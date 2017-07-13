@@ -1,0 +1,922 @@
+[
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\mr_ic_play_light.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\24.0.0\\res\\drawable\\mr_ic_play_light.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\common_google_signin_btn_icon_dark.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.6.0\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_book_default.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_book_default.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_mini_controller_pause.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_mini_controller_pause.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_liver.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_liver.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_cab_background_internal_bg.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\mr_dialog_material_background_light.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\24.0.0\\res\\drawable\\mr_dialog_material_background_light.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_menu_overflow_material.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_ic_menu_overflow_material.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_zigzag_colored.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_zigzag_colored.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_tab_indicator_material.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_seekbar_thumb_material.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_mini_controller_skip_next.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_mini_controller_skip_next.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_zigzag.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_zigzag.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_pen.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_pen.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_mini_controller_forward30.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_mini_controller_forward30.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_lung_fighter.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_lung_fighter.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_childhood_fighter.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_childhood_fighter.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_profile_supporters.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_profile_supporters.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_connect.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_connect.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\mr_ic_audiotrack_light.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\24.0.0\\res\\drawable\\mr_ic_audiotrack_light.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\no_media.jpg",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\no_media.jpg"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_notification_rewind30.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_notification_rewind30.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_item_background_holo_light.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_pancreatic.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_pancreatic.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_small_material.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_ratingbar_small_material.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_nh_lymphoma.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_nh_lymphoma.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_lung.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_lung.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_leukemia_fighter.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_leukemia_fighter.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_notification_small_icon.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_notification_small_icon.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_h_lymphoma.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_h_lymphoma.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_alert_feed.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_alert_feed.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_notification_forward.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_notification_forward.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\icon_feeds_selected.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\icon_feeds_selected.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\common_google_signin_btn_icon_light.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.6.0\\res\\drawable\\common_google_signin_btn_icon_light.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\icon_messages.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\icon_messages.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_skip_ad_label_border.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_skip_ad_label_border.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\profilepic2.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\profilepic2.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_alert_invite.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_alert_invite.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\grid_color_selector.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\grid_color_selector.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_testicular_fighter.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_testicular_fighter.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_zigzag_grey.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_zigzag_grey.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_breast.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_breast.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_expanded_controller_rewind30.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_expanded_controller_rewind30.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_collapse.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\24.0.0\\res\\drawable\\ic_collapse.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_expanded_controller_mute.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_expanded_controller_mute.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\splash_image.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\splash_image.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_clear_material.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_ic_clear_material.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\list_item_font_secondary.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\BigCConnect\\gmailChipsLibrary\\unspecified\\res\\drawable\\list_item_font_secondary.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\default_profile_pic_icon.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\default_profile_pic_icon.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_cervical.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_cervical.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_mini_controller_pause_large.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_mini_controller_pause_large.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_book.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_book.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\common_google_signin_btn_text_dark.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.6.0\\res\\drawable\\common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\icon_messages_selected.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\icon_messages_selected.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\mr_ic_pause_dark.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\24.0.0\\res\\drawable\\mr_ic_pause_dark.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_colored_material.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_ovarian_fighter.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_ovarian_fighter.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_liver_fighter.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_liver_fighter.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_notification_rewind.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_notification_rewind.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_news.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_news.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\edit.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\edit.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_notification_stop_live_stream.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_notification_stop_live_stream.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_dialog_material_background.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\grey_click_selector.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\grey_click_selector.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\vpi__tab_indicator.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.github.JakeWharton\\ViewPagerIndicator\\2.4.1\\res\\drawable\\vpi__tab_indicator.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_notification_pause.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_notification_pause.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\mr_ic_close_light.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\24.0.0\\res\\drawable\\mr_ic_close_light.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_mini_controller_stop.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_mini_controller_stop.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_kidney.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_kidney.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_expanded_controller_stop.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_expanded_controller_stop.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_bolt_plus.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_bolt_plus.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\mr_ic_pause_light.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\24.0.0\\res\\drawable\\mr_ic_pause_light.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_seekbar_tick_mark_material.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_mini_controller_rewind30.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_mini_controller_rewind30.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\profilepic4.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\profilepic4.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_videos.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_videos.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\mr_ic_media_route_on_dark.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\24.0.0\\res\\drawable\\mr_ic_media_route_on_dark.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_material.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_ratingbar_material.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_childhood.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_childhood.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\profilepic3.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\profilepic3.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_expanded_controller_closed_caption.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_expanded_controller_closed_caption.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_search_logo.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_search_logo.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\profile_settings.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\profile_settings.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_expanded_controller_pause.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_expanded_controller_pause.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\loading_img.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\loading_img.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\edittext_round_border.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\edittext_round_border.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_melanoma_fighter.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_melanoma_fighter.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_search_plus.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_search_plus.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_notification_connecting.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast\\9.6.0\\res\\drawable\\cast_ic_notification_connecting.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_text_cursor_material.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\mr_ic_media_route_connecting_light.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\24.0.0\\res\\drawable\\mr_ic_media_route_connecting_light.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_mini_controller_closed_caption.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_mini_controller_closed_caption.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_expanded_controller_actionbar_bg_gradient_light.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_expanded_controller_actionbar_bg_gradient_light.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_candle.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_candle.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\list_item_font_primary.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\BigCConnect\\gmailChipsLibrary\\unspecified\\res\\drawable\\list_item_font_primary.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_love_colored.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_love_colored.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\mr_ic_media_route_on_light.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\24.0.0\\res\\drawable\\mr_ic_media_route_on_light.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\search_view_holo_light.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\search_view_holo_light.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_mini_controller_mute.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_mini_controller_mute.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_connect_pending.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_connect_pending.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_switch_thumb_material.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\progress_drawable.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\progress_drawable.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_colon.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_colon.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_bladder.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_bladder.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_radio_material.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_comments.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_comments.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\splash_image_beta.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\splash_image_beta.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_menu_dropdown_panel_holo_light.9.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\abc_menu_dropdown_panel_holo_light.9.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_breast_male_fighter.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_breast_male_fighter.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_connected.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_connected.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_textfield_search_material.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_cab_background_top_material.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_edit_text_material.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_mini_controller_stop_large.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_mini_controller_stop_large.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\icon_profile_selected.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\icon_profile_selected.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_mini_controller_play_large.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_mini_controller_play_large.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\settings_edittext_normal.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\settings_edittext_normal.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_bone.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_bone.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_notification_rewind10.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_notification_rewind10.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_ovarian.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_ovarian.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\selector_crop_button.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\BigCConnect\\simpleCropLib\\unspecified\\res\\drawable\\selector_crop_button.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\icon_connections_selected.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\icon_connections_selected.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\mr_ic_cast_light.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\24.0.0\\res\\drawable\\mr_ic_cast_light.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\icon_profile.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\icon_profile.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\fighter_img.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\fighter_img.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_expanded_controller_forward30.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_expanded_controller_forward30.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\mr_ic_cast_dark.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\24.0.0\\res\\drawable\\mr_ic_cast_dark.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\mr_ic_media_route_mono_dark.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\24.0.0\\res\\drawable\\mr_ic_media_route_mono_dark.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_expand.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\24.0.0\\res\\drawable\\ic_expand.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\profile_message.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\profile_message.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_seekbar_track_material.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\icon_explore.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\icon_explore.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_user_stories.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_user_stories.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_supporter.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_supporter.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\fighter_selected_img.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\fighter_selected_img.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_plus_settings.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_plus_settings.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_prostate_fighter.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_prostate_fighter.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\profilepic1.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\profilepic1.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_search_api_material.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_ic_search_api_material.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\survivor_img.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\survivor_img.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_voice_search_api_material.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_ic_voice_search_api_material.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\container_shadow.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\container_shadow.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_brain.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_brain.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\pop_up_backgroud.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\pop_up_backgroud.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_holo_light.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_update_profile.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_update_profile.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\supporter_img.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\supporter_img.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_brain_fighter.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_brain_fighter.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\white_color_selector.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\white_color_selector.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_stomach.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_stomach.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_ab_back_material.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_ic_ab_back_material.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\mr_ic_close_dark.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\24.0.0\\res\\drawable\\mr_ic_close_dark.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_action_overflow.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_action_overflow.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_testicular.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_testicular.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_bladder_fighter.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_bladder_fighter.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_notification_disconnect.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_notification_disconnect.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\mr_ic_play_dark.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\24.0.0\\res\\drawable\\mr_ic_play_dark.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_breast_male.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_breast_male.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_kidney_fighter.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_kidney_fighter.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\mr_ic_media_route_mono_light.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\24.0.0\\res\\drawable\\mr_ic_media_route_mono_light.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_all_supporters.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_all_supporters.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_indicator_material.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_thyroid.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_thyroid.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_cervical_fighter.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_cervical_fighter.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\settings_edittext_border.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\settings_edittext_border.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_pancreatic_fighter.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_pancreatic_fighter.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\on_focus_checkbox.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\on_focus_checkbox.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_mini_controller_gradient_light.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_mini_controller_gradient_light.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\continue_button.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\continue_button.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\checkbox_selected.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\checkbox_selected.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_prostate.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_prostate.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_podcasts.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_podcasts.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\progress_background.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\progress_background.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_melanoma.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_melanoma.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\common_google_signin_btn_text_light.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.6.0\\res\\drawable\\common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\default_profile_pic.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\default_profile_pic.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\shadow_black.9.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\shadow_black.9.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_leukemia.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_leukemia.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_colon_fighter.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_colon_fighter.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_expanded_controller_skip_previous.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_expanded_controller_skip_previous.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_profile_posts.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_profile_posts.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_supporter_link.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_supporter_link.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_friend_request.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_friend_request.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_mini_controller_skip_prev.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_mini_controller_skip_prev.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\checkbox_up.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\checkbox_up.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_thyroid_fighter.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_thyroid_fighter.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_mini_controller_progress_drawable.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_mini_controller_progress_drawable.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_expanded_controller_bg_gradient_light.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_expanded_controller_bg_gradient_light.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\search.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\search.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_tribute.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_tribute.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_go_search_api_material.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_ic_go_search_api_material.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\icon_explore_selected.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\icon_explore_selected.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_mini_controller_play.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_mini_controller_play.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_notification_forward10.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_notification_forward10.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_check_material.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_btn_check_material.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_breast_fighter.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_breast_fighter.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_connections.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_connections.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\mr_ic_media_route_connecting_dark.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\24.0.0\\res\\drawable\\mr_ic_media_route_connecting_dark.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\mr_dialog_material_background_dark.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\24.0.0\\res\\drawable\\mr_dialog_material_background_dark.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_borderless_material.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable\\abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_expanded_controller_play.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_expanded_controller_play.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\supporter_selected_img.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\supporter_selected_img.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_stomach_fighter.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_stomach_fighter.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_notification_skip_next.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_notification_skip_next.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\edittext_border.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\edittext_border.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\shadow_top.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\shadow_top.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\icon_connections.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\icon_connections.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_launcher.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_nh_lymphoma_fighter.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_nh_lymphoma_fighter.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_expanded_controller_skip_next.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_expanded_controller_skip_next.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_broadcast.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_broadcast.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\costum_progress_bar.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\BigCConnect\\loadMoreListView\\unspecified\\res\\drawable\\costum_progress_bar.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_bone_fighter.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_bone_fighter.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_notification_skip_prev.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_notification_skip_prev.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_action_search.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_action_search.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ribbon_h_lymphoma_fighter.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_h_lymphoma_fighter.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\survivor_selected_img.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\survivor_selected_img.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\shadow.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\shadow.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_story_plus.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_story_plus.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_notification_forward30.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_notification_forward30.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\cast_ic_notification_play.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.0\\res\\drawable\\cast_ic_notification_play.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\ic_profile_bold.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_profile_bold.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\drawable\\icon_feeds.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\icon_feeds.png"
+    }
+]

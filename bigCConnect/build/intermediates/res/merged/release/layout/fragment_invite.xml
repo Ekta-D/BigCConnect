@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_margin="3dp"
+        android:orientation="horizontal"
+        android:weightSum="5" >
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:scaleType="fitStart"
+            android:src="@drawable/splash_image" />
+
+        <TextView
+            android:id="@+id/skipOption"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|right"
+            android:paddingRight="15dp"
+            android:singleLine="true"
+            android:text="@string/finish"
+            android:textColor="@color/white"
+            android:textSize="@dimen/buttonTextSize" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:paddingTop="40dp" >
+
+        <TextView
+            android:id="@+id/inviteSupporterTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:text="@string/inviteSupportersOrSurvivors"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/headingsTextSize" />
+
+        <LinearLayout
+            android:id="@+id/buttonsParent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="4" >
+
+            <TextView
+                android:id="@+id/yesButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/buttonBackground"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/yes"
+                android:textColor="@color/white"
+                android:textSize="@dimen/buttonTextSize" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="10dp"
+                android:layout_weight=".6" />
+
+            <TextView
+                android:id="@+id/noButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/buttonBackground"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/no"
+                android:textColor="@color/white"
+                android:textSize="@dimen/buttonTextSize" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/inviteSupporterDescriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buttonsParent"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="@string/inviteSupportersDescription"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/normalTextSize" />
+    </RelativeLayout>
+
+</LinearLayout>

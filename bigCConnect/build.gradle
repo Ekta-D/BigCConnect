@@ -1,0 +1,77 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
+    defaultConfig {
+        applicationId 'com.bigc_connect'
+        minSdkVersion 16
+        targetSdkVersion 24
+        multiDexEnabled true
+        useLibrary  'org.apache.http.legacy'
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/ASL2.0'
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    productFlavors {
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+   }
+
+dependencies {
+    compile project(':loadMoreListView')
+    compile project(':simpleCropLib')
+    compile project(':gmailChipsLibrary')
+    compile('com.github.JakeWharton:ViewPagerIndicator:2.4.1') {
+        exclude module: 'support-v4'
+    }
+    //compile 'com.github.JakeWharton:ViewPagerIndicator:2.4.1'
+
+    compile 'com.google.firebase:firebase-core:9.6.0' //firebase
+    compile 'com.google.firebase:firebase-storage:9.6.0'
+    compile 'com.google.firebase:firebase-database:9.6.0'
+    compile 'com.google.firebase:firebase-auth:9.6.0'
+    compile 'com.google.firebase:firebase-messaging:9.6.0' // for push notification
+//    compile 'com.firebase:firebase-client-android:2.5.2'
+
+    compile 'com.google.android.gms:play-services:9.6.0'
+    compile 'com.google.android.gms:play-services-location:9.6.0'
+    compile 'com.google.android.gms:play-services-places:9.6.0'
+
+    compile 'com.android.support:appcompat-v7:24.1.1'
+    compile files('libs/YouTubeAndroidPlayerApi.jar')
+    compile files('libs/jackson-annotations-2.2.3.jar')
+    compile files('libs/jackson-core-2.1.3.jar')
+    compile files('libs/jackson-core-asl-1.9.11.jar')
+    compile files('libs/jackson-mapper-asl-1.9.11.jar')
+    compile files('libs/robospice-1.4.13.jar')
+    compile files('libs/robospice-cache-1.4.13.jar')
+    compile files('libs/robospice-spring-android-1.4.13.jar')
+    compile files('libs/spring-android-core-1.0.1.RELEASE.jar')
+    compile files('libs/spring-android-rest-template-1.0.1.RELEASE.jar')
+    compile files('libs/universal-image-loader-1.9.2.jar')
+}
+apply plugin: 'com.google.gms.google-services'

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <!-- Search / will display always -->
+    <item
+        android:id="@+id/action_search"
+        android:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="always"
+        android:title="@string/search"
+        app:actionViewClass="android.support.v7.widget.SearchView"/>
+
+    <!-- More -->
+    <item
+        android:id="@+id/action_more"
+        android:icon="@drawable/ic_action_overflow"
+        app:showAsAction="always"
+        android:title="@string/more">
+        <menu>
+            <item
+                android:id="@+id/action_logout"
+                app:showAsAction="never"
+                android:title="@string/logout"/>
+            <item
+                android:id="@+id/action_resetPassword"
+                app:showAsAction="never"
+                android:title="@string/resetPassword"/>
+            <item
+                android:id="@+id/action_report_a_problem"
+                app:showAsAction="never"
+                android:title="@string/reportAProblem"/>
+        </menu>
+    </item>
+
+</menu>

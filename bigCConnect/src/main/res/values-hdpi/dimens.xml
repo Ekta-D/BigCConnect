@@ -1,0 +1,10 @@
+<resources>
+
+    <dimen name="headingsTextSize">20dp</dimen>
+    <dimen name="buttonTextSize">16dp</dimen>
+    <dimen name="normalTextSize">12dp</dimen>
+    <dimen name="galleryImageWidth">110dp</dimen>
+    <dimen name="galleryImageHeight">130dp</dimen>
+    <dimen name="postPictureHeight">170dp</dimen>
+    
+</resources>

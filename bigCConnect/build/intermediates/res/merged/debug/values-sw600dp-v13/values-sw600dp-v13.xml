@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="abc_action_bar_content_inset_material">24dp</dimen>
+    <dimen name="abc_action_bar_content_inset_with_nav">80dp</dimen>
+    <dimen name="abc_action_bar_default_height_material">64dp</dimen>
+    <dimen name="abc_action_bar_default_padding_end_material">8dp</dimen>
+    <dimen name="abc_action_bar_default_padding_start_material">8dp</dimen>
+    <dimen name="abc_config_prefDialogWidth">580dp</dimen>
+    <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
+    <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
+    <dimen name="buttonTextSize">25dp</dimen>
+    <dimen name="galleryImageHeight">220dp</dimen>
+    <dimen name="galleryImageWidth">190dp</dimen>
+    <dimen name="headingsTextSize">32dp</dimen>
+    <item name="mr_dialog_fixed_width_major" type="dimen">60%</item>
+    <item name="mr_dialog_fixed_width_minor" type="dimen">90%</item>
+    <dimen name="normalTextSize">20dp</dimen>
+    <dimen name="postPictureHeight">300dp</dimen>
+    <style name="RecipientEditTextView" parent="@android:attr/autoCompleteTextViewStyle">
+        <item name="android:paddingLeft">8dip</item>
+        <item name="android:paddingRight">4dip</item>
+        <item name="android:inputType">textEmailAddress|textMultiLine</item>
+        <item name="android:imeOptions">actionNext</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+        <item name="android:background">@null</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:dropDownVerticalOffset">0dip</item>
+        <item name="android:dropDownHorizontalOffset">-4dip</item>
+    </style>
+</resources>

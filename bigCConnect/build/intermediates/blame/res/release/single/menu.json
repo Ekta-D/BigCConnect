@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\menu\\search_activity.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\menu\\search_activity.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\menu\\main_premium.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\menu\\main_premium.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\menu\\main.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\menu\\main.xml"
+    }
+]

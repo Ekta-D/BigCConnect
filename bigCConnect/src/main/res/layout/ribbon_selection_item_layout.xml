@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:padding="2dp" >
+
+    <ImageView
+        android:id="@+id/ribbonSelectionImage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ribbon_bone" />
+
+    <TextView
+        android:id="@+id/ribbonSelectionText"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/buttonTextSize" />
+
+</LinearLayout>

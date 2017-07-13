@@ -1,0 +1,327 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Manifest Merging:
+-----------------
+Your project uses libraries that provide manifests, and your Eclipse
+project did not explicitly turn on manifest merging. In Android Gradle
+projects, manifests are always merged (meaning that contents from your
+libraries' manifests will be merged into the app manifest. If you had
+manually copied contents from library manifests into your app manifest
+you may need to remove these for the app to build correctly.
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+From BigCConnect:
+* .DS_Store
+* .gitignore
+* ic_launcher-web.png
+* proguard-project.txt
+From GmailChipsLibrary:
+* Android.mk
+From LoadMoreListView:
+* build.gradle
+* proguard.cfg
+From SimpleCropLib:
+* ant.properties
+* build.gradle
+* build.xml
+* proguard-project.txt
+From mopub-sdk:
+* build.gradle
+* build.properties
+* etc/
+* etc/expectedFile.jpg
+* etc/mraid.js
+* gradle/
+* gradle/wrapper/
+* gradle/wrapper/gradle-wrapper.jar
+* gradle/wrapper/gradle-wrapper.properties
+* gradlew
+* gradlew.bat
+* pom.xml
+* proguard.txt
+* settings.gradle
+* src/
+* src/test/
+* src/test/java/
+* src/test/java/com/
+* src/test/java/com/mopub/
+* src/test/java/com/mopub/common/
+* src/test/java/com/mopub/common/AdReportTest.java
+* src/test/java/com/mopub/common/CacheServiceTest.java
+* src/test/java/com/mopub/common/ClientMetadataTest.java
+* src/test/java/com/mopub/common/CloseableLayoutTest.java
+* src/test/java/com/mopub/common/DownloadResponseTest.java
+* src/test/java/com/mopub/common/DownloadTaskTest.java
+* src/test/java/com/mopub/common/GpsHelperTest.java
+* src/test/java/com/mopub/common/HttpClientTest.java
+* src/test/java/com/mopub/common/HttpResponsesTest.java
+* src/test/java/com/mopub/common/MoPubBrowserTest.java
+* src/test/java/com/mopub/common/PreconditionsTest.java
+* src/test/java/com/mopub/common/VolleyRequestMatcher.java
+* src/test/java/com/mopub/common/event/
+* src/test/java/com/mopub/common/event/BaseEventTest.java
+* src/test/java/com/mopub/common/event/ErrorEventTest.java
+* src/test/java/com/mopub/common/event/EventDispatcherTest.java
+* src/test/java/com/mopub/common/event/EventSamplerTest.java
+* src/test/java/com/mopub/common/event/EventSerializerTest.java
+* src/test/java/com/mopub/common/event/EventTest.java
+* src/test/java/com/mopub/common/event/MoPubEventsTest.java
+* src/test/java/com/mopub/common/event/ScribeEventRecorderTest.java
+* src/test/java/com/mopub/common/test/
+* src/test/java/com/mopub/common/test/support/
+* src/test/java/com/mopub/common/test/support/SdkTestRunner.java
+* src/test/java/com/mopub/common/util/
+* src/test/java/com/mopub/common/util/AsyncTasksTest.java
+* src/test/java/com/mopub/common/util/DipsTest.java
+* src/test/java/com/mopub/common/util/DrawablesTest.java
+* src/test/java/com/mopub/common/util/FilesTest.java
+* src/test/java/com/mopub/common/util/IntentsTest.java
+* src/test/java/com/mopub/common/util/JsonTest.java
+* src/test/java/com/mopub/common/util/ManifestUtilsTest.java
+* src/test/java/com/mopub/common/util/NumbersTest.java
+* src/test/java/com/mopub/common/util/ReflectionTest.java
+* src/test/java/com/mopub/common/util/StreamsTest.java
+* src/test/java/com/mopub/common/util/UtilsTest.java
+* src/test/java/com/mopub/common/util/VersionCodeTest.java
+* src/test/java/com/mopub/common/util/ViewsTest.java
+* src/test/java/com/mopub/common/util/VisibilityTest.java
+* src/test/java/com/mopub/common/util/test/
+* src/test/java/com/mopub/common/util/test/support/
+* src/test/java/com/mopub/common/util/test/support/ShadowAsyncTasks.java
+* src/test/java/com/mopub/common/util/test/support/TestDateAndTime.java
+* src/test/java/com/mopub/common/util/test/support/TestMethodBuilderFactory.java
+* src/test/java/com/mopub/mobileads/
+* src/test/java/com/mopub/mobileads/AdAlertGestureListenerTest.java
+* src/test/java/com/mopub/mobileads/AdAlertReporterTest.java
+* src/test/java/com/mopub/mobileads/AdLoaderTest.java
+* src/test/java/com/mopub/mobileads/AdRequestStatusMappingTest.java
+* src/test/java/com/mopub/mobileads/AdTypeTranslatorTest.java
+* src/test/java/com/mopub/mobileads/AdViewControllerTest.java
+* src/test/java/com/mopub/mobileads/BaseHtmlWebViewTest.java
+* src/test/java/com/mopub/mobileads/BaseInterstitialActivityTest.java
+* src/test/java/com/mopub/mobileads/BaseVideoPlayerActivityTest.java
+* src/test/java/com/mopub/mobileads/BaseWebViewTest.java
+* src/test/java/com/mopub/mobileads/CustomEventAdLoaderTest.java
+* src/test/java/com/mopub/mobileads/CustomEventBannerAdapterTest.java
+* src/test/java/com/mopub/mobileads/CustomEventInterstitialAdapterTest.java
+* src/test/java/com/mopub/mobileads/EventForwardingBroadcastReceiverTest.java
+* src/test/java/com/mopub/mobileads/HtmlBannerTest.java
+* src/test/java/com/mopub/mobileads/HtmlBannerWebViewTest.java
+* src/test/java/com/mopub/mobileads/HtmlInterstitialTest.java
+* src/test/java/com/mopub/mobileads/HtmlInterstitialWebViewTest.java
+* src/test/java/com/mopub/mobileads/HtmlWebViewClientTest.java
+* src/test/java/com/mopub/mobileads/MoPubActivityTest.java
+* src/test/java/com/mopub/mobileads/MoPubConversionTrackerTest.java
+* src/test/java/com/mopub/mobileads/MoPubInterstitialTest.java
+* src/test/java/com/mopub/mobileads/MoPubRewardedVideoManagerTest.java
+* src/test/java/com/mopub/mobileads/MoPubViewTest.java
+* src/test/java/com/mopub/mobileads/MraidActivityTest.java
+* src/test/java/com/mopub/mobileads/MraidVideoPlayerActivityTest.java
+* src/test/java/com/mopub/mobileads/ResponseBodyInterstitialTest.java
+* src/test/java/com/mopub/mobileads/VastVideoDownloadTaskTest.java
+* src/test/java/com/mopub/mobileads/VastVideoInterstitialTest.java
+* src/test/java/com/mopub/mobileads/VastVideoToolbarTest.java
+* src/test/java/com/mopub/mobileads/VastVideoViewControllerTest.java
+* src/test/java/com/mopub/mobileads/ViewGestureDetectorTest.java
+* src/test/java/com/mopub/mobileads/WebViewAdUrlGeneratorTest.java
+* src/test/java/com/mopub/mobileads/factories/
+* src/test/java/com/mopub/mobileads/factories/CustomEventBannerFactoryTest.java
+* src/test/java/com/mopub/mobileads/factories/CustomEventInterstitialFactoryTest.java
+* src/test/java/com/mopub/mobileads/test/
+* src/test/java/com/mopub/mobileads/test/support/
+* src/test/java/com/mopub/mobileads/test/support/FileUtils.java
+* src/test/java/com/mopub/mobileads/test/support/GestureUtils.java
+* src/test/java/com/mopub/mobileads/test/support/JsonUtils.java
+* src/test/java/com/mopub/mobileads/test/support/MoPubShadowTelephonyManager.java
+* src/test/java/com/mopub/mobileads/test/support/TestAdViewControllerFactory.java
+* src/test/java/com/mopub/mobileads/test/support/TestCustomEventBannerAdapterFactory.java
+* src/test/java/com/mopub/mobileads/test/support/TestCustomEventBannerFactory.java
+* src/test/java/com/mopub/mobileads/test/support/TestCustomEventInterstitialAdapterFactory.java
+* src/test/java/com/mopub/mobileads/test/support/TestCustomEventInterstitialFactory.java
+* src/test/java/com/mopub/mobileads/test/support/TestHtmlBannerWebViewFactory.java
+* src/test/java/com/mopub/mobileads/test/support/TestHtmlInterstitialWebViewFactory.java
+* src/test/java/com/mopub/mobileads/test/support/TestHttpClientFactory.java
+* src/test/java/com/mopub/mobileads/test/support/TestHttpResponseWithHeaders.java
+* src/test/java/com/mopub/mobileads/test/support/TestMoPubViewFactory.java
+* src/test/java/com/mopub/mobileads/test/support/TestMraidControllerFactory.java
+* src/test/java/com/mopub/mobileads/test/support/TestVastManagerFactory.java
+* src/test/java/com/mopub/mobileads/test/support/TestVastVideoDownloadTaskFactory.java
+* src/test/java/com/mopub/mobileads/test/support/ThreadUtils.java
+* src/test/java/com/mopub/mobileads/util/
+* src/test/java/com/mopub/mobileads/util/HttpClientsTest.java
+* src/test/java/com/mopub/mobileads/util/WebViewsTest.java
+* src/test/java/com/mopub/mobileads/util/vast/
+* src/test/java/com/mopub/mobileads/util/vast/VastManagerTest.java
+* src/test/java/com/mopub/mobileads/util/vast/VastXmlManagerAggregatorTest.java
+* src/test/java/com/mopub/mobileads/util/vast/VastXmlManagerTest.java
+* src/test/java/com/mopub/mobileads/util/vast/XmlUtilsTest.java
+* src/test/java/com/mopub/mraid/
+* src/test/java/com/mopub/mraid/MraidBannerTest.java
+* src/test/java/com/mopub/mraid/MraidBridgeTest.java
+* src/test/java/com/mopub/mraid/MraidControllerTest.java
+* src/test/java/com/mopub/mraid/MraidInterstitialTest.java
+* src/test/java/com/mopub/mraid/MraidNativeCommandHandlerTest.java
+* src/test/java/com/mopub/mraid/MraidVideoViewControllerTest.java
+* src/test/java/com/mopub/nativeads/
+* src/test/java/com/mopub/nativeads/AdapterHelperTest.java
+* src/test/java/com/mopub/nativeads/BaseForwardingNativeAdTest.java
+* src/test/java/com/mopub/nativeads/ClickDestinationResolutionListenerTest.java
+* src/test/java/com/mopub/nativeads/CustomEventNativeAdapterTest.java
+* src/test/java/com/mopub/nativeads/ImpressionTrackerTest.java
+* src/test/java/com/mopub/nativeads/MoPubAdAdapterTest.java
+* src/test/java/com/mopub/nativeads/MoPubClientPositioningTest.java
+* src/test/java/com/mopub/nativeads/MoPubCustomEventNativeTest.java
+* src/test/java/com/mopub/nativeads/MoPubForwardingNativeAdTest.java
+* src/test/java/com/mopub/nativeads/MoPubNativeAdRendererTest.java
+* src/test/java/com/mopub/nativeads/MoPubNativeTest.java
+* src/test/java/com/mopub/nativeads/MoPubStreamAdPlacerTest.java
+* src/test/java/com/mopub/nativeads/NativeAdSourceTest.java
+* src/test/java/com/mopub/nativeads/NativeAdViewHelperTest.java
+* src/test/java/com/mopub/nativeads/NativeResponseTest.java
+* src/test/java/com/mopub/nativeads/NativeUrlGeneratorTest.java
+* src/test/java/com/mopub/nativeads/NativeViewHolderTest.java
+* src/test/java/com/mopub/nativeads/PlacementDataTest.java
+* src/test/java/com/mopub/nativeads/PositioningRequestTest.java
+* src/test/java/com/mopub/nativeads/ServerPositioningSourceTest.java
+* src/test/java/com/mopub/nativeads/VisibilityTrackerTest.java
+* src/test/java/com/mopub/nativeads/factories/
+* src/test/java/com/mopub/nativeads/factories/CustomEventNativeFactoryTest.java
+* src/test/java/com/mopub/nativeads/test/
+* src/test/java/com/mopub/nativeads/test/support/
+* src/test/java/com/mopub/nativeads/test/support/MoPubShadowBitmap.java
+* src/test/java/com/mopub/nativeads/test/support/MoPubShadowDisplay.java
+* src/test/java/com/mopub/nativeads/test/support/TestCustomEventNativeFactory.java
+* src/test/java/com/mopub/network/
+* src/test/java/com/mopub/network/AdRequestTest.java
+* src/test/java/com/mopub/network/HeaderUtilsTest.java
+* src/test/java/com/mopub/network/MoPubRequestQueueTest.java
+* src/test/java/com/mopub/network/NetworkingTest.java
+* src/test/java/com/mopub/network/PlayServicesUrlRewriterTest.java
+* src/test/java/com/mopub/network/RequestManagerTest.java
+* src/test/java/com/mopub/network/ScribeBackoffPolicyTest.java
+* src/test/java/com/mopub/network/ScribeRequestManagerTest.java
+* src/test/java/com/mopub/network/ScribeRequestTest.java
+* src/test/java/com/mopub/network/TrackingRequestTest.java
+* src/test/resources/
+* src/test/resources/org.robolectric.Config.properties
+From viewpagerindicatorlibrary:
+* pom.xml
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:19.1.0
+
+Replaced Libraries with Dependencies:
+-------------------------------------
+The importer recognized the following library projects as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the source files in your project were of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the library replacement in the import wizard and try
+again:
+
+actionbarsherlock =>
+    com.actionbarsherlock:actionbarsherlock:4.4.0@aar
+    com.android.support:support-v4:18.0.0
+google-play-services_lib => [com.google.android.gms:play-services:+]
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+In mopub-sdk:
+* .README => .readme
+* AndroidManifest.xml => mopubsdk/src/main/AndroidManifest.xml
+* assets/ => mopubsdk/src/main/assets
+* libs/mopub-volley-1.1.0.jar => mopubsdk/libs/mopub-volley-1.1.0.jar
+* res/ => mopubsdk/src/main/res/
+* src/main/java/ => mopubsdk/src/main/java/
+In GmailChipsLibrary:
+* AndroidManifest.xml => gmailChipsLibrary/src/main/AndroidManifest.xml
+* assets/ => gmailChipsLibrary/src/main/assets
+* libs/Parse-1.9.1.jar => gmailChipsLibrary/libs/Parse-1.9.1.jar
+* libs/bolts-android-1.2.0-javadoc.jar => gmailChipsLibrary/libs/bolts-android-1.2.0-javadoc.jar
+* libs/bolts-android-1.2.0.jar => gmailChipsLibrary/libs/bolts-android-1.2.0.jar
+* lint.xml => gmailChipsLibrary/lint.xml
+* res/ => gmailChipsLibrary/src/main/res/
+* src/ => gmailChipsLibrary/src/main/java/
+In LoadMoreListView:
+* AndroidManifest.xml => loadMoreListView/src/main/AndroidManifest.xml
+* assets/ => loadMoreListView/src/main/assets
+* res/ => loadMoreListView/src/main/res/
+* src/ => loadMoreListView/src/main/java/
+In SimpleCropLib:
+* AndroidManifest.xml => simpleCropLib/src/main/AndroidManifest.xml
+* assets/ => simpleCropLib/src/main/assets
+* res/ => simpleCropLib/src/main/res/
+* src/ => simpleCropLib/src/main/java/
+In viewpagerindicatorlibrary:
+* AndroidManifest.xml => viewpagerindicatorlibrary/src/main/AndroidManifest.xml
+* assets/ => viewpagerindicatorlibrary/src/main/assets
+* res/ => viewpagerindicatorlibrary/src/main/res/
+* src/ => viewpagerindicatorlibrary/src/main/java/
+In BigCConnect:
+* AndroidManifest.xml => bigCConnect/src/main/AndroidManifest.xml
+* assets/ => bigCConnect/src/main/assets/
+* libs/YouTubeAndroidPlayerApi.jar => bigCConnect/libs/YouTubeAndroidPlayerApi.jar
+* libs/jackson-annotations-2.2.3.jar => bigCConnect/libs/jackson-annotations-2.2.3.jar
+* libs/jackson-core-2.1.3.jar => bigCConnect/libs/jackson-core-2.1.3.jar
+* libs/jackson-core-asl-1.9.11.jar => bigCConnect/libs/jackson-core-asl-1.9.11.jar
+* libs/jackson-mapper-asl-1.9.11.jar => bigCConnect/libs/jackson-mapper-asl-1.9.11.jar
+* libs/robospice-1.4.13.jar => bigCConnect/libs/robospice-1.4.13.jar
+* libs/robospice-cache-1.4.13.jar => bigCConnect/libs/robospice-cache-1.4.13.jar
+* libs/robospice-spring-android-1.4.13.jar => bigCConnect/libs/robospice-spring-android-1.4.13.jar
+* libs/spring-android-core-1.0.1.RELEASE.jar => bigCConnect/libs/spring-android-core-1.0.1.RELEASE.jar
+* libs/spring-android-rest-template-1.0.1.RELEASE.jar => bigCConnect/libs/spring-android-rest-template-1.0.1.RELEASE.jar
+* libs/universal-image-loader-1.9.2.jar => bigCConnect/libs/universal-image-loader-1.9.2.jar
+* lint.xml => bigCConnect/lint.xml
+* res/ => bigCConnect/src/main/res/
+* src/ => bigCConnect/src/main/java/
+* src/.DS_Store => bigCConnect/src/main/resources/.DS_Store
+* src/com/.DS_Store => bigCConnect/src/main/resources/com/.DS_Store
+* src/com/android/.DS_Store => bigCConnect/src/main/resources/com/android/.DS_Store
+* src/com/android/vending/.DS_Store => bigCConnect/src/main/resources/com/android/vending/.DS_Store
+* src/com/android/vending/billing/.DS_Store => bigCConnect/src/main/resources/com/android/vending/billing/.DS_Store
+* src/com/android/vending/billing/IInAppBillingService.aidl => bigCConnect/src/main/aidl/com/android/vending/billing/IInAppBillingService.aidl
+* src/com/bigc/.DS_Store => bigCConnect/src/main/resources/com/bigc/.DS_Store
+* src/com/bigc/activities/.DS_Store => bigCConnect/src/main/resources/com/bigc/activities/.DS_Store
+* src/com/bigc/fragments/.DS_Store => bigCConnect/src/main/resources/com/bigc/fragments/.DS_Store
+* src/com/bigc/general/.DS_Store => bigCConnect/src/main/resources/com/bigc/general/.DS_Store
+* src/com/bigc/general/classes/.DS_Store => bigCConnect/src/main/resources/com/bigc/general/classes/.DS_Store
+* src/com/bigc/requests/.DS_Store => bigCConnect/src/main/resources/com/bigc/requests/.DS_Store
+* src/com/bigc/views/.DS_Store => bigCConnect/src/main/resources/com/bigc/views/.DS_Store
+* src/com/bigc_connect/.DS_Store => bigCConnect/src/main/resources/com/bigc_connect/.DS_Store
+* src/com/model/.DS_Store => bigCConnect/src/main/resources/com/model/.DS_Store
+* src/com/model/books/.DS_Store => bigCConnect/src/main/resources/com/model/books/.DS_Store
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

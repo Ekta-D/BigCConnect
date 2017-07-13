@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "795009335553",
+    "firebase_url": "https://bigc-e2fb5.firebaseio.com",
+    "project_id": "bigc-e2fb5",
+    "storage_bucket": "bigc-e2fb5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:795009335553:android:cf9146f1a617072d",
+        "android_client_info": {
+          "package_name": "com.bigc_connect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "795009335553-54b8u9e795fub3hdtg22f9ft48u23459.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBECkzyTqyZtxMs8mfdGfgj084zeTFavoI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

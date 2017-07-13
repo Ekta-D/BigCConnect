@@ -1,0 +1,9 @@
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tabImage"
+    android:layout_width="wrap_content"
+    android:layout_height="35dp"
+    android:layout_margin="5dp"
+    android:layout_marginBottom="2dp"
+    android:layout_weight="1"
+    android:contentDescription="@string/app_name" />

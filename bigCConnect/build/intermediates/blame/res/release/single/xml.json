@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\xml\\searchable.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\xml\\searchable.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\release\\xml\\provider_paths.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\xml\\provider_paths.xml"
+    }
+]

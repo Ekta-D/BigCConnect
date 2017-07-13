@@ -1,0 +1,12 @@
+<resources>
+
+    <dimen name="editTextVerticalPadding">7dp</dimen>
+    <dimen name="headingsTextSize">20dp</dimen>
+    <dimen name="buttonTextSize">16dp</dimen>
+    <dimen name="galleryImageWidth">90dp</dimen>
+    <dimen name="galleryImageHeight">110dp</dimen>
+    <dimen name="postPictureHeight">140dp</dimen>
+    <dimen name="dateTextSize">10sp</dimen>
+    <dimen name="margin">8dp</dimen>
+
+</resources>

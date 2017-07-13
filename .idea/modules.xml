@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BigCConnect.iml" filepath="$PROJECT_DIR$/BigCConnect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bigCConnect/bigCConnect.iml" filepath="$PROJECT_DIR$/bigCConnect/bigCConnect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gmailChipsLibrary/gmailChipsLibrary.iml" filepath="$PROJECT_DIR$/gmailChipsLibrary/gmailChipsLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/loadMoreListView/loadMoreListView.iml" filepath="$PROJECT_DIR$/loadMoreListView/loadMoreListView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/simpleCropLib/simpleCropLib.iml" filepath="$PROJECT_DIR$/simpleCropLib/simpleCropLib.iml" />
+    </modules>
+  </component>
+</project>

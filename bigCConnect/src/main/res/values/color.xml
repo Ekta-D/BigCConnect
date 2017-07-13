@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="progressColor">#66000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="background">#8683B3</color>
+    <color name="buttonBackground">#656391</color>
+    <color name="darkGrey">#696969</color>
+    <color name="grey">#7A7A7A</color>
+    <color name="black">#000000</color>
+    <color name="buttonGrey">#A9A9AA</color>
+    <color name="lightGrey">#DDDDDD</color>
+    <color name="blue">#928DC4</color>
+    <color name="black_shadow">#44000000</color>
+    <color name="bg_bone">#F7EC11</color>
+    <color name="bg_brain">#BABABB</color>
+    <color name="bg_breast">#F280AF</color>
+    <color name="bg_cervical">#0AA4A8</color>
+    <color name="bg_childhood">#FFC807</color>
+    <color name="bg_colon">#5DA4DA</color>
+    <color name="bg_h_lymphoma">#592A77</color>
+    <color name="bg_kidney">#1D5A2D</color>
+    <color name="bg_leukemia">#F78C1E</color>
+    <color name="bg_liver">#0AA4A8</color>
+    <color name="bg_lung">#CBCBCB</color>
+    <color name="bg_bladder">#FFC810</color>
+    <color name="bg_thyroid">#382A73</color>
+    <color name="bg_melanoma">#020304</color>
+    <color name="bg_nh_lymphoma">#69BD45</color>
+    <color name="bg_ovarian">#3C52A3</color>
+    <color name="bg_prostate">#B0DAF4</color>
+    <color name="bg_stomach">#CDAED3</color>
+    <color name="bg_testicular">#5A2A77</color>
+    <color name="bg_pancreatic">#4C0696</color>
+
+</resources>

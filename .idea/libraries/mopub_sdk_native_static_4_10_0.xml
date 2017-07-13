@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="mopub-sdk-native-static-4.10.0">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/bigCConnect/build/intermediates/exploded-aar/com.mopub/mopub-sdk-native-static/4.10.0/res" />
+      <root url="jar://$PROJECT_DIR$/bigCConnect/build/intermediates/exploded-aar/com.mopub/mopub-sdk-native-static/4.10.0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mopub/mopub-sdk-native-static/4.10.0/9fb3e56a119b850441771930e526093f86c951e0/mopub-sdk-native-static-4.10.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

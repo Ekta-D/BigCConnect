@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/splashTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/background"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="@string/newsfeedSplash"
+        android:textColor="@color/white" />
+
+    <LinearLayout
+        android:id="@+id/bottomOptionsParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/background"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+
+        <LinearLayout
+            android:id="@+id/postParent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin"
+            android:layout_weight=".8"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="5dp" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonTextSize"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_pen" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:text="@string/update"
+                android:textColor="@color/white"
+                android:textSize="@dimen/buttonTextSize" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/photoParent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin"
+            android:layout_weight=".8"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonTextSize"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_zigzag" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:text="@string/photo"
+                android:textColor="@color/white"
+                android:textSize="@dimen/buttonTextSize" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.costum.android.widget.PullAndLoadListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomOptionsParent"
+        android:layout_below="@id/splashTextView"
+        android:layout_marginTop="@dimen/margin"
+        android:background="@color/lightGrey"
+        android:divider="@null" />
+
+    <LinearLayout
+        android:id="@+id/messageViewParent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomOptionsParent"
+        android:layout_below="@id/splashTextView"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/margin"
+        android:visibility="gone" >
+
+        <ProgressBar
+            android:id="@+id/progressView"
+            style="@android:style/Widget.ProgressBar"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+
+        <TextView
+            android:id="@+id/messageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="3dp"
+            android:text="@string/loadingRequests" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_margin="3dp"
+        android:orientation="horizontal"
+        android:weightSum="5" >
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:scaleType="fitStart"
+            android:src="@drawable/splash_image" />
+
+        <TextView
+            android:id="@+id/skipOption"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|right"
+            android:paddingRight="15dp"
+            android:text="@string/skip"
+            android:textColor="@color/white"
+            android:textSize="@dimen/buttonTextSize" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp" >
+
+        <TextView
+            android:id="@+id/addProfilePicTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="@string/addProfilePicText"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/headingsTextSize" />
+
+        <TextView
+            android:id="@+id/chooseFromGalleryButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:background="@color/buttonBackground"
+            android:gravity="center"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:text="@string/chooseFromGallery"
+            android:textColor="@color/white"
+            android:textSize="@dimen/buttonTextSize"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/takeAPhotoButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/chooseFromGalleryButton"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/buttonBackground"
+            android:gravity="center"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:text="@string/takeAPhoto"
+            android:textColor="@color/white"
+            android:textSize="@dimen/buttonTextSize"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/takeAPhotoButton"
+            android:layout_below="@id/addProfilePicTextView"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="2.5" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="horizontal"
+                android:weightSum="2" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:weightSum="2" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="1"
+                        android:gravity="bottom|right" >
+
+                        <com.bigc.views.SquareImageView
+                            android:layout_width="wrap_content"
+                            android:id="@+id/pic1"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/profilepic1" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="1"
+                        android:gravity="top|right" >
+
+                        <com.bigc.views.SquareImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/profilepic2" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:weightSum="2" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="1"
+                        android:gravity="bottom|left" >
+
+                        <com.bigc.views.SquareImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/profilepic3" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="1"
+                        android:gravity="top|left" >
+
+                        <com.bigc.views.SquareImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/profilepic4" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>
