@@ -8,8 +8,8 @@ import com.parse.ParseUser;
 
 public class UserConnections {
 
-	public List<ParseUser> activeConnections = new ArrayList<ParseUser>();
-	public List<ParseUser> pendingConnections = new ArrayList<ParseUser>();
+	public List<Users> activeConnections = new ArrayList<>();
+	public List<Users> pendingConnections = new ArrayList<>();
 
 
 }

@@ -24,6 +24,7 @@ import com.bigc.general.classes.UserConnections;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
+import com.bigc.models.Users;
 import com.bigc_connect.R;
 import com.costum.android.widget.LoadMoreListView;
 import com.costum.android.widget.LoadMoreListView.OnLoadMoreListener;
@@ -43,8 +44,11 @@ public class CategorySurvivorsFragment extends BaseFragment implements
 	private ProgressBar progressView;
 	private TextView titleView;
 
-	private List<ParseUser> users = new ArrayList<ParseUser>();
+	private List<Users> users = new ArrayList<>();
 	private UserConnections connections = new UserConnections();
+
+	public CategorySurvivorsFragment() {
+	}
 
 	public CategorySurvivorsFragment(int ribbon, UserConnections connections) {
 		CategorySurvivorsFragment.ribbon = ribbon;
@@ -133,8 +137,9 @@ public class CategorySurvivorsFragment extends BaseFragment implements
 	}
 
 	private void loadData() {
+		populateList(Queries.getCategorizedUsersQuery(ribbon));
 
-		ParseQuery<ParseUser> query = Queries.getCategorizedUsersQuery(ribbon);
+		/*ParseQuery<ParseUser> query = Queries.getCategorizedUsersQuery(ribbon);
 
 		query.findInBackground(new FindCallback<ParseUser>() {
 
@@ -154,10 +159,10 @@ public class CategorySurvivorsFragment extends BaseFragment implements
 				}
 			}
 		});
-
+*/
 	}
 
-	private void populateList(List<ParseUser> users) {
+	private void populateList(List<Users> users) {
 
 		this.users.clear();
 		if (listView != null) {
@@ -193,7 +198,8 @@ public class CategorySurvivorsFragment extends BaseFragment implements
 	}
 
 	private void loadPosts(Date from, final boolean recent) {
-		ParseQuery<ParseUser> query = Queries.getCategorizedUsersQuery(ribbon);
+		// TODO: 7/13/2017 Get posts of the user from a date
+		/*ParseQuery<ParseUser> query = Queries.getCategorizedUsersQuery(ribbon);
 
 		if (recent)
 			query.whereGreaterThan(DbConstants.CREATED_AT, from);
@@ -214,7 +220,7 @@ public class CategorySurvivorsFragment extends BaseFragment implements
 					listView.onLoadMoreComplete();
 				}
 			}
-		});
+		});*/
 	}
 
 	@Override

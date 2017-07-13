@@ -45,6 +45,8 @@ import com.bigc.datastorage.Preferences;
 import com.bigc.emailer.EmailComposer;
 import com.bigc.gallery.CustomGalleryActivity;
 import com.bigc.interfaces.PopupOptionHandler;
+import com.bigc.models.ConnectionsModel;
+import com.bigc.models.Users;
 import com.bigc.views.PopupHelper;
 import com.bigc.views.ProgressDialogue;
 import com.bigc_connect.BuildConfig;
@@ -53,7 +55,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.parse.DeleteCallback;
@@ -292,7 +296,44 @@ public class Utils {
         return matcher.matches();
     }
 
-    public static void addConnections(List<ParseUser> newConnections) {
+
+    public static void addConnections(List<Users> newConnections) {
+        Log.e("ParseUser", "Saving Connections: " + newConnections.size());
+        if (newConnections == null || newConnections.size() == 0)
+            return;
+
+        List<ConnectionsModel> newConnectionObjects = new ArrayList<>();
+        for (Users c : newConnections) {
+            final ConnectionsModel o = new ConnectionsModel();
+            ConnectionsModel.To toObj = new ConnectionsModel.To();
+            toObj.setObjectId(c.getObjectId());
+            o.setTo(new ConnectionsModel.To());
+            ConnectionsModel.From fromObj = new ConnectionsModel.From();
+            fromObj.setObjectId(FirebaseAuth.getInstance().getCurrentUser().getUid());
+            o.setFrom(fromObj);
+            o.setStatus(false);
+            newConnectionObjects.add(o);
+        }
+
+        //new saveConnectionTask(newConnectionObjects).execute();
+        updateConnectionTable(newConnectionObjects);
+    }
+
+    private static void updateConnectionTable(List<ConnectionsModel> newConnectionObjects) {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+        for(ConnectionsModel connectionReq : newConnectionObjects){
+            Map<String, Object> objectMap = new HashMap<>();
+            objectMap.put("objectId", user.getUid());
+            databaseReference.child(DbConstants.CONNECTIONS).setValue(connectionReq, new DatabaseReference.CompletionListener() {
+                @Override
+                public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+                    // TODO: 7/13/2017 show success
+                }
+            });
+        }
+    }
+    /*public static void addConnections(List<ParseUser> newConnections) {
         Log.e("ParseUser", "Saving Connections: " + newConnections.size());
         if (newConnections == null || newConnections.size() == 0)
             return;
@@ -307,15 +348,15 @@ public class Utils {
         }
 
         new saveConnectionTask(newConnectionObjects).execute();
-    }
+    }*/
 
-    private static class saveConnectionTask extends
+   /* private static class saveConnectionTask extends
             AsyncTask<Void, Void, Boolean> {
 
-        List<ParseObject> connections;
+        List<ConnectionsModel> connections;
 
-        private saveConnectionTask(List<ParseObject> connections) {
-            this.connections = new ArrayList<ParseObject>();
+        private saveConnectionTask(List<ConnectionsModel> connections) {
+            this.connections = new ArrayList<>();
             if (connections != null && connections.size() > 0) {
                 this.connections.addAll(connections);
             }
@@ -324,7 +365,7 @@ public class Utils {
         @Override
         protected Boolean doInBackground(Void... params) {
             boolean result = true;
-            for (ParseObject c : connections)
+            for (ConnectionsModel c : connections)
                 try {
                     c.save();
                     c.pin(Constants.TAG_CONNECTIONS);
@@ -351,15 +392,45 @@ public class Utils {
             Log.e("Save Status:", status + "-");
         }
 
-    }
+    }*/
 
     public static void removeConnections(
-            final List<ParseUser> removedConnections) {
+            final List<Users> removedConnections) {
         Log.e("ParseUser", "Removing : " + removedConnections.size());
         if (removedConnections == null || removedConnections.size() == 0)
             return;
 
-        ParseQuery<ParseObject> sQuery1 = ParseQuery
+        List<ConnectionsModel> removeConnectionObjects = new ArrayList<>();
+        for (Users c : removedConnections) {
+            final ConnectionsModel o = new ConnectionsModel();
+            ConnectionsModel.To toObj = new ConnectionsModel.To();
+
+            // TODO: 7/13/2017 discuss how to remove
+
+            toObj.setObjectId("");
+            o.setTo(new ConnectionsModel.To());
+            ConnectionsModel.From fromObj = new ConnectionsModel.From();
+            fromObj.setObjectId("");
+            o.setFrom(fromObj);
+            o.setStatus(false);
+            removeConnectionObjects.add(o);
+        }
+        // TODO: 7/13/2017 remove for both from and to requests
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+        for(ConnectionsModel connectionReq : removeConnectionObjects){
+            Map<String, Object> objectMap = new HashMap<>();
+            objectMap.put("objectId", user.getUid());
+            databaseReference.child(DbConstants.CONNECTIONS).setValue(connectionReq, new DatabaseReference.CompletionListener() {
+                @Override
+                public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+                    // TODO: 7/13/2017 show success
+                }
+            });
+        }
+
+
+       /* ParseQuery<ParseObject> sQuery1 = ParseQuery
                 .getQuery(DbConstants.TABLE_CONNECTIONS);
         sQuery1.whereEqualTo(DbConstants.FROM, ParseUser.getCurrentUser());
         sQuery1.whereContainedIn(DbConstants.TO, removedConnections);
@@ -420,7 +491,7 @@ public class Utils {
                     }
                 }
             }
-        });
+        });*/
     }
 
     public static void inviteSupporters(Activity activity, boolean supporter) {
@@ -943,7 +1014,7 @@ public class Utils {
         }
     }
 
-    public static int getUserIndex(ParseUser user, List<ParseUser> list) {
+    public static int getUserIndex(Users user, List<Users> list) {
         if (user == null)
             return -1;
 

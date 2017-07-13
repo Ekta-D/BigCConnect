@@ -14,16 +14,17 @@ import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.UserConnections;
 import com.bigc.general.classes.Utils;
+import com.bigc.models.Users;
 import com.parse.ParseUser;
 
-public abstract class SearchResultBaseAdapter extends ArrayAdapter<ParseUser> {
+public abstract class SearchResultBaseAdapter extends ArrayAdapter<Users> {
 
-    protected List<ParseUser> data;
+    protected List<Users> data;
     protected LayoutInflater inflater;
-    protected List<ParseUser> activeConnections;
-    protected List<ParseUser> pendingConnections;
-    protected List<ParseUser> newAddedConnections;
-    protected List<ParseUser> removedConnections;
+    protected List<Users> activeConnections;
+    protected List<Users> pendingConnections;
+    protected List<Users> newAddedConnections;
+    protected List<Users> removedConnections;
     protected boolean isSupporterUser;
 
     public static final String TAG_CONNECTED = "2";
@@ -31,43 +32,43 @@ public abstract class SearchResultBaseAdapter extends ArrayAdapter<ParseUser> {
     public static final String TAG_NOT_CONNECTED = "0";
 
     protected SearchResultBaseAdapter(Context context, int layout,
-                                      List<ParseUser> activeConnections,
-                                      List<ParseUser> pendingConnections, List<ParseUser> data) {
+                                      List<Users> activeConnections,
+                                      List<Users> pendingConnections, List<Users> data) {
 
         super(context, layout, data);
         if (data == null)
-            this.data = new ArrayList<ParseUser>();
+            this.data = new ArrayList<>();
         else
-            this.data = new ArrayList<ParseUser>(data);
+            this.data = new ArrayList<>(data);
 
         if (activeConnections == null)
-            this.activeConnections = new ArrayList<ParseUser>();
+            this.activeConnections = new ArrayList<>();
         else
-            this.activeConnections = new ArrayList<ParseUser>(activeConnections);
+            this.activeConnections = new ArrayList<>(activeConnections);
 
         if (pendingConnections == null)
-            this.pendingConnections = new ArrayList<ParseUser>();
+            this.pendingConnections = new ArrayList<>();
         else
-            this.pendingConnections = new ArrayList<ParseUser>(
+            this.pendingConnections = new ArrayList<>(
                     pendingConnections);
 
 //		isSupporterUser = ParseUser.getCurrentUser().getInt(DbConstants.TYPE) == Constants.USER_TYPE.SUPPORTER
 //				.ordinal();
         isSupporterUser = Preferences.getInstance(context).getInt(DbConstants.TYPE) == 1;
 
-        newAddedConnections = new ArrayList<ParseUser>();
-        removedConnections = new ArrayList<ParseUser>();
+        newAddedConnections = new ArrayList<>();
+        removedConnections = new ArrayList<>();
         inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
-    public ParseUser getItem(int position) {
+    public Users getItem(int position) {
         return data.get(position);
     }
 
-    public List<ParseUser> getConnections() {
-        List<ParseUser> cns = new ArrayList<ParseUser>();
+    public List<Users> getConnections() {
+        List<Users> cns = new ArrayList<>();
         cns.addAll(activeConnections);
         cns.addAll(pendingConnections);
         cns.addAll(newAddedConnections);
@@ -79,11 +80,10 @@ public abstract class SearchResultBaseAdapter extends ArrayAdapter<ParseUser> {
         cns.activeConnections.addAll(activeConnections);
         cns.pendingConnections.addAll(pendingConnections);
         cns.pendingConnections.addAll(newAddedConnections);
-        ;
         return cns;
     }
 
-    public List<ParseUser> getData() {
+    public List<Users> getData() {
         return data;
     }
 
@@ -92,9 +92,9 @@ public abstract class SearchResultBaseAdapter extends ArrayAdapter<ParseUser> {
         return data.size();
     }
 
-    public void updateData(List<ParseUser> result,
-                           List<ParseUser> activeConnections,
-                           List<ParseUser> pendingConnections) {
+    public void updateData(List<Users> result,
+                           List<Users> activeConnections,
+                           List<Users> pendingConnections) {
         this.activeConnections.clear();
         this.pendingConnections.clear();
 
@@ -107,8 +107,8 @@ public abstract class SearchResultBaseAdapter extends ArrayAdapter<ParseUser> {
         updateData(result);
     }
 
-    public void updateConnections(List<ParseUser> activeConnections,
-                                  List<ParseUser> pendingConnections) {
+    public void updateConnections(List<Users> activeConnections,
+                                  List<Users> pendingConnections) {
         this.activeConnections.clear();
         this.pendingConnections.clear();
 
@@ -121,7 +121,7 @@ public abstract class SearchResultBaseAdapter extends ArrayAdapter<ParseUser> {
         notifyDataSetChanged();
     }
 
-    public void updateData(List<ParseUser> result) {
+    public void updateData(List<Users> result) {
         data.clear();
         if (result == null)
             return;
@@ -130,11 +130,11 @@ public abstract class SearchResultBaseAdapter extends ArrayAdapter<ParseUser> {
     }
 
     public void processUserSettings() {
-        Utils.addConnections(new ArrayList<ParseUser>(newAddedConnections));
-        Utils.removeConnections(new ArrayList<ParseUser>(removedConnections));
+        Utils.addConnections(new ArrayList<>(newAddedConnections));
+        Utils.removeConnections(new ArrayList<>(removedConnections));
 
         int temp;
-        for (ParseUser r : removedConnections) {
+        for (Users r : removedConnections) {
             temp = Utils.getUserIndex(r, activeConnections);
             if (temp >= 0) {
                 activeConnections.remove(temp);
@@ -153,10 +153,10 @@ public abstract class SearchResultBaseAdapter extends ArrayAdapter<ParseUser> {
     public Date getLastItemDate() {
         if (data.size() == 0)
             return null;
-        return data.get(data.size() - 1).getCreatedAt();
+        return new Date(data.get(data.size() - 1).getCreatedAt());
     }
 
-    public void addItems(List<ParseUser> results, boolean atStart) {
+    public void addItems(List<Users> results, boolean atStart) {
 
         if (results == null)
             return;

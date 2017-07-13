@@ -38,6 +38,8 @@ import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
 import com.bigc.interfaces.SignupInterface;
+import com.bigc.models.ConnectionsModel;
+import com.bigc.models.Users;
 import com.bigc_connect.BigcConnect;
 import com.bigc_connect.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -46,9 +48,11 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -67,7 +71,7 @@ import eu.janmuller.android.simplecropimage.Util;
 public class ProfileFragment extends BaseFragment {
 
     private static BaseFragment caller = null;
-    private static ParseUser user = null;
+    private static Users user = null;
     private static boolean showProfile = false;
 
     private TextView nameView;
@@ -92,14 +96,17 @@ public class ProfileFragment extends BaseFragment {
     DatabaseReference databaseReference;
     FirebaseUser firebaseUser;
 
-    public ProfileFragment(BaseFragment caller, ParseUser user) {
+    public ProfileFragment(BaseFragment caller, Users user) {
         if (caller != null)
             ProfileFragment.caller = caller;
 
         if (user != null)
             ProfileFragment.user = user;
-        else if (ProfileFragment.user == null)
-            ProfileFragment.user = ParseUser.getCurrentUser();
+        else if (ProfileFragment.user == null) {
+            // TODO: 7/13/2017 Get user from preference
+            ProfileFragment.user = Preferences.getInstance(getActivity()).getUserFromPreference();
+            //ProfileFragment.user = ParseUser.getCurrentUser();
+        }
 
     }
 
@@ -107,11 +114,11 @@ public class ProfileFragment extends BaseFragment {
         showProfile = true;
     }
 
-    public static ParseUser getUser() {
+    public static Users getUser() {
         return user;
     }
 
-    public static void setUser(ParseUser user) {
+    public static void setUser(Users user) {
         if (user != null)
             ProfileFragment.user = user;
     }
@@ -203,8 +210,37 @@ public class ProfileFragment extends BaseFragment {
             if (Preferences.getInstance(getActivity()).getInt(DbConstants.TYPE) == 1) {
                 connectionView.setVisibility(View.GONE);
             } else {
+                // TODO: 7/13/2017 Get if the user if a connection or not or is connection request is sent or received
 
-                ParseQuery<ParseObject> mQuery = Queries
+                DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+                mDatabase.child(DbConstants.TABLE_CONNECTIONS).equalTo(Preferences.getInstance(getActivity()).getString(DbConstants.ID)).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if (dataSnapshot != null) {
+                            ConnectionsModel user = dataSnapshot.getValue(ConnectionsModel.class);
+                            if (user.getStatus()) {
+                                connectionView
+                                        .setImageResource(R.drawable.ic_connected);
+                                connectionView.setContentDescription("1");
+                            } else {
+                                connectionView
+                                        .setImageResource(R.drawable.ic_connect_pending);
+                                connectionView.setContentDescription("2");
+                            }
+                        } else {
+                            connectionView
+                                    .setImageResource(R.drawable.ic_connect);
+                            connectionView.setContentDescription("0");
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+
+               /* ParseQuery<ParseObject> mQuery = Queries
                         .getUserConnectionStatusQuery(user);
 
                 mQuery.fromPin(Constants.TAG_CONNECTIONS);
@@ -228,7 +264,7 @@ public class ProfileFragment extends BaseFragment {
                             connectionView.setContentDescription("0");
                         }
                     }
-                });
+                });*/
             }
         }
 
@@ -251,15 +287,17 @@ public class ProfileFragment extends BaseFragment {
             supportersView.setVisibility(View.VISIBLE);
 
 //            String stage = ProfileFragment.user.getString(DbConstants.STAGE);
-            String stage = Preferences.getInstance(getActivity()).getString(DbConstants.STAGE);
+            String stage = "";
+            stage = Preferences.getInstance(getActivity()).getString(DbConstants.STAGE);
 //            String type = ProfileFragment.user
 //                    .getString(DbConstants.CANCER_TYPE);
-            String type = Preferences.getInstance(getActivity()).getString(DbConstants.CANCER_TYPE);
-            stage = stage == null ? "-" : stage;
+            String type = "";
+            type = Preferences.getInstance(getActivity()).getString(DbConstants.CANCER_TYPE);
+            stage = stage == "" ? "-" : stage;
 
-            type = type == null ? "-" : type;
+            type = type == "" ? "-" : type;
 
-            stageView.setText(stage.split(",").toString());
+            stageView.setText(stage);
             typeView.setText(type);
 
 //            int ribbon = ProfileFragment.user.getInt(DbConstants.RIBBON);
@@ -360,7 +398,7 @@ public class ProfileFragment extends BaseFragment {
             case R.id.connectOption:
                 GoogleAnalyticsHelper.setClickedAction(getActivity(),
                         "User-Connection Icon");
-                List<ParseUser> req = new ArrayList<ParseUser>();
+                List<Users> req = new ArrayList<>();
                 req.add(user);
                 ImageView iView = (ImageView) view;
                 if (iView.getContentDescription().equals("0")) {
@@ -403,7 +441,7 @@ public class ProfileFragment extends BaseFragment {
 //        if (showProfile && !user.getObjectId().equals(
 //                ParseUser.getCurrentUser().getObjectId()))
         if (showProfile && !Preferences.getInstance(getActivity()).getString(DbConstants.ID).equals(firebaseUser.getUid())) {
-            user = ParseUser.getCurrentUser();
+            user = Preferences.getInstance(getActivity()).getUserFromPreference();
             onViewCreated(getView(), null);
         } else {
             if (caller != null)
@@ -480,7 +518,7 @@ public class ProfileFragment extends BaseFragment {
                         public void onComplete(@NonNull Task<Void> task) {
                             ImageLoader.getInstance().displayImage(downloadUri.toString(), picView,
                                     Utils.normalDisplayOptions);
-                        //    Utils.hideProgress();
+                            //    Utils.hideProgress();
                         }
                     });
                     Utils.hideProgress();

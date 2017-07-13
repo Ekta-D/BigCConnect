@@ -1,5 +1,6 @@
 package com.bigc.fragments;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.os.AsyncTask;
@@ -26,6 +27,7 @@ import com.bigc.general.classes.UserConnections;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
+import com.bigc.models.Users;
 import com.bigc_connect.R;
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -116,7 +118,17 @@ public class FragmentSearchSurvivors extends BaseFragment {
 	}
 
 	private void searchSurvivors(String SEARCH_KEY) {
-		ParseQuery<ParseUser> query = Queries
+		Utils.showProgress(getActivity());
+		ArrayList<Users> searchUsers = Queries.getSearchSurvivorQuery(SEARCH_KEY);
+		if (searchUsers!=null) {
+			showError("Unable to reach server, Please check your connect and try again");
+		} else if(searchUsers.size() == 0) {
+			showError("No survivor found");
+		} else {
+			showResult(searchUsers);
+		}
+
+		/*ParseQuery<ParseUser> query = Queries
 				.getSearchSurvivorQuery(SEARCH_KEY);
 		Utils.showProgress(getActivity());
 
@@ -135,7 +147,7 @@ public class FragmentSearchSurvivors extends BaseFragment {
 				}
 				Utils.hideProgress();
 			}
-		});
+		});*/
 	}
 
 	private void showError(String message) {
@@ -147,7 +159,7 @@ public class FragmentSearchSurvivors extends BaseFragment {
 		categoryGridView.setVisibility(View.VISIBLE);
 	}
 
-	private void showResult(List<ParseUser> result) {
+	private void showResult(List<Users> result) {
 		if (categoryGridView == null || listview == null)
 			return;
 		categoryGridView.setVisibility(View.GONE);
@@ -198,7 +210,8 @@ public class FragmentSearchSurvivors extends BaseFragment {
 
 		UserConnections connections = new UserConnections();
 
-		try {
+		// TODO: 7/13/2017 Load connections here 
+		/*try {
 			List<ParseObject> survivorConnections = mQuery.find();
 			Log.e("Result", survivorConnections.size() + " - ");
 			
@@ -236,7 +249,7 @@ public class FragmentSearchSurvivors extends BaseFragment {
 			ParseObject.pinAll(Constants.TAG_CONNECTIONS, survivorConnections);
 		} catch (ParseException e) {
 			e.printStackTrace();
-		}
+		}*/
 
 		return connections;
 	}

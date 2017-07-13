@@ -13,8 +13,11 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
+import com.bigc.activities.LoginActivity;
 import com.bigc.general.classes.Constants;
+import com.bigc.general.classes.DbConstants;
 import com.bigc.models.Feeds;
+import com.bigc.models.Users;
 
 public class Preferences {
 
@@ -106,6 +109,21 @@ public class Preferences {
 			Log.e("Ex", "Mapper-" + e.toString());
 			return new Feeds();
 		}
+	}
+
+	public Users getUserFromPreference(){
+		Users user = new Users();
+		user.setName(getString(DbConstants.NAME));
+		user.setEmail(getString(DbConstants.EMAIL));
+		user.setProfile_picture(getString(DbConstants.PROFILE_PICTURE));
+		user.setRibbon(getInt(DbConstants.RIBBON));
+		user.setLocation(getString(DbConstants.LOCATION));
+		user.setStage(getString(DbConstants.STAGE));
+		user.setCancertype(getString(DbConstants.CANCER_TYPE));
+		user.setType(getInt(DbConstants.TYPE));
+		user.setObjectId(getString(DbConstants.ID));
+		user.setVisibility(getInt(DbConstants.VISIBILITY));
+		return user;
 	}
 
 

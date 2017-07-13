@@ -3,8 +3,14 @@ package com.bigc.general.classes;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.bigc.datastorage.Preferences;
+import com.bigc.models.Users;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
@@ -25,8 +31,27 @@ public class Queries {
         return mQuery;
     }
 
-    public static ParseQuery<ParseUser> getSearchSurvivorQuery(String keyword) {
-        ParseQuery<ParseUser> query1 = ParseUser.getQuery();
+    public static ArrayList<Users> getSearchSurvivorQuery(String keyword) {
+        final ArrayList<Users> searchUsers = null;
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase.child(DbConstants.USERS).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if(dataSnapshot!=null && dataSnapshot.hasChildren()){
+                    for( DataSnapshot data: dataSnapshot.getChildren()) {
+                        searchUsers.add(data.getValue(Users.class));
+                    }
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        /*ParseQuery<ParseUser> query1 = ParseUser.getQuery();
         query1.whereContains(DbConstants.NAME, keyword);
         query1.whereNotEqualTo(DbConstants.TYPE,
                 Constants.USER_TYPE.SUPPORTER.ordinal());
@@ -52,7 +77,8 @@ public class Queries {
 
         ParseQuery<ParseUser> mQuery = ParseQuery.or(queries);
 
-        return mQuery;
+        return mQuery;*/
+        return searchUsers;
     }
 
 //    public static Query getSearchSurvivorQuery1(String keyword) {
@@ -72,6 +98,38 @@ public class Queries {
         return query;
     }
 
+    public static ArrayList<Users> getCategorizedUsersQuery(int ribbon) {
+        final ArrayList<Users> categoryUsers = null;
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase.child(DbConstants.USERS).startAt(DbConstants.RIBBON,String.valueOf(ribbon)).orderByChild(DbConstants.CREATED_AT).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if(dataSnapshot!=null && dataSnapshot.hasChildren()){
+                    for( DataSnapshot data: dataSnapshot.getChildren()) {
+                        categoryUsers.add(data.getValue(Users.class));
+                    }
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+       /* ParseQuery<ParseUser> query = ParseUser.getQuery();
+        query.whereNotEqualTo(DbConstants.TYPE,
+                Constants.USER_TYPE.SUPPORTER.ordinal());
+        query.whereEqualTo(DbConstants.RIBBON, ribbon);
+        query.whereNotEqualTo(DbConstants.VISIBILITY, Constants.PRIVATE);
+        query.orderByDescending(DbConstants.CREATED_AT);
+        query.whereNotEqualTo(DbConstants.DEACTIVATED, true);*/
+
+        return categoryUsers;
+    }
+
+/*
     public static ParseQuery<ParseUser> getCategorizedUsersQuery(int ribbon) {
         ParseQuery<ParseUser> query = ParseUser.getQuery();
         query.whereNotEqualTo(DbConstants.TYPE,
@@ -83,6 +141,7 @@ public class Queries {
 
         return query;
     }
+*/
 
     public static ParseQuery<ParseObject> getUserFeedsQuery(ParseUser user) {
         ParseQuery<ParseObject> mQuery = new ParseQuery<ParseObject>(
