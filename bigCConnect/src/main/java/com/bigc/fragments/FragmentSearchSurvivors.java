@@ -211,6 +211,7 @@ public class FragmentSearchSurvivors extends BaseFragment {
 		UserConnections connections = new UserConnections();
 
 		// TODO: 7/13/2017 Load connections here 
+		//More // TODO: 7/13/2017 asdfdf 
 		/*try {
 			List<ParseObject> survivorConnections = mQuery.find();
 			Log.e("Result", survivorConnections.size() + " - ");
