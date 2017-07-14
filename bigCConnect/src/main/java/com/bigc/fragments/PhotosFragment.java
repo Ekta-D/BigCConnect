@@ -6,20 +6,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.bigc.adapters.PhotoAdapter;
-import com.bigc.adapters.PhotosAdapter;
 import com.bigc.datastorage.Preferences;
 import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
-import com.bigc.general.classes.Queries;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
@@ -30,13 +26,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
-import com.parse.ParseQuery;
-import com.parse.ParseUser;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -117,6 +109,7 @@ public class PhotosFragment extends BaseFragment {
 
     Map<String, Object> media;
     ArrayList<Posts> posts_array;
+    ArrayList<String> media_array;
 
     private void loadData() {
         //    Utils.showProgress(getActivity());
@@ -130,6 +123,7 @@ public class PhotosFragment extends BaseFragment {
 
         media = new HashMap<>();
         posts_array = new ArrayList<>();
+        media_array = new ArrayList<>();
         Query query = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_POST).orderByChild("user")
                 .equalTo(Preferences.getInstance(getActivity()).getString(DbConstants.ID));
         query.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -138,14 +132,15 @@ public class PhotosFragment extends BaseFragment {
                 long children_count = dataSnapshot.getChildrenCount();
                 for (DataSnapshot child : dataSnapshot.getChildren()) {
                     String key = child.getKey();
-                    Posts posts=new Posts();
+                    Posts posts = new Posts();
                     posts = child.getValue(Posts.class);
+                    media_array.add(posts.getMedia());
                     posts_array.add(posts);
 
 
                     //   Utils.hideProgress();
                 }
-                setAdapter(posts_array);
+                setAdapter(posts_array, media_array);
             }
 
             @Override
@@ -172,11 +167,18 @@ public class PhotosFragment extends BaseFragment {
 //		});
     }
 
-    public void setAdapter(ArrayList<Posts> posts) {
-        gridview.setVisibility(View.VISIBLE);
-        messageViewParent.setVisibility(View.GONE);
-        adapter = new PhotoAdapter(posts, getActivity());
-        gridview.setAdapter(adapter);
+    public void setAdapter(ArrayList<Posts> posts, ArrayList<String> media_array) {
+
+        if (media_array.size() == 0)
+
+            showError(Utils.loadString(getActivity(),
+                    R.string.noPhotosPostedYet));
+        else {
+            gridview.setVisibility(View.VISIBLE);
+            messageViewParent.setVisibility(View.GONE);
+            adapter = new PhotoAdapter(posts, getActivity());
+            gridview.setAdapter(adapter);
+        }
     }
 
     private class completePostLoadingsTask extends

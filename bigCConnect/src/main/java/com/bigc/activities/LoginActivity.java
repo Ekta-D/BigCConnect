@@ -260,14 +260,18 @@ public class LoginActivity extends Activity implements OnClickListener {
     private void gotoHomeScreen() {
         FirebaseUser currentUser = firebaseAuth.getCurrentUser();
         String current_uid = currentUser.getUid();
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("users").child(current_uid);
+        databaseReference = FirebaseDatabase.getInstance().getReference().child(DbConstants.USERS).child(current_uid);
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
 
-                String key = dataSnapshot.getKey();
-                Map<Object, Object> values = (Map<Object, Object>) dataSnapshot.getValue();
+                if (dataSnapshot.getValue() == null) {
+                    Utils.showPrompt(LoginActivity.this, "This user may not exists in database");
+                    Utils.hideProgress();
+                } else {
+                    String key = dataSnapshot.getKey();
+                    Map<Object, Object> values = (Map<Object, Object>) dataSnapshot.getValue();
 
 
                 Preferences.getInstance(LoginActivity.this).save(DbConstants.NAME, String.valueOf(values.get("name")));
@@ -282,8 +286,10 @@ public class LoginActivity extends Activity implements OnClickListener {
                 Preferences.getInstance(LoginActivity.this).save(DbConstants.VISIBILITY, Integer.parseInt(String.valueOf(values.get("visibility"))));
                 Utils.hideProgress();
 
-                startActivity(new Intent(LoginActivity.this, HomeScreen.class));
-                finish();
+                    startActivity(new Intent(com.bigc.activities.LoginActivity.this, HomeScreen.class));
+                    finish();
+                }
+
             }
 
             @Override

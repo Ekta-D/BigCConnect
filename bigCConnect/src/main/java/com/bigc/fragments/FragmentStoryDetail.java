@@ -130,8 +130,9 @@ public class FragmentStoryDetail extends BaseFragment implements
 		GoogleAnalyticsHelper.sendScreenViewGoogleAnalytics(getActivity(),
 				"Survivor Story Detail Screen");
 
-		adapter = new CommentsAdapter(getActivity());
-		listView.setAdapter(adapter);
+		// TODO: 7/14/2017 Set Comment adapter 
+		/*adapter = new CommentsAdapter(getActivity());
+		listView.setAdapter(adapter);*/
 
 		if (!Preferences.getInstance(getActivity()).getBoolean(
 				Constants.PREMIUM)) {
@@ -183,7 +184,7 @@ public class FragmentStoryDetail extends BaseFragment implements
 
 		titleView.setText(story.getResults().get(0).getTitle() == null ? ""
 				: story.getResults().get(0).getTitle());
-		statusView.setText(story.getResults().get(0).getMessage());
+		statusView.setText(story.getResults().get(0).getTitle());
 		dateView.setText(Utils.getTimeStringForFeed(getActivity(),
 				new Date(story.getResults().get(0).getCreatedAt())));
 
@@ -204,7 +205,7 @@ public class FragmentStoryDetail extends BaseFragment implements
 	}
 
 	private void loadComments() {
-		// TODO: 7/14/2017 Load story comments here
+		// TODO: 7/14/2017  implement load comments 
 		/*ParseQuery<ParseObject> mQuery = Queries.getStoryCommentsQuery(story);
 		mQuery.findInBackground(new FindCallback<ParseObject>() {
 
@@ -259,13 +260,14 @@ public class FragmentStoryDetail extends BaseFragment implements
 	}
 
 	private void showComments(List<ParseObject> objects) {
-		try {
+		// TODO: 7/14/2017 implement show comments 
+		/*try {
 			progressParent.setVisibility(View.GONE);
 			adapter.setData(objects);
 			listView.setVisibility(View.VISIBLE);
 		} catch (NullPointerException e) {
 
-		}
+		}*/
 	}
 
 	@Override
@@ -274,7 +276,7 @@ public class FragmentStoryDetail extends BaseFragment implements
 		case R.id.optionView:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
 					"Story 3-Dots Options");
-			// TODO: 7/14/2017 show quick action
+			// TODO: 7/14/2017 show quick action 
 			/*Utils.showQuickActionMenu(
 					FragmentStoryDetail.this,
 					getActivity(),
@@ -312,9 +314,10 @@ public class FragmentStoryDetail extends BaseFragment implements
 		case R.id.newsFeedPicView:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
 					"Story Picture");
-			if (story.getResults().get(0).getMedia() != null)
+			// TODO: 7/14/2017 open zoom view 
+			/*if (story.getParseFile(DbConstants.MEDIA) != null)
 				Utils.openImageZoomView(getActivity(),
-						story.getResults().get(0).getMedia().getUrl());
+						story.getParseFile(DbConstants.MEDIA).getUrl());*/
 			break;
 		case R.id.postButton:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
@@ -326,7 +329,7 @@ public class FragmentStoryDetail extends BaseFragment implements
 				Utils.hideKeyboard(getActivity());
 				String comment = commentInputView.getText().toString();
 				commentInputView.setText("");
-				// TODO: 7/14/2017 add item to adapter
+				// TODO: 7/14/2017 set adapter 
 				/*adapter.addItem(PostManager.getInstance().commentOnStory(
 						comment, story));*/
 				Toast.makeText(getActivity(), "Comment posted",
@@ -339,7 +342,7 @@ public class FragmentStoryDetail extends BaseFragment implements
 		case R.id.loveImage:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
 					"Story-Love Button");
-			// TODO: 7/14/2017 check if story is liked
+			// TODO: 7/14/2017 check is liked 
 			/*if (!isLiked(story)) {
 				loveCountView.setText(String.valueOf(story
 						.getList(DbConstants.LIKES) == null ? 1 : story
@@ -416,7 +419,7 @@ public class FragmentStoryDetail extends BaseFragment implements
 	@Override
 	public void onEditDone(int position, ParseObject post) {
 		Log.e(FragmentStoryDetail.class.getSimpleName(), "onEditDone");
-		// TODO: 7/14/2017 check edit
+		// TODO: 7/14/2017 implement on edit done 
 		/*FragmentStoryDetail.story = post;
 		statusView.setText(story.getString(DbConstants.MESSAGE) == null ? ""
 				: story.getString(DbConstants.MESSAGE));*/
@@ -425,7 +428,7 @@ public class FragmentStoryDetail extends BaseFragment implements
 	@Override
 	public void onFlagClicked(int position, ParseObject post) {
 		if (post == null) {
-			// TODO: 7/14/2017 post = story
+			// TODO: 7/14/2017 post = story 
 			//post = story;
 		}
 		if (post != null) {

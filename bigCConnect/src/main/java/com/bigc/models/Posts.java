@@ -8,13 +8,13 @@ import java.util.Map;
  * Created by ENTER on 10-07-2017.
  */
 public class Posts {
-    String message;
-    String media;
+    String message="";
+    String media="";
     ArrayList<String> likes;
-    String createdAt;
-    String updatedAt;
+    String createdAt="";
+    String updatedAt="";
     int comments;
-    String user;
+    String user="";
 
     public String getUser() {
         return user;

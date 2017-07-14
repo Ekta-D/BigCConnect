@@ -7,7 +7,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -26,6 +25,7 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TabHost;
 
+import com.bigc.activities.LoginActivity;
 import com.bigc.datastorage.Preferences;
 import com.bigc.fragments.ConnectionsFragment;
 import com.bigc.fragments.ExploreFragment;
@@ -47,7 +47,6 @@ import com.bigc.interfaces.FragmentHolder;
 import com.bigc.views.AppRatingPrompt;
 import com.bigc.views.CustomTypefaceSpan;
 import com.bigc_connect.R;
-import com.google.android.gms.auth.api.Auth;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -94,22 +93,6 @@ public class HomeScreen extends AppCompatActivity implements
         bar.setTitle(s);
         Preferences.getInstance(HomeScreen.this).save(Constants.ISFIRST_TIME, true);
         setContentView(R.layout.activity_home);
-
-        Query query = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_COMMENT).
-                orderByChild(DbConstants.ID).equalTo("C024309B-13F3-434D-8443-8EEF31B38284");
-        query.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if(dataSnapshot!=null)
-                    System.out.println(dataSnapshot.toString());
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-
 
         AppRatingPrompt.app_launched(this);
         mTabHost = (TabHost) findViewById(android.R.id.tabhost);
@@ -185,19 +168,21 @@ public class HomeScreen extends AppCompatActivity implements
                 if (objectId == null || objectId.length() == 0) {
                     replaceFragment(getFragment(Constants.FRAGMENT_TRIBUTES));
                 } else {
-                    ParseObject tributeObject = ParseObject.createWithoutData(
+                    // TODO: 7/14/2017 tribute work 
+                    /*ParseObject tributeObject = ParseObject.createWithoutData(
                             DbConstants.TABLE_TRIBUTE, objectId);
                     replaceFragment(new FragmentTributeDetail(null,
-                            tributeObject, -1));
+                            tributeObject, -1));*/
                 }
             } else if (Constants.ACTION_NEWS_FEED.equals(action)) {
                 if (objectId == null || objectId.length() == 0) {
                     renderHomeFragment();
                 } else {
-                    ParseObject postObject = ParseObject.createWithoutData(
+                    // TODO: 7/14/2017 tribute work 
+                    /*ParseObject postObject = ParseObject.createWithoutData(
                             DbConstants.TABLE_POST, objectId);
                     replaceFragment(new PostDetailFragment(null, -1,
-                            postObject, true));
+                            postObject, true));*/
                 }
             } else {
 

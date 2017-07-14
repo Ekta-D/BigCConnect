@@ -144,7 +144,7 @@ public class SurvivorSearchResultFragment extends Fragment implements
 		if (errorMessageView == null || listview == null)
 			return;
 		errorMessageView.setVisibility(View.GONE);
-		// TODO: 7/14/2017 update data to adapter 
+		// TODO: 7/14/2017 update data to adapter
 		/*adapter.updateData(result);*/
 		listview.setVisibility(View.VISIBLE);
 	}

@@ -149,7 +149,8 @@ public class MessageDetailFragment extends BaseFragment implements
 				obj.put(DbConstants.USER2, user);
 				obj.put(DbConstants.MESSAGE, reply);
 				obj.put(DbConstants.SENDER, ParseUser.getCurrentUser());
-				PostManager.getInstance().sendMessage(obj, user);
+				// TODO: 7/14/2017 send message 
+				//PostManager.getInstance().sendMessage(obj, user);
 				conversation.put(DbConstants.MESSAGE, reply);
 				adapter.addItem(obj);
 			}

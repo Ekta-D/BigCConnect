@@ -134,8 +134,9 @@ public class FragmentTributeDetail extends BaseFragment implements
 		GoogleAnalyticsHelper.sendScreenViewGoogleAnalytics(getActivity(),
 				"Tribute Detail Screen");
 
-		adapter = new CommentsAdapter(getActivity());
-		listView.setAdapter(adapter);
+		// TODO: 7/14/2017 set adapter 
+		/*adapter = new CommentsAdapter(getActivity());
+		listView.setAdapter(adapter);*/
 
 		if (tribute.isDataAvailable()) {
 			populateData();
@@ -289,7 +290,8 @@ public class FragmentTributeDetail extends BaseFragment implements
 	private void showComments(List<ParseObject> objects) {
 		try {
 			progressParent.setVisibility(View.GONE);
-			adapter.setData(objects);
+			// TODO: 7/14/2017 set data 
+			//adapter.setData(objects);
 			listView.setVisibility(View.VISIBLE);
 		} catch (NullPointerException e) {
 
@@ -356,8 +358,9 @@ public class FragmentTributeDetail extends BaseFragment implements
 				Utils.hideKeyboard(getActivity());
 				String comment = commentInputView.getText().toString();
 				commentInputView.setText("");
-				adapter.addItem(PostManager.getInstance().commentOnTribute(
-						comment, tribute));
+				// TODO: 7/14/2017 set adapter 
+				/*adapter.addItem(PostManager.getInstance().commentOnTribute(
+						comment, tribute));*/
 				Toast.makeText(getActivity(), "Comment posted",
 						Toast.LENGTH_SHORT).show();
 				commentCountView.setText(String.valueOf(Integer

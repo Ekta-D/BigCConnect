@@ -1,28 +1,17 @@
 package com.bigc.activities;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 
 import com.bigc.datastorage.Preferences;
 import com.bigc.general.classes.Constants;
-import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
 import com.bigc.general.classes.Utils;
 import com.bigc_connect.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.parse.GetCallback;
-import com.parse.ParseException;
-import com.parse.ParseQuery;
-import com.parse.ParseUser;
-import com.parse.RequestPasswordResetCallback;
 
 public class ForgotPasswordActivity extends Activity implements OnClickListener {
 

@@ -1,9 +1,12 @@
 package com.bigc.general.classes;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import com.bigc.datastorage.Preferences;
+import com.bigc.models.Posts;
 import com.bigc.models.Users;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -313,12 +316,20 @@ public class Queries {
         return mQuery;
     }
 
-    public static ParseQuery<ParseObject> getPostCommentsQuery(ParseObject post) {
-        ParseQuery<ParseObject> mQuery = new ParseQuery<ParseObject>(
-                DbConstants.TABLE_COMMENT);
-        mQuery.whereEqualTo(DbConstants.POST, post);
-        mQuery.addDescendingOrder(DbConstants.CREATED_AT);
-        return mQuery;
+    //    public static ParseQuery<ParseObject> getPostCommentsQuery(ParseObject post) {
+//        ParseQuery<ParseObject> mQuery = new ParseQuery<ParseObject>(
+//                DbConstants.TABLE_COMMENT);
+//        mQuery.whereEqualTo(DbConstants.POST, post);
+//        mQuery.addDescendingOrder(DbConstants.CREATED_AT);
+//        return mQuery;
+//    }
+    public static Query getPostCommentSQuery(Posts post) {
+        Query query = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_COMMENT).
+                orderByChild("post").equalTo(post.getObjectId());
+        Log.i("getPostCommentSQuery", query.toString());
+
+        return query;
+
     }
 
     public static ParseQuery<ParseObject> getStoryCommentsQuery(

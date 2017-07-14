@@ -8,6 +8,7 @@ public class DbConstants {
         Story
     }
 
+    public static final String COMMENT_COUNT = "comment_count";
     public static final String DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
     public static final String ID = "objectId";
     public static final String EMAIL = "email";

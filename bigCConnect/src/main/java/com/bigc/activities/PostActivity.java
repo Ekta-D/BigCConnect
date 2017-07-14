@@ -68,6 +68,18 @@ import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
+import java.util.List;
+
 import eu.janmuller.android.simplecropimage.CropImage;
 
 public class PostActivity extends Activity implements OnClickListener,
@@ -163,8 +175,7 @@ public class PostActivity extends Activity implements OnClickListener,
             statusInputView.setHint(R.string.sendPersonalMessage);
             shareUsers = (RecipientEditTextView) findViewById(R.id.UsersInputView);
 
-            shareUsers
-                    .setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
+            shareUsers.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
             shareUsers.setThreshold(1);
             shareUsers.setAdapter(new BaseRecipientAdapter(this, 4, Utils
                     .loadConnectionChips()) {
@@ -400,22 +411,42 @@ public class PostActivity extends Activity implements OnClickListener,
         allSupportersParent.setVisibility(View.VISIBLE);
     }
 
-    private List<ParseUser> getAllUsers() {
+//    private List<ParseUser> getAllUsers() {
+//        List<RecipientEntry> recipients = shareUsers.getAdapter().getEntries();
+////        List<ParseUser> users = new ArrayList<ParseUser>();
+//        if (recipients == null)
+//            return users;
+//
+//        for (final RecipientEntry entry : recipients)
+////            users.add(entry.getUser());
+//
+//        return users;
+//    }
+
+    private List<Object> getAllUsers() {
         List<RecipientEntry> recipients = shareUsers.getAdapter().getEntries();
-        List<ParseUser> users = new ArrayList<ParseUser>();
+        List<Object> users = new ArrayList<>();
         if (recipients == null)
             return users;
 
         for (final RecipientEntry entry : recipients)
-            users.add(entry.getUser());
-
+            users.add(entry.getUser().toString());
         return users;
     }
 
-    private List<ParseUser> getAllSelectedUsers() {
-        final Collection<RecipientEntry> recipients = shareUsers
-                .getChosenRecipients();
-        List<ParseUser> users = new ArrayList<ParseUser>();
+//    private List<ParseUser> getAllSelectedUsers() {
+//        final Collection<RecipientEntry> recipients = shareUsers
+//                .getChosenRecipients();
+//        List<ParseUser> users = new ArrayList<ParseUser>();
+//        for (final RecipientEntry entry : recipients)
+//            users.add(entry.getUser());
+//
+//        return users;
+//    }
+
+    private List<Object> getAllSelectedUsers() {
+        final Collection<RecipientEntry> recipients = shareUsers.getChosenRecipients();
+        List<Object> users = new ArrayList<>();
         for (final RecipientEntry entry : recipients)
             users.add(entry.getUser());
 
@@ -466,11 +497,15 @@ public class PostActivity extends Activity implements OnClickListener,
             }
     }
 
+    //    private void sendMessage(String message, Bitmap picture,
+//                             List<ParseUser> users)
     private void sendMessage(String message, Bitmap picture,
-                             List<ParseUser> users) {
+                             List<Object> users) {
 
-        PostManager.getInstance().sendMessage(message, picture, users);
+        PostManager.getInstance().sendMessage(PostActivity.this, message, picture, users);
     }
+
+    String media = "";
 
     private void addPost(final String message, Bitmap bitmap) {
         Utils.showProgress(PostActivity.this);
@@ -492,6 +527,9 @@ public class PostActivity extends Activity implements OnClickListener,
 //		post.put(DbConstants.USER, ParseUser.getCurrentUser());
 //		PostManager.getInstance().addPost(post, this);
 
+        final String objectId = databaseReference.child(DbConstants.TABLE_POST).push().getKey();
+        SimpleDateFormat format = new SimpleDateFormat(DbConstants.DATE_FORMAT);
+        final String date = format.format(new Date(System.currentTimeMillis()));
 
         Uri uri = null;
         if (bitmap != null) {
@@ -499,39 +537,47 @@ public class PostActivity extends Activity implements OnClickListener,
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, outStream);
             String path = MediaStore.Images.Media.insertImage(PostActivity.this.getContentResolver(), bitmap, "Title", null);
             uri = Uri.parse(path);
+
+            StorageReference reference = storageReference.child("PostImages/" + objectId + ".jpg");
+            reference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    Uri downloadUri = taskSnapshot.getMetadata().getDownloadUrl();
+                    //    String objectId = databaseReference.child(DbConstants.TABLE_POST).push().getKey();
+
+                    media = downloadUri.toString();
+                    postMessageToServer(message, 0, date, date, media, objectId, FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+
+                    Utils.hideProgress();
+
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Utils.showPrompt(PostActivity.this, e.toString().trim());
+
+                }
+            });
+        } else {
+            postMessageToServer(message, 0, date, date, media, objectId, FirebaseAuth.getInstance().getCurrentUser().getUid());
         }
 
-        final String objectId = databaseReference.child(DbConstants.TABLE_POST).push().getKey();
-        StorageReference reference = storageReference.child("PostImages/" + objectId + ".jpg");
-        reference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Uri downloadUri = taskSnapshot.getMetadata().getDownloadUrl();
-            //    String objectId = databaseReference.child(DbConstants.TABLE_POST).push().getKey();
-                SimpleDateFormat format = new SimpleDateFormat(DbConstants.DATE_FORMAT);
-                String date = format.format(new Date(System.currentTimeMillis()));
-                Posts post = new Posts();
-                post.setMessage(message);
-                post.setComments(0);
-                post.setCreatedAt(date);
-                post.setUpdatedAt(date);
-                String media = downloadUri.toString();
 
-                post.setMedia(media);
-                post.setObjectId(objectId);
-                post.setUser(FirebaseAuth.getInstance().getCurrentUser().getUid());
+    }
 
-                databaseReference.child(DbConstants.TABLE_POST).child(objectId).setValue(post);
-                Utils.hideProgress();
+    public void postMessageToServer(String message, int comment, String
+            createdAt, String updatedAt, String media, String objectId, String user) {
+        Posts post = new Posts();
+        post.setMessage(message);
+        post.setComments(comment);
+        post.setCreatedAt(createdAt);
+        post.setUpdatedAt(updatedAt);
+        post.setMedia(media);
+        post.setObjectId(objectId);
+        post.setUser(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Utils.showPrompt(PostActivity.this, e.toString().trim());
-
-            }
-        });
+        databaseReference.child(DbConstants.TABLE_POST).child(objectId).setValue(post);
     }
 
     private void addTribute(String message, Bitmap bitmap,

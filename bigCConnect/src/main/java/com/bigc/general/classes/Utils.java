@@ -44,6 +44,8 @@ import com.bigc.activities.ZoomActivity;
 import com.bigc.datastorage.Preferences;
 import com.bigc.emailer.EmailComposer;
 import com.bigc.gallery.CustomGalleryActivity;
+import com.bigc.general.classes.Constants;
+import com.bigc.general.classes.Queries;
 import com.bigc.interfaces.PopupOptionHandler;
 import com.bigc.models.ConnectionsModel;
 import com.bigc.models.Users;
