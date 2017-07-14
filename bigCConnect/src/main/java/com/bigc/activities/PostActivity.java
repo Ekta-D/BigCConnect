@@ -10,9 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -22,7 +20,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
@@ -38,25 +35,18 @@ import android.widget.Toast;
 import com.android.ex.chips.BaseRecipientAdapter;
 import com.android.ex.chips.RecipientEditTextView;
 import com.android.ex.chips.RecipientEntry;
-import com.bigc.datastorage.Preferences;
 import com.bigc.dialogs.AddTributeDialog;
-import com.bigc.fragments.RibbonSelectionFragment;
-import com.bigc.fragments.SurvivorSearch;
 import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
 import com.bigc.general.classes.PostManager;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.ProgressHandler;
-import com.bigc.interfaces.SignupInterface;
-import com.bigc.models.Post;
 import com.bigc.models.Posts;
 import com.bigc_connect.R;
-import com.google.android.gms.nearby.connection.dev.Strategy;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -552,9 +542,9 @@ public class PostActivity extends Activity implements OnClickListener,
                     //    String objectId = databaseReference.child(DbConstants.TABLE_POST).push().getKey();
 
                     media = downloadUri.toString();
-                    postMessageToServer(message, 0, date, date, media, objectId, FirebaseAuth.getInstance().getCurrentUser().getUid());
+                    uploadPost(message, 0, date, date, media, objectId, FirebaseAuth.getInstance().getCurrentUser().getUid());
 
-
+                    Utils.hideProgress();
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
@@ -564,14 +554,15 @@ public class PostActivity extends Activity implements OnClickListener,
                 }
             });
         } else {
-            postMessageToServer(message, 0, date, date, media, objectId, FirebaseAuth.getInstance().getCurrentUser().getUid());
-            Utils.hideProgress();
+            uploadPost(message, 0, date, date, media, objectId, FirebaseAuth.getInstance().getCurrentUser().getUid());
+
         }
+        Utils.hideProgress();
 
 
     }
 
-    public void postMessageToServer(String message, int comment, String
+    public void uploadPost(String message, int comment, String
             createdAt, String updatedAt, String media, String objectId, String user) {
         Posts post = new Posts();
         post.setMessage(message);
@@ -581,7 +572,7 @@ public class PostActivity extends Activity implements OnClickListener,
         post.setMedia(media);
         post.setObjectId(objectId);
         post.setUser(FirebaseAuth.getInstance().getCurrentUser().getUid());
-
+        Utils.hideProgress();
         databaseReference.child(DbConstants.TABLE_POST).child(objectId).setValue(post);
         Utils.showToast(PostActivity.this, "Your post has been uploaded!");
         finishActivity();

@@ -18,6 +18,7 @@ import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.PostManager;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
+import com.bigc.interfaces.PopupOptionHandler;
 import com.bigc.models.Post;
 import com.bigc.models.Posts;
 import com.bigc_connect.R;
@@ -44,7 +45,7 @@ import java.util.Map;
 /**
  * Created by ENTER on 11-07-2017.
  */
-public class NewsFeedsAdapter extends BaseAdapter {
+public class NewsFeedsAdapter extends BaseAdapter  {
 
     DatabaseReference databaseReference;
     FirebaseAuth firebaseAuth;
@@ -52,6 +53,7 @@ public class NewsFeedsAdapter extends BaseAdapter {
     public BaseFragment context;
     LayoutInflater inflater;
     List<Posts> posts;
+    private static PopupOptionHandler handler = null;
     private static DisplayImageOptions imgDisplayOptions = new DisplayImageOptions.Builder()
             .cacheInMemory(true).cacheOnDisk(true).build();
 
@@ -62,12 +64,14 @@ public class NewsFeedsAdapter extends BaseAdapter {
         this.context = context;
         this.posts = posts;
 
+
         inflater = (LayoutInflater) context.getActivity().getSystemService(
                 Context.LAYOUT_INFLATER_SERVICE);
 
         config = new ImageLoaderConfiguration.Builder(context.getActivity())
                 .memoryCacheSize(41943040).diskCacheSize(104857600)
                 .threadPoolSize(10).build();
+
 
         imageLoader.init(config);
     }
@@ -98,7 +102,7 @@ public class NewsFeedsAdapter extends BaseAdapter {
     ViewHolder holder;
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
 
         Log.i("getView", "getView called");
         final Posts user_post = posts.get(position);
@@ -243,10 +247,10 @@ public class NewsFeedsAdapter extends BaseAdapter {
 //
 //        // if () {
 //        holder.optionView.setVisibility(View.VISIBLE);
-//        holder.optionView.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v) {
+        holder.optionView.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
 //                Utils.showQuickActionMenu(
 //                        NewsfeedAdapter.this,
 //                        context.getActivity(),
@@ -258,8 +262,39 @@ public class NewsFeedsAdapter extends BaseAdapter {
 //                                .equals(ParseUser.getCurrentUser()
 //                                        .getObjectId()),
 //                        DbConstants.Flags.NewsFeed);
-//            }
-//        });
+                boolean isOwner = posts.get(position).getUser().equalsIgnoreCase
+                        (Preferences.getInstance(context.getActivity()).getString(DbConstants.ID));
+                Utils.showQuickActionMenu(
+                        handler=new PopupOptionHandler() {
+                            @Override
+                            public void onDelete(int position, Posts post) {
+                                PostManager.getInstance().deletePost(post);
+                                if (handler != null)
+                                    handler.onDelete(position, post);
+                                ((HomeScreen) context.getActivity()).onBackPressed();
+                            }
+
+                            @Override
+                            public void onEditClicked(int position, Posts post) {
+                                Utils.launchEditView(
+                                        context.getActivity(),
+                                        post.getMedia() == null ? Constants.OPERATION_STATUS
+                                                : Constants.OPERATION_PHOTO, position, post);
+                            }
+
+                            @Override
+                            public void onFlagClicked(int position, ParseObject post) {
+
+                            }
+                        },
+                        context.getActivity(),
+                        position,
+                        posts.get(position),
+                        v,
+                        isOwner,
+                        DbConstants.Flags.NewsFeed);
+            }
+        });
 //
         return convertView;
     }
@@ -327,6 +362,8 @@ public class NewsFeedsAdapter extends BaseAdapter {
             }
         });
         holder.optionView.setVisibility(View.VISIBLE);
+
+
     }
 
 //    private void onClickLove(ParseObject post, TextView countView) {
@@ -380,6 +417,7 @@ public class NewsFeedsAdapter extends BaseAdapter {
         this.posts.add(0, post);
         notifyDataSetChanged();
     }
+
 
     public static class ViewHolder {
 

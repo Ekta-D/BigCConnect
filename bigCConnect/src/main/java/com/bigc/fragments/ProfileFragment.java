@@ -361,9 +361,10 @@ public class ProfileFragment extends BaseFragment {
                 break;
             case R.id.postsOptions:
                 GoogleAnalyticsHelper.setClickedAction(getActivity(),
-                        "User-Posts Button");
-                ((FragmentHolder) getActivity())
-                        .replaceFragment(new PostsFragments());
+                        "User-Posts Button");//// TODO: 14-07-2017
+                Utils.showPrompt(getActivity(), "Functionality is in progress");
+//                ((FragmentHolder) getActivity())
+//                        .replaceFragment(new PostsFragments());
                 break;
             case R.id.photosOption:
                 GoogleAnalyticsHelper.setClickedAction(getActivity(),
@@ -374,8 +375,9 @@ public class ProfileFragment extends BaseFragment {
             case R.id.supportersOption:
                 GoogleAnalyticsHelper.setClickedAction(getActivity(),
                         "User-Supporters Button");
-                ((FragmentHolder) getActivity())
-                        .replaceFragment(new SupportersFragment(true));
+                Utils.showPrompt(getActivity(), "Functionality is in progress");
+//                ((FragmentHolder) getActivity())
+//                        .replaceFragment(new SupportersFragment(true));
                 break;
             case R.id.supportingView:
                 GoogleAnalyticsHelper.setClickedAction(getActivity(),

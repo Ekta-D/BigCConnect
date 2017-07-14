@@ -273,21 +273,29 @@ public class LoginActivity extends Activity implements OnClickListener {
                     String key = dataSnapshot.getKey();
                     Map<Object, Object> values = (Map<Object, Object>) dataSnapshot.getValue();
 
+                    boolean deactivated= (boolean) values.get(DbConstants.DEACTIVATED);
 
-                Preferences.getInstance(LoginActivity.this).save(DbConstants.NAME, String.valueOf(values.get("name")));
-                Preferences.getInstance(LoginActivity.this).save(DbConstants.EMAIL, String.valueOf(values.get("email")));
-                Preferences.getInstance(LoginActivity.this).save(DbConstants.PROFILE_PICTURE, String.valueOf(values.get("profile_picture")));
-                Preferences.getInstance(LoginActivity.this).save(DbConstants.RIBBON, Integer.parseInt(String.valueOf(values.get("ribbon"))));
-                Preferences.getInstance(LoginActivity.this).save(DbConstants.LOCATION, String.valueOf(values.get("location")));
-                Preferences.getInstance(LoginActivity.this).save(DbConstants.STAGE, String.valueOf(values.get("stage")));
-                Preferences.getInstance(LoginActivity.this).save(DbConstants.CANCER_TYPE, String.valueOf(values.get("cancertype")));
-                Preferences.getInstance(LoginActivity.this).save(DbConstants.TYPE, Integer.parseInt(String.valueOf(values.get("type"))));
-                Preferences.getInstance(LoginActivity.this).save(DbConstants.ID, String.valueOf(values.get("objectId")));
-                Preferences.getInstance(LoginActivity.this).save(DbConstants.VISIBILITY, Integer.parseInt(String.valueOf(values.get("visibility"))));
-                Utils.hideProgress();
+                    Preferences.getInstance(LoginActivity.this).save(DbConstants.NAME, String.valueOf(values.get("name")));
+                    Preferences.getInstance(LoginActivity.this).save(DbConstants.EMAIL, String.valueOf(values.get("email")));
+                    Preferences.getInstance(LoginActivity.this).save(DbConstants.PROFILE_PICTURE, String.valueOf(values.get("profile_picture")));
+                    Preferences.getInstance(LoginActivity.this).save(DbConstants.RIBBON, Integer.parseInt(String.valueOf(values.get("ribbon"))));
+                    Preferences.getInstance(LoginActivity.this).save(DbConstants.LOCATION, String.valueOf(values.get("location")));
+                    Preferences.getInstance(LoginActivity.this).save(DbConstants.STAGE, String.valueOf(values.get("stage")));
+                    Preferences.getInstance(LoginActivity.this).save(DbConstants.CANCER_TYPE, String.valueOf(values.get("cancertype")));
+                    Preferences.getInstance(LoginActivity.this).save(DbConstants.TYPE, Integer.parseInt(String.valueOf(values.get("type"))));
+                    Preferences.getInstance(LoginActivity.this).save(DbConstants.ID, String.valueOf(values.get("objectId")));
+                    Preferences.getInstance(LoginActivity.this).save(DbConstants.VISIBILITY, Integer.parseInt(String.valueOf(values.get("visibility"))));
+                    Utils.hideProgress();
 
-                    startActivity(new Intent(com.bigc.activities.LoginActivity.this, HomeScreen.class));
-                    finish();
+                    if (deactivated)
+                    {
+                        passwordView.setText("");
+                        showDeactivatedDialog();
+                    }else{
+                        startActivity(new Intent(com.bigc.activities.LoginActivity.this, HomeScreen.class));
+                        finish();
+                    }
+
                 }
 
             }
