@@ -49,6 +49,11 @@ import com.bigc.views.CustomTypefaceSpan;
 import com.bigc_connect.R;
 import com.google.android.gms.auth.api.Auth;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.parse.DeleteCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -89,6 +94,22 @@ public class HomeScreen extends AppCompatActivity implements
         bar.setTitle(s);
         Preferences.getInstance(HomeScreen.this).save(Constants.ISFIRST_TIME, true);
         setContentView(R.layout.activity_home);
+
+        Query query = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_COMMENT).
+                orderByChild(DbConstants.ID).equalTo("C024309B-13F3-434D-8443-8EEF31B38284");
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if(dataSnapshot!=null)
+                    System.out.println(dataSnapshot.toString());
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
 
         AppRatingPrompt.app_launched(this);
         mTabHost = (TabHost) findViewById(android.R.id.tabhost);
@@ -277,7 +298,7 @@ public class HomeScreen extends AppCompatActivity implements
     }
 
     private void showUserProfile() {
-        ProfileFragment.setUser(ParseUser.getCurrentUser());
+        ProfileFragment.setUser(Preferences.getInstance(this).getUserFromPreference());
         currentFragment.onViewCreated(currentFragment.getView(), null);
         setTabBar(currentFragment.getTab());
     }
@@ -315,7 +336,7 @@ public class HomeScreen extends AppCompatActivity implements
             return new ExploreFragment();
         } else if (Constants.FRAGMENT_PROFILE.equals(tag)) {
             return new ProfileFragment(new NewsFeedFragment(),
-                    ParseUser.getCurrentUser());
+                    Preferences.getInstance(this).getUserFromPreference());
         } else if (Constants.FRAGMENT_TRIBUTES.equals(tag))
             return new FragmentTributes();
 

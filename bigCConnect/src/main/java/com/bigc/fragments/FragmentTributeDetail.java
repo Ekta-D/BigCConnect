@@ -318,10 +318,11 @@ public class FragmentTributeDetail extends BaseFragment implements
 		case R.id.newsFeedHeading1:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
 					"Tribute-User-Info View");
-			((FragmentHolder) getActivity())
+			// TODO: 7/14/2017 open Profile fragment
+			/*((FragmentHolder) getActivity())
 					.replaceFragment(new ProfileFragment(
 							FragmentTributeDetail.this, tribute
-									.getParseUser(DbConstants.TO)));
+									.getParseUser(DbConstants.TO)));*/
 			break;
 		case R.id.leftOptionParent:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
@@ -332,10 +333,11 @@ public class FragmentTributeDetail extends BaseFragment implements
 		case R.id.ribbonView:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
 					"Tribute-User-Infor View");
-			((FragmentHolder) getActivity())
+			// TODO: 7/14/2017 open Profile fragment
+			/*((FragmentHolder) getActivity())
 					.replaceFragment(new ProfileFragment(
 							FragmentTributeDetail.this, tribute
-									.getParseUser(DbConstants.TO)));
+									.getParseUser(DbConstants.TO)));*/
 			break;
 		case R.id.newsFeedPicView:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),

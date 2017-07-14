@@ -96,10 +96,11 @@ public class FragmentSurvivorStories extends BaseFragment implements
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				((FragmentHolder) getActivity())
+				// TODO: 7/14/2017 open Fragment story detail 
+				/*((FragmentHolder) getActivity())
 						.replaceFragment(new FragmentStoryDetail(
 								FragmentSurvivorStories.this, adapter
-										.getItem(position), position));
+										.getItem(position), position));*/
 			}
 		});
 

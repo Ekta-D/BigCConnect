@@ -246,10 +246,11 @@ public class PostDetailFragment extends BaseFragment implements
 		case R.id.newsFeedHeading1:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
 					"Post-User-Info View");
-			((FragmentHolder) getActivity())
+			// TODO: 7/14/2017 open Profile fragment  
+			/*((FragmentHolder) getActivity())
 					.replaceFragment(new ProfileFragment(
 							PostDetailFragment.this, post
-									.getParseUser(DbConstants.USER)));
+									.getParseUser(DbConstants.USER)));*/
 			break;
 		case R.id.optionView:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),

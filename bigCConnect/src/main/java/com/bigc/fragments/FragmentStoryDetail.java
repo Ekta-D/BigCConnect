@@ -1,6 +1,7 @@
 package com.bigc.fragments;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import android.graphics.Canvas;
@@ -33,6 +34,8 @@ import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
 import com.bigc.interfaces.PopupOptionHandler;
 import com.bigc.interfaces.UploadStoryObserver;
+import com.bigc.models.Stories;
+import com.bigc.models.Users;
 import com.bigc.views.NestedListView;
 import com.bigc_connect.R;
 import com.google.android.gms.ads.AdRequest;
@@ -49,7 +52,7 @@ public class FragmentStoryDetail extends BaseFragment implements
 		UploadStoryObserver, PopupOptionHandler {
 
 	private CommentsAdapter adapter;
-	private static ParseObject story = null;
+	private static Stories story = null;
 	private static PopupOptionHandler handler = null;
 	private static int position = -1;
 
@@ -70,7 +73,7 @@ public class FragmentStoryDetail extends BaseFragment implements
 	private ImageView optionView;
 	private TextView titleView;
 
-	public FragmentStoryDetail(PopupOptionHandler handler, ParseObject story,
+	public FragmentStoryDetail(PopupOptionHandler handler, Stories story,
 			int position) {
 		FragmentStoryDetail.story = story;
 		FragmentStoryDetail.position = position;
@@ -136,9 +139,11 @@ public class FragmentStoryDetail extends BaseFragment implements
 			adView.loadAd(adRequest);
 		}
 
-		ParseUser owner = story.getParseUser(DbConstants.USER);
-		headingOne.setText(owner.getString(DbConstants.NAME));
-		if (owner.getInt(DbConstants.TYPE) == Constants.USER_TYPE.SUPPORTER
+		Stories.User owner = story.getResults().get(0).getUser();
+
+		// TODO: 7/14/2017 get owner details from firebase
+		headingOne.setText(owner.getObjectId());
+		/*if (owner.getInt(DbConstants.TYPE) == Constants.USER_TYPE.SUPPORTER
 				.ordinal()) {
 			ribbonView.setImageResource(R.drawable.ribbon_supporter);
 		} else if (owner.getInt(DbConstants.TYPE) == Constants.USER_TYPE.FIGHTER
@@ -152,11 +157,11 @@ public class FragmentStoryDetail extends BaseFragment implements
 					.setImageResource(owner.getInt(DbConstants.RIBBON) < 0 ? R.drawable.ic_launcher
 							: Utils.survivor_ribbons[owner
 									.getInt(DbConstants.RIBBON)]);
-		}
+		}*/
 
-		if (story.getParseFile(DbConstants.MEDIA) != null)
+		if (story.getResults().get(0).getMedia() != null)
 			ImageLoader.getInstance().displayImage(
-					story.getParseFile(DbConstants.MEDIA).getUrl(), picView,
+					story.getResults().get(0).getMedia().getUrl(), picView,
 					Utils.normalDisplayOptions,
 					new SimpleImageLoadingListener() {
 						@Override
@@ -170,17 +175,17 @@ public class FragmentStoryDetail extends BaseFragment implements
 
 		loveCountView
 				.setText(String
-						.valueOf(story.getList(DbConstants.LIKES) == null ? 0
-								: story.getList(DbConstants.LIKES).size()));
+						.valueOf(story.getResults().get(0).getLikes() == null ? 0
+								: story.getResults().get(0).getLikes().size()));
 
 		commentCountView.setText(String.valueOf(story
-				.getInt(DbConstants.COMMENTS)));
+				.getResults().get(0).getComments()));
 
-		titleView.setText(story.getString(DbConstants.TITLE) == null ? ""
-				: story.getString(DbConstants.TITLE));
-		statusView.setText(story.getString(DbConstants.MESSAGE));
+		titleView.setText(story.getResults().get(0).getTitle() == null ? ""
+				: story.getResults().get(0).getTitle());
+		statusView.setText(story.getResults().get(0).getMessage());
 		dateView.setText(Utils.getTimeStringForFeed(getActivity(),
-				story.getCreatedAt()));
+				new Date(story.getResults().get(0).getCreatedAt())));
 
 		ribbonView.setOnClickListener(this);
 		headingOne.setOnClickListener(this);
@@ -199,7 +204,8 @@ public class FragmentStoryDetail extends BaseFragment implements
 	}
 
 	private void loadComments() {
-		ParseQuery<ParseObject> mQuery = Queries.getStoryCommentsQuery(story);
+		// TODO: 7/14/2017 Load story comments here
+		/*ParseQuery<ParseObject> mQuery = Queries.getStoryCommentsQuery(story);
 		mQuery.findInBackground(new FindCallback<ParseObject>() {
 
 			@Override
@@ -210,7 +216,7 @@ public class FragmentStoryDetail extends BaseFragment implements
 					showLoadingError();
 				}
 			}
-		});
+		});*/
 	}
 
 	private class completeCommentLoadingsTask extends
@@ -268,7 +274,8 @@ public class FragmentStoryDetail extends BaseFragment implements
 		case R.id.optionView:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
 					"Story 3-Dots Options");
-			Utils.showQuickActionMenu(
+			// TODO: 7/14/2017 show quick action
+			/*Utils.showQuickActionMenu(
 					FragmentStoryDetail.this,
 					getActivity(),
 					position,
@@ -276,16 +283,17 @@ public class FragmentStoryDetail extends BaseFragment implements
 					v,
 					story.getParseUser(DbConstants.USER).getObjectId()
 							.equals(ParseUser.getCurrentUser().getObjectId()),
-					DbConstants.Flags.Story);
+					DbConstants.Flags.Story);*/
 			break;
 		case R.id.newsFeedRibbonView:
 		case R.id.newsFeedHeading1:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
 					"User-Info View");
-			((FragmentHolder) getActivity())
+			// TODO: 7/14/2017 Navigate when story is working 
+			/*((FragmentHolder) getActivity())
 					.replaceFragment(new ProfileFragment(
 							FragmentStoryDetail.this, story
-									.getParseUser(DbConstants.USER)));
+									.getParseUser(DbConstants.USER)));*/
 			break;
 		case R.id.addAStoryOptionImage:
 		case R.id.addAStoryOptionText:
@@ -295,17 +303,18 @@ public class FragmentStoryDetail extends BaseFragment implements
 			break;
 		case R.id.nameView:
 		case R.id.ribbonView:
-			((FragmentHolder) getActivity())
+			// TODO: 7/14/2017 navigate when story is working 
+			/*((FragmentHolder) getActivity())
 					.replaceFragment(new ProfileFragment(
 							FragmentStoryDetail.this, story
-									.getParseUser(DbConstants.USER)));
+									.getParseUser(DbConstants.USER)));*/
 			break;
 		case R.id.newsFeedPicView:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
 					"Story Picture");
-			if (story.getParseFile(DbConstants.MEDIA) != null)
+			if (story.getResults().get(0).getMedia() != null)
 				Utils.openImageZoomView(getActivity(),
-						story.getParseFile(DbConstants.MEDIA).getUrl());
+						story.getResults().get(0).getMedia().getUrl());
 			break;
 		case R.id.postButton:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
@@ -317,8 +326,9 @@ public class FragmentStoryDetail extends BaseFragment implements
 				Utils.hideKeyboard(getActivity());
 				String comment = commentInputView.getText().toString();
 				commentInputView.setText("");
-				adapter.addItem(PostManager.getInstance().commentOnStory(
-						comment, story));
+				// TODO: 7/14/2017 add item to adapter
+				/*adapter.addItem(PostManager.getInstance().commentOnStory(
+						comment, story));*/
 				Toast.makeText(getActivity(), "Comment posted",
 						Toast.LENGTH_SHORT).show();
 				commentCountView.setText(String.valueOf(Integer
@@ -329,14 +339,15 @@ public class FragmentStoryDetail extends BaseFragment implements
 		case R.id.loveImage:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
 					"Story-Love Button");
-			if (!isLiked(story)) {
+			// TODO: 7/14/2017 check if story is liked
+			/*if (!isLiked(story)) {
 				loveCountView.setText(String.valueOf(story
 						.getList(DbConstants.LIKES) == null ? 1 : story
 						.getList(DbConstants.LIKES).size() + 1));
 				story.add(DbConstants.LIKES, ParseUser.getCurrentUser()
 						.getObjectId());
 				PostManager.getInstance().likeStory(story);
-			}
+			}*/
 
 		}
 	}
@@ -405,15 +416,17 @@ public class FragmentStoryDetail extends BaseFragment implements
 	@Override
 	public void onEditDone(int position, ParseObject post) {
 		Log.e(FragmentStoryDetail.class.getSimpleName(), "onEditDone");
-		FragmentStoryDetail.story = post;
+		// TODO: 7/14/2017 check edit
+		/*FragmentStoryDetail.story = post;
 		statusView.setText(story.getString(DbConstants.MESSAGE) == null ? ""
-				: story.getString(DbConstants.MESSAGE));
+				: story.getString(DbConstants.MESSAGE));*/
 	}
 
 	@Override
 	public void onFlagClicked(int position, ParseObject post) {
 		if (post == null) {
-			post = story;
+			// TODO: 7/14/2017 post = story
+			//post = story;
 		}
 		if (post != null) {
 			Utils.flagStory(post);

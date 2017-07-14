@@ -109,7 +109,8 @@ public class SurvivorSearchResultFragment extends Fragment implements
 	}
 
 	private void searchSurvivors(String SEARCH_KEY) {
-		ParseQuery<ParseUser> query = Queries
+		// TODO: 7/14/2017 search survivors 
+		/*ParseQuery<ParseUser> query = Queries
 				.getSearchSurvivorQuery(SEARCH_KEY);
 		Utils.showProgress(getActivity());
 		query.findInBackground(new FindCallback<ParseUser>() {
@@ -127,7 +128,7 @@ public class SurvivorSearchResultFragment extends Fragment implements
 				}
 				Utils.hideProgress();
 			}
-		});
+		});*/
 	}
 
 	private void showError(String message) {
@@ -143,7 +144,8 @@ public class SurvivorSearchResultFragment extends Fragment implements
 		if (errorMessageView == null || listview == null)
 			return;
 		errorMessageView.setVisibility(View.GONE);
-		adapter.updateData(result);
+		// TODO: 7/14/2017 update data to adapter 
+		/*adapter.updateData(result);*/
 		listview.setVisibility(View.VISIBLE);
 	}
 

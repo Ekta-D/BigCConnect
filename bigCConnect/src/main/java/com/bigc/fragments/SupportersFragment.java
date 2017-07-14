@@ -148,24 +148,26 @@ public class SupportersFragment extends BaseFragment {
                         if (obj.getParseUser(DbConstants.FROM).fetchIfNeeded()
                                 .getInt(DbConstants.TYPE) == Constants.USER_TYPE.SUPPORTER
                                 .ordinal()) {
-                            if (obj.getBoolean(DbConstants.STATUS))
+                            // TODO: 7/14/2017 show status 
+                            /*if (obj.getBoolean(DbConstants.STATUS))
                                 connections.activeConnections.add(obj
                                         .getParseUser(DbConstants.FROM));
                             else
                                 connections.pendingConnections.add(obj
-                                        .getParseUser(DbConstants.FROM));
+                                        .getParseUser(DbConstants.FROM));*/
                         }
 
                     } else {
                         if (obj.getParseUser(DbConstants.TO).fetchIfNeeded()
                                 .getInt(DbConstants.TYPE) == Constants.USER_TYPE.SUPPORTER
                                 .ordinal()) {
-                            if (obj.getBoolean(DbConstants.STATUS))
+                            // TODO: 7/14/2017 show type 
+                            /*if (obj.getBoolean(DbConstants.STATUS))
                                 connections.activeConnections.add(obj
                                         .getParseUser(DbConstants.TO));
                             else
                                 connections.pendingConnections.add(obj
-                                        .getParseUser(DbConstants.TO));
+                                        .getParseUser(DbConstants.TO));*/
                         }
                     }
                 } else {
@@ -175,24 +177,26 @@ public class SupportersFragment extends BaseFragment {
                         if (obj.getParseUser(DbConstants.FROM).fetchIfNeeded()
                                 .getInt(DbConstants.TYPE) != Constants.USER_TYPE.SUPPORTER
                                 .ordinal()) {
-                            if (obj.getBoolean(DbConstants.STATUS))
+                            // TODO: 7/14/2017 get from user 
+                            /*if (obj.getBoolean(DbConstants.STATUS))
                                 connections.activeConnections.add(obj
                                         .getParseUser(DbConstants.FROM));
                             else
                                 connections.pendingConnections.add(obj
-                                        .getParseUser(DbConstants.FROM));
+                                        .getParseUser(DbConstants.FROM));*/
                         }
 
                     } else {
                         if (obj.getParseUser(DbConstants.TO).fetchIfNeeded()
                                 .getInt(DbConstants.TYPE) != Constants.USER_TYPE.SUPPORTER
                                 .ordinal()) {
-                            if (obj.getBoolean(DbConstants.STATUS))
+                            // TODO: 7/14/2017 get to user 
+                            /*if (obj.getBoolean(DbConstants.STATUS))
                                 connections.activeConnections.add(obj
                                         .getParseUser(DbConstants.TO));
                             else
                                 connections.pendingConnections.add(obj
-                                        .getParseUser(DbConstants.TO));
+                                        .getParseUser(DbConstants.TO));*/
                         }
                     }
                 }
@@ -303,9 +307,10 @@ public class SupportersFragment extends BaseFragment {
     private void showData(List<ParseUser> connections,
                           UserConnections loggedInUserConnections) {
         try {
-            adapter.updateData(connections,
+            // TODO: 7/14/2017 update data to list 
+            /*adapter.updateData(connections,
                     loggedInUserConnections.activeConnections,
-                    loggedInUserConnections.pendingConnections);
+                    loggedInUserConnections.pendingConnections);*/
             listview.setVisibility(View.VISIBLE);
             messageViewParent.setVisibility(View.GONE);
         } catch (Exception e) {

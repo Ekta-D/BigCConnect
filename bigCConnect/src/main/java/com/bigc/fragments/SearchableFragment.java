@@ -195,25 +195,28 @@ public class SearchableFragment extends BaseFragment implements
 	}
 
 	private List<ParseUser> loadRibbonSurvivors(int ribbon) {
-
-		ParseQuery<ParseUser> query = Queries.getCategorizedUsersQuery(ribbon);
+		// TODO: 7/14/2017 loadRibbonSurvirors
+		/*ParseQuery<ParseUser> query = Queries.getCategorizedUsersQuery(ribbon);
 
 		try {
 			return query.find();
 		} catch (ParseException e) {
 			return null;
-		}
+		}*/
+		return new ArrayList<>();
 	}
 
 	private List<ParseUser> searchSurvivors(String SEARCH_KEY) {
-		ParseQuery<ParseUser> query = Queries
+		// TODO: 7/14/2017 search survivors
+		/*ParseQuery<ParseUser> query = Queries
 				.getSearchSurvivorQuery(SEARCH_KEY);
 
 		try {
 			return query.find();
 		} catch (Exception e) {
 			return null;
-		}
+		}*/
+		return new ArrayList<>();
 
 	}
 
@@ -231,10 +234,10 @@ public class SearchableFragment extends BaseFragment implements
 	private void showResult(List<ParseUser> result) {
 		if (listView == null)
 			return;
-
-		adapter.updateData(result,
+		// TODO: 7/14/2017 update data to adapter
+		/*adapter.updateData(result,
 				((SearchActivity) getActivity()).connections.activeConnections,
-				((SearchActivity) getActivity()).connections.pendingConnections);
+				((SearchActivity) getActivity()).connections.pendingConnections);*/
 		listView.setVisibility(View.VISIBLE);
 		progressParent.setVisibility(View.GONE);
 	}

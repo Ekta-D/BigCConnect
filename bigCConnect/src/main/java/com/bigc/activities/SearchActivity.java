@@ -28,6 +28,7 @@ import com.bigc.general.classes.UserConnections;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
+import com.bigc.models.Users;
 import com.bigc_connect.R;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -43,7 +44,7 @@ public class SearchActivity extends AppCompatActivity implements
 	private FragmentTransaction fragmentTransaction;
 	private FragmentManager fragmentManager;
 	private BaseFragment currentFragment;
-	private ParseUser profileFragmentCurrentState;
+	private Users profileFragmentCurrentState;
 	private ProgressBar progressBar;
 
 	public UserConnections connections = new UserConnections();
@@ -54,7 +55,7 @@ public class SearchActivity extends AppCompatActivity implements
 		super.onCreate(savedInstanceState);
 		ActionBar bar = getSupportActionBar();
 		bar.setDisplayHomeAsUpEnabled(true);
-		bar.setBackgroundDrawable(new ColorDrawable(getColor(R.color.background)));
+		bar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.background)));
 		bar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(
 				R.color.background)));
 
@@ -221,8 +222,10 @@ public class SearchActivity extends AppCompatActivity implements
 	}
 
 	private UserConnections loadConnections(final boolean fromCache) {
+		// TODO: 7/14/2017 load user connections here
 
-		ParseQuery<ParseObject> mQuery = Queries.getUserConnectionsQuery(
+		UserConnections connections = new UserConnections();
+		/*ParseQuery<ParseObject> mQuery = Queries.getUserConnectionsQuery(
 				ParseUser.getCurrentUser(), fromCache);
 
 		UserConnections connections = new UserConnections();
@@ -263,7 +266,7 @@ public class SearchActivity extends AppCompatActivity implements
 			ParseObject.pinAll(Constants.TAG_CONNECTIONS, survivorConnections);
 		} catch (ParseException e) {
 			e.printStackTrace();
-		}
+		}*/
 
 		return connections;
 	}

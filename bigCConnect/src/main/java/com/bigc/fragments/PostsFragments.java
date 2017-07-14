@@ -143,7 +143,8 @@ public class PostsFragments extends BaseFragment implements PopupOptionHandler {
 	}
 
 	private void loadUserData() {
-		ParseQuery<ParseObject> mQuery = Queries
+		// TODO: 7/14/2017 loadUserData 
+		/*ParseQuery<ParseObject> mQuery = Queries
 				.getUserConnectionStatusQuery(ProfileFragment.getUser());
 		mQuery.fromPin(Constants.TAG_CONNECTIONS);
 		mQuery.getFirstInBackground(new GetCallback<ParseObject>() {
@@ -158,13 +159,13 @@ public class PostsFragments extends BaseFragment implements PopupOptionHandler {
 				adapter.setClickable(isConnected);
 				loadData();
 			}
-		});
+		});*/
 
 	}
 
 	private void loadData() {
-
-		ParseQuery<ParseObject> query = Queries
+		// TODO: 7/14/2017 loadData 
+		/*ParseQuery<ParseObject> query = Queries
 				.getUserFeedsQuery(ProfileFragment.getUser());
 
 		query.findInBackground(new FindCallback<ParseObject>() {
@@ -181,7 +182,7 @@ public class PostsFragments extends BaseFragment implements PopupOptionHandler {
 				}
 
 			}
-		});
+		});*/
 	}
 
 	private class completePostLoadingsTask extends

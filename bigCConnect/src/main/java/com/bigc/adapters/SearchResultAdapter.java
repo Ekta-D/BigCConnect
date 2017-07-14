@@ -17,6 +17,7 @@ import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.SearchResultBaseAdapter;
+import com.bigc.models.Users;
 import com.bigc_connect.R;
 import com.parse.ParseUser;
 
@@ -25,15 +26,15 @@ import eu.janmuller.android.simplecropimage.Util;
 public class SearchResultAdapter extends SearchResultBaseAdapter {
 
     public SearchResultAdapter(Context context,
-                               List<ParseUser> activeConnection, List<ParseUser> pendingConnection) {
+                               List<Users> activeConnection, List<Users> pendingConnection) {
         super(context, R.layout.listitem_search_result, activeConnection,
                 pendingConnection, null);
         // init(context, activeConnection, pendingConnections, null);
     }
 
     public SearchResultAdapter(Context context,
-                               List<ParseUser> activeConnections,
-                               List<ParseUser> pendingConnections, List<ParseUser> data) {
+                               List<Users> activeConnections,
+                               List<Users> pendingConnections, List<Users> data) {
         super(context, R.layout.listitem_search_result, activeConnections,
                 pendingConnections, data);
         // init(context, userConnections, pendingConnections, data);
@@ -42,7 +43,7 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
     @Override
     public View getView(final int position, View view, ViewGroup parent) {
         final SurvivorSearchViewHolder holder;
-        final ParseUser user = data.get(position);
+        final Users user = data.get(position);
         if (view == null) {
             view = inflater.inflate(R.layout.listitem_search_result, parent,
                     false);
@@ -66,10 +67,10 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
         holder.indexInRemovedConnections = Utils.getUserIndex(user,
                 removedConnections);
 
-        holder.nameView.setText(user.getString(DbConstants.NAME));
-        String stage = user.getString(DbConstants.STAGE);
+        holder.nameView.setText(user.getName());
+        String stage = user.getStage();
         stage = stage == null ? "" : stage;
-        String loc = user.getString(DbConstants.LOCATION);
+        String loc = user.getLocation();
 
         String desc = (stage.length() > 0 ? stage.concat(", ") : "")
                 .concat(loc == null ? "" : loc);
@@ -91,7 +92,7 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
                 holder.ribbonView.setImageResource(
                         Preferences.getInstance(getContext()).getInt(DbConstants.RIBBON) < 0 ?
                                 R.drawable.ic_launcher : Utils.fighter_ribbons[user
-                                .getInt(DbConstants.RIBBON)]);
+                                .getRibbon()]);
 
             } else {
 //                holder.ribbonView
@@ -101,7 +102,7 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
                 holder.ribbonView
                         .setImageResource( Preferences.getInstance(getContext()).getInt(DbConstants.RIBBON) < 0 ? R.drawable.ic_launcher
                                 : Utils.survivor_ribbons[user
-                                .getInt(DbConstants.RIBBON)]);
+                                .getRibbon()]);
             }
 
             // int ribbon = user.getInt(DbConstants.RIBBON);

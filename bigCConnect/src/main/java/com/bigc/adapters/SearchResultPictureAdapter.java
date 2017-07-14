@@ -14,6 +14,7 @@ import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.SearchResultBaseAdapter;
+import com.bigc.models.Users;
 import com.bigc_connect.R;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -26,8 +27,8 @@ public class SearchResultPictureAdapter extends SearchResultBaseAdapter {
 			.build();
 
 	public SearchResultPictureAdapter(Context context,
-			List<ParseUser> activeConnections,
-			List<ParseUser> pendingConnections, List<ParseUser> data) {
+			List<Users> activeConnections,
+			List<Users> pendingConnections, List<Users> data) {
 		super(context, R.layout.listitem_search_result_with_picture,
 				activeConnections, pendingConnections, data);
 
@@ -36,7 +37,7 @@ public class SearchResultPictureAdapter extends SearchResultBaseAdapter {
 	@Override
 	public View getView(final int position, View view, ViewGroup parent) {
 		final SurvivorSearchViewHolder holder;
-		final ParseUser user = data.get(position);
+		final Users user = data.get(position);
 
 		if (view == null) {
 			view = inflater
@@ -62,25 +63,24 @@ public class SearchResultPictureAdapter extends SearchResultBaseAdapter {
 		holder.indexInRemovedConnections = Utils.getUserIndex(user,
 				removedConnections);
 
-		holder.nameView.setText(user.getString(DbConstants.NAME));
-		String stage = user.getString(DbConstants.STAGE);
+		holder.nameView.setText(user.getName());
+		String stage = user.getStage();
 		stage = stage == null ? "" : stage;
-		String loc = user.getString(DbConstants.LOCATION);
+		String loc = user.getLocation();
 
 		String desc = (stage.length() > 0 ? stage.concat(", ") : "")
 				.concat(loc == null ? "" : loc);
 		holder.descView.setText(desc);
-		boolean supporter = user.getInt(DbConstants.TYPE) == Constants.USER_TYPE.SUPPORTER
+		boolean supporter = user.getType() == Constants.USER_TYPE.SUPPORTER
 				.ordinal();
 
-		if (user.getParseFile(DbConstants.PROFILE_PICTURE) == null) {
+		if (user.getProfile_picture() == null) {
 
 			holder.ribbonView.setImageResource(R.drawable.ic_launcher);
 
 		} else {
 
-			String url = user.getParseFile(DbConstants.PROFILE_PICTURE)
-					.getUrl();
+			String url = user.getProfile_picture();
 			if (url.length() > 0) {
 				ImageLoader.getInstance().displayImage(url, holder.ribbonView,
 						options);
