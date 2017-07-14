@@ -1,5 +1,86 @@
 [
     {
+        "outputFile": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\release\\values-da\\values-da.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 105,
+                    "endColumn": 90,
+                    "endOffset": 191
+                },
+                "from": {
+                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-da\\strings.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 929,
+                        "endColumn": 90,
+                        "endOffset": 1015
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 196,
+                    "endColumn": 91,
+                    "endOffset": 283
+                },
+                "from": {
+                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-da\\strings.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1021,
+                        "endColumn": 91,
+                        "endOffset": 1108
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 288,
+                    "endColumn": 70,
+                    "endOffset": 354
+                },
+                "from": {
+                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-da\\strings.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 1114,
+                        "endColumn": 70,
+                        "endOffset": 1180
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 359,
+                    "endColumn": 101,
+                    "endOffset": 456
+                },
+                "from": {
+                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-da\\strings.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 822,
+                        "endColumn": 105,
+                        "endOffset": 923
+                    }
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\release\\values-da\\values-da.xml",
         "map": [
             {

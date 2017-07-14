@@ -1,5 +1,86 @@
 [
     {
+        "outputFile": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\release\\values-en-rGB\\values-en-rGB.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 105,
+                    "endColumn": 87,
+                    "endOffset": 188
+                },
+                "from": {
+                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-en-rGB\\strings.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 1,
+                        "startOffset": 926,
+                        "endColumn": 84,
+                        "endOffset": 1009
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 193,
+                    "endColumn": 86,
+                    "endOffset": 275
+                },
+                "from": {
+                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-en-rGB\\strings.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 1,
+                        "startOffset": 1012,
+                        "endColumn": 83,
+                        "endOffset": 1094
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 280,
+                    "endColumn": 69,
+                    "endOffset": 345
+                },
+                "from": {
+                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-en-rGB\\strings.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 1,
+                        "startOffset": 1097,
+                        "endColumn": 66,
+                        "endOffset": 1162
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 350,
+                    "endColumn": 101,
+                    "endOffset": 447
+                },
+                "from": {
+                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-en-rGB\\strings.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 1,
+                        "startOffset": 822,
+                        "endColumn": 102,
+                        "endOffset": 923
+                    }
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\release\\values-en-rGB\\values-en-rGB.xml",
         "map": [
             {

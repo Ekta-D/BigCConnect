@@ -160,5 +160,86 @@
                 }
             }
         ]
+    },
+    {
+        "outputFile": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\debug\\values-lv\\values-lv.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 105,
+                    "endColumn": 89,
+                    "endOffset": 190
+                },
+                "from": {
+                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-lv\\strings.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 940,
+                        "endColumn": 89,
+                        "endOffset": 1025
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 195,
+                    "endColumn": 89,
+                    "endOffset": 280
+                },
+                "from": {
+                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-lv\\strings.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1031,
+                        "endColumn": 89,
+                        "endOffset": 1116
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 285,
+                    "endColumn": 74,
+                    "endOffset": 355
+                },
+                "from": {
+                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-lv\\strings.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 1122,
+                        "endColumn": 74,
+                        "endOffset": 1192
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 360,
+                    "endColumn": 112,
+                    "endOffset": 468
+                },
+                "from": {
+                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-lv\\strings.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 822,
+                        "endColumn": 116,
+                        "endOffset": 934
+                    }
+                }
+            }
+        ]
     }
 ]

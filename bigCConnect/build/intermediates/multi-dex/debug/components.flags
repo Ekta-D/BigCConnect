@@ -1,7 +1,7 @@
--injars 'D:\StudioSpace\BigC-Connect\Android\BigCConnect\bigCConnect\build\intermediates\transforms\jarMerging\debug\jars\1\1f\combined.jar'
--outjars 'D:\StudioSpace\BigC-Connect\Android\BigCConnect\bigCConnect\build\intermediates\multi-dex\debug\componentClasses.jar'
+-injars 'D:\Office work\BigCConnect\bigCConnect\build\intermediates\transforms\jarMerging\debug\jars\1\1f\combined.jar'
+-outjars 'D:\Office work\BigCConnect\bigCConnect\build\intermediates\multi-dex\debug\componentClasses.jar'
 
--libraryjars 'C:\Users\beesolver\AppData\Local\Android\Sdk\build-tools\24.0.1\lib\shrinkedAndroid.jar'
+-libraryjars 'C:\Users\ENTER\AppData\Local\Android\Sdk\build-tools\24.0.1\lib\shrinkedAndroid.jar'
 
 -forceprocessing
 -dontoptimize
@@ -10,7 +10,7 @@
 -dontpreverify
 -dontnote **,com.android.tools.fd.**,android.support.multidex.MultiDexExtractor
 -dontwarn **
--printconfiguration 'D:\StudioSpace\BigC-Connect\Android\BigCConnect\bigCConnect\build\intermediates\multi-dex\debug\components.flags'
+-printconfiguration 'D:\Office work\BigCConnect\bigCConnect\build\intermediates\multi-dex\debug\components.flags'
 
 
 -keep class com.bigc_connect.BigcConnect {

@@ -1,7 +1,12 @@
 package com.bigc.adapters;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -22,12 +27,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.parse.ParseObject;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
+import com.parse.ParseUser;
 
 public class CommentsAdapter extends ArrayAdapter<ParseObject> {
 
@@ -121,7 +121,7 @@ public class CommentsAdapter extends ArrayAdapter<ParseObject> {
         return view;
     }
 
-    public void setValues(Users users, ViewHolder holder, Comments comment)
+    public void setValues(Users users,ViewHolder holder,Comments comment)
     {
 //        if (owner.getInt(DbConstants.TYPE) == Constants.USER_TYPE.SUPPORTER
 //                .ordinal())

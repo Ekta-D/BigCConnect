@@ -38,13 +38,17 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
+import com.parse.FindCallback;
+import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -80,10 +84,10 @@ public class PostDetailFragment extends BaseFragment implements
 //			ParseObject post, boolean isConnected)
     public PostDetailFragment(PopupOptionHandler handler, int position,
                               Posts post, boolean isConnected) {
-        com.bigc.fragments.PostDetailFragment.post = post;
-        com.bigc.fragments.PostDetailFragment.postPosition = position;
-        com.bigc.fragments.PostDetailFragment.handler = handler;
-        com.bigc.fragments.PostDetailFragment.isConnected = isConnected;
+        PostDetailFragment.post = post;
+        PostDetailFragment.postPosition = position;
+        PostDetailFragment.handler = handler;
+        PostDetailFragment.isConnected = isConnected;
     }
 
     @Override
@@ -316,6 +320,24 @@ public class PostDetailFragment extends BaseFragment implements
         if (post != null)
             statusView.setText(post.getMessage() == null ? ""
                     : post.getMessage());
+
+        updatePost(post);
+    }
+
+    public void updatePost(Posts post) {
+
+        Map<String, Object> updated_post = new HashMap<>();
+        updated_post.put(DbConstants.CREATED_AT, post.getCreatedAt());
+        updated_post.put(DbConstants.UPDATED_AT, post.getUpdatedAt());
+        updated_post.put(DbConstants.MEDIA, post.getMedia());
+        updated_post.put(DbConstants.LIKES, post.getLikes());
+        updated_post.put(DbConstants.COMMENTS, post.getComments());
+        updated_post.put(DbConstants.USER, post.getUser());
+        updated_post.put(DbConstants.ID, post.getObjectId());
+        updated_post.put(DbConstants.MESSAGE,post.getMessage());
+
+        FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_POST).
+                child(post.getObjectId()).updateChildren(updated_post);
     }
 
     @Override
@@ -343,6 +365,15 @@ public class PostDetailFragment extends BaseFragment implements
 //                        post.getParseUser(DbConstants.USER).getObjectId()
 //                                .equals(ParseUser.getCurrentUser().getObjectId()),
 //                        DbConstants.Flags.NewsFeed);
+                boolean isOwner = post.getUser().equalsIgnoreCase(Preferences.getInstance(getActivity()).getString(DbConstants.ID));
+                Utils.showQuickActionMenu(
+                        PostDetailFragment.this,
+                        getActivity(),
+                        postPosition,
+                        post,
+                        v,
+                        isOwner,
+                        DbConstants.Flags.NewsFeed);
                 break;
             case R.id.newsFeedPicView:
                 GoogleAnalyticsHelper.setClickedAction(getActivity(),
@@ -375,7 +406,7 @@ public class PostDetailFragment extends BaseFragment implements
                             Toast.LENGTH_SHORT).show();
                     commentCountView.setText(String.valueOf(Integer
                             .valueOf(commentCountView.getText().toString()) + 1));
-                    int comments_count=Integer.parseInt(commentCountView.getText().toString() );
+                    int comments_count = Integer.parseInt(commentCountView.getText().toString());
                     Preferences.getInstance(getActivity()).save(DbConstants.COMMENT_COUNT, (int) comments_count);
                 }
                 break;
@@ -528,7 +559,7 @@ public class PostDetailFragment extends BaseFragment implements
     }
 
     @Override
-    public void onDelete(int position, ParseObject post) {
+    public void onDelete(int position, Posts post) {
         PostManager.getInstance().deletePost(post);
         if (handler != null)
             handler.onDelete(position, post);
@@ -543,11 +574,15 @@ public class PostDetailFragment extends BaseFragment implements
     }
 
     @Override
-    public void onEditClicked(int position, ParseObject post) {
+    public void onEditClicked(int position, Posts post) {
         Log.e("onEditClicked", "Done");
+//        Utils.launchEditView(
+//                getActivity(),
+//                post.getParseFile(DbConstants.MEDIA) == null ? Constants.OPERATION_STATUS
+//                        : Constants.OPERATION_PHOTO, position, post);
         Utils.launchEditView(
                 getActivity(),
-                post.getParseFile(DbConstants.MEDIA) == null ? Constants.OPERATION_STATUS
+                post.getMedia() == null ? Constants.OPERATION_STATUS
                         : Constants.OPERATION_PHOTO, position, post);
     }
 
@@ -558,7 +593,7 @@ public class PostDetailFragment extends BaseFragment implements
 
     @Override
     public void onEditDone(int position, ParseObject post) {
-        Log.e(com.bigc.fragments.PostDetailFragment.class.getSimpleName(), "onEditDone");
+        Log.e(PostDetailFragment.class.getSimpleName(), "onEditDone");
         //PostDetailFragment.post = post;
         messageView.setText(post.getString(DbConstants.MESSAGE) == null ? ""
                 : post.getString(DbConstants.MESSAGE));

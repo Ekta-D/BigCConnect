@@ -8,6 +8,14 @@
         "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\simpleCropLib\\build\\intermediates\\bundles\\debug\\res\\drawable\\ic_launcher.png"
     },
     {
+        "merged": "D:\\Office work\\BigCConnect\\simpleCropLib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\selector_crop_button.xml",
+        "source": "D:\\Office work\\BigCConnect\\simpleCropLib\\build\\intermediates\\bundles\\debug\\res\\drawable\\selector_crop_button.xml"
+    },
+    {
+        "merged": "D:\\Office work\\BigCConnect\\simpleCropLib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\ic_launcher.png",
+        "source": "D:\\Office work\\BigCConnect\\simpleCropLib\\build\\intermediates\\bundles\\debug\\res\\drawable\\ic_launcher.png"
+    },
+    {
         "merged": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\simpleCropLib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\ic_launcher.png",
         "source": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\simpleCropLib\\build\\intermediates\\bundles\\debug\\res\\drawable\\ic_launcher.png"
     },

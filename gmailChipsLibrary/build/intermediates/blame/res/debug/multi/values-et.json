@@ -81,6 +81,87 @@
         ]
     },
     {
+        "outputFile": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\debug\\values-et\\values-et.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 105,
+                    "endColumn": 92,
+                    "endOffset": 193
+                },
+                "from": {
+                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-et\\strings.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 929,
+                        "endColumn": 92,
+                        "endOffset": 1017
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 198,
+                    "endColumn": 91,
+                    "endOffset": 285
+                },
+                "from": {
+                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-et\\strings.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1023,
+                        "endColumn": 91,
+                        "endOffset": 1110
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 290,
+                    "endColumn": 71,
+                    "endOffset": 357
+                },
+                "from": {
+                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-et\\strings.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 1116,
+                        "endColumn": 71,
+                        "endOffset": 1183
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 362,
+                    "endColumn": 101,
+                    "endOffset": 459
+                },
+                "from": {
+                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-et\\strings.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 822,
+                        "endColumn": 105,
+                        "endOffset": 923
+                    }
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\debug\\values-et\\values-et.xml",
         "map": [
             {

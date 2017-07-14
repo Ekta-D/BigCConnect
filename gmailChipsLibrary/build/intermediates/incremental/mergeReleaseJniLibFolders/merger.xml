@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="D:\StudioSpace\BigC-Connect\Android\BigCConnect\gmailChipsLibrary\src\main\jniLibs"/></dataSet><dataSet config="release"><source path="D:\StudioSpace\BigC-Connect\Android\BigCConnect\gmailChipsLibrary\src\release\jniLibs"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="D:\Office work\BigCConnect\gmailChipsLibrary\src\main\jniLibs"/></dataSet><dataSet config="release"><source path="D:\Office work\BigCConnect\gmailChipsLibrary\src\release\jniLibs"/></dataSet></merger>

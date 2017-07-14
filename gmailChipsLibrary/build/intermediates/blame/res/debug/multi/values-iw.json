@@ -1,5 +1,86 @@
 [
     {
+        "outputFile": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\debug\\values-iw\\values-iw.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 105,
+                    "endColumn": 86,
+                    "endOffset": 187
+                },
+                "from": {
+                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-iw\\strings.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 929,
+                        "endColumn": 86,
+                        "endOffset": 1011
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 192,
+                    "endColumn": 84,
+                    "endOffset": 272
+                },
+                "from": {
+                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-iw\\strings.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1017,
+                        "endColumn": 84,
+                        "endOffset": 1097
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 277,
+                    "endColumn": 67,
+                    "endOffset": 340
+                },
+                "from": {
+                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-iw\\strings.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 1103,
+                        "endColumn": 67,
+                        "endOffset": 1166
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 345,
+                    "endColumn": 101,
+                    "endOffset": 442
+                },
+                "from": {
+                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-iw\\strings.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 822,
+                        "endColumn": 105,
+                        "endOffset": 923
+                    }
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\debug\\values-iw\\values-iw.xml",
         "map": [
             {

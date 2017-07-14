@@ -37,8 +37,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+//public class FragmentTributes extends BaseFragment implements
+//		OnLoadMoreListener, UploadPostObserver, PopupOptionHandler  //// TODO: 14-07-2017
 public class FragmentTributes extends BaseFragment implements
-		OnLoadMoreListener, UploadPostObserver, PopupOptionHandler {
+		OnLoadMoreListener, UploadPostObserver
+{
 
 	private LoadMoreListView listView;
 	private TributesAdapter adapter;
@@ -83,12 +86,13 @@ public class FragmentTributes extends BaseFragment implements
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-
-				Log.e("Clicked on", position + "--");
-				((FragmentHolder) getActivity())
-						.replaceFragment(new FragmentTributeDetail(
-								FragmentTributes.this, adapter
-										.getItem(position), position));
+				//// TODO: 14-07-2017
+//
+//				Log.e("Clicked on", position + "--");
+//				((FragmentHolder) getActivity())
+//						.replaceFragment(new FragmentTributeDetail(
+//								FragmentTributes.this, adapter
+//										.getItem(position), position));
 			}
 		});
 
@@ -322,37 +326,38 @@ public class FragmentTributes extends BaseFragment implements
 			listView.onLoadMoreComplete();
 		}
 	}
+	//// TODO: 14-07-2017
 
-	@Override
-	public void onDelete(int position, ParseObject post) {
-		if (position >= 0 && position < posts.size())
-			posts.remove(position);
-	}
-
-	@Override
-	public void onEditClicked(int position, ParseObject post) {
-		Log.e("onEditClicked", "Done");
-		ParseObject obj = post == null ? adapter.getItem(position) : post;
-		Utils.launchEditView(getActivity(), Constants.OPERATION_TRIBUTE,
-				position, obj);
-	}
+//	@Override
+//	public void onDelete(int position, ParseObject post) {
+//		if (position >= 0 && position < posts.size())
+//			posts.remove(position);
+//	}
+//
+//	@Override
+//	public void onEditClicked(int position, ParseObject post) {
+//		Log.e("onEditClicked", "Done");
+//		ParseObject obj = post == null ? adapter.getItem(position) : post;
+//		Utils.launchEditView(getActivity(), Constants.OPERATION_TRIBUTE,
+//				position, obj);
+//	}
 
 	@Override
 	public void onEditDone(int position, ParseObject post) {
 		Log.e(FragmentTributes.class.getSimpleName(), "onEditDone");
-		adapter.updateItem(position, post);
+		//adapter.updateItem(position, post);//// TODO: 14-07-2017
 	}
-
-	@Override
-	public void onFlagClicked(int position, ParseObject post) {
-		if (post == null) {
-			post = adapter.getItem(position);
-		}
-		if (post != null) {
-			Utils.flagTribute(post);
-		}
-		Toast.makeText(getActivity(),
-				getResources().getString(R.string.tributeFlagMessage),
-				Toast.LENGTH_SHORT).show();
-	}
+//// TODO: 14-07-2017
+//	@Override
+//	public void onFlagClicked(int position, ParseObject post) {
+//		if (post == null) {
+//			post = adapter.getItem(position);
+//		}
+//		if (post != null) {
+//			Utils.flagTribute(post);
+//		}
+//		Toast.makeText(getActivity(),
+//				getResources().getString(R.string.tributeFlagMessage),
+//				Toast.LENGTH_SHORT).show();
+//	}
 }

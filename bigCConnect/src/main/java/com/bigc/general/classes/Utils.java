@@ -20,13 +20,11 @@ import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Environment;
 import android.provider.ContactsContract.DisplayNameSources;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.FileProvider;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -44,14 +42,12 @@ import com.bigc.activities.ZoomActivity;
 import com.bigc.datastorage.Preferences;
 import com.bigc.emailer.EmailComposer;
 import com.bigc.gallery.CustomGalleryActivity;
-import com.bigc.general.classes.Constants;
-import com.bigc.general.classes.Queries;
 import com.bigc.interfaces.PopupOptionHandler;
 import com.bigc.models.ConnectionsModel;
+import com.bigc.models.Posts;
 import com.bigc.models.Users;
 import com.bigc.views.PopupHelper;
 import com.bigc.views.ProgressDialogue;
-import com.bigc_connect.BuildConfig;
 import com.bigc_connect.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -298,7 +294,6 @@ public class Utils {
         return matcher.matches();
     }
 
-
     public static void addConnections(List<Users> newConnections) {
         Log.e("ParseUser", "Saving Connections: " + newConnections.size());
         if (newConnections == null || newConnections.size() == 0)
@@ -335,30 +330,13 @@ public class Utils {
             });
         }
     }
-    /*public static void addConnections(List<ParseUser> newConnections) {
-        Log.e("ParseUser", "Saving Connections: " + newConnections.size());
-        if (newConnections == null || newConnections.size() == 0)
-            return;
-
-        List<ParseObject> newConnectionObjects = new ArrayList<ParseObject>();
-        for (ParseUser c : newConnections) {
-            final ParseObject o = new ParseObject(DbConstants.TABLE_CONNECTIONS);
-            o.put(DbConstants.TO, c);
-            o.put(DbConstants.FROM, ParseUser.getCurrentUser());
-            o.put(DbConstants.STATUS, false);
-            newConnectionObjects.add(o);
-        }
-
-        new saveConnectionTask(newConnectionObjects).execute();
-    }*/
-
-   /* private static class saveConnectionTask extends
+    private static class saveConnectionTask extends
             AsyncTask<Void, Void, Boolean> {
 
-        List<ConnectionsModel> connections;
+        List<ParseObject> connections;
 
-        private saveConnectionTask(List<ConnectionsModel> connections) {
-            this.connections = new ArrayList<>();
+        private saveConnectionTask(List<ParseObject> connections) {
+            this.connections = new ArrayList<ParseObject>();
             if (connections != null && connections.size() > 0) {
                 this.connections.addAll(connections);
             }
@@ -367,7 +345,7 @@ public class Utils {
         @Override
         protected Boolean doInBackground(Void... params) {
             boolean result = true;
-            for (ConnectionsModel c : connections)
+            for (ParseObject c : connections)
                 try {
                     c.save();
                     c.pin(Constants.TAG_CONNECTIONS);
@@ -394,7 +372,7 @@ public class Utils {
             Log.e("Save Status:", status + "-");
         }
 
-    }*/
+    }
 
     public static void removeConnections(
             final List<Users> removedConnections) {
@@ -668,11 +646,7 @@ public class Utils {
         } catch (IOException e) {
         }
 
-        Uri outputFileUri = null;
-        if(android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
-            outputFileUri = FileProvider.getUriForFile(activity, BuildConfig.APPLICATION_ID+".provider", newfile);
-        else
-            outputFileUri = Uri.fromFile(newfile);
+        Uri outputFileUri = Uri.fromFile(newfile);
         Constants.currentCameraIntentURI = outputFileUri.toString();
         Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, outputFileUri);
@@ -790,8 +764,10 @@ public class Utils {
     }
 
     public static void showQuickActionMenu(final PopupOptionHandler handler,
-                                           final Activity activity, final int pos, final ParseObject post,
-                                           View v, boolean isOwner, final DbConstants.Flags flag) {
+                                           final Activity activity, final int pos, final Posts post,
+                                           View v, boolean isOwner, final DbConstants.Flags flag)
+
+    {
 
         // This is just a view with buttons that act as a menu.
         View popupView = ((LayoutInflater) activity
@@ -860,10 +836,9 @@ public class Utils {
                     displaymetrics, 0, 0, PopupHelper.LOWER_HALF);
         }
     }
-
     private static void showDeleteConfirmationDialog(
             final PopupOptionHandler handler, Activity activity,
-            final int position, final ParseObject post, DbConstants.Flags flag) {
+            final int position, final Posts post, DbConstants.Flags flag) {
         int title;
         int message;
         if (flag == DbConstants.Flags.Story) {
@@ -909,7 +884,7 @@ public class Utils {
     }
 
     public static void launchEditView(Activity activity, int operation,
-                                      int position, ParseObject post) {
+                                      int position, Posts post) {
         PostActivity.setCurrentObject(position, post);
         Intent i = new Intent(activity, PostActivity.class);
         i.putExtra(Constants.OPERATION, operation);
@@ -1031,7 +1006,12 @@ public class Utils {
 
         return -1;
     }
-
+    public static String getCurrentDate()
+    {
+        SimpleDateFormat format = new SimpleDateFormat(DbConstants.DATE_FORMAT);
+        String date = format.format(new Date(System.currentTimeMillis()));
+        return date;
+    }
     public static void refreshLoggedInUser() {
         ParseUser.getCurrentUser().fetchInBackground(
                 new GetCallback<ParseUser>() {

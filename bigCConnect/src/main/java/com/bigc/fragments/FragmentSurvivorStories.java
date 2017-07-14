@@ -39,8 +39,12 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
+//public class FragmentSurvivorStories extends BaseFragment implements
+//		OnLoadMoreListener, UploadStoryObserver, PopupOptionHandler //// TODO: 14-07-2017  
 public class FragmentSurvivorStories extends BaseFragment implements
-		OnLoadMoreListener, UploadStoryObserver, PopupOptionHandler {
+		OnLoadMoreListener, UploadStoryObserver
+
+{
 
 	private LoadMoreListView listView;
 	private StoriesAdapter adapter;
@@ -96,11 +100,11 @@ public class FragmentSurvivorStories extends BaseFragment implements
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				// TODO: 7/14/2017 open Fragment story detail 
-				/*((FragmentHolder) getActivity())
-						.replaceFragment(new FragmentStoryDetail(
-								FragmentSurvivorStories.this, adapter
-										.getItem(position), position));*/
+				//// TODO: 14-07-2017  
+//				((FragmentHolder) getActivity())
+//						.replaceFragment(new FragmentStoryDetail(
+//								FragmentSurvivorStories.this, adapter
+//										.getItem(position), position));
 			}
 		});
 
@@ -355,31 +359,31 @@ public class FragmentSurvivorStories extends BaseFragment implements
 	public void onEditDone(int position, ParseObject post) {
 		Log.e(FragmentSurvivorStories.class.getSimpleName(), "onEditDone");
 	}
-
-	@Override
-	public void onDelete(int position, ParseObject post) {
-		if (position >= 0 && position < stories.size())
-			stories.remove(position);
-	}
-
-	@Override
-	public void onEditClicked(int position, ParseObject post) {
-		Log.e("onEditClicked", "Done");
-		ParseObject obj = post == null ? adapter.getItem(position) : post;
-		Utils.launchEditView(getActivity(), Constants.OPERATION_STORY,
-				position, obj);
-	}
-
-	@Override
-	public void onFlagClicked(int position, ParseObject post) {
-		if (post == null) {
-			post = adapter.getItem(position);
-		}
-		if (post != null) {
-			Utils.flagStory(post);
-		}
-		Toast.makeText(getActivity(),
-				getResources().getString(R.string.storyFlagMessage),
-				Toast.LENGTH_SHORT).show();
-	}
+//// TODO: 14-07-2017
+//	@Override
+//	public void onDelete(int position, ParseObject post) {
+//		if (position >= 0 && position < stories.size())
+//			stories.remove(position);
+//	}
+//
+//	@Override
+//	public void onEditClicked(int position, ParseObject post) {
+//		Log.e("onEditClicked", "Done");
+//		ParseObject obj = post == null ? adapter.getItem(position) : post;
+//		Utils.launchEditView(getActivity(), Constants.OPERATION_STORY,
+//				position, obj);
+//	}
+//
+//	@Override
+//	public void onFlagClicked(int position, ParseObject post) {
+//		if (post == null) {
+//			post = adapter.getItem(position);
+//		}
+//		if (post != null) {
+//			Utils.flagStory(post);
+//		}
+//		Toast.makeText(getActivity(),
+//				getResources().getString(R.string.storyFlagMessage),
+//				Toast.LENGTH_SHORT).show();
+//	}
 }

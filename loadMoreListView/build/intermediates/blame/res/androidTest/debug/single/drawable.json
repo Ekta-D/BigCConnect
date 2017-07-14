@@ -6,5 +6,9 @@
     {
         "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\loadMoreListView\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\costum_progress_bar.xml",
         "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\loadMoreListView\\build\\intermediates\\bundles\\debug\\res\\drawable\\costum_progress_bar.xml"
+    },
+    {
+        "merged": "D:\\Office work\\BigCConnect\\loadMoreListView\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\costum_progress_bar.xml",
+        "source": "D:\\Office work\\BigCConnect\\loadMoreListView\\build\\intermediates\\bundles\\debug\\res\\drawable\\costum_progress_bar.xml"
     }
 ]

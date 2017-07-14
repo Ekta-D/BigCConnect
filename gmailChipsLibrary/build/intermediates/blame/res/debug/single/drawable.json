@@ -8,11 +8,19 @@
         "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\drawable\\list_item_font_secondary.xml"
     },
     {
+        "merged": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\debug\\drawable\\list_item_font_secondary.xml",
+        "source": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\drawable\\list_item_font_secondary.xml"
+    },
+    {
         "merged": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\debug\\drawable\\list_item_font_primary.xml",
         "source": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\drawable\\list_item_font_primary.xml"
     },
     {
         "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\debug\\drawable\\list_item_font_primary.xml",
         "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\drawable\\list_item_font_primary.xml"
+    },
+    {
+        "merged": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\debug\\drawable\\list_item_font_primary.xml",
+        "source": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\drawable\\list_item_font_primary.xml"
     }
 ]

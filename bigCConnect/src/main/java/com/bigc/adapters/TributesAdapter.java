@@ -27,8 +27,10 @@ import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListene
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
-public class TributesAdapter extends ArrayAdapter<ParseObject> implements
-		PopupOptionHandler {
+//public class TributesAdapter extends ArrayAdapter<ParseObject> implements
+//		PopupOptionHandler //// TODO: 14-07-2017
+public class TributesAdapter extends ArrayAdapter<ParseObject>
+{
 
 	private LayoutInflater inflater;
 	private List<ParseObject> data;
@@ -113,22 +115,24 @@ public class TributesAdapter extends ArrayAdapter<ParseObject> implements
 
 			@Override
 			public void onClick(View v) {
-				Utils.showQuickActionMenu(
-						TributesAdapter.this,
-						context.getActivity(),
-						position,
-						null,
-						v,
-						(tribute.getParseUser(DbConstants.USER)
-								.getObjectId()
-								.equals(ParseUser.getCurrentUser()
-										.getObjectId()) || tribute
-								.getParseUser(DbConstants.TO)
-								.getObjectId()
-								.equals(ParseUser.getCurrentUser()
-										.getObjectId())),
-						DbConstants.Flags.Tribute);
+				//// TODO: 14-07-2017
 			}
+//				Utils.showQuickActionMenu(
+//						TributesAdapter.this,
+//						context.getActivity(),
+//						position,
+//						null,
+//						v,
+//						(tribute.getParseUser(DbConstants.USER)
+//								.getObjectId()
+//								.equals(ParseUser.getCurrentUser()
+//										.getObjectId()) || tribute
+//								.getParseUser(DbConstants.TO)
+//								.getObjectId()
+//								.equals(ParseUser.getCurrentUser()
+//										.getObjectId())),
+//						DbConstants.Flags.Tribute);
+//			}
 		});
 
 		holder.dateView.setText(Utils.getTimeStringForFeed(
@@ -193,33 +197,34 @@ public class TributesAdapter extends ArrayAdapter<ParseObject> implements
 		public TextView locationView;
 		public ImageView optionView;
 	}
+	//// TODO: 14-07-2017
 
-	@Override
-	public void onDelete(int position, ParseObject tribute) {
-		Log.e("Deleting", position + "--");
-		if (position < data.size()) {
-			PostManager.getInstance().deletePost(data.get(position));
-			data.remove(position);
-			((PopupOptionHandler) context).onDelete(position, tribute);
-			notifyDataSetChanged();
-			Log.e("Deleted", position + "--");
-		}
-	}
-
-	@Override
-	public void onEditClicked(int position, ParseObject post) {
-		((PopupOptionHandler) context).onEditClicked(position, post);
-	}
-
-	public void updateItem(int position, ParseObject item) {
-		if (position >= 0 && position < data.size()) {
-			data.set(position, item);
-			notifyDataSetChanged();
-		}
-	}
-
-	@Override
-	public void onFlagClicked(int position, ParseObject post) {
-		((PopupOptionHandler) context).onFlagClicked(position, post);
-	}
+//	@Override
+//	public void onDelete(int position, ParseObject tribute) {
+//		Log.e("Deleting", position + "--");
+//		if (position < data.size()) {
+//			PostManager.getInstance().deletePost(data.get(position));
+//			data.remove(position);
+//			((PopupOptionHandler) context).onDelete(position, tribute);
+//			notifyDataSetChanged();
+//			Log.e("Deleted", position + "--");
+//		}
+//	}
+//
+//	@Override
+//	public void onEditClicked(int position, ParseObject post) {
+//		((PopupOptionHandler) context).onEditClicked(position, post);
+//	}
+//
+//	public void updateItem(int position, ParseObject item) {
+//		if (position >= 0 && position < data.size()) {
+//			data.set(position, item);
+//			notifyDataSetChanged();
+//		}
+//	}
+//
+//	@Override
+//	public void onFlagClicked(int position, ParseObject post) {
+//		((PopupOptionHandler) context).onFlagClicked(position, post);
+//	}
 }

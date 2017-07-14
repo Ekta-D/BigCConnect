@@ -68,19 +68,8 @@ import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
-import java.util.List;
-
 import eu.janmuller.android.simplecropimage.CropImage;
+import eu.janmuller.android.simplecropimage.Util;
 
 public class PostActivity extends Activity implements OnClickListener,
         ProgressHandler {
@@ -99,14 +88,15 @@ public class PostActivity extends Activity implements OnClickListener,
     private boolean isPublicShare = true;
     private int operation;
     private boolean isEdit = false;
-    private static ParseObject currentObject = null;
+    //    private static ParseObject currentObject = null;
+    public static Posts currentObject = null;
     private static int currentObjectIndex = -1;
     DatabaseReference databaseReference;
     private File mFileTemp;
     FirebaseStorage firebaseStorage;
     StorageReference storageReference;
 
-    public static void setCurrentObject(int position, ParseObject object) {
+    public static void setCurrentObject(int position, Posts object) {
         currentObject = object;
         currentObjectIndex = position;
     }
@@ -200,18 +190,32 @@ public class PostActivity extends Activity implements OnClickListener,
         if (isEdit) {
 
             if (operation == Constants.OPERATION_STORY) {
-                titleInputView.setText(currentObject
-                        .getString(DbConstants.TITLE) == null ? ""
-                        : currentObject.getString(DbConstants.TITLE));
+//                titleInputView.setText(currentObject
+//                        .getString(DbConstants.TITLE) == null ? ""
+//                        : currentObject.getString(DbConstants.TITLE));
+                //// TODO: 14-07-2017  
             }
 
-            String text = currentObject.getString(DbConstants.MESSAGE) == null ? ""
-                    : currentObject.getString(DbConstants.MESSAGE);
+//            String text = currentObject.getString(DbConstants.MESSAGE) == null ? ""
+//                    : currentObject.getString(DbConstants.MESSAGE);
+            String text = currentObject.getMessage() == null ? ""
+                    : currentObject.getMessage();
             statusInputView.setText(text);
             statusInputView.setSelection(text.length());
-            if (currentObject.getParseFile(DbConstants.MEDIA) != null) {
+//            if (currentObject.getParseFile(DbConstants.MEDIA) != null) {
+//                ImageLoader.getInstance().displayImage(
+//                        currentObject.getParseFile(DbConstants.MEDIA).getUrl(),
+//                        pictureInputView, Utils.normalDisplayOptions,
+//                        new SimpleImageLoadingListener() {
+//                            @Override
+//                            public void onLoadingStarted(String url, View view) {
+//                                ((ImageView) view)
+//                                        .setImageResource(android.R.color.white);
+//                            }
+//                        });
+            if (currentObject.getMedia() != null) {
                 ImageLoader.getInstance().displayImage(
-                        currentObject.getParseFile(DbConstants.MEDIA).getUrl(),
+                        currentObject.getMedia(),
                         pictureInputView, Utils.normalDisplayOptions,
                         new SimpleImageLoadingListener() {
                             @Override
@@ -257,13 +261,14 @@ public class PostActivity extends Activity implements OnClickListener,
                                     Toast.LENGTH_LONG).show();
                             v.setClickable(true);
                         } else {
-                            currentObject.put(DbConstants.MESSAGE, message);
+                            currentObject.setMessage(message);
+                            // currentObject.put(DbConstants.MESSAGE, message);
 
                             finishActivity();
                             Toast.makeText(this, "Tribute has been updated.",
                                     Toast.LENGTH_LONG).show();
-                            PostManager.getInstance().editTribute(
-                                    currentObjectIndex, currentObject);
+//                            PostManager.getInstance().editTribute(
+//                                    currentObjectIndex, currentObject);//// TODO: 14-07-2017  
                         }
                     } else if (Constants.OPERATION_STORY == operation) {
 
@@ -285,14 +290,15 @@ public class PostActivity extends Activity implements OnClickListener,
                         }
                         // addStory(message,
                         // selectedPicture);
-                        currentObject.put(DbConstants.MESSAGE, message);
-                        currentObject.put(DbConstants.TITLE, title);
+                        //   currentObject.put(DbConstants.MESSAGE, message);
+                        currentObject.setMessage(message);
+                        //// TODO: 14-07-2017            //   currentObject.put(DbConstants.TITLE, title);
 
                         finishActivity();
                         Toast.makeText(this, "Story has been updated.",
                                 Toast.LENGTH_LONG).show();
-                        PostManager.getInstance().editStory(currentObjectIndex,
-                                currentObject);
+//                        PostManager.getInstance().editStory(currentObjectIndex,
+//                                currentObject);//// TODO: 14-07-2017  
                     } else {
                         if (message.length() == 0 && selectedPicture == null) {
                             Toast.makeText(this,
@@ -300,13 +306,15 @@ public class PostActivity extends Activity implements OnClickListener,
                                     Toast.LENGTH_LONG).show();
                             v.setClickable(true);
                         } else {
-                            currentObject.put(DbConstants.MESSAGE, message);
+                            //currentObject.put(DbConstants.MESSAGE, message);
+                            currentObject.setMessage(message);
 
+                            currentObject.setUpdatedAt(Utils.getCurrentDate());
                             finishActivity();
                             Toast.makeText(this, "Post has been updated.",
                                     Toast.LENGTH_LONG).show();
-                            PostManager.getInstance().editPost(currentObjectIndex,
-                                    currentObject);
+//                            PostManager.getInstance().editPost(currentObjectIndex,
+//                                    currentObject);//// TODO: 14-07-2017  
                         }
                     }
 
@@ -428,7 +436,6 @@ public class PostActivity extends Activity implements OnClickListener,
         List<Object> users = new ArrayList<>();
         if (recipients == null)
             return users;
-
         for (final RecipientEntry entry : recipients)
             users.add(entry.getUser().toString());
         return users;
@@ -449,7 +456,6 @@ public class PostActivity extends Activity implements OnClickListener,
         List<Object> users = new ArrayList<>();
         for (final RecipientEntry entry : recipients)
             users.add(entry.getUser());
-
         return users;
     }
 
@@ -549,8 +555,6 @@ public class PostActivity extends Activity implements OnClickListener,
                     postMessageToServer(message, 0, date, date, media, objectId, FirebaseAuth.getInstance().getCurrentUser().getUid());
 
 
-                    Utils.hideProgress();
-
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
@@ -561,6 +565,7 @@ public class PostActivity extends Activity implements OnClickListener,
             });
         } else {
             postMessageToServer(message, 0, date, date, media, objectId, FirebaseAuth.getInstance().getCurrentUser().getUid());
+            Utils.hideProgress();
         }
 
 
@@ -578,6 +583,8 @@ public class PostActivity extends Activity implements OnClickListener,
         post.setUser(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
         databaseReference.child(DbConstants.TABLE_POST).child(objectId).setValue(post);
+        Utils.showToast(PostActivity.this, "Your post has been uploaded!");
+        finishActivity();
     }
 
     private void addTribute(String message, Bitmap bitmap,

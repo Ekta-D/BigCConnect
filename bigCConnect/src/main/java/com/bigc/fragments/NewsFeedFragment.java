@@ -1,5 +1,6 @@
 package com.bigc.fragments;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,16 +14,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bigc.adapters.NewsFeedsAdapter;
+//import com.bigc.adapters.NewsfeedAdapter;
 import com.bigc.datastorage.Preferences;
 import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
 import com.bigc.general.classes.PostManager;
+import com.bigc.general.classes.Queries;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
 import com.bigc.interfaces.PopupOptionHandler;
 import com.bigc.interfaces.UploadPostObserver;
+import com.bigc.models.Post;
 import com.bigc.models.Posts;
 import com.bigc_connect.R;
 import com.costum.android.widget.PullAndLoadListView;
@@ -38,12 +42,15 @@ import com.mopub.nativeads.MoPubNativeAdPositioning;
 import com.mopub.nativeads.MoPubStaticNativeAdRenderer;
 import com.mopub.nativeads.RequestParameters;
 import com.mopub.nativeads.ViewBinder;
+import com.parse.FindCallback;
+import com.parse.ParseException;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-
-//import com.bigc.adapters.NewsfeedAdapter;
+import java.util.Map;
 
 public class NewsFeedFragment extends BaseFragment implements
         OnRefreshListener, UploadPostObserver, OnLoadMoreListener,
@@ -122,6 +129,7 @@ public class NewsFeedFragment extends BaseFragment implements
             if (mAdAdapter != null)
                 mAdAdapter.loadAds(Constants.MOPUB_UNIT_ID, mRequestParameters);
         }
+        loadData(true);
         super.onResume();
     }
 
@@ -167,7 +175,7 @@ public class NewsFeedFragment extends BaseFragment implements
                 if (position - 1 < adapter.getCount())
                     ((FragmentHolder) getActivity())
                             .replaceFragment(new PostDetailFragment(
-                                    com.bigc.fragments.NewsFeedFragment.this, position - 1,
+                                    NewsFeedFragment.this, position - 1,
                                     adapter.getItem(position - 1), true));
 
             }
@@ -221,6 +229,7 @@ public class NewsFeedFragment extends BaseFragment implements
     @Override
     public void onRefresh() {
         //loadData(false);
+
     }
 
     @Override
@@ -232,6 +241,7 @@ public class NewsFeedFragment extends BaseFragment implements
 
     private void loadData(final boolean fromCache) {
 
+//        final List<Posts> posts_arraylist = new ArrayList<>();
         final List<Posts> posts_arraylist = new ArrayList<>();
         Query query = null;
         if (fromCache) {
@@ -244,8 +254,18 @@ public class NewsFeedFragment extends BaseFragment implements
                 long count = dataSnapshot.getChildrenCount();
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     String key = dataSnapshot1.getKey();
-                    Posts posts = dataSnapshot1.getValue(Posts.class);
-                    posts_arraylist.add(posts);
+                    //Posts posts = dataSnapshot1.getValue(Posts.class);
+                    Map<Object, Object> posts = (Map<Object, Object>) dataSnapshot1.getValue();
+                    Posts post = new Posts();
+                    post.setMessage(String.valueOf(posts.get(DbConstants.MESSAGE)));
+                    post.setMedia(String.valueOf(posts.get(DbConstants.MEDIA)));
+                    post.setLikes((ArrayList<String>) posts.get(DbConstants.LIKES));
+                    post.setCreatedAt(String.valueOf(posts.get(DbConstants.CREATED_AT)));
+                    post.setUpdatedAt(String.valueOf(posts.get(DbConstants.UPDATED_AT)));
+                    post.setComments(Integer.parseInt(String.valueOf(posts.get(DbConstants.COMMENTS))));
+                    post.setUser(String.valueOf(posts.get(DbConstants.USER)));
+                    post.setObjectId(String.valueOf(posts.get(DbConstants.ID)));
+                    posts_arraylist.add(post);
                 }
 
                 populateList(posts_arraylist);
@@ -357,8 +377,8 @@ public class NewsFeedFragment extends BaseFragment implements
                         R.string.noFeedMessage));
             } else {
                 listView.setVisibility(View.VISIBLE);
-                adapter=new NewsFeedsAdapter(com.bigc.fragments.NewsFeedFragment.this,posts);
-              listView.setAdapter(adapter);
+                adapter = new NewsFeedsAdapter(NewsFeedFragment.this, posts);
+                listView.setAdapter(adapter);
                 progressParent.setVisibility(View.GONE);
             }
 
@@ -440,17 +460,17 @@ public class NewsFeedFragment extends BaseFragment implements
         }
 
         if (posts != null)
-           // posts.add(0, post);
+            // posts.add(0, post);
 
-        if (listView == null)
-            return;
+            if (listView == null)
+                return;
 
         getActivity().runOnUiThread(new Runnable() {
 
             @Override
             public void run() {
                 try {
-                  //  adapter.addItem(post);
+                    //  adapter.addItem(post);
                     if (listView.getVisibility() == View.GONE) {
                         listView.setVisibility(View.VISIBLE);
                         progressParent.setVisibility(View.GONE);
@@ -492,13 +512,13 @@ public class NewsFeedFragment extends BaseFragment implements
     }
 
     @Override
-    public void onDelete(int position, ParseObject post) {
+    public void onDelete(int position, Posts post) {
         if (position >= 0 && position < posts.size())
             posts.remove(position);
     }
 
     @Override
-    public void onEditClicked(int position, ParseObject post) {
+    public void onEditClicked(int position, Posts post) {
         Log.e("onEditClicked", "Done");
 
         //   ParseObject obj = post == null ? adapter.getItem(position) : post;
@@ -510,14 +530,14 @@ public class NewsFeedFragment extends BaseFragment implements
 
     @Override
     public void onEditDone(int position, ParseObject post) {
-        Log.e(com.bigc.fragments.NewsFeedFragment.class.getSimpleName(), "onEditDone");
+        Log.e(NewsFeedFragment.class.getSimpleName(), "onEditDone");
 //        adapter.updateItem(position, post);
     }
 
     @Override
     public void onFlagClicked(int position, ParseObject post) {
         if (post == null) {
-          //  post = adapter.getItem(position);
+            //  post = adapter.getItem(position);
         }
         if (post != null) {
             Utils.flagFeed(post);

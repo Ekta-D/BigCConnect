@@ -13,6 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+//import com.bigc.adapters.NewsfeedAdapter;
 import com.bigc.adapters.NewsfeedAdapter;
 import com.bigc.datastorage.Preferences;
 import com.bigc.general.classes.Constants;
@@ -23,6 +24,7 @@ import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
 import com.bigc.interfaces.PopupOptionHandler;
+import com.bigc.models.Posts;
 import com.bigc_connect.R;
 import com.mopub.nativeads.MoPubAdAdapter;
 import com.mopub.nativeads.MoPubNativeAdPositioning;
@@ -40,251 +42,265 @@ import java.util.List;
 
 public class PostsFragments extends BaseFragment implements PopupOptionHandler {
 
-	private NewsfeedAdapter adapter;
-	private ListView listview;
-	private TextView messageView;
-	private MoPubAdAdapter mAdAdapter;
-	private RequestParameters mRequestParameters;
-	private LinearLayout messageViewParent;
-	private ProgressBar progressView;
-	private boolean isPremium;
+    private NewsfeedAdapter adapter;
+    private ListView listview;
+    private TextView messageView;
+    private MoPubAdAdapter mAdAdapter;
+    private RequestParameters mRequestParameters;
+    private LinearLayout messageViewParent;
+    private ProgressBar progressView;
+    private boolean isPremium;
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-	}
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
-		View view = inflater.inflate(R.layout.layout_list, container, false);
+        View view = inflater.inflate(R.layout.layout_list, container, false);
 
-		listview = (ListView) view.findViewById(R.id.listview);
-		messageView = (TextView) view.findViewById(R.id.messageView);
-		messageViewParent = (LinearLayout) view
-				.findViewById(R.id.messageViewParent);
-		progressView = (ProgressBar) view.findViewById(R.id.progressView);
-		adapter = new NewsfeedAdapter(this, null);
+        listview = (ListView) view.findViewById(R.id.listview);
+        messageView = (TextView) view.findViewById(R.id.messageView);
+        messageViewParent = (LinearLayout) view
+                .findViewById(R.id.messageViewParent);
+        progressView = (ProgressBar) view.findViewById(R.id.progressView);
+        adapter = new NewsfeedAdapter(this, null);
 
-		isPremium = Preferences.getInstance(getActivity()).getBoolean(
-				Constants.PREMIUM);
-		if (!isPremium) {
+        isPremium = Preferences.getInstance(getActivity()).getBoolean(
+                Constants.PREMIUM);
+        if (!isPremium) {
 
-			ViewBinder viewBinder = new ViewBinder.Builder(
-					R.layout.list_item_ad).mainImageId(R.id.newsFeedPicView)
-					.iconImageId(R.id.newsFeedRibbonView)
-					.titleId(R.id.newsFeedHeading1)
-					.textId(R.id.newsFeedMessageView).build();
+            ViewBinder viewBinder = new ViewBinder.Builder(
+                    R.layout.list_item_ad).mainImageId(R.id.newsFeedPicView)
+                    .iconImageId(R.id.newsFeedRibbonView)
+                    .titleId(R.id.newsFeedHeading1)
+                    .textId(R.id.newsFeedMessageView).build();
 
-			// Set up the positioning behavior your ads should have.
-			MoPubNativeAdPositioning.MoPubServerPositioning adPositioning = MoPubNativeAdPositioning
-					.serverPositioning();
-			MoPubStaticNativeAdRenderer adRenderer = new MoPubStaticNativeAdRenderer(
-					viewBinder);
-			// Set up the MoPubAdAdapter
-			mAdAdapter = new MoPubAdAdapter(getActivity(), adapter,
-					adPositioning);
-			mAdAdapter.registerAdRenderer(adRenderer);
+            // Set up the positioning behavior your ads should have.
+            MoPubNativeAdPositioning.MoPubServerPositioning adPositioning = MoPubNativeAdPositioning
+                    .serverPositioning();
+            MoPubStaticNativeAdRenderer adRenderer = new MoPubStaticNativeAdRenderer(
+                    viewBinder);
+            // Set up the MoPubAdAdapter
+            mAdAdapter = new MoPubAdAdapter(getActivity(), adapter,
+                    adPositioning);
+            mAdAdapter.registerAdRenderer(adRenderer);
 
-			listview.setAdapter(mAdAdapter);
-		} else {
-			listview.setAdapter(adapter);
-		}
+            listview.setAdapter(mAdAdapter);
+        } else {
+            listview.setAdapter(adapter);
+        }
 
-		return view;
-	}
+        return view;
+    }
 
-	@Override
-	public void onResume() {
-		super.onResume();
+    @Override
+    public void onResume() {
+        super.onResume();
 
-		if (!isPremium) {
+        if (!isPremium) {
 
-			// Set up your request parameters
-			mRequestParameters = new RequestParameters.Builder().keywords(
-					"medical, health, cancer, ad").build();
+            // Set up your request parameters
+            mRequestParameters = new RequestParameters.Builder().keywords(
+                    "medical, health, cancer, ad").build();
 
-			// Request ads when the user returns to this activity.
-			mAdAdapter.loadAds(Constants.MOPUB_UNIT_ID, mRequestParameters);
-		}
-		super.onResume();
-	}
+            // Request ads when the user returns to this activity.
+            mAdAdapter.loadAds(Constants.MOPUB_UNIT_ID, mRequestParameters);
+        }
+        super.onResume();
+    }
 
-	@Override
-	public void onDestroyView() {
-		super.onDestroyView();
-		if (!isPremium) {
-			mAdAdapter.destroy();
-		}
-	}
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        if (!isPremium) {
+            mAdAdapter.destroy();
+        }
+    }
 
-	@Override
-	public void onViewCreated(View view, Bundle savedInstanceState) {
-		super.onViewCreated(view, savedInstanceState);
-		GoogleAnalyticsHelper.sendScreenViewGoogleAnalytics(getActivity(),
-				"User-Posts Screen");
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        GoogleAnalyticsHelper.sendScreenViewGoogleAnalytics(getActivity(),
+                "User-Posts Screen");
 
-		listview.setOnItemClickListener(new OnItemClickListener() {
+        listview.setOnItemClickListener(new OnItemClickListener() {
 
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				if (!isPremium) {
-					int temp = mAdAdapter.getOriginalPosition(position);
-					if (temp >= 0) {
-						position = temp;
-					}
-				}
-			}
-		});
-		messageView.setText(R.string.loadingFeeds);
-		loadUserData();
-	}
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                if (!isPremium) {
+                    int temp = mAdAdapter.getOriginalPosition(position);
+                    if (temp >= 0) {
+                        position = temp;
+                    }
+                }
+            }
+        });
+        messageView.setText(R.string.loadingFeeds);
+        loadUserData();
+    }
 
-	private void loadUserData() {
-		// TODO: 7/14/2017 loadUserData 
-		/*ParseQuery<ParseObject> mQuery = Queries
-				.getUserConnectionStatusQuery(ProfileFragment.getUser());
-		mQuery.fromPin(Constants.TAG_CONNECTIONS);
-		mQuery.getFirstInBackground(new GetCallback<ParseObject>() {
+    private void loadUserData() {
+        // TODO: 7/14/2017 loadUserData 
+  /*ParseQuery<ParseObject> mQuery = Queries
+    .getUserConnectionStatusQuery(ProfileFragment.getUser());
+  mQuery.fromPin(Constants.TAG_CONNECTIONS);
+  mQuery.getFirstInBackground(new GetCallback<ParseObject>() {
 
-			@Override
-			public void done(ParseObject object, ParseException e) {
-				boolean isConnected = false;
-				if (e == null && object != null
-						&& object.getBoolean(DbConstants.STATUS))
-					isConnected = true;
+   @Override
+   public void done(ParseObject object, ParseException e) {
+    boolean isConnected = false;
+    if (e == null && object != null
+      && object.getBoolean(DbConstants.STATUS))
+     isConnected = true;
 
-				adapter.setClickable(isConnected);
-				loadData();
-			}
-		});*/
+    adapter.setClickable(isConnected);
+    loadData();
+   }
+  });*/
 
-	}
+    
+    }
 
-	private void loadData() {
-		// TODO: 7/14/2017 loadData 
-		/*ParseQuery<ParseObject> query = Queries
-				.getUserFeedsQuery(ProfileFragment.getUser());
+    //// TODO: 14-07-2017  
+//    private void loadData() {
+//
+//        ParseQuery<ParseObject> query = Queries
+//                .getUserFeedsQuery(ProfileFragment.getUser());
+//
+//        query.findInBackground(new FindCallback<ParseObject>() {
+//
+//            @Override
+//            public void done(final List<ParseObject> posts, ParseException e) {
+//
+//                if (e == null) {
+//
+//                    new completePostLoadingsTask(posts).execute();
+//
+//                } else {
+//                    populateList(null);
+//                }
+//
+//            }
+//        });
+//    }
 
-		query.findInBackground(new FindCallback<ParseObject>() {
+    private class completePostLoadingsTask extends
+            AsyncTask<Void, Void, List<ParseObject>> {
 
-			@Override
-			public void done(final List<ParseObject> posts, ParseException e) {
+        List<ParseObject> posts;
 
-				if (e == null) {
+        public completePostLoadingsTask(List<ParseObject> objects) {
+            this.posts = new ArrayList<ParseObject>();
+            if (objects != null)
+                this.posts.addAll(objects);
 
-					new completePostLoadingsTask(posts).execute();
+        }
 
-				} else {
-					populateList(null);
-				}
+        @Override
+        public List<ParseObject> doInBackground(Void... params) {
+            try {
+                for (ParseObject p : posts)
+                    p.getParseUser(DbConstants.USER).fetchIfNeeded();
+                return posts;
+            } catch (ParseException e2) {
+                e2.printStackTrace();
+                return null;
+            }
+        }
 
-			}
-		});*/
-	}
+        @Override
+        public void onPostExecute(List<ParseObject> posts) {
+            populateList(posts);
+        }
+    }
 
-	private class completePostLoadingsTask extends
-			AsyncTask<Void, Void, List<ParseObject>> {
+    private void populateList(List<ParseObject> posts) {
 
-		List<ParseObject> posts;
+        if (listview != null) {
+            if (posts == null) {
+                showError(Utils.loadString(getActivity(),
+                        R.string.networkFailureMessage));
+            } else if (posts.size() == 0) {
+                showError(Utils.loadString(getActivity(),
+                        R.string.noUpdatesPostedYet));
+            } else {
+                adapter.setData(posts);
+                listview.setVisibility(View.VISIBLE);
+                messageViewParent.setVisibility(View.GONE);
+            }
+        }
+    }
 
-		public completePostLoadingsTask(List<ParseObject> objects) {
-			this.posts = new ArrayList<ParseObject>();
-			if (objects != null)
-				this.posts.addAll(objects);
+    private void showError(String message) {
+        listview.setVisibility(View.GONE);
+        messageViewParent.setVisibility(View.VISIBLE);
+        progressView.setVisibility(View.GONE);
+        messageView.setText(message);
+    }
 
-		}
+    @Override
+    public void onClick(View v) {
 
-		@Override
-		public List<ParseObject> doInBackground(Void... params) {
-			try {
-				for (ParseObject p : posts)
-					p.getParseUser(DbConstants.USER).fetchIfNeeded();
-				return posts;
-			} catch (ParseException e2) {
-				e2.printStackTrace();
-				return null;
-			}
-		}
+    }
 
-		@Override
-		public void onPostExecute(List<ParseObject> posts) {
-			populateList(posts);
-		}
-	}
+    @Override
+    public String getName() {
+        return Constants.FRAGMENT_POSTS;
+    }
 
-	private void populateList(List<ParseObject> posts) {
+    @Override
+    public int getTab() {
+        return 0;
+    }
 
-		if (listview != null) {
-			if (posts == null) {
-				showError(Utils.loadString(getActivity(),
-						R.string.networkFailureMessage));
-			} else if (posts.size() == 0) {
-				showError(Utils.loadString(getActivity(),
-						R.string.noUpdatesPostedYet));
-			} else {
-				adapter.setData(posts);
-				listview.setVisibility(View.VISIBLE);
-				messageViewParent.setVisibility(View.GONE);
-			}
-		}
-	}
+    @Override
+    public boolean onBackPressed() {
+        ((FragmentHolder) getActivity()).replaceFragment(new ProfileFragment(
+                null, null));
+        return true;
+    }
 
-	private void showError(String message) {
-		listview.setVisibility(View.GONE);
-		messageViewParent.setVisibility(View.VISIBLE);
-		progressView.setVisibility(View.GONE);
-		messageView.setText(message);
-	}
+    //	@Override
+//	public void onDelete(int position, ParseObject post) {
+//
+//	}
+    @Override
+    public void onDelete(int position, Posts post) {
 
-	@Override
-	public void onClick(View v) {
+    }
 
-	}
+    //    @Override
+//    public void onEditClicked(int position, ParseObject post) {
+//        ParseObject obj = post == null ? adapter.getItem(position) : post;
+//        Utils.launchEditView(
+//                getActivity(),
+//                obj.getParseFile(DbConstants.MEDIA) == null ? Constants.OPERATION_MESSAGE
+//                        : Constants.OPERATION_PHOTO, position, obj);
+//    }
+    @Override
+    public void onEditClicked(int position, Posts post) {
+        //  Posts obj = post == null ? adapter.getItem(position) : post;
+        Utils.launchEditView(
+                getActivity(),
+                post.getMedia() == null ? Constants.OPERATION_MESSAGE
+                        : Constants.OPERATION_PHOTO, position, post);
+    }
 
-	@Override
-	public String getName() {
-		return Constants.FRAGMENT_POSTS;
-	}
-
-	@Override
-	public int getTab() {
-		return 0;
-	}
-
-	@Override
-	public boolean onBackPressed() {
-		((FragmentHolder) getActivity()).replaceFragment(new ProfileFragment(
-				null, null));
-		return true;
-	}
-
-	@Override
-	public void onDelete(int position, ParseObject post) {
-
-	}
-
-	@Override
-	public void onEditClicked(int position, ParseObject post) {
-		ParseObject obj = post == null ? adapter.getItem(position) : post;
-		Utils.launchEditView(
-				getActivity(),
-				obj.getParseFile(DbConstants.MEDIA) == null ? Constants.OPERATION_MESSAGE
-						: Constants.OPERATION_PHOTO, position, obj);
-	}
-
-	@Override
-	public void onFlagClicked(int position, ParseObject post) {
-		if (post == null) {
-			post = adapter.getItem(position);
-		}
-		if (post != null) {
-			Utils.flagFeed(post);
-		}
-		Toast.makeText(getActivity(),
-				getResources().getString(R.string.postFlagMessage),
-				Toast.LENGTH_SHORT).show();
-	}
+    @Override
+    public void onFlagClicked(int position, ParseObject post) {
+        if (post == null) {
+            post = adapter.getItem(position);
+        }
+        if (post != null) {
+            Utils.flagFeed(post);
+        }
+        Toast.makeText(getActivity(),
+                getResources().getString(R.string.postFlagMessage),
+                Toast.LENGTH_SHORT).show();
+    }
 }

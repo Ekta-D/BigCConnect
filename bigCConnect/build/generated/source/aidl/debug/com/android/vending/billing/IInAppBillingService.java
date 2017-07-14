@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\aidl\\com\\android\\vending\\billing\\IInAppBillingService.aidl
+ * Original file: D:\\Office work\\BigCConnect\\bigCConnect\\src\\main\\aidl\\com\\android\\vending\\billing\\IInAppBillingService.aidl
  */
 package com.android.vending.billing;
 /**

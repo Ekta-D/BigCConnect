@@ -1,6 +1,8 @@
 package com.bigc.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,10 +11,14 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bigc.activities.HomeScreen;
 import com.bigc.datastorage.Preferences;
+import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
+import com.bigc.general.classes.PostManager;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
+import com.bigc.models.Post;
 import com.bigc.models.Posts;
 import com.bigc_connect.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -124,30 +130,50 @@ public class NewsFeedsAdapter extends BaseAdapter {
         }
 
 //        ParseUser owner = post.getParseUser(DbConstants.USER);
+
         String user = posts.get(position).getUser();
         databaseReference = FirebaseDatabase.getInstance().getReference().child(DbConstants.USERS).child(user);
-        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+        databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-
-
                 if (dataSnapshot.getValue() == null) {
 
                 } else {
+
                     String key = dataSnapshot.getKey();
                     Map<Object, Object> user_values = (Map<Object, Object>) dataSnapshot.getValue();
                     setValues(context, user_values, holder, user_post);
                 }
 
-
-                Utils.hideProgress();
             }
+
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
         });
+//        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                long count = dataSnapshot.getChildrenCount();
+//
+//                if (dataSnapshot.getValue() == null) {
+//
+//                } else {
+//
+//                    String key = dataSnapshot.getKey();
+//                    Map<Object, Object> user_values = (Map<Object, Object>) dataSnapshot.getValue();
+//                    setValues(context, user_values, holder, user_post);
+//                }
+//                Utils.hideProgress();
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
 
 
 //        holder.headingOne.setText(owner.getString(DbConstants.NAME));
@@ -264,16 +290,16 @@ public class NewsFeedsAdapter extends BaseAdapter {
         } else {
             holder.picView.setImageResource(R.drawable.loading_img);
             holder.picView.setVisibility(View.VISIBLE);
-            imageLoader.displayImage(posts.getMedia(), holder.picView, imgDisplayOptions,
-                    new SimpleImageLoadingListener() {
-                        @Override
-                        public void onLoadingStarted(String imageUri, View view) {
-                            holder.picView
-                                    .setImageResource(R.drawable.loading_img);
-                            super.onLoadingStarted(imageUri, view);
-                        }
-                    });
-
+//            imageLoader.displayImage(posts.getMedia(), holder.picView, imgDisplayOptions,
+//                    new SimpleImageLoadingListener() {
+//                        @Override
+//                        public void onLoadingStarted(String imageUri, View view) {
+//                            holder.picView
+//                                    .setImageResource(R.drawable.loading_img);
+//                            super.onLoadingStarted(imageUri, view);
+//                        }
+//                    });
+            imageLoader.displayImage(posts.getMedia(), holder.picView, imgDisplayOptions);
         }
 
         String date = posts.getCreatedAt();

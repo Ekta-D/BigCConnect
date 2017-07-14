@@ -28,8 +28,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class NewsfeedAdapter extends ArrayAdapter<ParseObject> implements
-		PopupOptionHandler {
+public class NewsfeedAdapter extends ArrayAdapter<ParseObject>
+	 {
 
 	private LayoutInflater inflater;
 	private static ImageLoaderConfiguration config;
@@ -174,17 +174,17 @@ public class NewsfeedAdapter extends ArrayAdapter<ParseObject> implements
 
 			@Override
 			public void onClick(View v) {
-				Utils.showQuickActionMenu(
-						NewsfeedAdapter.this,
-						context.getActivity(),
-						position,
-						null,
-						v,
-						post.getParseUser(DbConstants.USER)
-								.getObjectId()
-								.equals(ParseUser.getCurrentUser()
-										.getObjectId()),
-						DbConstants.Flags.NewsFeed);
+//				Utils.showQuickActionMenu(
+//						NewsfeedAdapter.this,
+//						context.getActivity(),
+//						position,
+//						null,
+//						v,
+//						post.getParseUser(DbConstants.USER)
+//								.getObjectId()
+//								.equals(ParseUser.getCurrentUser()
+//										.getObjectId()),
+//						DbConstants.Flags.NewsFeed);
 			}
 		});
 		// } else {
@@ -272,23 +272,23 @@ public class NewsfeedAdapter extends ArrayAdapter<ParseObject> implements
 		public TextView loveCountView;
 		public ImageView optionView;
 	}
-
-	@Override
-	public void onDelete(int position, ParseObject post) {
-		Log.e("Deleting", position + "--");
-		if (position < data.size()) {
-			PostManager.getInstance().deletePost(data.get(position));
-			data.remove(position);
-			((PopupOptionHandler) context).onDelete(position, post);
-			notifyDataSetChanged();
-			Log.e("Deleted", position + "--");
-		}
-	}
-
-	@Override
-	public void onEditClicked(int position, ParseObject post) {
-		((PopupOptionHandler) context).onEditClicked(position, post);
-	}
+		 //need to check
+//	@Override
+//	public void onDelete(int position, ParseObject post) {
+//		Log.e("Deleting", position + "--");
+//		if (position < data.size()) {
+//			PostManager.getInstance().deletePost(data.get(position));
+//			data.remove(position);
+//			((PopupOptionHandler) context).onDelete(position, post);
+//			notifyDataSetChanged();
+//			Log.e("Deleted", position + "--");
+//		}
+//	}
+		 //need to check
+//	@Override
+//	public void onEditClicked(int position, ParseObject post) {
+//		((PopupOptionHandler) context).onEditClicked(position, post);
+//	}
 
 	public void updateItem(int position, ParseObject item) {
 		if (position >= 0 && position < data.size()) {
@@ -297,8 +297,9 @@ public class NewsfeedAdapter extends ArrayAdapter<ParseObject> implements
 		}
 	}
 
-	@Override
-	public void onFlagClicked(int position, ParseObject post) {
-		((PopupOptionHandler) context).onFlagClicked(position, post);
-	}
+		 //need to check
+//	@Override
+//	public void onFlagClicked(int position, ParseObject post) {
+//		((PopupOptionHandler) context).onFlagClicked(position, post);
+//	}
 }

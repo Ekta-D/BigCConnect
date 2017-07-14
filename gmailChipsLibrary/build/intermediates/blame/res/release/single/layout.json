@@ -4,12 +4,24 @@
         "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\layout\\chips_alternate_item.xml"
     },
     {
+        "merged": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\release\\layout\\chips_recipient_dropdown_item.xml",
+        "source": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\layout\\chips_recipient_dropdown_item.xml"
+    },
+    {
         "merged": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\release\\layout\\copy_chip_dialog_layout.xml",
         "source": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\layout\\copy_chip_dialog_layout.xml"
     },
     {
         "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\release\\layout\\copy_chip_dialog_layout.xml",
         "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\layout\\copy_chip_dialog_layout.xml"
+    },
+    {
+        "merged": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\release\\layout\\chips_alternate_item.xml",
+        "source": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\layout\\chips_alternate_item.xml"
+    },
+    {
+        "merged": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\release\\layout\\copy_chip_dialog_layout.xml",
+        "source": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\layout\\copy_chip_dialog_layout.xml"
     },
     {
         "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\release\\layout\\chips_recipient_dropdown_item.xml",
@@ -22,6 +34,10 @@
     {
         "merged": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\release\\layout\\chips_alternate_item.xml",
         "source": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\layout\\chips_alternate_item.xml"
+    },
+    {
+        "merged": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\release\\layout\\more_item.xml",
+        "source": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\layout\\more_item.xml"
     },
     {
         "merged": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\release\\layout\\chips_recipient_dropdown_item.xml",

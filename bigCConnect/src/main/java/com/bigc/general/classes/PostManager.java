@@ -1,5 +1,14 @@
 package com.bigc.general.classes;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -21,8 +30,11 @@ import com.bigc.models.Posts;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -37,18 +49,9 @@ import com.parse.ParseUser;
 import com.parse.ProgressCallback;
 import com.parse.SaveCallback;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 public class PostManager implements UploadPostObservable, MessageObservable {
 
-    private static com.bigc.general.classes.PostManager manager = new com.bigc.general.classes.PostManager();
+    private static PostManager manager = new PostManager();
 
     private UploadPostObserver postObserver;
     private UploadPostObserver tributeObserver;
@@ -62,7 +65,7 @@ public class PostManager implements UploadPostObservable, MessageObservable {
 
     }
 
-    public static com.bigc.general.classes.PostManager getInstance() {
+    public static PostManager getInstance() {
         return manager;
     }
 
@@ -107,16 +110,31 @@ public class PostManager implements UploadPostObservable, MessageObservable {
         });
     }
 
-    public void deletePost(final ParseObject post) {
-        post.deleteInBackground(new DeleteCallback() {
+    //    public void deletePost(final ParseObject post) {
+//        post.deleteInBackground(new DeleteCallback() {
+//
+//            @Override
+//            public void done(ParseException e) {
+//                if (e != null) {
+//                    post.deleteEventually();
+//                }
+//            }
+//        });
+    public void deletePost(final Posts post) {
 
-            @Override
-            public void done(ParseException e) {
-                if (e != null) {
-                    post.deleteEventually();
-                }
-            }
-        });
+//    post.deleteInBackground(new DeleteCallback() {
+//
+//        @Override
+//        public void done(ParseException e) {
+//            if (e != null) {
+//                post.deleteEventually();
+//            }
+//        }
+//    });
+
+        // Delete post
+        FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_POST).child(post.getObjectId()).removeValue();
+
     }
 
     public void addPost(final ParseObject post,
@@ -431,9 +449,8 @@ public class PostManager implements UploadPostObservable, MessageObservable {
             storyObserver.onNotify(story);
     }
 
-    public void sendMessage(final Messages message, final ParseUser user) {
-        // TODO: 7/14/2017 Implement send message 
-        /*message.saveInBackground(new SaveCallback() {
+    public void sendMessage(final ParseObject message, final ParseUser user) {
+        message.saveInBackground(new SaveCallback() {
 
             @Override
             public void done(ParseException e) {
@@ -450,7 +467,7 @@ public class PostManager implements UploadPostObservable, MessageObservable {
                                     + " sent you a message.");
                 }
             }
-        });*/
+        });
     }
 
     //    public void sendMessage(final String message, Bitmap image,

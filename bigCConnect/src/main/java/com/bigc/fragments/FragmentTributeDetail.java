@@ -33,6 +33,7 @@ import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
 import com.bigc.interfaces.PopupOptionHandler;
 import com.bigc.interfaces.UploadPostObserver;
+import com.bigc.models.Posts;
 import com.bigc.views.NestedListView;
 import com.bigc_connect.R;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -44,8 +45,11 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
+//public class FragmentTributeDetail extends BaseFragment implements
+//		PopupOptionHandler, UploadPostObserver //// TODO: 14-07-2017  
 public class FragmentTributeDetail extends BaseFragment implements
-		PopupOptionHandler, UploadPostObserver {
+		 UploadPostObserver
+{
 
 	private CommentsAdapter adapter;
 	private static ParseObject tribute = null;
@@ -133,10 +137,9 @@ public class FragmentTributeDetail extends BaseFragment implements
 		super.onViewCreated(view, savedInstanceState);
 		GoogleAnalyticsHelper.sendScreenViewGoogleAnalytics(getActivity(),
 				"Tribute Detail Screen");
-
-		// TODO: 7/14/2017 set adapter 
-		/*adapter = new CommentsAdapter(getActivity());
-		listView.setAdapter(adapter);*/
+//
+//		adapter = new CommentsAdapter(getActivity());
+//		listView.setAdapter(adapter);
 
 		if (tribute.isDataAvailable()) {
 			populateData();
@@ -290,7 +293,6 @@ public class FragmentTributeDetail extends BaseFragment implements
 	private void showComments(List<ParseObject> objects) {
 		try {
 			progressParent.setVisibility(View.GONE);
-			// TODO: 7/14/2017 set data 
 			//adapter.setData(objects);
 			listView.setVisibility(View.VISIBLE);
 		} catch (NullPointerException e) {
@@ -304,27 +306,28 @@ public class FragmentTributeDetail extends BaseFragment implements
 		case R.id.optionView:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
 					"Tribute 3-Dots Options");
-			Utils.showQuickActionMenu(
-					FragmentTributeDetail.this,
-					getActivity(),
-					position,
-					tribute,
-					v,
-					(tribute.getParseUser(DbConstants.USER).getObjectId()
-							.equals(ParseUser.getCurrentUser().getObjectId()) || tribute
-							.getParseUser(DbConstants.TO).getObjectId()
-							.equals(ParseUser.getCurrentUser().getObjectId())),
-					DbConstants.Flags.Tribute);
+			//// TODO: 14-07-2017  
+//			Utils.showQuickActionMenu(
+//					FragmentTributeDetail.this,
+//					getActivity(),
+//					position,
+//					tribute,
+//					v,
+//					(tribute.getParseUser(DbConstants.USER).getObjectId()
+//							.equals(ParseUser.getCurrentUser().getObjectId()) || tribute
+//							.getParseUser(DbConstants.TO).getObjectId()
+//							.equals(ParseUser.getCurrentUser().getObjectId())),
+//					DbConstants.Flags.Tribute);
 			break;
 		case R.id.newsFeedRibbonView:
 		case R.id.newsFeedHeading1:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
 					"Tribute-User-Info View");
-			// TODO: 7/14/2017 open Profile fragment
-			/*((FragmentHolder) getActivity())
-					.replaceFragment(new ProfileFragment(
-							FragmentTributeDetail.this, tribute
-									.getParseUser(DbConstants.TO)));*/
+			//// TODO: 14-07-2017
+//			((FragmentHolder) getActivity())
+//					.replaceFragment(new ProfileFragment(
+//							FragmentTributeDetail.this, tribute
+//									.getParseUser(DbConstants.TO)));
 			break;
 		case R.id.leftOptionParent:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
@@ -335,11 +338,11 @@ public class FragmentTributeDetail extends BaseFragment implements
 		case R.id.ribbonView:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
 					"Tribute-User-Infor View");
-			// TODO: 7/14/2017 open Profile fragment
-			/*((FragmentHolder) getActivity())
-					.replaceFragment(new ProfileFragment(
-							FragmentTributeDetail.this, tribute
-									.getParseUser(DbConstants.TO)));*/
+			//// TODO: 14-07-2017
+//			((FragmentHolder) getActivity())
+//					.replaceFragment(new ProfileFragment(
+//							FragmentTributeDetail.this, tribute
+//									.getParseUser(DbConstants.TO)));
 			break;
 		case R.id.newsFeedPicView:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
@@ -358,9 +361,8 @@ public class FragmentTributeDetail extends BaseFragment implements
 				Utils.hideKeyboard(getActivity());
 				String comment = commentInputView.getText().toString();
 				commentInputView.setText("");
-				// TODO: 7/14/2017 set adapter 
-				/*adapter.addItem(PostManager.getInstance().commentOnTribute(
-						comment, tribute));*/
+//				adapter.addItem(PostManager.getInstance().commentOnTribute(
+//						comment, tribute));
 				Toast.makeText(getActivity(), "Comment posted",
 						Toast.LENGTH_SHORT).show();
 				commentCountView.setText(String.valueOf(Integer
@@ -429,21 +431,21 @@ public class FragmentTributeDetail extends BaseFragment implements
 				.replaceFragment(new FragmentTributes());
 		return true;
 	}
-
-	@Override
-	public void onDelete(int position, ParseObject tribute) {
-		PostManager.getInstance().deletePost(tribute);
-		if (handler != null)
-			handler.onDelete(position, tribute);
-		((HomeScreen) getActivity()).onBackPressed();
-	}
-
-	@Override
-	public void onEditClicked(int position, ParseObject post) {
-		Log.e("onEditClicked", "Done");
-		Utils.launchEditView(getActivity(), Constants.OPERATION_TRIBUTE,
-				position, post);
-	}
+//// TODO: 14-07-2017  
+//	@Override
+//	public void onDelete(int position, ParseObject tribute) {
+//		//PostManager.getInstance().deletePost(tribute);
+//		if (handler != null)
+//	//		handler.onDelete(position, tribute);
+//		((HomeScreen) getActivity()).onBackPressed();
+//	}
+//
+//	@Override
+//	public void onEditClicked(int position, ParseObject post) {
+//		Log.e("onEditClicked", "Done");
+////		Utils.launchEditView(getActivity(), Constants.OPERATION_TRIBUTE,
+////				position, post);
+//	}
 
 	@Override
 	public void onNotify(ParseObject post) {
@@ -452,23 +454,24 @@ public class FragmentTributeDetail extends BaseFragment implements
 
 	@Override
 	public void onEditDone(int position, ParseObject tribute) {
-		Log.e(FragmentTributeDetail.class.getSimpleName(), "onEditDone - "
-				+ tribute.getString(DbConstants.MESSAGE));
-		FragmentTributeDetail.tribute = tribute;
-		statusView.setText(tribute.getString(DbConstants.MESSAGE) == null ? ""
-				: tribute.getString(DbConstants.MESSAGE));
+//		Log.e(FragmentTributeDetail.class.getSimpleName(), "onEditDone - "
+//				+ tribute.getString(DbConstants.MESSAGE));
+//		FragmentTributeDetail.tribute = tribute;
+//		statusView.setText(tribute.getString(DbConstants.MESSAGE) == null ? ""
+//				: tribute.getString(DbConstants.MESSAGE));
 	}
+	//// TODO: 14-07-2017
 
-	@Override
-	public void onFlagClicked(int position, ParseObject post) {
-		if (post == null) {
-			post = tribute;
-		}
-		if (post != null) {
-			Utils.flagTribute(post);
-		}
-		Toast.makeText(getActivity(),
-				getResources().getString(R.string.tributeFlagMessage),
-				Toast.LENGTH_SHORT).show();
-	}
+//	@Override
+//	public void onFlagClicked(int position, ParseObject post) {
+////		if (post == null) {
+////			post = tribute;
+////		}
+////		if (post != null) {
+////			Utils.flagTribute(post);
+////		}
+//		Toast.makeText(getActivity(),
+//				getResources().getString(R.string.tributeFlagMessage),
+//				Toast.LENGTH_SHORT).show();
+//	}
 }

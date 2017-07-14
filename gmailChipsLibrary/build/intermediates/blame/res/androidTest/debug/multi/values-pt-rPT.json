@@ -1,5 +1,86 @@
 [
     {
+        "outputFile": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-pt-rPT\\values-pt-rPT.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 105,
+                    "endColumn": 93,
+                    "endOffset": 194
+                },
+                "from": {
+                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\debug\\res\\values-pt-rPT\\values-pt-rPT.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 105,
+                        "endColumn": 93,
+                        "endOffset": 194
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 199,
+                    "endColumn": 94,
+                    "endOffset": 289
+                },
+                "from": {
+                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\debug\\res\\values-pt-rPT\\values-pt-rPT.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 199,
+                        "endColumn": 94,
+                        "endOffset": 289
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 294,
+                    "endColumn": 69,
+                    "endOffset": 359
+                },
+                "from": {
+                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\debug\\res\\values-pt-rPT\\values-pt-rPT.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 294,
+                        "endColumn": 69,
+                        "endOffset": 359
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 364,
+                    "endColumn": 101,
+                    "endOffset": 461
+                },
+                "from": {
+                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\debug\\res\\values-pt-rPT\\values-pt-rPT.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 364,
+                        "endColumn": 101,
+                        "endOffset": 461
+                    }
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-pt-rPT\\values-pt-rPT.xml",
         "map": [
             {

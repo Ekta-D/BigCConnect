@@ -5,7 +5,6 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.bigc.datastorage.Preferences;
 import com.bigc.models.Posts;
 import com.bigc.models.Users;
 import com.google.firebase.database.DataSnapshot;
@@ -20,19 +19,32 @@ import com.parse.ParseUser;
 
 public class Queries {
 
-    public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
-            ParseUser user) {
-        List<ParseUser> users = new ArrayList<ParseUser>();
-        users.add(ParseUser.getCurrentUser());
-        users.add(user);
-        ParseQuery<ParseObject> mQuery = ParseQuery
-                .getQuery(DbConstants.TABLE_CONNECTIONS);
-        mQuery.whereContainedIn(DbConstants.TO, users);
-        mQuery.whereContainedIn(DbConstants.FROM, users);
+//    public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
+//            ParseUser user) {
+//        List<ParseUser> users = new ArrayList<ParseUser>();
+//        users.add(ParseUser.getCurrentUser());
+//        users.add(user);
+//        ParseQuery<ParseObject> mQuery = ParseQuery
+//                .getQuery(DbConstants.TABLE_CONNECTIONS);
+//        mQuery.whereContainedIn(DbConstants.TO, users);
+//        mQuery.whereContainedIn(DbConstants.FROM, users);
+//
+//        mQuery.include("User");
+//        return mQuery;
+//    }
+public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
+        ParseUser user) {
+    List<ParseUser> users = new ArrayList<ParseUser>();
+    users.add(ParseUser.getCurrentUser());
+    users.add(user);
+    ParseQuery<ParseObject> mQuery = ParseQuery
+            .getQuery(DbConstants.TABLE_CONNECTIONS);
+    mQuery.whereContainedIn(DbConstants.TO, users);
+    mQuery.whereContainedIn(DbConstants.FROM, users);
 
-        mQuery.include("User");
-        return mQuery;
-    }
+    mQuery.include("User");
+    return mQuery;
+}
 
     public static ArrayList<Users> getSearchSurvivorQuery(String keyword) {
         final ArrayList<Users> searchUsers = null;
@@ -100,11 +112,11 @@ public class Queries {
 
         return query;
     }
-
     public static ArrayList<Users> getCategorizedUsersQuery(int ribbon) {
         final ArrayList<Users> categoryUsers = null;
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-        mDatabase.child(DbConstants.USERS).startAt(DbConstants.RIBBON,String.valueOf(ribbon)).orderByChild(DbConstants.CREATED_AT).addListenerForSingleValueEvent(new ValueEventListener() {
+        mDatabase.child(DbConstants.USERS).startAt(DbConstants.RIBBON,String.valueOf(ribbon)).orderByChild(DbConstants.CREATED_AT).
+                addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if(dataSnapshot!=null && dataSnapshot.hasChildren()){
@@ -131,20 +143,17 @@ public class Queries {
 
         return categoryUsers;
     }
-
-/*
-    public static ParseQuery<ParseUser> getCategorizedUsersQuery(int ribbon) {
-        ParseQuery<ParseUser> query = ParseUser.getQuery();
-        query.whereNotEqualTo(DbConstants.TYPE,
-                Constants.USER_TYPE.SUPPORTER.ordinal());
-        query.whereEqualTo(DbConstants.RIBBON, ribbon);
-        query.whereNotEqualTo(DbConstants.VISIBILITY, Constants.PRIVATE);
-        query.orderByDescending(DbConstants.CREATED_AT);
-        query.whereNotEqualTo(DbConstants.DEACTIVATED, true);
-
-        return query;
-    }
-*/
+//    public static ParseQuery<ParseUser> getCategorizedUsersQuery(int ribbon) {
+//        ParseQuery<ParseUser> query = ParseUser.getQuery();
+//        query.whereNotEqualTo(DbConstants.TYPE,
+//                Constants.USER_TYPE.SUPPORTER.ordinal());
+//        query.whereEqualTo(DbConstants.RIBBON, ribbon);
+//        query.whereNotEqualTo(DbConstants.VISIBILITY, Constants.PRIVATE);
+//        query.orderByDescending(DbConstants.CREATED_AT);
+//        query.whereNotEqualTo(DbConstants.DEACTIVATED, true);
+//
+//        return query;
+//    }
 
     public static ParseQuery<ParseObject> getUserFeedsQuery(ParseUser user) {
         ParseQuery<ParseObject> mQuery = new ParseQuery<ParseObject>(

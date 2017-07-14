@@ -13,7 +13,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
-import com.bigc.activities.LoginActivity;
 import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.models.Feeds;
@@ -125,6 +124,4 @@ public class Preferences {
 		user.setVisibility(getInt(DbConstants.VISIBILITY));
 		return user;
 	}
-
-
 }

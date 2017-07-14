@@ -1,7 +1,6 @@
 package com.bigc.fragments;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import android.graphics.Canvas;
@@ -34,8 +33,6 @@ import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
 import com.bigc.interfaces.PopupOptionHandler;
 import com.bigc.interfaces.UploadStoryObserver;
-import com.bigc.models.Stories;
-import com.bigc.models.Users;
 import com.bigc.views.NestedListView;
 import com.bigc_connect.R;
 import com.google.android.gms.ads.AdRequest;
@@ -48,11 +45,14 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
+//public class FragmentStoryDetail extends BaseFragment implements
+//		UploadStoryObserver, PopupOptionHandler //// TODO: 14-07-2017
 public class FragmentStoryDetail extends BaseFragment implements
-		UploadStoryObserver, PopupOptionHandler {
+		UploadStoryObserver
+{
 
 	private CommentsAdapter adapter;
-	private static Stories story = null;
+	private static ParseObject story = null;
 	private static PopupOptionHandler handler = null;
 	private static int position = -1;
 
@@ -73,7 +73,7 @@ public class FragmentStoryDetail extends BaseFragment implements
 	private ImageView optionView;
 	private TextView titleView;
 
-	public FragmentStoryDetail(PopupOptionHandler handler, Stories story,
+	public FragmentStoryDetail(PopupOptionHandler handler, ParseObject story,
 			int position) {
 		FragmentStoryDetail.story = story;
 		FragmentStoryDetail.position = position;
@@ -130,9 +130,8 @@ public class FragmentStoryDetail extends BaseFragment implements
 		GoogleAnalyticsHelper.sendScreenViewGoogleAnalytics(getActivity(),
 				"Survivor Story Detail Screen");
 
-		// TODO: 7/14/2017 Set Comment adapter 
-		/*adapter = new CommentsAdapter(getActivity());
-		listView.setAdapter(adapter);*/
+		//adapter = new CommentsAdapter(getActivity());
+		//listView.setAdapter(adapter);
 
 		if (!Preferences.getInstance(getActivity()).getBoolean(
 				Constants.PREMIUM)) {
@@ -140,11 +139,9 @@ public class FragmentStoryDetail extends BaseFragment implements
 			adView.loadAd(adRequest);
 		}
 
-		Stories.User owner = story.getResults().get(0).getUser();
-
-		// TODO: 7/14/2017 get owner details from firebase
-		headingOne.setText(owner.getObjectId());
-		/*if (owner.getInt(DbConstants.TYPE) == Constants.USER_TYPE.SUPPORTER
+		ParseUser owner = story.getParseUser(DbConstants.USER);
+		headingOne.setText(owner.getString(DbConstants.NAME));
+		if (owner.getInt(DbConstants.TYPE) == Constants.USER_TYPE.SUPPORTER
 				.ordinal()) {
 			ribbonView.setImageResource(R.drawable.ribbon_supporter);
 		} else if (owner.getInt(DbConstants.TYPE) == Constants.USER_TYPE.FIGHTER
@@ -158,11 +155,11 @@ public class FragmentStoryDetail extends BaseFragment implements
 					.setImageResource(owner.getInt(DbConstants.RIBBON) < 0 ? R.drawable.ic_launcher
 							: Utils.survivor_ribbons[owner
 									.getInt(DbConstants.RIBBON)]);
-		}*/
+		}
 
-		if (story.getResults().get(0).getMedia() != null)
+		if (story.getParseFile(DbConstants.MEDIA) != null)
 			ImageLoader.getInstance().displayImage(
-					story.getResults().get(0).getMedia().getUrl(), picView,
+					story.getParseFile(DbConstants.MEDIA).getUrl(), picView,
 					Utils.normalDisplayOptions,
 					new SimpleImageLoadingListener() {
 						@Override
@@ -176,17 +173,17 @@ public class FragmentStoryDetail extends BaseFragment implements
 
 		loveCountView
 				.setText(String
-						.valueOf(story.getResults().get(0).getLikes() == null ? 0
-								: story.getResults().get(0).getLikes().size()));
+						.valueOf(story.getList(DbConstants.LIKES) == null ? 0
+								: story.getList(DbConstants.LIKES).size()));
 
 		commentCountView.setText(String.valueOf(story
-				.getResults().get(0).getComments()));
+				.getInt(DbConstants.COMMENTS)));
 
-		titleView.setText(story.getResults().get(0).getTitle() == null ? ""
-				: story.getResults().get(0).getTitle());
-		statusView.setText(story.getResults().get(0).getTitle());
+		titleView.setText(story.getString(DbConstants.TITLE) == null ? ""
+				: story.getString(DbConstants.TITLE));
+		statusView.setText(story.getString(DbConstants.MESSAGE));
 		dateView.setText(Utils.getTimeStringForFeed(getActivity(),
-				new Date(story.getResults().get(0).getCreatedAt())));
+				story.getCreatedAt()));
 
 		ribbonView.setOnClickListener(this);
 		headingOne.setOnClickListener(this);
@@ -205,8 +202,7 @@ public class FragmentStoryDetail extends BaseFragment implements
 	}
 
 	private void loadComments() {
-		// TODO: 7/14/2017  implement load comments 
-		/*ParseQuery<ParseObject> mQuery = Queries.getStoryCommentsQuery(story);
+		ParseQuery<ParseObject> mQuery = Queries.getStoryCommentsQuery(story);
 		mQuery.findInBackground(new FindCallback<ParseObject>() {
 
 			@Override
@@ -217,7 +213,7 @@ public class FragmentStoryDetail extends BaseFragment implements
 					showLoadingError();
 				}
 			}
-		});*/
+		});
 	}
 
 	private class completeCommentLoadingsTask extends
@@ -260,14 +256,13 @@ public class FragmentStoryDetail extends BaseFragment implements
 	}
 
 	private void showComments(List<ParseObject> objects) {
-		// TODO: 7/14/2017 implement show comments 
-		/*try {
+		try {
 			progressParent.setVisibility(View.GONE);
-			adapter.setData(objects);
+			//adapter.setData(objects);
 			listView.setVisibility(View.VISIBLE);
 		} catch (NullPointerException e) {
 
-		}*/
+		}
 	}
 
 	@Override
@@ -276,26 +271,26 @@ public class FragmentStoryDetail extends BaseFragment implements
 		case R.id.optionView:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
 					"Story 3-Dots Options");
-			// TODO: 7/14/2017 show quick action 
-			/*Utils.showQuickActionMenu(
-					FragmentStoryDetail.this,
-					getActivity(),
-					position,
-					story,
-					v,
-					story.getParseUser(DbConstants.USER).getObjectId()
-							.equals(ParseUser.getCurrentUser().getObjectId()),
-					DbConstants.Flags.Story);*/
+			//// TODO: 14-07-2017
+//			Utils.showQuickActionMenu(
+//					FragmentStoryDetail.this,
+//					getActivity(),
+//					position,
+//					story,
+//					v,
+//					story.getParseUser(DbConstants.USER).getObjectId()
+//							.equals(ParseUser.getCurrentUser().getObjectId()),
+//					DbConstants.Flags.Story);
 			break;
 		case R.id.newsFeedRibbonView:
 		case R.id.newsFeedHeading1:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
 					"User-Info View");
-			// TODO: 7/14/2017 Navigate when story is working 
-			/*((FragmentHolder) getActivity())
-					.replaceFragment(new ProfileFragment(
-							FragmentStoryDetail.this, story
-									.getParseUser(DbConstants.USER)));*/
+			//// TODO: 14-07-2017
+//			((FragmentHolder) getActivity())
+//					.replaceFragment(new ProfileFragment(
+//							FragmentStoryDetail.this, story
+//									.getParseUser(DbConstants.USER)));
 			break;
 		case R.id.addAStoryOptionImage:
 		case R.id.addAStoryOptionText:
@@ -305,19 +300,18 @@ public class FragmentStoryDetail extends BaseFragment implements
 			break;
 		case R.id.nameView:
 		case R.id.ribbonView:
-			// TODO: 7/14/2017 navigate when story is working 
-			/*((FragmentHolder) getActivity())
-					.replaceFragment(new ProfileFragment(
-							FragmentStoryDetail.this, story
-									.getParseUser(DbConstants.USER)));*/
+			//// TODO: 14-07-2017
+//			((FragmentHolder) getActivity())
+//					.replaceFragment(new ProfileFragment(
+//							FragmentStoryDetail.this, story
+//									.getParseUser(DbConstants.USER)));
 			break;
 		case R.id.newsFeedPicView:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
 					"Story Picture");
-			// TODO: 7/14/2017 open zoom view 
-			/*if (story.getParseFile(DbConstants.MEDIA) != null)
+			if (story.getParseFile(DbConstants.MEDIA) != null)
 				Utils.openImageZoomView(getActivity(),
-						story.getParseFile(DbConstants.MEDIA).getUrl());*/
+						story.getParseFile(DbConstants.MEDIA).getUrl());
 			break;
 		case R.id.postButton:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
@@ -329,9 +323,8 @@ public class FragmentStoryDetail extends BaseFragment implements
 				Utils.hideKeyboard(getActivity());
 				String comment = commentInputView.getText().toString();
 				commentInputView.setText("");
-				// TODO: 7/14/2017 set adapter 
-				/*adapter.addItem(PostManager.getInstance().commentOnStory(
-						comment, story));*/
+//				adapter.addItem(PostManager.getInstance().commentOnStory(
+//						comment, story));
 				Toast.makeText(getActivity(), "Comment posted",
 						Toast.LENGTH_SHORT).show();
 				commentCountView.setText(String.valueOf(Integer
@@ -342,15 +335,14 @@ public class FragmentStoryDetail extends BaseFragment implements
 		case R.id.loveImage:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
 					"Story-Love Button");
-			// TODO: 7/14/2017 check is liked 
-			/*if (!isLiked(story)) {
+			if (!isLiked(story)) {
 				loveCountView.setText(String.valueOf(story
 						.getList(DbConstants.LIKES) == null ? 1 : story
 						.getList(DbConstants.LIKES).size() + 1));
 				story.add(DbConstants.LIKES, ParseUser.getCurrentUser()
 						.getObjectId());
 				PostManager.getInstance().likeStory(story);
-			}*/
+			}
 
 		}
 	}
@@ -419,38 +411,38 @@ public class FragmentStoryDetail extends BaseFragment implements
 	@Override
 	public void onEditDone(int position, ParseObject post) {
 		Log.e(FragmentStoryDetail.class.getSimpleName(), "onEditDone");
-		// TODO: 7/14/2017 implement on edit done 
-		/*FragmentStoryDetail.story = post;
+		FragmentStoryDetail.story = post;
 		statusView.setText(story.getString(DbConstants.MESSAGE) == null ? ""
-				: story.getString(DbConstants.MESSAGE));*/
+				: story.getString(DbConstants.MESSAGE));
 	}
+	//// TODO: 14-07-2017
 
-	@Override
-	public void onFlagClicked(int position, ParseObject post) {
-		if (post == null) {
-			// TODO: 7/14/2017 post = story 
-			//post = story;
-		}
-		if (post != null) {
-			Utils.flagStory(post);
-		}
 
-		Toast.makeText(getActivity(),
-				getResources().getString(R.string.storyFlagMessage),
-				Toast.LENGTH_SHORT).show();
-	}
-
-	@Override
-	public void onDelete(int position, ParseObject story) {
-		PostManager.getInstance().deletePost(story);
-		handler.onDelete(position, story);
-		((HomeScreen) getActivity()).onBackPressed();
-	}
-
-	@Override
-	public void onEditClicked(int position, ParseObject post) {
-		Log.e("onEditClicked", "Done");
-		Utils.launchEditView(getActivity(), Constants.OPERATION_STORY,
-				position, post);
-	}
+//	@Override
+//	public void onFlagClicked(int position, ParseObject post) {
+//		if (post == null) {
+//			post = story;
+//		}
+//		if (post != null) {
+//			Utils.flagStory(post);
+//		}
+//
+//		Toast.makeText(getActivity(),
+//				getResources().getString(R.string.storyFlagMessage),
+//				Toast.LENGTH_SHORT).show();
+//	}
+//
+//	@Override
+//	public void onDelete(int position, ParseObject story) {
+//		PostManager.getInstance().deletePost(story);
+//		handler.onDelete(position, story);
+//		((HomeScreen) getActivity()).onBackPressed();
+//	}
+//
+//	@Override
+//	public void onEditClicked(int position, ParseObject post) {
+//		Log.e("onEditClicked", "Done");
+//		Utils.launchEditView(getActivity(), Constants.OPERATION_STORY,
+//				position, post);
+//	}
 }

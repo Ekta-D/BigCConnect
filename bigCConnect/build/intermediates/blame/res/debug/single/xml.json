@@ -10,5 +10,13 @@
     {
         "merged": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\xml\\searchable.xml",
         "source": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\xml\\searchable.xml"
+    },
+    {
+        "merged": "D:\\Office work\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\xml\\searchable.xml",
+        "source": "D:\\Office work\\BigCConnect\\bigCConnect\\src\\main\\res\\xml\\searchable.xml"
+    },
+    {
+        "merged": "D:\\Office work\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\xml\\provider_paths.xml",
+        "source": "D:\\Office work\\BigCConnect\\bigCConnect\\src\\main\\res\\xml\\provider_paths.xml"
     }
 ]

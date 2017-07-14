@@ -1,5 +1,86 @@
 [
     {
+        "outputFile": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-fi\\values-fi.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 105,
+                    "endColumn": 92,
+                    "endOffset": 193
+                },
+                "from": {
+                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\debug\\res\\values-fi\\values-fi.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 105,
+                        "endColumn": 92,
+                        "endOffset": 193
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 198,
+                    "endColumn": 89,
+                    "endOffset": 283
+                },
+                "from": {
+                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\debug\\res\\values-fi\\values-fi.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 198,
+                        "endColumn": 89,
+                        "endOffset": 283
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 288,
+                    "endColumn": 68,
+                    "endOffset": 352
+                },
+                "from": {
+                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\debug\\res\\values-fi\\values-fi.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 288,
+                        "endColumn": 68,
+                        "endOffset": 352
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 357,
+                    "endColumn": 104,
+                    "endOffset": 457
+                },
+                "from": {
+                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\debug\\res\\values-fi\\values-fi.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 357,
+                        "endColumn": 104,
+                        "endOffset": 457
+                    }
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-fi\\values-fi.xml",
         "map": [
             {
