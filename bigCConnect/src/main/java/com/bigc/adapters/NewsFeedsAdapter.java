@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.bigc.activities.HomeScreen;
 import com.bigc.datastorage.Preferences;
+import com.bigc.fragments.NewsFeedFragment;
 import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.PostManager;
@@ -42,10 +43,12 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import eu.janmuller.android.simplecropimage.Util;
+
 /**
  * Created by ENTER on 11-07-2017.
  */
-public class NewsFeedsAdapter extends BaseAdapter  {
+public class NewsFeedsAdapter extends BaseAdapter {
 
     DatabaseReference databaseReference;
     FirebaseAuth firebaseAuth;
@@ -265,21 +268,25 @@ public class NewsFeedsAdapter extends BaseAdapter  {
                 boolean isOwner = posts.get(position).getUser().equalsIgnoreCase
                         (Preferences.getInstance(context.getActivity()).getString(DbConstants.ID));
                 Utils.showQuickActionMenu(
-                        handler=new PopupOptionHandler() {
+                        handler = new PopupOptionHandler() {
                             @Override
                             public void onDelete(int position, Posts post) {
                                 PostManager.getInstance().deletePost(post);
-                                if (handler != null)
-                                    handler.onDelete(position, post);
-                                ((HomeScreen) context.getActivity()).onBackPressed();
+//                                if (handler != null)
+//                                    handler.onDelete(position, post);
+//                                ((HomeScreen) context.getActivity()).onBackPressed();
+                                posts.remove(position);
+                                Log.i("posts", posts.toString());
+                                notifyDataSetChanged();
                             }
 
                             @Override
                             public void onEditClicked(int position, Posts post) {
+                                NewsFeedFragment.currentObject = post;
                                 Utils.launchEditView(
                                         context.getActivity(),
                                         post.getMedia() == null ? Constants.OPERATION_STATUS
-                                                : Constants.OPERATION_PHOTO, position, post);
+                                                : Constants.OPERATION_PHOTO, true, position, post);
                             }
 
                             @Override
@@ -319,7 +326,8 @@ public class NewsFeedsAdapter extends BaseAdapter  {
         holder.statusView.setText(posts.getMessage());
         holder.loveCountView.setText(String.valueOf(0));
 //        holder.commentCountView.setText(String.valueOf(posts.getComments()));
-        holder.commentCountView.setText(String.valueOf(Preferences.getInstance(context.getActivity()).getInt(DbConstants.COMMENT_COUNT)));
+        holder.commentCountView.setText(String.valueOf(posts.getComments()));
+        // holder.commentCountView.setText(String.valueOf(Preferences.getInstance(context.getActivity()).getInt(DbConstants.COMMENT_COUNT)));
         if (posts.getMedia().equalsIgnoreCase("") || posts.getMedia().equals(null)) {
             holder.picView.setVisibility(View.GONE);
         } else {
@@ -337,21 +345,21 @@ public class NewsFeedsAdapter extends BaseAdapter  {
             imageLoader.displayImage(posts.getMedia(), holder.picView, imgDisplayOptions);
         }
 
-        String date = posts.getCreatedAt();
-        SimpleDateFormat format = new SimpleDateFormat(DbConstants.DATE_FORMAT, Locale.getDefault());
-        Date createdDate = null;
-
-        try {
-            if (date.contains("T") && date.contains("Z")) {
-                date.replace("T", "");
-                date.replace("Z", "");
-            }
-            createdDate = format.parse(date);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+//        String date = posts.getCreatedAt();
+//        SimpleDateFormat format = new SimpleDateFormat(DbConstants.DATE_FORMAT, Locale.getDefault());
+//        Date createdDate = null;
+//
+//        try {
+//            if (date.contains("T") && date.contains("Z")) {
+//                date.replace("T", "");
+//                date.replace("Z", "");
+//            }
+//            createdDate = format.parse(date);
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
         holder.dateView.setText(Utils.getTimeStringForFeed(
-                context.getActivity(), createdDate));
+                context.getActivity(), Utils.convertStringToDate(posts.getCreatedAt())));
 
         holder.loveCountView.setOnClickListener(new View.OnClickListener() {
 

@@ -43,8 +43,10 @@ import com.bigc.datastorage.Preferences;
 import com.bigc.emailer.EmailComposer;
 import com.bigc.gallery.CustomGalleryActivity;
 import com.bigc.interfaces.PopupOptionHandler;
+import com.bigc.interfaces.StoryPopupOptionHandler;
 import com.bigc.models.ConnectionsModel;
 import com.bigc.models.Posts;
+import com.bigc.models.Stories;
 import com.bigc.models.Users;
 import com.bigc.views.PopupHelper;
 import com.bigc.views.ProgressDialogue;
@@ -83,6 +85,7 @@ import java.util.Date;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -319,7 +322,7 @@ public class Utils {
     private static void updateConnectionTable(List<ConnectionsModel> newConnectionObjects) {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
-        for(ConnectionsModel connectionReq : newConnectionObjects){
+        for (ConnectionsModel connectionReq : newConnectionObjects) {
             Map<String, Object> objectMap = new HashMap<>();
             objectMap.put("objectId", user.getUid());
             databaseReference.child(DbConstants.CONNECTIONS).setValue(connectionReq, new DatabaseReference.CompletionListener() {
@@ -330,6 +333,7 @@ public class Utils {
             });
         }
     }
+
     private static class saveConnectionTask extends
             AsyncTask<Void, Void, Boolean> {
 
@@ -398,7 +402,7 @@ public class Utils {
         // TODO: 7/13/2017 remove for both from and to requests
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
-        for(ConnectionsModel connectionReq : removeConnectionObjects){
+        for (ConnectionsModel connectionReq : removeConnectionObjects) {
             Map<String, Object> objectMap = new HashMap<>();
             objectMap.put("objectId", user.getUid());
             databaseReference.child(DbConstants.CONNECTIONS).setValue(connectionReq, new DatabaseReference.CompletionListener() {
@@ -763,10 +767,81 @@ public class Utils {
         }
     }
 
+    public static void storyQuickActionMenu(final StoryPopupOptionHandler handler,
+                                            final Activity activity, final int pos, final Stories story,
+                                            View v, boolean isOwner, final DbConstants.Flags flag) {
+
+        // This is just a view with buttons that act as a menu.
+        View popupView = ((LayoutInflater) activity
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(
+                R.layout.layout_popup, null);
+
+        if (isOwner) {
+            popupView.findViewById(R.id.editOption).setVisibility(View.VISIBLE);
+            popupView.findViewById(R.id.editOptionShadow).setVisibility(
+                    View.VISIBLE);
+            popupView.findViewById(R.id.deleteOption).setVisibility(
+                    View.VISIBLE);
+            popupView.findViewById(R.id.deleteOptionShadow).setVisibility(
+                    View.VISIBLE);
+        }
+        final PopupWindow window = PopupHelper.newBasicPopupWindow(activity);
+        window.setContentView(popupView);
+
+        popupView.findViewById(R.id.editOption).setOnClickListener(
+                new OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        window.dismiss();
+                        GoogleAnalyticsHelper.setClickedAction(activity,
+                                "3-Dots Edit Button");
+                        handler.onEditClicked(pos, story);
+                    }
+                });
+
+        popupView.findViewById(R.id.deleteOption).setOnClickListener(
+                new OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        window.dismiss();
+                        GoogleAnalyticsHelper.setClickedAction(activity,
+                                "3-Dots Delete Button");
+                        storyDeleteConfirmationDialog(handler, activity, pos,
+                                story, flag);
+                    }
+                });
+
+        popupView.findViewById(R.id.flagOption).setOnClickListener(
+                new OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        GoogleAnalyticsHelper.setClickedAction(activity,
+                                "3-Dots FlagsAsInappropriate Option");
+                        window.dismiss();
+                    }
+                });
+
+        DisplayMetrics displaymetrics = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay()
+                .getMetrics(displaymetrics);
+        int[] location = new int[2];
+        v.getLocationOnScreen(location);
+
+        if (location[1] < (displaymetrics.heightPixels / 2.0)) {
+            PopupHelper.showLikeQuickAction(window, popupView, v,
+                    displaymetrics, 0, 0, PopupHelper.UPPER_HALF);
+        } else {
+            PopupHelper.showLikeQuickAction(window, popupView, v,
+                    displaymetrics, 0, 0, PopupHelper.LOWER_HALF);
+        }
+    }
+
     public static void showQuickActionMenu(final PopupOptionHandler handler,
                                            final Activity activity, final int pos, final Posts post,
                                            View v, boolean isOwner, final DbConstants.Flags flag)
-
     {
 
         // This is just a view with buttons that act as a menu.
@@ -836,6 +911,39 @@ public class Utils {
                     displaymetrics, 0, 0, PopupHelper.LOWER_HALF);
         }
     }
+
+    private static void storyDeleteConfirmationDialog(final StoryPopupOptionHandler handler, Activity activity,
+                                                      final int position, final Stories post, DbConstants.Flags flag) {
+        int title;
+        int message;
+        if (flag == DbConstants.Flags.Story) {
+            title = R.string.deleteStory;
+            message = R.string.deleteStoryMessage;
+            new AlertDialog.Builder(activity)
+                    .setTitle(title)
+                    .setMessage(message)
+                    .setPositiveButton(R.string.delete,
+                            new DialogInterface.OnClickListener() {
+
+                                @Override
+                                public void onClick(DialogInterface dialog,
+                                                    int which) {
+                                    dialog.dismiss();
+                                    handler.onDelete(position, post);
+                                }
+                            })
+                    .setNegativeButton(R.string.cancel,
+                            new DialogInterface.OnClickListener() {
+
+                                @Override
+                                public void onClick(DialogInterface dialog,
+                                                    int which) {
+                                    dialog.dismiss();
+                                }
+                            }).create().show();
+        }
+    }
+
     private static void showDeleteConfirmationDialog(
             final PopupOptionHandler handler, Activity activity,
             final int position, final Posts post, DbConstants.Flags flag) {
@@ -883,9 +991,36 @@ public class Utils {
         activity.overridePendingTransition(R.anim.pull_up, R.anim.remains_same);
     }
 
-    public static void launchEditView(Activity activity, int operation,
+    public static void updatePost(Posts post) {
+
+        Map<String, Object> updated_post = new HashMap<>();
+        updated_post.put(DbConstants.CREATED_AT, post.getCreatedAt());
+        updated_post.put(DbConstants.UPDATED_AT, post.getUpdatedAt());
+        updated_post.put(DbConstants.MEDIA, post.getMedia());
+        updated_post.put(DbConstants.LIKES, post.getLikes());
+        updated_post.put(DbConstants.COMMENTS, post.getComments());
+        updated_post.put(DbConstants.USER, post.getUser());
+        updated_post.put(DbConstants.ID, post.getObjectId());
+        updated_post.put(DbConstants.MESSAGE, post.getMessage());
+
+        FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_POST).
+                child(post.getObjectId()).updateChildren(updated_post);
+    }
+
+
+    public static void launchEditView(Activity activity, int operation, boolean fromNewsfeeds,
                                       int position, Posts post) {
-        PostActivity.setCurrentObject(position, post);
+        PostActivity.setCurrentObject(position, post,null);
+        Intent i = new Intent(activity, PostActivity.class);
+        i.putExtra(Constants.OPERATION, operation);
+        i.putExtra(Constants.EDIT_MODE, true);
+        i.putExtra(Constants.FROM_NEWSFEEDS, fromNewsfeeds);
+        activity.startActivity(i);
+    }
+
+    public static void launchStoryEditView(Activity activity, int operation,
+                                           int position, Stories story) {
+        PostActivity.setCurrentObject(position, null,story);
         Intent i = new Intent(activity, PostActivity.class);
         i.putExtra(Constants.OPERATION, operation);
         i.putExtra(Constants.EDIT_MODE, true);
@@ -1006,12 +1141,30 @@ public class Utils {
 
         return -1;
     }
-    public static String getCurrentDate()
-    {
+
+    public static String getCurrentDate() {
         SimpleDateFormat format = new SimpleDateFormat(DbConstants.DATE_FORMAT);
         String date = format.format(new Date(System.currentTimeMillis()));
         return date;
     }
+
+    public static Date convertStringToDate(String string_date) {
+
+        SimpleDateFormat format = new SimpleDateFormat(DbConstants.DATE_FORMAT, Locale.getDefault());
+        Date createdDate = null;
+
+        try {
+            if (string_date.contains("T") && string_date.contains("Z")) {
+                string_date.replace("T", "");
+                string_date.replace("Z", "");
+            }
+            createdDate = format.parse(string_date);
+        } catch (java.text.ParseException e) {
+            e.printStackTrace();
+        }
+        return createdDate;
+    }
+
     public static void refreshLoggedInUser() {
         ParseUser.getCurrentUser().fetchInBackground(
                 new GetCallback<ParseUser>() {

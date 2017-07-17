@@ -890,6 +890,7 @@ org/codehaus/jackson/map/deser/std/StdDeserializer$ShortDeserializer.class
 android/support/v4/media/MediaBrowserCompat$MediaBrowserImplApi21.class
 com/mopub/network/RequestManager.class
 android/support/v4/content/PermissionChecker$PermissionResult.class
+com/bigc/models/Stories.class
 com/parse/PushService$3.class
 com/google/firebase/database/ThrowOnExtraProperties.class
 roboguice/util/temp/Ln$BaseConfig.class
@@ -1480,6 +1481,7 @@ android/support/v7/widget/RecyclerView$ChildDrawingOrderCallback.class
 com/google/android/gms/appinvite/PreviewActivity.class
 com/google/android/gms/internal/zzks.class
 org/codehaus/jackson/map/MapperConfig$Impl.class
+com/bigc/activities/PostActivity$7.class
 com/google/android/gms/internal/zzij.class
 android/support/v4/view/AbsSavedState.class
 com/google/android/gms/auth/api/signin/internal/zzf$zza.class
@@ -1539,6 +1541,7 @@ com/fasterxml/jackson/annotation/JsonIgnoreProperties.class
 android/support/v4/app/Fragment.class
 org/codehaus/jackson/map/jsontype/impl/TypeDeserializerBase.class
 android/support/v4/view/ViewPager.class
+com/bigc/activities/PostActivity$6.class
 com/mopub/mobileads/VastWebView.class
 com/google/android/gms/appinvite/PreviewActivity$1.class
 com/bigc/activities/HomeScreen$9.class

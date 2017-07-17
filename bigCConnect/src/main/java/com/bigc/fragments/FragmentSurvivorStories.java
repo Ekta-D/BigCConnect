@@ -28,12 +28,18 @@ import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
 import com.bigc.interfaces.PopupOptionHandler;
+import com.bigc.interfaces.StoryPopupOptionHandler;
 import com.bigc.interfaces.UploadStoryObserver;
+import com.bigc.models.Stories;
 import com.bigc_connect.R;
 import com.costum.android.widget.LoadMoreListView;
 import com.costum.android.widget.LoadMoreListView.OnLoadMoreListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -42,323 +48,403 @@ import com.parse.ParseQuery;
 //public class FragmentSurvivorStories extends BaseFragment implements
 //		OnLoadMoreListener, UploadStoryObserver, PopupOptionHandler //// TODO: 14-07-2017  
 public class FragmentSurvivorStories extends BaseFragment implements
-		OnLoadMoreListener, UploadStoryObserver
+        OnLoadMoreListener, UploadStoryObserver, StoryPopupOptionHandler
 
 {
 
-	private LoadMoreListView listView;
-	private StoriesAdapter adapter;
-	private AdView adView;
-	private TextView messageView;
-	private LinearLayout progressParent;
-	private ProgressBar progressView;
+    private LoadMoreListView listView;
+    private StoriesAdapter adapter;
+    private AdView adView;
+    private TextView messageView;
+    private LinearLayout progressParent;
+    private ProgressBar progressView;
 
-	private List<ParseObject> stories = new ArrayList<ParseObject>();
+    //private List<ParseObject> stories = new ArrayList<ParseObject>();
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-	}
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
-		View view = inflater.inflate(R.layout.fragment_stories_layout,
-				container, false);
+        View view = inflater.inflate(R.layout.fragment_stories_layout,
+                container, false);
 
-		listView = (LoadMoreListView) view.findViewById(R.id.listview);
-		adView = (AdView) view.findViewById(R.id.adView);
-		messageView = (TextView) view.findViewById(R.id.messageView);
-		progressView = (ProgressBar) view.findViewById(R.id.progressView);
-		progressParent = (LinearLayout) view
-				.findViewById(R.id.messageViewParent);
+        listView = (LoadMoreListView) view.findViewById(R.id.listview);
+        adView = (AdView) view.findViewById(R.id.adView);
+        messageView = (TextView) view.findViewById(R.id.messageView);
+        progressView = (ProgressBar) view.findViewById(R.id.progressView);
+        progressParent = (LinearLayout) view
+                .findViewById(R.id.messageViewParent);
 
-		view.findViewById(R.id.addAStoryOptionImage).setOnClickListener(this);
-		view.findViewById(R.id.addAStoryOptionText).setOnClickListener(this);
-		adapter = new StoriesAdapter(this, stories);
-		return view;
-	}
+        view.findViewById(R.id.addAStoryOptionImage).setOnClickListener(this);
+        view.findViewById(R.id.addAStoryOptionText).setOnClickListener(this);
+        //	adapter = new StoriesAdapter(this, stories);
+        return view;
+    }
 
-	@Override
-	public void onViewCreated(View view, Bundle savedInstanceState) {
-		super.onViewCreated(view, savedInstanceState);
-		GoogleAnalyticsHelper.sendScreenViewGoogleAnalytics(getActivity(),
-				"Survivor Stories Screen");
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        GoogleAnalyticsHelper.sendScreenViewGoogleAnalytics(getActivity(),
+                "Survivor Stories Screen");
 
-		if (!Preferences.getInstance(getActivity()).getBoolean(
-				Constants.PREMIUM)) {
-			AdRequest adRequest = new AdRequest.Builder().build();
-			adView.loadAd(adRequest);
-		}
+        if (!Preferences.getInstance(getActivity()).getBoolean(
+                Constants.PREMIUM)) {
+            AdRequest adRequest = new AdRequest.Builder().build();
+            adView.loadAd(adRequest);
+        }
 
-		// listView.setOnRefreshListener(this);
-		listView.setOnLoadMoreListener(this);
+        // listView.setOnRefreshListener(this);
+//		listView.setOnLoadMoreListener(this);
+//
+        listView.setOnItemClickListener(new OnItemClickListener() {
 
-		listView.setOnItemClickListener(new OnItemClickListener() {
-
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				//// TODO: 14-07-2017  
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                //// TODO: 14-07-2017
 //				((FragmentHolder) getActivity())
 //						.replaceFragment(new FragmentStoryDetail(
 //								FragmentSurvivorStories.this, adapter
 //										.getItem(position), position));
-			}
-		});
 
-		listView.setAdapter(adapter);
-		if (stories.size() == 0) {
-			startProgress();
-			loadData(true);
-		} else {
-			adapter.notifyDataSetChanged();
-		}
-	}
+                ((FragmentHolder) getActivity()).replaceFragment(new
+                        FragmentStoryDetail(FragmentSurvivorStories.this,
+                        adapter.getItem(position), position));
 
-	@Override
-	public void onResume() {
-		super.onResume();
-		if (Preferences.getInstance(getActivity())
-				.getBoolean(Constants.PREMIUM)) {
-			adView.setVisibility(View.GONE);
-		}
-	}
+            }
+        });
 
-	@Override
-	public void onLoadMore() {
+//		listView.setAdapter(adapter);
+//		if (stories.size() == 0) {
+//			startProgress();
+//			loadData(true);
+//		} else {
+//			adapter.notifyDataSetChanged();
+//		}
 
-		loadStories(adapter.getLastItemDate(), false);
-	}
+        loadData(true);
+    }
 
-	private void loadData(final boolean fromCache) {
+    @Override
+    public void onResume() {
+        super.onResume();
 
-		ParseQuery<ParseObject> query = Queries.getStoriesQuery(fromCache);
+        if (Preferences.getInstance(getActivity())
+                .getBoolean(Constants.PREMIUM)) {
+            adView.setVisibility(View.GONE);
+        }
 
-		query.findInBackground(new FindCallback<ParseObject>() {
+        loadData(true);
+        if (adapter != null) {
+            adapter.notifyDataSetChanged();
+        }
+    }
 
-			@Override
-			public void done(final List<ParseObject> stories, ParseException e) {
+    @Override
+    public void onLoadMore() {
 
-				if (e == null) {
+        // loadStories(adapter.getLastItemDate(), false);
+    }
 
-					if (stories.size() == 0 && fromCache) {
-						loadData(false);
-						return;
-					}
+    ArrayList<Stories> stories_list;
 
-					new completePostLoadingsTask(stories, false, false)
-							.execute();
+    private void loadData(final boolean fromCache) {
 
-				} else {
-					if (!fromCache) {
-						if (listView != null) {
-							// listView.onRefreshComplete();
-							if (e.getCode() == ParseException.CONNECTION_FAILED) {
-								populateList(null);
-							} else {
-								populateList(new ArrayList<ParseObject>());
-							}
-						}
-					} else {
-						populateList(null);
-					}
-				}
+        //ParseQuery<ParseObject> query = Queries.getStoriesQuery(fromCache);
 
-			}
-		});
-	}
+//		query.findInBackground(new FindCallback<ParseObject>() {
+//
+//			@Override
+//			public void done(final List<ParseObject> stories, ParseException e) {
+//
+//				if (e == null) {
+//
+//					if (stories.size() == 0 && fromCache) {
+//						loadData(false);
+//						return;
+//					}
+//// TODO: 17-07-2017
+////					new completePostLoadingsTask(stories, false, false)
+////							.execute();
+//
+//				} else {
+//					if (!fromCache) {
+//						if (listView != null) {
+//							// listView.onRefreshComplete();
+//							if (e.getCode() == ParseException.CONNECTION_FAILED) {
+//								populateList(null);
+//							} else {
+//								populateList(new ArrayList<ParseObject>());
+//							}
+//						}
+//					} else {
+//						populateList(null);
+//					}
+//				}
+//
+//			}
+//		});
 
-	private class completePostLoadingsTask extends
-			AsyncTask<Void, Void, List<ParseObject>> {
 
-		List<ParseObject> stories;
-		boolean isMoreLoading;
-		boolean isRecent;
+        Query query = Queries.getStoriesQuery(fromCache);
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                long story_count = dataSnapshot.getChildrenCount();
 
-		public completePostLoadingsTask(List<ParseObject> objects,
-				boolean isMoreLoading, boolean isRecent) {
-			this.stories = new ArrayList<ParseObject>();
-			if (objects != null)
-				this.stories.addAll(objects);
+                stories_list = new ArrayList<Stories>();
+                for (DataSnapshot data : dataSnapshot.getChildren()) {
+                    String key = data.getKey();
+                    Stories stories = data.getValue(Stories.class);
+                    stories_list.add(stories);
+                }
+                populateList(stories_list);
+            }
 
-			this.isMoreLoading = isMoreLoading;
-			this.isRecent = isRecent;
-		}
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
 
-		@Override
-		public List<ParseObject> doInBackground(Void... params) {
-			try {
-				ParseObject.unpinAll(Constants.TAG_STORIES, stories);
-				for (ParseObject p : stories)
-					p.getParseUser(DbConstants.USER).fetchIfNeeded();
-				ParseObject.pinAll(Constants.TAG_STORIES, stories);
-				return stories;
-			} catch (ParseException e2) {
-				e2.printStackTrace();
-				return null;
-			}
-		}
+            }
+        });
+    }
+    //// TODO: 17-07-2017
 
-		@Override
-		public void onPostExecute(List<ParseObject> stories) {
-			if (isMoreLoading) {
-				Log.e("new stories", stories.size() + "--");
-				adapter.addItems(stories, isRecent);
-				if (!isRecent)
-					listView.onLoadMoreComplete();
-			} else {
-				populateList(stories);
-			}
-		}
-	}
+//	private class completePostLoadingsTask extends
+//			AsyncTask<Void, Void, List<ParseObject>> {
+//
+//		List<ParseObject> stories;
+//		boolean isMoreLoading;
+//		boolean isRecent;
+//
+//		public completePostLoadingsTask(List<ParseObject> objects,
+//				boolean isMoreLoading, boolean isRecent) {
+//			this.stories = new ArrayList<ParseObject>();
+//			if (objects != null)
+//				this.stories.addAll(objects);
+//
+//			this.isMoreLoading = isMoreLoading;
+//			this.isRecent = isRecent;
+//		}
+//
+//		@Override
+//		public List<ParseObject> doInBackground(Void... params) {
+//			try {
+//				ParseObject.unpinAll(Constants.TAG_STORIES, stories);
+//				for (ParseObject p : stories)
+//					p.getParseUser(DbConstants.USER).fetchIfNeeded();
+//				ParseObject.pinAll(Constants.TAG_STORIES, stories);
+//				return stories;
+//			} catch (ParseException e2) {
+//				e2.printStackTrace();
+//				return null;
+//			}
+//		}
+//
+//		@Override
+//		public void onPostExecute(List<ParseObject> stories) {
+//			if (isMoreLoading) {
+//				Log.e("new stories", stories.size() + "--");
+//				adapter.addItems(stories, isRecent);
+//				if (!isRecent)
+//					listView.onLoadMoreComplete();
+//			} else {
+//				populateList(stories);
+//			}
+//		}
+//	}
 
-	private void populateList(List<ParseObject> stories) {
+    private void populateList(List<Stories> stories) {
 
-		this.stories.clear();
-		if (listView != null) {
-			if (stories == null) {
-				showError(Utils.loadString(getActivity(),
-						R.string.networkFailureMessage));
-			} else if (stories.size() == 0) {
-				showError(Utils.loadString(getActivity(),
-						R.string.noStoriesMessage));
-			} else {
-				adapter.setData(stories);
-				listView.setVisibility(View.VISIBLE);
-				progressParent.setVisibility(View.GONE);
-				this.stories.addAll(stories);
-			}
-			// listView.onRefreshComplete();
-		}
-	}
+        //this.stories.clear();
+        if (listView != null) {
+            if (stories == null) {
+                showError(Utils.loadString(getActivity(),
+                        R.string.networkFailureMessage));
+            } else if (stories.size() == 0) {
+                showError(Utils.loadString(getActivity(),
+                        R.string.noStoriesMessage));
+            } else {
+                // TODO: 17-07-2017
+//				adapter.setData(stories);
+//				listView.setVisibility(View.VISIBLE);
+//				progressParent.setVisibility(View.GONE);
+//				this.stories.addAll(stories);
+                adapter = new StoriesAdapter(FragmentSurvivorStories.this, stories);
+                listView.setVisibility(View.VISIBLE);
+                listView.setAdapter(adapter);
+                progressParent.setVisibility(View.GONE);
 
-	private void startProgress() {
-		try {
-			messageView.setText(R.string.loadingStories);
-			progressParent.setVisibility(View.VISIBLE);
-			listView.setVisibility(View.GONE);
-		} catch (NullPointerException e) {
-			e.printStackTrace();
-		}
-	}
+            }
+            // listView.onRefreshComplete();
+        }
+    }
+//	private void populateList(List<ParseObject> stories) {
+//
+//		//this.stories.clear();
+//		if (listView != null) {
+//			if (stories == null) {
+//				showError(Utils.loadString(getActivity(),
+//						R.string.networkFailureMessage));
+//			} else if (stories.size() == 0) {
+//				showError(Utils.loadString(getActivity(),
+//						R.string.noStoriesMessage));
+//			} else {
+//				// TODO: 17-07-2017
+////				adapter.setData(stories);
+////				listView.setVisibility(View.VISIBLE);
+////				progressParent.setVisibility(View.GONE);
+////				this.stories.addAll(stories);
+//			}
+//			 listView.onRefreshComplete();
+//		}
+//	}
 
-	private void showError(String message) {
-		listView.setVisibility(View.GONE);
-		progressParent.setVisibility(View.VISIBLE);
-		progressView.setVisibility(View.GONE);
-		messageView.setText(message);
-	}
+    private void startProgress() {
+        try {
+            messageView.setText(R.string.loadingStories);
+            progressParent.setVisibility(View.VISIBLE);
+            listView.setVisibility(View.GONE);
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+    }
 
-	@Override
-	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.addAStoryOptionImage:
-		case R.id.addAStoryOptionText:
-			GoogleAnalyticsHelper.setClickedAction(getActivity(),
-					"Add A Story Button");
-			Utils.launchPostView(getActivity(), Constants.OPERATION_STORY);
-			break;
-		}
-	}
+    private void showError(String message) {
+        listView.setVisibility(View.GONE);
+        progressParent.setVisibility(View.VISIBLE);
+        progressView.setVisibility(View.GONE);
+        messageView.setText(message);
+    }
 
-	public void onStart() {
-		super.onStart();
-		PostManager.getInstance().addObserver(this);
-	}
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.addAStoryOptionImage:
+            case R.id.addAStoryOptionText:
+                GoogleAnalyticsHelper.setClickedAction(getActivity(),
+                        "Add A Story Button");
+                Utils.launchPostView(getActivity(), Constants.OPERATION_STORY);
+                break;
+        }
+    }
 
-	@Override
-	public void onDestroy() {
-		PostManager.getInstance().removeStoryObserver();
-		super.onDestroy();
-	}
+    public void onStart() {
+        super.onStart();
+        PostManager.getInstance().addObserver(this);
+    }
 
-	@Override
-	public String getName() {
-		return Constants.FRAGMENT_STORIES;
-	}
+    @Override
+    public void onDestroy() {
+        PostManager.getInstance().removeStoryObserver();
+        super.onDestroy();
+    }
 
-	@Override
-	public int getTab() {
-		return 0;
-	}
+    @Override
+    public String getName() {
+        return Constants.FRAGMENT_STORIES;
+    }
 
-	private void loadStories(Date from, final boolean recent) {
-		ParseQuery<ParseObject> query = Queries.getStoriesQuery(false);
+    @Override
+    public int getTab() {
+        return 0;
+    }
 
-		if (recent)
-			query.whereGreaterThan(DbConstants.CREATED_AT, from);
-		else
-			query.whereLessThan(DbConstants.CREATED_AT, from);
+//    private void loadStories(Date from, final boolean recent) {
+//        ParseQuery<ParseObject> query = Queries.getStoriesQuery(false);
+//
+//        if (recent)
+//            query.whereGreaterThan(DbConstants.CREATED_AT, from);
+//        else
+//            query.whereLessThan(DbConstants.CREATED_AT, from);
+//
+//        query.findInBackground(new FindCallback<ParseObject>() {
+//
+//            @Override
+//            public void done(final List<ParseObject> stories, ParseException e) {
+//
+//                if (e == null) {
+//// TODO: 17-07-2017
+////					new completePostLoadingsTask(stories, true, recent)
+////							.execute();
+//                } else {
+//                    listView.onLoadMoreComplete();
+//                }
+//
+//            }
+//        });
+//
+//    }
 
-		query.findInBackground(new FindCallback<ParseObject>() {
+    @Override
+    public void onNotify(final ParseObject story) {
+        Log.e(FragmentSurvivorStories.class.getSimpleName(), "onNotify");
+        if (story == null) {
+            Toast.makeText(getActivity(), "Publish story is failed, try again",
+                    Toast.LENGTH_LONG).show();
+            return;
+        }
 
-			@Override
-			public void done(final List<ParseObject> stories, ParseException e) {
+        try {
+            story.getParseUser(DbConstants.USER).fetchIfNeeded();
+            story.pin(Constants.TAG_STORIES);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
-				if (e == null) {
+//        if (stories != null)
+//            stories.add(0, story);
 
-					new completePostLoadingsTask(stories, true, recent)
-							.execute();
-				} else {
-					listView.onLoadMoreComplete();
-				}
+        if (listView == null)
+            return;
 
-			}
-		});
+        getActivity().runOnUiThread(new Runnable() {
 
-	}
+            @Override
+            public void run() {
+                try {
+                    // TODO: 17-07-2017
+                    //	adapter.addItem(story);
+                    if (listView.getVisibility() == View.GONE) {
+                        listView.setVisibility(View.VISIBLE);
+                        progressParent.setVisibility(View.GONE);
+                    }
+                } catch (NullPointerException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
 
-	@Override
-	public void onNotify(final ParseObject story) {
-		Log.e(FragmentSurvivorStories.class.getSimpleName(), "onNotify");
-		if (story == null) {
-			Toast.makeText(getActivity(), "Publish story is failed, try again",
-					Toast.LENGTH_LONG).show();
-			return;
-		}
+    @Override
+    public boolean onBackPressed() {
+        ((FragmentHolder) getActivity()).replaceFragment(new ExploreFragment());
+        return true;
+    }
 
-		try {
-			story.getParseUser(DbConstants.USER).fetchIfNeeded();
-			story.pin(Constants.TAG_STORIES);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
+    @Override
+    public void onEditDone(int position, ParseObject post) {
+        Log.e(FragmentSurvivorStories.class.getSimpleName(), "onEditDone");
+    }
 
-		if (stories != null)
-			stories.add(0, story);
+    @Override
+    public void onDelete(int position, Stories story) {
 
-		if (listView == null)
-			return;
+    }
 
-		getActivity().runOnUiThread(new Runnable() {
+    @Override
+    public void onEditClicked(int position, Stories story) {
 
-			@Override
-			public void run() {
-				try {
-					adapter.addItem(story);
-					if (listView.getVisibility() == View.GONE) {
-						listView.setVisibility(View.VISIBLE);
-						progressParent.setVisibility(View.GONE);
-					}
-				} catch (NullPointerException e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+    }
 
-	@Override
-	public boolean onBackPressed() {
-		((FragmentHolder) getActivity()).replaceFragment(new ExploreFragment());
-		return true;
-	}
+    @Override
+    public void onFlagClicked(int position, Stories story) {
 
-	@Override
-	public void onEditDone(int position, ParseObject post) {
-		Log.e(FragmentSurvivorStories.class.getSimpleName(), "onEditDone");
-	}
+    }
 //// TODO: 14-07-2017
 //	@Override
 //	public void onDelete(int position, ParseObject post) {

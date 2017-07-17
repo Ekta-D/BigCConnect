@@ -448,7 +448,7 @@ public class SettingsFragment extends BaseFragment {
                 if (resCode == Activity.RESULT_OK) {
                     Toast.makeText(getActivity(), "Applying your new settings",
                             Toast.LENGTH_LONG).show();
-                    Utils.showProgress(getActivity());
+//                    Utils.showProgress(getActivity());
 //                    ParseUser.getCurrentUser().saveInBackground(new SaveCallback() {
 //
 //                        @Override

@@ -5,7 +5,12 @@ public class Constants {
     public static enum USER_TYPE {
         SURVIVOR, SUPPORTER, FIGHTER
     }
-public static final String FIREBASE_STRAGE_URL="gs://bigc-e2fb5.appspot.com";
+
+    public static final int IS_SURVIVO = 0;
+    public static final int IS_SUPPORTER = 1;
+    public static final int IS_FIGHTER = 2;
+
+    public static final String FIREBASE_STRAGE_URL = "gs://bigc-e2fb5.appspot.com";
     public static final String CURRENT_USERID = "Current_user_id";
     public static final String ISFIRST_TIME = "Isfirst_time";
     public static final String YOUTUBE_DEVELOPER_KEY = "AIzaSyBV2lb1moknZjNmJPtXFznF9OLOQ7mKU_8"; // Test:
@@ -102,6 +107,7 @@ public static final String FIREBASE_STRAGE_URL="gs://bigc-e2fb5.appspot.com";
     public static final int OPERATION_TRIBUTE = 5;
     public static final String EDIT_MODE = "editOperation";
     public static final String OPERATION = "operation";
+    public static final String FROM_NEWSFEEDS = "from_newsfeeds";
 
     public static final String CLOUD_ID = "rueeOaJe3KEn1JEt8Nj2zH2MJ2encom4PFBiwbWf";
     public static final String CLOUD_KEY = "KosqGC4f2xjDLWlPKC0zcA96Z4QLZPoqYIiYXy4D";
