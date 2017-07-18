@@ -419,7 +419,7 @@ public class FragmentStoryDetail extends BaseFragment implements
 
                 boolean isOwner = story.getUser().equals(FirebaseAuth.getInstance().getCurrentUser().getUid());
                 Utils.storyQuickActionMenu(FragmentStoryDetail.this, getActivity(),
-                        position, null, v, isOwner, DbConstants.Flags.Story);
+                        position, story, v, isOwner, DbConstants.Flags.Story);
 //			Utils.showQuickActionMenu(
 //					FragmentStoryDetail.this,
 //					getActivity(),
