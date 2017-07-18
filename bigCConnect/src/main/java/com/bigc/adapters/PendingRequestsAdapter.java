@@ -91,7 +91,7 @@ public class PendingRequestsAdapter extends ArrayAdapter<ParseObject> {
 
         Preferences.getInstance(getContext()).getString(DbConstants.NAME);
         final DatabaseReference mReference = FirebaseDatabase.getInstance().getReference();
-        mReference.child(DbConstants.USERS).child(object.getFrom().getObjectId()).addListenerForSingleValueEvent(new ValueEventListener() {
+        mReference.child(DbConstants.USERS).child(object.getFrom()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot != null) {

@@ -19,6 +19,7 @@ import android.widget.ListView;
 
 import com.bigc.adapters.RibbonsGridAdapter;
 import com.bigc.adapters.SearchResultAdapter;
+import com.bigc.datastorage.Preferences;
 import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
@@ -27,8 +28,19 @@ import com.bigc.general.classes.UserConnections;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
+import com.bigc.models.Connection;
+import com.bigc.models.ConnectionsModel;
+import com.bigc.models.Stories;
 import com.bigc.models.Users;
 import com.bigc_connect.R;
+import com.google.android.gms.nearby.connection.Connections;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -114,19 +126,47 @@ public class FragmentSearchSurvivors extends BaseFragment {
 			}
 		});
 
-		new loadSurvivorsTask().execute();
+		loadConnections(false);
+
+		//new loadSurvivorsTask().execute();
 	}
 
 	private void searchSurvivors(String SEARCH_KEY) {
 		Utils.showProgress(getActivity());
-		ArrayList<Users> searchUsers = Queries.getSearchSurvivorQuery(SEARCH_KEY);
-		if (searchUsers!=null) {
-			showError("Unable to reach server, Please check your connect and try again");
-		} else if(searchUsers.size() == 0) {
-			showError("No survivor found");
-		} else {
-			showResult(searchUsers);
-		}
+		//ArrayList<Users> searchUsers = Queries.getSearchSurvivorQuery(SEARCH_KEY);
+
+		final ArrayList<Users> searchUsers = new ArrayList<>();
+		DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+		mDatabase.child(DbConstants.USERS).orderByChild(DbConstants.NAME_LOWERCASE).startAt(SEARCH_KEY).endAt(SEARCH_KEY+"\uf8ff").addListenerForSingleValueEvent(new ValueEventListener() {
+			@Override
+			public void onDataChange(DataSnapshot dataSnapshot) {
+				Utils.hideProgress();
+				if(dataSnapshot!=null && dataSnapshot.hasChildren()){
+					for( DataSnapshot data: dataSnapshot.getChildren()) {
+						if(data.getValue(Users.class).getObjectId()!= FirebaseAuth.getInstance().getCurrentUser().getUid() && data.getValue(Users.class).isDeactivated()==false)
+							searchUsers.add(data.getValue(Users.class));
+					}
+					if(searchUsers.size() == 0) {
+						showError("No survivor found");
+					} else
+						showResult(searchUsers);
+
+				} else if(searchUsers.size() == 0) {
+					showError("No survivor found");
+				}  /*else {
+						showError("Unable to reach server, Please check your connect and try again");
+				}*/
+
+			}
+
+			@Override
+			public void onCancelled(DatabaseError databaseError) {
+				Utils.hideProgress();
+				showError("Unable to reach server, Please check your connect and try again");
+			}
+		});
+
+
 
 		/*ParseQuery<ParseUser> query = Queries
 				.getSearchSurvivorQuery(SEARCH_KEY);
@@ -180,7 +220,7 @@ public class FragmentSearchSurvivors extends BaseFragment {
 		return Constants.FRAGMENT_SEARCH_SURVIVOR;
 	}
 
-	private class loadSurvivorsTask extends
+/*	private class loadSurvivorsTask extends
 			AsyncTask<Void, Void, UserConnections> {
 
 		@Override
@@ -200,18 +240,54 @@ public class FragmentSearchSurvivors extends BaseFragment {
 						connections.pendingConnections);
 			Utils.hideProgress();
 		}
-	}
-
+	}*/
+	List<Users> activeConnections = new ArrayList<>();
+	List<Users> pendingConnections = new ArrayList<>();
+	UserConnections userConnections = new UserConnections();
+	Users connectionUser = null;
 	private UserConnections loadConnections(final boolean fromCache) {
 
-		ParseQuery<ParseObject> mQuery = Queries.getUserConnectionsQuery(
-				ParseUser.getCurrentUser(), fromCache);
+		Query connectionsQuery = Queries.getUserConnectionsQuery(Preferences.getInstance(getContext()).getUserFromPreference(),false);
+
+		final String currentUid = Preferences.getInstance(getContext()).getString(DbConstants.ID);
+
+		connectionsQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+			@Override
+			public void onDataChange(DataSnapshot dataSnapshot) {
+				if(dataSnapshot!=null && dataSnapshot.hasChildren()){
+					for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+						// TODO: handle the post
+						ConnectionsModel connection = postSnapshot.getValue(ConnectionsModel.class);
+
+						if(currentUid.equalsIgnoreCase(connection.getTo())) {
+							Users user = new Users();
+							user.setObjectId(connection.getTo());
+							if (connection.getStatus()) {
+								activeConnections.add(user);
+							} else {
+								pendingConnections.add(user);
+							}
+						}
+
+						//getUserDetail(connection);
+
+					}
+
+				}
+			}
+
+			@Override
+			public void onCancelled(DatabaseError databaseError) {
+
+			}
+		});
 
 
-		UserConnections connections = new UserConnections();
-
+		//userConnections1.activeConnections = activeConnections;
 		// TODO: 7/13/2017 Load connections here
-		/*try {
+		/*ParseQuery<ParseObject> mQuery = Queries.getUserConnectionsQuery(
+				ParseUser.getCurrentUser(), fromCache);
+		try {
 			List<ParseObject> survivorConnections = mQuery.find();
 			Log.e("Result", survivorConnections.size() + " - ");
 			
@@ -250,9 +326,43 @@ public class FragmentSearchSurvivors extends BaseFragment {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}*/
-
-		return connections;
+		userConnections.activeConnections = activeConnections;
+		userConnections.pendingConnections = pendingConnections;
+		if (adapter != null)
+			adapter.updateData(null, userConnections.activeConnections,
+					userConnections.pendingConnections);
+		Utils.hideProgress();
+		return userConnections;
 	}
+
+/*	private Users getUserDetail(final ConnectionsModel connection) {
+		final DatabaseReference mReference = FirebaseDatabase.getInstance().getReference();
+
+		if(Preferences.getInstance(getContext()).getUserFromPreference().getObjectId().equalsIgnoreCase(connection.getTo())) {
+			mReference.child(DbConstants.USERS).child(connection.getTo()).addListenerForSingleValueEvent(new ValueEventListener() {
+				@Override
+				public void onDataChange(DataSnapshot dataSnapshot) {
+					if (dataSnapshot != null && dataSnapshot.hasChildren()) {
+						connectionUser = dataSnapshot.getValue(Users.class);
+						if (connectionUser.getType() != Constants.USER_TYPE.SUPPORTER.ordinal()) {
+							if (connectionUser.isStatus())
+								activeConnections.add(connection.getFrom());
+							else
+								pendingConnections.add(obj
+										.getParseUser(DbConstants.FROM));
+						}
+					}
+				}
+
+				@Override
+				public void onCancelled(DatabaseError databaseError) {
+
+				}
+			});
+		}
+
+		return connectionUser;
+	}*/
 
 	@Override
 	public int getTab() {

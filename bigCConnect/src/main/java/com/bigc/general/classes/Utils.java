@@ -304,13 +304,9 @@ public class Utils {
 
         List<ConnectionsModel> newConnectionObjects = new ArrayList<>();
         for (Users c : newConnections) {
-            final ConnectionsModel o = new ConnectionsModel();
-            ConnectionsModel.To toObj = new ConnectionsModel.To();
-            toObj.setObjectId(c.getObjectId());
-            o.setTo(new ConnectionsModel.To());
-            ConnectionsModel.From fromObj = new ConnectionsModel.From();
-            fromObj.setObjectId(FirebaseAuth.getInstance().getCurrentUser().getUid());
-            o.setFrom(fromObj);
+            final ConnectionsModel o = new ConnectionsModel();;
+            o.setTo(c.getObjectId());
+            o.setFrom(FirebaseAuth.getInstance().getCurrentUser().getUid());
             o.setStatus(false);
             newConnectionObjects.add(o);
         }
@@ -387,15 +383,9 @@ public class Utils {
         List<ConnectionsModel> removeConnectionObjects = new ArrayList<>();
         for (Users c : removedConnections) {
             final ConnectionsModel o = new ConnectionsModel();
-            ConnectionsModel.To toObj = new ConnectionsModel.To();
-
             // TODO: 7/13/2017 discuss how to remove
-
-            toObj.setObjectId("");
-            o.setTo(new ConnectionsModel.To());
-            ConnectionsModel.From fromObj = new ConnectionsModel.From();
-            fromObj.setObjectId("");
-            o.setFrom(fromObj);
+            o.setTo("");
+            o.setFrom("");
             o.setStatus(false);
             removeConnectionObjects.add(o);
         }
@@ -418,19 +408,15 @@ public class Utils {
                 .getQuery(DbConstants.TABLE_CONNECTIONS);
         sQuery1.whereEqualTo(DbConstants.FROM, ParseUser.getCurrentUser());
         sQuery1.whereContainedIn(DbConstants.TO, removedConnections);
-
         ParseQuery<ParseObject> sQuery2 = ParseQuery
                 .getQuery(DbConstants.TABLE_CONNECTIONS);
         sQuery2.whereEqualTo(DbConstants.TO, ParseUser.getCurrentUser());
         sQuery2.whereContainedIn(DbConstants.FROM, removedConnections);
-
         List<ParseQuery<ParseObject>> queries = new ArrayList<ParseQuery<ParseObject>>();
         queries.add(sQuery1);
         queries.add(sQuery2);
-
         ParseQuery<ParseObject> mQuery = ParseQuery.or(queries);
         mQuery.findInBackground(new FindCallback<ParseObject>() {
-
             @Override
             public void done(final List<ParseObject> objects, ParseException e) {
                 Log.e("DeleteObjects", objects.size() + "--");
@@ -439,7 +425,6 @@ public class Utils {
                         ParseObject.unpinAllInBackground(
                                 Constants.TAG_CONNECTIONS, removedConnections,
                                 new DeleteCallback() {
-
                                     @Override
                                     public void done(ParseException e2) {
                                         Log.e("Unpinned", e2 + "--");
@@ -447,18 +432,15 @@ public class Utils {
                                                 .unpinAllInBackground(removedConnections);
                                     }
                                 });
-
                     } else {
                         ParseObject.deleteAllInBackground(objects,
                                 new DeleteCallback() {
-
                                     @Override
                                     public void done(ParseException e) {
                                         Log.e("Connection", "Deleted - " + e);
                                         ParseObject.unpinAllInBackground(
                                                 Constants.TAG_CONNECTIONS,
                                                 objects, new DeleteCallback() {
-
                                                     @Override
                                                     public void done(
                                                             ParseException e2) {
@@ -1010,7 +992,7 @@ public class Utils {
 
     public static void launchEditView(Activity activity, int operation, boolean fromNewsfeeds,
                                       int position, Posts post) {
-        PostActivity.setCurrentObject(position, post,null);
+        PostActivity.setCurrentObject(position, post, null);
         Intent i = new Intent(activity, PostActivity.class);
         i.putExtra(Constants.OPERATION, operation);
         i.putExtra(Constants.EDIT_MODE, true);

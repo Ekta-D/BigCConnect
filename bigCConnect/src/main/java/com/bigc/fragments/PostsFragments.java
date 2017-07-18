@@ -163,7 +163,7 @@ public class PostsFragments extends BaseFragment implements PopupOptionHandler {
    }
   });*/
 
-
+    
     }
 
     //// TODO: 14-07-2017  
@@ -288,7 +288,7 @@ public class PostsFragments extends BaseFragment implements PopupOptionHandler {
         Utils.launchEditView(
                 getActivity(),
                 post.getMedia() == null ? Constants.OPERATION_MESSAGE
-                        : Constants.OPERATION_PHOTO, false, position, post);
+                        : Constants.OPERATION_PHOTO, true, position, post);
     }
 
     @Override

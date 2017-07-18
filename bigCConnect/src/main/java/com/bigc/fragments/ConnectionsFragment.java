@@ -140,6 +140,8 @@ public class ConnectionsFragment extends BaseFragment {
 						System.out.println("ddata conenction "+data.toString());
 					}
 					showRequests(requests);
+				} else {
+					showNoRequestsMessage();
 				}
 			}
 

@@ -139,7 +139,7 @@ public class SelectionFragment extends Fragment implements View.OnClickListener 
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.continueButton:
-//                continueButton.setClickable(false);
+                continueButton.setClickable(false);
                 if (supporterView.getContentDescription().equals("0")
                         && fighterView.getContentDescription().equals("0")
                         && survivorView.getContentDescription().equals("0")) {
@@ -176,7 +176,7 @@ public class SelectionFragment extends Fragment implements View.OnClickListener 
                         createUser();
                     }
                 }
-//                continueButton.setClickable(true);
+                continueButton.setClickable(true);
                 break;
             case R.id.signInOption:
                 if (((SignupInterface) getActivity()).isStatusUpdate()) {

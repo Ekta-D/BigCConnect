@@ -8,7 +8,6 @@ import java.util.List;
 
 public class Stories {
 
-
     private Integer comments;
     private String createdAt;
     private List<String> likes = null;
@@ -91,7 +90,6 @@ public class Stories {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
-
 
 }
 

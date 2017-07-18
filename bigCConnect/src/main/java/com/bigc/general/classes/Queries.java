@@ -5,6 +5,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.bigc.datastorage.Preferences;
 import com.bigc.models.Posts;
 import com.bigc.models.Stories;
 import com.bigc.models.Users;
@@ -20,7 +21,7 @@ import com.parse.ParseUser;
 
 public class Queries {
 
-    //    public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
+//    public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
 //            ParseUser user) {
 //        List<ParseUser> users = new ArrayList<ParseUser>();
 //        users.add(ParseUser.getCurrentUser());
@@ -33,19 +34,26 @@ public class Queries {
 //        mQuery.include("User");
 //        return mQuery;
 //    }
-    public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
-            ParseUser user) {
-        List<ParseUser> users = new ArrayList<ParseUser>();
-        users.add(ParseUser.getCurrentUser());
-        users.add(user);
-        ParseQuery<ParseObject> mQuery = ParseQuery
-                .getQuery(DbConstants.TABLE_CONNECTIONS);
-        mQuery.whereContainedIn(DbConstants.TO, users);
-        mQuery.whereContainedIn(DbConstants.FROM, users);
 
-        mQuery.include("User");
-        return mQuery;
+    public static Query getStoryCommentQuery(Stories story) {
+        Query query = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_STORY_COMMENT).
+                orderByChild(DbConstants.POST).equalTo(story.getObjectId());
+        return query;
     }
+
+public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
+        ParseUser user) {
+    List<ParseUser> users = new ArrayList<ParseUser>();
+    users.add(ParseUser.getCurrentUser());
+    users.add(user);
+    ParseQuery<ParseObject> mQuery = ParseQuery
+            .getQuery(DbConstants.TABLE_CONNECTIONS);
+    mQuery.whereContainedIn(DbConstants.TO, users);
+    mQuery.whereContainedIn(DbConstants.FROM, users);
+
+    mQuery.include("User");
+    return mQuery;
+}
 
     public static ArrayList<Users> getSearchSurvivorQuery(String keyword) {
         final ArrayList<Users> searchUsers = null;
@@ -53,8 +61,8 @@ public class Queries {
         mDatabase.child(DbConstants.USERS).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot != null && dataSnapshot.hasChildren()) {
-                    for (DataSnapshot data : dataSnapshot.getChildren()) {
+                if(dataSnapshot!=null && dataSnapshot.hasChildren()){
+                    for( DataSnapshot data: dataSnapshot.getChildren()) {
                         searchUsers.add(data.getValue(Users.class));
                     }
                 }
@@ -113,27 +121,26 @@ public class Queries {
 
         return query;
     }
-
     public static ArrayList<Users> getCategorizedUsersQuery(int ribbon) {
         final ArrayList<Users> categoryUsers = null;
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-        mDatabase.child(DbConstants.USERS).startAt(DbConstants.RIBBON, String.valueOf(ribbon)).orderByChild(DbConstants.CREATED_AT).
+        mDatabase.child(DbConstants.USERS).startAt(DbConstants.RIBBON,String.valueOf(ribbon)).orderByChild(DbConstants.CREATED_AT).
                 addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        if (dataSnapshot != null && dataSnapshot.hasChildren()) {
-                            for (DataSnapshot data : dataSnapshot.getChildren()) {
-                                categoryUsers.add(data.getValue(Users.class));
-                            }
-                        }
-
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if(dataSnapshot!=null && dataSnapshot.hasChildren()){
+                    for( DataSnapshot data: dataSnapshot.getChildren()) {
+                        categoryUsers.add(data.getValue(Users.class));
                     }
+                }
 
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
+            }
 
-                    }
-                });
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
        /* ParseQuery<ParseUser> query = ParseUser.getQuery();
         query.whereNotEqualTo(DbConstants.TYPE,
@@ -179,26 +186,20 @@ public class Queries {
         return mQuery;
     }
 
-//    public static ParseQuery<ParseObject> getStoriesQuery(boolean fromCache) {
-//        ParseQuery<ParseObject> mQuery = new ParseQuery<ParseObject>(
-//                DbConstants.TABLE_STORIES);
-//        ParseQuery<ParseUser> blockedusersQuery = ParseUser.getQuery();
-//        blockedusersQuery.whereEqualTo(DbConstants.DEACTIVATED, true);
-//        mQuery.whereDoesNotMatchQuery(DbConstants.USER, blockedusersQuery);
-//        mQuery.addDescendingOrder(DbConstants.CREATED_AT);
-//
-//        if (fromCache)
-//            mQuery.fromLocalDatastore();
-//        else
-//            mQuery.setLimit(30);
-//
-//        return mQuery;
-//    }
+    public static ParseQuery<ParseObject> getStoriesQuery(boolean fromCache) {
+        ParseQuery<ParseObject> mQuery = new ParseQuery<ParseObject>(
+                DbConstants.TABLE_STORIES);
+        ParseQuery<ParseUser> blockedusersQuery = ParseUser.getQuery();
+        blockedusersQuery.whereEqualTo(DbConstants.DEACTIVATED, true);
+        mQuery.whereDoesNotMatchQuery(DbConstants.USER, blockedusersQuery);
+        mQuery.addDescendingOrder(DbConstants.CREATED_AT);
 
-    public static Query getStoriesQuery(boolean fromCache) {
-        Query query = FirebaseDatabase.getInstance().getReference().
-                child(DbConstants.TABLE_STORIES).limitToFirst(30).orderByChild(DbConstants.CREATED_AT);
-        return query;
+        if (fromCache)
+            mQuery.fromLocalDatastore();
+        else
+            mQuery.setLimit(30);
+
+        return mQuery;
     }
 
     public static ParseQuery<ParseObject> getGroupMessagesQuery(ParseUser user,
@@ -349,19 +350,13 @@ public class Queries {
 
     }
 
-//    public static ParseQuery<ParseObject> getStoryCommentsQuery(
-//            ParseObject story) {
-//        ParseQuery<ParseObject> mQuery = new ParseQuery<ParseObject>(
-//                DbConstants.TABLE_STORY_COMMENT);
-//        mQuery.whereEqualTo(DbConstants.POST, story);
-//        mQuery.addDescendingOrder(DbConstants.CREATED_AT);
-//        return mQuery;
-//    }
-
-    public static Query getStoryCommentQuery(Stories story) {
-        Query query = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_STORY_COMMENT).
-                orderByChild(DbConstants.POST).equalTo(story.getObjectId());
-        return query;
+    public static ParseQuery<ParseObject> getStoryCommentsQuery(
+            ParseObject story) {
+        ParseQuery<ParseObject> mQuery = new ParseQuery<ParseObject>(
+                DbConstants.TABLE_STORY_COMMENT);
+        mQuery.whereEqualTo(DbConstants.POST, story);
+        mQuery.addDescendingOrder(DbConstants.CREATED_AT);
+        return mQuery;
     }
 
     public static ParseQuery<ParseObject> getTributeCommentsQuery(
@@ -373,7 +368,15 @@ public class Queries {
         return mQuery;
     }
 
-    public static ParseQuery<ParseObject> getUserConnectionsQuery(
+    public static Query getUserConnectionsQuery(
+            Users user, boolean fromCache) {
+
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        return mDatabase.child(DbConstants.TABLE_CONNECTIONS).equalTo(DbConstants.TO, user.getObjectId());
+    }
+
+    /*public static ParseQuery<ParseObject> getUserConnectionsQuery(
             ParseUser user, boolean fromCache) {
 
         ParseQuery<ParseObject> fromQuery = ParseQuery
@@ -396,7 +399,7 @@ public class Queries {
             mQuery.fromPin(Constants.TAG_CONNECTIONS);
 
         return mQuery;
-    }
+    }*/
 
     public static ParseQuery<ParseObject> getUserActiveConnectionsQuery(
             ParseUser user, boolean fromCache) {

@@ -55,7 +55,7 @@ import java.util.Map;
 public class NewsFeedFragment extends BaseFragment implements
         OnRefreshListener, UploadPostObserver, OnLoadMoreListener,
         PopupOptionHandler {
-    public static Posts currentObject = null;
+
     private PullAndLoadListView listView;
     //	private NewsfeedAdapter adapter;
     private NewsFeedsAdapter adapter;
@@ -65,7 +65,6 @@ public class NewsFeedFragment extends BaseFragment implements
     private LinearLayout progressParent;
     private ProgressBar progressView;
     private boolean isPremium;
-    Posts post;
 
     //private List<ParseObject> posts = new ArrayList<ParseObject>();
     List<Posts> posts = new ArrayList<>();
@@ -131,15 +130,6 @@ public class NewsFeedFragment extends BaseFragment implements
                 mAdAdapter.loadAds(Constants.MOPUB_UNIT_ID, mRequestParameters);
         }
         loadData(true);
-        if (NewsFeedFragment.currentObject != null) {
-            //   Log.i("post", post.toString());
-//            statusView.setText(post.getMessage() == null ? ""
-//                    : post.getMessage());
-
-            Utils.updatePost(NewsFeedFragment.currentObject);
-            adapter.notifyDataSetChanged();
-        }
-
         super.onResume();
     }
 
@@ -393,32 +383,30 @@ public class NewsFeedFragment extends BaseFragment implements
             }
 
         }
-        if (adapter!=null)
-        {
-            if (!isPremium) {
+        if (!isPremium) {
 
-                ViewBinder viewBinder = new ViewBinder.Builder(
-                        R.layout.list_item_ad).mainImageId(R.id.newsFeedPicView)
-                        .iconImageId(R.id.newsFeedRibbonView)
-                        .titleId(R.id.newsFeedHeading1)
-                        .textId(R.id.newsFeedMessageView).build();
+            ViewBinder viewBinder = new ViewBinder.Builder(
+                    R.layout.list_item_ad).mainImageId(R.id.newsFeedPicView)
+                    .iconImageId(R.id.newsFeedRibbonView)
+                    .titleId(R.id.newsFeedHeading1)
+                    .textId(R.id.newsFeedMessageView).build();
 
-                MoPubNativeAdPositioning.MoPubServerPositioning adPositioning = MoPubNativeAdPositioning
-                        .serverPositioning();
-                MoPubStaticNativeAdRenderer adRenderer = new MoPubStaticNativeAdRenderer(
-                        viewBinder);
+            MoPubNativeAdPositioning.MoPubServerPositioning adPositioning = MoPubNativeAdPositioning
+                    .serverPositioning();
+            MoPubStaticNativeAdRenderer adRenderer = new MoPubStaticNativeAdRenderer(
+                    viewBinder);
 
-
+            if(adapter!=null) {
                 mAdAdapter = new MoPubAdAdapter(getActivity(), adapter,
                         adPositioning);
                 mAdAdapter.registerAdRenderer(adRenderer);
-
                 listView.setAdapter(mAdAdapter);
-            } else {
-                listView.setAdapter(adapter);
             }
-        }
 
+
+        } else {
+            listView.setAdapter(adapter);
+        }
     }
 
 //    private void populateList(List<ParseObject> posts) {

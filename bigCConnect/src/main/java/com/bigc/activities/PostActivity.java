@@ -36,7 +36,6 @@ import com.android.ex.chips.BaseRecipientAdapter;
 import com.android.ex.chips.RecipientEditTextView;
 import com.android.ex.chips.RecipientEntry;
 import com.bigc.dialogs.AddTributeDialog;
-import com.bigc.fragments.NewsFeedFragment;
 import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
@@ -80,11 +79,10 @@ public class PostActivity extends Activity implements OnClickListener,
     private boolean isPublicShare = true;
     private int operation;
     private boolean isEdit = false;
-    private boolean fromNewsfeeds = false;
     //    private static ParseObject currentObject = null;
-//    public static Posts currentObject = null;
-    public static Stories currentstoryObject = null;
+    public static Posts currentObject = null;
     private static int currentObjectIndex = -1;
+    public static Stories currentstoryObject = null;
     DatabaseReference databaseReference;
     private File mFileTemp;
     FirebaseStorage firebaseStorage;
@@ -111,8 +109,7 @@ public class PostActivity extends Activity implements OnClickListener,
             operation = getIntent().getIntExtra(Constants.OPERATION,
                     Constants.OPERATION_STATUS);
             isEdit = getIntent().getBooleanExtra(Constants.EDIT_MODE, false);
-            fromNewsfeeds = getIntent().getBooleanExtra(Constants.FROM_NEWSFEEDS, false);
-            if (isEdit && NewsFeedFragment.currentObject == null) {
+            if (isEdit && currentObject == null) {
                 isEdit = false;
             }
         }
@@ -186,17 +183,16 @@ public class PostActivity extends Activity implements OnClickListener,
         if (isEdit) {
 
             if (operation == Constants.OPERATION_STORY) {
-                titleInputView.setText(currentstoryObject.getTitle() == null ? "" : currentstoryObject.getTitle());
 //                titleInputView.setText(currentObject
 //                        .getString(DbConstants.TITLE) == null ? ""
 //                        : currentObject.getString(DbConstants.TITLE));
-                ////
+                //// TODO: 14-07-2017  
             }
 
 //            String text = currentObject.getString(DbConstants.MESSAGE) == null ? ""
 //                    : currentObject.getString(DbConstants.MESSAGE);
-            String text = NewsFeedFragment.currentObject.getMessage() == null ? ""
-                    : NewsFeedFragment.currentObject.getMessage();
+            String text = currentObject.getMessage() == null ? ""
+                    : currentObject.getMessage();
             statusInputView.setText(text);
             statusInputView.setSelection(text.length());
 //            if (currentObject.getParseFile(DbConstants.MEDIA) != null) {
@@ -210,9 +206,9 @@ public class PostActivity extends Activity implements OnClickListener,
 //                                        .setImageResource(android.R.color.white);
 //                            }
 //                        });
-            if (NewsFeedFragment.currentObject.getMedia() != null) {
+            if (currentObject.getMedia() != null) {
                 ImageLoader.getInstance().displayImage(
-                        NewsFeedFragment.currentObject.getMedia(),
+                        currentObject.getMedia(),
                         pictureInputView, Utils.normalDisplayOptions,
                         new SimpleImageLoadingListener() {
                             @Override
@@ -258,7 +254,7 @@ public class PostActivity extends Activity implements OnClickListener,
                                     Toast.LENGTH_LONG).show();
                             v.setClickable(true);
                         } else {
-                            NewsFeedFragment.currentObject.setMessage(message);
+                            currentObject.setMessage(message);
                             // currentObject.put(DbConstants.MESSAGE, message);
 
                             finishActivity();
@@ -288,7 +284,7 @@ public class PostActivity extends Activity implements OnClickListener,
                         // addStory(message,
                         // selectedPicture);
                         //   currentObject.put(DbConstants.MESSAGE, message);
-                        NewsFeedFragment.currentObject.setMessage(message);
+                        currentObject.setMessage(message);
                         //// TODO: 14-07-2017            //   currentObject.put(DbConstants.TITLE, title);
 
                         finishActivity();
@@ -304,15 +300,14 @@ public class PostActivity extends Activity implements OnClickListener,
                             v.setClickable(true);
                         } else {
                             //currentObject.put(DbConstants.MESSAGE, message);
-                            NewsFeedFragment.currentObject.setMessage(message);
+                            currentObject.setMessage(message);
 
-                            NewsFeedFragment.currentObject.setUpdatedAt(Utils.getCurrentDate());
+                            currentObject.setUpdatedAt(Utils.getCurrentDate());
                             finishActivity();
-
                             Toast.makeText(this, "Post has been updated.",
                                     Toast.LENGTH_LONG).show();
 //                            PostManager.getInstance().editPost(currentObjectIndex,
-//                                    currentObject);
+//                                    currentObject);//// TODO: 14-07-2017  
                         }
                     }
 
@@ -609,74 +604,25 @@ public class PostActivity extends Activity implements OnClickListener,
         PostManager.getInstance().addTribute(post, this);
     }
 
-    private void addStory(final String title, final String message, Bitmap bitmap) {
-//        ParseObject story = new ParseObject(DbConstants.TABLE_STORIES);
-//        story.put(DbConstants.MESSAGE, message);
-//        story.put(DbConstants.TITLE, title);
-//        if (bitmap != null) {
-//            ByteArrayOutputStream outStream = new ByteArrayOutputStream();
-//            bitmap.compress(Bitmap.CompressFormat.PNG, 100, outStream);
-//            byte[] bitmapdata = outStream.toByteArray();
-//            try {
-//                outStream.close();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//            ParseFile file = new ParseFile("media.png", bitmapdata);
-//            story.put(DbConstants.MEDIA, file);
-//        }
-//
-//        story.put(DbConstants.USER, ParseUser.getCurrentUser());
-//        PostManager.getInstance().addStory(story, this);
-        final String objectId = databaseReference.child(DbConstants.TABLE_STORIES).push().getKey();
-        Uri uri = null;
-        SimpleDateFormat format = new SimpleDateFormat(DbConstants.DATE_FORMAT);
-        final String date = format.format(new Date(System.currentTimeMillis()));
+    private void addStory(String title, String message, Bitmap bitmap) {
+        ParseObject story = new ParseObject(DbConstants.TABLE_STORIES);
+        story.put(DbConstants.MESSAGE, message);
+        story.put(DbConstants.TITLE, title);
         if (bitmap != null) {
             ByteArrayOutputStream outStream = new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, outStream);
-            String path = MediaStore.Images.Media.insertImage(PostActivity.this.getContentResolver(), bitmap, "Title", null);
-            uri = Uri.parse(path);
-
-            StorageReference reference = storageReference.child("StoryImages/" + objectId + ".jpg");
-            reference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    Uri downloadUri = taskSnapshot.getMetadata().getDownloadUrl();
-
-                    media = downloadUri.toString();
-
-                    uploadStory(message, title, date, date, objectId, media, 0, FirebaseAuth.getInstance().getCurrentUser().getUid());
-                    Utils.hideProgress();
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Utils.showPrompt(PostActivity.this, e.toString().trim());
-
-                }
-            });
-        } else {
-            uploadStory(message, title, date, date, objectId, media, 0, FirebaseAuth.getInstance().getCurrentUser().getUid());
+            byte[] bitmapdata = outStream.toByteArray();
+            try {
+                outStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            ParseFile file = new ParseFile("media.png", bitmapdata);
+            story.put(DbConstants.MEDIA, file);
         }
 
-    }
-
-    public void uploadStory(String message, String title, String createdAt, String updatedAt, String objectId, String media
-            , int comments, String user) {
-        Stories story = new Stories();
-        story.setComments(comments);
-        story.setCreatedAt(createdAt);
-        story.setMedia(media);
-        story.setMessage(message);
-        story.setObjectId(objectId);
-        story.setTitle(title);
-        story.setUpdatedAt(updatedAt);
-        story.setUser(user);
-        Utils.hideProgress();
-        databaseReference.child(DbConstants.TABLE_STORIES).child(objectId).setValue(story);
-        Utils.showToast(PostActivity.this, "Your story has been uploaded!");
-        finishActivity();
+        story.put(DbConstants.USER, ParseUser.getCurrentUser());
+        PostManager.getInstance().addStory(story, this);
     }
 
     @Override
