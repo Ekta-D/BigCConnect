@@ -2,10 +2,6 @@ package com.bigc.general.classes;
 
 import android.util.Log;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.bigc.datastorage.Preferences;
 import com.bigc.models.Posts;
 import com.bigc.models.Stories;
 import com.bigc.models.Users;
@@ -15,9 +11,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-import com.parse.ParseUser;
+
+import java.util.ArrayList;
 
 public class Queries {
 
@@ -34,6 +29,11 @@ public class Queries {
 //        mQuery.include("User");
 //        return mQuery;
 //    }
+public static Query getStoriesQuery(boolean fromCache) {
+    Query query = FirebaseDatabase.getInstance().getReference().
+            child(DbConstants.TABLE_STORIES).limitToFirst(30).orderByChild(DbConstants.CREATED_AT);
+    return query;
+}
 
     public static Query getStoryCommentQuery(Stories story) {
         Query query = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_STORY_COMMENT).
@@ -41,6 +41,7 @@ public class Queries {
         return query;
     }
 
+/*
 public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
         ParseUser user) {
     List<ParseUser> users = new ArrayList<ParseUser>();
@@ -54,6 +55,7 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
     mQuery.include("User");
     return mQuery;
 }
+*/
 
     public static ArrayList<Users> getSearchSurvivorQuery(String keyword) {
         final ArrayList<Users> searchUsers = null;
@@ -113,14 +115,14 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
 //
 //    }
 
-    public static ParseQuery<ParseObject> getPendingRequestsQuery() {
+    /*public static ParseQuery<ParseObject> getPendingRequestsQuery() {
         ParseQuery<ParseObject> query = ParseQuery
                 .getQuery(DbConstants.TABLE_CONNECTIONS);
         query.whereEqualTo(DbConstants.TO, ParseUser.getCurrentUser());
         query.whereEqualTo(DbConstants.STATUS, false);
 
         return query;
-    }
+    }*/
     public static ArrayList<Users> getCategorizedUsersQuery(int ribbon) {
         final ArrayList<Users> categoryUsers = null;
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -164,7 +166,7 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
 //        return query;
 //    }
 
-    public static ParseQuery<ParseObject> getUserFeedsQuery(ParseUser user) {
+   /* public static ParseQuery<ParseObject> getUserFeedsQuery(ParseUser user) {
         ParseQuery<ParseObject> mQuery = new ParseQuery<ParseObject>(
                 DbConstants.TABLE_POST);
         mQuery.whereEqualTo(DbConstants.USER, user);
@@ -332,7 +334,7 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
         mQuery.include("User");
 
         return mQuery;
-    }
+    }*/
 
     //    public static ParseQuery<ParseObject> getPostCommentsQuery(ParseObject post) {
 //        ParseQuery<ParseObject> mQuery = new ParseQuery<ParseObject>(
@@ -350,7 +352,7 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
 
     }
 
-    public static ParseQuery<ParseObject> getStoryCommentsQuery(
+   /* public static ParseQuery<ParseObject> getStoryCommentsQuery(
             ParseObject story) {
         ParseQuery<ParseObject> mQuery = new ParseQuery<ParseObject>(
                 DbConstants.TABLE_STORY_COMMENT);
@@ -366,7 +368,7 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
         mQuery.whereEqualTo(DbConstants.POST, tribute);
         mQuery.addDescendingOrder(DbConstants.CREATED_AT);
         return mQuery;
-    }
+    }*/
 
     public static Query getUserConnectionsQuery(
             Users user, boolean fromCache) {
@@ -401,7 +403,7 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
         return mQuery;
     }*/
 
-    public static ParseQuery<ParseObject> getUserActiveConnectionsQuery(
+    /*public static ParseQuery<ParseObject> getUserActiveConnectionsQuery(
             ParseUser user, boolean fromCache) {
 
         ParseQuery<ParseObject> fromQuery = ParseQuery
@@ -426,5 +428,5 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
             mQuery.fromPin(Constants.TAG_CONNECTIONS);
 
         return mQuery;
-    }
+    }*/
 }

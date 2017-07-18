@@ -2,11 +2,8 @@ package com.bigc.requests;
 
 import android.util.Log;
 
-import com.bigc.general.classes.DbConstants;
-import com.bigc.general.classes.Utils;
 import com.model.books.BooksResponse;
 import com.octo.android.robospice.request.springandroid.SpringAndroidSpiceRequest;
-import com.parse.ParseUser;
 
 public class FetchBooksRequest extends SpringAndroidSpiceRequest<BooksResponse> {
 
@@ -40,9 +37,9 @@ public class FetchBooksRequest extends SpringAndroidSpiceRequest<BooksResponse> 
 	}
 
 	private String getQuery() {
-		int ribbon = ParseUser.getCurrentUser().getInt(DbConstants.RIBBON);
-		if (ribbon < 0)
+		/*int ribbon = ParseUser.getCurrentUser().getInt(DbConstants.RIBBON);
+		if (ribbon < 0)*/
 			return "cancer cure";
-		return Utils.ribbonNames[ribbon].concat(" cure");
+		//return Utils.ribbonNames[ribbon].concat(" cure");
 	}
 }

@@ -1,11 +1,6 @@
 package com.bigc.fragments;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,12 +23,9 @@ import com.bigc.general.classes.UserConnections;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
-import com.bigc.models.Connection;
 import com.bigc.models.ConnectionsModel;
-import com.bigc.models.Stories;
 import com.bigc.models.Users;
 import com.bigc_connect.R;
-import com.google.android.gms.nearby.connection.Connections;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -41,11 +33,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.parse.FindCallback;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-import com.parse.ParseUser;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class FragmentSearchSurvivors extends BaseFragment {
 

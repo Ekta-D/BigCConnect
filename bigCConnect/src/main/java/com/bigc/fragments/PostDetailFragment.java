@@ -1,6 +1,5 @@
 package com.bigc.fragments;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -38,17 +37,10 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
-import com.parse.FindCallback;
-import com.parse.GetCallback;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-import com.parse.ParseUser;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -321,24 +313,9 @@ public class PostDetailFragment extends BaseFragment implements
             statusView.setText(post.getMessage() == null ? ""
                     : post.getMessage());
 
-        updatePost(post);
+        Utils.updatePost(post);
     }
 
-    public void updatePost(Posts post) {
-
-        Map<String, Object> updated_post = new HashMap<>();
-        updated_post.put(DbConstants.CREATED_AT, post.getCreatedAt());
-        updated_post.put(DbConstants.UPDATED_AT, post.getUpdatedAt());
-        updated_post.put(DbConstants.MEDIA, post.getMedia());
-        updated_post.put(DbConstants.LIKES, post.getLikes());
-        updated_post.put(DbConstants.COMMENTS, post.getComments());
-        updated_post.put(DbConstants.USER, post.getUser());
-        updated_post.put(DbConstants.ID, post.getObjectId());
-        updated_post.put(DbConstants.MESSAGE,post.getMessage());
-
-        FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_POST).
-                child(post.getObjectId()).updateChildren(updated_post);
-    }
 
     @Override
     public void onClick(View v) {
@@ -392,15 +369,14 @@ public class PostDetailFragment extends BaseFragment implements
                     Utils.hideKeyboard(getActivity());
                     String comment = commentInputView.getText().toString();
                     commentInputView.setText("");
-
+                    NewsFeedFragment.currentObject = post;
                     Comments user_comment = new Comments();
                     user_comment.setMessage(comment);
                     user_comment.setPost(post.getObjectId());
 //                    user_comment.setCreatedAt();
 //                    adapter.addItem(PostManager.getInstance().commentOnPost(getActivity(),
 //                            comment, post));
-                    adapter.addItem(PostManager.getInstance().commentOnPost(getActivity(),
-                            comment, post));
+
 
                     Toast.makeText(getActivity(), "Comment posted",
                             Toast.LENGTH_SHORT).show();
@@ -408,6 +384,9 @@ public class PostDetailFragment extends BaseFragment implements
                             .valueOf(commentCountView.getText().toString()) + 1));
                     int comments_count = Integer.parseInt(commentCountView.getText().toString());
                     Preferences.getInstance(getActivity()).save(DbConstants.COMMENT_COUNT, (int) comments_count);
+                    NewsFeedFragment.currentObject.setComments(comments_count);
+                    adapter.addItem(PostManager.getInstance().commentOnPost(getActivity(),
+                            comment, post));
                 }
                 break;
             case R.id.loveCount:
@@ -429,14 +408,14 @@ public class PostDetailFragment extends BaseFragment implements
         }
     }
 
-    private boolean isLiked(ParseObject post) {
+/*    private boolean isLiked(ParseObject post) {
 
         List<String> likes = post.getList(DbConstants.LIKES);
         if (likes == null)
             return false;
 
         return likes.contains(ParseUser.getCurrentUser().getObjectId());
-    }
+    }*/
 
     @Override
     public String getName() {
@@ -496,7 +475,7 @@ public class PostDetailFragment extends BaseFragment implements
         showComments(comments);
     }
 
-    private class completeCommentLoadingsTask extends
+    /*private class completeCommentLoadingsTask extends
             AsyncTask<Void, Void, List<ParseObject>> {
 
         List<ParseObject> comments;
@@ -526,7 +505,7 @@ public class PostDetailFragment extends BaseFragment implements
         public void onPostExecute(List<ParseObject> comments) {
             // showComments(comments);
         }
-    }
+    }*/
 
     private void showLoadingError() {
         try {
@@ -580,6 +559,7 @@ public class PostDetailFragment extends BaseFragment implements
 //                getActivity(),
 //                post.getParseFile(DbConstants.MEDIA) == null ? Constants.OPERATION_STATUS
 //                        : Constants.OPERATION_PHOTO, position, post);
+        NewsFeedFragment.currentObject = post;
         Utils.launchEditView(
                 getActivity(),
                 post.getMedia() == null ? Constants.OPERATION_STATUS
@@ -587,20 +567,20 @@ public class PostDetailFragment extends BaseFragment implements
     }
 
     @Override
-    public void onNotify(ParseObject post) {
+    public void onNotify(Posts post) {
 
     }
 
     @Override
-    public void onEditDone(int position, ParseObject post) {
+    public void onEditDone(int position, Posts post) {
         Log.e(PostDetailFragment.class.getSimpleName(), "onEditDone");
         //PostDetailFragment.post = post;
-        messageView.setText(post.getString(DbConstants.MESSAGE) == null ? ""
-                : post.getString(DbConstants.MESSAGE));
+      /*  messageView.setText(post.getString(DbConstants.MESSAGE) == null ? ""
+                : post.getString(DbConstants.MESSAGE));*/
     }
 
     @Override
-    public void onFlagClicked(int position, ParseObject post) {
+    public void onFlagClicked(int position, Posts post) {
         if (post == null) {
             // post = PostDetailFragment.post;
         }

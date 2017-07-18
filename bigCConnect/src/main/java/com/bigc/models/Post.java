@@ -2,12 +2,8 @@ package com.bigc.models;
 
 import android.graphics.Bitmap;
 
-import com.bigc.general.classes.DbConstants;
-import com.parse.ParseClassName;
-import com.parse.ParseObject;
 
-@ParseClassName(DbConstants.TABLE_POST)
-public class Post extends ParseObject {
+public class Post  {
 
 	public Post() {
 		super();

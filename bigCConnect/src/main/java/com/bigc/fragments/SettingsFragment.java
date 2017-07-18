@@ -29,10 +29,6 @@ import com.bigc_connect.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.parse.ParseException;
-import com.parse.ParseInstallation;
-import com.parse.ParseUser;
-import com.parse.SaveCallback;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -145,7 +141,7 @@ public class SettingsFragment extends BaseFragment {
             }
         });
 
-        if (ParseInstallation.getCurrentInstallation().containsKey(
+        /*if (ParseInstallation.getCurrentInstallation().containsKey(
                 Constants.NOTIFICATIONS)
                 && ParseInstallation.getCurrentInstallation().getBoolean(
                 Constants.NOTIFICATIONS) == false) {
@@ -153,7 +149,7 @@ public class SettingsFragment extends BaseFragment {
         } else {
             notificationsButtons.check(R.id.onCheckbox);
         }
-
+*/
         notificationsButtons
                 .setOnCheckedChangeListener(new OnCheckedChangeListener() {
 

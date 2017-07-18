@@ -15,7 +15,6 @@ import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc_connect.R;
-import com.parse.ParseUser;
 
 public class AddTributeDialog extends Dialog implements
 		android.view.View.OnClickListener {
@@ -23,10 +22,10 @@ public class AddTributeDialog extends Dialog implements
 	private RecipientEditTextView shareUsers;
 	private EditText ageView;
 	private BaseFragment caller;
-	private static ParseUser targetUser = null;
+	private static com.android.ex.chips.Users targetUser = null;
 	private static int userAge = -1;
 
-	public static ParseUser getTargetUser() {
+	public static com.android.ex.chips.Users getTargetUser() {
 		return targetUser;
 	}
 

@@ -51,8 +51,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.parse.ParseFile;
-import com.parse.ParseUser;
 
 public class SignupActivity extends FragmentActivity implements
         SignupInterface, LoadImageObservable {
@@ -296,8 +294,8 @@ public class SignupActivity extends FragmentActivity implements
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, outStream);
             byte[] bitmapdata = outStream.toByteArray();
             outStream.close();
-            ParseFile file = new ParseFile("profilePic.png", bitmapdata);
-            ParseUser.getCurrentUser().put(DbConstants.PROFILE_PICTURE, file);
+            /*ParseFile file = new ParseFile("profilePic.png", bitmapdata);
+            ParseUser.getCurrentUser().put(DbConstants.PROFILE_PICTURE, file);*/
             return true;
         } catch (Exception e) {
             e.printStackTrace();

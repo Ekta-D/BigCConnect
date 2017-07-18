@@ -1,15 +1,8 @@
 package com.bigc.fragments;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Layout;
 import android.text.style.LeadingMarginSpan.LeadingMarginSpan2;
@@ -35,11 +28,9 @@ import com.bigc.general.classes.Queries;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
-import com.bigc.interfaces.PopupOptionHandler;
 import com.bigc.interfaces.StoryPopupOptionHandler;
 import com.bigc.interfaces.UploadStoryObserver;
 import com.bigc.models.Comments;
-import com.bigc.models.Post;
 import com.bigc.models.Posts;
 import com.bigc.models.Stories;
 import com.bigc.views.NestedListView;
@@ -55,11 +46,12 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
-import com.parse.FindCallback;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-import com.parse.ParseUser;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 //public class FragmentStoryDetail extends BaseFragment implements
 //		UploadStoryObserver, PopupOptionHandler //// TODO: 14-07-2017
@@ -338,7 +330,9 @@ public class FragmentStoryDetail extends BaseFragment implements
 
     @Override
     public void onDelete(int position, Stories story) {
-
+        PostManager.getInstance().deleteStory(story);
+		handler.onDelete(position, story);
+		((HomeScreen) getActivity()).onBackPressed();
     }
 
     @Override
@@ -419,7 +413,7 @@ public class FragmentStoryDetail extends BaseFragment implements
 
                 boolean isOwner = story.getUser().equals(FirebaseAuth.getInstance().getCurrentUser().getUid());
                 Utils.storyQuickActionMenu(FragmentStoryDetail.this, getActivity(),
-                        position, null, v, isOwner, DbConstants.Flags.Story);
+                        position, story, v, isOwner, DbConstants.Flags.Story);
 //			Utils.showQuickActionMenu(
 //					FragmentStoryDetail.this,
 //					getActivity(),
@@ -504,13 +498,14 @@ public class FragmentStoryDetail extends BaseFragment implements
         }
     }
 
-    private boolean isLiked(ParseObject post) {
-
-        List<String> likes = post.getList(DbConstants.LIKES);
+    private boolean isLiked(Posts post) {
+// TODO: 7/18/2017 work on likes
+       /* List<String> likes = post.getList(DbConstants.LIKES);
         if (likes == null)
             return false;
 
-        return likes.contains(ParseUser.getCurrentUser().getObjectId());
+        return likes.contains(ParseUser.getCurrentUser().getObjectId());*/
+       return false;
     }
 
     @Override
@@ -563,12 +558,12 @@ public class FragmentStoryDetail extends BaseFragment implements
     }
 
     @Override
-    public void onNotify(ParseObject story) {
+    public void onNotify(Stories story) {
 
     }
 
     @Override
-    public void onEditDone(int position, ParseObject post) {
+    public void onEditDone(int position, Posts post) {
 //        Log.e(FragmentStoryDetail.class.getSimpleName(), "onEditDone");
 //        FragmentStoryDetail.story = post;
 //        statusView.setText(story.getString(DbConstants.MESSAGE) == null ? ""
@@ -600,12 +595,6 @@ public class FragmentStoryDetail extends BaseFragment implements
 //		((HomeScreen) getActivity()).onBackPressed();
 //	}
 //
-//	@Override
-//	public void onEditClicked(int position, ParseObject post) {
-//		Log.e("onEditClicked", "Done");
-//		Utils.launchEditView(getActivity(), Constants.OPERATION_STORY,
-//				position, post);
-//	}
 
     public Comments commentOnStory(Context context, String comment, final Stories story) {
 

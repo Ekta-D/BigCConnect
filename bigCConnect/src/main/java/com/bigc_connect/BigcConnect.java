@@ -3,13 +3,10 @@ package com.bigc_connect;
 import android.app.Application;
 import android.graphics.Bitmap;
 
-import com.bigc.general.classes.Constants;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-import com.parse.Parse;
-import com.parse.ParsePush;
 
 public class BigcConnect extends Application {
 
@@ -21,7 +18,7 @@ public class BigcConnect extends Application {
 		super.onCreate();
 
 		// cloud integration would be here
-		Parse.enableLocalDatastore(getApplicationContext());
+		/*Parse.enableLocalDatastore(getApplicationContext());
 		Parse.initialize(this, Constants.CLOUD_ID, Constants.CLOUD_KEY);
 
 		// ONLY FOR PREMIUM VERSION
@@ -29,7 +26,7 @@ public class BigcConnect extends Application {
 //			Preferences.getInstance(this).save(Constants.PREMIUM, true);
 
 		bitmap = null;
-		ParsePush.subscribeInBackground("");
+		ParsePush.subscribeInBackground("");*/
 
 		ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
 				getApplicationContext()).build();

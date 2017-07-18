@@ -1,15 +1,10 @@
 package com.bigc.fragments;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Layout;
 import android.text.style.LeadingMarginSpan.LeadingMarginSpan2;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,30 +15,19 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bigc.activities.HomeScreen;
 import com.bigc.adapters.CommentsAdapter;
 import com.bigc.dialogs.AddTributeDialog;
 import com.bigc.general.classes.Constants;
-import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
-import com.bigc.general.classes.PostManager;
-import com.bigc.general.classes.Queries;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
 import com.bigc.interfaces.PopupOptionHandler;
 import com.bigc.interfaces.UploadPostObserver;
 import com.bigc.models.Posts;
+import com.bigc.models.Users;
 import com.bigc.views.NestedListView;
 import com.bigc_connect.R;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
-import com.parse.FindCallback;
-import com.parse.GetCallback;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-import com.parse.ParseUser;
 
 //public class FragmentTributeDetail extends BaseFragment implements
 //		PopupOptionHandler, UploadPostObserver //// TODO: 14-07-2017  
@@ -52,7 +36,7 @@ public class FragmentTributeDetail extends BaseFragment implements
 {
 
 	private CommentsAdapter adapter;
-	private static ParseObject tribute = null;
+	private static Object tribute = null;
 	private static PopupOptionHandler handler = null;
 	private static int position = -1;
 
@@ -72,7 +56,7 @@ public class FragmentTributeDetail extends BaseFragment implements
 	private ImageView optionView;
 
 	public FragmentTributeDetail(PopupOptionHandler handler,
-			ParseObject tribute, int position) {
+			Object tribute, int position) {
 		FragmentTributeDetail.tribute = tribute;
 		FragmentTributeDetail.handler = handler;
 		FragmentTributeDetail.position = position;
@@ -120,7 +104,7 @@ public class FragmentTributeDetail extends BaseFragment implements
 		return view;
 	}
 
-	@Override
+/*	@Override
 	public void onStart() {
 		super.onStart();
 		PostManager.getInstance().addTributeObserver(this);
@@ -130,7 +114,7 @@ public class FragmentTributeDetail extends BaseFragment implements
 	public void onDestroy() {
 		PostManager.getInstance().removeTributeObserver();
 		super.onDestroy();
-	}
+	}*/
 
 	@Override
 	public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -141,7 +125,7 @@ public class FragmentTributeDetail extends BaseFragment implements
 //		adapter = new CommentsAdapter(getActivity());
 //		listView.setAdapter(adapter);
 
-		if (tribute.isDataAvailable()) {
+		/*if (tribute.isDataAvailable()) {
 			populateData();
 		} else {
 			tribute.fetchIfNeededInBackground(new GetCallback<ParseObject>() {
@@ -154,11 +138,11 @@ public class FragmentTributeDetail extends BaseFragment implements
 					}
 				}
 			});
-		}
+		}*/
 	}
 
-	private void populateOwnerFields(ParseUser owner) {
-		headingOne.setText(owner.getString(DbConstants.NAME));
+	private void populateOwnerFields(Users owner) {
+		/*headingOne.setText(owner.getString(DbConstants.NAME));
 		if (owner.getInt(DbConstants.TYPE) == Constants.USER_TYPE.SUPPORTER
 				.ordinal()) {
 			ribbonView.setImageResource(R.drawable.ribbon_supporter);
@@ -174,7 +158,7 @@ public class FragmentTributeDetail extends BaseFragment implements
 							: Utils.survivor_ribbons[owner
 									.getInt(DbConstants.RIBBON)]);
 		}
-
+*/
 		// else {
 		// ribbonView
 		// .setImageResource(owner.getInt(DbConstants.RIBBON) < 0 ?
@@ -185,7 +169,7 @@ public class FragmentTributeDetail extends BaseFragment implements
 	}
 
 	private void populateData() {
-		ParseUser owner = tribute.getParseUser(DbConstants.TO);
+		/*ParseUser owner = tribute.getParseUser(DbConstants.TO);
 		if (!owner.isDataAvailable()) {
 			owner.fetchIfNeededInBackground(new GetCallback<ParseUser>() {
 
@@ -230,10 +214,10 @@ public class FragmentTributeDetail extends BaseFragment implements
 		headingOne.setOnClickListener(this);
 		loveCountView.setOnClickListener(this);
 
-		loadComments();
+		loadComments();*/
 	}
 
-	private void loadComments() {
+	/*private void loadComments() {
 		ParseQuery<ParseObject> mQuery = Queries
 				.getTributeCommentsQuery(tribute);
 		mQuery.findInBackground(new FindCallback<ParseObject>() {
@@ -248,7 +232,8 @@ public class FragmentTributeDetail extends BaseFragment implements
 			}
 		});
 	}
-
+*/
+/*
 	private class completeCommentLoadingsTask extends
 			AsyncTask<Void, Void, List<ParseObject>> {
 
@@ -280,6 +265,7 @@ public class FragmentTributeDetail extends BaseFragment implements
 			showComments(comments);
 		}
 	}
+*/
 
 	private void showLoadingError() {
 		try {
@@ -290,7 +276,7 @@ public class FragmentTributeDetail extends BaseFragment implements
 		}
 	}
 
-	private void showComments(List<ParseObject> objects) {
+	/*private void showComments(List<ParseObject> objects) {
 		try {
 			progressParent.setVisibility(View.GONE);
 			//adapter.setData(objects);
@@ -298,7 +284,7 @@ public class FragmentTributeDetail extends BaseFragment implements
 		} catch (NullPointerException e) {
 
 		}
-	}
+	}*/
 
 	@Override
 	public void onClick(View v) {
@@ -347,9 +333,9 @@ public class FragmentTributeDetail extends BaseFragment implements
 		case R.id.newsFeedPicView:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
 					"Tribute Picture");
-			if (tribute.getParseFile(DbConstants.MEDIA) != null)
+			/*if (tribute.getParseFile(DbConstants.MEDIA) != null)
 				Utils.openImageZoomView(getActivity(),
-						tribute.getParseFile(DbConstants.MEDIA).getUrl());
+						tribute.getParseFile(DbConstants.MEDIA).getUrl());*/
 			break;
 		case R.id.postButton:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
@@ -373,14 +359,14 @@ public class FragmentTributeDetail extends BaseFragment implements
 		case R.id.loveImage:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
 					"Love Tribute Button");
-			if (!Utils.isLiked(tribute)) {
+			/*if (!Utils.isLiked(tribute)) {
 				loveCountView.setText(String.valueOf(tribute
 						.getList(DbConstants.LIKES) == null ? 1 : tribute
 						.getList(DbConstants.LIKES).size() + 1));
 				tribute.add(DbConstants.LIKES, ParseUser.getCurrentUser()
 						.getObjectId());
 				PostManager.getInstance().likeStory(tribute);
-			}
+			}*/
 
 		}
 	}
@@ -448,12 +434,12 @@ public class FragmentTributeDetail extends BaseFragment implements
 //	}
 
 	@Override
-	public void onNotify(ParseObject post) {
+	public void onNotify(Posts post) {
 
 	}
 
 	@Override
-	public void onEditDone(int position, ParseObject tribute) {
+	public void onEditDone(int position, Posts tribute) {
 //		Log.e(FragmentTributeDetail.class.getSimpleName(), "onEditDone - "
 //				+ tribute.getString(DbConstants.MESSAGE));
 //		FragmentTributeDetail.tribute = tribute;

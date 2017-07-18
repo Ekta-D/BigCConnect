@@ -20,8 +20,6 @@ import com.bigc.interfaces.SearchResultBaseAdapter;
 import com.bigc.models.Users;
 import com.bigc_connect.R;
 import com.google.firebase.auth.FirebaseAuth;
-import com.parse.ParseUser;
-
 import eu.janmuller.android.simplecropimage.Util;
 
 public class SearchResultAdapter extends SearchResultBaseAdapter {

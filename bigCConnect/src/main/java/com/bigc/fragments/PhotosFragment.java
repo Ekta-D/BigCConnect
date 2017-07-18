@@ -26,8 +26,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.parse.ParseException;
-import com.parse.ParseObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -181,7 +179,7 @@ public class PhotosFragment extends BaseFragment {
         }
     }
 
-    private class completePostLoadingsTask extends
+    /*private class completePostLoadingsTask extends
             AsyncTask<Void, Void, List<ParseObject>> {
 
         List<ParseObject> posts;
@@ -209,7 +207,7 @@ public class PhotosFragment extends BaseFragment {
         public void onPostExecute(List<ParseObject> posts) {
             //   populateList(posts);
         }
-    }
+    }*/
 
 //    private void populateList(List<ParseObject> posts) {
 //

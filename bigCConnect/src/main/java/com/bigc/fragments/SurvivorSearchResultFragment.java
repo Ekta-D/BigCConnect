@@ -1,7 +1,5 @@
 package com.bigc.fragments;
 
-import java.util.List;
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -20,13 +18,9 @@ import android.widget.TextView;
 import com.bigc.activities.SignupActivity;
 import com.bigc.adapters.SearchResultAdapter;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
-import com.bigc.general.classes.Queries;
-import com.bigc.general.classes.Utils;
 import com.bigc_connect.R;
-import com.parse.FindCallback;
-import com.parse.ParseException;
-import com.parse.ParseQuery;
-import com.parse.ParseUser;
+
+import java.util.List;
 
 public class SurvivorSearchResultFragment extends Fragment implements
 		View.OnClickListener {
@@ -140,15 +134,15 @@ public class SurvivorSearchResultFragment extends Fragment implements
 
 	}
 
-	private void showResult(List<ParseUser> result) {
+	/*private void showResult(List<ParseUser> result) {
 		if (errorMessageView == null || listview == null)
 			return;
 		errorMessageView.setVisibility(View.GONE);
 		// TODO: 7/14/2017 update data to adapter
-		/*adapter.updateData(result);*/
+		*//*adapter.updateData(result);*//*
 		listview.setVisibility(View.VISIBLE);
 	}
-
+*/
 	@Override
 	public void onClick(View view) {
 		switch (view.getId()) {

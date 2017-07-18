@@ -21,7 +21,7 @@ import android.provider.ContactsContract.DisplayNameSources;
 import android.text.util.Rfc822Token;
 import android.text.util.Rfc822Tokenizer;
 
-import com.parse.ParseUser;
+
 
 /**
  * Represents one entry inside recipient auto-complete list.
@@ -74,14 +74,14 @@ public class RecipientEntry {
 	 */
 	private byte[] mPhotoBytes;
 	private final boolean mIsGalContact;
-	private final ParseUser user;
+	private final Users user;
 
 	private RecipientEntry(final int entryType, final String displayName,
 			final String destination, final int destinationType,
 			final String destinationLabel, final long contactId,
 			final long dataId, final Uri photoThumbnailUri,
 			final boolean isFirstLevel, final boolean isValid,
-			final boolean isGalContact, final ParseUser user) {
+			final boolean isGalContact, final Users user) {
 		mEntryType = entryType;
 		mIsFirstLevel = isFirstLevel;
 		mDisplayName = displayName;
@@ -102,7 +102,7 @@ public class RecipientEntry {
 		return mIsValid;
 	}
 
-	public ParseUser getUser() {
+	public Users getUser() {
 		return user;
 	}
 
@@ -186,7 +186,7 @@ public class RecipientEntry {
 			final String destinationLabel, final long contactId,
 			final long dataId, final String thumbnailUriAsString,
 			final boolean isValid, final boolean isGalContact,
-			final ParseUser user) {
+			final Users user) {
 		return new RecipientEntry(ENTRY_TYPE_PERSON, pickDisplayName(
 				displayNameSource, displayName, destination), destination,
 				destinationType, destinationLabel, contactId, dataId,

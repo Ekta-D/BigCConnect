@@ -1,16 +1,5 @@
 package com.bigc.fragments;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -28,16 +17,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bigc.activities.LoginActivity;
 import com.bigc.datastorage.Preferences;
 import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
-import com.bigc.general.classes.Queries;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
-import com.bigc.interfaces.SignupInterface;
 import com.bigc.models.ConnectionsModel;
 import com.bigc.models.Users;
 import com.bigc_connect.BigcConnect;
@@ -57,16 +43,15 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.parse.GetCallback;
-import com.parse.ParseException;
-import com.parse.ParseFile;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-import com.parse.ParseUser;
-import com.parse.SaveCallback;
 
-import eu.janmuller.android.simplecropimage.CropImage;
-import eu.janmuller.android.simplecropimage.Util;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ProfileFragment extends BaseFragment {
 
@@ -560,7 +545,7 @@ public class ProfileFragment extends BaseFragment {
             if (bmData == null)
                 return null;
 
-            ParseFile file = new ParseFile("profilePic.png", bmData);
+           /* ParseFile file = new ParseFile("profilePic.png", bmData);
             ParseUser.getCurrentUser().put(DbConstants.PROFILE_PICTURE, file);
             final BigcConnect application = (BigcConnect) ProfileFragment.this
                     .getActivity().getApplication();
@@ -576,7 +561,7 @@ public class ProfileFragment extends BaseFragment {
 
                     }
                 }
-            });
+            });*/
             return bm;
         }
 

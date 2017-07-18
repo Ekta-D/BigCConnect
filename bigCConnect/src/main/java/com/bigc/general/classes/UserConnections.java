@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.bigc.models.Users;
-import com.parse.ParseUser;
 
 public class UserConnections {
 

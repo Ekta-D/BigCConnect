@@ -17,9 +17,6 @@ import com.bigc_connect.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.parse.ParseException;
-import com.parse.ParseUser;
-import com.parse.SaveCallback;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -77,8 +74,7 @@ public class DeactivateFragment extends BaseFragment {
             case R.id.forgotPasswordOption:
                 GoogleAnalyticsHelper.setClickedAction(getActivity(),
                         "Forgot Password Button");
-                Utils.sendPasswordRecoverEmail(ParseUser.getCurrentUser()
-                        .getEmail());
+                Utils.sendPasswordRecoverEmail(FirebaseAuth.getInstance().getCurrentUser().getEmail());
                 Toast.makeText(getActivity(),
                         "Reset link has been sent to your email", Toast.LENGTH_LONG)
                         .show();

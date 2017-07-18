@@ -1,12 +1,7 @@
 package com.bigc.fragments;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.Context;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,47 +16,42 @@ import android.widget.Toast;
 import com.bigc.adapters.ChatAdapter;
 import com.bigc.datastorage.Preferences;
 import com.bigc.general.classes.Constants;
-import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
-import com.bigc.general.classes.PostManager;
-import com.bigc.general.classes.Queries;
-import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
 import com.bigc.interfaces.MessageObservable;
 import com.bigc.interfaces.MessageObserver;
+import com.bigc.models.Users;
 import com.bigc.receivers.NotificationReceiver;
 import com.bigc_connect.R;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.parse.FindCallback;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-import com.parse.ParseUser;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MessageDetailFragment extends BaseFragment implements
 		MessageObserver {
 
-	private static ParseUser user = null;
-	private static ParseObject conversation = null;
+	private static Users user = null;
+	private static Object conversation = null;
 	private ListView listView;
 	private LinearLayout messageViewParent;
 	private TextView messageView;
 	private ProgressBar progressView;
 	private AdView adView;
-	private List<ParseObject> messages = new ArrayList<ParseObject>();
+	private List<Object> messages = new ArrayList<>();
 	private ChatAdapter adapter;
 	private EditText replyView;
 	private static volatile boolean clicked = false;
 
-	public MessageDetailFragment(ParseObject conversation) {
+	public MessageDetailFragment(Object conversation) {
 		MessageDetailFragment.conversation = conversation;
-		MessageDetailFragment.user = conversation
+		/*MessageDetailFragment.user = conversation
 				.getParseUser(DbConstants.USER1).getObjectId()
 				.equals(ParseUser.getCurrentUser().getObjectId()) ? conversation
 				.getParseUser(DbConstants.USER2) : conversation
-				.getParseUser(DbConstants.USER1);
+				.getParseUser(DbConstants.USER1);*/
 	}
 
 	@Override
@@ -144,7 +134,7 @@ public class MessageDetailFragment extends BaseFragment implements
 				String reply = replyView.getText().toString();
 				replyView.setText("");
 
-				ParseObject obj = new ParseObject(DbConstants.TABLE_MESSAGE);
+				/*ParseObject obj = new ParseObject(DbConstants.TABLE_MESSAGE);
 				obj.put(DbConstants.USER1, ParseUser.getCurrentUser());
 				obj.put(DbConstants.USER2, user);
 				obj.put(DbConstants.MESSAGE, reply);
@@ -152,7 +142,7 @@ public class MessageDetailFragment extends BaseFragment implements
 				// TODO: 7/14/2017 send message 
 				//PostManager.getInstance().sendMessage(obj, user);
 				conversation.put(DbConstants.MESSAGE, reply);
-				adapter.addItem(obj);
+				adapter.addItem(obj);*/
 			}
 		}
 		clicked = false;
@@ -170,7 +160,7 @@ public class MessageDetailFragment extends BaseFragment implements
 
 	private void loadData(final boolean fromCache) {
 
-		ParseQuery<ParseObject> query = Queries.getGroupMessagesQuery(user,
+		/*ParseQuery<ParseObject> query = Queries.getGroupMessagesQuery(user,
 				fromCache);
 
 		query.findInBackground(new FindCallback<ParseObject>() {
@@ -206,10 +196,10 @@ public class MessageDetailFragment extends BaseFragment implements
 				}
 
 			}
-		});
+		});*/
 	}
 
-	private class completeMessageLoadingsTask extends
+	/*private class completeMessageLoadingsTask extends
 			AsyncTask<Void, Void, List<ParseObject>> {
 
 		List<ParseObject> messages;
@@ -238,8 +228,8 @@ public class MessageDetailFragment extends BaseFragment implements
 			populateList(messages);
 		}
 	}
-
-	private void populateList(List<ParseObject> messages) {
+*/
+/*	private void populateList(List<ParseObject> messages) {
 
 		this.messages.clear();
 		if (listView != null) {
@@ -257,7 +247,7 @@ public class MessageDetailFragment extends BaseFragment implements
 			}
 			// listView.onRefreshComplete();
 		}
-	}
+	}*/
 
 	@Override
 	public void onStart() {
@@ -274,8 +264,8 @@ public class MessageDetailFragment extends BaseFragment implements
 	}
 
 	@Override
-	public boolean onMessageReceive(final ParseObject message, ParseUser user) {
-		if (listView != null || adapter != null) {
+	public boolean onMessageReceive(final Object message, Users user) {
+		/*if (listView != null || adapter != null) {
 			getActivity().runOnUiThread(new Runnable() {
 
 				@Override
@@ -284,7 +274,7 @@ public class MessageDetailFragment extends BaseFragment implements
 				}
 			});
 			return true;
-		}
+		}*/
 		return false;
 	}
 

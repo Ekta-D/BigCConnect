@@ -1,6 +1,5 @@
 package com.bigc.fragments;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,13 +12,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-//import com.bigc.adapters.NewsfeedAdapter;
 import com.bigc.adapters.NewsfeedAdapter;
 import com.bigc.datastorage.Preferences;
 import com.bigc.general.classes.Constants;
-import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
-import com.bigc.general.classes.Queries;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
@@ -31,14 +27,8 @@ import com.mopub.nativeads.MoPubNativeAdPositioning;
 import com.mopub.nativeads.MoPubStaticNativeAdRenderer;
 import com.mopub.nativeads.RequestParameters;
 import com.mopub.nativeads.ViewBinder;
-import com.parse.FindCallback;
-import com.parse.GetCallback;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
 
-import java.util.ArrayList;
-import java.util.List;
+//import com.bigc.adapters.NewsfeedAdapter;
 
 public class PostsFragments extends BaseFragment implements PopupOptionHandler {
 
@@ -189,7 +179,7 @@ public class PostsFragments extends BaseFragment implements PopupOptionHandler {
 //        });
 //    }
 
-    private class completePostLoadingsTask extends
+    /*private class completePostLoadingsTask extends
             AsyncTask<Void, Void, List<ParseObject>> {
 
         List<ParseObject> posts;
@@ -217,9 +207,9 @@ public class PostsFragments extends BaseFragment implements PopupOptionHandler {
         public void onPostExecute(List<ParseObject> posts) {
             populateList(posts);
         }
-    }
+    }*/
 
-    private void populateList(List<ParseObject> posts) {
+    /*private void populateList(List<ParseObject> posts) {
 
         if (listview != null) {
             if (posts == null) {
@@ -234,7 +224,7 @@ public class PostsFragments extends BaseFragment implements PopupOptionHandler {
                 messageViewParent.setVisibility(View.GONE);
             }
         }
-    }
+    }*/
 
     private void showError(String message) {
         listview.setVisibility(View.GONE);
@@ -292,9 +282,9 @@ public class PostsFragments extends BaseFragment implements PopupOptionHandler {
     }
 
     @Override
-    public void onFlagClicked(int position, ParseObject post) {
+    public void onFlagClicked(int position, Posts post) {
         if (post == null) {
-            post = adapter.getItem(position);
+           // post = adapter.getItem(position);
         }
         if (post != null) {
             Utils.flagFeed(post);

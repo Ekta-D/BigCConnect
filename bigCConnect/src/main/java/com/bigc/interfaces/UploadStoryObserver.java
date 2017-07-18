@@ -1,10 +1,11 @@
 package com.bigc.interfaces;
 
-import com.parse.ParseObject;
+import com.bigc.models.Posts;
+import com.bigc.models.Stories;
 
 public interface UploadStoryObserver {
 
-	public void onNotify(ParseObject story);
+	public void onNotify(Stories story);
 	
-	public void onEditDone(int position, ParseObject post);
+	public void onEditDone(int position, Posts post);
 }

@@ -42,12 +42,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.parse.FindCallback;
-import com.parse.LogInCallback;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-import com.parse.ParseUser;
 
 public class LoginActivity extends Activity implements OnClickListener {
 
@@ -220,8 +214,8 @@ public class LoginActivity extends Activity implements OnClickListener {
                     }
                 }).create().show();
     }
-
-    private class fetchUsersTask extends AsyncTask<Void, Void, Void> {
+    // TODO: 7/18/2017 fetch user task
+/*    private class fetchUsersTask extends AsyncTask<Void, Void, Void> {
 
         private List<ParseObject> objects;
 
@@ -255,7 +249,7 @@ public class LoginActivity extends Activity implements OnClickListener {
             Utils.hideProgress();
             gotoHomeScreen();
         }
-    }
+    }*/
 
     private void gotoHomeScreen() {
         FirebaseUser currentUser = firebaseAuth.getCurrentUser();

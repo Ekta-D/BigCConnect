@@ -1,25 +1,14 @@
 package com.bigc.activities;
 
-import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.widget.Toast;
 
-import com.bigc.datastorage.Preferences;
-import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
 import com.bigc.general.classes.Utils;
 import com.bigc_connect.R;
-import com.parse.ParseAnalytics;
-import com.parse.ParseUser;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Splash extends Activity {
 
@@ -32,7 +21,7 @@ public class Splash extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        ParseAnalytics.trackAppOpenedInBackground(getIntent());
+        //ParseAnalytics.trackAppOpenedInBackground(getIntent());
         sync = false;
 
 
@@ -70,7 +59,7 @@ public class Splash extends Activity {
     }
 
     private void startApplication() {
-        if (ParseUser.getCurrentUser() == null) {
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
             Utils.unregisterDeviceForNotifications();
             startActivity(new Intent(Splash.this, LoginActivity.class));
         } else {

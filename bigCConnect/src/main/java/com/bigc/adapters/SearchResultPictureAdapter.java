@@ -1,9 +1,6 @@
 package com.bigc.adapters;
 
-import java.util.List;
-
 import android.content.Context;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -11,14 +8,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bigc.general.classes.Constants;
-import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.SearchResultBaseAdapter;
 import com.bigc.models.Users;
 import com.bigc_connect.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.parse.ParseUser;
+
+import java.util.List;
 
 public class SearchResultPictureAdapter extends SearchResultBaseAdapter {
 
@@ -91,7 +89,7 @@ public class SearchResultPictureAdapter extends SearchResultBaseAdapter {
 		}
 
 		if ((isSupporterUser && supporter)
-				|| ParseUser.getCurrentUser().getObjectId()
+				|| FirebaseAuth.getInstance().getCurrentUser().getUid()
 						.equals(user.getObjectId())) {
 			holder.addOption.setVisibility(View.GONE);
 		} else {

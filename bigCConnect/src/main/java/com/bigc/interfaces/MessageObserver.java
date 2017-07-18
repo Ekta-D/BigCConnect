@@ -1,9 +1,8 @@
 package com.bigc.interfaces;
 
-import com.parse.ParseObject;
-import com.parse.ParseUser;
+import com.bigc.models.Users;
 
 public interface MessageObserver {
 
-	public boolean onMessageReceive(ParseObject message, ParseUser sender);
+	public boolean onMessageReceive(Object message, Users sender);
 }

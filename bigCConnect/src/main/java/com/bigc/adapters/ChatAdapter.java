@@ -19,22 +19,21 @@ import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.MyLeadingMarginSpan2;
 import com.bigc.general.classes.Utils;
+import com.bigc.models.Users;
 import com.bigc_connect.R;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
-import com.parse.ParseObject;
-import com.parse.ParseUser;
 
-public class ChatAdapter extends ArrayAdapter<ParseObject> {
-
-	private List<ParseObject> messages;
+public class ChatAdapter extends ArrayAdapter<Users> {
+	// TODO: 7/18/2017 fix this class had parse object previously
+	//private List<ParseObject> messages;
 	private LayoutInflater inflater;
 	private MyLeadingMarginSpan2 span;
 	private Activity context;
 
 	public ChatAdapter(Activity context) {
 		super(context, R.layout.listitem_chat);
-		this.messages = new ArrayList<ParseObject>();
+		//this.messages = new ArrayList<ParseObject>();
 
 		this.context = context;
 		inflater = (LayoutInflater) context
@@ -44,7 +43,7 @@ public class ChatAdapter extends ArrayAdapter<ParseObject> {
 						.getDisplayMetrics()));
 	}
 
-	public void setData(List<ParseObject> messages) {
+	/*public void setData(List<ParseObject> messages) {
 		this.messages.clear();
 		if (messages == null)
 			return;
@@ -55,18 +54,18 @@ public class ChatAdapter extends ArrayAdapter<ParseObject> {
 	public void addItem(ParseObject message) {
 		this.messages.add(message);
 		notifyDataSetChanged();
-	}
+	}*/
 
 	@Override
 	public int getCount() {
 
-		return messages.size();
+		return 0;//messages.size();
 	}
 
 	@Override
 	public View getView(int position, View view, ViewGroup parent) {
 		final ViewHolder holder;
-		if (view == null) {
+		/*if (view == null) {
 			view = inflater.inflate(R.layout.listitem_chat, parent, false);
 			holder = new ViewHolder();
 			holder.nameView = (TextView) view.findViewById(R.id.nameView);
@@ -130,7 +129,7 @@ public class ChatAdapter extends ArrayAdapter<ParseObject> {
 				Utils.openImageZoomView(context,
 						message.getParseFile(DbConstants.MEDIA).getUrl());
 			}
-		});
+		});*/
 		return view;
 	}
 

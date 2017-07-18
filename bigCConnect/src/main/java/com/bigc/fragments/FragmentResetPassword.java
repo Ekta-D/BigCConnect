@@ -22,10 +22,6 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.parse.LogInCallback;
-import com.parse.ParseException;
-import com.parse.ParseUser;
-import com.parse.SaveCallback;
 
 public class FragmentResetPassword extends BaseFragment {
 
@@ -179,7 +175,7 @@ public class FragmentResetPassword extends BaseFragment {
     }
 
     private void resetPasswordOnClouds(final String nPassword) {
-        ParseUser.getCurrentUser().setPassword(nPassword);
+        /*ParseUser.getCurrentUser().setPassword(nPassword);
         ParseUser.getCurrentUser().put(DbConstants.KEY, nPassword);
         ParseUser.getCurrentUser().saveInBackground(new SaveCallback() {
 
@@ -198,7 +194,7 @@ public class FragmentResetPassword extends BaseFragment {
                     }
                 }
             }
-        });
+        });*/
     }
 
     @Override

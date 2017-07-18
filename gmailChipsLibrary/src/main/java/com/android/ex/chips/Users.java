@@ -1,9 +1,9 @@
-package com.bigc.models;
+package com.android.ex.chips;
 
 /**
  * Created by ENTER on 03-07-2017.
  */
-public class Users extends com.android.ex.chips.Users {
+public class Users {
     String email;
     String name;
     int type;

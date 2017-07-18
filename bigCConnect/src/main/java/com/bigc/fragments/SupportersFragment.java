@@ -1,7 +1,6 @@
 package com.bigc.fragments;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,19 +16,10 @@ import com.bigc.datastorage.Preferences;
 import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
-import com.bigc.general.classes.Queries;
-import com.bigc.general.classes.UserConnections;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
 import com.bigc_connect.R;
 import com.google.firebase.auth.FirebaseAuth;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-import com.parse.ParseUser;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class SupportersFragment extends BaseFragment {
 
@@ -126,7 +116,7 @@ public class SupportersFragment extends BaseFragment {
     }
 
 
-    private UserConnections loadUserConnections(final boolean fromCache) {
+   /* private UserConnections loadUserConnections(final boolean fromCache) {
 
         ParseQuery<ParseObject> mQuery = Queries.getUserActiveConnectionsQuery(
                 ParseUser.getCurrentUser(), fromCache);
@@ -149,12 +139,12 @@ public class SupportersFragment extends BaseFragment {
                                 .getInt(DbConstants.TYPE) == Constants.USER_TYPE.SUPPORTER
                                 .ordinal()) {
                             // TODO: 7/14/2017 show status 
-                            /*if (obj.getBoolean(DbConstants.STATUS))
+                            *//*if (obj.getBoolean(DbConstants.STATUS))
                                 connections.activeConnections.add(obj
                                         .getParseUser(DbConstants.FROM));
                             else
                                 connections.pendingConnections.add(obj
-                                        .getParseUser(DbConstants.FROM));*/
+                                        .getParseUser(DbConstants.FROM));*//*
                         }
 
                     } else {
@@ -162,12 +152,12 @@ public class SupportersFragment extends BaseFragment {
                                 .getInt(DbConstants.TYPE) == Constants.USER_TYPE.SUPPORTER
                                 .ordinal()) {
                             // TODO: 7/14/2017 show type 
-                            /*if (obj.getBoolean(DbConstants.STATUS))
+                            *//*if (obj.getBoolean(DbConstants.STATUS))
                                 connections.activeConnections.add(obj
                                         .getParseUser(DbConstants.TO));
                             else
                                 connections.pendingConnections.add(obj
-                                        .getParseUser(DbConstants.TO));*/
+                                        .getParseUser(DbConstants.TO));*//*
                         }
                     }
                 } else {
@@ -178,12 +168,12 @@ public class SupportersFragment extends BaseFragment {
                                 .getInt(DbConstants.TYPE) != Constants.USER_TYPE.SUPPORTER
                                 .ordinal()) {
                             // TODO: 7/14/2017 get from user 
-                            /*if (obj.getBoolean(DbConstants.STATUS))
+                            *//*if (obj.getBoolean(DbConstants.STATUS))
                                 connections.activeConnections.add(obj
                                         .getParseUser(DbConstants.FROM));
                             else
                                 connections.pendingConnections.add(obj
-                                        .getParseUser(DbConstants.FROM));*/
+                                        .getParseUser(DbConstants.FROM));*//*
                         }
 
                     } else {
@@ -191,12 +181,12 @@ public class SupportersFragment extends BaseFragment {
                                 .getInt(DbConstants.TYPE) != Constants.USER_TYPE.SUPPORTER
                                 .ordinal()) {
                             // TODO: 7/14/2017 get to user 
-                            /*if (obj.getBoolean(DbConstants.STATUS))
+                            *//*if (obj.getBoolean(DbConstants.STATUS))
                                 connections.activeConnections.add(obj
                                         .getParseUser(DbConstants.TO));
                             else
                                 connections.pendingConnections.add(obj
-                                        .getParseUser(DbConstants.TO));*/
+                                        .getParseUser(DbConstants.TO));*//*
                         }
                     }
                 }
@@ -209,8 +199,8 @@ public class SupportersFragment extends BaseFragment {
 
         return connections;
     }
-
-    private List<ParseUser> loadConnections(ParseUser user, boolean searchLocal) {
+*/
+  /*  private List<ParseUser> loadConnections(ParseUser user, boolean searchLocal) {
 
         ParseQuery<ParseObject> mQuery = Queries.getUserActiveConnectionsQuery(
                 user, searchLocal);
@@ -257,7 +247,7 @@ public class SupportersFragment extends BaseFragment {
         }
         return data;
     }
-
+*/
     @Override
     public void onClick(View v) {
 
@@ -282,7 +272,7 @@ public class SupportersFragment extends BaseFragment {
     private void showNoDataMessage() {
         try {
             listview.setVisibility(View.GONE);
-            if (supporters) {
+            /*if (supporters) {
                 if (ProfileFragment.getUser().getObjectId()
                         .equals(ParseUser.getCurrentUser().getObjectId()))
                     messageView.setText(R.string.NoSupporterMessage);
@@ -296,7 +286,7 @@ public class SupportersFragment extends BaseFragment {
                     messageView
                             .setText("User is currently not supporting anyone.");
             }
-
+*/
             messageViewParent.setVisibility(View.VISIBLE);
             progressView.setVisibility(View.GONE);
         } catch (Exception e) {
@@ -304,19 +294,19 @@ public class SupportersFragment extends BaseFragment {
         }
     }
 
-    private void showData(List<ParseUser> connections,
+    /*private void showData(List<ParseUser> connections,
                           UserConnections loggedInUserConnections) {
         try {
             // TODO: 7/14/2017 update data to list 
-            /*adapter.updateData(connections,
+            *//*adapter.updateData(connections,
                     loggedInUserConnections.activeConnections,
-                    loggedInUserConnections.pendingConnections);*/
+                    loggedInUserConnections.pendingConnections);*//*
             listview.setVisibility(View.VISIBLE);
             messageViewParent.setVisibility(View.GONE);
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
     @Override
     public boolean onBackPressed() {

@@ -1,9 +1,5 @@
 package com.bigc.fragments;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,16 +15,16 @@ import android.widget.Toast;
 import com.bigc.adapters.MessagesAdapter;
 import com.bigc.datastorage.Preferences;
 import com.bigc.general.classes.Constants;
-import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
 import com.bigc.general.classes.PostManager;
-import com.bigc.general.classes.Queries;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
 import com.bigc.interfaces.MessageObservable;
 import com.bigc.interfaces.MessageObserver;
 import com.bigc.interfaces.UploadPostObserver;
+import com.bigc.models.Posts;
+import com.bigc.models.Users;
 import com.bigc.receivers.NotificationReceiver;
 import com.bigc_connect.R;
 import com.costum.android.widget.PullAndLoadListView.OnLoadMoreListener;
@@ -36,11 +32,9 @@ import com.costum.android.widget.PullToRefreshListView;
 import com.costum.android.widget.PullToRefreshListView.OnRefreshListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.parse.FindCallback;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-import com.parse.ParseUser;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MessagesFragment extends BaseFragment implements
 		OnRefreshListener, UploadPostObserver, OnLoadMoreListener,
@@ -53,7 +47,7 @@ public class MessagesFragment extends BaseFragment implements
 	private LinearLayout progressParent;
 	private ProgressBar progressView;
 
-	private List<ParseObject> messages = new ArrayList<ParseObject>();
+	private List<Object> messages = new ArrayList<>();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -74,8 +68,8 @@ public class MessagesFragment extends BaseFragment implements
 		progressParent = (LinearLayout) view
 				.findViewById(R.id.messageViewParent);
 		listView = (PullToRefreshListView) view.findViewById(R.id.listview);
-		adapter = new MessagesAdapter(getActivity(), messages);
-		listView.setAdapter(adapter);
+		/*adapter = new MessagesAdapter(getActivity(), messages);
+		listView.setAdapter(adapter);*/
 
 		return view;
 	}
@@ -111,7 +105,7 @@ public class MessagesFragment extends BaseFragment implements
 		Log.e("Posts", messages.size() + "--");
 		if (messages.size() == 0) {
 			startProgress();
-			loadData(true);
+			/*loadData(true);*/
 		}
 	}
 
@@ -129,12 +123,12 @@ public class MessagesFragment extends BaseFragment implements
 		super.onStart();
 		PostManager.getInstance().bindObserver(this);
 		PostManager.getInstance().addObserver(this);
-		((MessageObservable) new NotificationReceiver()).bindObserver(this);
+//		((MessageObservable) new NotificationReceiver()).bindObserver(this); //// TODO: 7/18/2017  
 	}
 
 	@Override
 	public void onStop() {
-		((MessageObservable) new NotificationReceiver()).freeObserver();
+	//	((MessageObservable) new NotificationReceiver()).freeObserver();
 		super.onStop();
 	}
 
@@ -168,7 +162,7 @@ public class MessagesFragment extends BaseFragment implements
 
 	@Override
 	public void onRefresh() {
-		loadData(false);
+		/*loadData(false);*/
 	}
 
 	@Override
@@ -178,7 +172,7 @@ public class MessagesFragment extends BaseFragment implements
 		// loadPosts(adapter.getLastItemDate(), false);
 	}
 
-	private void loadData(final boolean fromCache) {
+	/*private void loadData(final boolean fromCache) {
 
 		ParseQuery<ParseObject> query = Queries
 				.getConversationsQuery(fromCache);
@@ -218,9 +212,9 @@ public class MessagesFragment extends BaseFragment implements
 
 			}
 		});
-	}
+	}*/
 
-	private class completeMessageLoadingsTask extends
+	/*private class completeMessageLoadingsTask extends
 			AsyncTask<Void, Void, List<ParseObject>> {
 
 		List<ParseObject> messages;
@@ -273,9 +267,9 @@ public class MessagesFragment extends BaseFragment implements
 				populateList(messages);
 			}
 		}
-	}
+	}*/
 
-	private void populateList(List<ParseObject> messages) {
+	private void populateList(List<Object> messages) {
 
 		this.messages.clear();
 		if (listView != null) {
@@ -285,7 +279,7 @@ public class MessagesFragment extends BaseFragment implements
 			} else if (messages.size() == 0) {
 				showError("No messages sent or received yet.");
 			} else {
-				adapter.setData(messages);
+				//adapter.setData(messages);
 				listView.setVisibility(View.VISIBLE);
 				progressParent.setVisibility(View.GONE);
 				this.messages.addAll(messages);
@@ -312,19 +306,19 @@ public class MessagesFragment extends BaseFragment implements
 	}
 
 	@Override
-	public void onNotify(final ParseObject post) {
+	public void onNotify(final Posts post) {
 		if (post == null) {
 			Toast.makeText(getActivity(), "Upload status is failed, try again",
 					Toast.LENGTH_LONG).show();
 			return;
 		}
 
-		try {
+		/*try {
 			post.getParseUser(DbConstants.USER).fetchIfNeeded();
 			post.pin(Constants.TAG_MESSAGES);
 		} catch (ParseException e) {
 			e.printStackTrace();
-		}
+		}*/
 
 		if (messages != null)
 			messages.add(0, post);
@@ -332,7 +326,7 @@ public class MessagesFragment extends BaseFragment implements
 		if (listView == null)
 			return;
 
-		getActivity().runOnUiThread(new Runnable() {
+	/*	getActivity().runOnUiThread(new Runnable() {
 
 			@Override
 			public void run() {
@@ -346,13 +340,13 @@ public class MessagesFragment extends BaseFragment implements
 					e.printStackTrace();
 				}
 			}
-		});
+		});*/
 	}
 
 	@Override
-	public boolean onMessageReceive(ParseObject message, ParseUser sender) {
+	public boolean onMessageReceive(Object message, Users sender) {
 		Log.e("onMessageReceive", "Invoked");
-		if (adapter != null && listView != null) {
+		/*if (adapter != null && listView != null) {
 			final List<ParseObject> data = new ArrayList<ParseObject>();
 			data.addAll(adapter.getData());
 			String senderId = sender == null ? message.getParseUser(
@@ -398,7 +392,7 @@ public class MessagesFragment extends BaseFragment implements
 				}
 			});
 			return true;
-		}
+		}*/
 		return false;
 	}
 
@@ -410,7 +404,7 @@ public class MessagesFragment extends BaseFragment implements
 	}
 
 	@Override
-	public void onEditDone(int position, ParseObject post) {
+	public void onEditDone(int position, Posts post) {
 		Log.e(MessagesFragment.class.getSimpleName(), "onEditDone");
 	}
 }

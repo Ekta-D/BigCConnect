@@ -1,27 +1,9 @@
 package com.bigc.receivers;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+public class NotificationReceiver /*extends ParsePushBroadcastReceiver implements
+		MessageObservable*/ {
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Vibrator;
-
-import com.bigc.general.classes.Constants;
-import com.bigc.general.classes.DbConstants;
-import com.bigc.general.classes.Utils;
-import com.bigc.interfaces.MessageObservable;
-import com.bigc.interfaces.MessageObserver;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParsePushBroadcastReceiver;
-import com.parse.ParseQuery;
-import com.parse.ParseUser;
-
-public class NotificationReceiver extends ParsePushBroadcastReceiver implements
-		MessageObservable {
-
-	private static MessageObserver observer;
+	/*private static MessageObserver observer;
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
@@ -92,5 +74,5 @@ public class NotificationReceiver extends ParsePushBroadcastReceiver implements
 			return observer.onMessageReceive(message, user);
 
 		return false;
-	}
+	}*/
 }

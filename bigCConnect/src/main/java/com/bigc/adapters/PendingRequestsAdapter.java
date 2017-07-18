@@ -34,13 +34,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.parse.DeleteCallback;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseUser;
-import com.parse.SaveCallback;
 
-public class PendingRequestsAdapter extends ArrayAdapter<ParseObject> {
+public class PendingRequestsAdapter extends ArrayAdapter<ConnectionsModel> {
 
     private List<ConnectionsModel> data;
     private LayoutInflater inflater;

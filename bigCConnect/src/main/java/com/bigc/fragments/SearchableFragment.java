@@ -1,11 +1,6 @@
 package com.bigc.fragments;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,20 +10,15 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.bigc.activities.SearchActivity;
 import com.bigc.adapters.SearchResultAdapter;
 import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
-import com.bigc.general.classes.Queries;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
 import com.bigc_connect.R;
 import com.costum.android.widget.LoadMoreListView;
 import com.costum.android.widget.LoadMoreListView.OnLoadMoreListener;
-import com.parse.ParseException;
-import com.parse.ParseQuery;
-import com.parse.ParseUser;
 
 public class SearchableFragment extends BaseFragment implements
 		OnLoadMoreListener {
@@ -39,7 +29,7 @@ public class SearchableFragment extends BaseFragment implements
 	private ProgressBar progressView;
 	private SearchResultAdapter adapter;
 	private static String query;
-	private static SearchSurvivorsTask searchTask = null;
+	//private static SearchSurvivorsTask searchTask = null;
 
 	public SearchableFragment(String query) {
 		if (query != null && SearchableFragment.query != null
@@ -53,12 +43,12 @@ public class SearchableFragment extends BaseFragment implements
 	}
 
 	public void executeSearch(String query) {
-		if (searchTask != null)
+		/*if (searchTask != null)
 			searchTask.cancel(true);
 
 		Utils.hideKeyboard(getActivity());
 		searchTask = new SearchSurvivorsTask();
-		searchTask.execute(query);
+		searchTask.execute(query);*/
 	}
 
 	@Override
@@ -155,8 +145,8 @@ public class SearchableFragment extends BaseFragment implements
 		return false;
 	}
 
-	private class SearchSurvivorsTask extends
-			AsyncTask<String, Void, List<ParseUser>> {
+	/*private class SearchSurvivorsTask extends
+			AsyncTask<String, Void, List<Users>> {
 
 		@Override
 		public void onPreExecute() {
@@ -164,9 +154,9 @@ public class SearchableFragment extends BaseFragment implements
 		}
 
 		@Override
-		protected List<ParseUser> doInBackground(String... params) {
+		protected List<Users> doInBackground(String... params) {
 			if (params[0] == null || params[0].length() == 0)
-				return new ArrayList<ParseUser>();
+				return new ArrayList<Users>();
 
 			if (params[0].toLowerCase().endsWith("survivors")) {
 				for (int i = 0; i < Utils.ribbonNames.length; i++) {
@@ -181,7 +171,7 @@ public class SearchableFragment extends BaseFragment implements
 		}
 
 		@Override
-		public void onPostExecute(List<ParseUser> users) {
+		public void onPostExecute(List<Users> users) {
 			Log.e("onPostExecute", "users: " + users);
 			if (users == null) {
 				showError("Unable to reach server, Please check your connect and try again");
@@ -192,33 +182,33 @@ public class SearchableFragment extends BaseFragment implements
 			}
 		}
 
-	}
+	}*/
 
-	private List<ParseUser> loadRibbonSurvivors(int ribbon) {
+	/*private List<Users> loadRibbonSurvivors(int ribbon) {
 		// TODO: 7/14/2017 loadRibbonSurvirors
-		/*ParseQuery<ParseUser> query = Queries.getCategorizedUsersQuery(ribbon);
+		*//*ParseQuery<Users> query = Queries.getCategorizedUsersQuery(ribbon);
 
 		try {
 			return query.find();
 		} catch (ParseException e) {
 			return null;
-		}*/
+		}*//*
 		return new ArrayList<>();
-	}
+	}*/
 
-	private List<ParseUser> searchSurvivors(String SEARCH_KEY) {
+	/*private List<Users> searchSurvivors(String SEARCH_KEY) {
 		// TODO: 7/14/2017 search survivors
-		/*ParseQuery<ParseUser> query = Queries
+		*//*ParseQuery<Users> query = Queries
 				.getSearchSurvivorQuery(SEARCH_KEY);
 
 		try {
 			return query.find();
 		} catch (Exception e) {
 			return null;
-		}*/
+		}*//*
 		return new ArrayList<>();
 
-	}
+	}*/
 
 	private void showError(String message) {
 		if (listView == null)
@@ -231,14 +221,14 @@ public class SearchableFragment extends BaseFragment implements
 
 	}
 
-	private void showResult(List<ParseUser> result) {
+	/*private void showResult(List<Users> result) {
 		if (listView == null)
 			return;
 		// TODO: 7/14/2017 update data to adapter
-		/*adapter.updateData(result,
+		*//*adapter.updateData(result,
 				((SearchActivity) getActivity()).connections.activeConnections,
-				((SearchActivity) getActivity()).connections.pendingConnections);*/
+				((SearchActivity) getActivity()).connections.pendingConnections);*//*
 		listView.setVisibility(View.VISIBLE);
 		progressParent.setVisibility(View.GONE);
-	}
+	}*/
 }

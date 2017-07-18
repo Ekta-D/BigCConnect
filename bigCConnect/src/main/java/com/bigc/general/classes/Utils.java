@@ -21,7 +21,6 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Environment;
-import android.provider.ContactsContract.DisplayNameSources;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -40,7 +39,6 @@ import com.bigc.activities.PostActivity;
 import com.bigc.activities.Splash;
 import com.bigc.activities.ZoomActivity;
 import com.bigc.datastorage.Preferences;
-import com.bigc.emailer.EmailComposer;
 import com.bigc.gallery.CustomGalleryActivity;
 import com.bigc.interfaces.PopupOptionHandler;
 import com.bigc.interfaces.StoryPopupOptionHandler;
@@ -60,15 +58,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.parse.DeleteCallback;
-import com.parse.FindCallback;
-import com.parse.GetCallback;
-import com.parse.ParseException;
-import com.parse.ParseInstallation;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-import com.parse.ParseUser;
-import com.parse.RequestPasswordResetCallback;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -146,13 +135,13 @@ public class Utils {
     public static final DisplayImageOptions normalDisplayOptions = new DisplayImageOptions.Builder()
             .cacheInMemory(true).cacheOnDisk(true).build();
 
-    public static boolean isLiked(ParseObject post) {
+    public static boolean isLiked(Posts post) {
 
-        List<String> likes = post.getList(DbConstants.LIKES);
+       /* List<String> likes = post.getList(DbConstants.LIKES);
         if (likes == null)
-            return false;
+            return false;*/
 
-        return likes.contains(ParseUser.getCurrentUser().getObjectId());
+        return false;//likes.contains(ParseUser.getCurrentUser().getObjectId());
     }
 
     public static String getIpAddress() {
@@ -226,29 +215,29 @@ public class Utils {
         activity.overridePendingTransition(R.anim.pull_up, R.anim.remains_same);
     }
 
-    public static void flagTribute(ParseObject tribute) {
-        ParseObject flaggedStory = new ParseObject(DbConstants.TABLE_FLAGS);
+    public static void flagTribute(Object tribute) {
+        /*ParseObject flaggedStory = new ParseObject(DbConstants.TABLE_FLAGS);
         flaggedStory.put(DbConstants.TYPE, DbConstants.Flags.Tribute.ordinal());
         flaggedStory.put(DbConstants.TRIBUTE_OBJECT, tribute);
         flaggedStory.put(DbConstants.USER, ParseUser.getCurrentUser());
-        flaggedStory.saveInBackground();
+        flaggedStory.saveInBackground();*/
     }
 
-    public static void flagStory(ParseObject story) {
-        ParseObject flaggedStory = new ParseObject(DbConstants.TABLE_FLAGS);
+    public static void flagStory(Object story) {
+       /* ParseObject flaggedStory = new ParseObject(DbConstants.TABLE_FLAGS);
         flaggedStory.put(DbConstants.TYPE, DbConstants.Flags.Story.ordinal());
         flaggedStory.put(DbConstants.STORY_OBJECT, story);
         flaggedStory.put(DbConstants.USER, ParseUser.getCurrentUser());
-        flaggedStory.saveInBackground();
+        flaggedStory.saveInBackground();*/
     }
 
-    public static void flagFeed(ParseObject feed) {
-        ParseObject flaggedStory = new ParseObject(DbConstants.TABLE_FLAGS);
+    public static void flagFeed(Object feed) {
+        /*ParseObject flaggedStory = new ParseObject(DbConstants.TABLE_FLAGS);
         flaggedStory
                 .put(DbConstants.TYPE, DbConstants.Flags.NewsFeed.ordinal());
         flaggedStory.put(DbConstants.FEED_OBJECT, feed);
         flaggedStory.put(DbConstants.USER, ParseUser.getCurrentUser());
-        flaggedStory.saveInBackground();
+        flaggedStory.saveInBackground();*/
     }
 
     public static void showToast(Context context, String message) {
@@ -304,8 +293,8 @@ public class Utils {
 
         List<ConnectionsModel> newConnectionObjects = new ArrayList<>();
         for (Users c : newConnections) {
-            final ConnectionsModel o = new ConnectionsModel();;
-            o.setTo(c.getObjectId());
+            final ConnectionsModel o = new ConnectionsModel();
+            o.setTo("");
             o.setFrom(FirebaseAuth.getInstance().getCurrentUser().getUid());
             o.setStatus(false);
             newConnectionObjects.add(o);
@@ -333,10 +322,10 @@ public class Utils {
     private static class saveConnectionTask extends
             AsyncTask<Void, Void, Boolean> {
 
-        List<ParseObject> connections;
+        List<ConnectionsModel> connections;
 
-        private saveConnectionTask(List<ParseObject> connections) {
-            this.connections = new ArrayList<ParseObject>();
+        private saveConnectionTask(List<ConnectionsModel> connections) {
+            this.connections = new ArrayList<>();
             if (connections != null && connections.size() > 0) {
                 this.connections.addAll(connections);
             }
@@ -345,7 +334,7 @@ public class Utils {
         @Override
         protected Boolean doInBackground(Void... params) {
             boolean result = true;
-            for (ParseObject c : connections)
+           /* for (ParseObject c : connections)
                 try {
                     c.save();
                     c.pin(Constants.TAG_CONNECTIONS);
@@ -363,7 +352,7 @@ public class Utils {
                         result = false;
                         break;
                     }
-                }
+                }*/
             return result;
         }
 
@@ -408,15 +397,19 @@ public class Utils {
                 .getQuery(DbConstants.TABLE_CONNECTIONS);
         sQuery1.whereEqualTo(DbConstants.FROM, ParseUser.getCurrentUser());
         sQuery1.whereContainedIn(DbConstants.TO, removedConnections);
+
         ParseQuery<ParseObject> sQuery2 = ParseQuery
                 .getQuery(DbConstants.TABLE_CONNECTIONS);
         sQuery2.whereEqualTo(DbConstants.TO, ParseUser.getCurrentUser());
         sQuery2.whereContainedIn(DbConstants.FROM, removedConnections);
+
         List<ParseQuery<ParseObject>> queries = new ArrayList<ParseQuery<ParseObject>>();
         queries.add(sQuery1);
         queries.add(sQuery2);
+
         ParseQuery<ParseObject> mQuery = ParseQuery.or(queries);
         mQuery.findInBackground(new FindCallback<ParseObject>() {
+
             @Override
             public void done(final List<ParseObject> objects, ParseException e) {
                 Log.e("DeleteObjects", objects.size() + "--");
@@ -425,6 +418,7 @@ public class Utils {
                         ParseObject.unpinAllInBackground(
                                 Constants.TAG_CONNECTIONS, removedConnections,
                                 new DeleteCallback() {
+
                                     @Override
                                     public void done(ParseException e2) {
                                         Log.e("Unpinned", e2 + "--");
@@ -432,15 +426,18 @@ public class Utils {
                                                 .unpinAllInBackground(removedConnections);
                                     }
                                 });
+
                     } else {
                         ParseObject.deleteAllInBackground(objects,
                                 new DeleteCallback() {
+
                                     @Override
                                     public void done(ParseException e) {
                                         Log.e("Connection", "Deleted - " + e);
                                         ParseObject.unpinAllInBackground(
                                                 Constants.TAG_CONNECTIONS,
                                                 objects, new DeleteCallback() {
+
                                                     @Override
                                                     public void done(
                                                             ParseException e2) {
@@ -561,30 +558,30 @@ public class Utils {
     }
 
     public static void registerDeviceForNotifications() {
-        if (ParseUser.getCurrentUser() == null)
+        /*if (ParseUser.getCurrentUser() == null)
             return;
         ParseInstallation.getCurrentInstallation().put("users",
                 ParseUser.getCurrentUser());
-        ParseInstallation.getCurrentInstallation().saveInBackground();
+        ParseInstallation.getCurrentInstallation().saveInBackground();*/
     }
 
     public static void unregisterDeviceForNotifications() {
-        ParseInstallation.getCurrentInstallation().remove("users");
+        /*ParseInstallation.getCurrentInstallation().remove("users");
         ParseInstallation.getCurrentInstallation().remove(
                 Constants.NOTIFICATIONS);
-        ParseInstallation.getCurrentInstallation().saveInBackground();
+        ParseInstallation.getCurrentInstallation().saveInBackground();*/
     }
 
     public static void enablePushes() {
-        ParseInstallation.getCurrentInstallation().put(Constants.NOTIFICATIONS,
+        /*ParseInstallation.getCurrentInstallation().put(Constants.NOTIFICATIONS,
                 true);
-        ParseInstallation.getCurrentInstallation().saveInBackground();
+        ParseInstallation.getCurrentInstallation().saveInBackground();*/
     }
 
     public static void disablePushes() {
-        ParseInstallation.getCurrentInstallation().put(Constants.NOTIFICATIONS,
+        /*ParseInstallation.getCurrentInstallation().put(Constants.NOTIFICATIONS,
                 false);
-        ParseInstallation.getCurrentInstallation().saveInBackground();
+        ParseInstallation.getCurrentInstallation().saveInBackground();*/
     }
 
     public static void choosePicFromGallery(Activity activity,
@@ -696,25 +693,25 @@ public class Utils {
         return 0;
     }
 
-    public static void sendWelcomeEmail() {
+/*    public static void sendWelcomeEmail() {
 
         String body = EmailComposer.composeSupporterWelcomeEmail(ParseUser
                 .getCurrentUser().getString(DbConstants.NAME));
         String email = ParseUser.getCurrentUser().getEmail();
         new EmailSenderTask().execute(email,
                 EmailComposer.WELCOME_EMAIL_SUBJECT, body);
-    }
+    }*/
 
     public static void sendPasswordRecoverEmail(String email) {
 
-        ParseUser.requestPasswordResetInBackground(email,
+       /* ParseUser.requestPasswordResetInBackground(email,
                 new RequestPasswordResetCallback() {
 
                     @Override
                     public void done(ParseException e) {
                         Log.e("Done", "ResetLink");
                     }
-                });
+                });*/
 
         // String body = EmailComposer.ComposeForgotPasswordMail(name,
         // password);
@@ -992,7 +989,7 @@ public class Utils {
 
     public static void launchEditView(Activity activity, int operation, boolean fromNewsfeeds,
                                       int position, Posts post) {
-        PostActivity.setCurrentObject(position, post, null);
+        PostActivity.setCurrentObject(position, post,null);
         Intent i = new Intent(activity, PostActivity.class);
         i.putExtra(Constants.OPERATION, operation);
         i.putExtra(Constants.EDIT_MODE, true);
@@ -1006,11 +1003,12 @@ public class Utils {
         Intent i = new Intent(activity, PostActivity.class);
         i.putExtra(Constants.OPERATION, operation);
         i.putExtra(Constants.EDIT_MODE, true);
+        i.putExtra(Constants.FROM_NEWSFEEDS, false);
         activity.startActivity(i);
     }
 
     public static ArrayList<RecipientEntry> loadConnectionChips() {
-        ParseQuery<ParseObject> query = Queries.getUserActiveConnectionsQuery(
+       /* ParseQuery<ParseObject> query = Queries.getUserActiveConnectionsQuery(
                 ParseUser.getCurrentUser(), true);
         try {
             List<ParseObject> objects = query.find();
@@ -1040,8 +1038,8 @@ public class Utils {
         } catch (ParseException e) {
             e.printStackTrace();
             return new ArrayList<RecipientEntry>();
-        }
-
+        }*/
+        return new ArrayList<RecipientEntry>();
     }
 
     public static String getTimeStringForFeed(Context context, Date date) {
@@ -1147,7 +1145,7 @@ public class Utils {
         return createdDate;
     }
 
-    public static void refreshLoggedInUser() {
+    /*public static void refreshLoggedInUser() {
         ParseUser.getCurrentUser().fetchInBackground(
                 new GetCallback<ParseUser>() {
 
@@ -1156,7 +1154,7 @@ public class Utils {
                         Log.e("User Refreshed", "Ex: " + e);
                     }
                 });
-    }
+    }*/
 
     public static void cropImage(Activity activity, String imgPath) {
         Intent intent = new Intent(activity, CropImage.class);

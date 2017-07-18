@@ -7,11 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bigc.activities.SignupActivity;
-import com.bigc.general.classes.Constants;
-import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
 import com.bigc_connect.R;
-import com.parse.ParseUser;
 
 public class SupporterVisibilityFragment extends Fragment implements
 		View.OnClickListener {
@@ -52,16 +49,16 @@ public class SupporterVisibilityFragment extends Fragment implements
 		case R.id.noButton:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
 					"Private Visibility");
-			ParseUser.getCurrentUser().put(DbConstants.VISIBILITY,
-					Constants.PRIVATE);
+			/*ParseUser.getCurrentUser().put(DbConstants.VISIBILITY,
+					Constants.PRIVATE);*/
 			showNextStep();
 			break;
 		case R.id.skipOption:
 		case R.id.yesButton:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
 					"Public Visibility");
-			ParseUser.getCurrentUser().put(DbConstants.VISIBILITY,
-					Constants.PUBLIC);
+			/*ParseUser.getCurrentUser().put(DbConstants.VISIBILITY,
+					Constants.PUBLIC);*/
 			showNextStep();
 			break;
 		}

@@ -1,11 +1,8 @@
 package com.bigc.models;
 
-import com.bigc.general.classes.DbConstants;
-import com.parse.ParseUser;
-
 public class Connection {
 
-	ParseUser obj;
+	/*ParseUser obj;
 
 	public Connection(ParseUser usr) {
 		this.obj = usr;
@@ -14,5 +11,5 @@ public class Connection {
 	@Override
 	public String toString() {
 		return obj.getString(DbConstants.NAME);
-	}
+	}*/
 }

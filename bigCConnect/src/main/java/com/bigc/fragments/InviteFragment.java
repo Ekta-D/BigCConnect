@@ -7,21 +7,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.bigc.activities.HomeScreen;
 import com.bigc.activities.LoginActivity;
 import com.bigc.activities.SignupActivity;
 import com.bigc.datastorage.Preferences;
-import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.LoadImageObserver;
 import com.bigc_connect.R;
-import com.parse.ParseException;
-import com.parse.ParseUser;
-import com.parse.SaveCallback;
 
 public class InviteFragment extends Fragment implements View.OnClickListener,
         LoadImageObserver {

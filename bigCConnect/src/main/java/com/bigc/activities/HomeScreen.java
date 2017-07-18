@@ -53,11 +53,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.parse.DeleteCallback;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseUser;
-
 public class HomeScreen extends AppCompatActivity implements
         FragmentHolder, OnClickListener {
 
@@ -271,7 +266,7 @@ public class HomeScreen extends AppCompatActivity implements
         if (currentFragment != null
                 && selectedTabID.equals(currentFragment.getName())) {
             if (Constants.FRAGMENT_PROFILE.equals(selectedTabID)
-                    && !ParseUser.getCurrentUser().getObjectId()
+                    && !FirebaseAuth.getInstance().getCurrentUser().getUid()
                     .equals(ProfileFragment.getUser().getObjectId()))
                 showUserProfile();
 
@@ -385,7 +380,7 @@ public class HomeScreen extends AppCompatActivity implements
 //    }
 
     private void clearLocalData() {
-        try {
+        /*try {
             ParseObject.unpinAllInBackground(Constants.TAG_CONNECTIONS,
                     new DeleteCallback() {
 
@@ -429,7 +424,7 @@ public class HomeScreen extends AppCompatActivity implements
         } catch (ParseException e) {
             e.printStackTrace();
             clearLocalData();
-        }
+        }*/
     }
 
     private void gotoLogin() {

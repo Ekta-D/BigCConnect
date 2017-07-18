@@ -1,52 +1,44 @@
 package com.bigc.adapters;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bigc.general.classes.Constants;
-import com.bigc.general.classes.DbConstants;
-import com.bigc.general.classes.PostManager;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
-import com.bigc.interfaces.PopupOptionHandler;
+import com.bigc.models.Posts;
 import com.bigc_connect.R;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
-import com.parse.ParseObject;
-import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class NewsfeedAdapter extends ArrayAdapter<ParseObject>
+public class NewsfeedAdapter extends ArrayAdapter<Object>
 	 {
-
 	private LayoutInflater inflater;
 	private static ImageLoaderConfiguration config;
-	private BaseFragment context;
+
 
 	private static DisplayImageOptions imgDisplayOptions = new DisplayImageOptions.Builder()
 			.cacheInMemory(true).cacheOnDisk(true).build();
 
 	private static ImageLoader imageLoader = ImageLoader.getInstance();
-	private List<ParseObject> data;
+	private List<Posts> data;
+		 private BaseFragment context;
 	private boolean isClickable = true;
 
-	public NewsfeedAdapter(BaseFragment context, List<ParseObject> posts) {
+	public NewsfeedAdapter(BaseFragment context, List<Posts> posts) {
 		super(context.getActivity(), R.layout.newsfeed_item_layout);
 
 		this.context = context;
-		data = new ArrayList<ParseObject>();
+		data = new ArrayList<>();
 		if (posts != null)
 			data.addAll(posts);
 
@@ -65,7 +57,7 @@ public class NewsfeedAdapter extends ArrayAdapter<ParseObject>
 	}
 
 	@Override
-	public ParseObject getItem(int position) {
+	public Object getItem(int position) {
 		if (position < 0 || position >= data.size())
 			return null;
 		return data.get(position);
@@ -74,7 +66,7 @@ public class NewsfeedAdapter extends ArrayAdapter<ParseObject>
 	@Override
 	public View getView(final int position, View view, ViewGroup parent) {
 
-		final ParseObject post = data.get(position);
+		final Posts post = data.get(position);
 		final ViewHolder holder;
 		if (view == null) {
 			view = inflater.inflate(R.layout.newsfeed_item_layout, parent,
@@ -102,7 +94,7 @@ public class NewsfeedAdapter extends ArrayAdapter<ParseObject>
 			holder = (ViewHolder) view.getTag();
 		}
 
-		ParseUser owner = post.getParseUser(DbConstants.USER);
+		/*ParseUser owner = post.getParseUser(DbConstants.USER);
 		holder.headingOne.setText(owner.getString(DbConstants.NAME));
 
 		if (owner.getInt(DbConstants.TYPE) == Constants.USER_TYPE.SUPPORTER
@@ -147,12 +139,12 @@ public class NewsfeedAdapter extends ArrayAdapter<ParseObject>
 						}
 					});
 
-		}
+		}*/
 
-		holder.dateView.setText(Utils.getTimeStringForFeed(
-				context.getActivity(), post.getCreatedAt()));
+		/*holder.dateView.setText(Utils.getTimeStringForFeed(
+				context.getActivity(), post.getCreatedAt()));*/
 
-		holder.loveCountView.setOnClickListener(new OnClickListener() {
+		/*holder.loveCountView.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -167,10 +159,10 @@ public class NewsfeedAdapter extends ArrayAdapter<ParseObject>
 				onClickLove(post, holder.loveCountView);
 			}
 		});
-
+*/
 		// if () {
 		holder.optionView.setVisibility(View.VISIBLE);
-		holder.optionView.setOnClickListener(new OnClickListener() {
+		/*holder.optionView.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -186,7 +178,7 @@ public class NewsfeedAdapter extends ArrayAdapter<ParseObject>
 //										.getObjectId()),
 //						DbConstants.Flags.NewsFeed);
 			}
-		});
+		});*/
 		// } else {
 		// holder.optionView.setVisibility(View.INVISIBLE);
 		// }
@@ -194,7 +186,7 @@ public class NewsfeedAdapter extends ArrayAdapter<ParseObject>
 		return view;
 	}
 
-	private void onClickLove(ParseObject post, TextView countView) {
+	/*private void onClickLove(ParseObject post, TextView countView) {
 		if (!isClickable)
 			return;
 
@@ -209,18 +201,18 @@ public class NewsfeedAdapter extends ArrayAdapter<ParseObject>
 			PostManager.getInstance().likePost(post);
 		}
 
-	}
+	}*/
 
-	private boolean isLiked(ParseObject post) {
+	/*private boolean isLiked(ParseObject post) {
 
 		List<String> likes = post.getList(DbConstants.LIKES);
 		if (likes == null)
 			return false;
 
 		return likes.contains(ParseUser.getCurrentUser().getObjectId());
-	}
+	}*/
 
-	public void setData(List<ParseObject> posts) {
+	public void setData(List<Posts> posts) {
 		this.data.clear();
 		if (posts == null)
 			return;
@@ -231,10 +223,10 @@ public class NewsfeedAdapter extends ArrayAdapter<ParseObject>
 	public Date getLastItemDate() {
 		if (data.size() == 0)
 			return null;
-		return data.get(data.size() - 1).getCreatedAt();
+		return new Date();//data.get(data.size() - 1).getCreatedAt();
 	}
 
-	public void addItems(List<ParseObject> posts, boolean atStart) {
+	public void addItems(List<Posts> posts, boolean atStart) {
 
 		if (posts == null)
 			return;
@@ -247,7 +239,7 @@ public class NewsfeedAdapter extends ArrayAdapter<ParseObject>
 		notifyDataSetChanged();
 	}
 
-	public void addItem(ParseObject post) {
+	public void addItem(Posts post) {
 		if (post == null)
 			return;
 		this.data.add(0, post);
@@ -290,12 +282,12 @@ public class NewsfeedAdapter extends ArrayAdapter<ParseObject>
 //		((PopupOptionHandler) context).onEditClicked(position, post);
 //	}
 
-	public void updateItem(int position, ParseObject item) {
+/*	public void updateItem(int position, ParseObject item) {
 		if (position >= 0 && position < data.size()) {
 			data.set(position, item);
 			notifyDataSetChanged();
 		}
-	}
+	}*/
 
 		 //need to check
 //	@Override
@@ -303,3 +295,4 @@ public class NewsfeedAdapter extends ArrayAdapter<ParseObject>
 //		((PopupOptionHandler) context).onFlagClicked(position, post);
 //	}
 }
+

@@ -16,11 +16,10 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
-import com.parse.ParseObject;
 
-public class PhotosAdapter extends ArrayAdapter<ParseObject> {
+public class PhotosAdapter extends ArrayAdapter<Object> {
 
-	private List<ParseObject> data;
+	private List<Object> data;
 	private LayoutInflater inflater;
 	private static ImageLoaderConfiguration config;
 
@@ -29,13 +28,13 @@ public class PhotosAdapter extends ArrayAdapter<ParseObject> {
 
 	private static ImageLoader imageLoader = ImageLoader.getInstance();
 
-	public PhotosAdapter(Context context, ArrayList<ParseObject> data) {
+	public PhotosAdapter(Context context, ArrayList<Object> data) {
 		super(context, R.layout.row_grid);
 
 		inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-		this.data = new ArrayList<ParseObject>();
+		this.data = new ArrayList<Object>();
 		if (data != null)
 			this.data.addAll(data);
 
@@ -52,11 +51,11 @@ public class PhotosAdapter extends ArrayAdapter<ParseObject> {
 	}
 
 	@Override
-	public ParseObject getItem(int position) {
+	public Object getItem(int position) {
 		return data.get(position);
 	}
 
-	public void setData(List<ParseObject> posts) {
+	public void setData(List<Object> posts) {
 		this.data.clear();
 		if (posts == null)
 			return;
@@ -78,7 +77,7 @@ public class PhotosAdapter extends ArrayAdapter<ParseObject> {
 			holder = (ViewHolder) row.getTag();
 		}
 
-		imageLoader.displayImage(
+		/*imageLoader.displayImage(
 				data.get(position).getParseFile(DbConstants.MEDIA).getUrl(),
 				holder.image, imgDisplayOptions,
 				new SimpleImageLoadingListener() {
@@ -87,7 +86,7 @@ public class PhotosAdapter extends ArrayAdapter<ParseObject> {
 						holder.image.setImageResource(R.drawable.loading_img);
 						super.onLoadingStarted(imageUri, view);
 					}
-				});
+				});*/
 
 		return row;
 	}

@@ -26,8 +26,6 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
-import com.parse.ParseUser;
-
 import android.accounts.Account;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -145,14 +143,14 @@ public abstract class BaseRecipientAdapter extends BaseAdapter implements
 		public final String thumbnailUriString;
 		public final int displayNameSource;
 		public final boolean isGalContact;
-		public final ParseUser user;
+		public final Users user;
 
 		public TemporaryEntry(final String displayName,
 				final String destination, final int destinationType,
 				final String destinationLabel, final long contactId,
 				final long dataId, final String thumbnailUriString,
 				final int displayNameSource, final boolean isGalContact,
-				ParseUser user) {
+				Users user) {
 			this.displayName = displayName;
 			this.destination = destination;
 			this.destinationType = destinationType;

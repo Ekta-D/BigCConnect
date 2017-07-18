@@ -26,10 +26,9 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.parse.ParseObject;
-import com.parse.ParseUser;
 
-public class CommentsAdapter extends ArrayAdapter<ParseObject> {
+
+public class CommentsAdapter extends ArrayAdapter<Comments> {
 
     private List<Comments> comments;
     private LayoutInflater inflater;

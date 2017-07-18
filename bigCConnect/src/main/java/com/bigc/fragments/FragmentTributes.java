@@ -1,6 +1,5 @@
 package com.bigc.fragments;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,22 +15,14 @@ import android.widget.Toast;
 import com.bigc.adapters.TributesAdapter;
 import com.bigc.dialogs.AddTributeDialog;
 import com.bigc.general.classes.Constants;
-import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
-import com.bigc.general.classes.PostManager;
-import com.bigc.general.classes.Queries;
-import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
-import com.bigc.interfaces.PopupOptionHandler;
 import com.bigc.interfaces.UploadPostObserver;
+import com.bigc.models.Posts;
 import com.bigc_connect.R;
 import com.costum.android.widget.LoadMoreListView;
 import com.costum.android.widget.LoadMoreListView.OnLoadMoreListener;
-import com.parse.FindCallback;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -49,7 +40,7 @@ public class FragmentTributes extends BaseFragment implements
 	private LinearLayout progressParent;
 	private ProgressBar progressView;
 
-	private List<ParseObject> posts = new ArrayList<ParseObject>();
+	private List<Posts> posts = new ArrayList<>();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -68,8 +59,8 @@ public class FragmentTributes extends BaseFragment implements
 		progressParent = (LinearLayout) view
 				.findViewById(R.id.messageViewParent);
 		listView = (LoadMoreListView) view.findViewById(R.id.listview);
-		adapter = new TributesAdapter(this, posts);
-		listView.setAdapter(adapter);
+		/*adapter = new TributesAdapter(this, posts);
+		listView.setAdapter(adapter);*/
 		return view;
 	}
 
@@ -103,7 +94,7 @@ public class FragmentTributes extends BaseFragment implements
 		}
 	}
 
-	@Override
+/*	@Override
 	public void onStart() {
 		super.onStart();
 		PostManager.getInstance().addTributeObserver(this);
@@ -113,7 +104,7 @@ public class FragmentTributes extends BaseFragment implements
 	public void onDestroy() {
 		PostManager.getInstance().removeTributeObserver();
 		super.onDestroy();
-	}
+	}*/
 
 	@Override
 	public void onClick(View v) {
@@ -150,7 +141,7 @@ public class FragmentTributes extends BaseFragment implements
 
 	private void loadData() {
 
-		ParseQuery<ParseObject> query = Queries.getTributesQuery();
+		/*ParseQuery<ParseObject> query = Queries.getTributesQuery();
 
 		query.findInBackground(new FindCallback<ParseObject>() {
 
@@ -175,7 +166,7 @@ public class FragmentTributes extends BaseFragment implements
 				}
 
 			}
-		});
+		});*/
 	}
 
 	private void startProgress() {
@@ -196,19 +187,19 @@ public class FragmentTributes extends BaseFragment implements
 	}
 
 	@Override
-	public void onNotify(final ParseObject post) {
+	public void onNotify(final Posts post) {
 		if (post == null) {
 			Toast.makeText(getActivity(), "Upload status is failed, try again",
 					Toast.LENGTH_LONG).show();
 			return;
 		}
 
-		try {
+		/*try {
 			post.getParseUser(DbConstants.USER).fetchIfNeeded();
 			post.pin(Constants.TAG_TRIBUTES);
 		} catch (ParseException e) {
 			e.printStackTrace();
-		}
+		}*/
 
 		posts.add(0, post);
 
@@ -233,7 +224,7 @@ public class FragmentTributes extends BaseFragment implements
 	}
 
 	private void loadPosts(Date from, final boolean recent) {
-		ParseQuery<ParseObject> query = Queries.getTributesQuery();
+	/*	ParseQuery<ParseObject> query = Queries.getTributesQuery();
 
 		if (recent)
 			query.whereGreaterThan(DbConstants.CREATED_AT, from);
@@ -258,10 +249,10 @@ public class FragmentTributes extends BaseFragment implements
 				}
 
 			}
-		});
+		});*/
 	}
 
-	private class completePostLoadingsTask extends
+	/*private class completePostLoadingsTask extends
 			AsyncTask<Void, Void, List<ParseObject>> {
 
 		private List<ParseObject> posts;
@@ -306,8 +297,8 @@ public class FragmentTributes extends BaseFragment implements
 			}
 		}
 	}
-
-	private void populateList(List<ParseObject> posts) {
+*/
+/*	private void populateList(List<ParseObject> posts) {
 
 		this.posts.clear();
 		if (listView != null) {
@@ -325,7 +316,7 @@ public class FragmentTributes extends BaseFragment implements
 			}
 			listView.onLoadMoreComplete();
 		}
-	}
+	}*/
 	//// TODO: 14-07-2017
 
 //	@Override
@@ -343,7 +334,7 @@ public class FragmentTributes extends BaseFragment implements
 //	}
 
 	@Override
-	public void onEditDone(int position, ParseObject post) {
+	public void onEditDone(int position, Posts post) {
 		Log.e(FragmentTributes.class.getSimpleName(), "onEditDone");
 		//adapter.updateItem(position, post);//// TODO: 14-07-2017
 	}

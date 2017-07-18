@@ -1,9 +1,5 @@
 package com.bigc.fragments;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,11 +9,9 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bigc.adapters.SearchResultPictureAdapter;
 import com.bigc.general.classes.Constants;
-import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
 import com.bigc.general.classes.Queries;
 import com.bigc.general.classes.UserConnections;
@@ -28,10 +22,10 @@ import com.bigc.models.Users;
 import com.bigc_connect.R;
 import com.costum.android.widget.LoadMoreListView;
 import com.costum.android.widget.LoadMoreListView.OnLoadMoreListener;
-import com.parse.FindCallback;
-import com.parse.ParseException;
-import com.parse.ParseQuery;
-import com.parse.ParseUser;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class CategorySurvivorsFragment extends BaseFragment implements
 		OnLoadMoreListener {

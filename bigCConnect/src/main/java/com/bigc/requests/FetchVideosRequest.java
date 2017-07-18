@@ -1,16 +1,13 @@
 package com.bigc.requests;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.util.Log;
 
 import com.bigc.general.classes.Constants;
-import com.bigc.general.classes.DbConstants;
-import com.bigc.general.classes.Utils;
 import com.model.youtube.SearchResults;
 import com.octo.android.robospice.request.springandroid.SpringAndroidSpiceRequest;
-import com.parse.ParseUser;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class FetchVideosRequest extends
 		SpringAndroidSpiceRequest<SearchResults> {
@@ -70,9 +67,9 @@ public class FetchVideosRequest extends
 	}
 
 	private String getQuery() {
-		int ribbon = ParseUser.getCurrentUser().getInt(DbConstants.RIBBON);
-		if (ribbon < 0)
+		/*int ribbon = ParseUser.getCurrentUser().getInt(DbConstants.RIBBON);
+		if (ribbon < 0)*/
 			return "cancer news";
-		return Utils.ribbonNames[ribbon].concat(" news");
+		//return Utils.ribbonNames[ribbon].concat(" news");
 	}
 }

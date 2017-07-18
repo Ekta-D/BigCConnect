@@ -2,13 +2,11 @@ package com.bigc.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.bigc.datastorage.Preferences;
-import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
 import com.bigc.general.classes.Utils;
@@ -17,16 +15,8 @@ import com.bigc.interfaces.LoadImageObserver;
 import com.bigc.interfaces.SignupInterface;
 import com.bigc_connect.R;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.parse.ParseUser;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class ProfilePicFragment extends Fragment implements
         View.OnClickListener, LoadImageObserver {

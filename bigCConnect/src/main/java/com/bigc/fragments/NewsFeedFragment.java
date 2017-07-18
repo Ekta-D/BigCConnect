@@ -1,6 +1,5 @@
 package com.bigc.fragments;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,19 +13,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bigc.adapters.NewsFeedsAdapter;
-//import com.bigc.adapters.NewsfeedAdapter;
 import com.bigc.datastorage.Preferences;
 import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
 import com.bigc.general.classes.PostManager;
-import com.bigc.general.classes.Queries;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
 import com.bigc.interfaces.PopupOptionHandler;
 import com.bigc.interfaces.UploadPostObserver;
-import com.bigc.models.Post;
 import com.bigc.models.Posts;
 import com.bigc_connect.R;
 import com.costum.android.widget.PullAndLoadListView;
@@ -42,20 +38,17 @@ import com.mopub.nativeads.MoPubNativeAdPositioning;
 import com.mopub.nativeads.MoPubStaticNativeAdRenderer;
 import com.mopub.nativeads.RequestParameters;
 import com.mopub.nativeads.ViewBinder;
-import com.parse.FindCallback;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
+
+//import com.bigc.adapters.NewsfeedAdapter;
 
 public class NewsFeedFragment extends BaseFragment implements
         OnRefreshListener, UploadPostObserver, OnLoadMoreListener,
         PopupOptionHandler {
-
+    public static Posts currentObject = null;
     private PullAndLoadListView listView;
     //	private NewsfeedAdapter adapter;
     private NewsFeedsAdapter adapter;
@@ -65,6 +58,7 @@ public class NewsFeedFragment extends BaseFragment implements
     private LinearLayout progressParent;
     private ProgressBar progressView;
     private boolean isPremium;
+    Posts post;
 
     //private List<ParseObject> posts = new ArrayList<ParseObject>();
     List<Posts> posts = new ArrayList<>();
@@ -130,6 +124,15 @@ public class NewsFeedFragment extends BaseFragment implements
                 mAdAdapter.loadAds(Constants.MOPUB_UNIT_ID, mRequestParameters);
         }
         loadData(true);
+        if (NewsFeedFragment.currentObject != null) {
+            //   Log.i("post", post.toString());
+//            statusView.setText(post.getMessage() == null ? ""
+//                    : post.getMessage());
+
+            Utils.updatePost(NewsFeedFragment.currentObject);
+            adapter.notifyDataSetChanged();
+        }
+
         super.onResume();
     }
 
@@ -383,30 +386,32 @@ public class NewsFeedFragment extends BaseFragment implements
             }
 
         }
-        if (!isPremium) {
+        if (adapter!=null)
+        {
+            if (!isPremium) {
 
-            ViewBinder viewBinder = new ViewBinder.Builder(
-                    R.layout.list_item_ad).mainImageId(R.id.newsFeedPicView)
-                    .iconImageId(R.id.newsFeedRibbonView)
-                    .titleId(R.id.newsFeedHeading1)
-                    .textId(R.id.newsFeedMessageView).build();
+                ViewBinder viewBinder = new ViewBinder.Builder(
+                        R.layout.list_item_ad).mainImageId(R.id.newsFeedPicView)
+                        .iconImageId(R.id.newsFeedRibbonView)
+                        .titleId(R.id.newsFeedHeading1)
+                        .textId(R.id.newsFeedMessageView).build();
 
-            MoPubNativeAdPositioning.MoPubServerPositioning adPositioning = MoPubNativeAdPositioning
-                    .serverPositioning();
-            MoPubStaticNativeAdRenderer adRenderer = new MoPubStaticNativeAdRenderer(
-                    viewBinder);
+                MoPubNativeAdPositioning.MoPubServerPositioning adPositioning = MoPubNativeAdPositioning
+                        .serverPositioning();
+                MoPubStaticNativeAdRenderer adRenderer = new MoPubStaticNativeAdRenderer(
+                        viewBinder);
 
-            if(adapter!=null) {
+
                 mAdAdapter = new MoPubAdAdapter(getActivity(), adapter,
                         adPositioning);
                 mAdAdapter.registerAdRenderer(adRenderer);
+
                 listView.setAdapter(mAdAdapter);
+            } else {
+                listView.setAdapter(adapter);
             }
-
-
-        } else {
-            listView.setAdapter(adapter);
         }
+
     }
 
 //    private void populateList(List<ParseObject> posts) {
@@ -447,7 +452,7 @@ public class NewsFeedFragment extends BaseFragment implements
     }
 
     @Override
-    public void onNotify(final ParseObject post) {
+    public void onNotify(final Posts post) {
         if (post == null) {
             Toast.makeText(getActivity(), "Upload status is failed, try again",
                     Toast.LENGTH_LONG).show();
@@ -532,13 +537,13 @@ public class NewsFeedFragment extends BaseFragment implements
     }
 
     @Override
-    public void onEditDone(int position, ParseObject post) {
+    public void onEditDone(int position, Posts post) {
         Log.e(NewsFeedFragment.class.getSimpleName(), "onEditDone");
 //        adapter.updateItem(position, post);
     }
 
     @Override
-    public void onFlagClicked(int position, ParseObject post) {
+    public void onFlagClicked(int position, Posts post) {
         if (post == null) {
             //  post = adapter.getItem(position);
         }

@@ -24,33 +24,31 @@ import com.bigc.interfaces.PopupOptionHandler;
 import com.bigc_connect.R;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
-import com.parse.ParseObject;
-import com.parse.ParseUser;
 
-//public class TributesAdapter extends ArrayAdapter<ParseObject> implements
+//public class TributesAdapter extends ArrayAdapter<Object> implements
 //		PopupOptionHandler //// TODO: 14-07-2017
-public class TributesAdapter extends ArrayAdapter<ParseObject>
+public class TributesAdapter extends ArrayAdapter<Object>
 {
 
 	private LayoutInflater inflater;
-	private List<ParseObject> data;
+	private List<Object> data;
 	private BaseFragment context;
 
-	public TributesAdapter(BaseFragment context, List<ParseObject> tributes) {
+	public TributesAdapter(BaseFragment context, List<Object> tributes) {
 		super(context.getActivity(), R.layout.list_item_tributes);
 
 		inflater = (LayoutInflater) context.getActivity().getSystemService(
 				Context.LAYOUT_INFLATER_SERVICE);
 		this.context = context;
 
-		data = new ArrayList<ParseObject>();
+		data = new ArrayList<Object>();
 		if (tributes != null)
 			data.addAll(tributes);
 
 	}
 
 	@Override
-	public ParseObject getItem(int position) {
+	public Object getItem(int position) {
 		if (position < 0 || position >= data.size())
 			return null;
 		return data.get(position);
@@ -58,7 +56,7 @@ public class TributesAdapter extends ArrayAdapter<ParseObject>
 
 	@Override
 	public View getView(final int position, View view, ViewGroup parent) {
-		final ParseObject tribute = data.get(position);
+		final Object tribute = data.get(position);
 		final ViewHolder holder;
 		if (view == null) {
 			view = inflater.inflate(R.layout.list_item_tributes, parent, false);
@@ -78,7 +76,7 @@ public class TributesAdapter extends ArrayAdapter<ParseObject>
 			holder = (ViewHolder) view.getTag();
 		}
 
-		ParseUser owner = tribute.getParseUser(DbConstants.TO);
+		/*ParseUser owner = tribute.getParseUser(DbConstants.TO);
 		holder.nameView.setText(owner.getString(DbConstants.NAME));
 		// Setting icon
 		if (owner.getInt(DbConstants.TYPE) == Constants.USER_TYPE.SUPPORTER
@@ -143,11 +141,11 @@ public class TributesAdapter extends ArrayAdapter<ParseObject>
 				owner.getString(DbConstants.NAME)).concat("'s Tribute Page")));
 		holder.locationView.setText(Html.fromHtml("<b>Location: </b>"
 				.concat(owner.getString(DbConstants.LOCATION) == null ? ""
-						: owner.getString(DbConstants.LOCATION))));
+						: owner.getString(DbConstants.LOCATION))));*/
 		return view;
 	}
 
-	public void setData(List<ParseObject> stories) {
+	public void setData(List<Object> stories) {
 		this.data.clear();
 		if (stories == null)
 			return;
@@ -158,10 +156,11 @@ public class TributesAdapter extends ArrayAdapter<ParseObject>
 	public Date getLastItemDate() {
 		if (data.size() == 0)
 			return null;
-		return data.get(data.size() - 1).getCreatedAt();
+		//return data.get(data.size() - 1).getCreatedAt();
+		return new Date();
 	}
 
-	public void addItems(List<ParseObject> stories, boolean atStart) {
+	public void addItems(List<Object> stories, boolean atStart) {
 
 		if (stories == null)
 			return;
@@ -174,7 +173,7 @@ public class TributesAdapter extends ArrayAdapter<ParseObject>
 		notifyDataSetChanged();
 	}
 
-	public void addItem(ParseObject story) {
+	public void addItem(Object story) {
 		if (story == null)
 			return;
 		this.data.add(0, story);
@@ -200,7 +199,7 @@ public class TributesAdapter extends ArrayAdapter<ParseObject>
 	//// TODO: 14-07-2017
 
 //	@Override
-//	public void onDelete(int position, ParseObject tribute) {
+//	public void onDelete(int position, Object tribute) {
 //		Log.e("Deleting", position + "--");
 //		if (position < data.size()) {
 //			PostManager.getInstance().deletePost(data.get(position));
@@ -212,11 +211,11 @@ public class TributesAdapter extends ArrayAdapter<ParseObject>
 //	}
 //
 //	@Override
-//	public void onEditClicked(int position, ParseObject post) {
+//	public void onEditClicked(int position, Object post) {
 //		((PopupOptionHandler) context).onEditClicked(position, post);
 //	}
 //
-//	public void updateItem(int position, ParseObject item) {
+//	public void updateItem(int position, Object item) {
 //		if (position >= 0 && position < data.size()) {
 //			data.set(position, item);
 //			notifyDataSetChanged();
@@ -224,7 +223,7 @@ public class TributesAdapter extends ArrayAdapter<ParseObject>
 //	}
 //
 //	@Override
-//	public void onFlagClicked(int position, ParseObject post) {
+//	public void onFlagClicked(int position, Object post) {
 //		((PopupOptionHandler) context).onFlagClicked(position, post);
 //	}
 }

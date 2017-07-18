@@ -1,21 +1,18 @@
 package com.bigc.interfaces;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.widget.ArrayAdapter;
 
-import com.bigc.activities.LoginActivity;
 import com.bigc.datastorage.Preferences;
-import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.UserConnections;
 import com.bigc.general.classes.Utils;
 import com.bigc.models.Users;
-import com.parse.ParseUser;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public abstract class SearchResultBaseAdapter extends ArrayAdapter<Users> {
 

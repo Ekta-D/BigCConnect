@@ -1,21 +1,11 @@
 package com.bigc.general.classes;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
 import com.bigc.datastorage.Preferences;
 import com.bigc.interfaces.MessageObservable;
@@ -27,27 +17,24 @@ import com.bigc.interfaces.UploadStoryObserver;
 import com.bigc.models.Comments;
 import com.bigc.models.Messages;
 import com.bigc.models.Posts;
+import com.bigc.models.Stories;
+import com.bigc.models.Users;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.parse.DeleteCallback;
-import com.parse.FunctionCallback;
-import com.parse.GetCallback;
-import com.parse.ParseCloud;
-import com.parse.ParseException;
-import com.parse.ParseFile;
-import com.parse.ParseObject;
-import com.parse.ParseUser;
-import com.parse.ProgressCallback;
-import com.parse.SaveCallback;
+
+import java.io.ByteArrayOutputStream;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class PostManager implements UploadPostObservable, MessageObservable {
 
@@ -69,11 +56,11 @@ public class PostManager implements UploadPostObservable, MessageObservable {
         return manager;
     }
 
-    public void addStory(final ParseObject story,
+    public void addStory(final Stories story,
                          final ProgressHandler progressHandler) {
 
         progressHandler.switchToProgressMode();
-        if (story.getParseFile(DbConstants.MEDIA) != null) {
+        /*if (story.getParseFile(DbConstants.MEDIA) != null) {
             ParseFile file = story.getParseFile(DbConstants.MEDIA);
             file.saveInBackground(new SaveCallback() {
 
@@ -92,10 +79,10 @@ public class PostManager implements UploadPostObservable, MessageObservable {
         } else {
             progressHandler.updateProgress(95);
             saveStory(story, progressHandler);
-        }
+        }*/
     }
 
-    private void saveStory(final ParseObject storyObject,
+/*    private void saveStory(final ParseObject storyObject,
                            final ProgressHandler progressHandler) {
         storyObject.saveInBackground(new SaveCallback() {
 
@@ -108,7 +95,7 @@ public class PostManager implements UploadPostObservable, MessageObservable {
                 notifyStoryObservers(storyObject);
             }
         });
-    }
+    }*/
 
     //    public void deletePost(final ParseObject post) {
 //        post.deleteInBackground(new DeleteCallback() {
@@ -137,7 +124,12 @@ public class PostManager implements UploadPostObservable, MessageObservable {
 
     }
 
-    public void addPost(final ParseObject post,
+    public void deleteStory(final Stories story)
+    {
+        FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_STORIES).child(story.getObjectId()).removeValue();
+    }
+
+  /*  public void addPost(final ParseObject post,
                         final ProgressHandler progressHandler) {
 
         progressHandler.switchToProgressMode();
@@ -161,31 +153,31 @@ public class PostManager implements UploadPostObservable, MessageObservable {
             progressHandler.updateProgress(95);
             savePost(post, progressHandler);
         }
-    }
+    }*/
 
-    private void savePost(final ParseObject post,
-                          final ProgressHandler progressHandler) {
-        progressHandler.updateLabelToProcessingMessage();
-        post.saveInBackground(new SaveCallback() {
+//    private void savePost(final ParseObject post,
+//                          final ProgressHandler progressHandler) {
+//        progressHandler.updateLabelToProcessingMessage();
+//        post.saveInBackground(new SaveCallback() {
+//
+//            @Override
+//            public void done(ParseException e) {
+//                progressHandler.onUploadComplete();
+//                if (e == null) {
+//                    notifyFeedObservers(post);
+//                    notifyPostUsers(
+//                            post,
+//                            ParseUser.getCurrentUser().getString(
+//                                    DbConstants.NAME)
+//                                    + " posted a status.");
+//                } else {
+//                    notifyFeedObservers(null);
+//                }
+//            }
+//        });
+//    }
 
-            @Override
-            public void done(ParseException e) {
-                progressHandler.onUploadComplete();
-                if (e == null) {
-                    notifyFeedObservers(post);
-                    notifyPostUsers(
-                            post,
-                            ParseUser.getCurrentUser().getString(
-                                    DbConstants.NAME)
-                                    + " posted a status.");
-                } else {
-                    notifyFeedObservers(null);
-                }
-            }
-        });
-    }
-
-    public void addTribute(final ParseObject tribute,
+   /* public void addTribute(final ParseObject tribute,
                            final ProgressHandler progressHandler) {
 
         progressHandler.switchToProgressMode();
@@ -209,9 +201,9 @@ public class PostManager implements UploadPostObservable, MessageObservable {
             progressHandler.updateProgress(95);
             saveTribute(tribute, progressHandler);
         }
-    }
+    }*/
 
-    private void saveTribute(final ParseObject tribute,
+    /*private void saveTribute(final ParseObject tribute,
                              final ProgressHandler progressHandler) {
         tribute.saveInBackground(new SaveCallback() {
 
@@ -230,7 +222,7 @@ public class PostManager implements UploadPostObservable, MessageObservable {
             }
         });
     }
-
+*/
 //    public ParseObject commentOnPost(String comment, final ParseObject post) {
 //        final ParseObject obj = new ParseObject(DbConstants.TABLE_COMMENT);
 //        obj.put(DbConstants.POST, post);
@@ -294,7 +286,7 @@ public class PostManager implements UploadPostObservable, MessageObservable {
         return obj;
     }
 
-    public ParseObject commentOnStory(String comment, final ParseObject story) {
+  /*  public ParseObject commentOnStory(String comment, final ParseObject story) {
         final ParseObject obj = new ParseObject(DbConstants.TABLE_STORY_COMMENT);
         obj.put(DbConstants.POST, story);
         obj.put(DbConstants.MESSAGE, comment);
@@ -315,9 +307,9 @@ public class PostManager implements UploadPostObservable, MessageObservable {
             }
         });
         return obj;
-    }
+    }*/
 
-    public ParseObject commentOnTribute(String comment,
+   /* public ParseObject commentOnTribute(String comment,
                                         final ParseObject tribute) {
         final ParseObject obj = new ParseObject(
                 DbConstants.TABLE_TRIBUTE_COMMENT);
@@ -340,8 +332,8 @@ public class PostManager implements UploadPostObservable, MessageObservable {
         });
         return obj;
     }
-
-    public void likePost(ParseObject post) {
+*/
+    /*public void likePost(ParseObject post) {
         post.saveInBackground(new SaveCallback() {
 
             @Override
@@ -350,9 +342,9 @@ public class PostManager implements UploadPostObservable, MessageObservable {
             }
         });
 
-    }
+    }*/
 
-    public void likeStory(ParseObject story) {
+   /* public void likeStory(ParseObject story) {
         story.saveInBackground(new SaveCallback() {
 
             @Override
@@ -362,8 +354,8 @@ public class PostManager implements UploadPostObservable, MessageObservable {
         });
 
     }
-
-    public void likeTribute(ParseObject story) {
+*/
+  /*  public void likeTribute(ParseObject story) {
         story.saveInBackground(new SaveCallback() {
 
             @Override
@@ -372,9 +364,9 @@ public class PostManager implements UploadPostObservable, MessageObservable {
             }
         });
 
-    }
+    }*/
 
-    public void reportProblem(ParseObject problem) {
+  /*  public void reportProblem(ParseObject problem) {
         problem.saveInBackground(new SaveCallback() {
 
             @Override
@@ -382,9 +374,9 @@ public class PostManager implements UploadPostObservable, MessageObservable {
 
             }
         });
-    }
+    }*/
 
-    private void notifyPostUsers(ParseObject post, String message) {
+   /* private void notifyPostUsers(ParseObject post, String message) {
         HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("post", post.getObjectId());
         params.put(DbConstants.MESSAGE, message);
@@ -398,9 +390,9 @@ public class PostManager implements UploadPostObservable, MessageObservable {
                     }
                 });
 
-    }
+    }*/
 
-    private void notifyUser(ParseUser user, String tribute, String message) {
+   /* private void notifyUser(ParseUser user, String tribute, String message) {
         HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("user", user.getObjectId());
         params.put("object", tribute);
@@ -415,7 +407,7 @@ public class PostManager implements UploadPostObservable, MessageObservable {
                     }
                 });
 
-    }
+    }*/
 
     @Override
     public void addObserver(UploadPostObserver o) {
@@ -437,19 +429,19 @@ public class PostManager implements UploadPostObservable, MessageObservable {
         this.postObserver = null;
     }
 
-    @Override
-    public void notifyFeedObservers(ParseObject post) {
+ /*   @Override
+    public void notifyFeedObservers(Posts post) {
         if (this.postObserver != null)
             postObserver.onNotify(post);
     }
 
     @Override
-    public void notifyStoryObservers(ParseObject story) {
+    public void notifyStoryObservers(Stories story) {
         if (this.storyObserver != null)
             storyObserver.onNotify(story);
-    }
+    }*/
 
-    public void sendMessage(final ParseObject message, final ParseUser user) {
+    /*public void sendMessage(final ParseObject message, final ParseUser user) {
         message.saveInBackground(new SaveCallback() {
 
             @Override
@@ -468,7 +460,7 @@ public class PostManager implements UploadPostObservable, MessageObservable {
                 }
             }
         });
-    }
+    }*/
 
     //    public void sendMessage(final String message, Bitmap image,
 //                            final List<ParseUser> users)
@@ -529,12 +521,12 @@ public class PostManager implements UploadPostObservable, MessageObservable {
     }
 
     private class sendMessageTask extends AsyncTask<Void, Void, List<String>> {
-        private List<ParseUser> users = new ArrayList<ParseUser>();
+        private List<Users> users = new ArrayList<>();
         private String message;
         private Bitmap image;
 
         public sendMessageTask(String message, Bitmap image,
-                               List<ParseUser> users) {
+                               List<Users> users) {
             this.message = message;
             this.image = image;
             this.users.addAll(users);
@@ -542,7 +534,7 @@ public class PostManager implements UploadPostObservable, MessageObservable {
 
         @Override
         protected List<String> doInBackground(Void... params) {
-            ParseFile imgFile = null;
+         /*   ParseFile imgFile = null;
             if (image != null) {
                 ByteArrayOutputStream outStream = new ByteArrayOutputStream();
                 image.compress(Bitmap.CompressFormat.PNG, 100, outStream);
@@ -567,19 +559,20 @@ public class PostManager implements UploadPostObservable, MessageObservable {
                     obj.put(DbConstants.MEDIA, imgFile);
                 obj.saveInBackground();
                 notifyObserver(obj, u);
-            }
-            return usersID;
+            }*/
+            //return usersID;
+            return null;
         }
 
         @Override
         public void onPostExecute(List<String> usersID) {
-            sendMessageNotification(usersID, message, ParseUser
+            /*sendMessageNotification(usersID, message, ParseUser
                     .getCurrentUser().getString(DbConstants.NAME)
-                    + " sent you a message.");
+                    + " sent you a message.");*/
         }
     }
 
-    private static void sendMessageNotification(List<String> users,
+   /* private static void sendMessageNotification(List<String> users,
                                                 String body, String alert) {
         Log.e("Notifying", "Message");
         HashMap<String, Object> params = new HashMap<String, Object>();
@@ -596,7 +589,7 @@ public class PostManager implements UploadPostObservable, MessageObservable {
                     }
                 });
 
-    }
+    }*/
 
     @Override
     public void bindObserver(MessageObserver ob) {
@@ -608,7 +601,7 @@ public class PostManager implements UploadPostObservable, MessageObservable {
         this.messageObserver = null;
     }
 
-    @Override
+   /* @Override
     public boolean notifyObserver(ParseObject message, ParseUser sender) {
         if (this.messageObserver != null)
             return this.messageObserver.onMessageReceive(message, sender);
@@ -685,5 +678,5 @@ public class PostManager implements UploadPostObservable, MessageObservable {
             }
         });
         notifyEditTributeObservers(position, tribute);
-    }
+    }*/
 }

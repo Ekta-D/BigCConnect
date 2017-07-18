@@ -1,9 +1,5 @@
 package com.bigc.adapters;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,39 +8,45 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bigc.datastorage.Preferences;
 import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.Utils;
+import com.bigc.models.Messages;
+import com.bigc.models.Users;
 import com.bigc_connect.R;
-import com.parse.ParseObject;
-import com.parse.ParseUser;
+import com.google.firebase.auth.FirebaseAuth;
 
-public class MessagesAdapter extends ArrayAdapter<ParseObject> {
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
-	private List<ParseObject> messages;
+public class MessagesAdapter extends ArrayAdapter<Messages> {
+
+	private List<Messages> messages;
 	private LayoutInflater inflater;
-	private ParseUser currentUser;
+	private Users currentUser;
 	private Context context;
 
-	public MessagesAdapter(Context context, List<ParseObject> messages) {
+	public MessagesAdapter(Context context, List<Messages> messages) {
 		super(context, R.layout.listitem_message);
-		this.messages = new ArrayList<ParseObject>();
+		this.messages = new ArrayList<>();
 		if (messages != null)
 			this.messages.addAll(messages);
 
 		this.context = context;
 		inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		currentUser = ParseUser.getCurrentUser();
+		currentUser = Preferences.getInstance(context).getUserFromPreference();
 
 	}
 
 	@Override
-	public ParseObject getItem(int position) {
+	public Messages getItem(int position) {
 		return messages.get(position);
 	}
 
-	public void setData(List<ParseObject> messages) {
+	public void setData(List<Messages> messages) {
 		this.messages.clear();
 		if (messages == null)
 			return;
@@ -75,7 +77,7 @@ public class MessagesAdapter extends ArrayAdapter<ParseObject> {
 			holder = (ViewHolder) view.getTag();
 		}
 
-		ParseObject message = messages.get(position);
+	/*	ParseObject message = messages.get(position);
 
 		ParseUser owner = message.getParseUser(DbConstants.USER1).getObjectId()
 				.equals(currentUser.getObjectId()) ? message
@@ -101,17 +103,17 @@ public class MessagesAdapter extends ArrayAdapter<ParseObject> {
 		holder.nameView.setText(owner.getString(DbConstants.NAME));
 		holder.dateView.setText(Utils.getTimeStringForFeed(context,
 				message.getUpdatedAt()));
-		holder.messageView.setText(message.getString(DbConstants.MESSAGE));
+		holder.messageView.setText(message.getString(DbConstants.MESSAGE));*/
 		return view;
 	}
 
 	public Date getLastItemDate() {
 		if (messages.size() == 0)
 			return null;
-		return messages.get(messages.size() - 1).getCreatedAt();
+		return new Date();// messages.get(messages.size() - 1).getCreatedAt();
 	}
 
-	public List<ParseObject> getData() {
+	/*public List<ParseObject> getData() {
 		return this.messages;
 	}
 
@@ -133,7 +135,7 @@ public class MessagesAdapter extends ArrayAdapter<ParseObject> {
 			return;
 		this.messages.add(0, message);
 		notifyDataSetChanged();
-	}
+	}*/
 
 	private static class ViewHolder {
 		public TextView nameView;

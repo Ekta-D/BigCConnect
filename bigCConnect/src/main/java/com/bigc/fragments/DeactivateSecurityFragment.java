@@ -9,9 +9,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.bigc.datastorage.Preferences;
 import com.bigc.general.classes.Constants;
-import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
@@ -21,9 +19,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.parse.LogInCallback;
-import com.parse.ParseException;
-import com.parse.ParseUser;
 
 public class DeactivateSecurityFragment extends BaseFragment {
 
@@ -79,8 +74,7 @@ public class DeactivateSecurityFragment extends BaseFragment {
             case R.id.forgotPasswordOption:
                 GoogleAnalyticsHelper.setClickedAction(getActivity(),
                         "Forgot Password Button");
-                Utils.sendPasswordRecoverEmail(ParseUser.getCurrentUser()
-                        .getEmail());
+                Utils.sendPasswordRecoverEmail(FirebaseAuth.getInstance().getCurrentUser().getEmail());
                 Toast.makeText(getActivity(),
                         "Reset link has been sent to your email", Toast.LENGTH_LONG)
                         .show();
