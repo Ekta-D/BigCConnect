@@ -452,7 +452,7 @@ public class NewsFeedFragment extends BaseFragment implements
     }
 
     @Override
-    public void onNotify(final Posts post) {
+    public void onNotify(final Object post) {
         if (post == null) {
             Toast.makeText(getActivity(), "Upload status is failed, try again",
                     Toast.LENGTH_LONG).show();

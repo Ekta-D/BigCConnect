@@ -1,6 +1,9 @@
 package com.bigc.adapters;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import android.content.Context;
 import android.util.Log;
@@ -17,9 +20,13 @@ import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.SearchResultBaseAdapter;
+import com.bigc.models.ConnectionsModel;
 import com.bigc.models.Users;
 import com.bigc_connect.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import eu.janmuller.android.simplecropimage.Util;
 
 public class SearchResultAdapter extends SearchResultBaseAdapter {
@@ -147,6 +154,8 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
                         if (v.getContentDescription().toString()
                                 .equals(TAG_NOT_CONNECTED)) {
                             // TODO: 7/17/2017 Send add connection request
+                            sendAddConnectionRequest(user, FirebaseAuth.getInstance().getCurrentUser().getUid());
+
                             if (holder.indexInRemovedConnections < 0) {
                                 newAddedConnections.add(user);
                                 holder.indexInNewAddedConnections = newAddedConnections
@@ -180,6 +189,16 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
                 });
             }
         return view;
+    }
+
+    private void sendAddConnectionRequest(Users user, String uid) {
+        SimpleDateFormat format = new SimpleDateFormat(DbConstants.DATE_FORMAT);
+        final String date = format.format(new Date(System.currentTimeMillis()));
+
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+        String objectID= ref.child(DbConstants.TABLE_CONNECTIONS).push().getKey();
+        ConnectionsModel connection = new ConnectionsModel(date, uid, objectID, false, user.getObjectId(), date);
+        ref.child(DbConstants.TABLE_CONNECTIONS).child(objectID).setValue(connection);
     }
 
 

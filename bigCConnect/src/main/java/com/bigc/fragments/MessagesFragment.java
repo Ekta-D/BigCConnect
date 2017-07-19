@@ -17,12 +17,14 @@ import com.bigc.datastorage.Preferences;
 import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
 import com.bigc.general.classes.PostManager;
+import com.bigc.general.classes.Queries;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
 import com.bigc.interfaces.MessageObservable;
 import com.bigc.interfaces.MessageObserver;
 import com.bigc.interfaces.UploadPostObserver;
+import com.bigc.models.Messages;
 import com.bigc.models.Posts;
 import com.bigc.models.Users;
 import com.bigc.receivers.NotificationReceiver;
@@ -32,6 +34,10 @@ import com.costum.android.widget.PullToRefreshListView;
 import com.costum.android.widget.PullToRefreshListView.OnRefreshListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +53,7 @@ public class MessagesFragment extends BaseFragment implements
 	private LinearLayout progressParent;
 	private ProgressBar progressView;
 
-	private List<Object> messages = new ArrayList<>();
+	private List<Messages> messages = new ArrayList<>();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -68,8 +74,8 @@ public class MessagesFragment extends BaseFragment implements
 		progressParent = (LinearLayout) view
 				.findViewById(R.id.messageViewParent);
 		listView = (PullToRefreshListView) view.findViewById(R.id.listview);
-		/*adapter = new MessagesAdapter(getActivity(), messages);
-		listView.setAdapter(adapter);*/
+		adapter = new MessagesAdapter(getActivity(), messages);
+		listView.setAdapter(adapter);
 
 		return view;
 	}
@@ -105,7 +111,7 @@ public class MessagesFragment extends BaseFragment implements
 		Log.e("Posts", messages.size() + "--");
 		if (messages.size() == 0) {
 			startProgress();
-			/*loadData(true);*/
+			loadData(true);
 		}
 	}
 
@@ -172,9 +178,36 @@ public class MessagesFragment extends BaseFragment implements
 		// loadPosts(adapter.getLastItemDate(), false);
 	}
 
-	/*private void loadData(final boolean fromCache) {
+	private void loadData(final boolean fromCache) {
 
-		ParseQuery<ParseObject> query = Queries
+		final List<Query> queries = Queries.getConversationsQuery(fromCache);
+
+		queries.get(1).addListenerForSingleValueEvent(new ValueEventListener() {
+			@Override
+			public void onDataChange(DataSnapshot dataSnapshot) {
+				if(dataSnapshot!=null && dataSnapshot.hasChildren()) {
+					for (DataSnapshot messageSnapshot : dataSnapshot.getChildren()) {
+						Messages message = messageSnapshot.getValue(Messages.class);
+						messages.add(message);
+					}
+
+					executeReceiveQuery(queries.get(2));
+				} else {
+					Toast.makeText(
+							getActivity(),
+							Utils.loadString(getActivity(),
+									R.string.networkFailureMessage),
+							Toast.LENGTH_LONG).show();
+				}
+			}
+
+			@Override
+			public void onCancelled(DatabaseError databaseError) {
+
+			}
+		});
+
+		/*ParseQuery<ParseObject> query = Queries
 				.getConversationsQuery(fromCache);
 
 		query.findInBackground(new FindCallback<ParseObject>() {
@@ -211,8 +244,36 @@ public class MessagesFragment extends BaseFragment implements
 				}
 
 			}
+		});*/
+	}
+
+	private void executeReceiveQuery(Query query) {
+		query.addListenerForSingleValueEvent(new ValueEventListener() {
+			@Override
+			public void onDataChange(DataSnapshot dataSnapshot) {
+				if(dataSnapshot!=null && dataSnapshot.hasChildren()){
+					for(DataSnapshot messageSnapshot: dataSnapshot.getChildren()){
+						Messages message = messageSnapshot.getValue(Messages.class);
+						messages.add(message);
+					}
+
+				}
+				/*if (messages.size() == 0) {
+					// Load data from network
+					loadData(false);
+					return;
+				}*/
+
+				/*new completeMessageLoadingsTask(messages, false, false)
+						.execute();*/
+			}
+
+			@Override
+			public void onCancelled(DatabaseError databaseError) {
+
+			}
 		});
-	}*/
+	}
 
 	/*private class completeMessageLoadingsTask extends
 			AsyncTask<Void, Void, List<ParseObject>> {
@@ -269,7 +330,7 @@ public class MessagesFragment extends BaseFragment implements
 		}
 	}*/
 
-	private void populateList(List<Object> messages) {
+	private void populateList(List<Messages> messages) {
 
 		this.messages.clear();
 		if (listView != null) {
@@ -306,7 +367,7 @@ public class MessagesFragment extends BaseFragment implements
 	}
 
 	@Override
-	public void onNotify(final Posts post) {
+	public void onNotify(final Object post) {
 		if (post == null) {
 			Toast.makeText(getActivity(), "Upload status is failed, try again",
 					Toast.LENGTH_LONG).show();
@@ -321,7 +382,7 @@ public class MessagesFragment extends BaseFragment implements
 		}*/
 
 		if (messages != null)
-			messages.add(0, post);
+			//messages.add(0, post);
 
 		if (listView == null)
 			return;

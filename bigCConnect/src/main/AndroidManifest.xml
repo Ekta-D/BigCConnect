@@ -123,17 +123,17 @@
                 android:resource="@xml/searchable" />
         </activity>
 
-        <service android:name="com.parse.PushService" />
+        <!--<service android:name="com.parse.PushService" />-->
         <service
             android:name="com.bigc.general.classes.RoboSpiceService"
             android:exported="false" />
 
-        <receiver android:name="com.parse.ParseBroadcastReceiver">
+       <!-- <receiver android:name="com.parse.ParseBroadcastReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.USER_PRESENT" />
             </intent-filter>
-        </receiver>
+        </receiver>-->
         <receiver
             android:name="com.parse.GcmBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND">
@@ -144,19 +144,19 @@
                 <category android:name="com.bigc_connect" />
             </intent-filter>
         </receiver>
-        <receiver
+        <!--<receiver
             android:name="com.bigc.receivers.NotificationReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.parse.push.intent.RECEIVE" />
                 <action android:name="com.parse.push.intent.DELETE" />
                 <action android:name="com.parse.push.intent.OPEN" />
-                <!-- <action android:name="com.bigc.FRIENDREQUEST" /> -->
-                <!-- <action android:name="com.bigc.NEWSFEED" /> -->
-                <!-- <action android:name="com.bigc.MESSAGE" /> -->
+                &lt;!&ndash; <action android:name="com.bigc.FRIENDREQUEST" /> &ndash;&gt;
+                &lt;!&ndash; <action android:name="com.bigc.NEWSFEED" /> &ndash;&gt;
+                &lt;!&ndash; <action android:name="com.bigc.MESSAGE" /> &ndash;&gt;
             </intent-filter>
         </receiver>
-
+-->
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />

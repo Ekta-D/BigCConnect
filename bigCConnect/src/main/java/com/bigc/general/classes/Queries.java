@@ -5,6 +5,7 @@ import android.util.Log;
 import com.bigc.models.Posts;
 import com.bigc.models.Stories;
 import com.bigc.models.Users;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -13,6 +14,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Queries {
 
@@ -230,11 +232,21 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
 
         mQuery.orderByAscending(DbConstants.CREATED_AT);
         return mQuery;
-    }
+    }*/
 
-    public static ParseQuery<ParseObject> getConversationsQuery(
+    public static List<Query> getConversationsQuery(
             boolean fromCache) {
-        ParseQuery<ParseObject> mQuery = new ParseQuery<ParseObject>(
+
+        Query mQuery = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION);
+        Query sentMessagesQuery = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION).orderByChild(DbConstants.USER1).equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        Query receivedMessagesQuery = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION).orderByChild(DbConstants.USER2).equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+        List<Query> conversationQueries = new ArrayList<>();
+        conversationQueries.add(mQuery);
+        conversationQueries.add(sentMessagesQuery);
+        conversationQueries.add(receivedMessagesQuery);
+
+        /*ParseQuery<ParseObject> mQuery = new ParseQuery<ParseObject>(
                 DbConstants.TABLE_CONVERSATION);
 
         ParseQuery<ParseObject> sentMessagesQuery = new ParseQuery<ParseObject>(
@@ -258,10 +270,11 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
         mQuery.include("User");
         mQuery.setLimit(1000);
 
-        return mQuery;
+        return mQuery;*/
+        return conversationQueries;
     }
 
-    public static ParseQuery<ParseObject> getTributesQuery() {
+   /* public static ParseQuery<ParseObject> getTributesQuery() {
         ParseQuery<ParseObject> mQuery = ParseQuery
                 .getQuery(DbConstants.TABLE_TRIBUTE);
         mQuery.setLimit(30);

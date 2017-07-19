@@ -123,7 +123,7 @@ public class ConnectionsFragment extends BaseFragment {
 	List<ConnectionsModel> requests;
 	private void loadPendingRequest(){
 		DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-		mDatabase.child(DbConstants.CONNECTIONS).addListenerForSingleValueEvent(new ValueEventListener() {
+		mDatabase.child(DbConstants.TABLE_CONNECTIONS).addListenerForSingleValueEvent(new ValueEventListener() {
 			@Override
 			public void onDataChange(DataSnapshot dataSnapshot) {
 				requests = new ArrayList<>();

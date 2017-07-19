@@ -434,7 +434,7 @@ public class FragmentTributeDetail extends BaseFragment implements
 //	}
 
 	@Override
-	public void onNotify(Posts post) {
+	public void onNotify(Object post) {
 
 	}
 

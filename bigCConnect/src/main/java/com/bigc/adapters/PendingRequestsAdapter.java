@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Objects;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +27,8 @@ import com.bigc.general.classes.Utils;
 import com.bigc.models.ConnectionsModel;
 import com.bigc.models.Users;
 import com.bigc_connect.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -154,6 +157,17 @@ public class PendingRequestsAdapter extends ArrayAdapter<ConnectionsModel> {
 				holder.progressParent.setVisibility(View.VISIBLE);
                 Map<String, Object> postValues = new HashMap<String, Object>();
                 postValues.put(DbConstants.STATUS, true);
+                mReference.child(DbConstants.TABLE_CONNECTIONS).child(object.getObjectId()).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        Toast.makeText(getContext(), "Update saved.", Toast.LENGTH_SHORT).show();
+                        holder.progressParent.setVisibility(View.GONE);
+
+                        data.remove(position);
+                        notifyDataSetChanged();
+                    }
+                });
+/*
                 mReference.updateChildren(postValues, new DatabaseReference.CompletionListener() {
                     @Override
                     public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
@@ -167,6 +181,7 @@ public class PendingRequestsAdapter extends ArrayAdapter<ConnectionsModel> {
 
                     }
                 });
+*/
 
 			}
 		});

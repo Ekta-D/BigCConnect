@@ -187,7 +187,7 @@ public class FragmentTributes extends BaseFragment implements
 	}
 
 	@Override
-	public void onNotify(final Posts post) {
+	public void onNotify(final Object post) {
 		if (post == null) {
 			Toast.makeText(getActivity(), "Upload status is failed, try again",
 					Toast.LENGTH_LONG).show();
@@ -201,7 +201,7 @@ public class FragmentTributes extends BaseFragment implements
 			e.printStackTrace();
 		}*/
 
-		posts.add(0, post);
+		//posts.add(0, post);
 
 		if (listView == null)
 			return;

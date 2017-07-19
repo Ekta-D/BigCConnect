@@ -9,6 +9,15 @@ public class ConnectionsModel {
     public ConnectionsModel() {
     }
 
+    public ConnectionsModel(String createdAt, String from, String objectId, Boolean status, String to, String updatedAt) {
+        this.createdAt = createdAt;
+        this.from = from;
+        this.objectId = objectId;
+        this.status = status;
+        this.to = to;
+        this.updatedAt = updatedAt;
+    }
+
     private String createdAt;
     private String from;
     private String objectId;
