@@ -67,6 +67,7 @@ public class PendingRequestsAdapter extends ArrayAdapter<ConnectionsModel> {
         final ViewHolder holder;
 
         final ConnectionsModel object = data.get(position);
+
         if (view == null) {
             view = inflater
                     .inflate(R.layout.item_request_layout, parent, false);
@@ -133,7 +134,7 @@ public class PendingRequestsAdapter extends ArrayAdapter<ConnectionsModel> {
                 holder.progressParent.setVisibility(View.VISIBLE);
                 Map<String, Object> postValues = new HashMap<String, Object>();
                 postValues.put(DbConstants.STATUS, true);
-                mReference.updateChildren(postValues, new DatabaseReference.CompletionListener() {
+                mReference.child(DbConstants.TABLE_CONNECTIONS).child(object.getObjectId()).updateChildren(postValues, new DatabaseReference.CompletionListener() {
                     @Override
                     public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
                         if(databaseError==null) {

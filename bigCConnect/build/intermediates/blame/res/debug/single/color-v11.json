@@ -8,6 +8,10 @@
         "source": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
     },
     {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
+        "source": "C:\\Users\\beesolver\\.android\\build-cache\\fefe49ff74511f5e72573ef467ff74cf09a1063e\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
         "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
         "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
     },
@@ -22,5 +26,9 @@
     {
         "merged": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
         "source": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
+        "source": "C:\\Users\\beesolver\\.android\\build-cache\\fefe49ff74511f5e72573ef467ff74cf09a1063e\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
     }
 ]

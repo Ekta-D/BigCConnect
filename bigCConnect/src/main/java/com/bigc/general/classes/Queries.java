@@ -1,7 +1,10 @@
 package com.bigc.general.classes;
 
+import android.content.Context;
 import android.util.Log;
 
+import com.bigc.datastorage.Preferences;
+import com.bigc.models.ConnectionsModel;
 import com.bigc.models.Posts;
 import com.bigc.models.Stories;
 import com.bigc.models.Users;
@@ -383,12 +386,132 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
         return mQuery;
     }*/
 
-    public static Query getUserConnectionsQuery(
-            Users user, boolean fromCache) {
+/* might use this condition for getUserConnectionsQuery
+   if (obj.getParseUser(DbConstants.TO).getObjectId()
+                            .equals(currentId)) {
+        if (obj.getParseUser(DbConstants.FROM).fetchIfNeeded()
+                .getInt(DbConstants.TYPE) != Constants.USER_TYPE.SUPPORTER
+                .ordinal()) {
+            if (obj.getBoolean(DbConstants.STATUS))
+                connections.activeConnections.add(obj
+                        .getParseUser(DbConstants.FROM));
+            else
+                connections.pendingConnections.add(obj
+                        .getParseUser(DbConstants.FROM));
+        }
+    } else {
+        if (obj.getParseUser(DbConstants.TO).fetchIfNeeded()
+                .getInt(DbConstants.TYPE) != Constants.USER_TYPE.SUPPORTER
+                .ordinal()) {
+            if (obj.getBoolean(DbConstants.STATUS))
+                connections.activeConnections.add(obj
+                        .getParseUser(DbConstants.TO));
+            else
+                connections.pendingConnections.add(obj
+                        .getParseUser(DbConstants.TO));
+        }
+    }*/
+
+    public static void getUserConnectionsQuery(
+            final Users user, boolean fromCache, final Context context) {
+
+        final List<Users> activeConnections = new ArrayList<>();
+        final List<Users> pendingConnections = new ArrayList<>();
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase.child(DbConstants.TABLE_CONNECTIONS).orderByKey().startAt(user.getObjectId()).endAt(user.getObjectId()+"\uf8ff").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if(dataSnapshot!=null && dataSnapshot.hasChildren()){
+                    for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()){
+                        ConnectionsModel connectionsModel = dataSnapshot1.getValue(ConnectionsModel.class);
+                            if(connectionsModel.getStatus() == true){
+                                //exists and is a connection.. dont send connection request
 
-        return mDatabase.child(DbConstants.TABLE_CONNECTIONS).equalTo(DbConstants.TO, user.getObjectId());
+                                getConnectionDetails(connectionsModel.getTo(), activeConnections, pendingConnections,true, context);
+
+
+                            } else {
+                                //exists and pending.. no need to send connection request
+                                getConnectionDetails(connectionsModel.getTo(), activeConnections, pendingConnections, false, context);
+                            }
+                    }
+                    //check for other connections
+                    searchOtherConnections(user, activeConnections, pendingConnections, context);
+                } else {
+                    //check for other connections
+                    searchOtherConnections(user, activeConnections, pendingConnections, context);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        //return mDatabase.child(DbConstants.TABLE_CONNECTIONS).equalTo(DbConstants.TO, user.getObjectId());
+    }
+
+    private static void searchOtherConnections(final Users user, final List<Users> activeConnections, final List<Users> pendingConnections, final Context context) {
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase.child(DbConstants.TABLE_CONNECTIONS).orderByChild(DbConstants.TO).equalTo(user.getObjectId()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if(dataSnapshot!=null && dataSnapshot.hasChildren()){
+                    for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()){
+                        ConnectionsModel connectionsModel = dataSnapshot1.getValue(ConnectionsModel.class);
+                        if(connectionsModel.getStatus() == true){
+                            //exists and is a connection.. dont send connection request
+                            getConnectionDetails(connectionsModel.getFrom(), activeConnections, pendingConnections, true, context);
+                        } else {
+                            //exists and pending.. no need to send connection request
+                            getConnectionDetails(connectionsModel.getFrom(), activeConnections, pendingConnections, false, context);
+                        }
+                    }
+
+                } else {
+
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private static void getConnectionDetails(String uid, final List<Users> active, final List<Users> pending, final boolean activeUser, final Context context) {
+
+        final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child(DbConstants.USERS).child(uid);
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+
+                if (dataSnapshot.getValue() == null) {
+                    //Utils.showPrompt(LoginActivity.this, "This user may not exists in database");
+                    Utils.hideProgress();
+                } else {
+                    Users user = dataSnapshot.getValue(Users.class);
+                    if(activeUser)
+                        active.add(user);
+                    else
+                        pending.add(user);
+
+                    //save to preferences
+                    Preferences.getInstance(context).saveConnectionsLocally(active, pending);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                //save to preferences
+                Preferences.getInstance(context).saveConnectionsLocally(active, pending);
+            }
+        });
     }
 
     /*public static ParseQuery<ParseObject> getUserConnectionsQuery(

@@ -19,6 +19,16 @@ public class Users extends com.android.ex.chips.Users {
     boolean deactivated;
     String objectId;
     String message;
+    String updatedAt;
+
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
 
     public String getCreatedAt() {
         return createdAt;

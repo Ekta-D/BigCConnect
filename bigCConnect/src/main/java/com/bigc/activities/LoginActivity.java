@@ -31,6 +31,7 @@ import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
 import com.bigc.general.classes.Queries;
 import com.bigc.general.classes.Utils;
+import com.bigc.models.ConnectionsModel;
 import com.bigc_connect.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -176,8 +177,9 @@ public class LoginActivity extends Activity implements OnClickListener {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            gotoHomeScreen();
 
+                            gotoHomeScreen();
+                            fetchUserTask();
                         } else {
                             String error = task.getException().toString();
                             String message = "";
@@ -214,7 +216,17 @@ public class LoginActivity extends Activity implements OnClickListener {
                     }
                 }).create().show();
     }
-    // TODO: 7/18/2017 fetch user task
+
+
+    private void fetchUserTask(){
+
+        // TODO: 7/18/2017 fetch user task
+        List<ConnectionsModel> connectionsModels = new ArrayList<>();
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+        //ref.child(DbConstants.TABLE_CONNECTIONS)
+        Queries.getUserConnectionsQuery(Preferences.getInstance(getBaseContext()).getUserFromPreference(), false, getApplicationContext());
+    }
+
 /*    private class fetchUsersTask extends AsyncTask<Void, Void, Void> {
 
         private List<ParseObject> objects;

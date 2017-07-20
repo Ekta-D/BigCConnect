@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -23,9 +24,14 @@ import com.bigc.interfaces.SearchResultBaseAdapter;
 import com.bigc.models.ConnectionsModel;
 import com.bigc.models.Users;
 import com.bigc_connect.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import eu.janmuller.android.simplecropimage.Util;
 
@@ -154,7 +160,7 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
                         if (v.getContentDescription().toString()
                                 .equals(TAG_NOT_CONNECTED)) {
                             // TODO: 7/17/2017 Send add connection request
-                            sendAddConnectionRequest(user, FirebaseAuth.getInstance().getCurrentUser().getUid());
+                            checkAddConnectionRequest(user, FirebaseAuth.getInstance().getCurrentUser().getUid());
 
                             if (holder.indexInRemovedConnections < 0) {
                                 newAddedConnections.add(user);
@@ -169,8 +175,9 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
                             holder.addOption.setContentDescription(TAG_WAITING);
                             holder.addOption
                                     .setImageResource(R.drawable.ic_connect_pending);
-                        } else {
-                            if (holder.indexInNewAddedConnections < 0) {
+                        } else if(v.getContentDescription().toString()
+                                .equals(TAG_WAITING)){
+                            /*if (holder.indexInNewAddedConnections < 0) {
                                 removedConnections.add(data.get(position));
                                 holder.indexInRemovedConnections = removedConnections
                                         .size() - 1;
@@ -183,7 +190,23 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
                             holder.addOption
                                     .setContentDescription(TAG_NOT_CONNECTED);
                             holder.addOption
-                                    .setImageResource(R.drawable.ic_connect);
+                                    .setImageResource(R.drawable.ic_connect);*/
+                        } else if(v.getContentDescription().toString()
+                                .equals(TAG_CONNECTED)){
+                            /*if (holder.indexInNewAddedConnections < 0) {
+                                removedConnections.add(data.get(position));
+                                holder.indexInRemovedConnections = removedConnections
+                                        .size() - 1;
+                            } else {
+                                newAddedConnections
+                                        .remove(holder.indexInNewAddedConnections);
+                                holder.indexInNewAddedConnections = -1;
+                            }
+
+                            holder.addOption
+                                    .setContentDescription(TAG_NOT_CONNECTED);
+                            holder.addOption
+                                    .setImageResource(R.drawable.ic_connect);*/
                         }
                     }
                 });
@@ -191,14 +214,105 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
         return view;
     }
 
-    private void sendAddConnectionRequest(Users user, String uid) {
+    private void checkAddConnectionRequest(final Users user, final String currentUid) {
         SimpleDateFormat format = new SimpleDateFormat(DbConstants.DATE_FORMAT);
-        final String date = format.format(new Date(System.currentTimeMillis()));
+        String date = format.format(new Date(System.currentTimeMillis()));
 
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+        final String objectID = currentUid+"_"+user.getObjectId();
+        final ConnectionsModel connection = new ConnectionsModel(date, currentUid, objectID, false, user.getObjectId(), date);
+
+        final DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+
+        // TODO: 7/19/2017 Check if there's a pending connection
+        ref.child(DbConstants.TABLE_CONNECTIONS).orderByKey().equalTo(objectID).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if(dataSnapshot!=null && dataSnapshot.hasChildren()){
+                    /*boolean sendRequest = true;
+                    for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()){
+                        ConnectionsModel connectionsModel = dataSnapshot1.getValue(ConnectionsModel.class);
+                        if(connectionsModel.getFrom().equalsIgnoreCase(user.getObjectId()) || connectionsModel.getTo().equalsIgnoreCase(user.getObjectId())){
+                            if(connectionsModel.getStatus() == true){
+                                //exists and is a connection.. dont send connection request
+
+                            } else {
+                                //exists and pending.. no need to send connection request
+                            }
+                            sendRequest = false;
+                            break;
+                        }
+                    }*/
+                    /*if(sendRequest){
+                        //send add connection request
+                        checkReverse(ref, user.getObjectId()+"_"+currentUid, connection, user);
+                        //sendConnectionRequest(ref, objectID, connection);
+                    }*/
+                } else {
+                    //send add connection request
+                    checkReverse(ref, currentUid, user.getObjectId(), connection, user);
+                    //sendConnectionRequest(ref, objectID, connection);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
+
+       /* DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
         String objectID= ref.child(DbConstants.TABLE_CONNECTIONS).push().getKey();
         ConnectionsModel connection = new ConnectionsModel(date, uid, objectID, false, user.getObjectId(), date);
-        ref.child(DbConstants.TABLE_CONNECTIONS).child(objectID).setValue(connection);
+        ref.child(DbConstants.TABLE_CONNECTIONS).child(objectID).setValue(connection);*/
+
+    }
+
+    private void checkReverse(final DatabaseReference ref, final String currentUid, final String userId, final ConnectionsModel connection, final Users user){
+        ref.child(DbConstants.TABLE_CONNECTIONS).orderByKey().equalTo(userId+"_"+currentUid).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if(dataSnapshot!=null && dataSnapshot.hasChildren()){
+                    /*boolean sendRequest = true;
+                    for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()){
+                        ConnectionsModel connectionsModel = dataSnapshot1.getValue(ConnectionsModel.class);
+                        if(connectionsModel.getFrom().equalsIgnoreCase(user.getObjectId()) || connectionsModel.getTo().equalsIgnoreCase(user.getObjectId())){
+                            if(connectionsModel.getStatus() == true){
+                                //exists and is a connection.. dont send connection request
+
+                            } else {
+                                //exists and pending.. no need to send connection request
+                            }
+                            sendRequest = false;
+                            break;
+                        }
+                    }
+                    if(sendRequest){
+                        //send add connection request
+                        sendConnectionRequest(ref, objectID, connection);
+                    }*/
+                } else {
+                    //send add connection request
+                    sendConnectionRequest(ref, currentUid+"_"+userId, connection);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void sendConnectionRequest(DatabaseReference ref, String objectID, ConnectionsModel connection) {
+        // TODO: 7/19/2017 send add connection request
+        ref.child(DbConstants.TABLE_CONNECTIONS).child(objectID).setValue(connection).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                //show success
+            }
+        });
     }
 
 

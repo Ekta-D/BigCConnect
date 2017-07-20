@@ -21,6 +21,7 @@ import com.bigc.models.ConnectionsModel;
 import com.bigc_connect.R;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -130,10 +131,14 @@ public class ConnectionsFragment extends BaseFragment {
 				if(dataSnapshot!=null && dataSnapshot.hasChildren()) {
 					for( DataSnapshot data: dataSnapshot.getChildren()) {
 						ConnectionsModel connection = data.getValue(ConnectionsModel.class);
-						requests.add(connection);
+						System.out.println("request: "+ connection.getTo() +" "+ FirebaseAuth.getInstance().getCurrentUser().getUid());
+						if(connection.getTo().equalsIgnoreCase(FirebaseAuth.getInstance().getCurrentUser().getUid()) && connection.getStatus()!=true)
+							requests.add(connection);
 						System.out.println("ddata conenction "+data.toString());
 					}
-					showRequests(requests);
+					if(requests.size()>0)
+						showRequests(requests);
+					else showNoRequestsMessage();
 				} else {
 					showNoRequestsMessage();
 				}

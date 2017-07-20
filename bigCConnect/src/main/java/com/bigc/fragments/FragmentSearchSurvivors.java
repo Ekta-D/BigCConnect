@@ -237,7 +237,10 @@ public class FragmentSearchSurvivors extends BaseFragment {
 	Users connectionUser = null;
 	private UserConnections loadConnections(final boolean fromCache) {
 
-		Query connectionsQuery = Queries.getUserConnectionsQuery(Preferences.getInstance(getContext()).getUserFromPreference(),false);
+		Queries.getUserConnectionsQuery(Preferences.getInstance(getActivity()).getUserFromPreference(), false, getActivity());
+
+
+		/*Query connectionsQuery = Queries.getUserConnectionsQuery(Preferences.getInstance(getContext()).getUserFromPreference(),false);
 
 		final String currentUid = Preferences.getInstance(getContext()).getString(DbConstants.ID);
 
@@ -270,7 +273,7 @@ public class FragmentSearchSurvivors extends BaseFragment {
 			public void onCancelled(DatabaseError databaseError) {
 
 			}
-		});
+		});*/
 
 
 		//userConnections1.activeConnections = activeConnections;
@@ -316,8 +319,8 @@ public class FragmentSearchSurvivors extends BaseFragment {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}*/
-		userConnections.activeConnections = activeConnections;
-		userConnections.pendingConnections = pendingConnections;
+		userConnections.activeConnections = Preferences.getInstance(getActivity()).getLocalConnections().get(0);
+		userConnections.pendingConnections = Preferences.getInstance(getActivity()).getLocalConnections().get(1);
 		if (adapter != null)
 			adapter.updateData(null, userConnections.activeConnections,
 					userConnections.pendingConnections);

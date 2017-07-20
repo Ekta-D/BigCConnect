@@ -127,7 +127,7 @@ public abstract class SearchResultBaseAdapter extends ArrayAdapter<Users> {
     }
 
     public void processUserSettings() {
-        Utils.addConnections(new ArrayList<>(newAddedConnections));
+     /*   Utils.addConnections(new ArrayList<>(newAddedConnections));
         Utils.removeConnections(new ArrayList<>(removedConnections));
 
         int temp;
@@ -144,7 +144,7 @@ public abstract class SearchResultBaseAdapter extends ArrayAdapter<Users> {
         pendingConnections.addAll(newAddedConnections);
 
         newAddedConnections.clear();
-        removedConnections.clear();
+        removedConnections.clear();*/
     }
 
     public Date getLastItemDate() {

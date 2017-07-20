@@ -42,6 +42,7 @@ import com.bigc.datastorage.Preferences;
 import com.bigc.gallery.CustomGalleryActivity;
 import com.bigc.interfaces.PopupOptionHandler;
 import com.bigc.interfaces.StoryPopupOptionHandler;
+import com.bigc.models.Connection;
 import com.bigc.models.ConnectionsModel;
 import com.bigc.models.Posts;
 import com.bigc.models.Stories;
@@ -53,9 +54,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -291,17 +294,32 @@ public class Utils {
         if (newConnections == null || newConnections.size() == 0)
             return;
 
-        List<ConnectionsModel> newConnectionObjects = new ArrayList<>();
+        String currentUid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+        SimpleDateFormat format = new SimpleDateFormat(DbConstants.DATE_FORMAT);
+        //List<ConnectionsModel> newConnectionObjects = new ArrayList<>();
         for (Users c : newConnections) {
-            final ConnectionsModel o = new ConnectionsModel();
-            o.setTo("");
+
+
+            String date = format.format(new Date(System.currentTimeMillis()));
+            String objectID = currentUid+"_"+c.getObjectId();
+            ConnectionsModel connection = new ConnectionsModel(date, currentUid, objectID, false, c.getObjectId(), date);
+            ref.child(DbConstants.TABLE_CONNECTIONS).child(objectID).setValue(connection).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    //show success
+                }
+            });
+
+            /*final ConnectionsModel o = new ConnectionsModel();
+            o.setTo(c.getObjectId());
             o.setFrom(FirebaseAuth.getInstance().getCurrentUser().getUid());
-            o.setStatus(false);
-            newConnectionObjects.add(o);
+            o.setStatus(false);*/
+           // newConnectionObjects.add(connection);
         }
 
         //new saveConnectionTask(newConnectionObjects).execute();
-        updateConnectionTable(newConnectionObjects);
+        //updateConnectionTable(newConnectionObjects);
     }
 
     private static void updateConnectionTable(List<ConnectionsModel> newConnectionObjects) {
@@ -376,6 +394,25 @@ public class Utils {
             o.setTo("");
             o.setFrom("");
             o.setStatus(false);
+
+            DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+           // ConnectionsModel connection = new ConnectionsModel(date, uid, objectID, false, user.getObjectId(), date);
+            /*ref.child(DbConstants.TABLE_CONNECTIONS).orderByChild(DbConstants.TO).equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    if(dataSnapshot!=null && dataSnapshot.hasChildren()){
+                        ConnectionsModel connection1  = dataSnapshot.getValue(ConnectionsModel.class);
+                        if(connection1.getFrom())
+
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });*/
+
             removeConnectionObjects.add(o);
         }
         // TODO: 7/13/2017 remove for both from and to requests

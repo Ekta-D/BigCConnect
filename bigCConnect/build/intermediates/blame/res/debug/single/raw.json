@@ -10,5 +10,9 @@
     {
         "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\raw\\gtm_analytics",
         "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-analytics-impl\\9.6.0\\res\\raw\\gtm_analytics"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\raw\\gtm_analytics",
+        "source": "C:\\Users\\beesolver\\.android\\build-cache\\a0e4a29da75b422b406ae17bf170df125e33e2a1\\output\\res\\raw\\gtm_analytics"
     }
 ]

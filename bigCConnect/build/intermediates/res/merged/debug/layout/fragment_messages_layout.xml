@@ -69,13 +69,10 @@
         android:id="@+id/listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/adView"
-        android:layout_below="@id/splashTextView"
-        android:layout_marginLeft="@dimen/margin"
-        android:layout_marginRight="@dimen/margin"
-        android:layout_marginTop="@dimen/margin"
         android:background="@color/lightGrey"
-        android:divider="@null" />
+        android:divider="@null"
+        android:layout_above="@+id/adView"
+        android:layout_centerHorizontal="true" />
 
     <LinearLayout
         android:id="@+id/messageViewParent"
