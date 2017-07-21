@@ -322,7 +322,11 @@ public class NewsFeedsAdapter extends BaseAdapter {
                             : Utils.survivor_ribbons[ribbon]);
         }
         holder.statusView.setText(posts.getMessage());
-        holder.loveCountView.setText(String.valueOf(0));
+        int size;
+        size = posts.getLikes() == null ? 0 : posts.getLikes().size();
+
+        holder.loveCountView.setText(String.valueOf(size));
+
 //        holder.commentCountView.setText(String.valueOf(posts.getComments()));
         holder.commentCountView.setText(String.valueOf(posts.getComments()));
         // holder.commentCountView.setText(String.valueOf(Preferences.getInstance(context.getActivity()).getInt(DbConstants.COMMENT_COUNT)));

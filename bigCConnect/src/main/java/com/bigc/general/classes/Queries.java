@@ -653,10 +653,13 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
                                     checkReverse(users, ref, reversed_objectID, connectionExist);
                                 } else {
                                     for (DataSnapshot data : dataSnapshot.getChildren()) {
-                                        String key = data.getKey();
-                                        Map<String, Object> values = (Map<String, Object>) data.getValue(Map.class);
+                                      //  String key = data.getKey();
+                                        ConnectionsModel connection = data.getValue(ConnectionsModel.class);
 
-                                        Log.i("connections_values", values.toString());
+                                        Log.i("connections_values", connection.toString());
+                                        //Map<String, Object> values = (Map<String, Object>) data.getValue(Map.class);
+
+                                        //Log.i("connections_values", values.toString());
                                     }
                                 }
 
