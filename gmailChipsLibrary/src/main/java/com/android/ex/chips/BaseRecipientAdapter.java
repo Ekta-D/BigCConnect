@@ -61,7 +61,7 @@ import android.widget.TextView;
 /**
  * Adapter for showing a recipient list.
  */
-public abstract class BaseRecipientAdapter extends BaseAdapter implements
+public class BaseRecipientAdapter extends BaseAdapter implements
 		Filterable, AccountSpecifier {
 	private static final String TAG = "BaseRecipientAdapter";
 	private static final boolean DEBUG = false;

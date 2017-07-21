@@ -26,6 +26,7 @@ import com.bigc.interfaces.MessageObserver;
 import com.bigc.interfaces.UploadPostObserver;
 import com.bigc.models.Messages;
 import com.bigc.models.Posts;
+import com.bigc.models.Tributes;
 import com.bigc.models.Users;
 import com.bigc.receivers.NotificationReceiver;
 import com.bigc_connect.R;
@@ -367,7 +368,7 @@ public class MessagesFragment extends BaseFragment implements
 	}
 
 	@Override
-	public void onNotify(final Object post) {
+	public void onNotify(final Tributes post) {
 		if (post == null) {
 			Toast.makeText(getActivity(), "Upload status is failed, try again",
 					Toast.LENGTH_LONG).show();

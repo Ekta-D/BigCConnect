@@ -1,26 +1,10 @@
 [
     {
-        "merged": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\loadMoreListView\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-ldpi-v4\\ic_pulltorefresh_arrow.png",
-        "source": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\loadMoreListView\\build\\intermediates\\bundles\\debug\\res\\drawable-ldpi-v4\\ic_pulltorefresh_arrow.png"
+        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\loadMoreListView\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-ldpi-v4\\ic_launcher.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\loadMoreListView\\build\\intermediates\\bundles\\debug\\res\\drawable-ldpi-v4\\ic_launcher.png"
     },
     {
-        "merged": "D:\\Office work\\BigCConnect\\loadMoreListView\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-ldpi-v4\\ic_launcher.png",
-        "source": "D:\\Office work\\BigCConnect\\loadMoreListView\\build\\intermediates\\bundles\\debug\\res\\drawable-ldpi-v4\\ic_launcher.png"
-    },
-    {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\loadMoreListView\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-ldpi-v4\\ic_launcher.png",
-        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\loadMoreListView\\build\\intermediates\\bundles\\debug\\res\\drawable-ldpi-v4\\ic_launcher.png"
-    },
-    {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\loadMoreListView\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-ldpi-v4\\ic_pulltorefresh_arrow.png",
-        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\loadMoreListView\\build\\intermediates\\bundles\\debug\\res\\drawable-ldpi-v4\\ic_pulltorefresh_arrow.png"
-    },
-    {
-        "merged": "D:\\Office work\\BigCConnect\\loadMoreListView\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-ldpi-v4\\ic_pulltorefresh_arrow.png",
-        "source": "D:\\Office work\\BigCConnect\\loadMoreListView\\build\\intermediates\\bundles\\debug\\res\\drawable-ldpi-v4\\ic_pulltorefresh_arrow.png"
-    },
-    {
-        "merged": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\loadMoreListView\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-ldpi-v4\\ic_launcher.png",
-        "source": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\loadMoreListView\\build\\intermediates\\bundles\\debug\\res\\drawable-ldpi-v4\\ic_launcher.png"
+        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\loadMoreListView\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-ldpi-v4\\ic_pulltorefresh_arrow.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\loadMoreListView\\build\\intermediates\\bundles\\debug\\res\\drawable-ldpi-v4\\ic_pulltorefresh_arrow.png"
     }
 ]

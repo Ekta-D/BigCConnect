@@ -4,6 +4,8 @@ import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.MultiAutoCompleteTextView;
 import android.widget.Toast;
@@ -14,76 +16,134 @@ import com.android.ex.chips.RecipientEntry;
 import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
+import com.bigc.interfaces.ConnectionExist;
+import com.bigc.models.Users;
 import com.bigc_connect.R;
 
+import java.util.ArrayList;
+
+import eu.janmuller.android.simplecropimage.Util;
+
 public class AddTributeDialog extends Dialog implements
-		android.view.View.OnClickListener {
-	private Context context;
-	private RecipientEditTextView shareUsers;
-	private EditText ageView;
-	private BaseFragment caller;
-	private static com.android.ex.chips.Users targetUser = null;
-	private static int userAge = -1;
+        android.view.View.OnClickListener {
+    private Context context;
+    private MultiAutoCompleteTextView shareUsers;
+    private EditText ageView;
+    private BaseFragment caller;
+    private static com.android.ex.chips.Users targetUser = null;
+    private static int userAge = -1;
+    Users selectedUser = null;
 
-	public static com.android.ex.chips.Users getTargetUser() {
-		return targetUser;
-	}
+    public static com.android.ex.chips.Users getTargetUser() {
+        return targetUser;
+    }
 
-	public static int getTargetUserAge() {
-		return userAge;
-	}
+    public static int getTargetUserAge() {
+        return userAge;
+    }
 
-	public AddTributeDialog(Context context, BaseFragment caller) {
-		super(context, R.style.dlg_priority);
-		this.context = context;
-		this.caller = caller;
-	}
+    public AddTributeDialog(Context context, BaseFragment caller) {
+        super(context, R.style.dlg_priority);
+        this.context = context;
+        this.caller = caller;
+    }
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		this.setContentView(R.layout.layout_dialog_add_tribute);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        this.setContentView(R.layout.layout_dialog_add_tribute);
 
-		shareUsers = (RecipientEditTextView) findViewById(R.id.UsersInputView);
+        shareUsers = (MultiAutoCompleteTextView) findViewById(R.id.UsersInputView);
 
-		shareUsers.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
-		shareUsers.setThreshold(1);
-		shareUsers.setAdapter(new BaseRecipientAdapter(context, 4, Utils
+        shareUsers.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
+        shareUsers.setThreshold(1);
+
+        final ArrayList<String> connectionNames = new ArrayList<>();
+        final ArrayList<Users> active = Utils.loadConnectionChips(getContext());
+        for(Users conn: active){
+            connectionNames.add(conn.getName());
+        }
+
+
+        ArrayAdapter<String> usersArrayAdapter = new ArrayAdapter<>(context, R.layout.single_textview_listitem, connectionNames);
+        shareUsers.setAdapter(usersArrayAdapter);
+        shareUsers.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                selectedUser = active.get(i);
+                shareUsers.setText(connectionNames.get(i));
+                System.out.println(selectedUser.toString() + " conn "+connectionNames.get(i));
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+		/*shareUsers.setAdapter(new BaseRecipientAdapter(context, 4, Utils
 				.loadConnectionChips()) {
-		});
+		});*/
 
-		findViewById(R.id.addButton).setOnClickListener(this);
-		findViewById(R.id.cancelButton).setOnClickListener(this);
-		ageView = (EditText) findViewById(R.id.AgeInputView);
-	}
 
-	@Override
-	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.addButton:
-			// Pass event to parent
-			targetUser = null;
-			for (RecipientEntry e : shareUsers.getChosenRecipients()) {
-				targetUser = e.getUser();
-			}
-			if (targetUser == null) {
-				Toast.makeText(getContext(), "Add user", Toast.LENGTH_LONG)
-						.show();
-				return;
-			} else if (ageView.getText().length() == 0) {
-				Toast.makeText(getContext(), "Enter age", Toast.LENGTH_LONG)
-						.show();
-				return;
-			}
-			userAge = Integer.valueOf(ageView.getText().toString());
-			dismiss();
-			Utils.launchPostView(caller.getActivity(),
-					Constants.OPERATION_TRIBUTE);
-			break;
-		case R.id.cancelButton:
-			dismiss();
-			break;
-		}
+        findViewById(R.id.addButton).setOnClickListener(this);
+        findViewById(R.id.cancelButton).setOnClickListener(this);
+        ageView = (EditText) findViewById(R.id.AgeInputView);
+    }
 
-	}
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.addButton:
+               // String survivor_name = "camy";
+
+                if(!shareUsers.getText().toString().equals("")){
+                    Utils.launchPostViewFromTribute(caller.getActivity(),
+                            Constants.OPERATION_TRIBUTE, selectedUser);
+                }
+                /*shareUsers.setAdapter(new BaseRecipientAdapter(context, 4, Utils.loadConnectionChips(context,
+                        survivor_name, new ConnectionExist() {
+                            @Override
+                            public void isConnection(boolean isConnection, Users user) {
+                                if (isConnection) {
+                                    Utils.launchPostViewFromTribute(caller.getActivity(),
+                                            Constants.OPERATION_TRIBUTE, user);
+                                }
+                            }
+                        })));*/
+
+
+                // Pass event to parent
+//                targetUser = null;
+//                for (RecipientEntry e : shareUsers.getChosenRecipients()) {
+//                    targetUser = e.getUser();
+//                }
+//                if (targetUser == null) {
+//                    Toast.makeText(getContext(), "Add user", Toast.LENGTH_LONG)
+//                            .show();
+//                    return;
+//                } else if (ageView.getText().length() == 0) {
+//                    Toast.makeText(getContext(), "Enter age", Toast.LENGTH_LONG)
+//                            .show();
+//                    return;
+//                }
+//
+//                userAge = Integer.valueOf(ageView.getText().toString());
+//                dismiss();
+                //  Utils.launchPostView(caller.getActivity(),
+//                        Constants.OPERATION_TRIBUTE); //// TODO: 20-07-2017
+                dismiss();
+                break;
+            case R.id.cancelButton:
+                dismiss();
+                break;
+        }
+
+    }
+
+    public void shareTribute() {
+
+    }
+
+
 }

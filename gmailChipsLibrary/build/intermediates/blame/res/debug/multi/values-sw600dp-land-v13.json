@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\debug\\values-sw600dp-land-v13\\values-sw600dp-land-v13.xml",
+        "outputFile": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-land-v13\\values-sw600dp-land-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,69 +11,7 @@
                     "endOffset": 94
                 },
                 "from": {
-                    "file": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-sw600dp-land\\dimen.xml",
-                    "position": {
-                        "startLine": 18,
-                        "startColumn": 4,
-                        "startOffset": 731,
-                        "endColumn": 43,
-                        "endOffset": 770
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 3,
-                    "startColumn": 4,
-                    "startOffset": 99,
-                    "endColumn": 43,
-                    "endOffset": 138
-                },
-                "from": {
-                    "file": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-sw600dp-land\\dimen.xml",
-                    "position": {
-                        "startLine": 17,
-                        "startColumn": 4,
-                        "startOffset": 687,
-                        "endColumn": 43,
-                        "endOffset": 726
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 4,
-                    "startColumn": 4,
-                    "startOffset": 143,
-                    "endColumn": 45,
-                    "endOffset": 184
-                },
-                "from": {
-                    "file": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-sw600dp-land\\dimen.xml",
-                    "position": {
-                        "startLine": 19,
-                        "startColumn": 4,
-                        "startOffset": 775,
-                        "endColumn": 45,
-                        "endOffset": 816
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\debug\\values-sw600dp-land-v13\\values-sw600dp-land-v13.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 43,
-                    "endOffset": 94
-                },
-                "from": {
-                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-sw600dp-land\\dimen.xml",
+                    "file": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-sw600dp-land\\dimen.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -92,7 +30,7 @@
                     "endOffset": 138
                 },
                 "from": {
-                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-sw600dp-land\\dimen.xml",
+                    "file": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-sw600dp-land\\dimen.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -111,75 +49,13 @@
                     "endOffset": 184
                 },
                 "from": {
-                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-sw600dp-land\\dimen.xml",
+                    "file": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-sw600dp-land\\dimen.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
                         "startOffset": 794,
                         "endColumn": 45,
                         "endOffset": 835
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\debug\\values-sw600dp-land-v13\\values-sw600dp-land-v13.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 43,
-                    "endOffset": 94
-                },
-                "from": {
-                    "file": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-sw600dp-land\\dimen.xml",
-                    "position": {
-                        "startLine": 18,
-                        "startColumn": 4,
-                        "startOffset": 731,
-                        "endColumn": 43,
-                        "endOffset": 770
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 3,
-                    "startColumn": 4,
-                    "startOffset": 99,
-                    "endColumn": 43,
-                    "endOffset": 138
-                },
-                "from": {
-                    "file": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-sw600dp-land\\dimen.xml",
-                    "position": {
-                        "startLine": 17,
-                        "startColumn": 4,
-                        "startOffset": 687,
-                        "endColumn": 43,
-                        "endOffset": 726
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 4,
-                    "startColumn": 4,
-                    "startOffset": 143,
-                    "endColumn": 45,
-                    "endOffset": 184
-                },
-                "from": {
-                    "file": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-sw600dp-land\\dimen.xml",
-                    "position": {
-                        "startLine": 19,
-                        "startColumn": 4,
-                        "startOffset": 775,
-                        "endColumn": 45,
-                        "endOffset": 816
                     }
                 }
             }

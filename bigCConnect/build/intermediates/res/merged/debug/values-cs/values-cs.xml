@@ -104,6 +104,7 @@
     <string name="preparing_card">Připravuji kartu</string>
     <string name="save">Uložit</string>
     <string name="saving_image">Ukládám obrázek</string>
+    <string msgid="146198913615257606" name="search_menu_title">"Hledat"</string>
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>
     <string msgid="363496807345461806" name="wallet_buy_button_place_holder">"Koupit pomocí Googlu"</string>
 </resources>

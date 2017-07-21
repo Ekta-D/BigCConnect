@@ -15,14 +15,22 @@ import android.widget.Toast;
 import com.bigc.adapters.TributesAdapter;
 import com.bigc.dialogs.AddTributeDialog;
 import com.bigc.general.classes.Constants;
+import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
 import com.bigc.interfaces.UploadPostObserver;
 import com.bigc.models.Posts;
+import com.bigc.models.Tributes;
 import com.bigc_connect.R;
 import com.costum.android.widget.LoadMoreListView;
 import com.costum.android.widget.LoadMoreListView.OnLoadMoreListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -31,68 +39,71 @@ import java.util.List;
 //public class FragmentTributes extends BaseFragment implements
 //		OnLoadMoreListener, UploadPostObserver, PopupOptionHandler  //// TODO: 14-07-2017
 public class FragmentTributes extends BaseFragment implements
-		OnLoadMoreListener, UploadPostObserver
-{
+        OnLoadMoreListener, UploadPostObserver {
 
-	private LoadMoreListView listView;
-	private TributesAdapter adapter;
-	private TextView messageView;
-	private LinearLayout progressParent;
-	private ProgressBar progressView;
+    private LoadMoreListView listView;
+    private TributesAdapter adapter;
+    private TextView messageView;
+    private LinearLayout progressParent;
+    private ProgressBar progressView;
+    private List<Tributes> tributes;
+//	private List<Posts> posts = new ArrayList<>();
 
-	private List<Posts> posts = new ArrayList<>();
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-	}
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_tribunes, container,
+                false);
 
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_tribunes, container,
-				false);
+        view.findViewById(R.id.leftOptionParent).setOnClickListener(this);
+        messageView = (TextView) view.findViewById(R.id.messageView);
+        progressView = (ProgressBar) view.findViewById(R.id.progressView);
+        progressParent = (LinearLayout) view
+                .findViewById(R.id.messageViewParent);
+        listView = (LoadMoreListView) view.findViewById(R.id.listview);
+        /*adapter = new TributesAdapter(this, posts);
+        listView.setAdapter(adapter);*/
+        return view;
+    }
 
-		view.findViewById(R.id.leftOptionParent).setOnClickListener(this);
-		messageView = (TextView) view.findViewById(R.id.messageView);
-		progressView = (ProgressBar) view.findViewById(R.id.progressView);
-		progressParent = (LinearLayout) view
-				.findViewById(R.id.messageViewParent);
-		listView = (LoadMoreListView) view.findViewById(R.id.listview);
-		/*adapter = new TributesAdapter(this, posts);
-		listView.setAdapter(adapter);*/
-		return view;
-	}
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        GoogleAnalyticsHelper.sendScreenViewGoogleAnalytics(getActivity(),
+                "Tributes Screen");
 
-	@Override
-	public void onViewCreated(View view, Bundle savedInstanceState) {
-		super.onViewCreated(view, savedInstanceState);
-		GoogleAnalyticsHelper.sendScreenViewGoogleAnalytics(getActivity(),
-				"Tributes Screen");
+        listView.setOnLoadMoreListener(this);
 
-		listView.setOnLoadMoreListener(this);
+        listView.setOnItemClickListener(new OnItemClickListener() {
 
-		listView.setOnItemClickListener(new OnItemClickListener() {
-
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				//// TODO: 14-07-2017
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                //// TODO: 14-07-2017
 //
 //				Log.e("Clicked on", position + "--");
 //				((FragmentHolder) getActivity())
 //						.replaceFragment(new FragmentTributeDetail(
 //								FragmentTributes.this, adapter
 //										.getItem(position), position));
-			}
-		});
+            }
+        });
 
-		Log.e("Posts", posts.size() + "--");
-		if (posts.size() == 0) {
-			startProgress();
-			loadData();
-		}
-	}
+        tributes = new ArrayList<>();
+        if (tributes.size() == 0) {
+            startProgress();
+            loadData();
+        }
+//		if (posts.size() == 0) {
+//			startProgress();
+//			loadData();
+//		}
+    }
 
 /*	@Override
 	public void onStart() {
@@ -106,40 +117,40 @@ public class FragmentTributes extends BaseFragment implements
 		super.onDestroy();
 	}*/
 
-	@Override
-	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.leftOptionParent:
-			new AddTributeDialog(getActivity(), this).show();
-			break;
-		}
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.leftOptionParent:
+                new AddTributeDialog(getActivity(), this).show();
+                break;
+        }
 
-	}
+    }
 
-	@Override
-	public String getName() {
-		return Constants.FRAGMENT_TRIBUTES;
-	}
+    @Override
+    public String getName() {
+        return Constants.FRAGMENT_TRIBUTES;
+    }
 
-	@Override
-	public int getTab() {
-		return 4;
-	}
+    @Override
+    public int getTab() {
+        return 4;
+    }
 
-	@Override
-	public boolean onBackPressed() {
-		((FragmentHolder) getActivity()).replaceFragment(new ExploreFragment());
-		return true;
-	}
+    @Override
+    public boolean onBackPressed() {
+        ((FragmentHolder) getActivity()).replaceFragment(new ExploreFragment());
+        return true;
+    }
 
-	@Override
-	public void onLoadMore() {
+    @Override
+    public void onLoadMore() {
 
-		Log.e("LoadMore", "Request");
-		loadPosts(adapter.getLastItemDate(), false);
-	}
+        Log.e("LoadMore", "Request");
+        loadPosts(adapter.getLastItemDate(), false);
+    }
 
-	private void loadData() {
+    private void loadData() {
 
 		/*ParseQuery<ParseObject> query = Queries.getTributesQuery();
 
@@ -167,7 +178,40 @@ public class FragmentTributes extends BaseFragment implements
 
 			}
 		});*/
-	}
+
+
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_TRIBUTE);
+        databaseReference.orderByChild(DbConstants.FROM).equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        databaseReference.addChildEventListener(childEventListener);
+
+    }
+
+    ChildEventListener childEventListener = new ChildEventListener() {
+        @Override
+        public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+            Log.i("added_tributes", dataSnapshot.toString());
+        }
+
+        @Override
+        public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+            Log.i("update_tributes", dataSnapshot.toString());
+        }
+
+        @Override
+        public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+        }
+
+        @Override
+        public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+        }
+
+        @Override
+        public void onCancelled(DatabaseError databaseError) {
+
+        }
+    };
 
 	private void startProgress() {
 		try {
@@ -187,7 +231,7 @@ public class FragmentTributes extends BaseFragment implements
 	}
 
 	@Override
-	public void onNotify(final Object post) {
+	public void onNotify(final Tributes post) {
 		if (post == null) {
 			Toast.makeText(getActivity(), "Upload status is failed, try again",
 					Toast.LENGTH_LONG).show();
@@ -333,11 +377,11 @@ public class FragmentTributes extends BaseFragment implements
 //				position, obj);
 //	}
 
-	@Override
-	public void onEditDone(int position, Posts post) {
-		Log.e(FragmentTributes.class.getSimpleName(), "onEditDone");
-		//adapter.updateItem(position, post);//// TODO: 14-07-2017
-	}
+    @Override
+    public void onEditDone(int position, Posts post) {
+        Log.e(FragmentTributes.class.getSimpleName(), "onEditDone");
+        //adapter.updateItem(position, post);//// TODO: 14-07-2017
+    }
 //// TODO: 14-07-2017
 //	@Override
 //	public void onFlagClicked(int position, ParseObject post) {

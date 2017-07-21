@@ -27,8 +27,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.nostra13.universalimageloader.utils.L;
 
 import java.io.ByteArrayOutputStream;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -124,8 +126,7 @@ public class PostManager implements UploadPostObservable, MessageObservable {
 
     }
 
-    public void deleteStory(final Stories story)
-    {
+    public void deleteStory(final Stories story) {
         FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_STORIES).child(story.getObjectId()).removeValue();
     }
 
@@ -333,17 +334,30 @@ public class PostManager implements UploadPostObservable, MessageObservable {
         return obj;
     }
 */
-    /*public void likePost(ParseObject post) {
-        post.saveInBackground(new SaveCallback() {
+// public void likePost(ParseObject post) {
+//        post.saveInBackground(new SaveCallback() {
+//
+//            @Override
+//            public void done(ParseException e) {
+//
+//            }
+//        });
+//
+//    }
 
-            @Override
-            public void done(ParseException e) {
+    public void likePost(List<String> likes_list, Posts post) {
+        Map<String, Object> likes_update = new HashMap<>();
+        likes_update.put(DbConstants.LIKES, likes_list);
+        FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_POST).
+                child(post.getObjectId()).updateChildren(likes_update);
+    }
 
-            }
-        });
-
-    }*/
-
+    public void likeStory(List<String> like_list, Stories story) {
+        Map<String, Object> story_likes = new HashMap<>();
+        story_likes.put(DbConstants.LIKES, like_list);
+        FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_STORIES).child(story.getObjectId())
+                .updateChildren(story_likes);
+    }
    /* public void likeStory(ParseObject story) {
         story.saveInBackground(new SaveCallback() {
 

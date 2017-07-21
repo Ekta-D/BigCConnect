@@ -1,9 +1,11 @@
 package com.bigc.models;
 
+import java.io.Serializable;
+
 /**
  * Created by ENTER on 03-07-2017.
  */
-public class Users extends com.android.ex.chips.Users {
+public class Users extends com.android.ex.chips.Users implements Serializable {
     String email;
     String name;
     int type;

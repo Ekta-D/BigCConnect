@@ -4,6 +4,8 @@ import android.content.Context;
 import android.util.Log;
 
 import com.bigc.datastorage.Preferences;
+import com.bigc.interfaces.ConnectionExist;
+import com.bigc.interfaces.SignupInterface;
 import com.bigc.models.ConnectionsModel;
 import com.bigc.models.Posts;
 import com.bigc.models.Stories;
@@ -18,6 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class Queries {
 
@@ -563,6 +566,149 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
         if (fromCache)
             mQuery.fromPin(Constants.TAG_CONNECTIONS);
 
-        return mQuery;
-    }*/
+           return mQuery;
+       }*/
+
+    static List<Users> user_list;
+    static boolean isCompleted = false;
+
+    public static Query getUserActiveConnectionsQuery(final Context context,
+                                                      String name, final ConnectionExist connectionExist) {
+        Query query = null;
+
+        query = FirebaseDatabase.getInstance().getReference().child(DbConstants.USERS).
+                orderByChild(DbConstants.NAME).equalTo(name);
+
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                long count = dataSnapshot.getChildrenCount();
+                user_list = new ArrayList<Users>();
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                    String key = dataSnapshot1.getKey();
+                    Users users = dataSnapshot1.getValue(Users.class);
+
+                    user_list.add(users);
+                }
+                isCompleted = true;
+                afterCompletion(context, isCompleted, user_list, connectionExist);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
+//        final DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+//        final String objectID = Preferences.getInstance(context).getString(DbConstants.ID) + "_" + users.getObjectId();
+//        // TODO: 7/19/2017 Check if there's a pending connection
+//        ref.child(DbConstants.TABLE_CONNECTIONS).orderByKey().equalTo(objectID).
+//                addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                if (dataSnapshot != null && dataSnapshot.hasChildren()) {
+//                    boolean sendRequest = true;
+//                    ConnectionsModel connectionsModel = dataSnapshot.getValue(ConnectionsModel.class);
+//                    if (connectionsModel.getStatus() == true) {
+//                        //exists and is a connection.. dont send connection request
+//
+//                    } else {
+//                        //exists and pending.. no need to send connection request
+//                        checkReverse(ref, users.getObjectId() + "_" + Preferences.getInstance(context).getString(DbConstants.ID), connectionsModel, users);
+//                    }
+//                } else {
+//                    //send add connection request
+//                    checkReverse(ref, users.getObjectId() + "_" + Preferences.getInstance(context).getString(DbConstants.ID), null, users);
+//                    //sendConnectionRequest(ref, objectID, connection);
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
+        return query;
+    }
+
+    public static void afterCompletion(Context context, boolean isCompleted, List<Users> user_list, final ConnectionExist connectionExist) {
+        if (isCompleted && user_list.size() > 0) {
+            for (int i = 0; i < user_list.size(); i++) {
+                final DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+                final String objectID = Preferences.getInstance(context).
+                        getString(DbConstants.ID) + "_" + user_list.get(i).getObjectId();
+
+                final Users users = user_list.get(i);
+                final String reversed_objectID = user_list.get(i).getObjectId() + "_" + Preferences.getInstance(context).
+                        getString(DbConstants.ID);
+                ref.child(DbConstants.TABLE_CONNECTIONS).orderByChild(DbConstants.ID).equalTo(objectID).
+                        addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                Log.i("datasnapshot", dataSnapshot.toString());
+                                if (dataSnapshot.getValue() == null) {
+                                    checkReverse(users, ref, reversed_objectID, connectionExist);
+                                } else {
+                                    for (DataSnapshot data : dataSnapshot.getChildren()) {
+                                        String key = data.getKey();
+                                        Map<String, Object> values = (Map<String, Object>) data.getValue(Map.class);
+
+                                        Log.i("connections_values", values.toString());
+                                    }
+                                }
+
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+                        });
+            }
+        }
+    }
+
+    static boolean isConnectionExist = false;
+
+    private static void checkReverse(final Users users, final DatabaseReference ref, final String objectID, final ConnectionExist connectionExist) {
+        ref.child(DbConstants.TABLE_CONNECTIONS).orderByChild(DbConstants.ID).equalTo(objectID).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot != null && dataSnapshot.hasChildren()) {
+                    ConnectionsModel connection = new ConnectionsModel();
+                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                        String key = dataSnapshot1.getKey();
+                        Map<String, Object> connections = (Map<String, Object>) dataSnapshot1.getValue();
+
+                        connection.setStatus(Boolean.parseBoolean(String.valueOf(connections.get(DbConstants.STATUS))));
+                        connection.setCreatedAt(String.valueOf(connections.get(DbConstants.CREATED_AT)));
+                        connection.setFrom(String.valueOf(connections.get(DbConstants.FROM)));
+                        connection.setObjectId(String.valueOf(connections.get(DbConstants.ID)));
+                        connection.setTo(String.valueOf(connections.get(DbConstants.TO)));
+                        connection.setUpdatedAt(String.valueOf(connections.get(DbConstants.UPDATED_AT)));
+                    }
+
+                    if (connection.getStatus() == true) {
+                        //exists and is a connection.. dont send connection request
+
+                        isConnectionExist = true;
+                        connectionExist.isConnection(isConnectionExist, users);
+                    } else {
+                        //exists and pending.. no need to send connection request
+                        isConnectionExist = false;
+                        connectionExist.isConnection(isConnectionExist, users);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
 }

@@ -27,6 +27,7 @@ import com.bigc.interfaces.PopupOptionHandler;
 import com.bigc.interfaces.UploadPostObserver;
 import com.bigc.models.Comments;
 import com.bigc.models.Posts;
+import com.bigc.models.Tributes;
 import com.bigc.models.Users;
 import com.bigc.views.NestedListView;
 import com.bigc_connect.R;
@@ -567,7 +568,7 @@ public class PostDetailFragment extends BaseFragment implements
     }
 
     @Override
-    public void onNotify(Object post) {
+    public void onNotify(Tributes post) {
 
     }
 

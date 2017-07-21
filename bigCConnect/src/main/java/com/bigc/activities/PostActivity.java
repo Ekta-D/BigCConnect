@@ -31,8 +31,10 @@ import com.bigc.general.classes.GoogleAnalyticsHelper;
 import com.bigc.general.classes.PostManager;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.ProgressHandler;
+import com.bigc.models.Post;
 import com.bigc.models.Posts;
 import com.bigc.models.Stories;
+import com.bigc.models.Tributes;
 import com.bigc.models.Users;
 import com.bigc_connect.R;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -85,6 +87,7 @@ public class PostActivity extends Activity implements OnClickListener,
     private File mFileTemp;
     FirebaseStorage firebaseStorage;
     StorageReference storageReference;
+    Users user;
 
     public static void setCurrentObject(int position, Posts object, Stories storyObject) {
         //  currentObject = object;
@@ -114,6 +117,7 @@ public class PostActivity extends Activity implements OnClickListener,
            if (isEdit && NewsFeedFragment.currentObject == null&& currentstoryObject==null) {
                 isEdit = false;
             }
+            user = (Users) getIntent().getSerializableExtra(DbConstants.USER_INFO);
         }
 
         progressIndicator = (ProgressBar) findViewById(R.id.progressIndicator);
@@ -162,9 +166,9 @@ public class PostActivity extends Activity implements OnClickListener,
 
             shareUsers.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
             shareUsers.setThreshold(1);
-            shareUsers.setAdapter(new BaseRecipientAdapter(this, 4, Utils
+            /*shareUsers.setAdapter(new BaseRecipientAdapter(this, 4, Utils
                     .loadConnectionChips()) {
-            });
+            });*/
             GoogleAnalyticsHelper.sendScreenViewGoogleAnalytics(this,
                     "Compose New Message Screen");
             switchToSelectionMode(findViewById(R.id.allSupportersView));
@@ -308,11 +312,10 @@ public class PostActivity extends Activity implements OnClickListener,
                         }
                         // addStory(message,
                         // selectedPicture);
-                        //   currentObject.put(DbConstants.MESSAGE, message);
+                        currentstoryObject.setTitle(title);
                         currentstoryObject.setMessage(message);
-                      //  NewsFeedFragment.currentObject.setMessage(message);
-                        //// TODO: 14-07-2017
-                        //   currentObject.put(DbConstants.TITLE, title);
+                        currentstoryObject.setUpdatedAt(Utils.getCurrentDate());
+
 
                         finishActivity();
                         Toast.makeText(this, "Story has been updated.",
@@ -348,9 +351,12 @@ public class PostActivity extends Activity implements OnClickListener,
                                     Toast.LENGTH_LONG).show();
                             v.setClickable(true);
                         } else {
-                            addTribute(message, selectedPicture,
-                                    (Users) AddTributeDialog.getTargetUser(),
-                                    AddTributeDialog.getTargetUserAge());
+//                            addTribute(message, selectedPicture,
+//                                    (Users) AddTributeDialog.getTargetUser(),
+                            //     AddTributeDialog.getTargetUserAge());
+//                            addTribute(message, selectedPicture, (Users) AddTributeDialog.getTargetUser(),
+//                                    AddTributeDialog.getTargetUserAge());
+                            addTribute(message, selectedPicture, user, AddTributeDialog.getTargetUserAge());
 
                         }
                     } else if (Constants.OPERATION_STORY == operation) {
@@ -609,8 +615,10 @@ public class PostActivity extends Activity implements OnClickListener,
         finishActivity();
     }
 
-    private void addTribute(String message, Bitmap bitmap,
-                            Users targetUser, int age) {
+    //    private void addTribute(String message, Bitmap bitmap,
+//                            Users targetUser, int age)
+    private void addTribute(final String message, Bitmap bitmap,
+                            final Users targetUser, final int age) {
        /* ParseObject post = new ParseObject(DbConstants.TABLE_TRIBUTE);
         post.put(DbConstants.MESSAGE, message);
         post.put(DbConstants.AGE, age);
@@ -630,6 +638,68 @@ public class PostActivity extends Activity implements OnClickListener,
         post.put(DbConstants.USER, ParseUser.getCurrentUser());
         post.put(DbConstants.TO, targetUser);
         PostManager.getInstance().addTribute(post, this);*/
+
+        Utils.showProgress(PostActivity.this);
+        final String objectId = databaseReference.child(DbConstants.TABLE_TRIBUTE).push().getKey();
+        SimpleDateFormat format = new SimpleDateFormat(DbConstants.DATE_FORMAT);
+        final String date = format.format(new Date(System.currentTimeMillis()));
+
+        Uri uri = null;
+        if (bitmap != null) {
+            ByteArrayOutputStream outStream = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, outStream);
+            String path = MediaStore.Images.Media.insertImage(PostActivity.this.getContentResolver(), bitmap, "Title", null);
+            uri = Uri.parse(path);
+
+            StorageReference reference = storageReference.child("TributeImages/" + objectId + ".jpg");
+            reference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    Uri downloadUri = taskSnapshot.getMetadata().getDownloadUrl();
+                    //    String objectId = databaseReference.child(DbConstants.TABLE_POST).push().getKey();
+
+                    media = downloadUri.toString();
+                    uploadTribute(targetUser, message, 0, date, date, media,
+                            objectId, FirebaseAuth.getInstance().getCurrentUser().getUid(), age);
+
+                    Utils.hideProgress();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Utils.showPrompt(PostActivity.this, e.toString().trim());
+
+                }
+            });
+        } else {
+            uploadTribute(targetUser, message, 0, date, date, media, objectId,
+                    FirebaseAuth.getInstance().getCurrentUser().getUid(), age);
+        }
+
+    }
+
+    public void uploadTribute(Users targetUser, String message, int comments, String createdAt,
+                              String updatedAt, String mediaUrl, String objectId,
+                              String user, int age) {
+
+
+        Tributes tributes = new Tributes();
+        tributes.setAge(age);
+        tributes.setComments(comments);
+        tributes.setCreatedAt(createdAt);
+        tributes.setUpdatedAt(updatedAt);
+        tributes.setObjectId(objectId);
+        tributes.setMedia(mediaUrl);
+        tributes.setMessage(message);
+        tributes.setTo(targetUser.getObjectId());
+        tributes.setFrom(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        tributes.setUser(user);
+        tributes.setLocation(targetUser.getLocation());
+        tributes.setSurvivor(targetUser.getName());
+
+        databaseReference.child(DbConstants.TABLE_TRIBUTE).child(objectId).setValue(tributes);
+        Utils.hideProgress();
+        finishActivity();
     }
 
     private void addStory(final String title, final String message, Bitmap bitmap) {

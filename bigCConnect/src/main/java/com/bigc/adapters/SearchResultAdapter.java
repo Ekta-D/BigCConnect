@@ -126,8 +126,8 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
                 // holder.ribbonView.setImageResource(R.drawable.ic_launcher);
             }
 
-            if ((isSupporterUser && supporter)
-                    || FirebaseAuth.getInstance().getCurrentUser().getUid()
+            if (/*(isSupporterUser && supporter)
+                    || */FirebaseAuth.getInstance().getCurrentUser().getUid()
                     .equals(user.getObjectId())) {
                 holder.addOption.setVisibility(View.GONE);
             } else {

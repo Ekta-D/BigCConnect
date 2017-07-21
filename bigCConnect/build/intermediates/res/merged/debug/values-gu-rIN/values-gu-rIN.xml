@@ -35,5 +35,6 @@
     <string msgid="4570331844078181931" name="mr_controller_stop">"કાસ્ટ કરવાનું રોકો"</string>
     <string msgid="5441529851481176817" name="mr_system_route_name">"સિસ્ટમ"</string>
     <string msgid="7498112907524977311" name="mr_user_route_category_name">"ઉપકરણો"</string>
+    <string msgid="146198913615257606" name="search_menu_title">"શોધો"</string>
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>
 </resources>

@@ -21,60 +21,63 @@ import com.bigc.general.classes.PostManager;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.PopupOptionHandler;
+import com.bigc.models.Tributes;
 import com.bigc_connect.R;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
 
 //public class TributesAdapter extends ArrayAdapter<Object> implements
 //		PopupOptionHandler //// TODO: 14-07-2017
-public class TributesAdapter extends ArrayAdapter<Object>
-{
+public class TributesAdapter extends ArrayAdapter<Tributes> {
 
-	private LayoutInflater inflater;
-	private List<Object> data;
-	private BaseFragment context;
+    private LayoutInflater inflater;
+    //	private List<Object> data;
+    private List<Tributes> data;
+    private BaseFragment context;
 
-	public TributesAdapter(BaseFragment context, List<Object> tributes) {
-		super(context.getActivity(), R.layout.list_item_tributes);
 
-		inflater = (LayoutInflater) context.getActivity().getSystemService(
-				Context.LAYOUT_INFLATER_SERVICE);
-		this.context = context;
+    public TributesAdapter(BaseFragment context, List<Tributes> tributes) {
+        super(context.getActivity(), R.layout.list_item_tributes);
 
-		data = new ArrayList<Object>();
-		if (tributes != null)
-			data.addAll(tributes);
+        inflater = (LayoutInflater) context.getActivity().getSystemService(
+                Context.LAYOUT_INFLATER_SERVICE);
+        this.context = context;
 
-	}
+        data = new ArrayList<Tributes>();
+        if (tributes != null)
+            data.addAll(tributes);
 
-	@Override
-	public Object getItem(int position) {
-		if (position < 0 || position >= data.size())
-			return null;
-		return data.get(position);
-	}
+    }
 
-	@Override
-	public View getView(final int position, View view, ViewGroup parent) {
-		final Object tribute = data.get(position);
-		final ViewHolder holder;
-		if (view == null) {
-			view = inflater.inflate(R.layout.list_item_tributes, parent, false);
-			holder = new ViewHolder();
-			holder.profileView = (ImageView) view
-					.findViewById(R.id.profilePictureView);
-			holder.iconView = (ImageView) view.findViewById(R.id.iconView);
-			holder.nameView = (TextView) view.findViewById(R.id.nameView);
-			holder.visitView = (TextView) view.findViewById(R.id.visitTextView);
-			holder.ageView = (TextView) view.findViewById(R.id.ageView);
-			holder.locationView = (TextView) view
-					.findViewById(R.id.locationView);
-			holder.dateView = (TextView) view.findViewById(R.id.dateView);
-			holder.optionView = (ImageView) view.findViewById(R.id.optionView);
-			view.setTag(holder);
-		} else {
-			holder = (ViewHolder) view.getTag();
-		}
+    @Override
+    public Tributes getItem(int position) {
+        if (position < 0 || position >= data.size())
+            return null;
+        return data.get(position);
+    }
+
+    @Override
+    public View getView(final int position, View view, ViewGroup parent) {
+//        final Object tribute = data.get(position);
+        final Tributes tribute = data.get(position);
+        final ViewHolder holder;
+        if (view == null) {
+            view = inflater.inflate(R.layout.list_item_tributes, parent, false);
+            holder = new ViewHolder();
+            holder.profileView = (ImageView) view
+                    .findViewById(R.id.profilePictureView);
+            holder.iconView = (ImageView) view.findViewById(R.id.iconView);
+            holder.nameView = (TextView) view.findViewById(R.id.nameView);
+            holder.visitView = (TextView) view.findViewById(R.id.visitTextView);
+            holder.ageView = (TextView) view.findViewById(R.id.ageView);
+            holder.locationView = (TextView) view
+                    .findViewById(R.id.locationView);
+            holder.dateView = (TextView) view.findViewById(R.id.dateView);
+            holder.optionView = (ImageView) view.findViewById(R.id.optionView);
+            view.setTag(holder);
+        } else {
+            holder = (ViewHolder) view.getTag();
+        }
 
 		/*ParseUser owner = tribute.getParseUser(DbConstants.TO);
 		holder.nameView.setText(owner.getString(DbConstants.NAME));
@@ -145,58 +148,58 @@ public class TributesAdapter extends ArrayAdapter<Object>
 		return view;
 	}
 
-	public void setData(List<Object> stories) {
-		this.data.clear();
-		if (stories == null)
-			return;
-		this.data.addAll(stories);
-		notifyDataSetChanged();
-	}
+    public void setData(List<Tributes> stories) {
+        this.data.clear();
+        if (stories == null)
+            return;
+        this.data.addAll(stories);
+        notifyDataSetChanged();
+    }
 
-	public Date getLastItemDate() {
-		if (data.size() == 0)
-			return null;
-		//return data.get(data.size() - 1).getCreatedAt();
-		return new Date();
-	}
+    public Date getLastItemDate() {
+        if (data.size() == 0)
+            return null;
+        //return data.get(data.size() - 1).getCreatedAt();
+        return new Date();
+    }
 
-	public void addItems(List<Object> stories, boolean atStart) {
+    public void addItems(List<Tributes> stories, boolean atStart) {
 
-		if (stories == null)
-			return;
+        if (stories == null)
+            return;
 
-		if (atStart)
-			this.data.addAll(0, stories);
-		else
-			this.data.addAll(stories);
+        if (atStart)
+            this.data.addAll(0, stories);
+        else
+            this.data.addAll(stories);
 
-		notifyDataSetChanged();
-	}
+        notifyDataSetChanged();
+    }
 
-	public void addItem(Object story) {
-		if (story == null)
-			return;
-		this.data.add(0, story);
-		notifyDataSetChanged();
-	}
+    public void addItem(Tributes story) {
+        if (story == null)
+            return;
+        this.data.add(0, story);
+        notifyDataSetChanged();
+    }
 
-	@Override
-	public int getCount() {
-		return data.size();
-	}
+    @Override
+    public int getCount() {
+        return data.size();
+    }
 
-	public static class ViewHolder {
+    public static class ViewHolder {
 
-		public ImageView profileView;
-		public ImageView iconView;
-		public TextView nameView;
-		public TextView dateView;
-		public TextView visitView;
-		public TextView ageView;
-		public TextView locationView;
-		public ImageView optionView;
-	}
-	//// TODO: 14-07-2017
+        public ImageView profileView;
+        public ImageView iconView;
+        public TextView nameView;
+        public TextView dateView;
+        public TextView visitView;
+        public TextView ageView;
+        public TextView locationView;
+        public ImageView optionView;
+    }
+    //// TODO: 14-07-2017
 
 //	@Override
 //	public void onDelete(int position, Object tribute) {

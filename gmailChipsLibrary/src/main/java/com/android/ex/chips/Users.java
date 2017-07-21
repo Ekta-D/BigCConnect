@@ -4,21 +4,21 @@ package com.android.ex.chips;
  * Created by ENTER on 03-07-2017.
  */
 public class Users {
-    String email;
-    String name;
-    int type;
-    String profile_picture;
-    String name_lowercase;
-    int ribbon;
-    boolean status;
-    String location;
-    String cancertype;
-    String stage;
-    int visibility;
-    String deactivated_reason = "";
-    boolean deactivated;
-    String objectId;
-    String message;
+    private transient String email;
+    private transient String name;
+    private transient int type;
+    private transient String profile_picture;
+    private transient String name_lowercase;
+    private transient int ribbon;
+    private transient boolean status;
+    private transient String location;
+    private transient String cancertype;
+    private transient String stage;
+    private transient int visibility;
+    private transient String deactivated_reason = "";
+    private transient boolean deactivated;
+    private transient String objectId;
+    private transient String message;
 
     public String getCreatedAt() {
         return createdAt;
@@ -28,7 +28,7 @@ public class Users {
         this.createdAt = createdAt;
     }
 
-    String createdAt;
+    private transient String createdAt;
 
     public String getProblem_type() {
         return problem_type;
@@ -38,7 +38,7 @@ public class Users {
         this.problem_type = problem_type;
     }
 
-    String problem_type;
+    private transient String problem_type;
 
     public String getMessage() {
         return message;

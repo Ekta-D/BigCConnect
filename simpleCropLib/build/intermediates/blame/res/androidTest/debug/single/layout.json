@@ -1,26 +1,10 @@
 [
     {
-        "merged": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\simpleCropLib\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\main.xml",
-        "source": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\simpleCropLib\\build\\intermediates\\bundles\\debug\\res\\layout\\main.xml"
+        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\simpleCropLib\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\main.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\simpleCropLib\\build\\intermediates\\bundles\\debug\\res\\layout\\main.xml"
     },
     {
-        "merged": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\simpleCropLib\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\cropimage.xml",
-        "source": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\simpleCropLib\\build\\intermediates\\bundles\\debug\\res\\layout\\cropimage.xml"
-    },
-    {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\simpleCropLib\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\cropimage.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\simpleCropLib\\build\\intermediates\\bundles\\debug\\res\\layout\\cropimage.xml"
-    },
-    {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\simpleCropLib\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\main.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\simpleCropLib\\build\\intermediates\\bundles\\debug\\res\\layout\\main.xml"
-    },
-    {
-        "merged": "D:\\Office work\\BigCConnect\\simpleCropLib\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\cropimage.xml",
-        "source": "D:\\Office work\\BigCConnect\\simpleCropLib\\build\\intermediates\\bundles\\debug\\res\\layout\\cropimage.xml"
-    },
-    {
-        "merged": "D:\\Office work\\BigCConnect\\simpleCropLib\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\main.xml",
-        "source": "D:\\Office work\\BigCConnect\\simpleCropLib\\build\\intermediates\\bundles\\debug\\res\\layout\\main.xml"
+        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\simpleCropLib\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\cropimage.xml",
+        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\simpleCropLib\\build\\intermediates\\bundles\\debug\\res\\layout\\cropimage.xml"
     }
 ]

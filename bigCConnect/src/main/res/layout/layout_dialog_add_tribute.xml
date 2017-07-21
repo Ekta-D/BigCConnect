@@ -43,7 +43,7 @@
             android:text="Survivor:"
             android:textColor="@color/black" />
 
-        <com.bigc.views.CustomRecipientEditTextView
+        <MultiAutoCompleteTextView
             android:id="@+id/UsersInputView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

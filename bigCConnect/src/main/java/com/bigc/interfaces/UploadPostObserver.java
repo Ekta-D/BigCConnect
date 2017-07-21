@@ -1,10 +1,11 @@
 package com.bigc.interfaces;
 
 import com.bigc.models.Posts;
+import com.bigc.models.Tributes;
 
 public interface UploadPostObserver {
 
-    	public void onNotify(Object post);
+    	public void onNotify(Tributes post);
     //public void onNotify(Posts postObject);
 
 //    public void onEditDone(int position, Posts postObject);

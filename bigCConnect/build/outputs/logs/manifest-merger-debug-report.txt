@@ -17,7 +17,6 @@ ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\m
 		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:2:11-69
 uses-sdk
 ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:multidex:1.0.1] C:\Users\beesolver\.android\build-cache\5f4b52ba574fe935384dc9952c0b7fac9afb3805\output\AndroidManifest.xml:18:5-42
 MERGED from [BigCConnect:loadMoreListView:unspecified] D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\loadMoreListView\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
 MERGED from [BigCConnect:gmailChipsLibrary:unspecified] D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\gmailChipsLibrary\build\intermediates\bundles\default\AndroidManifest.xml:6:5-8:41
 MERGED from [com.mopub:mopub-sdk-native-static:4.10.0] C:\Users\beesolver\.android\build-cache\71f41f52c206d3e30396689b5f5aa9cf412f0b4f\output\AndroidManifest.xml:7:5-9:41
@@ -75,12 +74,17 @@ MERGED from [com.google.android.gms:play-services-maps:9.6.0] C:\Users\beesolver
 MERGED from [com.google.android.gms:play-services-base:9.6.0] C:\Users\beesolver\.android\build-cache\39cac0cd3945e4bd584590e81e6f05add07ec1e5\output\AndroidManifest.xml:17:5-42
 MERGED from [com.google.android.gms:play-services-tasks:9.6.0] C:\Users\beesolver\.android\build-cache\7217ef36340ac774840244561358fd470e1dc176\output\AndroidManifest.xml:3:5-42
 MERGED from [com.google.android.gms:play-services-basement:9.6.0] C:\Users\beesolver\.android\build-cache\3be25977ec9a26fef414bab0c26302f8424c0f35\output\AndroidManifest.xml:17:5-42
-MERGED from [com.android.support:appcompat-v7:24.1.1] C:\Users\beesolver\.android\build-cache\fefe49ff74511f5e72573ef467ff74cf09a1063e\output\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:24.1.1] C:\Users\beesolver\.android\build-cache\d74c93d579392e8d04e69bc74541ed26a6bba730\output\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:24.1.1] C:\Users\beesolver\.android\build-cache\c1697a863deb10c7eaf169649fbb1f3baac4dffc\output\AndroidManifest.xml:21:5-43
-MERGED from [com.android.support:support-v4:24.1.1] C:\Users\beesolver\.android\build-cache\ae90047e25a69987ab8acc546e5ec3e5cd8b4aa9\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:appcompat-v7:25.0.0] C:\Users\beesolver\.android\build-cache\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:25.0.0] C:\Users\beesolver\.android\build-cache\ee0eac4d8d26742d16cfd26b5a7b7f7fd23bca8f\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.0.0] C:\Users\beesolver\.android\build-cache\f5e4d27e65f0cbe92720ab10bfcd0af8c80fc2de\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.0.0] C:\Users\beesolver\.android\build-cache\3a06da5843552602d38b4eacf349c880f9303cca\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.0.0] C:\Users\beesolver\.android\build-cache\ac43e7275c03bcff51e64e1ee6b80717d75fc09a\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.0.0] C:\Users\beesolver\.android\build-cache\afd25d6ae79914167bf2bf17302984f7655e6c2a\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:25.0.0] C:\Users\beesolver\.android\build-cache\6519a05215fef39ce479153d51a981830d597bc0\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.0.0] C:\Users\beesolver\.android\build-cache\e9b8b66ef18ccd594b82a176fab329a074325a08\output\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-compat:25.0.0] C:\Users\beesolver\.android\build-cache\0dd02f42f76409fc26ba020dbce8299941fa25fe\output\AndroidManifest.xml:21:5-23:58
 	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:24.1.1] C:\Users\beesolver\.android\build-cache\fefe49ff74511f5e72573ef467ff74cf09a1063e\output\AndroidManifest.xml:23:9-75
+		ADDED from [com.android.support:appcompat-v7:25.0.0] C:\Users\beesolver\.android\build-cache\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\output\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
 		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:9:9-38
 		INJECTED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml
@@ -236,10 +240,15 @@ MERGED from [com.google.android.gms:play-services-maps:9.6.0] C:\Users\beesolver
 MERGED from [com.google.android.gms:play-services-base:9.6.0] C:\Users\beesolver\.android\build-cache\39cac0cd3945e4bd584590e81e6f05add07ec1e5\output\AndroidManifest.xml:18:5-20:19
 MERGED from [com.google.android.gms:play-services-tasks:9.6.0] C:\Users\beesolver\.android\build-cache\7217ef36340ac774840244561358fd470e1dc176\output\AndroidManifest.xml:4:5-19
 MERGED from [com.google.android.gms:play-services-basement:9.6.0] C:\Users\beesolver\.android\build-cache\3be25977ec9a26fef414bab0c26302f8424c0f35\output\AndroidManifest.xml:19:5-21:19
-MERGED from [com.android.support:appcompat-v7:24.1.1] C:\Users\beesolver\.android\build-cache\fefe49ff74511f5e72573ef467ff74cf09a1063e\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:animated-vector-drawable:24.1.1] C:\Users\beesolver\.android\build-cache\d74c93d579392e8d04e69bc74541ed26a6bba730\output\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-vector-drawable:24.1.1] C:\Users\beesolver\.android\build-cache\c1697a863deb10c7eaf169649fbb1f3baac4dffc\output\AndroidManifest.xml:23:5-20
-MERGED from [com.android.support:support-v4:24.1.1] C:\Users\beesolver\.android\build-cache\ae90047e25a69987ab8acc546e5ec3e5cd8b4aa9\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:25.0.0] C:\Users\beesolver\.android\build-cache\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:25.0.0] C:\Users\beesolver\.android\build-cache\ee0eac4d8d26742d16cfd26b5a7b7f7fd23bca8f\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.0.0] C:\Users\beesolver\.android\build-cache\f5e4d27e65f0cbe92720ab10bfcd0af8c80fc2de\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.0.0] C:\Users\beesolver\.android\build-cache\3a06da5843552602d38b4eacf349c880f9303cca\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.0.0] C:\Users\beesolver\.android\build-cache\ac43e7275c03bcff51e64e1ee6b80717d75fc09a\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.0.0] C:\Users\beesolver\.android\build-cache\afd25d6ae79914167bf2bf17302984f7655e6c2a\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.0.0] C:\Users\beesolver\.android\build-cache\6519a05215fef39ce479153d51a981830d597bc0\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:25.0.0] C:\Users\beesolver\.android\build-cache\e9b8b66ef18ccd594b82a176fab329a074325a08\output\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-compat:25.0.0] C:\Users\beesolver\.android\build-cache\0dd02f42f76409fc26ba020dbce8299941fa25fe\output\AndroidManifest.xml:25:5-20
 	android:label
 		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:39:9-41
 	android:allowBackup

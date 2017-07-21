@@ -25,6 +25,7 @@ import com.bigc.interfaces.FragmentHolder;
 import com.bigc.interfaces.PopupOptionHandler;
 import com.bigc.interfaces.UploadPostObserver;
 import com.bigc.models.Posts;
+import com.bigc.models.Tributes;
 import com.bigc.models.Users;
 import com.bigc.views.NestedListView;
 import com.bigc_connect.R;
@@ -56,7 +57,7 @@ public class FragmentTributeDetail extends BaseFragment implements
 	private ImageView optionView;
 
 	public FragmentTributeDetail(PopupOptionHandler handler,
-			Object tribute, int position) {
+			Tributes tribute, int position) {
 		FragmentTributeDetail.tribute = tribute;
 		FragmentTributeDetail.handler = handler;
 		FragmentTributeDetail.position = position;
@@ -434,7 +435,7 @@ public class FragmentTributeDetail extends BaseFragment implements
 //	}
 
 	@Override
-	public void onNotify(Object post) {
+	public void onNotify(Tributes post) {
 
 	}
 

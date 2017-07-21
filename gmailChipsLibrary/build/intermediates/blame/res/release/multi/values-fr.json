@@ -1,23 +1,23 @@
 [
     {
-        "outputFile": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\release\\values-fr\\values-fr.xml",
+        "outputFile": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-fr\\values-fr.xml",
         "map": [
             {
                 "to": {
                     "startLine": 2,
                     "startColumn": 4,
                     "startOffset": 105,
-                    "endColumn": 93,
-                    "endOffset": 194
+                    "endColumn": 107,
+                    "endOffset": 208
                 },
                 "from": {
-                    "file": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-fr\\strings.xml",
+                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-fr\\values.xml",
                     "position": {
-                        "startLine": 19,
+                        "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 911,
-                        "endColumn": 93,
-                        "endOffset": 1000
+                        "startOffset": 340,
+                        "endColumn": 107,
+                        "endOffset": 443
                     }
                 }
             },
@@ -25,18 +25,18 @@
                 "to": {
                     "startLine": 3,
                     "startColumn": 4,
-                    "startOffset": 199,
-                    "endColumn": 98,
-                    "endOffset": 293
+                    "startOffset": 213,
+                    "endColumn": 211,
+                    "endOffset": 420
                 },
                 "from": {
-                    "file": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-fr\\strings.xml",
+                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-fr\\values.xml",
                     "position": {
-                        "startLine": 20,
+                        "startLine": 5,
                         "startColumn": 4,
-                        "startOffset": 1005,
-                        "endColumn": 98,
-                        "endOffset": 1099
+                        "startOffset": 448,
+                        "endColumn": 211,
+                        "endOffset": 655
                     }
                 }
             },
@@ -44,18 +44,18 @@
                 "to": {
                     "startLine": 4,
                     "startColumn": 4,
-                    "startOffset": 298,
-                    "endColumn": 69,
-                    "endOffset": 363
+                    "startOffset": 425,
+                    "endColumn": 131,
+                    "endOffset": 552
                 },
                 "from": {
-                    "file": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-fr\\strings.xml",
+                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-fr\\values.xml",
                     "position": {
-                        "startLine": 21,
+                        "startLine": 6,
                         "startColumn": 4,
-                        "startOffset": 1104,
-                        "endColumn": 69,
-                        "endOffset": 1169
+                        "startOffset": 660,
+                        "endColumn": 131,
+                        "endOffset": 787
                     }
                 }
             },
@@ -63,117 +63,335 @@
                 "to": {
                     "startLine": 5,
                     "startColumn": 4,
-                    "startOffset": 368,
-                    "endColumn": 102,
-                    "endOffset": 466
+                    "startOffset": 557,
+                    "endColumn": 110,
+                    "endOffset": 663
                 },
                 "from": {
-                    "file": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-fr\\strings.xml",
+                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 792,
+                        "endColumn": 110,
+                        "endOffset": 898
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 668,
+                    "endColumn": 236,
+                    "endOffset": 900
+                },
+                "from": {
+                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 903,
+                        "endColumn": 236,
+                        "endOffset": 1135
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 905,
+                    "endColumn": 236,
+                    "endOffset": 1137
+                },
+                "from": {
+                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 1140,
+                        "endColumn": 236,
+                        "endOffset": 1372
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 1142,
+                    "endColumn": 134,
+                    "endOffset": 1272
+                },
+                "from": {
+                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 1377,
+                        "endColumn": 134,
+                        "endOffset": 1507
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 1277,
+                    "endColumn": 141,
+                    "endOffset": 1414
+                },
+                "from": {
+                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 1512,
+                        "endColumn": 141,
+                        "endOffset": 1649
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 1419,
+                    "endColumn": 287,
+                    "endOffset": 1702
+                },
+                "from": {
+                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\3be25977ec9a26fef414bab0c26302f8424c0f35\\output\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 343,
+                        "endColumn": 287,
+                        "endOffset": 626
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 1707,
+                    "endColumn": 275,
+                    "endOffset": 1978
+                },
+                "from": {
+                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1654,
+                        "endColumn": 275,
+                        "endOffset": 1925
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1983,
+                    "endColumn": 123,
+                    "endOffset": 2102
+                },
+                "from": {
+                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1930,
+                        "endColumn": 123,
+                        "endOffset": 2049
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 2107,
+                    "endColumn": 113,
+                    "endOffset": 2216
+                },
+                "from": {
+                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 2054,
+                        "endColumn": 113,
+                        "endOffset": 2163
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 2221,
+                    "endColumn": 215,
+                    "endOffset": 2432
+                },
+                "from": {
+                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 2168,
+                        "endColumn": 215,
+                        "endOffset": 2379
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 2437,
+                    "endColumn": 137,
+                    "endOffset": 2570
+                },
+                "from": {
+                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 2384,
+                        "endColumn": 137,
+                        "endOffset": 2517
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 2575,
+                    "endColumn": 218,
+                    "endOffset": 2789
+                },
+                "from": {
+                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-fr\\values.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 2522,
+                        "endColumn": 218,
+                        "endOffset": 2736
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 2794,
+                    "endColumn": 137,
+                    "endOffset": 2927
+                },
+                "from": {
+                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-fr\\values.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
-                        "startOffset": 804,
-                        "endColumn": 106,
-                        "endOffset": 906
+                        "startOffset": 2741,
+                        "endColumn": 137,
+                        "endOffset": 2874
                     }
                 }
-            }
-        ]
-    },
-    {
-        "outputFile": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\release\\values-fr\\values-fr.xml",
-        "map": [
+            },
             {
                 "to": {
-                    "startLine": 2,
+                    "startLine": 18,
                     "startColumn": 4,
-                    "startOffset": 105,
-                    "endColumn": 93,
-                    "endOffset": 194
+                    "startOffset": 2932,
+                    "endColumn": 208,
+                    "endOffset": 3136
                 },
                 "from": {
-                    "file": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-fr\\strings.xml",
+                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-fr\\values.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
-                        "startOffset": 911,
-                        "endColumn": 93,
-                        "endOffset": 1000
+                        "startOffset": 2879,
+                        "endColumn": 208,
+                        "endOffset": 3083
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 3,
+                    "startLine": 19,
                     "startColumn": 4,
-                    "startOffset": 199,
-                    "endColumn": 98,
-                    "endOffset": 293
+                    "startOffset": 3141,
+                    "endColumn": 102,
+                    "endOffset": 3239
                 },
                 "from": {
-                    "file": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-fr\\strings.xml",
+                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-fr\\values.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
-                        "startOffset": 1005,
-                        "endColumn": 98,
-                        "endOffset": 1099
+                        "startOffset": 3088,
+                        "endColumn": 102,
+                        "endOffset": 3186
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 4,
+                    "startLine": 20,
                     "startColumn": 4,
-                    "startOffset": 298,
-                    "endColumn": 69,
-                    "endOffset": 363
+                    "startOffset": 3244,
+                    "endColumn": 96,
+                    "endOffset": 3336
                 },
                 "from": {
-                    "file": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-fr\\strings.xml",
+                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-fr\\values.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
-                        "startOffset": 1104,
-                        "endColumn": 69,
-                        "endOffset": 1169
+                        "startOffset": 3191,
+                        "endColumn": 96,
+                        "endOffset": 3283
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 5,
+                    "startLine": 21,
                     "startColumn": 4,
-                    "startOffset": 368,
-                    "endColumn": 102,
-                    "endOffset": 466
+                    "startOffset": 3341,
+                    "endColumn": 112,
+                    "endOffset": 3449
                 },
                 "from": {
-                    "file": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-fr\\strings.xml",
+                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-fr\\values.xml",
                     "position": {
-                        "startLine": 18,
+                        "startLine": 22,
                         "startColumn": 4,
-                        "startOffset": 804,
-                        "endColumn": 106,
-                        "endOffset": 906
+                        "startOffset": 3288,
+                        "endColumn": 112,
+                        "endOffset": 3396
                     }
                 }
-            }
-        ]
-    },
-    {
-        "outputFile": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\release\\values-fr\\values-fr.xml",
-        "map": [
+            },
             {
                 "to": {
-                    "startLine": 2,
+                    "startLine": 22,
                     "startColumn": 4,
-                    "startOffset": 105,
+                    "startOffset": 3454,
                     "endColumn": 93,
-                    "endOffset": 194
+                    "endOffset": 3543
                 },
                 "from": {
-                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-fr\\strings.xml",
+                    "file": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-fr\\strings.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -185,14 +403,14 @@
             },
             {
                 "to": {
-                    "startLine": 3,
+                    "startLine": 23,
                     "startColumn": 4,
-                    "startOffset": 199,
+                    "startOffset": 3548,
                     "endColumn": 98,
-                    "endOffset": 293
+                    "endOffset": 3642
                 },
                 "from": {
-                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-fr\\strings.xml",
+                    "file": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-fr\\strings.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -204,14 +422,14 @@
             },
             {
                 "to": {
-                    "startLine": 4,
+                    "startLine": 24,
                     "startColumn": 4,
-                    "startOffset": 298,
+                    "startOffset": 3647,
                     "endColumn": 69,
-                    "endOffset": 363
+                    "endOffset": 3712
                 },
                 "from": {
-                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-fr\\strings.xml",
+                    "file": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-fr\\strings.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
@@ -223,14 +441,14 @@
             },
             {
                 "to": {
-                    "startLine": 5,
+                    "startLine": 25,
                     "startColumn": 4,
-                    "startOffset": 368,
+                    "startOffset": 3717,
                     "endColumn": 102,
-                    "endOffset": 466
+                    "endOffset": 3815
                 },
                 "from": {
-                    "file": "D:\\Office work\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-fr\\strings.xml",
+                    "file": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-fr\\strings.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,

@@ -6,41 +6,5 @@
     {
         "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\common_ic_googleplayservices.png",
         "source": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\drawable-ldpi-v4\\common_ic_googleplayservices.png"
-    },
-    {
-        "merged": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_pulltorefresh_arrow.png",
-        "source": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\BigCConnect\\loadMoreListView\\unspecified\\res\\drawable-ldpi-v4\\ic_pulltorefresh_arrow.png"
-    },
-    {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\common_ic_googleplayservices.png",
-        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.6.0\\res\\drawable-ldpi-v4\\common_ic_googleplayservices.png"
-    },
-    {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_launcher.png",
-        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable-ldpi\\ic_launcher.png"
-    },
-    {
-        "merged": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_launcher.png",
-        "source": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable-ldpi\\ic_launcher.png"
-    },
-    {
-        "merged": "D:\\Office work\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\common_ic_googleplayservices.png",
-        "source": "D:\\Office work\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.6.0\\res\\drawable-ldpi-v4\\common_ic_googleplayservices.png"
-    },
-    {
-        "merged": "D:\\Office work\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_pulltorefresh_arrow.png",
-        "source": "D:\\Office work\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\BigCConnect\\loadMoreListView\\unspecified\\res\\drawable-ldpi-v4\\ic_pulltorefresh_arrow.png"
-    },
-    {
-        "merged": "D:\\Office work\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_launcher.png",
-        "source": "D:\\Office work\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable-ldpi\\ic_launcher.png"
-    },
-    {
-        "merged": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\common_ic_googleplayservices.png",
-        "source": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.6.0\\res\\drawable-ldpi-v4\\common_ic_googleplayservices.png"
-    },
-    {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_pulltorefresh_arrow.png",
-        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\BigCConnect\\loadMoreListView\\unspecified\\res\\drawable-ldpi-v4\\ic_pulltorefresh_arrow.png"
     }
 ]

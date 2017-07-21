@@ -40,9 +40,9 @@ import com.bigc.activities.Splash;
 import com.bigc.activities.ZoomActivity;
 import com.bigc.datastorage.Preferences;
 import com.bigc.gallery.CustomGalleryActivity;
+import com.bigc.interfaces.ConnectionExist;
 import com.bigc.interfaces.PopupOptionHandler;
 import com.bigc.interfaces.StoryPopupOptionHandler;
-import com.bigc.models.Connection;
 import com.bigc.models.ConnectionsModel;
 import com.bigc.models.Posts;
 import com.bigc.models.Stories;
@@ -54,11 +54,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.Query;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -83,6 +82,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import eu.janmuller.android.simplecropimage.CropImage;
+import eu.janmuller.android.simplecropimage.Util;
 
 public class Utils {
 
@@ -857,8 +857,7 @@ public class Utils {
 
     public static void showQuickActionMenu(final PopupOptionHandler handler,
                                            final Activity activity, final int pos, final Posts post,
-                                           View v, boolean isOwner, final DbConstants.Flags flag)
-    {
+                                           View v, boolean isOwner, final DbConstants.Flags flag) {
 
         // This is just a view with buttons that act as a menu.
         View popupView = ((LayoutInflater) activity
@@ -1007,6 +1006,14 @@ public class Utils {
         activity.overridePendingTransition(R.anim.pull_up, R.anim.remains_same);
     }
 
+    public static void launchPostViewFromTribute(Activity activity, int operation, Users users) {
+        Intent intent = new Intent(activity, PostActivity.class);
+        intent.putExtra(Constants.OPERATION, operation);
+        intent.putExtra(DbConstants.USER_INFO, users);
+        activity.startActivity(intent);
+        activity.overridePendingTransition(R.anim.pull_up, R.anim.remains_same);
+    }
+
     public static void updatePost(Posts post) {
 
         Map<String, Object> updated_post = new HashMap<>();
@@ -1023,6 +1030,22 @@ public class Utils {
                 child(post.getObjectId()).updateChildren(updated_post);
     }
 
+    public static void updateStory(Stories story) {
+        Map<String, Object> updated_story = new HashMap<>();
+        updated_story.put(DbConstants.CREATED_AT, story.getCreatedAt());
+        updated_story.put(DbConstants.UPDATED_AT, story.getUpdatedAt());
+        updated_story.put(DbConstants.MEDIA, story.getMedia());
+        updated_story.put(DbConstants.LIKES, story.getLikes());
+        updated_story.put(DbConstants.COMMENTS, story.getComments());
+        updated_story.put(DbConstants.USER, story.getUser());
+        updated_story.put(DbConstants.ID, story.getObjectId());
+        updated_story.put(DbConstants.MESSAGE, story.getMessage());
+        updated_story.put(DbConstants.TITLE, story.getTitle());
+
+        FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_STORIES).
+                child(story.getObjectId()).updateChildren(updated_story);
+    }
+
 
     public static void launchEditView(Activity activity, int operation, boolean fromNewsfeeds,
                                       int position, Posts post) {
@@ -1036,7 +1059,7 @@ public class Utils {
 
     public static void launchStoryEditView(Activity activity, int operation,
                                            int position, Stories story) {
-        PostActivity.setCurrentObject(position, null,story);
+        PostActivity.setCurrentObject(position, null, story);
         Intent i = new Intent(activity, PostActivity.class);
         i.putExtra(Constants.OPERATION, operation);
         i.putExtra(Constants.EDIT_MODE, true);
@@ -1044,7 +1067,9 @@ public class Utils {
         activity.startActivity(i);
     }
 
-    public static ArrayList<RecipientEntry> loadConnectionChips() {
+    public static ArrayList<Users> loadConnectionChips(Context context) {
+        ArrayList<Users> active = Preferences.getInstance(context).getLocalConnections().get(0);
+        //Queries.getUserActiveConnectionsQuery(context, name, connectionExist);
        /* ParseQuery<ParseObject> query = Queries.getUserActiveConnectionsQuery(
                 ParseUser.getCurrentUser(), true);
         try {
@@ -1076,7 +1101,7 @@ public class Utils {
             e.printStackTrace();
             return new ArrayList<RecipientEntry>();
         }*/
-        return new ArrayList<RecipientEntry>();
+        return active;
     }
 
     public static String getTimeStringForFeed(Context context, Date date) {

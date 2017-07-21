@@ -1,18 +1,22 @@
 [
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout-v21\\place_autocomplete_fragment.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-places\\9.6.0\\res\\layout-v21\\place_autocomplete_fragment.xml"
+        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout-v21\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout-v21\\notification_template_icon_group.xml"
     },
     {
         "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout-v21\\place_autocomplete_fragment.xml",
         "source": "C:\\Users\\beesolver\\.android\\build-cache\\6c02cd301da124e1f85c11bfc21066452ea151d9\\output\\res\\layout-v21\\place_autocomplete_fragment.xml"
-    },
-    {
-        "merged": "D:\\Office work\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout-v21\\place_autocomplete_fragment.xml",
-        "source": "D:\\Office work\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-places\\9.6.0\\res\\layout-v21\\place_autocomplete_fragment.xml"
-    },
-    {
-        "merged": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout-v21\\place_autocomplete_fragment.xml",
-        "source": "F:\\BigC-Connect\\BigC-Connect Codes\\Android\\BigCConnect\\bigCConnect\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-places\\9.6.0\\res\\layout-v21\\place_autocomplete_fragment.xml"
     }
 ]

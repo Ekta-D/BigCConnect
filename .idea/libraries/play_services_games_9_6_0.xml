@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="play-services-games-9.6.0">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/bigCConnect/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/9.6.0/res" />
-      <root url="jar://$PROJECT_DIR$/bigCConnect/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/9.6.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/2249eeca0638d9769db037eff8f48fc42504595b/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/2249eeca0638d9769db037eff8f48fc42504595b/output/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
