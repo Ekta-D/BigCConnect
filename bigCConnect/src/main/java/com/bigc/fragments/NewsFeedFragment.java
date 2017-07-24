@@ -521,13 +521,13 @@ public class NewsFeedFragment extends BaseFragment implements
     }
 
     @Override
-    public void onDelete(int position, Posts post) {
+    public void onDelete(int position, Object post) {
         if (position >= 0 && position < posts.size())
             posts.remove(position);
     }
 
     @Override
-    public void onEditClicked(int position, Posts post) {
+    public void onEditClicked(int position, Object post) {
         Log.e("onEditClicked", "Done");
 
         //   ParseObject obj = post == null ? adapter.getItem(position) : post;
@@ -538,13 +538,13 @@ public class NewsFeedFragment extends BaseFragment implements
     }
 
     @Override
-    public void onEditDone(int position, Posts post) {
+    public void onEditDone(int position, Object post) {
         Log.e(NewsFeedFragment.class.getSimpleName(), "onEditDone");
 //        adapter.updateItem(position, post);
     }
 
     @Override
-    public void onFlagClicked(int position, Posts post) {
+    public void onFlagClicked(int position, Object post) {
         if (post == null) {
             //  post = adapter.getItem(position);
         }

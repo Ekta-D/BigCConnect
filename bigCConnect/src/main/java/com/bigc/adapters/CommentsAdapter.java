@@ -54,7 +54,7 @@ public class CommentsAdapter extends ArrayAdapter<Comments> {
     }
 
     public void setData(List<Comments> comments) {
-        //     this.comments.clear();
+   //     this.comments.clear();
         if (comments == null)
             return;
         this.comments.addAll(comments);
@@ -94,33 +94,34 @@ public class CommentsAdapter extends ArrayAdapter<Comments> {
 
         FirebaseDatabase.getInstance().getReference().child(DbConstants.USERS).child(owner)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
 
 
-                        if (dataSnapshot.getValue() == null) {
+                if (dataSnapshot.getValue() == null) {
 
-                        } else {
-                            String key = dataSnapshot.getKey();
-                            Users users = dataSnapshot.getValue(Users.class);
-                            //  Map<Object, Object> user_values = (Map<Object, Object>) dataSnapshot.getValue();
-                            setValues(users, holder, comment);
-                        }
+                } else {
+                    String key = dataSnapshot.getKey();
+                    Users users=dataSnapshot.getValue(Users.class);
+                  //  Map<Object, Object> user_values = (Map<Object, Object>) dataSnapshot.getValue();
+                    setValues(users,holder,comment);
+                }
 
 
-                        Utils.hideProgress();
-                    }
+                Utils.hideProgress();
+            }
 
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
 
-                    }
-                });
+            }
+        });
 
         return view;
     }
 
-    public void setValues(Users users, ViewHolder holder, Comments comment) {
+    public void setValues(Users users,ViewHolder holder,Comments comment)
+    {
 //        if (owner.getInt(DbConstants.TYPE) == Constants.USER_TYPE.SUPPORTER
 //                .ordinal())
         if (users.getType() == Constants.IS_SUPPORTER) {

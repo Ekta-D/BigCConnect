@@ -22,6 +22,7 @@ import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.PopupOptionHandler;
 import com.bigc.models.Post;
 import com.bigc.models.Posts;
+import com.bigc.models.Tributes;
 import com.bigc_connect.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -100,14 +101,14 @@ public class NewsFeedsAdapter extends BaseAdapter {
 
     }
 
-    ViewHolder holder;
+
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
 
         Log.i("getView", "getView called");
         final Posts user_post = posts.get(position);
-
+        final ViewHolder holder;
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.newsfeed_item_layout, parent,
                     false);
@@ -268,8 +269,8 @@ public class NewsFeedsAdapter extends BaseAdapter {
                 Utils.showQuickActionMenu(
                         handler = new PopupOptionHandler() {
                             @Override
-                            public void onDelete(int position, Posts post) {
-                                PostManager.getInstance().deletePost(post);
+                            public void onDelete(int position, Object post) {
+                                PostManager.getInstance().deletePost((Posts)post);
 //                                if (handler != null)
 //                                    handler.onDelete(position, post);
 //                                ((HomeScreen) context.getActivity()).onBackPressed();
@@ -279,18 +280,19 @@ public class NewsFeedsAdapter extends BaseAdapter {
                             }
 
                             @Override
-                            public void onEditClicked(int position, Posts post) {
-                                NewsFeedFragment.currentObject = post;
+                            public void onEditClicked(int position, Object post) {
+                                NewsFeedFragment.currentObject = (Posts) post;
                                 Utils.launchEditView(
                                         context.getActivity(),
-                                        post.getMedia() == null ? Constants.OPERATION_STATUS
-                                                : Constants.OPERATION_PHOTO, true, position, post);
+                                        ((Posts) (post)).getMedia() == null ? Constants.OPERATION_STATUS
+                                                : Constants.OPERATION_PHOTO, true, position, (Posts) post);
                             }
 
                             @Override
-                            public void onFlagClicked(int position, Posts post) {
+                            public void onFlagClicked(int position, Object post) {
 
                             }
+
                         },
                         context.getActivity(),
                         position,
@@ -345,6 +347,7 @@ public class NewsFeedsAdapter extends BaseAdapter {
 //                        }
 //                    });
             imageLoader.displayImage(posts.getMedia(), holder.picView, imgDisplayOptions);
+            notifyDataSetChanged();
         }
 
 //        String date = posts.getCreatedAt();
@@ -372,7 +375,7 @@ public class NewsFeedsAdapter extends BaseAdapter {
             }
         });
         holder.optionView.setVisibility(View.VISIBLE);
-
+        notifyDataSetChanged();
 
     }
 

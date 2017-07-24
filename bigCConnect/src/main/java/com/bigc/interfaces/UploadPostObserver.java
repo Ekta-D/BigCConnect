@@ -9,5 +9,5 @@ public interface UploadPostObserver {
     //public void onNotify(Posts postObject);
 
 //    public void onEditDone(int position, Posts postObject);
-	public void onEditDone(int position, Posts post);
+	public void onEditDone(int position, Object post);
 }

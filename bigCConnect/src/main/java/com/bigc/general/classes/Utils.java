@@ -46,6 +46,7 @@ import com.bigc.interfaces.StoryPopupOptionHandler;
 import com.bigc.models.ConnectionsModel;
 import com.bigc.models.Posts;
 import com.bigc.models.Stories;
+import com.bigc.models.Tributes;
 import com.bigc.models.Users;
 import com.bigc.views.PopupHelper;
 import com.bigc.views.ProgressDialogue;
@@ -856,7 +857,7 @@ public class Utils {
     }
 
     public static void showQuickActionMenu(final PopupOptionHandler handler,
-                                           final Activity activity, final int pos, final Posts post,
+                                           final Activity activity, final int pos, final Object post,
                                            View v, boolean isOwner, final DbConstants.Flags flag) {
 
         // This is just a view with buttons that act as a menu.
@@ -961,7 +962,7 @@ public class Utils {
 
     private static void showDeleteConfirmationDialog(
             final PopupOptionHandler handler, Activity activity,
-            final int position, final Posts post, DbConstants.Flags flag) {
+            final int position, final Object post, DbConstants.Flags flag) {
         int title;
         int message;
         if (flag == DbConstants.Flags.Story) {
@@ -1049,7 +1050,17 @@ public class Utils {
 
     public static void launchEditView(Activity activity, int operation, boolean fromNewsfeeds,
                                       int position, Posts post) {
-        PostActivity.setCurrentObject(position, post,null);
+        PostActivity.setCurrentObject(position, post,null, null);
+        Intent i = new Intent(activity, PostActivity.class);
+        i.putExtra(Constants.OPERATION, operation);
+        i.putExtra(Constants.EDIT_MODE, true);
+        i.putExtra(Constants.FROM_NEWSFEEDS, fromNewsfeeds);
+        activity.startActivity(i);
+    }
+
+    public static void launchTributeEditView(Activity activity, int operation, boolean fromNewsfeeds,
+                                      int position, Tributes post) {
+        PostActivity.setCurrentObject(position, null,null, post);
         Intent i = new Intent(activity, PostActivity.class);
         i.putExtra(Constants.OPERATION, operation);
         i.putExtra(Constants.EDIT_MODE, true);
@@ -1059,7 +1070,7 @@ public class Utils {
 
     public static void launchStoryEditView(Activity activity, int operation,
                                            int position, Stories story) {
-        PostActivity.setCurrentObject(position, null, story);
+        PostActivity.setCurrentObject(position, null, story, null);
         Intent i = new Intent(activity, PostActivity.class);
         i.putExtra(Constants.OPERATION, operation);
         i.putExtra(Constants.EDIT_MODE, true);

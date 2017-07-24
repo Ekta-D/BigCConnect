@@ -6,6 +6,8 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.bigc.datastorage.Preferences;
 import com.bigc.interfaces.MessageObservable;
@@ -18,10 +20,12 @@ import com.bigc.models.Comments;
 import com.bigc.models.Messages;
 import com.bigc.models.Posts;
 import com.bigc.models.Stories;
+import com.bigc.models.Tributes;
 import com.bigc.models.Users;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -52,7 +56,7 @@ public class PostManager implements UploadPostObservable, MessageObservable {
     private StorageReference storageReference;
 
     private PostManager() {
-
+        databaseReference = FirebaseDatabase.getInstance().getReference();
     }
 
     public static PostManager getInstance() {
@@ -129,6 +133,10 @@ public class PostManager implements UploadPostObservable, MessageObservable {
 
     public void deleteStory(final Stories story) {
         FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_STORIES).child(story.getObjectId()).removeValue();
+    }
+
+    public void deleteTribute(final Tributes story) {
+        FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_TRIBUTE).child(story.getObjectId()).removeValue();
     }
 
   /*  public void addPost(final ParseObject post,
@@ -311,9 +319,21 @@ public class PostManager implements UploadPostObservable, MessageObservable {
         return obj;
     }*/
 
-   /* public ParseObject commentOnTribute(String comment,
-                                        final ParseObject tribute) {
-        final ParseObject obj = new ParseObject(
+    public Comments commentOnTribute(String comment,
+                                        final Tributes tribute) {
+        final Comments obj = new Comments();
+        obj.setPost(tribute.getObjectId());
+        obj.setMessage(comment);
+        obj.setUser(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        SimpleDateFormat format = new SimpleDateFormat(DbConstants.DATE_FORMAT);
+        String date = format.format(new Date(System.currentTimeMillis()));
+        obj.setCreatedAt(date);
+        obj.setUpdatedAt(date);
+        String objectId = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_TRIBUTE_COMMENT).push().getKey();
+        obj.setObjectId(objectId);
+        FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_TRIBUTE_COMMENT).child(objectId).setValue(obj);
+        return obj;
+       /* final ParseObject obj = new ParseObject(
                 DbConstants.TABLE_TRIBUTE_COMMENT);
         obj.put(DbConstants.POST, tribute);
         obj.put(DbConstants.MESSAGE, comment);
@@ -332,9 +352,8 @@ public class PostManager implements UploadPostObservable, MessageObservable {
                 });
             }
         });
-        return obj;
+        return obj;*/
     }
-*/
 // public void likePost(ParseObject post) {
 //        post.saveInBackground(new SaveCallback() {
 //
@@ -593,15 +612,15 @@ public class PostManager implements UploadPostObservable, MessageObservable {
         if (this.storyObserver != null)
             storyObserver.onEditDone(position, story);
 
-    }
+    }*/
 
-    @Override
-    public void notifyEditTributeObservers(int position, ParseObject tribute) {
+/*    @Override
+    public void notifyEditTributeObservers(int position, Object tribute) {
         if (this.tributeObserver != null)
             tributeObserver.onEditDone(position, tribute);
-    }
+    }*/
 
-    public void editPost(int position, final ParseObject post) {
+   /* public void editPost(int position, final ParseObject post) {
         post.saveInBackground(new SaveCallback() {
 
             @Override
@@ -623,10 +642,10 @@ public class PostManager implements UploadPostObservable, MessageObservable {
             }
         });
         notifyEditStoryObservers(position, story);
-    }
+    }*/
 
-    public void editTribute(int position, final ParseObject tribute) {
-        tribute.saveInBackground(new SaveCallback() {
+    public void editTribute(int position, final Tributes tribute) {
+        /*tribute.saveInBackground(new SaveCallback() {
 
             @Override
             public void done(ParseException e) {
@@ -634,6 +653,21 @@ public class PostManager implements UploadPostObservable, MessageObservable {
                     tribute.saveEventually();
             }
         });
-        notifyEditTributeObservers(position, tribute);
-    }*/
+        notifyEditTributeObservers(position, tribute);*/
+
+        Map<String, Object> updateTribute = new HashMap<>();
+        updateTribute.put("age", tribute.getAge());
+        updateTribute.put("comments", tribute.getComments());
+        updateTribute.put("message", tribute.getMessage());
+        updateTribute.put("updatedAt", Utils.getCurrentDate());
+        updateTribute.put("media", tribute.getMedia());
+        updateTribute.put("location", tribute.getLocation());
+        databaseReference.child(DbConstants.TABLE_TRIBUTE).child(tribute.getObjectId()).updateChildren(updateTribute, new DatabaseReference.CompletionListener() {
+            @Override
+            public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+                Log.i("PostManager", "Tribute updated");
+            }
+        });
+
+    }
 }

@@ -47,58 +47,59 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MessagesFragment extends BaseFragment implements
-        OnRefreshListener, UploadPostObserver, OnLoadMoreListener,
-        MessageObserver {
+		OnRefreshListener, UploadPostObserver, OnLoadMoreListener,
+		MessageObserver {
 
-    private AdView adView;
-//    private MessagesAdapter adapter;
-    private PullToRefreshListView listView;
-    private TextView messageView;
-    private LinearLayout progressParent;
-    private ProgressBar progressView;
+	private AdView adView;
+	private MessagesAdapter adapter;
+	private PullToRefreshListView listView;
+	private TextView messageView;
+	private LinearLayout progressParent;
+	private ProgressBar progressView;
 
-    private List<Messages> messages = new ArrayList<>();
+	private List<Messages> messages = new ArrayList<>();
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
 
-    }
+	}
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_messages_layout,
-                container, false);
-        adView = (AdView) view.findViewById(R.id.adView);
-        view.findViewById(R.id.leftBottomOption).setOnClickListener(this);
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		View view = inflater.inflate(R.layout.fragment_messages_layout,
+				container, false);
+		adView = (AdView) view.findViewById(R.id.adView);
+		view.findViewById(R.id.leftBottomOption).setOnClickListener(this);
 
-        messageView = (TextView) view.findViewById(R.id.messageView);
-        progressView = (ProgressBar) view.findViewById(R.id.progressView);
-        progressParent = (LinearLayout) view
-                .findViewById(R.id.messageViewParent);
-        listView = (PullToRefreshListView) view.findViewById(R.id.listview);
+		messageView = (TextView) view.findViewById(R.id.messageView);
+		progressView = (ProgressBar) view.findViewById(R.id.progressView);
+		progressParent = (LinearLayout) view
+				.findViewById(R.id.messageViewParent);
+		listView = (PullToRefreshListView) view.findViewById(R.id.listview);
+		/*adapter = new MessagesAdapter(getActivity(), messages);
+		listView.setAdapter(adapter);
+*/
+		return view;
+	}
 
+	@Override
+	public void onViewCreated(View view, Bundle savedInstanceState) {
+		super.onViewCreated(view, savedInstanceState);
+		GoogleAnalyticsHelper.sendScreenViewGoogleAnalytics(getActivity(),
+				"Messages Screen");
 
-        return view;
-    }
+		if (!Preferences.getInstance(getActivity()).getBoolean(
+				Constants.SPLASHES, true)) {
+			view.findViewById(R.id.splashTextView).setVisibility(View.GONE);
+		}
 
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        GoogleAnalyticsHelper.sendScreenViewGoogleAnalytics(getActivity(),
-                "Messages Screen");
+		listView.setOnRefreshListener(this);
+		// listView.setOnLoadMoreListener(this);
 
-        if (!Preferences.getInstance(getActivity()).getBoolean(
-                Constants.SPLASHES, true)) {
-            view.findViewById(R.id.splashTextView).setVisibility(View.GONE);
-        }
-
-        listView.setOnRefreshListener(this);
-        // listView.setOnLoadMoreListener(this);
-
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
+		AdRequest adRequest = new AdRequest.Builder().build();
+		adView.loadAd(adRequest);
 
 //		listView.setOnItemClickListener(new OnItemClickListener() {
 //
@@ -244,7 +245,7 @@ public class MessagesFragment extends BaseFragment implements
         });
 
 		/*ParseQuery<ParseObject> query = Queries
-                .getConversationsQuery(fromCache);
+				.getConversationsQuery(fromCache);
 
 		query.findInBackground(new FindCallback<ParseObject>() {
 
@@ -281,7 +282,7 @@ public class MessagesFragment extends BaseFragment implements
 
 			}
 		});*/
-    }
+	}
 
     private void executeReceiveQuery(Query query) {
         query.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -293,26 +294,26 @@ public class MessagesFragment extends BaseFragment implements
                         messages.add(message);
                     }
 
-                }
-                /*if (messages.size() == 0) {
-                    // Load data from network
+				}
+				/*if (messages.size() == 0) {
+					// Load data from network
 					loadData(false);
 					return;
 				}*/
 
 				/*new completeMessageLoadingsTask(messages, false, false)
-                        .execute();*/
-            }
+						.execute();*/
+			}
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
+			@Override
+			public void onCancelled(DatabaseError databaseError) {
 
-            }
-        });
-    }
+			}
+		});
+	}
 
 	/*private class completeMessageLoadingsTask extends
-            AsyncTask<Void, Void, List<ParseObject>> {
+			AsyncTask<Void, Void, List<ParseObject>> {
 
 		List<ParseObject> messages;
 		boolean isMoreLoading;
@@ -366,7 +367,7 @@ public class MessagesFragment extends BaseFragment implements
 		}
 	}*/
 
-    private void populateList(List<Messages> messages) {
+	private void populateList(List<Messages> messages) {
 
         if (messages == null) {
             showError(Utils.loadString(getActivity(),
@@ -435,17 +436,17 @@ public class MessagesFragment extends BaseFragment implements
         }
 
 		/*try {
-            post.getParseUser(DbConstants.USER).fetchIfNeeded();
+			post.getParseUser(DbConstants.USER).fetchIfNeeded();
 			post.pin(Constants.TAG_MESSAGES);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}*/
 
-        if (messages != null)
-            //messages.add(0, post);
+		if (messages != null)
+			//messages.add(0, post);
 
-            if (listView == null)
-                return;
+		if (listView == null)
+			return;
 
 	/*	getActivity().runOnUiThread(new Runnable() {
 
@@ -462,7 +463,7 @@ public class MessagesFragment extends BaseFragment implements
 				}
 			}
 		});*/
-    }
+	}
 
     @Override
     public boolean onMessageReceive(Object message, Users sender) {
@@ -514,18 +515,18 @@ public class MessagesFragment extends BaseFragment implements
 			});
 			return true;
 		}*/
-        return false;
-    }
+		return false;
+	}
 
-    @Override
-    public boolean onBackPressed() {
-        ((FragmentHolder) getActivity())
-                .replaceFragment(new NewsFeedFragment());
-        return true;
-    }
+	@Override
+	public boolean onBackPressed() {
+		((FragmentHolder) getActivity())
+				.replaceFragment(new NewsFeedFragment());
+		return true;
+	}
 
-    @Override
-    public void onEditDone(int position, Posts post) {
-        Log.e(MessagesFragment.class.getSimpleName(), "onEditDone");
-    }
+	@Override
+	public void onEditDone(int position, Object post) {
+		Log.e(MessagesFragment.class.getSimpleName(), "onEditDone");
+	}
 }

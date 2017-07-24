@@ -1,6 +1,7 @@
 package com.bigc.models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * Created by beesolver on 7/20/2017.
@@ -20,6 +21,16 @@ public class Tributes implements Serializable {
     String from;
     String location;
     String survivor;
+
+    public ArrayList<String> getLikes() {
+        return likes;
+    }
+
+    public void setLikes(ArrayList<String> likes) {
+        this.likes = likes;
+    }
+
+    ArrayList<String> likes;
 
     public String getLocation() {
         return location;

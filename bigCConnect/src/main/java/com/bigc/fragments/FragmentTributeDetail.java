@@ -5,6 +5,7 @@ import android.graphics.Paint;
 import android.os.Bundle;
 import android.text.Layout;
 import android.text.style.LeadingMarginSpan.LeadingMarginSpan2;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,29 +16,44 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bigc.activities.HomeScreen;
 import com.bigc.adapters.CommentsAdapter;
 import com.bigc.dialogs.AddTributeDialog;
 import com.bigc.general.classes.Constants;
+import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
+import com.bigc.general.classes.PostManager;
+import com.bigc.general.classes.Queries;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
 import com.bigc.interfaces.PopupOptionHandler;
 import com.bigc.interfaces.UploadPostObserver;
+import com.bigc.models.Comments;
 import com.bigc.models.Posts;
 import com.bigc.models.Tributes;
 import com.bigc.models.Users;
 import com.bigc.views.NestedListView;
 import com.bigc_connect.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 //public class FragmentTributeDetail extends BaseFragment implements
 //		PopupOptionHandler, UploadPostObserver //// TODO: 14-07-2017  
 public class FragmentTributeDetail extends BaseFragment implements
-		 UploadPostObserver
+		 UploadPostObserver, PopupOptionHandler
 {
 
 	private CommentsAdapter adapter;
-	private static Object tribute = null;
+	private static Tributes tribute = null;
 	private static PopupOptionHandler handler = null;
 	private static int position = -1;
 
@@ -55,6 +71,8 @@ public class FragmentTributeDetail extends BaseFragment implements
 	private EditText commentInputView;
 	private TextView postButton;
 	private ImageView optionView;
+	List<Comments> comment_list;
+	long comment_count;
 
 	public FragmentTributeDetail(PopupOptionHandler handler,
 			Tributes tribute, int position) {
@@ -122,14 +140,14 @@ public class FragmentTributeDetail extends BaseFragment implements
 		super.onViewCreated(view, savedInstanceState);
 		GoogleAnalyticsHelper.sendScreenViewGoogleAnalytics(getActivity(),
 				"Tribute Detail Screen");
-//
-//		adapter = new CommentsAdapter(getActivity());
-//		listView.setAdapter(adapter);
 
-		/*if (tribute.isDataAvailable()) {
+		adapter = new CommentsAdapter(getContext(), new ArrayList<Comments>());
+		listView.setAdapter(adapter);
+
+		if (getActivity().getIntent()!=null) {
 			populateData();
 		} else {
-			tribute.fetchIfNeededInBackground(new GetCallback<ParseObject>() {
+			/*tribute.fetchIfNeededInBackground(new GetCallback<ParseObject>() {
 
 				@Override
 				public void done(ParseObject object, ParseException e) {
@@ -138,8 +156,8 @@ public class FragmentTributeDetail extends BaseFragment implements
 						populateData();
 					}
 				}
-			});
-		}*/
+			});*/
+		}
 	}
 
 	private void populateOwnerFields(Users owner) {
@@ -181,12 +199,12 @@ public class FragmentTributeDetail extends BaseFragment implements
 			});
 		} else {
 			populateOwnerFields(owner);
-		}
+		}*/
 
-		if (tribute.getParseFile(DbConstants.MEDIA) != null) {
+		if (tribute.getMedia() != null) {
 			picView.setVisibility(View.VISIBLE);
 			ImageLoader.getInstance().displayImage(
-					tribute.getParseFile(DbConstants.MEDIA).getUrl(), picView,
+					tribute.getMedia(), picView,
 					Utils.normalDisplayOptions,
 					new SimpleImageLoadingListener() {
 						@Override
@@ -201,25 +219,45 @@ public class FragmentTributeDetail extends BaseFragment implements
 
 		loveCountView
 				.setText(String
-						.valueOf(tribute.getList(DbConstants.LIKES) == null ? 0
-								: tribute.getList(DbConstants.LIKES).size()));
+						.valueOf(tribute.getLikes() == null ? 0
+								: tribute.getLikes().size()));
 
 		commentCountView.setText(String.valueOf(tribute
-				.getInt(DbConstants.COMMENTS)));
+				.getComments()));
 
-		statusView.setText(tribute.getString(DbConstants.MESSAGE));
+		statusView.setText(tribute.getMessage());
 		dateView.setText(Utils.getTimeStringForFeed(getActivity(),
-				tribute.getCreatedAt()));
+				Utils.convertStringToDate(tribute.getCreatedAt())));
 
 		ribbonView.setOnClickListener(this);
 		headingOne.setOnClickListener(this);
 		loveCountView.setOnClickListener(this);
 
-		loadComments();*/
+		loadComments();
 	}
 
-	/*private void loadComments() {
-		ParseQuery<ParseObject> mQuery = Queries
+	private void loadComments() {
+		Query query = Queries.getTributeCommentsQuery(tribute);
+		query.addValueEventListener(new ValueEventListener() {
+			@Override
+			public void onDataChange(DataSnapshot dataSnapshot) {
+				Log.i("comments", dataSnapshot.toString());
+				comment_count = dataSnapshot.getChildrenCount();
+				comment_list = new ArrayList<Comments>();
+				for (DataSnapshot data : dataSnapshot.getChildren()) {
+					String key = data.getKey();
+					Comments comments = data.getValue(Comments.class);
+					comment_list.add(comments);
+				}
+				showComments(comment_list,comment_count);
+			}
+
+			@Override
+			public void onCancelled(DatabaseError databaseError) {
+
+			}
+		});
+		/*ParseQuery<ParseObject> mQuery = Queries
 				.getTributeCommentsQuery(tribute);
 		mQuery.findInBackground(new FindCallback<ParseObject>() {
 
@@ -231,9 +269,26 @@ public class FragmentTributeDetail extends BaseFragment implements
 					showLoadingError();
 				}
 			}
-		});
+		});*/
 	}
-*/
+
+	private void showComments(List<Comments> objects,long comment_count) {
+//        try {
+//            progressParent.setVisibility(View.GONE);
+//            //adapter.setData(objects);
+//            listView.setVisibility(View.VISIBLE);
+//        } catch (NullPointerException e) {
+//
+//        }
+		if (objects != null) {
+			progressParent.setVisibility(View.GONE);
+			adapter = new CommentsAdapter(getActivity(), objects);
+			listView.setVisibility(View.VISIBLE);
+			listView.setAdapter(adapter);
+			commentCountView.setText(String.valueOf(comment_count));
+		}
+
+	}
 /*
 	private class completeCommentLoadingsTask extends
 			AsyncTask<Void, Void, List<ParseObject>> {
@@ -293,18 +348,18 @@ public class FragmentTributeDetail extends BaseFragment implements
 		case R.id.optionView:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
 					"Tribute 3-Dots Options");
-			//// TODO: 14-07-2017  
-//			Utils.showQuickActionMenu(
-//					FragmentTributeDetail.this,
-//					getActivity(),
-//					position,
-//					tribute,
-//					v,
-//					(tribute.getParseUser(DbConstants.USER).getObjectId()
-//							.equals(ParseUser.getCurrentUser().getObjectId()) || tribute
-//							.getParseUser(DbConstants.TO).getObjectId()
-//							.equals(ParseUser.getCurrentUser().getObjectId())),
-//					DbConstants.Flags.Tribute);
+			// TODO: 14-07-2017
+			Utils.showQuickActionMenu(
+					FragmentTributeDetail.this,
+					getActivity(),
+					position,
+					tribute,
+					v,
+					(tribute.getFrom()
+							.equals(FirebaseAuth.getInstance().getCurrentUser().getUid()) || tribute
+							.getTo()
+							.equals(FirebaseAuth.getInstance().getCurrentUser().getUid())),
+					DbConstants.Flags.Tribute);
 			break;
 		case R.id.newsFeedRibbonView:
 		case R.id.newsFeedHeading1:
@@ -334,9 +389,9 @@ public class FragmentTributeDetail extends BaseFragment implements
 		case R.id.newsFeedPicView:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
 					"Tribute Picture");
-			/*if (tribute.getParseFile(DbConstants.MEDIA) != null)
+			if (tribute.getMedia() != null)
 				Utils.openImageZoomView(getActivity(),
-						tribute.getParseFile(DbConstants.MEDIA).getUrl());*/
+						tribute.getMedia());
 			break;
 		case R.id.postButton:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
@@ -348,8 +403,8 @@ public class FragmentTributeDetail extends BaseFragment implements
 				Utils.hideKeyboard(getActivity());
 				String comment = commentInputView.getText().toString();
 				commentInputView.setText("");
-//				adapter.addItem(PostManager.getInstance().commentOnTribute(
-//						comment, tribute));
+				adapter.addItem(PostManager.getInstance().commentOnTribute(
+						comment, tribute));
 				Toast.makeText(getActivity(), "Comment posted",
 						Toast.LENGTH_SHORT).show();
 				commentCountView.setText(String.valueOf(Integer
@@ -418,21 +473,21 @@ public class FragmentTributeDetail extends BaseFragment implements
 				.replaceFragment(new FragmentTributes());
 		return true;
 	}
-//// TODO: 14-07-2017  
-//	@Override
-//	public void onDelete(int position, ParseObject tribute) {
-//		//PostManager.getInstance().deletePost(tribute);
-//		if (handler != null)
-//	//		handler.onDelete(position, tribute);
-//		((HomeScreen) getActivity()).onBackPressed();
-//	}
-//
-//	@Override
-//	public void onEditClicked(int position, ParseObject post) {
-//		Log.e("onEditClicked", "Done");
-////		Utils.launchEditView(getActivity(), Constants.OPERATION_TRIBUTE,
-////				position, post);
-//	}
+// TODO: 14-07-2017
+	@Override
+	public void onDelete(int position, Object tribute) {
+		PostManager.getInstance().deleteTribute((Tributes) tribute);
+		if (handler != null)
+			handler.onDelete(position, tribute);
+		((HomeScreen) getActivity()).onBackPressed();
+	}
+
+	@Override
+	public void onEditClicked(int position, Object post) {
+		Log.e("onEditClicked", "Done");
+		Utils.launchTributeEditView(getActivity(), Constants.OPERATION_TRIBUTE, false,
+				position, (Tributes) post);
+	}
 
 	@Override
 	public void onNotify(Tributes post) {
@@ -440,25 +495,26 @@ public class FragmentTributeDetail extends BaseFragment implements
 	}
 
 	@Override
-	public void onEditDone(int position, Posts tribute) {
-//		Log.e(FragmentTributeDetail.class.getSimpleName(), "onEditDone - "
-//				+ tribute.getString(DbConstants.MESSAGE));
-//		FragmentTributeDetail.tribute = tribute;
-//		statusView.setText(tribute.getString(DbConstants.MESSAGE) == null ? ""
-//				: tribute.getString(DbConstants.MESSAGE));
+	public void onEditDone(int position, Object tribute) {
+		Tributes tributeObj = (Tributes) tribute;
+		Log.e(FragmentTributeDetail.class.getSimpleName(), "onEditDone - "
+				+ tributeObj.getMessage());
+		FragmentTributeDetail.tribute = (Tributes) tribute;
+		statusView.setText(tributeObj.getMessage() == null ? ""
+				: tributeObj.getMessage());
 	}
 	//// TODO: 14-07-2017
 
-//	@Override
-//	public void onFlagClicked(int position, ParseObject post) {
-////		if (post == null) {
-////			post = tribute;
-////		}
-////		if (post != null) {
-////			Utils.flagTribute(post);
-////		}
-//		Toast.makeText(getActivity(),
-//				getResources().getString(R.string.tributeFlagMessage),
-//				Toast.LENGTH_SHORT).show();
-//	}
+	@Override
+	public void onFlagClicked(int position, Object post) {
+//		if (post == null) {
+//			post = tribute;
+//		}
+//		if (post != null) {
+//			Utils.flagTribute(post);
+//		}
+		Toast.makeText(getActivity(),
+				getResources().getString(R.string.tributeFlagMessage),
+				Toast.LENGTH_SHORT).show();
+	}
 }

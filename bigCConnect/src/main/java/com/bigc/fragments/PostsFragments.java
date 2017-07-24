@@ -21,6 +21,7 @@ import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
 import com.bigc.interfaces.PopupOptionHandler;
 import com.bigc.models.Posts;
+import com.bigc.models.Tributes;
 import com.bigc_connect.R;
 import com.mopub.nativeads.MoPubAdAdapter;
 import com.mopub.nativeads.MoPubNativeAdPositioning;
@@ -259,8 +260,9 @@ public class PostsFragments extends BaseFragment implements PopupOptionHandler {
 //	public void onDelete(int position, ParseObject post) {
 //
 //	}
+
     @Override
-    public void onDelete(int position, Posts post) {
+    public void onDelete(int position, Object post) {
 
     }
 
@@ -273,18 +275,18 @@ public class PostsFragments extends BaseFragment implements PopupOptionHandler {
 //                        : Constants.OPERATION_PHOTO, position, obj);
 //    }
     @Override
-    public void onEditClicked(int position, Posts post) {
+    public void onEditClicked(int position, Object post) {
         //  Posts obj = post == null ? adapter.getItem(position) : post;
         Utils.launchEditView(
                 getActivity(),
-                post.getMedia() == null ? Constants.OPERATION_MESSAGE
-                        : Constants.OPERATION_PHOTO, true, position, post);
+                ((Posts)post).getMedia() == null ? Constants.OPERATION_MESSAGE
+                        : Constants.OPERATION_PHOTO, true, position, (Posts) post);
     }
 
     @Override
-    public void onFlagClicked(int position, Posts post) {
+    public void onFlagClicked(int position, Object post) {
         if (post == null) {
-           // post = adapter.getItem(position);
+            post = adapter.getItem(position);
         }
         if (post != null) {
             Utils.flagFeed(post);
@@ -293,4 +295,5 @@ public class PostsFragments extends BaseFragment implements PopupOptionHandler {
                 getResources().getString(R.string.postFlagMessage),
                 Toast.LENGTH_SHORT).show();
     }
+
 }

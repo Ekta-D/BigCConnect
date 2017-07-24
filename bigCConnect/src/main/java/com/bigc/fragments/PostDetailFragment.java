@@ -539,8 +539,8 @@ public class PostDetailFragment extends BaseFragment implements
     }
 
     @Override
-    public void onDelete(int position, Posts post) {
-        PostManager.getInstance().deletePost(post);
+    public void onDelete(int position, Object post) {
+        PostManager.getInstance().deletePost((Posts) post);
         if (handler != null)
             handler.onDelete(position, post);
         ((HomeScreen) getActivity()).onBackPressed();
@@ -554,17 +554,17 @@ public class PostDetailFragment extends BaseFragment implements
     }
 
     @Override
-    public void onEditClicked(int position, Posts post) {
+    public void onEditClicked(int position, Object post) {
         Log.e("onEditClicked", "Done");
 //        Utils.launchEditView(
 //                getActivity(),
 //                post.getParseFile(DbConstants.MEDIA) == null ? Constants.OPERATION_STATUS
 //                        : Constants.OPERATION_PHOTO, position, post);
-        NewsFeedFragment.currentObject = post;
+        NewsFeedFragment.currentObject = (Posts)post;
         Utils.launchEditView(
                 getActivity(),
-                post.getMedia() == null ? Constants.OPERATION_STATUS
-                        : Constants.OPERATION_PHOTO, true, position, post);
+                ((Posts)post).getMedia() == null ? Constants.OPERATION_STATUS
+                        : Constants.OPERATION_PHOTO, true, position, (Posts) post);
     }
 
     @Override
@@ -573,7 +573,7 @@ public class PostDetailFragment extends BaseFragment implements
     }
 
     @Override
-    public void onEditDone(int position, Posts post) {
+    public void onEditDone(int position, Object post) {
         Log.e(PostDetailFragment.class.getSimpleName(), "onEditDone");
         //PostDetailFragment.post = post;
       /*  messageView.setText(post.getString(DbConstants.MESSAGE) == null ? ""
@@ -581,7 +581,7 @@ public class PostDetailFragment extends BaseFragment implements
     }
 
     @Override
-    public void onFlagClicked(int position, Posts post) {
+    public void onFlagClicked(int position, Object post) {
         if (post == null) {
             // post = PostDetailFragment.post;
         }
@@ -592,4 +592,5 @@ public class PostDetailFragment extends BaseFragment implements
                 getResources().getString(R.string.postFlagMessage),
                 Toast.LENGTH_SHORT).show();
     }
+
 }

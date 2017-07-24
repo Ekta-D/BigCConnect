@@ -9,6 +9,7 @@ import com.bigc.interfaces.SignupInterface;
 import com.bigc.models.ConnectionsModel;
 import com.bigc.models.Posts;
 import com.bigc.models.Stories;
+import com.bigc.models.Tributes;
 import com.bigc.models.Users;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -395,16 +396,19 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
         mQuery.whereEqualTo(DbConstants.POST, story);
         mQuery.addDescendingOrder(DbConstants.CREATED_AT);
         return mQuery;
-    }
+    }*/
 
-    public static ParseQuery<ParseObject> getTributeCommentsQuery(
-            ParseObject tribute) {
-        ParseQuery<ParseObject> mQuery = new ParseQuery<ParseObject>(
+    public static Query getTributeCommentsQuery(
+            Tributes tribute) {
+        Query query = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_TRIBUTE_COMMENT).
+                orderByChild(DbConstants.POST).equalTo(tribute.getObjectId());
+        return query;
+        /*ParseQuery<ParseObject> mQuery = new ParseQuery<ParseObject>(
                 DbConstants.TABLE_TRIBUTE_COMMENT);
         mQuery.whereEqualTo(DbConstants.POST, tribute);
         mQuery.addDescendingOrder(DbConstants.CREATED_AT);
-        return mQuery;
-    }*/
+        return mQuery;*/
+    }
 
 /* might use this condition for getUserConnectionsQuery
    if (obj.getParseUser(DbConstants.TO).getObjectId()

@@ -14,7 +14,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -34,7 +33,6 @@ import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
 import com.bigc.general.classes.PostManager;
-import com.bigc.general.classes.Queries;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.ProgressHandler;
 import com.bigc.models.Messages;
@@ -47,12 +45,8 @@ import com.bigc_connect.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -72,7 +66,6 @@ import java.util.List;
 import java.util.UUID;
 
 import eu.janmuller.android.simplecropimage.CropImage;
-import eu.janmuller.android.simplecropimage.Util;
 
 public class PostActivity extends Activity implements OnClickListener,
         ProgressHandler {
@@ -96,6 +89,7 @@ public class PostActivity extends Activity implements OnClickListener,
     //    private static ParseObject currentObject = null;
 //    public static Posts currentObject = null;
     public static Stories currentstoryObject = null;
+    public static Tributes currentTributeObject = null;
     private static int currentObjectIndex = -1;
     DatabaseReference databaseReference;
     private File mFileTemp;
@@ -104,10 +98,11 @@ public class PostActivity extends Activity implements OnClickListener,
     Users user, selected_user;
     AutoCompleteTextViewAdapter autoCompleteTextViewAdapter;
 
-    public static void setCurrentObject(int position, Posts object, Stories storyObject) {
+    public static void setCurrentObject(int position, Posts object, Stories storyObject, Tributes tribute) {
         //  currentObject = object;
         currentObjectIndex = position;
         currentstoryObject = storyObject;
+        currentTributeObject = tribute;
     }
 
     @Override
@@ -129,7 +124,7 @@ public class PostActivity extends Activity implements OnClickListener,
             if (!fromNewsfeeds) {
                 NewsFeedFragment.currentObject = null;
             }
-            if (isEdit && NewsFeedFragment.currentObject == null && currentstoryObject == null) {
+           if (isEdit && NewsFeedFragment.currentObject == null&& currentstoryObject==null && currentTributeObject==null) {
                 isEdit = false;
             }
             user = (Users) getIntent().getSerializableExtra(DbConstants.USER_INFO);
@@ -177,6 +172,7 @@ public class PostActivity extends Activity implements OnClickListener,
 
             ((TextView) findViewById(R.id.postOption)).setText(R.string.send);
             statusInputView.setHint(R.string.sendPersonalMessage);
+            shareUsers = (MultiAutoCompleteTextView) findViewById(R.id.UsersInputView);
 
 //            fetchUser();
             //  shareUsers = (RecipientEditTextView) findViewById(R.id.UsersInputView);
@@ -232,12 +228,28 @@ public class PostActivity extends Activity implements OnClickListener,
                 }
 
 
+            } else if(operation == Constants.OPERATION_TRIBUTE){
+                text = currentTributeObject == null ? ""
+                        : currentTributeObject.getMessage();
+                statusInputView.setText(text);
+                statusInputView.setSelection(text.length());
+                if (currentTributeObject!=null && currentTributeObject.getMedia() != null) {
+                    ImageLoader.getInstance().displayImage(
+                            currentTributeObject.getMedia(),
+                            pictureInputView, Utils.normalDisplayOptions,
+                            new SimpleImageLoadingListener() {
+                                @Override
+                                public void onLoadingStarted(String url, View view) {
+                                    ((ImageView) view).setImageResource(android.R.color.white);
+                                }
+                            });
+                }
             } else {
                 text = NewsFeedFragment.currentObject == null ? ""
                         : NewsFeedFragment.currentObject.getMessage();
                 statusInputView.setText(text);
                 statusInputView.setSelection(text.length());
-                if (NewsFeedFragment.currentObject != null && NewsFeedFragment.currentObject.getMedia() != null) {
+                if (NewsFeedFragment.currentObject!=null && NewsFeedFragment.currentObject.getMedia() != null) {
                     ImageLoader.getInstance().displayImage(
                             NewsFeedFragment.currentObject.getMedia(),
                             pictureInputView, Utils.normalDisplayOptions,
@@ -303,14 +315,14 @@ public class PostActivity extends Activity implements OnClickListener,
                                     Toast.LENGTH_LONG).show();
                             v.setClickable(true);
                         } else {
-                            NewsFeedFragment.currentObject.setMessage(message);
+                            currentTributeObject.setMessage(message);
                             // currentObject.put(DbConstants.MESSAGE, message);
 
                             finishActivity();
                             Toast.makeText(this, "Tribute has been updated.",
                                     Toast.LENGTH_LONG).show();
-//                            PostManager.getInstance().editTribute(
-//                                    currentObjectIndex, currentObject);//// TODO: 14-07-2017  
+                            PostManager.getInstance().editTribute(
+                                    currentObjectIndex, currentTributeObject);//// TODO: 14-07-2017
                         }
                     } else if (Constants.OPERATION_STORY == operation) {
 
@@ -474,7 +486,7 @@ public class PostActivity extends Activity implements OnClickListener,
         allSupportersParent.setVisibility(View.VISIBLE);
     }
 
-    //    private List<ParseUser> getAllUsers() {
+//    private List<ParseUser> getAllUsers() {
 //        List<RecipientEntry> recipients = shareUsers.getAdapter().getEntries();
 ////        List<ParseUser> users = new ArrayList<ParseUser>();
 //        if (recipients == null)

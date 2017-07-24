@@ -67,24 +67,16 @@ public class AddTributeDialog extends Dialog implements
 
         ArrayAdapter<String> usersArrayAdapter = new ArrayAdapter<>(context, R.layout.single_textview_listitem, connectionNames);
         shareUsers.setAdapter(usersArrayAdapter);
-        shareUsers.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        shareUsers.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 selectedUser = active.get(i);
-                shareUsers.setText(connectionNames.get(i));
-                System.out.println(selectedUser.toString() + " conn "+connectionNames.get(i));
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+                shareUsers.setText(shareUsers.getText().toString().substring(0,shareUsers.getText().toString().length()-1));
+                shareUsers.setText(connectionNames.get(i-1));
+                shareUsers.setSelection(shareUsers.getText().length());
 
             }
         });
-		/*shareUsers.setAdapter(new BaseRecipientAdapter(context, 4, Utils
-				.loadConnectionChips()) {
-		});*/
-
 
         findViewById(R.id.addButton).setOnClickListener(this);
         findViewById(R.id.cancelButton).setOnClickListener(this);
@@ -95,23 +87,11 @@ public class AddTributeDialog extends Dialog implements
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.addButton:
-               // String survivor_name = "camy";
-
+                System.out.println(/*selectedUser.toString() +*/ " conn ");
                 if(!shareUsers.getText().toString().equals("")){
                     Utils.launchPostViewFromTribute(caller.getActivity(),
                             Constants.OPERATION_TRIBUTE, selectedUser);
                 }
-                /*shareUsers.setAdapter(new BaseRecipientAdapter(context, 4, Utils.loadConnectionChips(context,
-                        survivor_name, new ConnectionExist() {
-                            @Override
-                            public void isConnection(boolean isConnection, Users user) {
-                                if (isConnection) {
-                                    Utils.launchPostViewFromTribute(caller.getActivity(),
-                                            Constants.OPERATION_TRIBUTE, user);
-                                }
-                            }
-                        })));*/
-
 
                 // Pass event to parent
 //                targetUser = null;
