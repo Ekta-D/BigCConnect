@@ -37,11 +37,18 @@ public class Queries {
 //        mQuery.include("User");
 //        return mQuery;
 //    }
-public static Query getStoriesQuery(boolean fromCache) {
-    Query query = FirebaseDatabase.getInstance().getReference().
-            child(DbConstants.TABLE_STORIES).limitToFirst(30).orderByChild(DbConstants.CREATED_AT);
-    return query;
-}
+
+
+    public static Query getAllUsers() {
+        Query query = FirebaseDatabase.getInstance().getReference().child(DbConstants.USERS);
+        return query;
+    }
+
+    public static Query getStoriesQuery(boolean fromCache) {
+        Query query = FirebaseDatabase.getInstance().getReference().
+                child(DbConstants.TABLE_STORIES).limitToFirst(30).orderByChild(DbConstants.CREATED_AT);
+        return query;
+    }
 
     public static Query getStoryCommentQuery(Stories story) {
         Query query = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_STORY_COMMENT).
@@ -71,8 +78,8 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
         mDatabase.child(DbConstants.USERS).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if(dataSnapshot!=null && dataSnapshot.hasChildren()){
-                    for( DataSnapshot data: dataSnapshot.getChildren()) {
+                if (dataSnapshot != null && dataSnapshot.hasChildren()) {
+                    for (DataSnapshot data : dataSnapshot.getChildren()) {
                         searchUsers.add(data.getValue(Users.class));
                     }
                 }
@@ -134,23 +141,23 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
     public static ArrayList<Users> getCategorizedUsersQuery(int ribbon) {
         final ArrayList<Users> categoryUsers = null;
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-        mDatabase.child(DbConstants.USERS).startAt(DbConstants.RIBBON,String.valueOf(ribbon)).orderByChild(DbConstants.CREATED_AT).
+        mDatabase.child(DbConstants.USERS).startAt(DbConstants.RIBBON, String.valueOf(ribbon)).orderByChild(DbConstants.CREATED_AT).
                 addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if(dataSnapshot!=null && dataSnapshot.hasChildren()){
-                    for( DataSnapshot data: dataSnapshot.getChildren()) {
-                        categoryUsers.add(data.getValue(Users.class));
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if (dataSnapshot != null && dataSnapshot.hasChildren()) {
+                            for (DataSnapshot data : dataSnapshot.getChildren()) {
+                                categoryUsers.add(data.getValue(Users.class));
+                            }
+                        }
+
                     }
-                }
 
-            }
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
+                    }
+                });
 
        /* ParseQuery<ParseUser> query = ParseUser.getQuery();
         query.whereNotEqualTo(DbConstants.TYPE,
@@ -240,12 +247,22 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
         return mQuery;
     }*/
 
+//    public static Query getGroupMessagesQuery(boolean fromCache) {
+//        String current_user = FirebaseAuth.getInstance().getCurrentUser().getUid();
+//        Query sentMessage = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_MESSAGE);
+//        sentMessage.orderByChild(DbConstants.USER1).equalTo(current_user);
+//        return sentMessage
+//
+//    }
+
     public static List<Query> getConversationsQuery(
             boolean fromCache) {
 
         Query mQuery = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION);
-        Query sentMessagesQuery = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION).orderByChild(DbConstants.USER1).equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
-        Query receivedMessagesQuery = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION).orderByChild(DbConstants.USER2).equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        Query sentMessagesQuery = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION).
+                orderByChild(DbConstants.USER1).equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        Query receivedMessagesQuery = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION).
+                orderByChild(DbConstants.USER2).equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
         List<Query> conversationQueries = new ArrayList<>();
         conversationQueries.add(mQuery);
@@ -422,22 +439,22 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
         final List<Users> pendingConnections = new ArrayList<>();
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-        mDatabase.child(DbConstants.TABLE_CONNECTIONS).orderByKey().startAt(user.getObjectId()).endAt(user.getObjectId()+"\uf8ff").addListenerForSingleValueEvent(new ValueEventListener() {
+        mDatabase.child(DbConstants.TABLE_CONNECTIONS).orderByKey().startAt(user.getObjectId()).endAt(user.getObjectId() + "\uf8ff").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if(dataSnapshot!=null && dataSnapshot.hasChildren()){
-                    for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()){
+                if (dataSnapshot != null && dataSnapshot.hasChildren()) {
+                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                         ConnectionsModel connectionsModel = dataSnapshot1.getValue(ConnectionsModel.class);
-                            if(connectionsModel.getStatus() == true){
-                                //exists and is a connection.. dont send connection request
+                        if (connectionsModel.getStatus() == true) {
+                            //exists and is a connection.. dont send connection request
 
-                                getConnectionDetails(connectionsModel.getTo(), activeConnections, pendingConnections,true, context);
+                            getConnectionDetails(connectionsModel.getTo(), activeConnections, pendingConnections, true, context);
 
 
-                            } else {
-                                //exists and pending.. no need to send connection request
-                                getConnectionDetails(connectionsModel.getTo(), activeConnections, pendingConnections, false, context);
-                            }
+                        } else {
+                            //exists and pending.. no need to send connection request
+                            getConnectionDetails(connectionsModel.getTo(), activeConnections, pendingConnections, false, context);
+                        }
                     }
                     //check for other connections
                     searchOtherConnections(user, activeConnections, pendingConnections, context);
@@ -461,10 +478,10 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
         mDatabase.child(DbConstants.TABLE_CONNECTIONS).orderByChild(DbConstants.TO).equalTo(user.getObjectId()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if(dataSnapshot!=null && dataSnapshot.hasChildren()){
-                    for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()){
+                if (dataSnapshot != null && dataSnapshot.hasChildren()) {
+                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                         ConnectionsModel connectionsModel = dataSnapshot1.getValue(ConnectionsModel.class);
-                        if(connectionsModel.getStatus() == true){
+                        if (connectionsModel.getStatus() == true) {
                             //exists and is a connection.. dont send connection request
                             getConnectionDetails(connectionsModel.getFrom(), activeConnections, pendingConnections, true, context);
                         } else {
@@ -498,7 +515,7 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
                     Utils.hideProgress();
                 } else {
                     Users user = dataSnapshot.getValue(Users.class);
-                    if(activeUser)
+                    if (activeUser)
                         active.add(user);
                     else
                         pending.add(user);
@@ -653,7 +670,7 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
                                     checkReverse(users, ref, reversed_objectID, connectionExist);
                                 } else {
                                     for (DataSnapshot data : dataSnapshot.getChildren()) {
-                                      //  String key = data.getKey();
+                                        //  String key = data.getKey();
                                         ConnectionsModel connection = data.getValue(ConnectionsModel.class);
 
                                         Log.i("connections_values", connection.toString());

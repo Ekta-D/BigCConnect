@@ -54,7 +54,7 @@ public class CommentsAdapter extends ArrayAdapter<Comments> {
     }
 
     public void setData(List<Comments> comments) {
-   //     this.comments.clear();
+        //     this.comments.clear();
         if (comments == null)
             return;
         this.comments.addAll(comments);
@@ -94,44 +94,41 @@ public class CommentsAdapter extends ArrayAdapter<Comments> {
 
         FirebaseDatabase.getInstance().getReference().child(DbConstants.USERS).child(owner)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
 
 
-                if (dataSnapshot.getValue() == null) {
+                        if (dataSnapshot.getValue() == null) {
 
-                } else {
-                    String key = dataSnapshot.getKey();
-                    Users users=dataSnapshot.getValue(Users.class);
-                  //  Map<Object, Object> user_values = (Map<Object, Object>) dataSnapshot.getValue();
-                    setValues(users,holder,comment);
-                }
+                        } else {
+                            String key = dataSnapshot.getKey();
+                            Users users = dataSnapshot.getValue(Users.class);
+                            //  Map<Object, Object> user_values = (Map<Object, Object>) dataSnapshot.getValue();
+                            setValues(users, holder, comment);
+                        }
 
 
-                Utils.hideProgress();
-            }
+                        Utils.hideProgress();
+                    }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
 
-            }
-        });
+                    }
+                });
 
         return view;
     }
 
-    public void setValues(Users users,ViewHolder holder,Comments comment)
-    {
+    public void setValues(Users users, ViewHolder holder, Comments comment) {
 //        if (owner.getInt(DbConstants.TYPE) == Constants.USER_TYPE.SUPPORTER
 //                .ordinal())
-            if (users.getType()==1)
-        {
+        if (users.getType() == Constants.IS_SUPPORTER) {
             holder.ribbonView.setImageResource(R.drawable.ribbon_supporter);
         }
 //            else if (owner.getInt(DbConstants.TYPE) == Constants.USER_TYPE.FIGHTER
 //                .ordinal())
-            else if (users.getType() ==2)
-            {
+        else if (users.getType() == Constants.IS_FIGHTER) {
             holder.ribbonView
                     .setImageResource(users.getRibbon() < 0 ? R.drawable.ic_launcher
                             : Utils.fighter_ribbons[users.getRibbon()]);
@@ -141,22 +138,8 @@ public class CommentsAdapter extends ArrayAdapter<Comments> {
                             : Utils.survivor_ribbons[users.getRibbon()]);
         }
 
-
-        String date = users.getCreatedAt();
-        SimpleDateFormat format = new SimpleDateFormat(DbConstants.DATE_FORMAT, Locale.getDefault());
-        Date createdDate = null;
-
-        try {
-            if (date.contains("T") && date.contains("Z")) {
-                date.replace("T", "");
-                date.replace("Z", "");
-            }
-            createdDate = format.parse(date);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
         holder.dateView.setText(Utils.getTimeStringForFeed(context,
-                createdDate));
+                Utils.convertStringToDate(comment.getCreatedAt())));
         holder.nameView.setText(users.getName());
         holder.commentView.setText(comment.getMessage());
     }

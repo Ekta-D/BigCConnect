@@ -12,9 +12,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bigc.activities.PostActivity;
 import com.bigc.adapters.MessagesAdapter;
 import com.bigc.datastorage.Preferences;
 import com.bigc.general.classes.Constants;
+import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
 import com.bigc.general.classes.PostManager;
 import com.bigc.general.classes.Queries;
@@ -37,6 +39,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
@@ -44,172 +47,204 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MessagesFragment extends BaseFragment implements
-		OnRefreshListener, UploadPostObserver, OnLoadMoreListener,
-		MessageObserver {
+        OnRefreshListener, UploadPostObserver, OnLoadMoreListener,
+        MessageObserver {
 
-	private AdView adView;
-	private MessagesAdapter adapter;
-	private PullToRefreshListView listView;
-	private TextView messageView;
-	private LinearLayout progressParent;
-	private ProgressBar progressView;
+    private AdView adView;
+//    private MessagesAdapter adapter;
+    private PullToRefreshListView listView;
+    private TextView messageView;
+    private LinearLayout progressParent;
+    private ProgressBar progressView;
 
-	private List<Messages> messages = new ArrayList<>();
+    private List<Messages> messages = new ArrayList<>();
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-	}
+    }
 
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_messages_layout,
-				container, false);
-		adView = (AdView) view.findViewById(R.id.adView);
-		view.findViewById(R.id.leftBottomOption).setOnClickListener(this);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_messages_layout,
+                container, false);
+        adView = (AdView) view.findViewById(R.id.adView);
+        view.findViewById(R.id.leftBottomOption).setOnClickListener(this);
 
-		messageView = (TextView) view.findViewById(R.id.messageView);
-		progressView = (ProgressBar) view.findViewById(R.id.progressView);
-		progressParent = (LinearLayout) view
-				.findViewById(R.id.messageViewParent);
-		listView = (PullToRefreshListView) view.findViewById(R.id.listview);
-		adapter = new MessagesAdapter(getActivity(), messages);
-		listView.setAdapter(adapter);
+        messageView = (TextView) view.findViewById(R.id.messageView);
+        progressView = (ProgressBar) view.findViewById(R.id.progressView);
+        progressParent = (LinearLayout) view
+                .findViewById(R.id.messageViewParent);
+        listView = (PullToRefreshListView) view.findViewById(R.id.listview);
 
-		return view;
-	}
 
-	@Override
-	public void onViewCreated(View view, Bundle savedInstanceState) {
-		super.onViewCreated(view, savedInstanceState);
-		GoogleAnalyticsHelper.sendScreenViewGoogleAnalytics(getActivity(),
-				"Messages Screen");
+        return view;
+    }
 
-		if (!Preferences.getInstance(getActivity()).getBoolean(
-				Constants.SPLASHES, true)) {
-			view.findViewById(R.id.splashTextView).setVisibility(View.GONE);
-		}
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        GoogleAnalyticsHelper.sendScreenViewGoogleAnalytics(getActivity(),
+                "Messages Screen");
 
-		listView.setOnRefreshListener(this);
-		// listView.setOnLoadMoreListener(this);
+        if (!Preferences.getInstance(getActivity()).getBoolean(
+                Constants.SPLASHES, true)) {
+            view.findViewById(R.id.splashTextView).setVisibility(View.GONE);
+        }
 
-		AdRequest adRequest = new AdRequest.Builder().build();
-		adView.loadAd(adRequest);
+        listView.setOnRefreshListener(this);
+        // listView.setOnLoadMoreListener(this);
 
-		listView.setOnItemClickListener(new OnItemClickListener() {
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
 
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				position--;
-				((FragmentHolder) getActivity())
-						.replaceFragment(new MessageDetailFragment(adapter
-								.getItem(position)));
-			}
-		});
-		Log.e("Posts", messages.size() + "--");
-		if (messages.size() == 0) {
-			startProgress();
-			loadData(true);
-		}
-	}
+//		listView.setOnItemClickListener(new OnItemClickListener() {
+//
+//			@Override
+//			public void onItemClick(AdapterView<?> parent, View view,
+//					int position, long id) {
+//				position--;
+//				((FragmentHolder) getActivity())
+//						.replaceFragment(new MessageDetailFragment(adapter
+//								.getItem(position)));
+//			}
+//		});
 
-	@Override
-	public void onResume() {
-		super.onResume();
-		if (Preferences.getInstance(getActivity())
-				.getBoolean(Constants.PREMIUM)) {
-			adView.setVisibility(View.GONE);
-		}
-	}
 
-	@Override
-	public void onStart() {
-		super.onStart();
-		PostManager.getInstance().bindObserver(this);
-		PostManager.getInstance().addObserver(this);
-//		((MessageObservable) new NotificationReceiver()).bindObserver(this); //// TODO: 7/18/2017  
-	}
+        Log.e("Posts", messages.size() + "--");
+        if (messages.size() == 0) {
+            startProgress();
+            loadData(true);
+        }
 
-	@Override
-	public void onStop() {
-	//	((MessageObservable) new NotificationReceiver()).freeObserver();
-		super.onStop();
-	}
 
-	@Override
-	public void onDestroy() {
-		PostManager.getInstance().freeObserver();
-		PostManager.getInstance().removePostObserver();
-		super.onDestroy();
-	}
+    }
 
-	@Override
-	public void onClick(View view) {
-		switch (view.getId()) {
-		case R.id.leftBottomOption:
-			GoogleAnalyticsHelper.setClickedAction(getActivity(),
-					"New Message Button");
-			Utils.launchPostView(getActivity(), Constants.OPERATION_MESSAGE);
-			break;
-		}
-	}
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (Preferences.getInstance(getActivity())
+                .getBoolean(Constants.PREMIUM)) {
+            adView.setVisibility(View.GONE);
+        }
+        if (PostActivity.selectedUsers_array != null) {
+            Log.i("uses's message", PostActivity.selectedUsers_array.toString());
+        }
+    }
 
-	@Override
-	public String getName() {
-		return Constants.FRAGMENT_MESSAGES;
-	}
+    @Override
+    public void onStart() {
+        super.onStart();
+        PostManager.getInstance().bindObserver(this);
+        PostManager.getInstance().addObserver(this);
+        //  ((MessageObservable) new NotificationReceiver()).bindObserver(this); //// TODO: 7/18/2017
+    }
 
-	@Override
-	public int getTab() {
-		return 3;
-	}
+    @Override
+    public void onStop() {
+        //  ((MessageObservable) new NotificationReceiver()).freeObserver();
+        super.onStop();
+    }
 
-	@Override
-	public void onRefresh() {
-		/*loadData(false);*/
-	}
+    @Override
+    public void onDestroy() {
+        PostManager.getInstance().freeObserver();
+        PostManager.getInstance().removePostObserver();
+        super.onDestroy();
+    }
 
-	@Override
-	public void onLoadMore() {
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.leftBottomOption:
+                GoogleAnalyticsHelper.setClickedAction(getActivity(),
+                        "New Message Button");
+                Utils.launchPostView(getActivity(), Constants.OPERATION_MESSAGE);
+                break;
+        }
+    }
 
-		Log.e("LoadMore", "Request");
-		// loadPosts(adapter.getLastItemDate(), false);
-	}
+    @Override
+    public String getName() {
+        return Constants.FRAGMENT_MESSAGES;
+    }
 
-	private void loadData(final boolean fromCache) {
+    @Override
+    public int getTab() {
+        return 3;
+    }
 
-		final List<Query> queries = Queries.getConversationsQuery(fromCache);
+    @Override
+    public void onRefresh() {
+        /*loadData(false);*/
+    }
 
-		queries.get(1).addListenerForSingleValueEvent(new ValueEventListener() {
-			@Override
-			public void onDataChange(DataSnapshot dataSnapshot) {
-				if(dataSnapshot!=null && dataSnapshot.hasChildren()) {
-					for (DataSnapshot messageSnapshot : dataSnapshot.getChildren()) {
-						Messages message = messageSnapshot.getValue(Messages.class);
-						messages.add(message);
-					}
+    @Override
+    public void onLoadMore() {
 
-					executeReceiveQuery(queries.get(2));
-				} else {
-					Toast.makeText(
-							getActivity(),
-							Utils.loadString(getActivity(),
-									R.string.networkFailureMessage),
-							Toast.LENGTH_LONG).show();
-				}
-			}
+        Log.e("LoadMore", "Request");
+        // loadPosts(adapter.getLastItemDate(), false);
+    }
 
-			@Override
-			public void onCancelled(DatabaseError databaseError) {
+    List<Messages> messages_list;
 
-			}
-		});
+    private void loadData(final boolean fromCache) {
+
+    /*    final List<Query> queries = Queries.getConversationsQuery(fromCache);
+
+        queries.get(1).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot != null && dataSnapshot.hasChildren()) {
+                    for (DataSnapshot messageSnapshot : dataSnapshot.getChildren()) {
+                        Messages message = messageSnapshot.getValue(Messages.class);
+                        messages.add(message);
+                    }
+
+                    executeReceiveQuery(queries.get(2));
+                } else {
+                    Toast.makeText(
+                            getActivity(),
+                            Utils.loadString(getActivity(),
+                                    R.string.networkFailureMessage),
+                            Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });*/ // TODO: 21-07-2017 need to work on Converation table
+
+        Query query = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_MESSAGE);
+        query.orderByChild(DbConstants.USER1).equalTo(Preferences.getInstance(getActivity()).getString(DbConstants.ID));
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                long count = dataSnapshot.getChildrenCount();
+                messages_list = new ArrayList<Messages>();
+                for (DataSnapshot data : dataSnapshot.getChildren()) {
+                    String key = data.getKey();
+                    Messages message = data.getValue(Messages.class);
+                    messages_list.add(message);
+                }
+
+                populateList(messages_list);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                showError(databaseError.toString());
+            }
+        });
 
 		/*ParseQuery<ParseObject> query = Queries
-				.getConversationsQuery(fromCache);
+                .getConversationsQuery(fromCache);
 
 		query.findInBackground(new FindCallback<ParseObject>() {
 
@@ -246,38 +281,38 @@ public class MessagesFragment extends BaseFragment implements
 
 			}
 		});*/
-	}
+    }
 
-	private void executeReceiveQuery(Query query) {
-		query.addListenerForSingleValueEvent(new ValueEventListener() {
-			@Override
-			public void onDataChange(DataSnapshot dataSnapshot) {
-				if(dataSnapshot!=null && dataSnapshot.hasChildren()){
-					for(DataSnapshot messageSnapshot: dataSnapshot.getChildren()){
-						Messages message = messageSnapshot.getValue(Messages.class);
-						messages.add(message);
-					}
+    private void executeReceiveQuery(Query query) {
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot != null && dataSnapshot.hasChildren()) {
+                    for (DataSnapshot messageSnapshot : dataSnapshot.getChildren()) {
+                        Messages message = messageSnapshot.getValue(Messages.class);
+                        messages.add(message);
+                    }
 
-				}
-				/*if (messages.size() == 0) {
-					// Load data from network
+                }
+                /*if (messages.size() == 0) {
+                    // Load data from network
 					loadData(false);
 					return;
 				}*/
 
 				/*new completeMessageLoadingsTask(messages, false, false)
-						.execute();*/
-			}
+                        .execute();*/
+            }
 
-			@Override
-			public void onCancelled(DatabaseError databaseError) {
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
 
-			}
-		});
-	}
+            }
+        });
+    }
 
 	/*private class completeMessageLoadingsTask extends
-			AsyncTask<Void, Void, List<ParseObject>> {
+            AsyncTask<Void, Void, List<ParseObject>> {
 
 		List<ParseObject> messages;
 		boolean isMoreLoading;
@@ -331,62 +366,86 @@ public class MessagesFragment extends BaseFragment implements
 		}
 	}*/
 
-	private void populateList(List<Messages> messages) {
+    private void populateList(List<Messages> messages) {
 
-		this.messages.clear();
-		if (listView != null) {
-			if (messages == null) {
-				showError(Utils.loadString(getActivity(),
-						R.string.networkFailureMessage));
-			} else if (messages.size() == 0) {
-				showError("No messages sent or received yet.");
-			} else {
-				//adapter.setData(messages);
-				listView.setVisibility(View.VISIBLE);
-				progressParent.setVisibility(View.GONE);
-				this.messages.addAll(messages);
-			}
-			listView.onRefreshComplete();
-		}
-	}
+        if (messages == null) {
+            showError(Utils.loadString(getActivity(),
+                    R.string.networkFailureMessage));
+        } else if (messages.size() == 0) {
+            showError("No messages sent or received yet.");
+        } else {
 
-	private void startProgress() {
-		try {
-			messageView.setText(R.string.loadingMessages);
-			progressParent.setVisibility(View.VISIBLE);
-			listView.setVisibility(View.GONE);
-		} catch (NullPointerException e) {
-			e.printStackTrace();
-		}
-	}
+            final MessagesAdapter message_adapter = new MessagesAdapter(getActivity(), messages, Preferences.getInstance(getActivity()).getAllUsers(DbConstants.FETCH_USER));
+            listView.setAdapter(message_adapter);
+            listView.setVisibility(View.VISIBLE);
+            progressParent.setVisibility(View.GONE);
+            listView.setOnItemClickListener(new OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                    position--;
+                    ((FragmentHolder) getActivity())
+                            .replaceFragment(new MessageDetailFragment(message_adapter
+                                    .getItem(position), Preferences.getInstance(getActivity()).getAllUsers(DbConstants.FETCH_USER)));
+                }
+            });
+        }
 
-	private void showError(String message) {
-		listView.setVisibility(View.GONE);
-		progressParent.setVisibility(View.VISIBLE);
-		progressView.setVisibility(View.GONE);
-		messageView.setText(message);
-	}
+//        this.messages.clear();
+//        if (listView != null) {
+//            if (messages == null) {
+//                showError(Utils.loadString(getActivity(),
+//                        R.string.networkFailureMessage));
+//            } else if (messages.size() == 0) {
+//                showError("No messages sent or received yet.");
+//            } else {
+//                //adapter.setData(messages);
+//                listView.setVisibility(View.VISIBLE);
+//                progressParent.setVisibility(View.GONE);
+//                this.messages.addAll(messages);
+//            }
+//            listView.onRefreshComplete();
+//        }
 
-	@Override
-	public void onNotify(final Tributes post) {
-		if (post == null) {
-			Toast.makeText(getActivity(), "Upload status is failed, try again",
-					Toast.LENGTH_LONG).show();
-			return;
-		}
+
+    }
+
+    private void startProgress() {
+        try {
+            messageView.setText(R.string.loadingMessages);
+            progressParent.setVisibility(View.VISIBLE);
+            listView.setVisibility(View.GONE);
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void showError(String message) {
+        listView.setVisibility(View.GONE);
+        progressParent.setVisibility(View.VISIBLE);
+        progressView.setVisibility(View.GONE);
+        messageView.setText(message);
+    }
+
+    @Override
+    public void onNotify(final Tributes post) {
+        if (post == null) {
+            Toast.makeText(getActivity(), "Upload status is failed, try again",
+                    Toast.LENGTH_LONG).show();
+            return;
+        }
 
 		/*try {
-			post.getParseUser(DbConstants.USER).fetchIfNeeded();
+            post.getParseUser(DbConstants.USER).fetchIfNeeded();
 			post.pin(Constants.TAG_MESSAGES);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}*/
 
-		if (messages != null)
-			//messages.add(0, post);
+        if (messages != null)
+            //messages.add(0, post);
 
-		if (listView == null)
-			return;
+            if (listView == null)
+                return;
 
 	/*	getActivity().runOnUiThread(new Runnable() {
 
@@ -403,13 +462,13 @@ public class MessagesFragment extends BaseFragment implements
 				}
 			}
 		});*/
-	}
+    }
 
-	@Override
-	public boolean onMessageReceive(Object message, Users sender) {
-		Log.e("onMessageReceive", "Invoked");
-		/*if (adapter != null && listView != null) {
-			final List<ParseObject> data = new ArrayList<ParseObject>();
+    @Override
+    public boolean onMessageReceive(Object message, Users sender) {
+        Log.e("onMessageReceive", "Invoked");
+        /*if (adapter != null && listView != null) {
+            final List<ParseObject> data = new ArrayList<ParseObject>();
 			data.addAll(adapter.getData());
 			String senderId = sender == null ? message.getParseUser(
 					DbConstants.SENDER).getObjectId() : sender.getObjectId();
@@ -455,18 +514,18 @@ public class MessagesFragment extends BaseFragment implements
 			});
 			return true;
 		}*/
-		return false;
-	}
+        return false;
+    }
 
-	@Override
-	public boolean onBackPressed() {
-		((FragmentHolder) getActivity())
-				.replaceFragment(new NewsFeedFragment());
-		return true;
-	}
+    @Override
+    public boolean onBackPressed() {
+        ((FragmentHolder) getActivity())
+                .replaceFragment(new NewsFeedFragment());
+        return true;
+    }
 
-	@Override
-	public void onEditDone(int position, Posts post) {
-		Log.e(MessagesFragment.class.getSimpleName(), "onEditDone");
-	}
+    @Override
+    public void onEditDone(int position, Posts post) {
+        Log.e(MessagesFragment.class.getSimpleName(), "onEditDone");
+    }
 }

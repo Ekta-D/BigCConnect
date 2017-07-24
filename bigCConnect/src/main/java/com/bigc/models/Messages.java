@@ -12,8 +12,27 @@ public class Messages {
     String objectId;
     String sender;
     String updatedAt;
-    Map<String, Object> users = new HashMap<>();
-    String  media;
+    String user1;
+    String user2;
+    String media;
+
+    public String getUser2() {
+        return user2;
+    }
+
+    public void setUser2(String user2) {
+        this.user2 = user2;
+    }
+
+    public String getUser1() {
+        return user1;
+    }
+
+    public void setUser1(String user1) {
+        this.user1 = user1;
+    }
+
+
 
     public String getMedia() {
         return media;
@@ -63,15 +82,6 @@ public class Messages {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
-
-    public Map<String, Object>getUsers() {
-        return users;
-    }
-
-    public void setUsers(Map<String, Object> users) {
-        this.users = users;
-    }
-
 
 
 }

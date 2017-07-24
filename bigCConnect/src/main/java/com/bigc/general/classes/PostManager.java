@@ -37,6 +37,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 public class PostManager implements UploadPostObservable, MessageObservable {
 
@@ -475,64 +476,6 @@ public class PostManager implements UploadPostObservable, MessageObservable {
             }
         });
     }*/
-
-    //    public void sendMessage(final String message, Bitmap image,
-//                            final List<ParseUser> users)
-    public void sendMessage(final Context context, final String message, Bitmap image,
-                            final List<Object> users) {
-        //	new sendMessageTask(message, image, users).execute();
-
-        Utils.showProgress(context);
-        databaseReference = FirebaseDatabase.getInstance().getReference();
-        firebaseStorage = FirebaseStorage.getInstance();
-        storageReference = firebaseStorage.getReferenceFromUrl(Constants.FIREBASE_STRAGE_URL);
-        Uri uri = null;
-        if (image != null) {
-            ByteArrayOutputStream outStream = new ByteArrayOutputStream();
-            image.compress(Bitmap.CompressFormat.PNG, 100, outStream);
-            String path = MediaStore.Images.Media.insertImage(context.getContentResolver(), image, "Title", null);
-            uri = Uri.parse(path);
-        }
-
-
-        final String objectId = databaseReference.child(DbConstants.TABLE_MESSAGE).push().getKey();
-
-        StorageReference reference = storageReference.child("MessageImages/" + objectId + ".jpg");
-        reference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Uri downloadUri = taskSnapshot.getMetadata().getDownloadUrl();
-                Messages message_model = new Messages();
-                SimpleDateFormat format = new SimpleDateFormat(DbConstants.DATE_FORMAT);
-                String date = format.format(new Date(System.currentTimeMillis()));
-                message_model.setMessage(message);
-                message_model.setCreatedAt(date);
-                message_model.setObjectId(objectId);
-                message_model.setSender(FirebaseAuth.getInstance().getCurrentUser().getUid());
-                Map<String, Object> receip_users = new HashMap<>();
-                receip_users.put(DbConstants.USER1, FirebaseAuth.getInstance().getCurrentUser().getUid());
-                if (users.size() > 0) {
-                    receip_users.put(DbConstants.USER2, users.get(0));
-                }
-                message_model.setMedia(downloadUri.toString());
-                message_model.setUsers(receip_users);
-
-                databaseReference.child(DbConstants.TABLE_MESSAGE).child(objectId).setValue(message_model);
-
-
-                Utils.hideProgress();
-
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Utils.showPrompt(context, e.toString().trim());
-                Utils.hideProgress();
-            }
-        });
-
-
-    }
 
     private class sendMessageTask extends AsyncTask<Void, Void, List<String>> {
         private List<Users> users = new ArrayList<>();

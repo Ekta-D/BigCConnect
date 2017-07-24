@@ -1,6 +1,7 @@
 package com.bigc.activities;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -12,6 +13,8 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -23,14 +26,18 @@ import android.widget.Toast;
 import com.android.ex.chips.BaseRecipientAdapter;
 import com.android.ex.chips.RecipientEditTextView;
 import com.android.ex.chips.RecipientEntry;
+import com.bigc.adapters.AutoCompleteTextViewAdapter;
+import com.bigc.datastorage.Preferences;
 import com.bigc.dialogs.AddTributeDialog;
 import com.bigc.fragments.NewsFeedFragment;
 import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
 import com.bigc.general.classes.PostManager;
+import com.bigc.general.classes.Queries;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.ProgressHandler;
+import com.bigc.models.Messages;
 import com.bigc.models.Post;
 import com.bigc.models.Posts;
 import com.bigc.models.Stories;
@@ -40,8 +47,12 @@ import com.bigc_connect.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -58,8 +69,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import eu.janmuller.android.simplecropimage.CropImage;
+import eu.janmuller.android.simplecropimage.Util;
 
 public class PostActivity extends Activity implements OnClickListener,
         ProgressHandler {
@@ -68,7 +81,8 @@ public class PostActivity extends Activity implements OnClickListener,
     private EditText statusInputView;
     private ImageView pictureInputView;
     private Bitmap selectedPicture;
-    private RecipientEditTextView shareUsers;
+    //    private RecipientEditTextView shareUsers;
+    MultiAutoCompleteTextView shareUsers;
     private EditText titleInputView;
 
     private LinearLayout indicatorParentView;
@@ -87,7 +101,8 @@ public class PostActivity extends Activity implements OnClickListener,
     private File mFileTemp;
     FirebaseStorage firebaseStorage;
     StorageReference storageReference;
-    Users user;
+    Users user, selected_user;
+    AutoCompleteTextViewAdapter autoCompleteTextViewAdapter;
 
     public static void setCurrentObject(int position, Posts object, Stories storyObject) {
         //  currentObject = object;
@@ -111,10 +126,10 @@ public class PostActivity extends Activity implements OnClickListener,
                     Constants.OPERATION_STATUS);
             isEdit = getIntent().getBooleanExtra(Constants.EDIT_MODE, false);
             fromNewsfeeds = getIntent().getBooleanExtra(Constants.FROM_NEWSFEEDS, false);
-            if(!fromNewsfeeds){
+            if (!fromNewsfeeds) {
                 NewsFeedFragment.currentObject = null;
             }
-           if (isEdit && NewsFeedFragment.currentObject == null&& currentstoryObject==null) {
+            if (isEdit && NewsFeedFragment.currentObject == null && currentstoryObject == null) {
                 isEdit = false;
             }
             user = (Users) getIntent().getSerializableExtra(DbConstants.USER_INFO);
@@ -162,13 +177,18 @@ public class PostActivity extends Activity implements OnClickListener,
 
             ((TextView) findViewById(R.id.postOption)).setText(R.string.send);
             statusInputView.setHint(R.string.sendPersonalMessage);
-            shareUsers = (RecipientEditTextView) findViewById(R.id.UsersInputView);
 
+//            fetchUser();
+            //  shareUsers = (RecipientEditTextView) findViewById(R.id.UsersInputView);
+            shareUsers = (MultiAutoCompleteTextView) findViewById(R.id.UsersInputView);
             shareUsers.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
             shareUsers.setThreshold(1);
+
             /*shareUsers.setAdapter(new BaseRecipientAdapter(this, 4, Utils
                     .loadConnectionChips()) {
             });*/
+
+            getAllUsers(Preferences.getInstance(this).getAllUsers(DbConstants.FETCH_USER));
             GoogleAnalyticsHelper.sendScreenViewGoogleAnalytics(this,
                     "Compose New Message Screen");
             switchToSelectionMode(findViewById(R.id.allSupportersView));
@@ -198,7 +218,7 @@ public class PostActivity extends Activity implements OnClickListener,
                         : currentstoryObject.getMessage();
                 statusInputView.setText(text);
                 statusInputView.setSelection(text.length());
-                if (currentstoryObject!=null && currentstoryObject.getMedia() != null) {
+                if (currentstoryObject != null && currentstoryObject.getMedia() != null) {
                     ImageLoader.getInstance().displayImage(
                             currentstoryObject.getMedia(),
                             pictureInputView, Utils.normalDisplayOptions,
@@ -217,7 +237,7 @@ public class PostActivity extends Activity implements OnClickListener,
                         : NewsFeedFragment.currentObject.getMessage();
                 statusInputView.setText(text);
                 statusInputView.setSelection(text.length());
-                if (NewsFeedFragment.currentObject!=null && NewsFeedFragment.currentObject.getMedia() != null) {
+                if (NewsFeedFragment.currentObject != null && NewsFeedFragment.currentObject.getMedia() != null) {
                     ImageLoader.getInstance().displayImage(
                             NewsFeedFragment.currentObject.getMedia(),
                             pictureInputView, Utils.normalDisplayOptions,
@@ -386,17 +406,25 @@ public class PostActivity extends Activity implements OnClickListener,
                             v.setClickable(true);
                             return;
                         }
+                        if (selectedUsers_array.size() == 0) {
+                            Utils.showToast(this, "Please enter users");
+                            v.setClickable(true);
+                            return;
+                        }
+
                         if (isPublicShare) {
-                            sendMessage(message, selectedPicture, getAllUsers());
+                            //  fetchUser();
+                            //sendMessage(message, selectedPicture, getAllUsers());
                         } else {
-                            sendMessage(message, selectedPicture,
-                                    getAllSelectedUsers());
+                            //   sendMessage(message, selectedPicture,
+                            // getAllSelectedUsers());
+                            sendMessage(PostActivity.this, message, selectedPicture, selectedUsers_array);
                         }
 
                         Toast.makeText(this, "Sending your message, Please wait",
                                 Toast.LENGTH_LONG).show();
 
-                        finishActivity();
+                        //  finishActivity();
                     } else {
                         if (message.length() == 0 && selectedPicture == null) {
                             Toast.makeText(this,
@@ -446,7 +474,7 @@ public class PostActivity extends Activity implements OnClickListener,
         allSupportersParent.setVisibility(View.VISIBLE);
     }
 
-//    private List<ParseUser> getAllUsers() {
+    //    private List<ParseUser> getAllUsers() {
 //        List<RecipientEntry> recipients = shareUsers.getAdapter().getEntries();
 ////        List<ParseUser> users = new ArrayList<ParseUser>();
 //        if (recipients == null)
@@ -458,14 +486,28 @@ public class PostActivity extends Activity implements OnClickListener,
 //        return users;
 //    }
 
-    private List<Object> getAllUsers() {
-        List<RecipientEntry> recipients = shareUsers.getAdapter().getEntries();
-        List<Object> users = new ArrayList<>();
-        if (recipients == null)
-            return users;
-        for (final RecipientEntry entry : recipients)
-            users.add(entry.getUser().toString());
-        return users;
+
+    public static ArrayList<Users> selectedUsers_array;
+
+    public void getAllUsers(final ArrayList<Users> userses) {
+        Utils.hideProgress();
+        final ArrayList<String> users_name = new ArrayList<>();
+        for (Users user : userses) {
+            users_name.add(user.getName());
+        }
+        selectedUsers_array = new ArrayList<>();
+        autoCompleteTextViewAdapter = new AutoCompleteTextViewAdapter(this, R.layout.autotext_layout, R.id.auto_text, userses);
+        shareUsers.setAdapter(autoCompleteTextViewAdapter);
+        shareUsers.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                selected_user = new Users();
+                selected_user = (Users) adapterView.getAdapter().getItem(position);
+                selectedUsers_array.add(selected_user);
+            }
+        });
+
+
     }
 
 //    private List<ParseUser> getAllSelectedUsers() {
@@ -478,13 +520,13 @@ public class PostActivity extends Activity implements OnClickListener,
 //        return users;
 //    }
 
-    private List<Object> getAllSelectedUsers() {
+   /* private List<Object> getAllSelectedUsers() {
         final Collection<RecipientEntry> recipients = shareUsers.getChosenRecipients();
         List<Object> users = new ArrayList<>();
         for (final RecipientEntry entry : recipients)
             users.add(entry.getUser());
         return users;
-    }
+    }*/
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -530,13 +572,73 @@ public class PostActivity extends Activity implements OnClickListener,
             }
     }
 
+    public void sendMessage(final Context context, final String message, Bitmap image,
+                            final List<Users> users) {
+        //	new sendMessageTask(message, image, users).execute();
+
+        Utils.showProgress(context);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+        firebaseStorage = FirebaseStorage.getInstance();
+        storageReference = firebaseStorage.getReferenceFromUrl(Constants.FIREBASE_STRAGE_URL);
+        Uri uri = null;
+        if (image != null) {
+            ByteArrayOutputStream outStream = new ByteArrayOutputStream();
+            image.compress(Bitmap.CompressFormat.PNG, 100, outStream);
+            String path = MediaStore.Images.Media.insertImage(context.getContentResolver(), image, "Title", null);
+            uri = Uri.parse(path);
+
+            StorageReference reference = storageReference.child("MessageImages/" + UUID.randomUUID().toString() + ".jpg");
+            reference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    Uri downloadUri = taskSnapshot.getMetadata().getDownloadUrl();
+                    media = downloadUri.toString();
+
+                    uploadMessage(media, users, message);
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Utils.showPrompt(context, e.toString().trim());
+                    Utils.hideProgress();
+                }
+            });
+        } else {
+            uploadMessage(media, users, message);
+            Utils.hideProgress();
+        }
+
+    }
+
+    public void uploadMessage(String media, List<Users> users_list, String message) {
+        for (int i = 0; i < users_list.size(); i++) {
+            Users user = users_list.get(i);
+            String current_user = FirebaseAuth.getInstance().getCurrentUser().getUid();
+            String objectId = databaseReference.child(DbConstants.TABLE_MESSAGE).push().getKey();
+            Messages message_model = new Messages();
+            message_model.setCreatedAt(Utils.getCurrentDate());
+            message_model.setMessage(message);
+            message_model.setObjectId(objectId);
+            message_model.setSender(current_user);
+            message_model.setUser1(current_user);
+            message_model.setUser2(user.getObjectId());
+            message_model.setMedia(media);
+
+            FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_MESSAGE)
+                    .child(objectId).setValue(message_model);
+        }
+        Utils.hideProgress();
+        finishActivity();
+    }
+
     //    private void sendMessage(String message, Bitmap picture,
 //                             List<ParseUser> users)
-    private void sendMessage(String message, Bitmap picture,
-                             List<Object> users) {
-
-        PostManager.getInstance().sendMessage(PostActivity.this, message, picture, users);
-    }
+//    private void sendMessage(String message, Bitmap picture,
+//                             List<Users> users) {
+//
+//        //PostManager.getInstance().sendMessage(PostActivity.this, message, picture, users);
+//    }
 
     String media = "";
 

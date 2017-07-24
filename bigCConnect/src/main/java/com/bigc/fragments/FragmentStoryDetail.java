@@ -49,6 +49,9 @@ import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListene
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -288,6 +291,7 @@ public class FragmentStoryDetail extends BaseFragment implements
 
     List<Comments> comment_list;
     long comment_count;
+
     private void loadComments() {
 
         Query query = Queries.getStoryCommentQuery(story);
@@ -295,14 +299,14 @@ public class FragmentStoryDetail extends BaseFragment implements
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Log.i("comments", dataSnapshot.toString());
-                 comment_count = dataSnapshot.getChildrenCount();
+                comment_count = dataSnapshot.getChildrenCount();
                 comment_list = new ArrayList<Comments>();
                 for (DataSnapshot data : dataSnapshot.getChildren()) {
                     String key = data.getKey();
                     Comments comments = data.getValue(Comments.class);
                     comment_list.add(comments);
                 }
-                showComments(comment_list,comment_count);
+                showComments(comment_list, comment_count);
             }
 
             @Override
@@ -310,7 +314,6 @@ public class FragmentStoryDetail extends BaseFragment implements
 
             }
         });
-
 
 
         // ParseQuery<ParseObject> mQuery = Queries.getStoryCommentsQuery(story);
@@ -331,8 +334,8 @@ public class FragmentStoryDetail extends BaseFragment implements
     @Override
     public void onDelete(int position, Stories story) {
         PostManager.getInstance().deleteStory(story);
-		handler.onDelete(position, story);
-		((HomeScreen) getActivity()).onBackPressed();
+        handler.onDelete(position, story);
+        ((HomeScreen) getActivity()).onBackPressed();
     }
 
     @Override
@@ -386,7 +389,7 @@ public class FragmentStoryDetail extends BaseFragment implements
         }
     }
 
-    private void showComments(List<Comments> objects,long comment_count) {
+    private void showComments(List<Comments> objects, long comment_count) {
 //        try {
 //            progressParent.setVisibility(View.GONE);
 //            //adapter.setData(objects);
@@ -396,6 +399,13 @@ public class FragmentStoryDetail extends BaseFragment implements
 //        }
         if (objects != null) {
             progressParent.setVisibility(View.GONE);
+            Collections.sort(objects, new Comparator<Comments>() {
+                @Override
+                public int compare(Comments comments, Comments t1) {
+                    return Integer.parseInt(String.valueOf(Utils.convertStringToDate(comments.getCreatedAt()).
+                            compareTo(Utils.convertStringToDate(t1.getCreatedAt()))));
+                }
+            });
             adapter = new CommentsAdapter(getActivity(), objects);
             listView.setVisibility(View.VISIBLE);
             listView.setAdapter(adapter);
@@ -505,7 +515,7 @@ public class FragmentStoryDetail extends BaseFragment implements
             return false;
 
         return likes.contains(ParseUser.getCurrentUser().getObjectId());*/
-       return false;
+        return false;
     }
 
     @Override
