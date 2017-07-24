@@ -8,6 +8,7 @@ public class DbConstants {
         Story
     }
 
+    public static final String FETCH_USER = "fetch_user";
     public static final String USER_INFO = "user_info";
     public static final String COMMENT_COUNT = "comment_count";
     public static final String DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
