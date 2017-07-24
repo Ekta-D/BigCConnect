@@ -32,6 +32,7 @@ import com.bigc.general.classes.GoogleAnalyticsHelper;
 import com.bigc.general.classes.Queries;
 import com.bigc.general.classes.Utils;
 import com.bigc.models.ConnectionsModel;
+import com.bigc.models.Users;
 import com.bigc_connect.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -42,6 +43,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends Activity implements OnClickListener {
@@ -180,6 +182,7 @@ public class LoginActivity extends Activity implements OnClickListener {
 
                             gotoHomeScreen();
                             fetchUserTask();
+                            fetchUser();
                         } else {
                             String error = task.getException().toString();
                             String message = "";
@@ -218,7 +221,7 @@ public class LoginActivity extends Activity implements OnClickListener {
     }
 
 
-    private void fetchUserTask(){
+    private void fetchUserTask() {
 
         // TODO: 7/18/2017 fetch user task
         List<ConnectionsModel> connectionsModels = new ArrayList<>();
@@ -226,6 +229,38 @@ public class LoginActivity extends Activity implements OnClickListener {
         //ref.child(DbConstants.TABLE_CONNECTIONS)
         Queries.getUserConnectionsQuery(Preferences.getInstance(getBaseContext()).getUserFromPreference(), false, getApplicationContext());
     }
+
+    PostActivity postActivity = new PostActivity();
+    ArrayList<Users> usersArrayList;
+
+    private void fetchUser() {
+        Query query = Queries.getAllUsers();
+        Utils.showProgress(LoginActivity.this);
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                long count = dataSnapshot.getChildrenCount();
+                usersArrayList = new ArrayList<Users>();
+                for (DataSnapshot data : dataSnapshot.getChildren()) {
+                    String key = data.getKey();
+                    Users user = data.getValue(Users.class);
+                    usersArrayList.add(user);
+                }
+                Utils.hideProgress();
+                Preferences.getInstance(LoginActivity.this).save_list(DbConstants.FETCH_USER, usersArrayList);
+//               postActivity.getAllUsers(usersArrayList);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
+    }
+
 
 /*    private class fetchUsersTask extends AsyncTask<Void, Void, Void> {
 
@@ -279,7 +314,7 @@ public class LoginActivity extends Activity implements OnClickListener {
                     String key = dataSnapshot.getKey();
                     Map<Object, Object> values = (Map<Object, Object>) dataSnapshot.getValue();
 
-                    boolean deactivated= (boolean) values.get(DbConstants.DEACTIVATED);
+                    boolean deactivated = (boolean) values.get(DbConstants.DEACTIVATED);
 
                     Preferences.getInstance(LoginActivity.this).save(DbConstants.NAME, String.valueOf(values.get("name")));
                     Preferences.getInstance(LoginActivity.this).save(DbConstants.EMAIL, String.valueOf(values.get("email")));
@@ -293,11 +328,10 @@ public class LoginActivity extends Activity implements OnClickListener {
                     Preferences.getInstance(LoginActivity.this).save(DbConstants.VISIBILITY, Integer.parseInt(String.valueOf(values.get("visibility"))));
                     Utils.hideProgress();
 
-                    if (deactivated)
-                    {
+                    if (deactivated) {
                         passwordView.setText("");
                         showDeactivatedDialog();
-                    }else{
+                    } else {
                         startActivity(new Intent(com.bigc.activities.LoginActivity.this, HomeScreen.class));
                         finish();
                     }
