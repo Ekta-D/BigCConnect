@@ -302,7 +302,15 @@ public class NewsFeedsAdapter extends BaseAdapter {
                         DbConstants.Flags.NewsFeed);
             }
         });
-//
+
+        holder.loveCountView.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                 onClickLove(user_post, holder.loveCountView);
+              //  Utils.showToast(context.getActivity(), "hey");
+            }
+        });
         return convertView;
     }
 
@@ -337,52 +345,18 @@ public class NewsFeedsAdapter extends BaseAdapter {
         } else {
             holder.picView.setImageResource(R.drawable.loading_img);
             holder.picView.setVisibility(View.VISIBLE);
-//            imageLoader.displayImage(posts.getMedia(), holder.picView, imgDisplayOptions,
-//                    new SimpleImageLoadingListener() {
-//                        @Override
-//                        public void onLoadingStarted(String imageUri, View view) {
-//                            holder.picView
-//                                    .setImageResource(R.drawable.loading_img);
-//                            super.onLoadingStarted(imageUri, view);
-//                        }
-//                    });
+
             imageLoader.displayImage(posts.getMedia(), holder.picView, imgDisplayOptions);
             notifyDataSetChanged();
-            holder.loveCountView.setOnClickListener(new View.OnClickListener() {
 
-                @Override
-                public void onClick(View v) {
-                    onClickLove(posts, holder.loveCountView);
-                }
-            });
         }
 
-//        String date = posts.getCreatedAt();
-//        SimpleDateFormat format = new SimpleDateFormat(DbConstants.DATE_FORMAT, Locale.getDefault());
-//        Date createdDate = null;
-//
-//        try {
-//            if (date.contains("T") && date.contains("Z")) {
-//                date.replace("T", "");
-//                date.replace("Z", "");
-//            }
-//            createdDate = format.parse(date);
-//        } catch (ParseException e) {
-//            e.printStackTrace();
-//        }
+
         holder.dateView.setText(Utils.getTimeStringForFeed(
                 context.getActivity(), Utils.convertStringToDate(posts.getCreatedAt())));
 
-        holder.loveCountView.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-                onClickLove(posts, holder.loveCountView);
-                Utils.showToast(context.getActivity(), "love clicked");
-            }
-        });
         holder.optionView.setVisibility(View.VISIBLE);
-        notifyDataSetChanged();
 
     }
 
@@ -408,8 +382,8 @@ public class NewsFeedsAdapter extends BaseAdapter {
         List<String> likes = post.getLikes();
         if (likes == null)
             return false;
-
-        return likes.contains(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        else
+            return likes.contains(FirebaseAuth.getInstance().getCurrentUser().getUid());
     }
 
     public Date getLastItemDate() {

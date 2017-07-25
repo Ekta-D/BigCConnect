@@ -106,6 +106,7 @@
         <ImageView
             android:id="@+id/loveImage"
             android:layout_width="25dp"
+            android:clickable="true"
             android:layout_height="25dp"
             android:src="@drawable/ic_love_colored" />
 
