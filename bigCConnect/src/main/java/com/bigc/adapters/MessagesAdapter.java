@@ -152,29 +152,29 @@ public class MessagesAdapter extends ArrayAdapter<Messages> {
         return new Date();// messages.get(messages.size() - 1).getCreatedAt();
     }
 
-	/*public List<ParseObject> getData() {
+    public List<Messages> getData() {
         return this.messages;
-	}
+    }
 
-	public void addItems(List<ParseObject> messages, boolean atStart) {
+    public void addItems(List<Messages> messages, boolean atStart) {
 
-		if (messages == null)
-			return;
+        if (messages == null)
+            return;
 
-		if (atStart)
-			this.messages.addAll(0, messages);
-		else
-			this.messages.addAll(messages);
+        if (atStart)
+            this.messages.addAll(0, messages);
+        else
+            this.messages.addAll(messages);
 
-		notifyDataSetChanged();
-	}
+        notifyDataSetChanged();
+    }
 
-	public void addItem(ParseObject message) {
-		if (message == null)
-			return;
-		this.messages.add(0, message);
-		notifyDataSetChanged();
-	}*/
+    public void addItem(Messages message) {
+        if (message == null)
+            return;
+        this.messages.add(0, message);
+        notifyDataSetChanged();
+    }
 
     private static class ViewHolder {
         public TextView nameView;

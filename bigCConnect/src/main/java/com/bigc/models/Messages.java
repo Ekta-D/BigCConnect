@@ -15,6 +15,16 @@ public class Messages {
     String user1;
     String user2;
     String media;
+    boolean is_read = false;
+
+    public boolean is_read() {
+        return is_read;
+    }
+
+    public void setIs_read(boolean is_read) {
+        this.is_read = is_read;
+    }
+
 
     public String getUser2() {
         return user2;
@@ -31,7 +41,6 @@ public class Messages {
     public void setUser1(String user1) {
         this.user1 = user1;
     }
-
 
 
     public String getMedia() {

@@ -48,7 +48,7 @@ public class ChatAdapter extends ArrayAdapter<Users> {
                         .getDisplayMetrics()));
     }
 
-	/*public void setData(List<ParseObject> messages) {
+	public void setData(List<Messages> messages) {
         this.messages.clear();
 		if (messages == null)
 			return;
@@ -56,10 +56,10 @@ public class ChatAdapter extends ArrayAdapter<Users> {
 		notifyDataSetChanged();
 	}
 
-	public void addItem(ParseObject message) {
+	public void addItem(Messages message) {
 		this.messages.add(message);
 		notifyDataSetChanged();
-	}*/
+	}
 
     @Override
     public int getCount() {

@@ -92,7 +92,7 @@ public class MessageDetailFragment extends BaseFragment implements
 
         List<Messages> messageList = new ArrayList<>();
         messageList.add(MessageDetailFragment.conversation);
-        adapter = new ChatAdapter(getActivity(),messageList , Preferences.
+        adapter = new ChatAdapter(getActivity(), messageList, Preferences.
                 getInstance(getActivity()).getAllUsers(DbConstants.FETCH_USER));
         //	adapter = new ChatAdapter(getActivity(),	MessageDetailFragment.conversation);
 
@@ -302,25 +302,40 @@ public class MessageDetailFragment extends BaseFragment implements
                 WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
     }
 
-    @Override
-    public boolean onMessageReceive(final Object message, Users user) {
-        /*if (listView != null || adapter != null) {
-            getActivity().runOnUiThread(new Runnable() {
-
-				@Override
-				public void run() {
-					adapter.addItem(message);
-				}
-			});
-			return true;
-		}*/
-        return false;
-    }
+//    @Override
+//    public boolean onMessageReceive(final Object message, Users user) {
+//      if (listView != null || adapter != null) {
+//            getActivity().runOnUiThread(new Runnable() {
+//
+//				@Override
+//				public void run() {
+//					adapter.addItem(message);
+//				}
+//			});
+//			return true;
+//		}
+//        return false;
+//    }
 
     @Override
     public boolean onBackPressed() {
         ((FragmentHolder) getActivity())
                 .replaceFragment(new MessagesFragment());
         return true;
+    }
+
+    @Override
+    public boolean onMessageReceive(final Messages message, Users sender) {
+        if (listView != null || adapter != null) {
+            getActivity().runOnUiThread(new Runnable() {
+
+                @Override
+                public void run() {
+                    adapter.addItem(message);
+                }
+            });
+            return true;
+        }
+        return false;
     }
 }

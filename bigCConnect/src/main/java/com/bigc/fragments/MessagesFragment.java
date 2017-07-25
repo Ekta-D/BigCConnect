@@ -39,6 +39,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
@@ -47,59 +48,60 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MessagesFragment extends BaseFragment implements
-		OnRefreshListener, UploadPostObserver, OnLoadMoreListener,
-		MessageObserver {
+        OnRefreshListener, UploadPostObserver, OnLoadMoreListener,
+        MessageObserver {
 
-	private AdView adView;
-	private MessagesAdapter adapter;
-	private PullToRefreshListView listView;
-	private TextView messageView;
-	private LinearLayout progressParent;
-	private ProgressBar progressView;
+    private AdView adView;
+    private MessagesAdapter adapter;
+    private PullToRefreshListView listView;
+    private TextView messageView;
+    private LinearLayout progressParent;
+    private ProgressBar progressView;
+    DatabaseReference databaseReference;
+    private List<Messages> messages = new ArrayList<>();
 
-	private List<Messages> messages = new ArrayList<>();
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    }
 
-	}
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_messages_layout,
+                container, false);
+        adView = (AdView) view.findViewById(R.id.adView);
+        view.findViewById(R.id.leftBottomOption).setOnClickListener(this);
 
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_messages_layout,
-				container, false);
-		adView = (AdView) view.findViewById(R.id.adView);
-		view.findViewById(R.id.leftBottomOption).setOnClickListener(this);
-
-		messageView = (TextView) view.findViewById(R.id.messageView);
-		progressView = (ProgressBar) view.findViewById(R.id.progressView);
-		progressParent = (LinearLayout) view
-				.findViewById(R.id.messageViewParent);
-		listView = (PullToRefreshListView) view.findViewById(R.id.listview);
-		/*adapter = new MessagesAdapter(getActivity(), messages);
-		listView.setAdapter(adapter);
+        messageView = (TextView) view.findViewById(R.id.messageView);
+        progressView = (ProgressBar) view.findViewById(R.id.progressView);
+        progressParent = (LinearLayout) view
+                .findViewById(R.id.messageViewParent);
+        listView = (PullToRefreshListView) view.findViewById(R.id.listview);
+        /*adapter = new MessagesAdapter(getActivity(), messages);
+        listView.setAdapter(adapter);
 */
-		return view;
-	}
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+        return view;
+    }
 
-	@Override
-	public void onViewCreated(View view, Bundle savedInstanceState) {
-		super.onViewCreated(view, savedInstanceState);
-		GoogleAnalyticsHelper.sendScreenViewGoogleAnalytics(getActivity(),
-				"Messages Screen");
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        GoogleAnalyticsHelper.sendScreenViewGoogleAnalytics(getActivity(),
+                "Messages Screen");
 
-		if (!Preferences.getInstance(getActivity()).getBoolean(
-				Constants.SPLASHES, true)) {
-			view.findViewById(R.id.splashTextView).setVisibility(View.GONE);
-		}
+        if (!Preferences.getInstance(getActivity()).getBoolean(
+                Constants.SPLASHES, true)) {
+            view.findViewById(R.id.splashTextView).setVisibility(View.GONE);
+        }
 
-		listView.setOnRefreshListener(this);
-		// listView.setOnLoadMoreListener(this);
+        listView.setOnRefreshListener(this);
+        // listView.setOnLoadMoreListener(this);
 
-		AdRequest adRequest = new AdRequest.Builder().build();
-		adView.loadAd(adRequest);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
 
 //		listView.setOnItemClickListener(new OnItemClickListener() {
 //
@@ -245,7 +247,7 @@ public class MessagesFragment extends BaseFragment implements
         });
 
 		/*ParseQuery<ParseObject> query = Queries
-				.getConversationsQuery(fromCache);
+                .getConversationsQuery(fromCache);
 
 		query.findInBackground(new FindCallback<ParseObject>() {
 
@@ -282,7 +284,7 @@ public class MessagesFragment extends BaseFragment implements
 
 			}
 		});*/
-	}
+    }
 
     private void executeReceiveQuery(Query query) {
         query.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -294,26 +296,26 @@ public class MessagesFragment extends BaseFragment implements
                         messages.add(message);
                     }
 
-				}
-				/*if (messages.size() == 0) {
-					// Load data from network
+                }
+                /*if (messages.size() == 0) {
+                    // Load data from network
 					loadData(false);
 					return;
 				}*/
 
 				/*new completeMessageLoadingsTask(messages, false, false)
-						.execute();*/
-			}
+                        .execute();*/
+            }
 
-			@Override
-			public void onCancelled(DatabaseError databaseError) {
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
 
-			}
-		});
-	}
+            }
+        });
+    }
 
 	/*private class completeMessageLoadingsTask extends
-			AsyncTask<Void, Void, List<ParseObject>> {
+            AsyncTask<Void, Void, List<ParseObject>> {
 
 		List<ParseObject> messages;
 		boolean isMoreLoading;
@@ -367,7 +369,7 @@ public class MessagesFragment extends BaseFragment implements
 		}
 	}*/
 
-	private void populateList(List<Messages> messages) {
+    private void populateList(List<Messages> messages) {
 
         if (messages == null) {
             showError(Utils.loadString(getActivity(),
@@ -436,17 +438,17 @@ public class MessagesFragment extends BaseFragment implements
         }
 
 		/*try {
-			post.getParseUser(DbConstants.USER).fetchIfNeeded();
+            post.getParseUser(DbConstants.USER).fetchIfNeeded();
 			post.pin(Constants.TAG_MESSAGES);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}*/
 
-		if (messages != null)
-			//messages.add(0, post);
+        if (messages != null)
+            //messages.add(0, post);
 
-		if (listView == null)
-			return;
+            if (listView == null)
+                return;
 
 	/*	getActivity().runOnUiThread(new Runnable() {
 
@@ -463,70 +465,124 @@ public class MessagesFragment extends BaseFragment implements
 				}
 			}
 		});*/
-	}
+    }
+
+//   @Override
+//    public boolean onMessageReceive(Object message, Users sender) {
+//        Log.e("onMessageReceive", "Invoked");
+//       if (adapter != null && listView != null) {
+//            final List<ParseObject> data = new ArrayList<ParseObject>();
+//			data.addAll(adapter.getData());
+//			String senderId = sender == null ? message.getParseUser(
+//					DbConstants.SENDER).getObjectId() : sender.getObjectId();
+//			boolean found = false;
+//			for (int i = 0; i < data.size(); i++) {
+//				if (data.get(i).getParseUser(DbConstants.USER1).getObjectId()
+//						.equals(senderId)
+//						|| data.get(i).getParseUser(DbConstants.USER2)
+//								.getObjectId().equals(senderId)) {
+//					Log.e("Object", "Found");
+//					found = true;
+//					ParseObject obj = data.get(i);
+//					obj.put(DbConstants.MESSAGE,
+//							message.getString(DbConstants.MESSAGE));
+//					obj.put(DbConstants.IS_READ, false);
+//					data.remove(i);
+//					data.add(0, obj);
+//				}
+//			}
+//			if (!found) {
+//				Log.e("New", "Add");
+//				ParseObject o = new ParseObject(DbConstants.TABLE_CONVERSATION);
+//				o.put(DbConstants.MESSAGE,
+//						message.getString(DbConstants.MESSAGE));
+//
+//				o.put(DbConstants.USER1,
+//						message.getParseUser(DbConstants.USER1));
+//				o.put(DbConstants.USER2,
+//						message.getParseUser(DbConstants.USER2));
+//				data.add(0, o);
+//			}
+//			getActivity().runOnUiThread(new Runnable() {
+//
+//				@Override
+//				public void run() {
+//					Log.e("Adapter", "Updated -- " + data.size());
+//					adapter.setData(data);
+//					if (data.size() == 1) {
+//						listView.setVisibility(View.VISIBLE);
+//						progressParent.setVisibility(View.GONE);
+//					}
+//				}
+//			});
+//			return true;
+//		}
+//		return false;
+//	}
 
     @Override
-    public boolean onMessageReceive(Object message, Users sender) {
+    public boolean onBackPressed() {
+        ((FragmentHolder) getActivity())
+                .replaceFragment(new NewsFeedFragment());
+        return true;
+    }
+
+    @Override
+    public void onEditDone(int position, Object post) {
+        Log.e(MessagesFragment.class.getSimpleName(), "onEditDone");
+    }
+
+    @Override
+    public boolean onMessageReceive(Messages message, Users sender) {
+
         Log.e("onMessageReceive", "Invoked");
-        /*if (adapter != null && listView != null) {
-            final List<ParseObject> data = new ArrayList<ParseObject>();
-			data.addAll(adapter.getData());
-			String senderId = sender == null ? message.getParseUser(
-					DbConstants.SENDER).getObjectId() : sender.getObjectId();
-			boolean found = false;
-			for (int i = 0; i < data.size(); i++) {
-				if (data.get(i).getParseUser(DbConstants.USER1).getObjectId()
-						.equals(senderId)
-						|| data.get(i).getParseUser(DbConstants.USER2)
-								.getObjectId().equals(senderId)) {
-					Log.e("Object", "Found");
-					found = true;
-					ParseObject obj = data.get(i);
-					obj.put(DbConstants.MESSAGE,
-							message.getString(DbConstants.MESSAGE));
-					obj.put(DbConstants.IS_READ, false);
-					data.remove(i);
-					data.add(0, obj);
-				}
-			}
-			if (!found) {
-				Log.e("New", "Add");
-				ParseObject o = new ParseObject(DbConstants.TABLE_CONVERSATION);
-				o.put(DbConstants.MESSAGE,
-						message.getString(DbConstants.MESSAGE));
+        if (adapter != null && listView != null) {
 
-				o.put(DbConstants.USER1,
-						message.getParseUser(DbConstants.USER1));
-				o.put(DbConstants.USER2,
-						message.getParseUser(DbConstants.USER2));
-				data.add(0, o);
-			}
-			getActivity().runOnUiThread(new Runnable() {
+            final List<Messages> data = new ArrayList<Messages>();
+            data.addAll(adapter.getData());
 
-				@Override
-				public void run() {
-					Log.e("Adapter", "Updated -- " + data.size());
-					adapter.setData(data);
-					if (data.size() == 1) {
-						listView.setVisibility(View.VISIBLE);
-						progressParent.setVisibility(View.GONE);
-					}
-				}
-			});
-			return true;
-		}*/
-		return false;
-	}
+            String senderId = sender == null ? message.getSender() : sender.getObjectId();
+            boolean found = false;
+            for (int i = 0; i < data.size(); i++) {
+                if (data.get(i).getUser1()
+                        .equals(senderId)
+                        || data.get(i).getUser2().equals(senderId)) {
+                    Log.e("Object", "Found");
+                    found = true;
+                    Messages obj = data.get(i);
+                    obj.setMessage(message.getMessage());
+                    obj.setIs_read(false);
+                    data.remove(i);
+                    data.add(0, obj);
+                    data.remove(i);
+                    data.add(0, obj);
+                }
+            }
 
-	@Override
-	public boolean onBackPressed() {
-		((FragmentHolder) getActivity())
-				.replaceFragment(new NewsFeedFragment());
-		return true;
-	}
+            if (!found) {
+                Log.e("New", "Add");
+                Messages message_object = new Messages();
+                message_object.setMessage(message.getMessage());
+                message_object.setUser1(message.getUser1());
+                message_object.setUser2(message.getUser2());
+                data.add(0, message_object);
 
-	@Override
-	public void onEditDone(int position, Object post) {
-		Log.e(MessagesFragment.class.getSimpleName(), "onEditDone");
-	}
+                String objectId = databaseReference.child(DbConstants.TABLE_CONVERSATION).push().getKey();
+                databaseReference.child(DbConstants.TABLE_CONVERSATION).child(objectId).setValue(message_object);
+            }
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Log.e("Adapter", "Updated -- " + data.size());
+                    adapter.setData(data);
+                    if (data.size() == 1) {
+                        listView.setVisibility(View.VISIBLE);
+                        progressParent.setVisibility(View.GONE);
+
+                    }
+                }
+            });
+        }
+        return false;
+    }
 }

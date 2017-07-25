@@ -495,27 +495,26 @@ public class FragmentStoryDetail extends BaseFragment implements
             case R.id.loveImage:
                 GoogleAnalyticsHelper.setClickedAction(getActivity(),
                         "Story-Love Button");
-//                if (!isLiked(story)) {
-//                    loveCountView.setText(String.valueOf(story
-//                            .getList(DbConstants.LIKES) == null ? 1 : story
-//                            .getList(DbConstants.LIKES).size() + 1));
-//                    story.add(DbConstants.LIKES, ParseUser.getCurrentUser()
-//                            .getObjectId());
-//                    PostManager.getInstance().likeStory(story);
-//                }
-                //// TODO: 17-07-2017  
+                if (!isLiked(story)) {
+                    loveCountView.setText(String.valueOf(story.getLikes() == null ? 1 : story.getLikes().size() + 1));
+                    ArrayList<String> likes = new ArrayList<>();
+                    likes.add(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                    story.setLikes(likes);
+                    PostManager.getInstance().likeStory(likes, story);
+                }
+
 
         }
     }
 
-    private boolean isLiked(Posts post) {
+    private boolean isLiked(Stories story) {
 // TODO: 7/18/2017 work on likes
-       /* List<String> likes = post.getList(DbConstants.LIKES);
+        List<String> likes = story.getLikes();
         if (likes == null)
             return false;
+        else
+            return likes.contains(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
-        return likes.contains(ParseUser.getCurrentUser().getObjectId());*/
-        return false;
     }
 
     @Override

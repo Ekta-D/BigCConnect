@@ -31,6 +31,7 @@ import com.bigc.models.Tributes;
 import com.bigc.models.Users;
 import com.bigc.views.NestedListView;
 import com.bigc_connect.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -397,26 +398,26 @@ public class PostDetailFragment extends BaseFragment implements
                 if (!isConnected)
                     return;
 
-//                if (!isLiked(post)) {
-//                    loveCountView.setText(String.valueOf(post
-//                            .getList(DbConstants.LIKES) == null ? 1 : post.getList(
-//                            DbConstants.LIKES).size() + 1));
-//                    post.add(DbConstants.LIKES, ParseUser.getCurrentUser()
-//                            .getObjectId());
-//                    PostManager.getInstance().likePost(post);
-//                }
+                if (!isLiked(post)) {
+                    loveCountView.setText(String.valueOf(post
+                            .getLikes() == null ? 1 : post.getLikes().size() + 1));
+                    ArrayList<String> like = new ArrayList<>();
+                    like.add(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                    post.setLikes(like);
+                    PostManager.getInstance().likePost(like, post);
+                }
 
         }
     }
 
-/*    private boolean isLiked(ParseObject post) {
+    private boolean isLiked(Posts post) {
 
-        List<String> likes = post.getList(DbConstants.LIKES);
+        List<String> likes = post.getLikes();
         if (likes == null)
             return false;
 
-        return likes.contains(ParseUser.getCurrentUser().getObjectId());
-    }*/
+        return likes.contains(FirebaseAuth.getInstance().getCurrentUser().getUid());
+    }
 
     @Override
     public String getName() {
@@ -560,10 +561,10 @@ public class PostDetailFragment extends BaseFragment implements
 //                getActivity(),
 //                post.getParseFile(DbConstants.MEDIA) == null ? Constants.OPERATION_STATUS
 //                        : Constants.OPERATION_PHOTO, position, post);
-        NewsFeedFragment.currentObject = (Posts)post;
+        NewsFeedFragment.currentObject = (Posts) post;
         Utils.launchEditView(
                 getActivity(),
-                ((Posts)post).getMedia() == null ? Constants.OPERATION_STATUS
+                ((Posts) post).getMedia() == null ? Constants.OPERATION_STATUS
                         : Constants.OPERATION_PHOTO, true, position, (Posts) post);
     }
 

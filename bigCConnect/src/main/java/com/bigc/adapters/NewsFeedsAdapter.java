@@ -37,6 +37,7 @@ import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListene
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -100,7 +101,6 @@ public class NewsFeedsAdapter extends BaseAdapter {
         return position;
 
     }
-
 
 
     @Override
@@ -270,7 +270,7 @@ public class NewsFeedsAdapter extends BaseAdapter {
                         handler = new PopupOptionHandler() {
                             @Override
                             public void onDelete(int position, Object post) {
-                                PostManager.getInstance().deletePost((Posts)post);
+                                PostManager.getInstance().deletePost((Posts) post);
 //                                if (handler != null)
 //                                    handler.onDelete(position, post);
 //                                ((HomeScreen) context.getActivity()).onBackPressed();
@@ -306,7 +306,7 @@ public class NewsFeedsAdapter extends BaseAdapter {
         return convertView;
     }
 
-    public void setValues(final BaseFragment context, Map<Object, Object> user_values, final ViewHolder holder, Posts posts) {
+    public void setValues(final BaseFragment context, Map<Object, Object> user_values, final ViewHolder holder, final Posts posts) {
         holder.headingOne.setText(String.valueOf(user_values.get(DbConstants.NAME)));
         int type = Integer.parseInt(String.valueOf(user_values.get(DbConstants.TYPE)));
         int ribbon = Integer.parseInt(String.valueOf(user_values.get(DbConstants.RIBBON)));
@@ -348,6 +348,13 @@ public class NewsFeedsAdapter extends BaseAdapter {
 //                    });
             imageLoader.displayImage(posts.getMedia(), holder.picView, imgDisplayOptions);
             notifyDataSetChanged();
+            holder.loveCountView.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    onClickLove(posts, holder.loveCountView);
+                }
+            });
         }
 
 //        String date = posts.getCreatedAt();
@@ -370,7 +377,7 @@ public class NewsFeedsAdapter extends BaseAdapter {
 
             @Override
             public void onClick(View v) {
-//                onClickLove(post, holder.loveCountView);
+                onClickLove(posts, holder.loveCountView);
                 Utils.showToast(context.getActivity(), "love clicked");
             }
         });
@@ -379,31 +386,31 @@ public class NewsFeedsAdapter extends BaseAdapter {
 
     }
 
-//    private void onClickLove(ParseObject post, TextView countView) {
-//        if (!isClickable)
-//            return;
-//
-//        if (!isLiked(post)) {
-//            countView
-//                    .setText(String
-//                            .valueOf(post.getList(DbConstants.LIKES) == null ? 1
-//                                    : post.getList(DbConstants.LIKES).size() + 1));
-//            post.add(DbConstants.LIKES, ParseUser.getCurrentUser()
-//                    .getObjectId());
-//            Log.e("Likes", post.getList(DbConstants.LIKES).size() + "--");
-//            PostManager.getInstance().likePost(post);
-//        }
-//
-//    }
+    private void onClickLove(Posts post, TextView countView) {
+        if (!isClickable)
+            return;
 
-//    private boolean isLiked(ParseObject post) {
-//
-//        List<String> likes = post.getList(DbConstants.LIKES);
-//        if (likes == null)
-//            return false;
-//
-//        return likes.contains(ParseUser.getCurrentUser().getObjectId());
-//    }
+        if (!isLiked(post)) {
+            countView.setText(String.valueOf(post.getLikes() == null ? 1
+                    : post.getLikes().size() + 1));
+            ArrayList<String> likes = new ArrayList<>();
+            likes.add(FirebaseAuth.getInstance().getCurrentUser().getUid());
+            post.setLikes(likes);
+
+            Log.e("Likes", post.getLikes().size() + "--");
+            PostManager.getInstance().likePost(likes, post);
+        }
+
+    }
+
+    private boolean isLiked(Posts post) {
+
+        List<String> likes = post.getLikes();
+        if (likes == null)
+            return false;
+
+        return likes.contains(FirebaseAuth.getInstance().getCurrentUser().getUid());
+    }
 
     public Date getLastItemDate() {
         if (posts.size() == 0)
