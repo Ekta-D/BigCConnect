@@ -157,11 +157,20 @@ public class ProfileFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
         GoogleAnalyticsHelper.sendScreenViewGoogleAnalytics(getActivity(),
                 "Profile Screen");
-
+        if(user==null) {
 //        nameView.setText(ProfileFragment.user.getString(DbConstants.NAME));
-        nameView.setText(Preferences.getInstance(getActivity()).getString(DbConstants.NAME));
+            populateViews(Preferences.getInstance(getContext()).getUserFromPreference());
+        } else {
+            populateViews(user);
+        }
+
+
+    }
+
+    private void populateViews(Users user) {
+        nameView.setText(user.getName());
 //        String location = ProfileFragment.user.getString(DbConstants.LOCATION);
-        String location = Preferences.getInstance(getActivity()).getString(DbConstants.LOCATION);
+        String location = user.getLocation();
         location = location == null ? "-" : location;
 
         liveView.setText(location);
@@ -169,7 +178,7 @@ public class ProfileFragment extends BaseFragment {
 
         firebaseUser = firebaseAuth.getCurrentUser();
 //        if (ParseUser.getCurrentUser().getObjectId().equals(user.getObjectId())) {
-        if (firebaseUser.getUid().equalsIgnoreCase(Preferences.getInstance(getActivity()).getString(DbConstants.ID))) {
+        if (user.getObjectId().equalsIgnoreCase(Preferences.getInstance(getActivity()).getString(DbConstants.ID))) {
             connectionView.setVisibility(View.GONE);
             settingsView.setVisibility(View.VISIBLE);
             notebookView.setVisibility(View.VISIBLE);
@@ -192,13 +201,13 @@ public class ProfileFragment extends BaseFragment {
 //                    .ordinal()
 //                    && user.getInt(DbConstants.TYPE) == Constants.USER_TYPE.SUPPORTER
 //                    .ordinal())
-            if (Preferences.getInstance(getActivity()).getInt(DbConstants.TYPE) == 1) {
+            if (user.getType() == 1) {
                 connectionView.setVisibility(View.GONE);
             } else {
                 // TODO: 7/13/2017 Get if the user if a connection or not or is connection request is sent or received
 
                 DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-                mDatabase.child(DbConstants.TABLE_CONNECTIONS).equalTo(Preferences.getInstance(getActivity()).getString(DbConstants.ID)).addListenerForSingleValueEvent(new ValueEventListener() {
+                mDatabase.child(DbConstants.TABLE_CONNECTIONS).equalTo(user.getObjectId()).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         if (dataSnapshot != null) {
@@ -255,7 +264,7 @@ public class ProfileFragment extends BaseFragment {
 
 //        if (ProfileFragment.user.getInt(DbConstants.TYPE) == Constants.USER_TYPE.SUPPORTER
 //                .ordinal())
-        if (Preferences.getInstance(getActivity()).getInt(DbConstants.TYPE) == 1)
+        if (user.getType() == 1)
 
         {
             stageParentView.setVisibility(View.GONE);
@@ -286,12 +295,12 @@ public class ProfileFragment extends BaseFragment {
             typeView.setText(type);
 
 //            int ribbon = ProfileFragment.user.getInt(DbConstants.RIBBON);
-            int ribbon = Preferences.getInstance(getActivity()).getInt(DbConstants.RIBBON);
+            int ribbon = user.getRibbon();
             if (ribbon >= 0) {
 
 //                if (ProfileFragment.user.getInt(DbConstants.TYPE) == Constants.USER_TYPE.FIGHTER
 //                        .ordinal())
-                if (Preferences.getInstance(getActivity()).getInt(DbConstants.TYPE) == 2) {
+                if (user.getRibbon() == 2) {
                     ribbonView.setImageResource(Utils.fighter_ribbons[ribbon]);
                 } else {
                     ribbonView.setImageResource(Utils.survivor_ribbons[ribbon]);
@@ -309,8 +318,8 @@ public class ProfileFragment extends BaseFragment {
 //
 //                            getUrl();
 //
-        if (Preferences.getInstance(getActivity()).getString(DbConstants.PROFILE_PICTURE) != null)
-            url = Preferences.getInstance(getActivity()).getString(DbConstants.PROFILE_PICTURE);
+        if (user.getProfile_picture() != null)
+            url = user.getProfile_picture();
 
         if (url != null && url.length() > 0)
             ImageLoader.getInstance().displayImage(url, picView,
@@ -320,8 +329,6 @@ public class ProfileFragment extends BaseFragment {
             settingsView.setOnClickListener(this);
         else
             settingsView.setVisibility(View.INVISIBLE);
-
-
     }
 
     private void initializeTempFile() {

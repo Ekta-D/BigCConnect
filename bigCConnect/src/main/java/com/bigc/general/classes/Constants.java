@@ -6,7 +6,7 @@ public class Constants {
         SURVIVOR, SUPPORTER, FIGHTER
     }
 
-    public static final int IS_SURVIVO = 0;
+    public static final int IS_SURVIVOR = 0;
     public static final int IS_SUPPORTER = 1;
     public static final int IS_FIGHTER = 2;
 

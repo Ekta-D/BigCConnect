@@ -112,7 +112,7 @@ public class TributesAdapter extends ArrayAdapter<Tributes> implements PopupOpti
                                         : Utils.survivor_ribbons[dataSnapshot.getValue(Users.class).getRibbon()]);
                     }
 
-                    if (dataSnapshot.getValue(Users.class).getProfile_picture() != null)
+                    if (dataSnapshot.getValue(Users.class).getProfile_picture() != null && !dataSnapshot.getValue(Users.class).getProfile_picture().equalsIgnoreCase(""))
                         ImageLoader.getInstance().displayImage(
                                 user.getProfile_picture(),
                                 holder.profileView, Utils.normalDisplayOptions,

@@ -139,13 +139,13 @@ public class Utils {
     public static final DisplayImageOptions normalDisplayOptions = new DisplayImageOptions.Builder()
             .cacheInMemory(true).cacheOnDisk(true).build();
 
-    public static boolean isLiked(Posts post) {
+    public static boolean isLiked(Object post) {
 
-       /* List<String> likes = post.getList(DbConstants.LIKES);
+        List<String> likes = ((Tributes)post).getLikes();
         if (likes == null)
-            return false;*/
+            return false;
 
-        return false;//likes.contains(ParseUser.getCurrentUser().getObjectId());
+        return likes.contains(FirebaseAuth.getInstance().getCurrentUser().getUid());
     }
 
     public static String getIpAddress() {

@@ -126,15 +126,25 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
                 // holder.ribbonView.setImageResource(R.drawable.ic_launcher);
             }
 
+            // TODO: 7/24/2017 check this
             if (/*(isSupporterUser && supporter)
                     || */FirebaseAuth.getInstance().getCurrentUser().getUid()
                     .equals(user.getObjectId())) {
                 holder.addOption.setVisibility(View.GONE);
             } else {
                 holder.addOption.setVisibility(View.VISIBLE);
-                if (holder.indexInNewAddedConnections >= 0) {
-                    holder.addOption
-                            .setImageResource(R.drawable.ic_connect_pending);
+                if(Preferences.getInstance(getContext()).getLocalConnections().get(0).contains(user)){
+                    holder.addOption.setImageResource(R.drawable.ic_connected);
+                    holder.addOption.setContentDescription(TAG_CONNECTED);
+                } else if (Preferences.getInstance(getContext()).getLocalConnections().get(1).contains(user)) {
+                    holder.addOption.setImageResource(R.drawable.ic_connect_pending);
+                    holder.addOption.setContentDescription(TAG_WAITING);
+                } else {
+                    holder.addOption.setImageResource(R.drawable.ic_connect);
+                    holder.addOption.setContentDescription(TAG_NOT_CONNECTED);
+                }
+                /*if (holder.indexInNewAddedConnections >= 0) {
+                    holder.addOption.setImageResource(R.drawable.ic_connect_pending);
                     holder.addOption.setContentDescription(TAG_WAITING);
 
                 } else if (holder.indexInActiveConnections >= 0
@@ -151,7 +161,7 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
                 } else {
                     holder.addOption.setImageResource(R.drawable.ic_connect);
                     holder.addOption.setContentDescription(TAG_NOT_CONNECTED);
-                }
+                }*/
 
                 holder.addOption.setOnClickListener(new OnClickListener() {
 
@@ -159,7 +169,7 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
                     public void onClick(View v) {
                         if (v.getContentDescription().toString()
                                 .equals(TAG_NOT_CONNECTED)) {
-                            // TODO: 7/17/2017 Send add connection request
+                            // Completed: 7/17/2017 Send add connection request
                             checkAddConnectionRequest(user, FirebaseAuth.getInstance().getCurrentUser().getUid());
 
                             if (holder.indexInRemovedConnections < 0) {
@@ -177,7 +187,7 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
                                     .setImageResource(R.drawable.ic_connect_pending);
                         } else if(v.getContentDescription().toString()
                                 .equals(TAG_WAITING)){
-                            /*if (holder.indexInNewAddedConnections < 0) {
+                            if (holder.indexInNewAddedConnections < 0) {
                                 removedConnections.add(data.get(position));
                                 holder.indexInRemovedConnections = removedConnections
                                         .size() - 1;
@@ -190,10 +200,12 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
                             holder.addOption
                                     .setContentDescription(TAG_NOT_CONNECTED);
                             holder.addOption
-                                    .setImageResource(R.drawable.ic_connect);*/
+                                    .setImageResource(R.drawable.ic_connect);
                         } else if(v.getContentDescription().toString()
                                 .equals(TAG_CONNECTED)){
-                            /*if (holder.indexInNewAddedConnections < 0) {
+
+                            // TODO: 7/24/2017 remove connection 
+                            if (holder.indexInNewAddedConnections < 0) {
                                 removedConnections.add(data.get(position));
                                 holder.indexInRemovedConnections = removedConnections
                                         .size() - 1;
@@ -206,7 +218,7 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
                             holder.addOption
                                     .setContentDescription(TAG_NOT_CONNECTED);
                             holder.addOption
-                                    .setImageResource(R.drawable.ic_connect);*/
+                                    .setImageResource(R.drawable.ic_connect);
                         }
                     }
                 });

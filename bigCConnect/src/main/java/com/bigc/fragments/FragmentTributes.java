@@ -189,51 +189,97 @@ public class FragmentTributes extends BaseFragment implements
 		});*/
 
 
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_TRIBUTE);
+        final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_TRIBUTE);
         Query query = databaseReference.orderByChild(DbConstants.FROM).equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
-       /* query.addValueEventListener(new ValueEventListener() {
+        query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 if (dataSnapshot.exists()) {
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                        tributesTemp.add(snapshot.getValue(Tributes.class));
+                        tributesHashMap.put(snapshot.getKey(), snapshot.getValue(Tributes.class));
                     }
-                    *//*adapter.notifyDataSetChanged();
-                    stopProgress();*//*
+                   /* adapter.notifyDataSetChanged();
 
                     //if (isMoreLoading) {
                     // Log.e("new posts", posts.size() + "--");
                     boolean isRecent = true;
-                    adapter.addItems(tributesTemp, isRecent);
+                    adapter.addItems(tributesHashMap.values(), isRecent);
                     if (!isRecent) {
                         listView.onLoadMoreComplete();
                     } else {
-                        populateList(tributesTemp);
-                    }
+                        populateList(tributesHashMap.values());
+                    }*/
                 } else {
-                    *//*if (listView != null) {
+                    /*if (listView != null) {
                         listView.onLoadMoreComplete();
-                        Toast.makeText(
+                        *//*Toast.makeText(
                                 getActivity(),
                                 Utils.loadString(getActivity(),
                                         R.string.networkFailureMessage),
-                                Toast.LENGTH_LONG).show();
-                    }*//*
+                                Toast.LENGTH_LONG).show();*//*
+                    }
                     showError(Utils.loadString(getActivity(),
-                            R.string.noTributeMessage));
+                            R.string.noTributeMessage));*/
                 }
+                checkToTributes(databaseReference, FirebaseAuth.getInstance().getCurrentUser().getUid());
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 throw databaseError.toException();
             }
-        });*/
+        });
 
         query.addChildEventListener(childEventListener);
 
+    }
+
+    private void checkToTributes(DatabaseReference databaseReference, String uid) {
+        Query query = databaseReference.orderByChild(DbConstants.TO).equalTo(uid);
+
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        tributesHashMap.put(snapshot.getKey(), snapshot.getValue(Tributes.class));
+                    }
+                    adapter.notifyDataSetChanged();
+
+                    //if (isMoreLoading) {
+                    // Log.e("new posts", posts.size() + "--");
+                    boolean isRecent = true;
+                    adapter.addItems(tributesHashMap.values(), isRecent);
+                    if (!isRecent) {
+                        listView.onLoadMoreComplete();
+                    } else {
+                        populateList(tributesHashMap.values());
+                    }
+                } else {
+                    if (listView != null) {
+                        listView.onLoadMoreComplete();
+                        /*Toast.makeText(
+                                getActivity(),
+                                Utils.loadString(getActivity(),
+                                        R.string.networkFailureMessage),
+                                Toast.LENGTH_LONG).show();*/
+                    }
+                    showError(Utils.loadString(getActivity(),
+                            R.string.noTributeMessage));
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                throw databaseError.toException();
+            }
+        });
+
+        query.addChildEventListener(childEventListener);
     }
 
     private void populateList(Collection<Tributes> tributes) {
@@ -334,7 +380,10 @@ public class FragmentTributes extends BaseFragment implements
 
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
-
+                if(dataSnapshot.exists()){
+                    tributesHashMap.remove(dataSnapshot.getKey());
+                    adapter.notifyDataSetChanged();
+                }
             }
 
             @Override

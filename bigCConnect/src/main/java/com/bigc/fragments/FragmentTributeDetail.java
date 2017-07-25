@@ -36,8 +36,11 @@ import com.bigc.models.Users;
 import com.bigc.views.NestedListView;
 import com.bigc_connect.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -73,6 +76,7 @@ public class FragmentTributeDetail extends BaseFragment implements
 	private ImageView optionView;
 	List<Comments> comment_list;
 	long comment_count;
+	private Users owner = null;
 
 	public FragmentTributeDetail(PopupOptionHandler handler,
 			Tributes tribute, int position) {
@@ -145,8 +149,32 @@ public class FragmentTributeDetail extends BaseFragment implements
 		listView.setAdapter(adapter);
 
 		if (getActivity().getIntent()!=null) {
-			populateData();
+			//populateData();
+			DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_TRIBUTE);
+			Query query = databaseReference.child(tribute.getObjectId());
+			query.addValueEventListener(new ValueEventListener() {
+				@Override
+				public void onDataChange(DataSnapshot dataSnapshot) {
+
+					Log.i("update_tributes", dataSnapshot.toString());
+					if(dataSnapshot!=null){
+						tribute = dataSnapshot.getValue(Tributes.class);
+						populateData();
+					} else {
+						Log.i("update_tributes", "i was removed");
+						onBackPressed();
+					}
+				}
+
+				@Override
+				public void onCancelled(DatabaseError databaseError) {
+
+				}
+			});
+
+
 		} else {
+
 			/*tribute.fetchIfNeededInBackground(new GetCallback<ParseObject>() {
 
 				@Override
@@ -161,34 +189,32 @@ public class FragmentTributeDetail extends BaseFragment implements
 	}
 
 	private void populateOwnerFields(Users owner) {
-		/*headingOne.setText(owner.getString(DbConstants.NAME));
-		if (owner.getInt(DbConstants.TYPE) == Constants.USER_TYPE.SUPPORTER
+
+		headingOne.setText(owner.getName());
+		if (owner.getType() == Constants.USER_TYPE.SUPPORTER
 				.ordinal()) {
 			ribbonView.setImageResource(R.drawable.ribbon_supporter);
-		} else if (owner.getInt(DbConstants.TYPE) == Constants.USER_TYPE.FIGHTER
+		} else if (owner.getType() == Constants.USER_TYPE.FIGHTER
 				.ordinal()) {
 			ribbonView
-					.setImageResource(owner.getInt(DbConstants.RIBBON) < 0 ? R.drawable.ic_launcher
+					.setImageResource(owner.getRibbon() < 0 ? R.drawable.ic_launcher
 							: Utils.fighter_ribbons[owner
-									.getInt(DbConstants.RIBBON)]);
+									.getRibbon()]);
 		} else {
 			ribbonView
-					.setImageResource(owner.getInt(DbConstants.RIBBON) < 0 ? R.drawable.ic_launcher
+					.setImageResource(owner.getRibbon() < 0 ? R.drawable.ic_launcher
 							: Utils.survivor_ribbons[owner
-									.getInt(DbConstants.RIBBON)]);
+									.getRibbon()]);
 		}
-*/
-		// else {
-		// ribbonView
-		// .setImageResource(owner.getInt(DbConstants.RIBBON) < 0 ?
-		// R.drawable.ic_launcher
-		// : Utils.survivor_ribbons[owner
-		// .getInt(DbConstants.RIBBON)]);
-		// }
+		 /*else {
+		 ribbonView
+		 .setImageResource(owner.getInt(DbConstants.RIBBON) < 0 ? R.drawable.ic_launcher
+		 : Utils.survivor_ribbons[owner.getInt(DbConstants.RIBBON)]);
+		 }*/
 	}
 
 	private void populateData() {
-		/*ParseUser owner = tribute.getParseUser(DbConstants.TO);
+		/*ParseUser owner = tribute.getTo();
 		if (!owner.isDataAvailable()) {
 			owner.fetchIfNeededInBackground(new GetCallback<ParseUser>() {
 
@@ -200,40 +226,60 @@ public class FragmentTributeDetail extends BaseFragment implements
 		} else {
 			populateOwnerFields(owner);
 		}*/
+		if(tribute!=null) {
+			FirebaseDatabase.getInstance().getReference().child(DbConstants.USERS).child(tribute.getTo()).addListenerForSingleValueEvent(new ValueEventListener() {
+				@Override
+				public void onDataChange(DataSnapshot dataSnapshot) {
+					if (dataSnapshot != null) {
+						owner = dataSnapshot.getValue(Users.class);
+						populateOwnerFields(dataSnapshot.getValue(Users.class));
+					}
 
-		if (tribute.getMedia() != null) {
-			picView.setVisibility(View.VISIBLE);
-			ImageLoader.getInstance().displayImage(
-					tribute.getMedia(), picView,
-					Utils.normalDisplayOptions,
-					new SimpleImageLoadingListener() {
-						@Override
-						public void onLoadingStarted(String imageUri, View view) {
-							picView.setImageResource(R.drawable.loading_img);
-							super.onLoadingStarted(imageUri, view);
-						}
-					});
+				}
+
+				@Override
+				public void onCancelled(DatabaseError databaseError) {
+
+				}
+			});
+
+			if (tribute.getMedia() != null && !tribute.getMedia().equalsIgnoreCase("")) {
+				picView.setVisibility(View.VISIBLE);
+				ImageLoader.getInstance().displayImage(
+						tribute.getMedia(), picView,
+						Utils.normalDisplayOptions,
+						new SimpleImageLoadingListener() {
+							@Override
+							public void onLoadingStarted(String imageUri, View view) {
+								picView.setImageResource(R.drawable.loading_img);
+								super.onLoadingStarted(imageUri, view);
+							}
+						});
+			} else {
+				picView.setVisibility(View.GONE);
+			}
+
+			loveCountView
+					.setText(String
+							.valueOf(tribute.getLikes() == null ? 0
+									: tribute.getLikes().size()));
+
+			commentCountView.setText(String.valueOf(tribute
+					.getComments()));
+
+			statusView.setText(tribute.getMessage());
+			dateView.setText(Utils.getTimeStringForFeed(getActivity(),
+					Utils.convertStringToDate(tribute.getCreatedAt())));
+
+			ribbonView.setOnClickListener(this);
+			headingOne.setOnClickListener(this);
+			loveCountView.setOnClickListener(this);
+
+			loadComments();
 		} else {
-			picView.setVisibility(View.GONE);
+			Log.i("update_tributes", "i was removed");
+			onBackPressed();
 		}
-
-		loveCountView
-				.setText(String
-						.valueOf(tribute.getLikes() == null ? 0
-								: tribute.getLikes().size()));
-
-		commentCountView.setText(String.valueOf(tribute
-				.getComments()));
-
-		statusView.setText(tribute.getMessage());
-		dateView.setText(Utils.getTimeStringForFeed(getActivity(),
-				Utils.convertStringToDate(tribute.getCreatedAt())));
-
-		ribbonView.setOnClickListener(this);
-		headingOne.setOnClickListener(this);
-		loveCountView.setOnClickListener(this);
-
-		loadComments();
 	}
 
 	private void loadComments() {
@@ -366,10 +412,9 @@ public class FragmentTributeDetail extends BaseFragment implements
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
 					"Tribute-User-Info View");
 			//// TODO: 14-07-2017
-//			((FragmentHolder) getActivity())
-//					.replaceFragment(new ProfileFragment(
-//							FragmentTributeDetail.this, tribute
-//									.getParseUser(DbConstants.TO)));
+			((FragmentHolder) getActivity())
+					.replaceFragment(new ProfileFragment(
+							FragmentTributeDetail.this, owner));
 			break;
 		case R.id.leftOptionParent:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
@@ -380,11 +425,10 @@ public class FragmentTributeDetail extends BaseFragment implements
 		case R.id.ribbonView:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
 					"Tribute-User-Infor View");
-			//// TODO: 14-07-2017
-//			((FragmentHolder) getActivity())
-//					.replaceFragment(new ProfileFragment(
-//							FragmentTributeDetail.this, tribute
-//									.getParseUser(DbConstants.TO)));
+			// TODO: 14-07-2017
+			((FragmentHolder) getActivity())
+					.replaceFragment(new ProfileFragment(
+							FragmentTributeDetail.this, owner));
 			break;
 		case R.id.newsFeedPicView:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
@@ -415,14 +459,19 @@ public class FragmentTributeDetail extends BaseFragment implements
 		case R.id.loveImage:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
 					"Love Tribute Button");
-			/*if (!Utils.isLiked(tribute)) {
+			if (!Utils.isLiked(tribute)) {
 				loveCountView.setText(String.valueOf(tribute
-						.getList(DbConstants.LIKES) == null ? 1 : tribute
-						.getList(DbConstants.LIKES).size() + 1));
-				tribute.add(DbConstants.LIKES, ParseUser.getCurrentUser()
-						.getObjectId());
-				PostManager.getInstance().likeStory(tribute);
-			}*/
+						.getLikes() == null ? 1 : tribute
+						.getLikes().size() + 1));
+				ArrayList<String> likesList = tribute.getLikes();
+				if(likesList==null) {
+					likesList = new ArrayList<>();
+					likesList.add(FirebaseAuth.getInstance().getCurrentUser().getUid());
+				} else
+					likesList.add(FirebaseAuth.getInstance().getCurrentUser().getUid());
+				PostManager.getInstance().likeTribute(likesList, tribute);
+			}
+			break;
 
 		}
 	}

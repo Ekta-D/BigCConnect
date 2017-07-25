@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.android.ex.chips.BaseRecipientAdapter;
 import com.android.ex.chips.RecipientEditTextView;
 import com.android.ex.chips.RecipientEntry;
+import com.bigc.adapters.AutoCompleteTextViewAdapter;
 import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
@@ -64,16 +65,16 @@ public class AddTributeDialog extends Dialog implements
             connectionNames.add(conn.getName());
         }
 
-
-        ArrayAdapter<String> usersArrayAdapter = new ArrayAdapter<>(context, R.layout.single_textview_listitem, connectionNames);
-        shareUsers.setAdapter(usersArrayAdapter);
+        AutoCompleteTextViewAdapter autoCompleteTextViewAdapter = new AutoCompleteTextViewAdapter(context, R.layout.autotext_layout, R.id.auto_text, active);
+        //ArrayAdapter<String> usersArrayAdapter = new ArrayAdapter<>(context, R.layout.single_textview_listitem, connectionNames);
+        shareUsers.setAdapter(autoCompleteTextViewAdapter);
         shareUsers.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                selectedUser = active.get(i);
-                shareUsers.setText(shareUsers.getText().toString().substring(0,shareUsers.getText().toString().length()-1));
+                selectedUser = (Users) adapterView.getAdapter().getItem(i);
+                /*shareUsers.setText(shareUsers.getText().toString().substring(0,shareUsers.getText().toString().length()-1));
                 shareUsers.setText(connectionNames.get(i-1));
-                shareUsers.setSelection(shareUsers.getText().length());
+                shareUsers.setSelection(shareUsers.getText().length());*/
 
             }
         });
@@ -87,10 +88,13 @@ public class AddTributeDialog extends Dialog implements
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.addButton:
-                System.out.println(/*selectedUser.toString() +*/ " conn ");
-                if(!shareUsers.getText().toString().equals("")){
+                if(!shareUsers.getText().toString().equals("") && selectedUser!=null){
                     Utils.launchPostViewFromTribute(caller.getActivity(),
                             Constants.OPERATION_TRIBUTE, selectedUser);
+                } else {
+                    Utils.showToast(context, "Please select a valid connection.");
+                    shareUsers.setText("");
+                    return;
                 }
 
                 // Pass event to parent
@@ -111,7 +115,7 @@ public class AddTributeDialog extends Dialog implements
 //                userAge = Integer.valueOf(ageView.getText().toString());
 //                dismiss();
                 //  Utils.launchPostView(caller.getActivity(),
-//                        Constants.OPERATION_TRIBUTE); //// TODO: 20-07-2017
+//                        Constants.OPERATION_TRIBUTE);
                 dismiss();
                 break;
             case R.id.cancelButton:

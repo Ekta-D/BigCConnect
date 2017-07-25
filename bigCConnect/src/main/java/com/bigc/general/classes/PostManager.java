@@ -378,6 +378,13 @@ public class PostManager implements UploadPostObservable, MessageObservable {
         FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_STORIES).child(story.getObjectId())
                 .updateChildren(story_likes);
     }
+
+    public void likeTribute(List<String> like_list, Tributes story) {
+        Map<String, Object> story_likes = new HashMap<>();
+        story_likes.put(DbConstants.LIKES, like_list);
+        FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_TRIBUTE).child(story.getObjectId())
+                .updateChildren(story_likes);
+    }
    /* public void likeStory(ParseObject story) {
         story.saveInBackground(new SaveCallback() {
 
