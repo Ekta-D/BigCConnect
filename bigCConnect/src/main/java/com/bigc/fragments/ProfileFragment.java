@@ -212,7 +212,7 @@ public class ProfileFragment extends BaseFragment {
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         if (dataSnapshot != null) {
                             ConnectionsModel user = dataSnapshot.getValue(ConnectionsModel.class);
-                            if (user.getStatus()) {
+                            if (user!=null && user.getStatus()) {
                                 connectionView
                                         .setImageResource(R.drawable.ic_connected);
                                 connectionView.setContentDescription("1");

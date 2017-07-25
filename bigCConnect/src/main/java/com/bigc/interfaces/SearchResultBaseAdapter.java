@@ -11,6 +11,7 @@ import com.bigc.general.classes.Utils;
 import com.bigc.models.Users;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -118,7 +119,7 @@ public abstract class SearchResultBaseAdapter extends ArrayAdapter<Users> {
         notifyDataSetChanged();
     }
 
-    public void updateData(List<Users> result) {
+    public void updateData(Collection<Users> result) {
         data.clear();
         if (result == null)
             return;

@@ -495,6 +495,7 @@ public class HomeScreen extends AppCompatActivity implements
     public void logoutUser() {
        // new LogoutTask().execute();
         FirebaseAuth.getInstance().signOut();
+        Preferences.getInstance(getBaseContext()).clearPreferences();
         gotoLogin();
 
     }

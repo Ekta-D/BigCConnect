@@ -1,6 +1,7 @@
 package com.bigc.fragments;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,14 +19,26 @@ import com.bigc.general.classes.UserConnections;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
+import com.bigc.models.Comments;
 import com.bigc.models.Users;
 import com.bigc_connect.R;
 import com.costum.android.widget.LoadMoreListView;
 import com.costum.android.widget.LoadMoreListView.OnLoadMoreListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 public class CategorySurvivorsFragment extends BaseFragment implements
 		OnLoadMoreListener {
@@ -39,6 +52,7 @@ public class CategorySurvivorsFragment extends BaseFragment implements
 	private TextView titleView;
 
 	private List<Users> users = new ArrayList<>();
+	private HashMap<String, Users> usersHashMap;
 	private UserConnections connections = new UserConnections();
 
 	public CategorySurvivorsFragment() {
@@ -131,7 +145,45 @@ public class CategorySurvivorsFragment extends BaseFragment implements
 	}
 
 	private void loadData() {
-		populateList(Queries.getCategorizedUsersQuery(ribbon));
+
+		Query query = Queries.getCategorizedUsersQuery(ribbon);
+		query.addValueEventListener(new ValueEventListener() {
+			@Override
+			public void onDataChange(DataSnapshot dataSnapshot) {
+				if(dataSnapshot!=null){
+					Log.i("CategorySurvivors",dataSnapshot.toString());
+					if(usersHashMap==null)
+						usersHashMap = new HashMap();
+					for(DataSnapshot snapshot: dataSnapshot.getChildren()) {
+						Users user = snapshot.getValue(Users.class);
+						if(user.getType()!=Constants.USER_TYPE.SUPPORTER.ordinal() && user.getVisibility()!=Constants.PRIVATE && user.isDeactivated()!=true)
+							usersHashMap.put(snapshot.getKey(), snapshot.getValue(Users.class));
+					}
+					List<Map.Entry<String, Users>> list = new LinkedList<>(usersHashMap.entrySet());
+					Collections.sort(list, new Comparator<HashMap.Entry<String, Users>>() {
+						@Override
+						public int compare(HashMap.Entry<String, Users> usersHashMap1, HashMap.Entry<String, Users> usersHashMap2) {
+							return ((usersHashMap1.getValue()).getCreatedAt()).compareTo((usersHashMap2.getValue()).getCreatedAt());
+						}
+					});
+					usersHashMap = new LinkedHashMap<>();
+					for (Map.Entry<String, Users> entry : list)
+					{
+						usersHashMap.put(entry.getKey(), entry.getValue());
+					}
+					populateList(usersHashMap.values());
+				}
+
+			}
+
+			@Override
+			public void onCancelled(DatabaseError databaseError) {
+
+			}
+		});
+
+
+		//populateList(Queries.getCategorizedUsersQuery(ribbon));
 
 		/*ParseQuery<ParseUser> query = Queries.getCategorizedUsersQuery(ribbon);
 
@@ -152,11 +204,11 @@ public class CategorySurvivorsFragment extends BaseFragment implements
 					}
 				}
 			}
-		});
-*/
+		});*/
+
 	}
 
-	private void populateList(List<Users> users) {
+	private void populateList(Collection<Users> users) {
 
 		this.users.clear();
 		if (listView != null) {

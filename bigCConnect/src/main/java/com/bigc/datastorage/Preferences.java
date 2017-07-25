@@ -42,6 +42,11 @@ public class Preferences {
         editor = prefs.edit();
     }
 
+    public void clearPreferences(){
+        editor.clear();
+        editor.commit();
+    }
+
     public static synchronized Preferences getInstance(Context context) {
         if (instance == null) {
             instance = new Preferences(context);

@@ -139,9 +139,11 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
 
         return query;
     }*/
-    public static ArrayList<Users> getCategorizedUsersQuery(int ribbon) {
+    public static Query getCategorizedUsersQuery(int ribbon) {
         final ArrayList<Users> categoryUsers = null;
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+        Query query = mDatabase.child(DbConstants.USERS).orderByChild(DbConstants.RIBBON).equalTo(ribbon);
+/*
         mDatabase.child(DbConstants.USERS).startAt(DbConstants.RIBBON, String.valueOf(ribbon)).orderByChild(DbConstants.CREATED_AT).
                 addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -159,6 +161,7 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
 
                     }
                 });
+*/
 
        /* ParseQuery<ParseUser> query = ParseUser.getQuery();
         query.whereNotEqualTo(DbConstants.TYPE,
@@ -168,7 +171,7 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
         query.orderByDescending(DbConstants.CREATED_AT);
         query.whereNotEqualTo(DbConstants.DEACTIVATED, true);*/
 
-        return categoryUsers;
+        return query;
     }
 //    public static ParseQuery<ParseUser> getCategorizedUsersQuery(int ribbon) {
 //        ParseQuery<ParseUser> query = ParseUser.getQuery();
