@@ -54,7 +54,6 @@ public class BooksFragment extends BaseFragment implements OnRefreshListener,
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_videos, container, false);
-		Toast.makeText(getActivity(), "books frag called", Toast.LENGTH_SHORT).show();
 		messageView = (TextView) view.findViewById(R.id.messageView);
 		progressView = (ProgressBar) view.findViewById(R.id.progressView);
 		progressParent = (LinearLayout) view

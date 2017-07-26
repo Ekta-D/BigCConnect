@@ -15,15 +15,25 @@ public class Messages {
     String user1;
     String user2;
     String media;
-    boolean is_read = false;
-
-    public boolean is_read() {
-        return is_read;
-    }
-
-    public void setIs_read(boolean is_read) {
-        this.is_read = is_read;
-    }
+//    boolean isRead = false;
+//    boolean Isread=false;
+//    public boolean isread() {
+//        return Isread;
+//    }
+//
+//    public void setIsread(boolean isread) {
+//        Isread = isread;
+//    }
+//
+//
+//
+//    public boolean isRead() {
+//        return isRead;
+//    }
+//
+//    public void setisRead(boolean isRead) {
+//        this.isRead = isRead;
+//    }
 
 
     public String getUser2() {

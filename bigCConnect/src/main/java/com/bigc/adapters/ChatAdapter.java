@@ -64,7 +64,7 @@ public class ChatAdapter extends ArrayAdapter<Users> {
     @Override
     public int getCount() {
         return messages.size();
-        //  return messages.size();//messages.size(); // TODO: 24-07-2017
+        //  return messages.size();//messages.size();
     }
 
     @Override

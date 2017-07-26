@@ -27,6 +27,7 @@ import com.bigc.interfaces.MessageObservable;
 import com.bigc.interfaces.MessageObserver;
 import com.bigc.interfaces.UploadPostObserver;
 import com.bigc.models.Messages;
+import com.bigc.models.Post;
 import com.bigc.models.Posts;
 import com.bigc.models.Tributes;
 import com.bigc.models.Users;
@@ -37,6 +38,7 @@ import com.costum.android.widget.PullToRefreshListView;
 import com.costum.android.widget.PullToRefreshListView.OnRefreshListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -45,7 +47,10 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 public class MessagesFragment extends BaseFragment implements
         OnRefreshListener, UploadPostObserver, OnLoadMoreListener,
@@ -132,8 +137,96 @@ public class MessagesFragment extends BaseFragment implements
                 .getBoolean(Constants.PREMIUM)) {
             adView.setVisibility(View.GONE);
         }
-        if (PostActivity.selectedUsers_array != null) {
-            Log.i("uses's message", PostActivity.selectedUsers_array.toString());
+
+        if (PostActivity.currentMessageObject != null &&
+                PostActivity.selectedUsers_array.size() > 0 &&
+                !PostActivity.message.equalsIgnoreCase("")) {
+            Log.i("currentMessageObject", PostActivity.currentMessageObject.toString());
+            uploadMessage(PostActivity.currentMessageObject, PostActivity.selectedUsers_array, messages_list);
+        }
+    }
+
+    boolean found = false;
+
+    private void uploadMessage(Messages messages, ArrayList<Users> selectedUsers, final List<Messages> messages_list) {
+        String conversationObjectId = "";
+        String messageId = "";
+
+        String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        for (int i = 0; i < selectedUsers.size(); i++) {
+            Users user = selectedUsers.get(i);
+            //    String objectId = databaseReference.child(DbConstants.TABLE_MESSAGE).push().getKey();
+
+
+            messages.setUser1(currentUserId);
+            messages.setUser2(user.getObjectId());
+            Messages mess = null;
+            for (int j = 0; j < messages_list.size(); j++) {
+                mess = messages_list.get(j);
+
+                String senderId = mess == null ? mess.getSender() : mess.getUser1();
+                if (mess.getUser1().equals(senderId) || mess.getUser2().equals(senderId)) {
+                    found = true;
+                    mess.setUser1(currentUserId);
+                    mess.setUser2(user.getObjectId());
+                    mess.setSender(currentUserId);
+                    mess.setMessage(messages.getMessage());
+                    messages_list.remove(i);
+                    messages_list.add(0, mess);
+                }
+
+
+            }
+
+
+            if (!found) {
+                Log.e("New", "Add");
+                messages_list.add(mess);
+                conversationObjectId = UUID.randomUUID().toString();
+                messageId = UUID.randomUUID().toString();
+                Messages conversation_model = new Messages();
+                conversation_model = mess;
+                conversation_model.setObjectId(conversationObjectId);
+
+                messages.setObjectId(messageId);
+                FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION).child(conversationObjectId)
+                        .setValue(conversation_model);
+                FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_MESSAGE).child(messageId).setValue(messages);
+
+            } else {
+                Map<String, Object> update_conversation = new HashMap<>();
+                update_conversation.put(DbConstants.CREATED_AT, mess.getCreatedAt());
+                update_conversation.put(DbConstants.MESSAGE, PostActivity.message);
+                update_conversation.put(DbConstants.ID, mess.getObjectId());
+                update_conversation.put(DbConstants.UPDATED_AT, Utils.getCurrentDate());
+                update_conversation.put(DbConstants.USER1, mess.getUser1());
+                update_conversation.put(DbConstants.USER2, mess.getUser2());
+                update_conversation.put(DbConstants.MEDIA, mess.getMedia());
+
+
+                FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION).child(mess.getObjectId())
+                        .updateChildren(update_conversation);
+                FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_MESSAGE).child(messageId).setValue(messages);
+            }
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+//                    adapter.setData(messages_list);
+//                    adapter.notifyDataSetChanged();
+                    populateList(messages_list);
+
+                    //empty model
+                    PostActivity.selectedUsers_array.clear();
+
+//                    if (messages_list.size() == 1) {
+//                        listView.setVisibility(View.VISIBLE);
+//                        progressParent.setVisibility(View.GONE);
+//                    }
+                }
+            });
+
+           /* FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_MESSAGE)
+                    .child(objectId).setValue(messages);*/
         }
     }
 
@@ -222,8 +315,8 @@ public class MessagesFragment extends BaseFragment implements
             }
         });*/ // TODO: 21-07-2017 need to work on Converation table
 
-        Query query = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_MESSAGE);
-        query.orderByChild(DbConstants.USER1).equalTo(Preferences.getInstance(getActivity()).getString(DbConstants.ID));
+        Query query = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION);
+        //     query.orderByChild(DbConstants.USER1).equalTo(Preferences.getInstance(getActivity()).getString(DbConstants.ID));
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -232,9 +325,24 @@ public class MessagesFragment extends BaseFragment implements
                 messages_list = new ArrayList<Messages>();
                 for (DataSnapshot data : dataSnapshot.getChildren()) {
                     String key = data.getKey();
+//                    Messages messages = new Messages();
+//                    messages.setCreatedAt(data.child(DbConstants.CREATED_AT).getValue(String.class));
+//                    messages.setMessage(data.child(DbConstants.MESSAGE).getValue(String.class));
+//                    messages.setObjectId(data.child(DbConstants.ID).getValue(String.class));
+//                    messages.setSender(data.child(DbConstants.SENDER).getValue(String.class));
+//                    messages.setUpdatedAt(data.child(DbConstants.UPDATED_AT).getValue(String.class));
+//                    messages.setUser1(data.child(DbConstants.USER1).getValue(String.class));
+//                    messages.setUser2(data.child(DbConstants.USER2).getValue(String.class));
+
                     Messages message = data.getValue(Messages.class);
-                    messages_list.add(message);
+
+                    if (message.getUser1().equalsIgnoreCase(Preferences.getInstance(getActivity()).getString(DbConstants.ID))
+                            || message.getUser2().equalsIgnoreCase(Preferences.getInstance(getActivity()).getString(DbConstants.ID))) {
+                        messages_list.add(message);
+                    }
+
                 }
+                // uploadMessage(null,PostActivity.selectedUsers_array,messages_list);
 
                 populateList(messages_list);
 
@@ -535,54 +643,54 @@ public class MessagesFragment extends BaseFragment implements
     @Override
     public boolean onMessageReceive(Messages message, Users sender) {
 
-        Log.e("onMessageReceive", "Invoked");
-        if (adapter != null && listView != null) {
-
-            final List<Messages> data = new ArrayList<Messages>();
-            data.addAll(adapter.getData());
-
-            String senderId = sender == null ? message.getSender() : sender.getObjectId();
-            boolean found = false;
-            for (int i = 0; i < data.size(); i++) {
-                if (data.get(i).getUser1()
-                        .equals(senderId)
-                        || data.get(i).getUser2().equals(senderId)) {
-                    Log.e("Object", "Found");
-                    found = true;
-                    Messages obj = data.get(i);
-                    obj.setMessage(message.getMessage());
-                    obj.setIs_read(false);
-                    data.remove(i);
-                    data.add(0, obj);
-                    data.remove(i);
-                    data.add(0, obj);
-                }
-            }
-
-            if (!found) {
-                Log.e("New", "Add");
-                Messages message_object = new Messages();
-                message_object.setMessage(message.getMessage());
-                message_object.setUser1(message.getUser1());
-                message_object.setUser2(message.getUser2());
-                data.add(0, message_object);
-
-                String objectId = databaseReference.child(DbConstants.TABLE_CONVERSATION).push().getKey();
-                databaseReference.child(DbConstants.TABLE_CONVERSATION).child(objectId).setValue(message_object);
-            }
-            getActivity().runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    Log.e("Adapter", "Updated -- " + data.size());
-                    adapter.setData(data);
-                    if (data.size() == 1) {
-                        listView.setVisibility(View.VISIBLE);
-                        progressParent.setVisibility(View.GONE);
-
-                    }
-                }
-            });
-        }
+//        Log.e("onMessageReceive", "Invoked");
+//        if (adapter != null && listView != null) {
+//
+//            final List<Messages> data = new ArrayList<Messages>();
+//            data.addAll(adapter.getData());
+//
+//            String senderId = sender == null ? message.getSender() : sender.getObjectId();
+//            boolean found = false;
+//            for (int i = 0; i < data.size(); i++) {
+//                if (data.get(i).getUser1()
+//                        .equals(senderId)
+//                        || data.get(i).getUser2().equals(senderId)) {
+//                    Log.e("Object", "Found");
+//                    found = true;
+//                    Messages obj = data.get(i);
+//                    obj.setMessage(message.getMessage());
+//                    //obj.setIsread(false);
+//                    data.remove(i);
+//                    data.add(0, obj);
+//                    data.remove(i);
+//                    data.add(0, obj);
+//                }
+//            }
+//
+//            if (!found) {
+//                Log.e("New", "Add");
+//                Messages message_object = new Messages();
+//                message_object.setMessage(message.getMessage());
+//                message_object.setUser1(message.getUser1());
+//                message_object.setUser2(message.getUser2());
+//                data.add(0, message_object);
+//
+//                String objectId = databaseReference.child(DbConstants.TABLE_CONVERSATION).push().getKey();
+//                databaseReference.child(DbConstants.TABLE_CONVERSATION).child(objectId).setValue(message_object);
+//            }
+//            getActivity().runOnUiThread(new Runnable() {
+//                @Override
+//                public void run() {
+//                    Log.e("Adapter", "Updated -- " + data.size());
+//                    adapter.setData(data);
+//                    if (data.size() == 1) {
+//                        listView.setVisibility(View.VISIBLE);
+//                        progressParent.setVisibility(View.GONE);
+//
+//                    }
+//                }
+//            });
+//        }
         return false;
     }
 }

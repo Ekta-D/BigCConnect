@@ -78,7 +78,7 @@ public class SupportersFragment extends BaseFragment {
             messageView.setText(R.string.loadingSupporting);
 
         //	new loadUserConnectionsTask().execute(ProfileFragment.getUser());
-        loadUserConnectionsTask();
+     //   loadUserConnectionsTask(); //// TODO: 25-07-2017  
     }
 
     //	private class loadUserConnectionsTask extends
@@ -107,13 +107,13 @@ public class SupportersFragment extends BaseFragment {
 //			}
 //		}
 //	}
-    private void loadUserConnectionsTask() {
+  /*  private void loadUserConnectionsTask() {
         String current_userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         if (current_userId.equalsIgnoreCase(Preferences.getInstance(getActivity()).getString(DbConstants.ID)))
         {
 
         }
-    }
+    }*///// TODO: 25-07-2017  
 
 
    /* private UserConnections loadUserConnections(final boolean fromCache) {

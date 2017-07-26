@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.widget.ArrayAdapter;
 
 import com.bigc.datastorage.Preferences;
+import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.UserConnections;
 import com.bigc.general.classes.Utils;
@@ -52,7 +53,7 @@ public abstract class SearchResultBaseAdapter extends ArrayAdapter<Users> {
 
 //		isSupporterUser = ParseUser.getCurrentUser().getInt(DbConstants.TYPE) == Constants.USER_TYPE.SUPPORTER
 //				.ordinal();
-        isSupporterUser = Preferences.getInstance(context).getInt(DbConstants.TYPE) == 1;
+        isSupporterUser = Preferences.getInstance(context).getInt(DbConstants.TYPE) == Constants.IS_SUPPORTER;
 
         newAddedConnections = new ArrayList<>();
         removedConnections = new ArrayList<>();

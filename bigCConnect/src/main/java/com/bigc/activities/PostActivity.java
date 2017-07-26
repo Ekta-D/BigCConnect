@@ -90,6 +90,7 @@ public class PostActivity extends Activity implements OnClickListener,
 //    public static Posts currentObject = null;
     public static Stories currentstoryObject = null;
     public static Tributes currentTributeObject = null;
+    public static Messages currentMessageObject = null;
     private static int currentObjectIndex = -1;
     DatabaseReference databaseReference;
     private File mFileTemp;
@@ -97,6 +98,7 @@ public class PostActivity extends Activity implements OnClickListener,
     StorageReference storageReference;
     Users user, selected_user;
     AutoCompleteTextViewAdapter autoCompleteTextViewAdapter;
+    public static String message = "";
 
     public static void setCurrentObject(int position, Posts object, Stories storyObject, Tributes tribute) {
         //  currentObject = object;
@@ -124,7 +126,7 @@ public class PostActivity extends Activity implements OnClickListener,
             if (!fromNewsfeeds) {
                 NewsFeedFragment.currentObject = null;
             }
-           if (isEdit && NewsFeedFragment.currentObject == null&& currentstoryObject==null && currentTributeObject==null) {
+            if (isEdit && NewsFeedFragment.currentObject == null && currentstoryObject == null && currentTributeObject == null) {
                 isEdit = false;
             }
             user = (Users) getIntent().getSerializableExtra(DbConstants.USER_INFO);
@@ -228,12 +230,12 @@ public class PostActivity extends Activity implements OnClickListener,
                 }
 
 
-            } else if(operation == Constants.OPERATION_TRIBUTE){
+            } else if (operation == Constants.OPERATION_TRIBUTE) {
                 text = currentTributeObject == null ? ""
                         : currentTributeObject.getMessage();
                 statusInputView.setText(text);
                 statusInputView.setSelection(text.length());
-                if (currentTributeObject!=null && currentTributeObject.getMedia() != null) {
+                if (currentTributeObject != null && currentTributeObject.getMedia() != null) {
                     ImageLoader.getInstance().displayImage(
                             currentTributeObject.getMedia(),
                             pictureInputView, Utils.normalDisplayOptions,
@@ -249,7 +251,7 @@ public class PostActivity extends Activity implements OnClickListener,
                         : NewsFeedFragment.currentObject.getMessage();
                 statusInputView.setText(text);
                 statusInputView.setSelection(text.length());
-                if (NewsFeedFragment.currentObject!=null && NewsFeedFragment.currentObject.getMedia() != null) {
+                if (NewsFeedFragment.currentObject != null && NewsFeedFragment.currentObject.getMedia() != null) {
                     ImageLoader.getInstance().displayImage(
                             NewsFeedFragment.currentObject.getMedia(),
                             pictureInputView, Utils.normalDisplayOptions,
@@ -305,7 +307,7 @@ public class PostActivity extends Activity implements OnClickListener,
         v.setClickable(false);
         switch (v.getId()) {
             case R.id.postOption:
-                String message = statusInputView.getText().toString().trim();
+                message = statusInputView.getText().toString().trim();
                 if (isEdit) {
                     if (Constants.OPERATION_TRIBUTE == operation) {
 
@@ -624,22 +626,32 @@ public class PostActivity extends Activity implements OnClickListener,
     }
 
     public void uploadMessage(String media, List<Users> users_list, String message) {
-        for (int i = 0; i < users_list.size(); i++) {
-            Users user = users_list.get(i);
-            String current_user = FirebaseAuth.getInstance().getCurrentUser().getUid();
-            String objectId = databaseReference.child(DbConstants.TABLE_MESSAGE).push().getKey();
-            Messages message_model = new Messages();
-            message_model.setCreatedAt(Utils.getCurrentDate());
-            message_model.setMessage(message);
-            message_model.setObjectId(objectId);
-            message_model.setSender(current_user);
-            message_model.setUser1(current_user);
-            message_model.setUser2(user.getObjectId());
-            message_model.setMedia(media);
+//        for (int i = 0; i < users_list.size(); i++) {
+//        Users user = users_list.get(i);
+        String current_user = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        //      String objectId = databaseReference.child(DbConstants.TABLE_MESSAGE).push().getKey();
+        String conversationObjectId = databaseReference.child(DbConstants.TABLE_CONVERSATION).push().getKey();
+        Messages message_model = new Messages();
+        message_model.setCreatedAt(Utils.getCurrentDate());
+        message_model.setUpdatedAt(Utils.getCurrentDate());
+        message_model.setMessage(message);
+        //  message_model.setObjectId(objectId);
+//        message_model.setSender(current_user);
+        //   message_model.setUser1(current_user);
+//        message_model.setUser2(user.getObjectId());
+        message_model.setMedia(media);
 
-            FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_MESSAGE)
-                    .child(objectId).setValue(message_model);
-        }
+
+        currentMessageObject = new Messages();
+        currentMessageObject = message_model;
+
+//            FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_MESSAGE)
+//                    .child(objectId).setValue(message_model);
+
+
+//            FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION)
+//                    .child(conversationObjectId).setValue(message_model);
+//        }
         Utils.hideProgress();
         finishActivity();
     }
