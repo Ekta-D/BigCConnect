@@ -142,7 +142,8 @@ public class MessagesAdapter extends ArrayAdapter<Messages> {
         }
         holder.nameView.setText(users.getName());
         holder.dateView.setText(Utils.getTimeStringForFeed(context,
-                Utils.convertStringToDate(messages.getCreatedAt())));
+                Utils.convertStringToDate(messages.getUpdatedAt()
+                )));
         holder.messageView.setText(messages.getMessage());
     }
 

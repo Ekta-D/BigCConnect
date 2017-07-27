@@ -26,6 +26,7 @@ import com.bigc.interfaces.FragmentHolder;
 import com.bigc.interfaces.MessageObservable;
 import com.bigc.interfaces.MessageObserver;
 import com.bigc.interfaces.UploadPostObserver;
+import com.bigc.models.Comments;
 import com.bigc.models.Messages;
 import com.bigc.models.Post;
 import com.bigc.models.Posts;
@@ -39,6 +40,7 @@ import com.costum.android.widget.PullToRefreshListView.OnRefreshListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -47,10 +49,14 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+
+import eu.janmuller.android.simplecropimage.Util;
 
 public class MessagesFragment extends BaseFragment implements
         OnRefreshListener, UploadPostObserver, OnLoadMoreListener,
@@ -138,6 +144,7 @@ public class MessagesFragment extends BaseFragment implements
             adView.setVisibility(View.GONE);
         }
 
+
         if (PostActivity.currentMessageObject != null &&
                 PostActivity.selectedUsers_array.size() > 0 &&
                 !PostActivity.message.equalsIgnoreCase("")) {
@@ -149,7 +156,7 @@ public class MessagesFragment extends BaseFragment implements
     boolean found = false;
 
     private void uploadMessage(Messages messages, ArrayList<Users> selectedUsers, final List<Messages> messages_list) {
-        String conversationObjectId = "";
+        String conversationObjectId;
         String messageId = "";
 
         String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
@@ -157,15 +164,21 @@ public class MessagesFragment extends BaseFragment implements
             Users user = selectedUsers.get(i);
             //    String objectId = databaseReference.child(DbConstants.TABLE_MESSAGE).push().getKey();
 
-
+            messageId = UUID.randomUUID().toString();
+            conversationObjectId = UUID.randomUUID().toString();
             messages.setUser1(currentUserId);
+            messages.setSender(currentUserId);
             messages.setUser2(user.getObjectId());
+            messages.setObjectId(messageId);
             Messages mess = null;
+            String senderId = messages.getSender() == null ? messages.getSender() : messages.getUser1();
             for (int j = 0; j < messages_list.size(); j++) {
                 mess = messages_list.get(j);
 
-                String senderId = mess == null ? mess.getSender() : mess.getUser1();
-                if (mess.getUser1().equals(senderId) || mess.getUser2().equals(senderId)) {
+                System.out.println("comdtidion: " + mess.getUser1().equalsIgnoreCase(senderId) + mess.getUser2().equalsIgnoreCase(senderId)
+                        + mess.getUser1().equalsIgnoreCase(user.getObjectId()) + mess.getUser2().equalsIgnoreCase(user.getObjectId()));
+                if ((mess.getUser1().equalsIgnoreCase(senderId) || mess.getUser2().equalsIgnoreCase(senderId))
+                        && (mess.getUser1().equalsIgnoreCase(user.getObjectId()) || mess.getUser2().equalsIgnoreCase(user.getObjectId()))) {
                     found = true;
                     mess.setUser1(currentUserId);
                     mess.setUser2(user.getObjectId());
@@ -173,25 +186,23 @@ public class MessagesFragment extends BaseFragment implements
                     mess.setMessage(messages.getMessage());
                     messages_list.remove(i);
                     messages_list.add(0, mess);
+                    break;
                 }
 
 
             }
 
-
             if (!found) {
                 Log.e("New", "Add");
-                messages_list.add(mess);
-                conversationObjectId = UUID.randomUUID().toString();
-                messageId = UUID.randomUUID().toString();
-                Messages conversation_model = new Messages();
-                conversation_model = mess;
+                messages_list.add(messages);
+                FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_MESSAGE).child(messages.getObjectId()).setValue(messages);
+                Messages conversation_model = null;
+                conversation_model = messages;
                 conversation_model.setObjectId(conversationObjectId);
+                conversation_model.setUpdatedAt(Utils.getCurrentDate());
 
-                messages.setObjectId(messageId);
                 FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION).child(conversationObjectId)
                         .setValue(conversation_model);
-                FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_MESSAGE).child(messageId).setValue(messages);
 
             } else {
                 Map<String, Object> update_conversation = new HashMap<>();
@@ -207,26 +218,21 @@ public class MessagesFragment extends BaseFragment implements
                 FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION).child(mess.getObjectId())
                         .updateChildren(update_conversation);
                 FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_MESSAGE).child(messageId).setValue(messages);
+                found = false;
             }
+
+
             getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-//                    adapter.setData(messages_list);
-//                    adapter.notifyDataSetChanged();
+
                     populateList(messages_list);
 
                     //empty model
                     PostActivity.selectedUsers_array.clear();
 
-//                    if (messages_list.size() == 1) {
-//                        listView.setVisibility(View.VISIBLE);
-//                        progressParent.setVisibility(View.GONE);
-//                    }
                 }
             });
-
-           /* FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_MESSAGE)
-                    .child(objectId).setValue(messages);*/
         }
     }
 
@@ -315,7 +321,10 @@ public class MessagesFragment extends BaseFragment implements
             }
         });*/ // TODO: 21-07-2017 need to work on Converation table
 
-        Query query = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION);
+
+        Query query = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION).orderByChild(DbConstants.UPDATED_AT);
+
+        query.addChildEventListener(childEventListener);
         //     query.orderByChild(DbConstants.USER1).equalTo(Preferences.getInstance(getActivity()).getString(DbConstants.ID));
         query.addValueEventListener(new ValueEventListener() {
             @Override
@@ -342,6 +351,7 @@ public class MessagesFragment extends BaseFragment implements
                     }
 
                 }
+
                 // uploadMessage(null,PostActivity.selectedUsers_array,messages_list);
 
                 populateList(messages_list);
@@ -486,6 +496,7 @@ public class MessagesFragment extends BaseFragment implements
             showError("No messages sent or received yet.");
         } else {
 
+
             final MessagesAdapter message_adapter = new MessagesAdapter(getActivity(), messages, Preferences.getInstance(getActivity()).getAllUsers(DbConstants.FETCH_USER));
             listView.setAdapter(message_adapter);
             listView.setVisibility(View.VISIBLE);
@@ -519,6 +530,36 @@ public class MessagesFragment extends BaseFragment implements
 
 
     }
+
+    ChildEventListener childEventListener = new ChildEventListener() {
+        @Override
+        public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+
+            if (dataSnapshot.exists()) {
+
+            }
+        }
+
+        @Override
+        public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+        }
+
+        @Override
+        public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+        }
+
+        @Override
+        public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+        }
+
+        @Override
+        public void onCancelled(DatabaseError databaseError) {
+
+        }
+    };
 
     private void startProgress() {
         try {

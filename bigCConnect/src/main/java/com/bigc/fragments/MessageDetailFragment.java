@@ -14,6 +14,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bigc.activities.PostActivity;
 import com.bigc.adapters.ChatAdapter;
 import com.bigc.datastorage.Preferences;
 import com.bigc.general.classes.Constants;
@@ -40,7 +41,10 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 import eu.janmuller.android.simplecropimage.Util;
 
@@ -143,11 +147,13 @@ public class MessageDetailFragment extends BaseFragment implements
 
     ArrayList<Messages> chat_conversation;
     boolean isCompleted = false;
+
     public void loadData(boolean fromCache) {
 
         Utils.showProgress(getActivity());
 
         final String userID = MessageDetailFragment.conversation.getSender();
+        final String receiver = MessageDetailFragment.conversation.getUser2();
         final String currentuserID = FirebaseAuth.getInstance().getCurrentUser().getUid();
         FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_MESSAGE).orderByChild(DbConstants.SENDER)
                 .equalTo(userID).addValueEventListener(new ValueEventListener() {
@@ -162,8 +168,11 @@ public class MessageDetailFragment extends BaseFragment implements
                     Log.i("data", data.toString());
                     boolean toadd = false;
 
-                    if ((messages.getUser1().equals(userID) && messages.getUser2().equals(currentuserID))
-                            || (messages.getUser1().equals(currentuserID) && messages.getUser2().equals(userID))) {
+
+                    if ((messages.getUser1().equals(userID) || messages.getUser2().equals(userID))
+                            && (messages.getUser1().equals(currentuserID) || messages.getUser2().equals(currentuserID))
+                            && (messages.getUser2().equalsIgnoreCase(receiver))
+                            ) {
                         toadd = true;
                     }
                     String user1 = messages.getUser1().equals(userID) ? userID : currentuserID;
@@ -177,8 +186,7 @@ public class MessageDetailFragment extends BaseFragment implements
                     }
                     isCompleted = true;
                 }
-                if (isCompleted)
-                {
+                if (isCompleted) {
                     if (userID.equals(MessageDetailFragment.conversation.getSender())) {
                         Collections.sort(chat_conversation, new Comparator<Messages>() {
                             @Override
@@ -192,6 +200,7 @@ public class MessageDetailFragment extends BaseFragment implements
                     } else {
                         loadData(false);
                     }
+
                     populateList(chat_conversation);
                     Utils.hideProgress();
                 }
@@ -228,7 +237,38 @@ public class MessageDetailFragment extends BaseFragment implements
                     String reply = replyView.getText().toString();
                     replyView.setText("");
 
-				/*ParseObject obj = new ParseObject(DbConstants.
+                    Messages message_reply = new Messages();
+                    Messages conversation = new Messages();
+                    message_reply.setCreatedAt(MessageDetailFragment.conversation.getCreatedAt());
+                    message_reply.setMessage(reply);
+                    message_reply.setUser1(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                    message_reply.setUser2(MessageDetailFragment.conversation.getUser2());
+                    message_reply.setUpdatedAt(Utils.getCurrentDate());
+                    message_reply.setMedia(MessageDetailFragment.conversation.getMedia());
+                    message_reply.setObjectId(UUID.randomUUID().toString());
+                    message_reply.setSender(FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+                    FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_MESSAGE).child(message_reply.getObjectId())
+                            .setValue(message_reply);
+
+                    conversation = message_reply;
+                    conversation.setObjectId(MessageDetailFragment.conversation.getObjectId());
+
+
+                    Map<String, Object> update_conversation = new HashMap<>();
+                    update_conversation.put(DbConstants.CREATED_AT, conversation.getCreatedAt());
+                    update_conversation.put(DbConstants.MESSAGE, conversation.getMessage());
+                    update_conversation.put(DbConstants.ID, conversation.getObjectId());
+                    update_conversation.put(DbConstants.UPDATED_AT, conversation.getUpdatedAt());
+                    update_conversation.put(DbConstants.USER1, conversation.getUser1());
+                    update_conversation.put(DbConstants.USER2, conversation.getUser2());
+                    update_conversation.put(DbConstants.MEDIA, conversation.getMedia());
+
+
+                    FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION).child(conversation.getObjectId())
+                            .updateChildren(update_conversation);
+
+                /*ParseObject obj = new ParseObject(DbConstants.
 
 				);
                 obj.put(DbConstants.USER1, ParseUser.getCurrentUser());
