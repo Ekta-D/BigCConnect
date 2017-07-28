@@ -33,6 +33,7 @@ import com.bigc_connect.R;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -152,68 +153,110 @@ public class MessageDetailFragment extends BaseFragment implements
 
         Utils.showProgress(getActivity());
 
-        final String userID = MessageDetailFragment.conversation.getSender();
+        final String senderID = MessageDetailFragment.conversation.getUser1();
         final String receiver = MessageDetailFragment.conversation.getUser2();
-        final String currentuserID = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_MESSAGE).orderByChild(DbConstants.SENDER)
-                .equalTo(userID).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                chat_conversation = new ArrayList<Messages>();
+//        final String currentuserID = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-                long count = dataSnapshot.getChildrenCount();
-                for (DataSnapshot data : dataSnapshot.getChildren()) {
-                    String key = data.getKey();
-                    Messages messages = data.getValue(Messages.class);
-                    Log.i("data", data.toString());
-                    boolean toadd = false;
+        FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_MESSAGE).orderByKey().addChildEventListener(childEventListener);
+        FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_MESSAGE).orderByKey().
+                addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        chat_conversation = new ArrayList<Messages>();
+
+                        long count = dataSnapshot.getChildrenCount();
+                        for (DataSnapshot data : dataSnapshot.getChildren()) {
+                            String key = data.getKey();
+                            Messages messages = data.getValue(Messages.class);
+                            Log.i("data", data.toString());
+                            boolean toadd = false;
 
 
-                    if ((messages.getUser1().equals(userID) || messages.getUser2().equals(userID))
-                            && (messages.getUser1().equals(currentuserID) || messages.getUser2().equals(currentuserID))
-                            && (messages.getUser2().equalsIgnoreCase(receiver))
-                            ) {
-                        toadd = true;
-                    }
-                    String user1 = messages.getUser1().equals(userID) ? userID : currentuserID;
-                    String user2 = messages.getUser2().equals(userID) ? userID : currentuserID;
-                    messages.setUser2(user2);
-                    messages.setUser1(user1);
-                    messages.setSender(user1);
+//                            if ((messages.getUser1().equals(userID) || messages.getUser2().equals(userID))
+//                                    && (messages.getUser1().equals(currentuserID) || messages.getUser2().equals(currentuserID))
+//                                    && (messages.getUser2().equalsIgnoreCase(receiver))
+//                                    )
 
-                    if (toadd) {
-                        chat_conversation.add(messages);
-                    }
-                    isCompleted = true;
-                }
-                if (isCompleted) {
-                    if (userID.equals(MessageDetailFragment.conversation.getSender())) {
-                        Collections.sort(chat_conversation, new Comparator<Messages>() {
-                            @Override
-                            public int compare(Messages comments, Messages t1) {
-                                return Integer.parseInt(String.valueOf(Utils.convertStringToDate(comments.getCreatedAt()).
-                                        compareTo(Utils.convertStringToDate(t1.getCreatedAt()))));
+                            System.out.println("condition" + messages.getUser1().equals(senderID) +
+                                    messages.getUser2().equals(senderID) + messages.getUser2().equalsIgnoreCase(receiver) +
+                                    messages.getUser1().equalsIgnoreCase(receiver));
+
+                            if ((messages.getUser1().equals(senderID) || messages.getUser2().equals(senderID))
+                                    && (messages.getUser2().equalsIgnoreCase(receiver) || messages.getUser1().equalsIgnoreCase(receiver))) {
+                                toadd = true;
                             }
-                        });
+                            String user1 = messages.getUser1().equals(senderID) ? senderID : FirebaseAuth.getInstance().getCurrentUser().getUid();
+                            String user2 = messages.getUser2().equals(senderID) ? senderID : FirebaseAuth.getInstance().getCurrentUser().getUid();
+                            messages.setUser2(user2);
+                            messages.setUser1(user1);
+                            messages.setSender(user1);
 
-                        Utils.hideProgress();
-                    } else {
-                        loadData(false);
+                            if (toadd) {
+                                chat_conversation.add(messages);
+                            }
+                            isCompleted = true;
+                        }
+                        if (isCompleted) {
+                            if (senderID.equals(MessageDetailFragment.conversation.getSender())) {
+                                Collections.sort(chat_conversation, new Comparator<Messages>() {
+                                    @Override
+                                    public int compare(Messages comments, Messages t1) {
+                                        return Integer.parseInt(String.valueOf(Utils.convertStringToDate(comments.getCreatedAt()).
+                                                compareTo(Utils.convertStringToDate(t1.getCreatedAt()))));
+                                    }
+                                });
+
+                                Utils.hideProgress();
+                            }
+
+                            populateList(chat_conversation);
+                            Utils.hideProgress();
+                        }
+
                     }
 
-                    populateList(chat_conversation);
-                    Utils.hideProgress();
-                }
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
 
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
+                    }
+                });
 
     }
+
+    ChildEventListener childEventListener = new ChildEventListener() {
+        @Override
+        public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+
+            Log.i("added_chat", dataSnapshot.toString());
+            if (dataSnapshot.exists()) {
+
+            }
+        }
+
+        @Override
+        public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+            Log.i("update_chat", dataSnapshot.toString());
+            if (dataSnapshot.exists()) {
+                chat_conversation.clear();
+
+            }
+        }
+
+        @Override
+        public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+        }
+
+        @Override
+        public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+        }
+
+        @Override
+        public void onCancelled(DatabaseError databaseError) {
+
+        }
+    };
 
     private void showError(String message) {
         progressView.setVisibility(View.GONE);
@@ -242,11 +285,16 @@ public class MessageDetailFragment extends BaseFragment implements
                     message_reply.setCreatedAt(MessageDetailFragment.conversation.getCreatedAt());
                     message_reply.setMessage(reply);
                     message_reply.setUser1(FirebaseAuth.getInstance().getCurrentUser().getUid());
-                    message_reply.setUser2(MessageDetailFragment.conversation.getUser2());
+                    message_reply.setSender(FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+                    String receiver = MessageDetailFragment.conversation.getUser2();
+                    if (!receiver.equalsIgnoreCase(message_reply.getSender())) {
+                        message_reply.setUser2(receiver);
+                    }
                     message_reply.setUpdatedAt(Utils.getCurrentDate());
                     message_reply.setMedia(MessageDetailFragment.conversation.getMedia());
                     message_reply.setObjectId(UUID.randomUUID().toString());
-                    message_reply.setSender(FirebaseAuth.getInstance().getCurrentUser().getUid());
+
 
                     FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_MESSAGE).child(message_reply.getObjectId())
                             .setValue(message_reply);
@@ -267,6 +315,12 @@ public class MessageDetailFragment extends BaseFragment implements
 
                     FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION).child(conversation.getObjectId())
                             .updateChildren(update_conversation);
+
+                    ArrayList<Messages> updateList = new ArrayList<>();
+                    updateList.add(conversation);
+                    adapter.setData(updateList);
+                    //   populateList(updateList);
+                    adapter.notifyDataSetChanged();
 
                 /*ParseObject obj = new ParseObject(DbConstants.
 

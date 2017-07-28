@@ -144,7 +144,7 @@ public class ChatAdapter extends ArrayAdapter<Users> {
 
 //        holder.dateView.setText(Utils.getTimeStringForFeed(context,
 //                message.getCreatedAt()));
-        holder.dateView.setText(Utils.getTimeStringForFeed(context, Utils.convertStringToDate(messages.getCreatedAt())));
+        holder.dateView.setText(Utils.getTimeStringForFeed(context, Utils.convertStringToDate(messages.getUpdatedAt())));
 //        holder.nameView.setText(owner.getString(DbConstants.NAME));
 //        SpannableString ss = new SpannableString(
 //                message.getString(DbConstants.MESSAGE));

@@ -193,7 +193,8 @@ public class MessagesFragment extends BaseFragment implements
             }
 
 
-            if (!found) {
+            if (!found)
+            {
                 Log.e("New", "Add");
                 messages_list.add(messages);
                 FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_MESSAGE).child(messages.getObjectId()).setValue(messages);
@@ -205,15 +206,17 @@ public class MessagesFragment extends BaseFragment implements
                 FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION).child(conversationObjectId)
                         .setValue(conversation_model);
 
-            } else {
+            } else
+            {
                 Map<String, Object> update_conversation = new HashMap<>();
                 update_conversation.put(DbConstants.CREATED_AT, mess.getCreatedAt());
                 update_conversation.put(DbConstants.MESSAGE, PostActivity.message);
                 update_conversation.put(DbConstants.ID, mess.getObjectId());
                 update_conversation.put(DbConstants.UPDATED_AT, Utils.getCurrentDate());
-                update_conversation.put(DbConstants.USER1, mess.getUser1());
+                update_conversation.put(DbConstants.USER1,FirebaseAuth.getInstance().getCurrentUser().getUid());
                 update_conversation.put(DbConstants.USER2, mess.getUser2());
                 update_conversation.put(DbConstants.MEDIA, mess.getMedia());
+                update_conversation.put(DbConstants.SENDER,FirebaseAuth.getInstance().getCurrentUser().getUid());
 
                 FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION).child(mess.getObjectId())
                         .updateChildren(update_conversation);
