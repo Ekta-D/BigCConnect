@@ -260,14 +260,15 @@ public class FragmentTributes extends BaseFragment implements
                     }
                 } else {
                     if (listView != null) {
+                        populateList(tributesHashMap.values());
                         listView.onLoadMoreComplete();
                         /*Toast.makeText(
                                 getActivity(),
                                 Utils.loadString(getActivity(),
                                         R.string.networkFailureMessage),
                                 Toast.LENGTH_LONG).show();*/
-                    }
-                    showError(Utils.loadString(getActivity(),
+                    } else
+                        showError(Utils.loadString(getActivity(),
                             R.string.noTributeMessage));
                 }
 

@@ -249,7 +249,7 @@ public class NewsFeedFragment extends BaseFragment implements
         final List<Posts> posts_arraylist = new ArrayList<>();
         Query query = null;
         if (fromCache) {
-            query = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_POST).orderByChild(DbConstants.CREATED_AT);
+            query = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_POST).orderByKey();
         }
         query.addValueEventListener(new ValueEventListener() {
             @Override
