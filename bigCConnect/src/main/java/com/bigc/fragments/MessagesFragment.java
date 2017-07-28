@@ -160,6 +160,7 @@ public class MessagesFragment extends BaseFragment implements
         String messageId = "";
 
         String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        String currentUserName = Preferences.getInstance(getContext()).getString(DbConstants.NAME);
         for (int i = 0; i < selectedUsers.size(); i++) {
             Users user = selectedUsers.get(i);
             //    String objectId = databaseReference.child(DbConstants.TABLE_MESSAGE).push().getKey();
@@ -225,7 +226,7 @@ public class MessagesFragment extends BaseFragment implements
             }
             ArrayList<String> sendTokens =  new ArrayList<>();
             sendTokens.add(user.getToken());
-            Utils.sendNotification(sendTokens, Constants.ACTION_MESSAGE, "Notification", "A post has been added.");
+            Utils.sendNotification(sendTokens, Constants.ACTION_MESSAGE, "Message from: "+currentUserName, messages.getMessage());
 
             getActivity().runOnUiThread(new Runnable() {
                 @Override
@@ -491,6 +492,8 @@ public class MessagesFragment extends BaseFragment implements
 			}
 		}
 	}*/
+
+
 
     private void populateList(List<Messages> messages) {
 

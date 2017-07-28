@@ -8,12 +8,12 @@
         "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\drawable-mdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\cast_ic_notification_1.png",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\ec5b149a6945ad70caba15951ced18ce06fd5482\\output\\res\\drawable-mdpi-v4\\cast_ic_notification_1.png"
-    },
-    {
         "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_cast_dark.png",
         "source": "C:\\Users\\beesolver\\.android\\build-cache\\7ec456b531d2e87f743b4e26a300471e5b078c52\\output\\res\\drawable-mdpi-v4\\ic_cast_dark.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\cast_ic_notification_1.png",
+        "source": "C:\\Users\\beesolver\\.android\\build-cache\\ec5b149a6945ad70caba15951ced18ce06fd5482\\output\\res\\drawable-mdpi-v4\\cast_ic_notification_1.png"
     },
     {
         "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_speaker_dark.png",
@@ -24,12 +24,12 @@
         "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\drawable-mdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\quantum_ic_play_circle_filled_grey600_36.png",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\\output\\res\\drawable-mdpi-v4\\quantum_ic_play_circle_filled_grey600_36.png"
-    },
-    {
         "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_btn_radio_to_on_mtrl_015.png",
         "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\drawable-mdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\quantum_ic_play_circle_filled_grey600_36.png",
+        "source": "C:\\Users\\beesolver\\.android\\build-cache\\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\\output\\res\\drawable-mdpi-v4\\quantum_ic_play_circle_filled_grey600_36.png"
     },
     {
         "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\notification_bg_normal_pressed.9.png",
@@ -44,16 +44,16 @@
         "source": "C:\\Users\\beesolver\\.android\\build-cache\\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\\output\\res\\drawable-mdpi-v4\\cast_ic_stop_circle_filled_white.png"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\drawable-mdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
+        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\quantum_ic_forward_30_white_24.png",
+        "source": "C:\\Users\\beesolver\\.android\\build-cache\\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\\output\\res\\drawable-mdpi-v4\\quantum_ic_forward_30_white_24.png"
     },
     {
         "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\quantum_ic_volume_up_grey600_36.png",
         "source": "C:\\Users\\beesolver\\.android\\build-cache\\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\\output\\res\\drawable-mdpi-v4\\quantum_ic_volume_up_grey600_36.png"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\quantum_ic_forward_30_white_24.png",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\\output\\res\\drawable-mdpi-v4\\quantum_ic_forward_30_white_24.png"
+        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png",
+        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\drawable-mdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
         "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_plusone_tall_off_client.png",

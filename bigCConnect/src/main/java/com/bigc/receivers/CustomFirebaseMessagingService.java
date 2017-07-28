@@ -35,7 +35,7 @@ public class CustomFirebaseMessagingService extends FirebaseMessagingService{
 
         // Check if message contains a data payload.
         if (remoteMessage.getData().size() > 0) {
-            Log.d(TAG, "Message data payload: " + remoteMessage.getData());
+            Log.d(TAG, "Message data payload: " + remoteMessage.getData().values()+ " " + remoteMessage.getNotification());
 
 
                 sendNotification(remoteMessage);
@@ -56,6 +56,7 @@ public class CustomFirebaseMessagingService extends FirebaseMessagingService{
             icon = R.drawable.ic_alert_invite;
         } else if (Constants.ACTION_MESSAGE.equals(action)) {
             icon = R.drawable.ic_alert_feed;
+
         } else {
             icon = R.drawable.ic_alert_feed;
         }
@@ -70,6 +71,7 @@ public class CustomFirebaseMessagingService extends FirebaseMessagingService{
         PendingIntent pIntent = PendingIntent.getActivity(context,
                 (int) System.currentTimeMillis(), intent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
+
 
         Notification n = new Notification.Builder(context)
                 .setContentTitle(
@@ -97,14 +99,16 @@ public class CustomFirebaseMessagingService extends FirebaseMessagingService{
         int icon;
         Intent intent = new Intent(this, HomeScreen.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        //intent.setAction(messageBody.getData().values().toArray()[0].toString());
+
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
                 PendingIntent.FLAG_ONE_SHOT);
 
         Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
-        if (Constants.ACTION_FRIEND_REQUEST.equals(messageBody.getData().values().toArray()[1])) {
+        if (Constants.ACTION_FRIEND_REQUEST.equals(messageBody.getData().values().toArray()[0])) {
             icon = R.drawable.ic_alert_invite;
-        } else if (Constants.ACTION_MESSAGE.equals("")) {
+        } else if (Constants.ACTION_MESSAGE.equals(messageBody.getData().values().toArray()[0])) {
             icon = R.drawable.ic_alert_feed;
         } else {
             icon = R.drawable.ic_alert_feed;
@@ -112,8 +116,8 @@ public class CustomFirebaseMessagingService extends FirebaseMessagingService{
 
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(icon)
-                .setContentTitle(messageBody.getData().values().toArray()[1].toString())
-                .setContentText(messageBody.getData().values().toArray()[0].toString())
+                .setContentTitle(messageBody.getNotification().getTitle())
+                .setContentText(messageBody.getNotification().getBody())
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri)
                 .setContentIntent(pendingIntent);

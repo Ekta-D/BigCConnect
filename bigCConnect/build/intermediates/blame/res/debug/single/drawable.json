@@ -72,12 +72,12 @@
         "source": "C:\\Users\\beesolver\\.android\\build-cache\\7ec456b531d2e87f743b4e26a300471e5b078c52\\output\\res\\drawable\\ic_expand.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable\\profilepic1.png",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\profilepic1.png"
-    },
-    {
         "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable\\ribbon_breast_male.png",
         "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_breast_male.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable\\profilepic1.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\profilepic1.png"
     },
     {
         "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable\\mr_ic_close_dark.xml",
@@ -88,12 +88,12 @@
         "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\drawable\\abc_vector_test.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable\\ribbon_pancreatic.png",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_pancreatic.png"
-    },
-    {
         "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable\\cast_ic_notification_forward30.xml",
         "source": "C:\\Users\\beesolver\\.android\\build-cache\\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\\output\\res\\drawable\\cast_ic_notification_forward30.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable\\ribbon_pancreatic.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_pancreatic.png"
     },
     {
         "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable\\splash_image_beta.png",
@@ -148,12 +148,12 @@
         "source": "C:\\Users\\beesolver\\.android\\build-cache\\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\\output\\res\\drawable\\cast_ic_notification_stop_live_stream.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable\\ribbon_supporter.png",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_supporter.png"
-    },
-    {
         "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_launcher.png",
         "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable\\ribbon_supporter.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_supporter.png"
     },
     {
         "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable\\cast_ic_notification_skip_next.xml",
@@ -172,12 +172,12 @@
         "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\default_profile_pic_icon.png"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable\\ribbon_liver_fighter.png",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_liver_fighter.png"
-    },
-    {
         "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable\\cast_ic_expanded_controller_mute.xml",
         "source": "C:\\Users\\beesolver\\.android\\build-cache\\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\\output\\res\\drawable\\cast_ic_expanded_controller_mute.xml"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable\\ribbon_liver_fighter.png",
+        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable\\ribbon_liver_fighter.png"
     },
     {
         "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",

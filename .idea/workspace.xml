@@ -14,224 +14,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a73130a8-b8d9-4fc1-b602-488f2ec5e328" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/okhttp_3_4_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/okio_1_9_0.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/PostManager$2.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/android/support/v7/appcompat/R$id.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/android/support/v7/appcompat/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/android/support/v7/appcompat/R$layout.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/android/support/v7/appcompat/R$layout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/android/support/v7/mediarouter/R$id.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/android/support/v7/mediarouter/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/android/support/v7/mediarouter/R$layout.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/android/support/v7/mediarouter/R$layout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/android/ex/chips/R$layout.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/android/ex/chips/R$layout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/android/widget/R$id.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/android/widget/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/android/widget/R$layout.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/android/widget/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/HomeScreen$1.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/HomeScreen$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/HomeScreen$2.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/HomeScreen$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/HomeScreen$3.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/HomeScreen$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/HomeScreen$4.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/HomeScreen$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/HomeScreen$5.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/HomeScreen$5.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/HomeScreen$6.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/HomeScreen$6.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/HomeScreen$7.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/HomeScreen$7.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/HomeScreen.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/HomeScreen.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/LoginActivity$1.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/LoginActivity$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/LoginActivity$2.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/LoginActivity$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/LoginActivity$3.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/LoginActivity$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/LoginActivity$4.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/LoginActivity$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/LoginActivity.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/LoginActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/PostActivity$1.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/PostActivity$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/PostActivity$2.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/PostActivity$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/PostActivity$3.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/PostActivity$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/PostActivity$4.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/PostActivity$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/PostActivity$5.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/PostActivity$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/PostActivity$6.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/PostActivity$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/PostActivity$7.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/PostActivity$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/PostActivity.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/PostActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/SearchActivity.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/SearchActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/Splash$1.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/Splash$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/Splash.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/Splash.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/BooksAdapter.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/BooksAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/ChatAdapter$ViewHolder.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/ChatAdapter$ViewHolder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/ChatAdapter.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/ChatAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/CommentsAdapter$ViewHolder.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/CommentsAdapter$ViewHolder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/CommentsAdapter.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/CommentsAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/MessagesAdapter$ViewHolder.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/MessagesAdapter$ViewHolder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/MessagesAdapter.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/MessagesAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/NewsAdapter.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/NewsAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/NewsFeedsAdapter$1.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/NewsFeedsAdapter$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/NewsFeedsAdapter$2$1.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/NewsFeedsAdapter$2$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/NewsFeedsAdapter$2.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/NewsFeedsAdapter$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/NewsFeedsAdapter$3.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/NewsFeedsAdapter$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/NewsFeedsAdapter$ViewHolder.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/NewsFeedsAdapter$ViewHolder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/NewsFeedsAdapter.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/NewsFeedsAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/NewsfeedAdapter.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/NewsfeedAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/PendingRequestsAdapter.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/PendingRequestsAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/PhotoAdapter.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/PhotoAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/PhotosAdapter.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/PhotosAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/RibbonSpinnerAdapter.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/RibbonSpinnerAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/RibbonsAdapter.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/RibbonsAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/RibbonsGridAdapter.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/RibbonsGridAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/SearchResultAdapter$1.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/SearchResultAdapter$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/SearchResultAdapter.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/SearchResultAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/SearchResultPictureAdapter.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/SearchResultPictureAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/StoriesAdapter.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/StoriesAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/TributesAdapter$ViewHolder.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/TributesAdapter$ViewHolder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/TributesAdapter.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/TributesAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/VideosAdapter.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/VideosAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/datastorage/Preferences.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/datastorage/Preferences.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/dialogs/AddTributeDialog$1.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/dialogs/AddTributeDialog$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/dialogs/AddTributeDialog.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/dialogs/AddTributeDialog.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/BookDetailFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/BookDetailFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/BooksFragment$1.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/BooksFragment$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/BooksFragment$SearchBooksReqListener.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/BooksFragment$SearchBooksReqListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/BooksFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/BooksFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/CategorySurvivorsFragment$1.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/CategorySurvivorsFragment$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/CategorySurvivorsFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/CategorySurvivorsFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/ConnectionsFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/ConnectionsFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/DeactivateFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/DeactivateFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/DeactivateSecurityFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/DeactivateSecurityFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/EmailInputFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/EmailInputFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/ExploreFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/ExploreFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/FragmentResetPassword.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/FragmentResetPassword.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/FragmentSearchSurvivors.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/FragmentSearchSurvivors.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/FragmentStoryDetail$1.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/FragmentStoryDetail$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/FragmentStoryDetail$2.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/FragmentStoryDetail$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/FragmentStoryDetail$3.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/FragmentStoryDetail$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/FragmentStoryDetail$MyLeadingMarginSpan2.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/FragmentStoryDetail$MyLeadingMarginSpan2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/FragmentStoryDetail.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/FragmentStoryDetail.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/FragmentSurvivorStories.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/FragmentSurvivorStories.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/FragmentTributeDetail$MyLeadingMarginSpan2.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/FragmentTributeDetail$MyLeadingMarginSpan2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/FragmentTributeDetail.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/FragmentTributeDetail.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/FragmentTributes$1.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/FragmentTributes$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/FragmentTributes$2.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/FragmentTributes$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/FragmentTributes$3.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/FragmentTributes$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/FragmentTributes.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/FragmentTributes.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/InviteFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/InviteFragment.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/MessageDetailFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/MessageDetailFragment.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/MessagesFragment$1.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/MessagesFragment$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/MessagesFragment$2.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/MessagesFragment$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/MessagesFragment$3.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/MessagesFragment$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/MessagesFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/MessagesFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/NameInputFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/NameInputFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/NewsFeedFragment$1.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/NewsFeedFragment$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/NewsFeedFragment$2.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/NewsFeedFragment$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/NewsFeedFragment$3.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/NewsFeedFragment$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/NewsFeedFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/NewsFeedFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/PasswordFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/PasswordFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/PhotosFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/PhotosFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/PostDetailFragment$1.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/PostDetailFragment$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/PostDetailFragment$2.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/PostDetailFragment$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/PostDetailFragment$3.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/PostDetailFragment$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/PostDetailFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/PostDetailFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/PostsFragments$1.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/PostsFragments$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/PostsFragments.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/PostsFragments.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/ProfileFragment$1.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/ProfileFragment$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/ProfileFragment$2.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/ProfileFragment$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/ProfileFragment$3$1.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/ProfileFragment$3$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/ProfileFragment$3.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/ProfileFragment$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/ProfileFragment$PictureResponseHandler.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/ProfileFragment$PictureResponseHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/ProfileFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/ProfileFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/ProfilePicFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/ProfilePicFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/ReportProblemFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/ReportProblemFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/RibbonSelectionFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/RibbonSelectionFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/RssFeedFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/RssFeedFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SelectionFragment$1.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SelectionFragment$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SelectionFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SelectionFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SettingsFragment$3.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SettingsFragment$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SettingsFragment$4.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SettingsFragment$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SettingsFragment$5.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SettingsFragment$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SettingsFragment$6.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SettingsFragment$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SettingsFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SettingsFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SetupRemainderFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SetupRemainderFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SupporterVisibilityFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SupporterVisibilityFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SupportersFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SupportersFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SurvivorSearch.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SurvivorSearch.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SurvivorSearchResultFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SurvivorSearchResultFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/TermsConditionsFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/TermsConditionsFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/VideosFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/VideosFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/gallery/CustomGalleryActivity.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/gallery/CustomGalleryActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/gallery/GalleryAdapter.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/gallery/GalleryAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Constants.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Constants.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/DbConstants.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/DbConstants.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/PostManager$1.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/PostManager$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/PostManager$sendMessageTask.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/PostManager$sendMessageTask.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/PostManager.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/PostManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Queries$1.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Queries$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Queries$2.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Queries$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Queries.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Queries.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$1.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$10.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$11.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$11.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$12.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$12.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$13.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$13.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$14.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$14.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$15.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$15.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$16.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$16.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$2.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$3.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$4.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$5.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$6.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$7.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$8.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$9.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$EmailSenderTask.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$EmailSenderTask.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$saveConnectionTask.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils$saveConnectionTask.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/Utils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/interfaces/MessageObserver.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/interfaces/MessageObserver.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/interfaces/PopupOptionHandler.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/interfaces/PopupOptionHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/interfaces/SearchResultBaseAdapter.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/interfaces/SearchResultBaseAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/interfaces/UploadPostObserver.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/interfaces/UploadPostObserver.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/models/Messages.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/models/Messages.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/models/Users.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/models/Users.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/BigcConnect.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/BigcConnect.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/R$id.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/R$integer.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/R$integer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/R$interpolator.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/R$interpolator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/R$layout.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/R$layout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/R$menu.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/R$menu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/R$raw.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/R$raw.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/R$string.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/R$string.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/R$style.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/R$style.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/R$styleable.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/R$styleable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/R$xml.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/R$xml.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/google/android/gms/R$id.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/google/android/gms/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/google/android/gms/R$layout.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/google/android/gms/R$layout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/eu/janmuller/android/simplecropimage/R$id.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/eu/janmuller/android/simplecropimage/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/eu/janmuller/android/simplecropimage/R$layout.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/eu/janmuller/android/simplecropimage/R$layout.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/res/resources-debug.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/outputs/apk/bigCConnect-debug.apk" afterPath="$PROJECT_DIR$/bigCConnect/build/outputs/apk/bigCConnect-debug.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gmailChipsLibrary/build/outputs/aar/gmailChipsLibrary-debug.aar" afterPath="$PROJECT_DIR$/gmailChipsLibrary/build/outputs/aar/gmailChipsLibrary-debug.aar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gmailChipsLibrary/build/outputs/aar/gmailChipsLibrary-release.aar" afterPath="$PROJECT_DIR$/gmailChipsLibrary/build/outputs/aar/gmailChipsLibrary-release.aar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loadMoreListView/build/intermediates/classes/release/com/costum/android/widget/PullToRefreshListView.class" afterPath="$PROJECT_DIR$/loadMoreListView/build/intermediates/classes/release/com/costum/android/widget/PullToRefreshListView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loadMoreListView/build/outputs/aar/loadMoreListView-debug.aar" afterPath="$PROJECT_DIR$/loadMoreListView/build/outputs/aar/loadMoreListView-debug.aar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loadMoreListView/build/outputs/aar/loadMoreListView-release.aar" afterPath="$PROJECT_DIR$/loadMoreListView/build/outputs/aar/loadMoreListView-release.aar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleCropLib/build/outputs/aar/simpleCropLib-debug.aar" afterPath="$PROJECT_DIR$/simpleCropLib/build/outputs/aar/simpleCropLib-debug.aar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleCropLib/build/outputs/aar/simpleCropLib-release.aar" afterPath="$PROJECT_DIR$/simpleCropLib/build/outputs/aar/simpleCropLib-release.aar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/bigCConnect.iml" afterPath="$PROJECT_DIR$/bigCConnect/bigCConnect.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/generated/source/r/debug/android/support/v7/appcompat/R.java" afterPath="$PROJECT_DIR$/bigCConnect/build/generated/source/r/debug/android/support/v7/appcompat/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/generated/source/r/debug/android/support/v7/mediarouter/R.java" afterPath="$PROJECT_DIR$/bigCConnect/build/generated/source/r/debug/android/support/v7/mediarouter/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/generated/source/r/debug/com/android/ex/chips/R.java" afterPath="$PROJECT_DIR$/bigCConnect/build/generated/source/r/debug/com/android/ex/chips/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/generated/source/r/debug/com/android/widget/R.java" afterPath="$PROJECT_DIR$/bigCConnect/build/generated/source/r/debug/com/android/widget/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/generated/source/r/debug/com/bigc_connect/R.java" afterPath="$PROJECT_DIR$/bigCConnect/build/generated/source/r/debug/com/bigc_connect/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/generated/source/r/debug/com/google/android/gms/R.java" afterPath="$PROJECT_DIR$/bigCConnect/build/generated/source/r/debug/com/google/android/gms/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/generated/source/r/debug/eu/janmuller/android/simplecropimage/R.java" afterPath="$PROJECT_DIR$/bigCConnect/build/generated/source/r/debug/eu/janmuller/android/simplecropimage/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/blame/res/debug/single/color.json" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/blame/res/debug/single/color.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/blame/res/debug/single/drawable-hdpi-v4.json" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/blame/res/debug/single/drawable-hdpi-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/blame/res/debug/single/drawable-mdpi-v4.json" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/blame/res/debug/single/drawable-mdpi-v4.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/blame/res/debug/single/drawable-xhdpi-v4.json" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/blame/res/debug/single/drawable-xhdpi-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/blame/res/debug/single/drawable-xxhdpi-v4.json" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/blame/res/debug/single/drawable-xxhdpi-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/blame/res/debug/single/drawable-xxxhdpi-v4.json" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/blame/res/debug/single/drawable-xxxhdpi-v4.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/blame/res/debug/single/drawable.json" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/blame/res/debug/single/drawable.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/blame/res/debug/single/layout.json" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/blame/res/debug/single/layout.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/incremental/mergeDebugResources/merger.xml" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/incremental/mergeDebugResources/merger.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/res/merged/debug/layout/activity_post_layout.xml" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/res/merged/debug/layout/activity_post_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/res/merged/debug/layout/newsfeed_item_layout.xml" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/res/merged/debug/layout/newsfeed_item_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/symbols/debug/R.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/bigCConnect/build/outputs/logs/manifest-merger-debug-report.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/NewsFeedsAdapter.java" afterPath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/NewsFeedsAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/BooksFragment.java" afterPath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/BooksFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/HomeScreen.java" afterPath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/HomeScreen.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/MessagesFragment.java" afterPath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/MessagesFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/NewsFeedFragment.java" afterPath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/NewsFeedFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/PostDetailFragment.java" afterPath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/PostDetailFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/VideosFragment.java" afterPath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/VideosFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/CustomFirebaseInstanceIDService.java" afterPath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/CustomFirebaseInstanceIDService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gmailChipsLibrary/gmailChipsLibrary.iml" afterPath="$PROJECT_DIR$/gmailChipsLibrary/gmailChipsLibrary.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loadMoreListView/build/intermediates/blame/res/androidTest/debug/single/drawable-mdpi-v4.json" afterPath="$PROJECT_DIR$/loadMoreListView/build/intermediates/blame/res/androidTest/debug/single/drawable-mdpi-v4.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loadMoreListView/loadMoreListView.iml" afterPath="$PROJECT_DIR$/loadMoreListView/loadMoreListView.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loadMoreListView/src/main/java/com/costum/android/widget/PullToRefreshListView.java" afterPath="$PROJECT_DIR$/loadMoreListView/src/main/java/com/costum/android/widget/PullToRefreshListView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleCropLib/simpleCropLib.iml" afterPath="$PROJECT_DIR$/simpleCropLib/simpleCropLib.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/CustomFirebaseMessagingService.java" afterPath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/CustomFirebaseMessagingService.java" />
     </list>
     <ignored path="BigCConnect.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -408,103 +221,69 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Utils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/Utils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="1067" column="0" selection-start-line="1067" selection-start-column="0" selection-end-line="1067" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PostDetailFragment.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/PostDetailFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1178">
-              <caret line="317" column="2" selection-start-line="317" selection-start-column="2" selection-end-line="317" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewsFeedsAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/NewsFeedsAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="90" column="24" selection-start-line="90" selection-start-column="24" selection-end-line="90" selection-end-column="24" />
-              <folding>
-                <element signature="e#3133#3134#0" expanded="true" />
-                <element signature="e#3168#3169#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewsFeedFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/NewsFeedFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="74" column="57" selection-start-line="74" selection-start-column="57" selection-end-line="74" selection-end-column="57" />
-              <folding>
-                <marker date="1501235803850" expanded="true" signature="8177:8212" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PullAndLoadListView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/loadMoreListView/src/main/java/com/costum/android/widget/PullAndLoadListView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="29" column="63" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="load_more_footer.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/loadMoreListView/src/main/res/layout/load_more_footer.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PullToRefreshListView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/loadMoreListView/src/main/java/com/costum/android/widget/PullToRefreshListView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="125" column="38" selection-start-line="125" selection-start-column="38" selection-end-line="125" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="HomeScreen.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/HomeScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="155" column="63" selection-start-line="155" selection-start-column="63" selection-end-line="155" selection-end-column="63" />
+            <state relative-caret-position="95">
+              <caret line="458" column="25" selection-start-line="458" selection-start-column="25" selection-end-line="458" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomFirebaseInstanceIDService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/CustomFirebaseInstanceIDService.java">
+      <file leaf-file-name="CustomFirebaseMessagingService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/CustomFirebaseMessagingService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
-              <caret line="39" column="55" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
+            <state relative-caret-position="74">
+              <caret line="101" column="10" selection-start-line="101" selection-start-column="10" selection-end-line="101" selection-end-column="10" />
               <folding>
-                <element signature="e#1613#1859#0" expanded="true" />
-                <element signature="e#1858#1859#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="method#buildRequestNotification#0;class#CustomFirebaseMessagingService#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessagesFragment.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/MessagesFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="228" column="105" selection-start-line="228" selection-start-column="105" selection-end-line="228" selection-end-column="105" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#11153#11154#0" expanded="true" />
+                <element signature="e#11177#11178#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessagesAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/MessagesAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="38" column="15" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Utils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/Utils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-240">
+              <caret line="583" column="58" selection-start-line="583" selection-start-column="54" selection-end-line="583" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NotificationReceiver.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/NotificationReceiver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="43" column="75" selection-start-line="30" selection-start-column="20" selection-end-line="43" selection-end-column="75" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -5230,7 +5009,6 @@
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/FragmentTributeDetail.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/dialogs/AddTributeDialog.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/datastorage/Preferences.java" />
-        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/HomeScreen.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/Queries.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/interfaces/SearchResultBaseAdapter.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/CategorySurvivorsFragment.java" />
@@ -5247,7 +5025,6 @@
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/Constants.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/Utils.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/SearchResultAdapter.java" />
-        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/CustomFirebaseMessagingService.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc_connect/BigcConnect.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/Splash.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/PostActivity.java" />
@@ -5255,7 +5032,6 @@
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/BooksFragment.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/VideosFragment.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/TributesAdapter.java" />
-        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/MessagesFragment.java" />
         <option value="$PROJECT_DIR$/loadMoreListView/src/main/java/com/costum/android/widget/PullAndLoadListView.java" />
         <option value="$PROJECT_DIR$/loadMoreListView/src/main/java/com/costum/android/widget/PullToRefreshListView.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/NewsFeedFragment.java" />
@@ -5263,6 +5039,9 @@
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/NewsFeedsAdapter.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/res/layout/fragment_feeds_layout.xml" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/PostDetailFragment.java" />
+        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/CustomFirebaseMessagingService.java" />
+        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/HomeScreen.java" />
+        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/MessagesFragment.java" />
       </list>
     </option>
   </component>
@@ -5378,7 +5157,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="adapters" />
+              <option name="myItemId" value="receivers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BigCConnect" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bigCConnect" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bigc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fragments" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -5391,8 +5196,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="F:/BigC-Connect/Android/BigCConnect" />
-    <property name="device.picker.selection" value="35469b8f0d91ff50" />
-    <property name="DEBUGGABLE_DEVICE" value="samsung-sm_t713-f61bec350434663c" />
+    <property name="device.picker.selection" value="f61bec350434663c" />
+    <property name="DEBUGGABLE_DEVICE" value="samsung-sm_t550-35469b8f0d91ff50" />
     <property name="DEBUGGABLE_PROCESS" value="com.bigc_connect" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="SearchEverywhereHistoryKey" value="newf&#9;FILE&#9;file://D:/StudioSpace/BigC-Connect/BigCConnect/BigCConnect/bigCConnect/src/main/java/com/bigc/adapters/NewsFeedsAdapter.java&#10;Pos&#9;FILE&#9;file://D:/Office work/BigCConnect/bigCConnect/src/main/java/com/bigc/activities/PostActivity.java&#10;pos&#9;FILE&#9;file://D:/Office work/BigCConnect/bigCConnect/src/main/java/com/bigc/fragments/PostDetailFragment.java" />
@@ -6026,7 +5831,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501220641834</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="changes in news feed&#10;Committed by:&#10;Preeti">
+      <created>1501235856585</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1501235856585</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView">
@@ -6040,30 +5852,30 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32796487" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3270869" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3935264" sideWeight="0.50907713" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4020443" sideWeight="0.48789713" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28279388" sideWeight="0.48789713" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.49546143" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4463373" sideWeight="0.5121029" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2118003" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2118003" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Fabric" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1669506" sideWeight="0.4924357" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31345826" sideWeight="0.4924357" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -6126,7 +5938,8 @@
     <MESSAGE value="Category survivors completed. &#10;Committed by:&#10;Preeti" />
     <MESSAGE value="Notifications completed.&#10;Committed by:&#10;Preeti" />
     <MESSAGE value="build changes...&#10;Committed by:&#10;Preeti" />
-    <option name="LAST_COMMIT_MESSAGE" value="build changes...&#10;Committed by:&#10;Preeti" />
+    <MESSAGE value="changes in news feed&#10;Committed by:&#10;Preeti" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes in news feed&#10;Committed by:&#10;Preeti" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -6361,7 +6174,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/CustomFirebaseMessagingService.java</url>
-          <line>104</line>
+          <line>108</line>
           <properties />
           <option name="timeStamp" value="112" />
         </line-breakpoint>
@@ -6395,19 +6208,18 @@
           <properties />
           <option name="timeStamp" value="119" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/CustomFirebaseMessagingService.java</url>
+          <line>40</line>
+          <properties />
+          <option name="timeStamp" value="120" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="120" />
+      <option name="time" value="121" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/ConnectionsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="944">
-          <caret line="114" column="51" selection-start-line="114" selection-start-column="51" selection-end-line="114" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-24/android.jar!/java/util/List.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
@@ -6488,14 +6300,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="363">
           <caret line="76" column="64" selection-start-line="76" selection-start-column="64" selection-end-line="76" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/NotificationReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -6606,17 +6410,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/CustomFirebaseMessagingService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="123" column="36" selection-start-line="123" selection-start-column="35" selection-end-line="123" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2483#2534#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -6718,16 +6511,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/MessagesFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="282" column="3" selection-start-line="282" selection-start-column="1" selection-end-line="285" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/VideosFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
@@ -6742,14 +6525,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/HomeScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="155" column="63" selection-start-line="155" selection-start-column="63" selection-end-line="155" selection-end-column="63" />
           <folding />
         </state>
       </provider>
@@ -6778,17 +6553,6 @@
         <state relative-caret-position="17">
           <caret line="29" column="63" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="63" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/CustomFirebaseInstanceIDService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="39" column="55" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
-          <folding>
-            <element signature="e#1613#1859#0" expanded="true" />
-            <element signature="e#1858#1859#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -6824,19 +6588,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/Utils.java">
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/PostDetailFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="1067" column="0" selection-start-line="1067" selection-start-column="0" selection-end-line="1067" selection-end-column="0" />
+        <state relative-caret-position="1382">
+          <caret line="317" column="2" selection-start-line="317" selection-start-column="2" selection-end-line="317" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/PostDetailFragment.java">
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/CustomFirebaseInstanceIDService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1178">
-          <caret line="317" column="2" selection-start-line="317" selection-start-column="2" selection-end-line="317" selection-end-column="2" />
+        <state relative-caret-position="264">
+          <caret line="39" column="55" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
+          <folding>
+            <element signature="e#1613#1859#0" expanded="true" />
+            <element signature="e#1858#1859#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-240">
+          <caret line="583" column="58" selection-start-line="583" selection-start-column="54" selection-end-line="583" selection-end-column="58" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/NotificationReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="43" column="75" selection-start-line="30" selection-start-column="20" selection-end-line="43" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/HomeScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="458" column="25" selection-start-line="458" selection-start-column="25" selection-end-line="458" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/CustomFirebaseMessagingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="101" column="10" selection-start-line="101" selection-start-column="10" selection-end-line="101" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#buildRequestNotification#0;class#CustomFirebaseMessagingService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/MessagesAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="38" column="15" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/MessagesFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="228" column="105" selection-start-line="228" selection-start-column="105" selection-end-line="228" selection-end-column="105" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#11153#11154#0" expanded="true" />
+            <element signature="e#11177#11178#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

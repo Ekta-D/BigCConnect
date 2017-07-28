@@ -136,40 +136,40 @@
         "source": "C:\\Users\\beesolver\\.android\\build-cache\\4043e53d2d02cd617ba4d303de955a8d5c8bb200\\output\\res\\drawable-xxhdpi-v4\\ic_plusone_medium_off_client.png"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ic_media_route_on_04_light.png",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\7ec456b531d2e87f743b4e26a300471e5b078c52\\output\\res\\drawable-xxhdpi-v4\\ic_media_route_on_04_light.png"
-    },
-    {
         "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_dark_focused.9.png",
         "source": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_dark_focused.9.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ic_media_route_on_04_light.png",
+        "source": "C:\\Users\\beesolver\\.android\\build-cache\\7ec456b531d2e87f743b4e26a300471e5b078c52\\output\\res\\drawable-xxhdpi-v4\\ic_media_route_on_04_light.png"
     },
     {
         "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ic_media_route_on_16_dark.png",
         "source": "C:\\Users\\beesolver\\.android\\build-cache\\7ec456b531d2e87f743b4e26a300471e5b078c52\\output\\res\\drawable-xxhdpi-v4\\ic_media_route_on_16_dark.png"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ic_plusone_small_off_client.png",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\4043e53d2d02cd617ba4d303de955a8d5c8bb200\\output\\res\\drawable-xxhdpi-v4\\ic_plusone_small_off_client.png"
+        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ic_media_route_on_14_light.png",
+        "source": "C:\\Users\\beesolver\\.android\\build-cache\\7ec456b531d2e87f743b4e26a300471e5b078c52\\output\\res\\drawable-xxhdpi-v4\\ic_media_route_on_14_light.png"
     },
     {
         "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ic_media_play.png",
         "source": "C:\\Users\\beesolver\\.android\\build-cache\\7ec456b531d2e87f743b4e26a300471e5b078c52\\output\\res\\drawable-xxhdpi-v4\\ic_media_play.png"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ic_media_route_on_14_light.png",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\7ec456b531d2e87f743b4e26a300471e5b078c52\\output\\res\\drawable-xxhdpi-v4\\ic_media_route_on_14_light.png"
+        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ic_plusone_small_off_client.png",
+        "source": "C:\\Users\\beesolver\\.android\\build-cache\\4043e53d2d02cd617ba4d303de955a8d5c8bb200\\output\\res\\drawable-xxhdpi-v4\\ic_plusone_small_off_client.png"
     },
     {
         "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ic_media_route_connecting_21_light.png",
         "source": "C:\\Users\\beesolver\\.android\\build-cache\\7ec456b531d2e87f743b4e26a300471e5b078c52\\output\\res\\drawable-xxhdpi-v4\\ic_media_route_connecting_21_light.png"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ic_media_route_connecting_11_light.png",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\7ec456b531d2e87f743b4e26a300471e5b078c52\\output\\res\\drawable-xxhdpi-v4\\ic_media_route_connecting_11_light.png"
-    },
-    {
         "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\quantum_ic_cast_connected_white_24.png",
         "source": "C:\\Users\\beesolver\\.android\\build-cache\\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\\output\\res\\drawable-xxhdpi-v4\\quantum_ic_cast_connected_white_24.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ic_media_route_connecting_11_light.png",
+        "source": "C:\\Users\\beesolver\\.android\\build-cache\\7ec456b531d2e87f743b4e26a300471e5b078c52\\output\\res\\drawable-xxhdpi-v4\\ic_media_route_connecting_11_light.png"
     },
     {
         "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\quantum_ic_pause_circle_filled_grey600_36.png",
@@ -220,12 +220,12 @@
         "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\drawable-xxhdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\quantum_ic_bigtop_updates_white_24.png",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\\output\\res\\drawable-xxhdpi-v4\\quantum_ic_bigtop_updates_white_24.png"
-    },
-    {
         "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png",
         "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\drawable-xxhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\quantum_ic_bigtop_updates_white_24.png",
+        "source": "C:\\Users\\beesolver\\.android\\build-cache\\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\\output\\res\\drawable-xxhdpi-v4\\quantum_ic_bigtop_updates_white_24.png"
     },
     {
         "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ic_media_route_on_18_light.png",
@@ -236,12 +236,12 @@
         "source": "C:\\Users\\beesolver\\.android\\build-cache\\7ec456b531d2e87f743b4e26a300471e5b078c52\\output\\res\\drawable-xxhdpi-v4\\ic_media_route_connecting_19_dark.png"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_pressed.9.png",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_pressed.9.png"
-    },
-    {
         "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ic_media_route_connecting_08_light.png",
         "source": "C:\\Users\\beesolver\\.android\\build-cache\\7ec456b531d2e87f743b4e26a300471e5b078c52\\output\\res\\drawable-xxhdpi-v4\\ic_media_route_connecting_08_light.png"
+    },
+    {
+        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_pressed.9.png",
+        "source": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_pressed.9.png"
     },
     {
         "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ic_media_route_connecting_15_light.png",

@@ -157,8 +157,7 @@ public class HomeScreen extends AppCompatActivity implements
 
                 replaceFragment(getFragment(Constants.FRAGMENT_CONNECTIONS));
             } else if (Constants.ACTION_MESSAGE.equals(action)) {
-
-                replaceFragment(getFragment(Constants.FRAGMENT_MESSAGES));
+                    replaceFragment(getFragment(Constants.FRAGMENT_MESSAGES));
             } else if (Constants.ACTION_TRIBUTE.equals(action)) {
                 if (objectId == null || objectId.length() == 0) {
                     replaceFragment(getFragment(Constants.FRAGMENT_TRIBUTES));
