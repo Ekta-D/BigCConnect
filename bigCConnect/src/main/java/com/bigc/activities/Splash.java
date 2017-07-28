@@ -4,11 +4,19 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 
+import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
 import com.bigc.general.classes.Utils;
 import com.bigc_connect.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
+
+import java.util.HashMap;
 
 public class Splash extends Activity {
 
@@ -60,10 +68,13 @@ public class Splash extends Activity {
 
     private void startApplication() {
         if (FirebaseAuth.getInstance().getCurrentUser() == null) {
-            Utils.unregisterDeviceForNotifications();
+
+            //Utils.unregisterDeviceForNotifications();
             startActivity(new Intent(Splash.this, LoginActivity.class));
         } else {
-            Utils.registerDeviceForNotifications();
+            sendRegistrationToServer(FirebaseInstanceId.getInstance().getToken());
+
+            //Utils.registerDeviceForNotifications();
             Intent i = new Intent(Splash.this, HomeScreen.class);
             if (getIntent() != null) {
 
@@ -79,6 +90,16 @@ public class Splash extends Activity {
         }
         finish();
     }
-
+    private void sendRegistrationToServer(String token) {
+        // TODO: Implement this method to send token to your app server.
+        HashMap<String, Object> map = new HashMap();
+        map.put(DbConstants.TOKEN, token);
+        FirebaseDatabase.getInstance().getReference().child(DbConstants.USERS).child(FirebaseAuth.getInstance().getCurrentUser().getUid()).updateChildren(map, new DatabaseReference.CompletionListener() {
+            @Override
+            public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+                Log.d("", "Refreshed token saved");
+            }
+        });
+    }
 
 }

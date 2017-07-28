@@ -157,10 +157,12 @@ public class SettingsFragment extends BaseFragment {
                     public void onCheckedChanged(RadioGroup group, int checkedId) {
                         if (checkedId == R.id.offCheckBox) {
                             Log.e("Notifications", "Off");
-                            Utils.disablePushes();
+                            //Utils.disablePushes();
+                            updateNotificationSetting(false);
                         } else {
                             Log.e("Notifications", "On");
-                            Utils.enablePushes();
+                            //Utils.enablePushes();
+                            updateNotificationSetting(true);
                         }
                     }
                 });
@@ -190,6 +192,12 @@ public class SettingsFragment extends BaseFragment {
         });
 
         return view;
+    }
+
+    private void updateNotificationSetting(boolean b) {
+        Preferences.getInstance(getActivity()).save(DbConstants.RECEIVEPUSH, b);
+        updated_values.put(DbConstants.RECEIVEPUSH, b);
+        databaseReference.child(DbConstants.USERS).child(current_userId).updateChildren(updated_values);
     }
 
     @Override

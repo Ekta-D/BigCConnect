@@ -23,6 +23,25 @@ public class Users extends com.android.ex.chips.Users implements Serializable {
     String message;
     String updatedAt;
 
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public boolean isRecievePush() {
+        return recievePush;
+    }
+
+    public void setRecievePush(boolean recievePush) {
+        this.recievePush = recievePush;
+    }
+
+    String token;
+    boolean recievePush;
+
     public String getUpdatedAt() {
         return updatedAt;
     }

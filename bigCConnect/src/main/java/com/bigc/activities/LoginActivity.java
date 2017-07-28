@@ -326,6 +326,10 @@ public class LoginActivity extends Activity implements OnClickListener {
                     Preferences.getInstance(LoginActivity.this).save(DbConstants.TYPE, Integer.parseInt(String.valueOf(values.get("type"))));
                     Preferences.getInstance(LoginActivity.this).save(DbConstants.ID, String.valueOf(values.get("objectId")));
                     Preferences.getInstance(LoginActivity.this).save(DbConstants.VISIBILITY, Integer.parseInt(String.valueOf(values.get("visibility"))));
+                    Preferences.getInstance(LoginActivity.this).save(DbConstants.TOKEN, String.valueOf(values.get("token")));
+                    Preferences.getInstance(LoginActivity.this).save(DbConstants.RECEIVEPUSH, String.valueOf(values.get("recievePush")));
+
+
                     Utils.hideProgress();
 
                     if (deactivated) {

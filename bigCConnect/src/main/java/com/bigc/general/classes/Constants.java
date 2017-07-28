@@ -6,11 +6,13 @@ public class Constants {
         SURVIVOR, SUPPORTER, FIGHTER
     }
 
+    public static final String LEGACY_SERVER_KEY = "AIzaSyC_xIY7X_myuFn2yc5p6TGsP5Gs4awt-WM";
+
     public static final int IS_SURVIVOR = 0;
     public static final int IS_SUPPORTER = 1;
     public static final int IS_FIGHTER = 2;
 
-public static final String FIREBASE_STRAGE_URL="gs://bigc-e2fb5.appspot.com";
+    public static final String FIREBASE_STRAGE_URL="gs://bigc-e2fb5.appspot.com";
     public static final String CURRENT_USERID = "Current_user_id";
     public static final String ISFIRST_TIME = "Isfirst_time";
     public static final String YOUTUBE_DEVELOPER_KEY = "AIzaSyBV2lb1moknZjNmJPtXFznF9OLOQ7mKU_8"; // Test:

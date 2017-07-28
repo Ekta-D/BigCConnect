@@ -276,7 +276,6 @@ public class NewsFeedsAdapter extends BaseAdapter {
 //                                ((HomeScreen) context.getActivity()).onBackPressed();
                                 posts.remove(position);
                                 Log.i("posts", posts.toString());
-                                notifyDataSetChanged();
                             }
 
                             @Override
@@ -347,7 +346,7 @@ public class NewsFeedsAdapter extends BaseAdapter {
             holder.picView.setVisibility(View.VISIBLE);
 
             imageLoader.displayImage(posts.getMedia(), holder.picView, imgDisplayOptions);
-            notifyDataSetChanged();
+
 
         }
 

@@ -1,6 +1,7 @@
 package com.bigc.adapters;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -306,7 +307,7 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
                     }*/
                 } else {
                     //send add connection request
-                    sendConnectionRequest(ref, currentUid+"_"+userId, connection);
+                    sendConnectionRequest(ref, currentUid+"_"+userId, connection, user);
                 }
             }
 
@@ -317,12 +318,15 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
         });
     }
 
-    private void sendConnectionRequest(DatabaseReference ref, String objectID, ConnectionsModel connection) {
+    private void sendConnectionRequest(DatabaseReference ref, String objectID, ConnectionsModel connection, final Users user) {
         // TODO: 7/19/2017 send add connection request
         ref.child(DbConstants.TABLE_CONNECTIONS).child(objectID).setValue(connection).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 //show success
+                ArrayList sendToken = new ArrayList();
+                sendToken.add(user.getToken());
+                Utils.sendNotification(sendToken, Constants.ACTION_FRIEND_REQUEST, "Connection Request", user.getName() + " has sent you a connection request");
             }
         });
     }

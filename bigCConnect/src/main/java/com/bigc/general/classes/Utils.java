@@ -62,6 +62,8 @@ import com.google.firebase.database.Query;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+import org.json.JSONObject;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
@@ -84,6 +86,11 @@ import java.util.regex.Pattern;
 
 import eu.janmuller.android.simplecropimage.CropImage;
 import eu.janmuller.android.simplecropimage.Util;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class Utils {
 
@@ -141,7 +148,7 @@ public class Utils {
 
     public static boolean isLiked(Object post) {
 
-        List<String> likes = ((Tributes)post).getLikes();
+        List<String> likes = ((Tributes) post).getLikes();
         if (likes == null)
             return false;
 
@@ -303,7 +310,7 @@ public class Utils {
 
 
             String date = format.format(new Date(System.currentTimeMillis()));
-            String objectID = currentUid+"_"+c.getObjectId();
+            String objectID = currentUid + "_" + c.getObjectId();
             ConnectionsModel connection = new ConnectionsModel(date, currentUid, objectID, false, c.getObjectId(), date);
             ref.child(DbConstants.TABLE_CONNECTIONS).child(objectID).setValue(connection).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
@@ -316,7 +323,7 @@ public class Utils {
             o.setTo(c.getObjectId());
             o.setFrom(FirebaseAuth.getInstance().getCurrentUser().getUid());
             o.setStatus(false);*/
-           // newConnectionObjects.add(connection);
+            // newConnectionObjects.add(connection);
         }
 
         //new saveConnectionTask(newConnectionObjects).execute();
@@ -397,7 +404,7 @@ public class Utils {
             o.setStatus(false);
 
             DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-           // ConnectionsModel connection = new ConnectionsModel(date, uid, objectID, false, user.getObjectId(), date);
+            // ConnectionsModel connection = new ConnectionsModel(date, uid, objectID, false, user.getObjectId(), date);
             /*ref.child(DbConstants.TABLE_CONNECTIONS).orderByChild(DbConstants.TO).equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
@@ -549,6 +556,46 @@ public class Utils {
                         : R.string.inviteIntentSurvivor)).putExtra(
                 Intent.EXTRA_INITIAL_INTENTS,
                 intentList.toArray(new LabeledIntent[intentList.size()])));
+    }
+
+    public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+
+    public static void sendNotification(final List<String> sendTokens, final String action, final String title, final String message) {
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... params) {
+                try {
+                    for (String token : sendTokens) {
+                        OkHttpClient client = new OkHttpClient();
+                        JSONObject json = new JSONObject();
+
+                        JSONObject notificationJson = new JSONObject();
+                        notificationJson.put("body", message);
+                        notificationJson.put("title", title);
+                        notificationJson.put("badge", "1");
+
+                        JSONObject dataJson = new JSONObject();
+                        dataJson.put("action", action);
+
+                        json.put("notification", notificationJson);
+                        json.put("data", dataJson);
+                        json.put("to", token);
+                        RequestBody body = RequestBody.create(JSON, json.toString());
+                        Request request = new Request.Builder()
+                                .header("Authorization", "key=" + Constants.LEGACY_SERVER_KEY)
+                                .url("https://fcm.googleapis.com/fcm/send")
+                                .post(body)
+                                .build();
+                        Response response = client.newCall(request).execute();
+                        String finalResponse = response.body().string();
+                        System.out.println("notification response: " + finalResponse);
+                    }
+                } catch (Exception e) {
+                    //Log.d(TAG,e+"");
+                }
+                return null;
+            }
+        }.execute();
     }
 
     public static void buildRequestNotification(Context context,
@@ -1050,7 +1097,7 @@ public class Utils {
 
     public static void launchEditView(Activity activity, int operation, boolean fromNewsfeeds,
                                       int position, Posts post) {
-        PostActivity.setCurrentObject(position, post,null, null);
+        PostActivity.setCurrentObject(position, post, null, null);
         Intent i = new Intent(activity, PostActivity.class);
         i.putExtra(Constants.OPERATION, operation);
         i.putExtra(Constants.EDIT_MODE, true);
@@ -1059,8 +1106,8 @@ public class Utils {
     }
 
     public static void launchTributeEditView(Activity activity, int operation, boolean fromNewsfeeds,
-                                      int position, Tributes post) {
-        PostActivity.setCurrentObject(position, null,null, post);
+                                             int position, Tributes post) {
+        PostActivity.setCurrentObject(position, null, null, post);
         Intent i = new Intent(activity, PostActivity.class);
         i.putExtra(Constants.OPERATION, operation);
         i.putExtra(Constants.EDIT_MODE, true);

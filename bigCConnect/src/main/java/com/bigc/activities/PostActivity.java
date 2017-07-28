@@ -5,7 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -14,6 +16,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -42,9 +45,13 @@ import com.bigc.models.Stories;
 import com.bigc.models.Tributes;
 import com.bigc.models.Users;
 import com.bigc_connect.R;
+import com.google.android.gms.nearby.connection.dev.Strategy;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -52,6 +59,8 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
+
+import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -66,6 +75,11 @@ import java.util.List;
 import java.util.UUID;
 
 import eu.janmuller.android.simplecropimage.CropImage;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class PostActivity extends Activity implements OnClickListener,
         ProgressHandler {
@@ -736,7 +750,16 @@ public class PostActivity extends Activity implements OnClickListener,
         post.setObjectId(objectId);
         post.setUser(FirebaseAuth.getInstance().getCurrentUser().getUid());
         Utils.hideProgress();
-        databaseReference.child(DbConstants.TABLE_POST).child(objectId).setValue(post);
+        databaseReference.child(DbConstants.TABLE_POST).child(objectId).setValue(post, new DatabaseReference.CompletionListener() {
+            @Override
+            public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+                ArrayList<String> sendTokens =  new ArrayList<>();
+                ArrayList<Users> activeConnections = Preferences.getInstance(getBaseContext()).getLocalConnections().get(0);
+                for(Users activeConnection : activeConnections)
+                    sendTokens.add(activeConnection.getToken());
+                Utils.sendNotification(sendTokens, Constants.ACTION_NEWS_FEED, "News Feed", "A post has been added.");
+            }
+        });
         Utils.showToast(PostActivity.this, "Your post has been uploaded!");
         finishActivity();
     }
@@ -825,6 +848,9 @@ public class PostActivity extends Activity implements OnClickListener,
 
         databaseReference.child(DbConstants.TABLE_TRIBUTE).child(objectId).setValue(tributes);
         Utils.hideProgress();
+        ArrayList<String> sendTokens = new ArrayList<>();
+        sendTokens.add(targetUser.getToken());
+        Utils.sendNotification(sendTokens, Constants.ACTION_TRIBUTE, "Tribute", "A tribute has been added");
         finishActivity();
     }
 

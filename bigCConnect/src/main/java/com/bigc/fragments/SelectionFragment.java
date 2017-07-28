@@ -29,6 +29,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -285,6 +286,9 @@ public class SelectionFragment extends Fragment implements View.OnClickListener 
                             users.setType(finalType);
                             users.setName_lowercase(((SignupActivity) getActivity()).name.toLowerCase());
 
+                            users.setToken(FirebaseInstanceId.getInstance().getToken());
+                            users.setRecievePush(true);
+
                             users.setCreatedAt(date);
 
                             mDatabase.child(DbConstants.USERS).child(uid).setValue(users);
@@ -294,6 +298,8 @@ public class SelectionFragment extends Fragment implements View.OnClickListener 
                             Preferences.getInstance(getActivity()).save(DbConstants.TYPE, users.getType());
                             Preferences.getInstance(getActivity()).save(DbConstants.NAME_LOWERCASE, users.getName_lowercase());
                             Preferences.getInstance(getActivity()).save(DbConstants.CREATED_AT, date);
+                            Preferences.getInstance(getActivity()).save(DbConstants.TOKEN, users.getToken());
+                            Preferences.getInstance(getActivity()).save(DbConstants.RECEIVEPUSH, users.isRecievePush());
                             userCreated();
                         }
                         if (!task.isSuccessful())

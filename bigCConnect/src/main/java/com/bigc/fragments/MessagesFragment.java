@@ -192,6 +192,7 @@ public class MessagesFragment extends BaseFragment implements
 
             }
 
+
             if (!found) {
                 Log.e("New", "Add");
                 messages_list.add(messages);
@@ -214,13 +215,14 @@ public class MessagesFragment extends BaseFragment implements
                 update_conversation.put(DbConstants.USER2, mess.getUser2());
                 update_conversation.put(DbConstants.MEDIA, mess.getMedia());
 
-
                 FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION).child(mess.getObjectId())
                         .updateChildren(update_conversation);
                 FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_MESSAGE).child(messageId).setValue(messages);
                 found = false;
             }
-
+            ArrayList<String> sendTokens =  new ArrayList<>();
+            sendTokens.add(user.getToken());
+            Utils.sendNotification(sendTokens, Constants.ACTION_MESSAGE, "Notification", "A post has been added.");
 
             getActivity().runOnUiThread(new Runnable() {
                 @Override
@@ -495,7 +497,6 @@ public class MessagesFragment extends BaseFragment implements
         } else if (messages.size() == 0) {
             showError("No messages sent or received yet.");
         } else {
-
 
             final MessagesAdapter message_adapter = new MessagesAdapter(getActivity(), messages, Preferences.getInstance(getActivity()).getAllUsers(DbConstants.FETCH_USER));
             listView.setAdapter(message_adapter);
