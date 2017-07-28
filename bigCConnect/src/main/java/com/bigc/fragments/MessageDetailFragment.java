@@ -185,11 +185,11 @@ public class MessageDetailFragment extends BaseFragment implements
                                     && (messages.getUser2().equalsIgnoreCase(receiver) || messages.getUser1().equalsIgnoreCase(receiver))) {
                                 toadd = true;
                             }
-                            String user1 = messages.getUser1().equals(senderID) ? senderID : FirebaseAuth.getInstance().getCurrentUser().getUid();
-                            String user2 = messages.getUser2().equals(senderID) ? senderID : FirebaseAuth.getInstance().getCurrentUser().getUid();
-                            messages.setUser2(user2);
-                            messages.setUser1(user1);
-                            messages.setSender(user1);
+//                            String user1 = messages.getUser1().equals(senderID) ? senderID : FirebaseAuth.getInstance().getCurrentUser().getUid();
+//                            String user2 = messages.getUser2().equals(senderID) ? senderID : FirebaseAuth.getInstance().getCurrentUser().getUid();
+//                            messages.setUser2(user2);
+//                            messages.setUser1(user1);
+//                            messages.setSender(user1);
 
                             if (toadd) {
                                 chat_conversation.add(messages);
@@ -288,8 +288,13 @@ public class MessageDetailFragment extends BaseFragment implements
                     message_reply.setSender(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
                     String receiver = MessageDetailFragment.conversation.getUser2();
-                    if (!receiver.equalsIgnoreCase(message_reply.getSender())) {
-                        message_reply.setUser2(receiver);
+//                    if (!receiver.equalsIgnoreCase(message_reply.getSender())) {
+//                        message_reply.setUser2(receiver);
+//                    }
+                    if (!receiver.equalsIgnoreCase(FirebaseAuth.getInstance().getCurrentUser().getUid())) {
+                        message_reply.setUser2(MessageDetailFragment.conversation.getUser2());
+                    } else {
+                        message_reply.setUser2(MessageDetailFragment.conversation.getUser1());
                     }
                     message_reply.setUpdatedAt(Utils.getCurrentDate());
                     message_reply.setMedia(MessageDetailFragment.conversation.getMedia());
@@ -311,7 +316,7 @@ public class MessageDetailFragment extends BaseFragment implements
                     update_conversation.put(DbConstants.USER1, conversation.getUser1());
                     update_conversation.put(DbConstants.USER2, conversation.getUser2());
                     update_conversation.put(DbConstants.MEDIA, conversation.getMedia());
-
+                    update_conversation.put(DbConstants.SENDER, conversation.getSender());
 
                     FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION).child(conversation.getObjectId())
                             .updateChildren(update_conversation);

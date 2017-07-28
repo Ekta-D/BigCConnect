@@ -48,18 +48,18 @@ public class ChatAdapter extends ArrayAdapter<Users> {
                         .getDisplayMetrics()));
     }
 
-	public void setData(List<Messages> messages) {
+    public void setData(List<Messages> messages) {
         this.messages.clear();
-		if (messages == null)
-			return;
-		this.messages.addAll(messages);
-		notifyDataSetChanged();
-	}
+        if (messages == null)
+            return;
+        this.messages.addAll(messages);
+        notifyDataSetChanged();
+    }
 
-	public void addItem(Messages message) {
-		this.messages.add(message);
-		notifyDataSetChanged();
-	}
+    public void addItem(Messages message) {
+        this.messages.add(message);
+        notifyDataSetChanged();
+    }
 
     @Override
     public int getCount() {
@@ -88,7 +88,7 @@ public class ChatAdapter extends ArrayAdapter<Users> {
         //ParseUser owner = message.getParseUser(DbConstants.SENDER);
         Messages message = messages.get(position);
 
-        String sender = message.getSender();
+        String sender = message.getUser1();
 //        if (message.getParseFile(DbConstants.MEDIA) != null) {
 //            holder.picView.setVisibility(View.VISIBLE);
 //            ImageLoader.getInstance().displayImage(
