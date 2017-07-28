@@ -26,8 +26,8 @@ import com.bigc.interfaces.FragmentHolder;
 import com.bigc.requests.FetchVideosRequest;
 import com.bigc_connect.R;
 import com.costum.android.widget.PullAndLoadListView;
-import com.costum.android.widget.PullAndLoadListView.OnLoadMoreListener;
-import com.costum.android.widget.PullToRefreshListView.OnRefreshListener;
+import com.costum.android.widget.PullAndLoadListView.OnLoadMoreListener;/*
+import com.costum.android.widget.PullToRefreshListView.OnRefreshListener;*/
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubeStandalonePlayer;
 import com.model.youtube.Item;
@@ -36,7 +36,7 @@ import com.octo.android.robospice.SpiceManager;
 import com.octo.android.robospice.persistence.exception.SpiceException;
 import com.octo.android.robospice.request.listener.RequestListener;
 
-public class VideosFragment extends BaseFragment implements OnRefreshListener,
+public class VideosFragment extends BaseFragment implements/* OnRefreshListener,*/
 		OnLoadMoreListener {
 
 	private static final int REQ_START_STANDALONE_PLAYER = 1;
@@ -78,7 +78,7 @@ public class VideosFragment extends BaseFragment implements OnRefreshListener,
 				"Videos Screen");
 		
 		
-		listView.setOnRefreshListener(this);
+		//listView.setOnRefreshListener(this);
 		listView.setOnLoadMoreListener(this);
 
 		listView.setOnItemClickListener(new OnItemClickListener() {
@@ -216,10 +216,10 @@ public class VideosFragment extends BaseFragment implements OnRefreshListener,
 		makeSearchRequest(adapter.getLastItemDate());
 	}
 
-	@Override
+/*	@Override
 	public void onRefresh() {
 		makeSearchRequest("");
-	}
+	}*/
 
 	@Override
 	public boolean onBackPressed() {

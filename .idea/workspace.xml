@@ -14,6 +14,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a73130a8-b8d9-4fc1-b602-488f2ec5e328" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/okhttp_3_4_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/okio_1_9_0.xml" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/general/classes/PostManager$2.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/android/support/v7/appcompat/R$id.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/android/support/v7/appcompat/R$id.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/android/support/v7/appcompat/R$layout.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/android/support/v7/appcompat/R$layout.class" />
@@ -39,6 +41,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/PostActivity$7.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/PostActivity$7.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/PostActivity.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/PostActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/SearchActivity.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/SearchActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/Splash$1.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/Splash$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/Splash.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/activities/Splash.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/BooksAdapter.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/BooksAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/ChatAdapter$ViewHolder.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/ChatAdapter$ViewHolder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/ChatAdapter.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/adapters/ChatAdapter.class" />
@@ -71,6 +75,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/dialogs/AddTributeDialog$1.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/dialogs/AddTributeDialog$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/dialogs/AddTributeDialog.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/dialogs/AddTributeDialog.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/BookDetailFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/BookDetailFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/BooksFragment$1.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/BooksFragment$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/BooksFragment$SearchBooksReqListener.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/BooksFragment$SearchBooksReqListener.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/BooksFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/BooksFragment.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/CategorySurvivorsFragment$1.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/CategorySurvivorsFragment$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/CategorySurvivorsFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/CategorySurvivorsFragment.class" />
@@ -100,6 +106,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/MessagesFragment$3.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/MessagesFragment$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/MessagesFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/MessagesFragment.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/NameInputFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/NameInputFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/NewsFeedFragment$1.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/NewsFeedFragment$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/NewsFeedFragment$2.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/NewsFeedFragment$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/NewsFeedFragment$3.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/NewsFeedFragment$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/NewsFeedFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/NewsFeedFragment.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/PasswordFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/PasswordFragment.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/PhotosFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/PhotosFragment.class" />
@@ -119,9 +128,12 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/ReportProblemFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/ReportProblemFragment.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/RibbonSelectionFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/RibbonSelectionFragment.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/RssFeedFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/RssFeedFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SelectionFragment$1.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SelectionFragment$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SelectionFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SelectionFragment.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SettingsFragment$3.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SettingsFragment$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SettingsFragment$4.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SettingsFragment$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SettingsFragment$5.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SettingsFragment$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SettingsFragment$6.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SettingsFragment$6.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SettingsFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SettingsFragment.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SetupRemainderFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SetupRemainderFragment.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SupporterVisibilityFragment.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/fragments/SupporterVisibilityFragment.class" />
@@ -164,6 +176,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/interfaces/SearchResultBaseAdapter.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/interfaces/SearchResultBaseAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/interfaces/UploadPostObserver.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/interfaces/UploadPostObserver.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/models/Messages.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/models/Messages.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/models/Users.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc/models/Users.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/BigcConnect.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/BigcConnect.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/R$id.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/R$id.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/R$integer.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/R$integer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/R$interpolator.class" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/classes/debug/com/bigc_connect/R$interpolator.class" />
@@ -182,11 +196,13 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/outputs/apk/bigCConnect-debug.apk" afterPath="$PROJECT_DIR$/bigCConnect/build/outputs/apk/bigCConnect-debug.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gmailChipsLibrary/build/outputs/aar/gmailChipsLibrary-debug.aar" afterPath="$PROJECT_DIR$/gmailChipsLibrary/build/outputs/aar/gmailChipsLibrary-debug.aar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gmailChipsLibrary/build/outputs/aar/gmailChipsLibrary-release.aar" afterPath="$PROJECT_DIR$/gmailChipsLibrary/build/outputs/aar/gmailChipsLibrary-release.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loadMoreListView/build/intermediates/classes/release/com/costum/android/widget/PullToRefreshListView.class" afterPath="$PROJECT_DIR$/loadMoreListView/build/intermediates/classes/release/com/costum/android/widget/PullToRefreshListView.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loadMoreListView/build/outputs/aar/loadMoreListView-debug.aar" afterPath="$PROJECT_DIR$/loadMoreListView/build/outputs/aar/loadMoreListView-debug.aar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loadMoreListView/build/outputs/aar/loadMoreListView-release.aar" afterPath="$PROJECT_DIR$/loadMoreListView/build/outputs/aar/loadMoreListView-release.aar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleCropLib/build/outputs/aar/simpleCropLib-debug.aar" afterPath="$PROJECT_DIR$/simpleCropLib/build/outputs/aar/simpleCropLib-debug.aar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleCropLib/build/outputs/aar/simpleCropLib-release.aar" afterPath="$PROJECT_DIR$/simpleCropLib/build/outputs/aar/simpleCropLib-release.aar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/bigCConnect.iml" afterPath="$PROJECT_DIR$/bigCConnect/bigCConnect.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/generated/source/r/debug/android/support/v7/appcompat/R.java" afterPath="$PROJECT_DIR$/bigCConnect/build/generated/source/r/debug/android/support/v7/appcompat/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/generated/source/r/debug/android/support/v7/mediarouter/R.java" afterPath="$PROJECT_DIR$/bigCConnect/build/generated/source/r/debug/android/support/v7/mediarouter/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/generated/source/r/debug/com/android/ex/chips/R.java" afterPath="$PROJECT_DIR$/bigCConnect/build/generated/source/r/debug/com/android/ex/chips/R.java" />
@@ -195,18 +211,27 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/generated/source/r/debug/com/google/android/gms/R.java" afterPath="$PROJECT_DIR$/bigCConnect/build/generated/source/r/debug/com/google/android/gms/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/generated/source/r/debug/eu/janmuller/android/simplecropimage/R.java" afterPath="$PROJECT_DIR$/bigCConnect/build/generated/source/r/debug/eu/janmuller/android/simplecropimage/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/blame/res/debug/single/color.json" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/blame/res/debug/single/color.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/blame/res/debug/single/drawable-xhdpi-v4.json" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/blame/res/debug/single/drawable-xhdpi-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/blame/res/debug/single/drawable.json" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/blame/res/debug/single/drawable.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/blame/res/debug/single/layout.json" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/blame/res/debug/single/layout.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/incremental/mergeDebugResources/merger.xml" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/incremental/mergeDebugResources/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/res/merged/debug/layout/activity_post_layout.xml" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/res/merged/debug/layout/activity_post_layout.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/res/merged/debug/layout/newsfeed_item_layout.xml" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/res/merged/debug/layout/newsfeed_item_layout.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/bigCConnect/build/intermediates/symbols/debug/R.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/bigCConnect/build/outputs/logs/manifest-merger-debug-report.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/HomeScreen.java" afterPath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/HomeScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/datastorage/Preferences.java" afterPath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/datastorage/Preferences.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/CategorySurvivorsFragment.java" afterPath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/CategorySurvivorsFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/ProfileFragment.java" afterPath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/ProfileFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/Queries.java" afterPath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/Queries.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/interfaces/SearchResultBaseAdapter.java" afterPath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/interfaces/SearchResultBaseAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/NewsFeedsAdapter.java" afterPath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/NewsFeedsAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/BooksFragment.java" afterPath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/BooksFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/MessagesFragment.java" afterPath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/MessagesFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/NewsFeedFragment.java" afterPath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/NewsFeedFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/PostDetailFragment.java" afterPath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/PostDetailFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/VideosFragment.java" afterPath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/VideosFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/CustomFirebaseInstanceIDService.java" afterPath="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/CustomFirebaseInstanceIDService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gmailChipsLibrary/gmailChipsLibrary.iml" afterPath="$PROJECT_DIR$/gmailChipsLibrary/gmailChipsLibrary.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loadMoreListView/build/intermediates/blame/res/androidTest/debug/single/drawable-mdpi-v4.json" afterPath="$PROJECT_DIR$/loadMoreListView/build/intermediates/blame/res/androidTest/debug/single/drawable-mdpi-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loadMoreListView/loadMoreListView.iml" afterPath="$PROJECT_DIR$/loadMoreListView/loadMoreListView.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loadMoreListView/src/main/java/com/costum/android/widget/PullToRefreshListView.java" afterPath="$PROJECT_DIR$/loadMoreListView/src/main/java/com/costum/android/widget/PullToRefreshListView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleCropLib/simpleCropLib.iml" afterPath="$PROJECT_DIR$/simpleCropLib/simpleCropLib.iml" />
     </list>
     <ignored path="BigCConnect.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -366,7 +391,15 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view />
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/bigCConnect">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state />
+        </projects_view>
       </state>
     </system>
   </component>
@@ -375,45 +408,103 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FragmentSearchSurvivors.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/FragmentSearchSurvivors.java">
+      <file leaf-file-name="Utils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="113" column="59" selection-start-line="113" selection-start-column="59" selection-end-line="113" selection-end-column="59" />
+            <state relative-caret-position="107">
+              <caret line="1067" column="0" selection-start-line="1067" selection-start-column="0" selection-end-line="1067" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CategorySurvivorsFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/CategorySurvivorsFragment.java">
+      <file leaf-file-name="PostDetailFragment.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/PostDetailFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="169" column="48" selection-start-line="169" selection-start-column="48" selection-end-line="169" selection-end-column="48" />
+            <state relative-caret-position="1178">
+              <caret line="317" column="2" selection-start-line="317" selection-start-column="2" selection-end-line="317" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewsFeedsAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/NewsFeedsAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="90" column="24" selection-start-line="90" selection-start-column="24" selection-end-line="90" selection-end-column="24" />
               <folding>
-                <element signature="e#4955#5261#0" expanded="true" />
-                <element signature="e#5260#5261#0" expanded="true" />
+                <element signature="e#3133#3134#0" expanded="true" />
+                <element signature="e#3168#3169#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProfileFragment.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/ProfileFragment.java">
+      <file leaf-file-name="NewsFeedFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/NewsFeedFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="219" column="46" selection-start-line="219" selection-start-column="46" selection-end-line="219" selection-end-column="46" />
+            <state relative-caret-position="102">
+              <caret line="74" column="57" selection-start-line="74" selection-start-column="57" selection-end-line="74" selection-end-column="57" />
+              <folding>
+                <marker date="1501235803850" expanded="true" signature="8177:8212" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PullAndLoadListView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/loadMoreListView/src/main/java/com/costum/android/widget/PullAndLoadListView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="29" column="63" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="63" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Queries.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/Queries.java">
+      <file leaf-file-name="load_more_footer.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/loadMoreListView/src/main/res/layout/load_more_footer.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="171" column="61" selection-start-line="166" selection-start-column="7" selection-end-line="171" selection-end-column="61" />
+            <state relative-caret-position="204">
+              <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PullToRefreshListView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/loadMoreListView/src/main/java/com/costum/android/widget/PullToRefreshListView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="236">
+              <caret line="125" column="38" selection-start-line="125" selection-start-column="38" selection-end-line="125" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomeScreen.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/HomeScreen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="155" column="63" selection-start-line="155" selection-start-column="63" selection-end-line="155" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomFirebaseInstanceIDService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/CustomFirebaseInstanceIDService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="71">
+              <caret line="39" column="55" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
+              <folding>
+                <element signature="e#1613#1859#0" expanded="true" />
+                <element signature="e#1858#1859#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -4600,7 +4691,7 @@
     <option name="modificationStamps">
       <map>
         <entry key="$PROJECT_DIR$" value="8999691800275" />
-        <entry key="D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect" value="9002380911797" />
+        <entry key="D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect" value="9003010064565" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -5121,51 +5212,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/NewsfeedAdapter.java" />
-        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/interfaces/PostsFragments.java" />
-        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/LoginActivity.java" />
-        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/models/Stories.java" />
-        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/interfaces/StoryPopupOptionHandler.java" />
-        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/FragmentSurvivorStories.java" />
-        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/StoriesAdapter.java" />
-        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/SettingsFragment.java" />
-        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/SelectionFragment.java" />
-        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/FragmentStoryDetail.java" />
         <option value="$PROJECT_DIR$/loadMoreListView/build.gradle" />
         <option value="$PROJECT_DIR$/simpleCropLib/build.gradle" />
         <option value="$PROJECT_DIR$/gmailChipsLibrary/src/main/java/com/android/ex/chips/BaseRecipientAdapter.java" />
-        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/DbConstants.java" />
-        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/models/Users.java" />
         <option value="$PROJECT_DIR$/gmailChipsLibrary/src/main/java/com/android/ex/chips/Users.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/res/layout/layout_dialog_add_tribute.xml" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/ExistingConnectionAdapter.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/res/layout/newsfeed_item_layout.xml" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/interfaces/UploadPostObserver.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/interfaces/PopupOptionHandler.java" />
-        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/NewsFeedsAdapter.java" />
-        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/NewsFeedFragment.java" />
-        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/PostDetailFragment.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/PostsFragments.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/models/Tributes.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/CommentsAdapter.java" />
-        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/PostActivity.java" />
-        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/MessagesFragment.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/PostManager.java" />
-        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/Utils.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/res/layout/single_textview_listitem.xml" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/res/layout/autotext_layout.xml" />
-        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/TributesAdapter.java" />
-        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/Constants.java" />
-        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/SearchResultAdapter.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/FragmentTributeDetail.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/dialogs/AddTributeDialog.java" />
-        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/FragmentTributes.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/datastorage/Preferences.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/HomeScreen.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/Queries.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/interfaces/SearchResultBaseAdapter.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/CategorySurvivorsFragment.java" />
         <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/ProfileFragment.java" />
+        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/FirebaseMessagingService.java" />
+        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/CustomFirebaseInstaceIDService.java" />
+        <option value="$PROJECT_DIR$/bigCConnect/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/models/Users.java" />
+        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/DbConstants.java" />
+        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/SelectionFragment.java" />
+        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/SettingsFragment.java" />
+        <option value="$PROJECT_DIR$/bigCConnect/build.gradle" />
+        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/Constants.java" />
+        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/Utils.java" />
+        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/SearchResultAdapter.java" />
+        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/CustomFirebaseMessagingService.java" />
+        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc_connect/BigcConnect.java" />
+        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/Splash.java" />
+        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/PostActivity.java" />
+        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/FragmentTributes.java" />
+        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/BooksFragment.java" />
+        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/VideosFragment.java" />
+        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/TributesAdapter.java" />
+        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/MessagesFragment.java" />
+        <option value="$PROJECT_DIR$/loadMoreListView/src/main/java/com/costum/android/widget/PullAndLoadListView.java" />
+        <option value="$PROJECT_DIR$/loadMoreListView/src/main/java/com/costum/android/widget/PullToRefreshListView.java" />
+        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/NewsFeedFragment.java" />
+        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/CustomFirebaseInstanceIDService.java" />
+        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/NewsFeedsAdapter.java" />
+        <option value="$PROJECT_DIR$/bigCConnect/src/main/res/layout/fragment_feeds_layout.xml" />
+        <option value="$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/PostDetailFragment.java" />
       </list>
     </option>
   </component>
@@ -5201,9 +5298,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -5284,43 +5378,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="fragments" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BigCConnect" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bigCConnect" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bigc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="activities" />
+              <option name="myItemId" value="adapters" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="F:/BigC-Connect/Android/BigCConnect" />
-    <property name="device.picker.selection" value="f61bec350434663c" />
+    <property name="device.picker.selection" value="35469b8f0d91ff50" />
     <property name="DEBUGGABLE_DEVICE" value="samsung-sm_t713-f61bec350434663c" />
     <property name="DEBUGGABLE_PROCESS" value="com.bigc_connect" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
@@ -5348,8 +5419,9 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/NewsFeedsAdapter.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/bigCConnect/src/main/res/layout/newsfeed_item_layout.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/ChatAdapter.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/MessageDetailFragment.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/MessagesFragment.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -5446,6 +5518,24 @@
     </UpdatedFiles>
   </component>
   <component name="RunManager" selected="Android App.bigCConnect">
+    <configuration default="false" name="BigCConnect [signingReport]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="signingReport" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -5757,9 +5847,15 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Android App.bigCConnect" />
+      <item index="1" class="java.lang.String" itemvalue="Gradle.BigCConnect [signingReport]" />
     </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Gradle.BigCConnect [signingReport]" />
+      </list>
+    </recent_temporary>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="DEPLOY" value="true" />
@@ -5909,7 +6005,28 @@
       <option name="project" value="LOCAL" />
       <updated>1500978442126</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Category survivors completed. &#10;Committed by:&#10;Preeti">
+      <created>1500986056227</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1500986056227</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Notifications completed.&#10;Committed by:&#10;Preeti">
+      <created>1501215248339</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1501215248339</updated>
+    </task>
+    <task id="LOCAL-00006" summary="build changes...&#10;Committed by:&#10;Preeti">
+      <created>1501220641834</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1501220641834</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -5923,30 +6040,30 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32796487" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3935264" sideWeight="0.50907713" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38160136" sideWeight="0.49092284" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4020443" sideWeight="0.48789713" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.49546143" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23524962" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4463373" sideWeight="0.5121029" order="12" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2118003" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Fabric" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2657581" sideWeight="0.4924357" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1669506" sideWeight="0.4924357" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -5963,14 +6080,14 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3935264" sideWeight="0.50907713" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3339012" sideWeight="0.49092284" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3713799" sideWeight="0.48789713" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2657581" sideWeight="0.4924357" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1669506" sideWeight="0.4924357" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -5978,14 +6095,14 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.49546143" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24357034" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4463373" sideWeight="0.5121029" order="12" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2193646" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Fabric" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
@@ -6006,20 +6123,23 @@
     <MESSAGE value="Merged code" />
     <MESSAGE value="Tribute done...except love count.&#10;Committed by:&#10;Preeti" />
     <MESSAGE value="Tribute completed and other minor changes.&#10;Committed by:&#10;Preeti" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tribute completed and other minor changes.&#10;Committed by:&#10;Preeti" />
+    <MESSAGE value="Category survivors completed. &#10;Committed by:&#10;Preeti" />
+    <MESSAGE value="Notifications completed.&#10;Committed by:&#10;Preeti" />
+    <MESSAGE value="build changes...&#10;Committed by:&#10;Preeti" />
+    <option name="LAST_COMMIT_MESSAGE" value="build changes...&#10;Committed by:&#10;Preeti" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/PostActivity.java</url>
-          <line>557</line>
+          <line>584</line>
           <properties class="com.bigc.activities.PostActivity" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/Utils.java</url>
-          <line>1045</line>
+          <line>1092</line>
           <properties class="com.bigc.general.classes.Utils" />
           <option name="timeStamp" value="33" />
         </line-breakpoint>
@@ -6031,37 +6151,37 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/PostActivity.java</url>
-          <line>658</line>
+          <line>684</line>
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/PostActivity.java</url>
-          <line>668</line>
+          <line>694</line>
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/PostActivity.java</url>
-          <line>672</line>
+          <line>698</line>
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/PostActivity.java</url>
-          <line>684</line>
+          <line>710</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/NewsFeedsAdapter.java</url>
-          <line>268</line>
+          <line>276</line>
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/PostActivity.java</url>
-          <line>271</line>
+          <line>287</line>
           <properties />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
@@ -6079,15 +6199,9 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/NewsFeedFragment.java</url>
-          <line>134</line>
+          <line>135</line>
           <properties />
           <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/NewsFeedsAdapter.java</url>
-          <line>278</line>
-          <properties />
-          <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/PostDetailFragment.java</url>
@@ -6097,13 +6211,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/PostActivity.java</url>
-          <line>289</line>
+          <line>305</line>
           <properties />
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/PostActivity.java</url>
-          <line>372</line>
+          <line>388</line>
           <properties />
           <option name="timeStamp" value="21" />
         </line-breakpoint>
@@ -6121,13 +6235,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/Utils.java</url>
-          <line>1047</line>
+          <line>1094</line>
           <properties />
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/PostActivity.java</url>
-          <line>205</line>
+          <line>221</line>
           <properties />
           <option name="timeStamp" value="36" />
         </line-breakpoint>
@@ -6157,19 +6271,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/SelectionFragment.java</url>
-          <line>142</line>
+          <line>143</line>
           <properties />
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/PostActivity.java</url>
-          <line>163</line>
+          <line>179</line>
           <properties />
           <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/PostActivity.java</url>
-          <line>207</line>
+          <line>223</line>
           <properties />
           <option name="timeStamp" value="53" />
         </line-breakpoint>
@@ -6187,27 +6301,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/SearchResultAdapter.java</url>
-          <line>145</line>
+          <line>146</line>
           <properties />
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/SearchResultAdapter.java</url>
-          <line>129</line>
+          <line>130</line>
           <properties />
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/PostActivity.java</url>
-          <line>788</line>
+          <line>823</line>
           <properties />
           <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/NewsFeedsAdapter.java</url>
-          <line>358</line>
-          <properties />
-          <option name="timeStamp" value="95" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/FragmentTributeDetail.java</url>
@@ -6223,15 +6331,9 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/FragmentTributes.java</url>
-          <line>310</line>
+          <line>311</line>
           <properties />
           <option name="timeStamp" value="99" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/FragmentTributes.java</url>
-          <line>327</line>
-          <properties />
-          <option name="timeStamp" value="100" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/FragmentTributeDetail.java</url>
@@ -6245,377 +6347,64 @@
           <properties />
           <option name="timeStamp" value="105" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/FragmentTributes.java</url>
+          <line>200</line>
+          <properties />
+          <option name="timeStamp" value="108" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/FragmentTributes.java</url>
+          <line>247</line>
+          <properties />
+          <option name="timeStamp" value="109" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/CustomFirebaseMessagingService.java</url>
+          <line>104</line>
+          <properties />
+          <option name="timeStamp" value="112" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/Utils.java</url>
+          <line>568</line>
+          <properties />
+          <option name="timeStamp" value="114" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/PostActivity.java</url>
+          <line>759</line>
+          <properties />
+          <option name="timeStamp" value="115" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/Utils.java</url>
+          <line>590</line>
+          <properties />
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/FragmentTributes.java</url>
+          <line>261</line>
+          <properties />
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/FragmentTributes.java</url>
+          <line>253</line>
+          <properties />
+          <option name="timeStamp" value="119" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="107" />
+      <option name="time" value="120" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.android/build-cache/dabda81be331e42a509b7a020d1d806eeb62229e/output/jars/classes.jar!/com/google/android/gms/internal/zzakp.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="43" column="25" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.android/build-cache/dabda81be331e42a509b7a020d1d806eeb62229e/output/jars/classes.jar!/com/google/android/gms/internal/zzajp.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="50" column="33" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/res/layout/newsfeed_item_layout.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/NotificationReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="17" column="53" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/interfaces/UploadPostObserver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/PostsFragments.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4250">
-          <caret line="288" column="11" selection-start-line="288" selection-start-column="11" selection-end-line="288" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/PostDetailFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-54">
-          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/NewsFeedFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="556" column="5" selection-start-line="556" selection-start-column="5" selection-end-line="556" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/interfaces/MessageObservable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/models/Posts.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="12" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/interfaces/UploadPostObservable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loadMoreListView/src/main/java/com/costum/android/widget/LoadMoreListView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="174" column="16" selection-start-line="174" selection-start-column="16" selection-end-line="174" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/FragmentStoryDetail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="414" column="5" selection-start-line="414" selection-start-column="5" selection-end-line="414" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/MessageDetailFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/ChatAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/MessagesAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="74" column="20" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/LoginActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="229" column="29" selection-start-line="229" selection-start-column="29" selection-end-line="229" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/res/layout/list_item_ad.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/models/Tributes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/PostManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="381" column="16" selection-start-line="381" selection-start-column="16" selection-end-line="381" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/res/layout/activity_search_layout.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/res/layout/fragment_messages_layout.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="18" column="45" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/res/layout/single_textview_listitem.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/res/layout/autotext_layout.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/MessagesFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2159">
-          <caret line="166" column="27" selection-start-line="166" selection-start-column="27" selection-end-line="166" selection-end-column="27" />
-          <folding>
-            <marker date="1500963775651" expanded="true" signature="19147:19148" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/DbConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-555">
-          <caret line="10" column="46" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/CommentsAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="126" column="41" selection-start-line="126" selection-start-column="41" selection-end-line="126" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/res/drawable/ic_connect_pending.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="40" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/NewsFeedsAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2484">
-          <caret line="204" column="21" selection-start-line="204" selection-start-column="17" selection-end-line="204" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/SearchResultPictureAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2567">
-          <caret line="167" column="30" selection-start-line="167" selection-start-column="30" selection-end-line="167" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/support-fragment/25.0.0/support-fragment-25.0.0-sources.jar!/android/support/v4/app/Fragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="2086" column="0" selection-start-line="2086" selection-start-column="0" selection-end-line="2086" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/interfaces/PopupOptionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="1063" column="43" selection-start-line="1063" selection-start-column="43" selection-end-line="1063" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/PostActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="807" column="0" selection-start-line="807" selection-start-column="0" selection-end-line="807" selection-end-column="0" />
-          <folding>
-            <element signature="e#13185#13186#0" expanded="true" />
-            <element signature="e#13217#13218#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/TributesAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="224" column="14" selection-start-line="224" selection-start-column="8" selection-end-line="224" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/dialogs/AddTributeDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="73" column="69" selection-start-line="73" selection-start-column="69" selection-end-line="73" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/PendingRequestsAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/SearchResultAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="135" column="16" selection-start-line="135" selection-start-column="16" selection-end-line="144" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/FragmentTributes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1099">
-          <caret line="273" column="13" selection-start-line="273" selection-start-column="13" selection-end-line="273" selection-end-column="13" />
-          <folding>
-            <element signature="e#9335#9360#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/FragmentTributeDetail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="416" column="64" selection-start-line="416" selection-start-column="64" selection-end-line="416" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/datastorage/Preferences.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/res/layout/fragment_search_survivors.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/ConnectionsFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="944">
           <caret line="114" column="51" selection-start-line="114" selection-start-column="51" selection-end-line="114" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/HomeScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="311" column="29" selection-start-line="311" selection-start-column="29" selection-end-line="311" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -6623,7 +6412,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -6631,41 +6419,423 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-289">
           <caret line="3" column="19" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/Queries.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="171" column="61" selection-start-line="166" selection-start-column="7" selection-end-line="171" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/FragmentSearchSurvivors.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
+        <state relative-caret-position="1292">
           <caret line="113" column="59" selection-start-line="113" selection-start-column="59" selection-end-line="113" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/CategorySurvivorsFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
+        <state relative-caret-position="2125">
           <caret line="169" column="48" selection-start-line="169" selection-start-column="48" selection-end-line="169" selection-end-column="48" />
-          <folding>
-            <element signature="e#4955#5261#0" expanded="true" />
-            <element signature="e#5260#5261#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/Queries.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2550">
+          <caret line="171" column="61" selection-start-line="166" selection-start-column="7" selection-end-line="171" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/res/layout/activity_search.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/res/layout/activity_signup.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/SignupActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1173">
+          <caret line="109" column="22" selection-start-line="109" selection-start-column="22" selection-end-line="109" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/EmailInputFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="170" column="64" selection-start-line="170" selection-start-column="64" selection-end-line="170" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/NameInputFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="71" column="59" selection-start-line="71" selection-start-column="59" selection-end-line="71" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/PasswordFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="76" column="64" selection-start-line="76" selection-start-column="64" selection-end-line="76" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/NotificationReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/models/Users.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/DbConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="42" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/ProfilePicFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="51" column="74" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/SelectionFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4896">
+          <caret line="324" column="49" selection-start-line="324" selection-start-column="49" selection-end-line="324" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/res/layout/fragment_profile_layout.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="292" column="49" selection-start-line="292" selection-start-column="37" selection-end-line="292" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/ProfileFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="219" column="46" selection-start-line="219" selection-start-column="46" selection-end-line="219" selection-end-column="46" />
+        <state relative-caret-position="5576">
+          <caret line="383" column="56" selection-start-line="383" selection-start-column="56" selection-end-line="383" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="316" column="0" selection-start-line="316" selection-start-column="0" selection-end-line="316" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/res/layout/fragment_settings.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="316" column="16" selection-start-line="316" selection-start-column="16" selection-end-line="316" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.android/build-cache/dabda81be331e42a509b7a020d1d806eeb62229e/output/jars/classes.jar!/com/google/android/gms/internal/zzajp.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="50" column="33" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/SettingsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="198" column="55" selection-start-line="198" selection-start-column="55" selection-end-line="198" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/SearchResultAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="329" column="0" selection-start-line="329" selection-start-column="0" selection-end-line="329" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/datastorage/Preferences.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2227">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc_connect/BigcConnect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/CustomFirebaseMessagingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="123" column="36" selection-start-line="123" selection-start-column="35" selection-end-line="123" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2483#2534#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/Splash.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="91" column="5" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="5" />
+          <folding>
+            <element signature="e#2895#3140#0" expanded="false" />
+            <element signature="e#3139#3140#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="88" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/PostActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="758" column="40" selection-start-line="758" selection-start-column="40" selection-end-line="758" selection-end-column="40" />
+          <folding>
+            <element signature="e#33139#33772#0" expanded="true" />
+            <element signature="e#33771#33772#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loadMoreListView/src/main/java/com/costum/android/widget/LoadMoreListView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="174" column="16" selection-start-line="174" selection-start-column="16" selection-end-line="174" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/FragmentTributeDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3594">
+          <caret line="416" column="64" selection-start-line="416" selection-start-column="64" selection-end-line="416" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.android/build-cache/dabda81be331e42a509b7a020d1d806eeb62229e/output/jars/classes.jar!/com/google/firebase/database/Query.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="109" column="30" selection-start-line="109" selection-start-column="30" selection-end-line="109" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/BooksFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="33" column="58" selection-start-line="33" selection-start-column="58" selection-end-line="33" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1501235803847" expanded="false" signature="5094:5099" ph=" { " />
+            <marker date="1501235803847" expanded="false" signature="5120:5123" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/FragmentTributes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="76" column="33" selection-start-line="76" selection-start-column="33" selection-end-line="76" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/TributesAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="103" column="64" selection-start-line="103" selection-start-column="64" selection-end-line="103" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/MessagesFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="282" column="3" selection-start-line="282" selection-start-column="1" selection-end-line="285" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/VideosFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="218" column="2" selection-start-line="218" selection-start-column="0" selection-end-line="221" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-24/android.jar!/android/widget/BaseAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/activities/HomeScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="155" column="63" selection-start-line="155" selection-start-column="63" selection-end-line="155" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loadMoreListView/src/main/java/com/costum/android/widget/PullToRefreshListView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="125" column="38" selection-start-line="125" selection-start-column="38" selection-end-line="125" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loadMoreListView/src/main/res/layout/load_more_footer.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loadMoreListView/src/main/java/com/costum/android/widget/PullAndLoadListView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="29" column="63" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/receivers/CustomFirebaseInstanceIDService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="39" column="55" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
+          <folding>
+            <element signature="e#1613#1859#0" expanded="true" />
+            <element signature="e#1858#1859#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/adapters/NewsFeedsAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="90" column="24" selection-start-line="90" selection-start-column="24" selection-end-line="90" selection-end-column="24" />
+          <folding>
+            <element signature="e#3133#3134#0" expanded="true" />
+            <element signature="e#3168#3169#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/res/layout/fragment_feeds_layout.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="84" column="36" selection-start-line="84" selection-start-column="36" selection-end-line="84" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/NewsFeedFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="74" column="57" selection-start-line="74" selection-start-column="57" selection-end-line="74" selection-end-column="57" />
+          <folding>
+            <marker date="1501235803850" expanded="true" signature="8177:8212" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/general/classes/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="1067" column="0" selection-start-line="1067" selection-start-column="0" selection-end-line="1067" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bigCConnect/src/main/java/com/bigc/fragments/PostDetailFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1178">
+          <caret line="317" column="2" selection-start-line="317" selection-start-column="2" selection-end-line="317" selection-end-column="2" />
           <folding />
         </state>
       </provider>

@@ -25,14 +25,13 @@ import com.bigc.requests.FetchBooksRequest;
 import com.bigc_connect.R;
 import com.costum.android.widget.PullAndLoadListView;
 import com.costum.android.widget.PullAndLoadListView.OnLoadMoreListener;
-import com.costum.android.widget.PullToRefreshListView.OnRefreshListener;
 import com.model.books.BooksResponse;
 import com.model.books.Item;
 import com.octo.android.robospice.SpiceManager;
 import com.octo.android.robospice.persistence.exception.SpiceException;
 import com.octo.android.robospice.request.listener.RequestListener;
 
-public class BooksFragment extends BaseFragment implements OnRefreshListener,
+public class BooksFragment extends BaseFragment implements
 		OnLoadMoreListener {
 
 	private SpiceManager spiceManager;
@@ -70,7 +69,7 @@ public class BooksFragment extends BaseFragment implements OnRefreshListener,
 		GoogleAnalyticsHelper.sendScreenViewGoogleAnalytics(getActivity(),
 				"Books Screen");
 
-		listView.setOnRefreshListener(this);
+		//listView.setOnRefreshListener(this);
 		listView.setOnLoadMoreListener(this);
 
 		listView.setOnItemClickListener(new OnItemClickListener() {
@@ -185,10 +184,10 @@ public class BooksFragment extends BaseFragment implements OnRefreshListener,
 		makeSearchRequest(adapter.getCount());
 	}
 
-	@Override
+/*	@Override
 	public void onRefresh() {
 		makeSearchRequest(0);
-	}
+	}*/
 
 	@Override
 	public boolean onBackPressed() {

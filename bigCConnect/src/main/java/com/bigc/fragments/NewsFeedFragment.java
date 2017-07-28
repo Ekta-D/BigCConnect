@@ -27,8 +27,8 @@ import com.bigc.models.Posts;
 import com.bigc.models.Tributes;
 import com.bigc_connect.R;
 import com.costum.android.widget.PullAndLoadListView;
-import com.costum.android.widget.PullAndLoadListView.OnLoadMoreListener;
-import com.costum.android.widget.PullToRefreshListView.OnRefreshListener;
+import com.costum.android.widget.PullAndLoadListView.OnLoadMoreListener;/*
+import com.costum.android.widget.PullToRefreshListView.OnRefreshListener;*/
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -47,7 +47,7 @@ import java.util.Map;
 //import com.bigc.adapters.NewsfeedAdapter;
 
 public class NewsFeedFragment extends BaseFragment implements
-        OnRefreshListener, UploadPostObserver, OnLoadMoreListener,
+       /* OnRefreshListener,*/ UploadPostObserver, OnLoadMoreListener,
         PopupOptionHandler {
     public static Posts currentObject = null;
     private PullAndLoadListView listView;
@@ -82,6 +82,7 @@ public class NewsFeedFragment extends BaseFragment implements
         progressParent = (LinearLayout) view
                 .findViewById(R.id.messageViewParent);
         listView = (PullAndLoadListView) view.findViewById(R.id.listview);
+
         // adapter = new NewsfeedAdapter(this, posts);
 
         isPremium = Preferences.getInstance(getActivity()).getBoolean(
@@ -124,14 +125,14 @@ public class NewsFeedFragment extends BaseFragment implements
             if (mAdAdapter != null)
                 mAdAdapter.loadAds(Constants.MOPUB_UNIT_ID, mRequestParameters);
         }
-        loadData(true);
+        //loadData(true);
         if (NewsFeedFragment.currentObject != null) {
             //   Log.i("post", post.toString());
 //            statusView.setText(post.getMessage() == null ? ""
 //                    : post.getMessage());
 
             Utils.updatePost(NewsFeedFragment.currentObject);
-            adapter.notifyDataSetChanged();
+            //adapter.notifyDataSetChanged();
         }
 
         super.onResume();
@@ -157,7 +158,7 @@ public class NewsFeedFragment extends BaseFragment implements
             view.findViewById(R.id.splashTextView).setVisibility(View.GONE);
         }
 
-        listView.setOnRefreshListener(this);
+        //listView.setOnRefreshListener(this);
         listView.setOnLoadMoreListener(this);
 
         listView.setOnItemClickListener(new OnItemClickListener() {
@@ -180,7 +181,7 @@ public class NewsFeedFragment extends BaseFragment implements
                     ((FragmentHolder) getActivity())
                             .replaceFragment(new PostDetailFragment(
                                     NewsFeedFragment.this, position - 1,
-                                    adapter.getItem(position - 1), true));
+                                    (Posts) adapter.getItem(position - 1), true));
 
             }
         });
@@ -230,11 +231,11 @@ public class NewsFeedFragment extends BaseFragment implements
         return 1;
     }
 
-    @Override
+/*    @Override
     public void onRefresh() {
         //loadData(false);
 
-    }
+    }*/
 
     @Override
     public void onLoadMore() {

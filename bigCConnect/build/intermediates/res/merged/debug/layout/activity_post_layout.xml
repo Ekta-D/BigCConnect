@@ -64,7 +64,7 @@
                     android:paddingLeft="15dp"
                     android:paddingRight="10dp" >
 
-                    <com.bigc.views.CustomRecipientEditTextView
+                    <MultiAutoCompleteTextView
                         android:id="@+id/UsersInputView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

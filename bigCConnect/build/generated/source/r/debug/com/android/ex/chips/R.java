@@ -95,10 +95,10 @@ public final class R {
         public static final int google_play_services_version = 0x7f0f000a;
     }
     public static final class layout {
-        public static final int chips_alternate_item = 0x7f03002b;
-        public static final int chips_recipient_dropdown_item = 0x7f03002c;
-        public static final int copy_chip_dialog_layout = 0x7f03002d;
-        public static final int more_item = 0x7f03006b;
+        public static final int chips_alternate_item = 0x7f03002c;
+        public static final int chips_recipient_dropdown_item = 0x7f03002d;
+        public static final int copy_chip_dialog_layout = 0x7f03002e;
+        public static final int more_item = 0x7f03006c;
     }
     public static final class string {
         public static final int common_google_play_services_enable_button = 0x7f080038;

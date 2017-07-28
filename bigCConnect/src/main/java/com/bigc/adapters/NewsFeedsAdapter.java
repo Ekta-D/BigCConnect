@@ -79,29 +79,37 @@ public class NewsFeedsAdapter extends BaseAdapter {
         imageLoader.init(config);
     }
 
+    @Override
+    public int getViewTypeCount() {
+
+        return getCount();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+
+        return position;
+    }
+
     public void setClickable(boolean isClickable) {
         this.isClickable = isClickable;
     }
 
+
     @Override
     public int getCount() {
-        Log.i("getCount", "getCount called");
         return posts.size();
     }
 
     @Override
-    public Posts getItem(int position) {
-        Log.i("getItem", "getItem called");
-        return posts.get(position);
+    public Object getItem(int i) {
+        return null;
     }
 
     @Override
-    public long getItemId(int position) {
-        Log.i("getItemId", "getItemId called");
-        return position;
-
+    public long getItemId(int i) {
+        return 0;
     }
-
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
@@ -401,14 +409,14 @@ public class NewsFeedsAdapter extends BaseAdapter {
         else
             this.posts.addAll(posts);
 
-        notifyDataSetChanged();
+        //notifyDataSetChanged();
     }
 
     public void addItem(Posts post) {
         if (post == null)
             return;
         this.posts.add(0, post);
-        notifyDataSetChanged();
+        //notifyDataSetChanged();
     }
 
 
@@ -429,7 +437,7 @@ public class NewsFeedsAdapter extends BaseAdapter {
     public void updateItem(int position, Posts item) {
         if (position >= 0 && position < posts.size()) {
             posts.set(position, item);
-            notifyDataSetChanged();
+            //notifyDataSetChanged();
         }
     }
 

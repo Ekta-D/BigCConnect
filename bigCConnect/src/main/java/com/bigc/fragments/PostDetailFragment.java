@@ -315,7 +315,7 @@ public class PostDetailFragment extends BaseFragment implements
             statusView.setText(post.getMessage() == null ? ""
                     : post.getMessage());
 
-        Utils.updatePost(post);
+//        Utils.updatePost(post);
     }
 
 

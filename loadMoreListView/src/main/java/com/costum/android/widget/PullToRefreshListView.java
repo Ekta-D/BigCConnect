@@ -123,7 +123,7 @@ public class PullToRefreshListView extends ListView implements OnScrollListener 
 
 		mRefreshState = TAP_TO_REFRESH;
 
-		addHeaderView(mRefreshView);
+		//addHeaderView(mRefreshView);
 
 		super.setOnScrollListener(this);
 

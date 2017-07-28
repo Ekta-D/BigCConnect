@@ -148,6 +148,7 @@
     <orderEntry type="library" exported="" name="spring-android-core-1.0.1.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="play-services-gcm-9.6.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-appinvite-9.6.0" level="project" />
+    <orderEntry type="library" exported="" name="okio-1.9.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-plus-9.6.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-nearby-9.6.0" level="project" />
     <orderEntry type="library" exported="" name="firebase-analytics-impl-9.6.0" level="project" />
@@ -178,6 +179,7 @@
     <orderEntry type="library" exported="" name="firebase-crash-9.6.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-safetynet-9.6.0" level="project" />
     <orderEntry type="library" exported="" name="multidex-1.0.1" level="project" />
+    <orderEntry type="library" exported="" name="okhttp-3.4.1" level="project" />
     <orderEntry type="library" exported="" name="play-services-clearcut-9.6.0" level="project" />
     <orderEntry type="library" exported="" name="support-vector-drawable-25.0.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-places-9.6.0" level="project" />

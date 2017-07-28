@@ -21,17 +21,17 @@ public final class R {
         public static final int ic_pulltorefresh_arrow = 0x7f020160;
     }
     public static final class id {
-        public static final int load_more_footer = 0x7f0e018a;
-        public static final int load_more_progressBar = 0x7f0e018b;
-        public static final int pull_to_refresh_header = 0x7f0e01cd;
-        public static final int pull_to_refresh_image = 0x7f0e01cf;
-        public static final int pull_to_refresh_progress = 0x7f0e01ce;
-        public static final int pull_to_refresh_text = 0x7f0e01d1;
-        public static final int pull_to_refresh_updated_at = 0x7f0e01d0;
+        public static final int load_more_footer = 0x7f0e018b;
+        public static final int load_more_progressBar = 0x7f0e018c;
+        public static final int pull_to_refresh_header = 0x7f0e01ce;
+        public static final int pull_to_refresh_image = 0x7f0e01d0;
+        public static final int pull_to_refresh_progress = 0x7f0e01cf;
+        public static final int pull_to_refresh_text = 0x7f0e01d2;
+        public static final int pull_to_refresh_updated_at = 0x7f0e01d1;
     }
     public static final class layout {
-        public static final int load_more_footer = 0x7f030069;
-        public static final int pull_to_refresh_header = 0x7f030089;
+        public static final int load_more_footer = 0x7f03006a;
+        public static final int pull_to_refresh_header = 0x7f03008a;
     }
     public static final class string {
         public static final int app_name = 0x7f080080;

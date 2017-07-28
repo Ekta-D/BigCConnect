@@ -142,9 +142,10 @@
             </intent-filter>
         </receiver>
         -->
+        <!--
         <receiver
             android:name="com.parse.GcmBroadcastReceiver"
-            android:permission="com.google.android.c2dm.permission.SEND" >
+            android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
@@ -152,6 +153,7 @@
                 <category android:name="com.bigc_connect" />
             </intent-filter>
         </receiver>
+        -->
         <!--
         <receiver
             android:name="com.bigc.receivers.NotificationReceiver"
@@ -212,6 +214,17 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
+
+        <service android:name="com.bigc.receivers.CustomFirebaseMessagingService" >
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.bigc.receivers.CustomFirebaseInstanceIDService" >
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
 
         <activity
             android:name="com.costum.android.widget.LoadMoreListView"

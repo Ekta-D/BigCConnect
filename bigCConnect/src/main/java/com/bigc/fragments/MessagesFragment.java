@@ -35,8 +35,8 @@ import com.bigc.models.Users;
 import com.bigc.receivers.NotificationReceiver;
 import com.bigc_connect.R;
 import com.costum.android.widget.PullAndLoadListView.OnLoadMoreListener;
-import com.costum.android.widget.PullToRefreshListView;
-import com.costum.android.widget.PullToRefreshListView.OnRefreshListener;
+import com.costum.android.widget.PullToRefreshListView;/*
+import com.costum.android.widget.PullToRefreshListView.OnRefreshListener;*/
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -59,7 +59,7 @@ import java.util.UUID;
 import eu.janmuller.android.simplecropimage.Util;
 
 public class MessagesFragment extends BaseFragment implements
-        OnRefreshListener, UploadPostObserver, OnLoadMoreListener,
+        /*OnRefreshListener,*/ UploadPostObserver, OnLoadMoreListener,
         MessageObserver {
 
     private AdView adView;
@@ -108,7 +108,7 @@ public class MessagesFragment extends BaseFragment implements
             view.findViewById(R.id.splashTextView).setVisibility(View.GONE);
         }
 
-        listView.setOnRefreshListener(this);
+        //listView.setOnRefreshListener(this);
         // listView.setOnLoadMoreListener(this);
 
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -283,10 +283,10 @@ public class MessagesFragment extends BaseFragment implements
         return 3;
     }
 
-    @Override
+ /*   @Override
     public void onRefresh() {
-        /*loadData(false);*/
-    }
+        *//*loadData(false);*//*
+    }*/
 
     @Override
     public void onLoadMore() {

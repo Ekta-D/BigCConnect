@@ -37,6 +37,7 @@ public class CustomFirebaseInstanceIDService extends FirebaseInstanceIdService {
         // TODO: Implement this method to send token to your app server.
         HashMap<String, Object> map = new HashMap();
         map.put(DbConstants.TOKEN, token);
+        if(FirebaseAuth.getInstance().getCurrentUser()!=null)
         FirebaseDatabase.getInstance().getReference().child(DbConstants.USERS).child(FirebaseAuth.getInstance().getCurrentUser().getUid()).updateChildren(map, new DatabaseReference.CompletionListener() {
             @Override
             public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
