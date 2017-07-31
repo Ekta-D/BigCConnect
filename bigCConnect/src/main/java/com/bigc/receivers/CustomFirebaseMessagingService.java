@@ -98,8 +98,10 @@ public class CustomFirebaseMessagingService extends FirebaseMessagingService{
     private void sendNotification(RemoteMessage messageBody) {
         int icon;
         Intent intent = new Intent(this, HomeScreen.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        //intent.setAction(messageBody.getData().values().toArray()[0].toString());
+        //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.setAction(messageBody.getData().values().toArray()[0].toString());
+
+        System.out.println("action in service: "+messageBody.getData().values().toArray()[0].toString());
 
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
                 PendingIntent.FLAG_ONE_SHOT);

@@ -190,6 +190,8 @@ public class HomeScreen extends AppCompatActivity implements
     @Override
     public void onNewIntent(Intent data) {
         super.onNewIntent(data);
+        //setIntent(data);
+
         handleNavigation(data);
     }
 
@@ -285,6 +287,8 @@ public class HomeScreen extends AppCompatActivity implements
     @Override
     public void onResume() {
         super.onResume();
+        if(getIntent()!=null)
+            //handleNavigation(getIntent());
         if (searchView != null) {
             searchView.setIconified(true);
             searchView.setIconified(true);

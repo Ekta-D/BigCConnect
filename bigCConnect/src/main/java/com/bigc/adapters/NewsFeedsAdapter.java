@@ -1,5 +1,6 @@
 package com.bigc.adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -38,6 +39,7 @@ import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListene
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -65,7 +67,9 @@ public class NewsFeedsAdapter extends BaseAdapter {
 
     public NewsFeedsAdapter(BaseFragment context, List<Posts> posts) {
         this.context = context;
-        this.posts = posts;
+        this.posts = new ArrayList<>();
+        if (posts != null)
+            this.posts.addAll(posts);
 
 
         inflater = (LayoutInflater) context.getActivity().getSystemService(
@@ -77,18 +81,6 @@ public class NewsFeedsAdapter extends BaseAdapter {
 
 
         imageLoader.init(config);
-    }
-
-    @Override
-    public int getViewTypeCount() {
-
-        return getCount();
-    }
-
-    @Override
-    public int getItemViewType(int position) {
-
-        return position;
     }
 
     public void setClickable(boolean isClickable) {
@@ -156,7 +148,7 @@ public class NewsFeedsAdapter extends BaseAdapter {
 
                     String key = dataSnapshot.getKey();
                     Map<Object, Object> user_values = (Map<Object, Object>) dataSnapshot.getValue();
-                    setValues(context, user_values, holder, user_post);
+                    setValues(context.getActivity(), user_values, holder, user_post);
                 }
 
             }
@@ -301,7 +293,7 @@ public class NewsFeedsAdapter extends BaseAdapter {
                             }
 
                         },
-                        context.getActivity(),
+                        (Activity) context.getActivity(),
                         position,
                         posts.get(position),
                         v,
@@ -321,7 +313,7 @@ public class NewsFeedsAdapter extends BaseAdapter {
         return convertView;
     }
 
-    public void setValues(final BaseFragment context, Map<Object, Object> user_values, final ViewHolder holder, final Posts posts) {
+    public void setValues(final Context context, Map<Object, Object> user_values, final ViewHolder holder, final Posts posts) {
         holder.headingOne.setText(String.valueOf(user_values.get(DbConstants.NAME)));
         int type = Integer.parseInt(String.valueOf(user_values.get(DbConstants.TYPE)));
         int ribbon = Integer.parseInt(String.valueOf(user_values.get(DbConstants.RIBBON)));
@@ -360,7 +352,7 @@ public class NewsFeedsAdapter extends BaseAdapter {
 
 
         holder.dateView.setText(Utils.getTimeStringForFeed(
-                context.getActivity(), Utils.convertStringToDate(posts.getCreatedAt())));
+                context, Utils.convertStringToDate(posts.getCreatedAt())));
 
 
         holder.optionView.setVisibility(View.VISIBLE);
@@ -399,7 +391,15 @@ public class NewsFeedsAdapter extends BaseAdapter {
         return new Date(posts.get(posts.size() - 1).getCreatedAt());
     }
 
-    public void addItems(List<Posts> posts, boolean atStart) {
+    public void setData(Collection<Posts> stories) {
+        this.posts.clear();
+        if (stories == null)
+            return;
+        this.posts.addAll(stories);
+        notifyDataSetChanged();
+    }
+
+    public void addItems(Collection<Posts> posts, boolean atStart) {
 
         if (posts == null)
             return;
@@ -409,14 +409,14 @@ public class NewsFeedsAdapter extends BaseAdapter {
         else
             this.posts.addAll(posts);
 
-        //notifyDataSetChanged();
+        notifyDataSetChanged();
     }
 
     public void addItem(Posts post) {
         if (post == null)
             return;
         this.posts.add(0, post);
-        //notifyDataSetChanged();
+        notifyDataSetChanged();
     }
 
 
@@ -437,7 +437,7 @@ public class NewsFeedsAdapter extends BaseAdapter {
     public void updateItem(int position, Posts item) {
         if (position >= 0 && position < posts.size()) {
             posts.set(position, item);
-            //notifyDataSetChanged();
+            notifyDataSetChanged();
         }
     }
 

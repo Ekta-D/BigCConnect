@@ -29,6 +29,7 @@ import com.bigc_connect.R;
 import com.costum.android.widget.PullAndLoadListView;
 import com.costum.android.widget.PullAndLoadListView.OnLoadMoreListener;/*
 import com.costum.android.widget.PullToRefreshListView.OnRefreshListener;*/
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -41,6 +42,8 @@ import com.mopub.nativeads.RequestParameters;
 import com.mopub.nativeads.ViewBinder;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -83,31 +86,37 @@ public class NewsFeedFragment extends BaseFragment implements
                 .findViewById(R.id.messageViewParent);
         listView = (PullAndLoadListView) view.findViewById(R.id.listview);
 
-        // adapter = new NewsfeedAdapter(this, posts);
+        adapter = new NewsFeedsAdapter(this, posts);
+        listView.setAdapter(adapter);
+        if (posts.size() == 0) {
+            startProgress();
+            loadData(true);
+        }
+
 
         isPremium = Preferences.getInstance(getActivity()).getBoolean(
                 Constants.PREMIUM);
-//        if (!isPremium) {
-//
-//            ViewBinder viewBinder = new ViewBinder.Builder(
-//                    R.layout.list_item_ad).mainImageId(R.id.newsFeedPicView)
-//                    .iconImageId(R.id.newsFeedRibbonView)
-//                    .titleId(R.id.newsFeedHeading1)
-//                    .textId(R.id.newsFeedMessageView).build();
-//
-//            MoPubNativeAdPositioning.MoPubServerPositioning adPositioning = MoPubNativeAdPositioning
-//                    .serverPositioning();
-//            MoPubStaticNativeAdRenderer adRenderer = new MoPubStaticNativeAdRenderer(
-//                    viewBinder);
-//
-//            mAdAdapter = new MoPubAdAdapter(getActivity(), adapter,
-//                    adPositioning);
-//            mAdAdapter.registerAdRenderer(adRenderer);
-//
-//            listView.setAdapter(mAdAdapter);
-//        } else {
-//            listView.setAdapter(adapter);
-//        }
+        if (!isPremium) {
+
+            ViewBinder viewBinder = new ViewBinder.Builder(
+                    R.layout.list_item_ad).mainImageId(R.id.newsFeedPicView)
+                    .iconImageId(R.id.newsFeedRibbonView)
+                    .titleId(R.id.newsFeedHeading1)
+                    .textId(R.id.newsFeedMessageView).build();
+
+            MoPubNativeAdPositioning.MoPubServerPositioning adPositioning = MoPubNativeAdPositioning
+                    .serverPositioning();
+            MoPubStaticNativeAdRenderer adRenderer = new MoPubStaticNativeAdRenderer(
+                    viewBinder);
+
+            mAdAdapter = new MoPubAdAdapter(getActivity(), adapter,
+                    adPositioning);
+            mAdAdapter.registerAdRenderer(adRenderer);
+
+            listView.setAdapter(mAdAdapter);
+        } else {
+            listView.setAdapter(adapter);
+        }
 
         return view;
     }
@@ -125,7 +134,7 @@ public class NewsFeedFragment extends BaseFragment implements
             if (mAdAdapter != null)
                 mAdAdapter.loadAds(Constants.MOPUB_UNIT_ID, mRequestParameters);
         }
-        //loadData(true);
+        loadData(true);
         if (NewsFeedFragment.currentObject != null) {
             //   Log.i("post", post.toString());
 //            statusView.setText(post.getMessage() == null ? ""
@@ -135,7 +144,6 @@ public class NewsFeedFragment extends BaseFragment implements
             //adapter.notifyDataSetChanged();
         }
 
-        super.onResume();
     }
 
     @Override
@@ -243,19 +251,21 @@ public class NewsFeedFragment extends BaseFragment implements
         Log.e("LoadMore", "Request");
         // loadPosts(adapter.getLastItemDate(), false);
     }
+    HashMap<String, Posts> feedHashMap = new HashMap<>();
 
-    private void loadData(final boolean fromCache) {
+    ChildEventListener childEventListener = new ChildEventListener() {
+        @Override
+        public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
-//        final List<Posts> posts_arraylist = new ArrayList<>();
-        final List<Posts> posts_arraylist = new ArrayList<>();
-        Query query = null;
-        if (fromCache) {
-            query = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_POST).orderByKey();
-        }
-        query.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+            if(dataSnapshot.exists()) {
+                feedHashMap.put(dataSnapshot.getKey(), dataSnapshot.getValue(Posts.class));
 
+                populateList(feedHashMap.values());
+            }
+            //if (isMoreLoading) {
+            // Log.e("new posts", posts.size() + "--");
+                /*boolean isRecent = true;
+                adapter.addItems(tributesHashMap.values(), isRecent);
                 long count = dataSnapshot.getChildrenCount();
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     String key = dataSnapshot1.getKey();
@@ -274,6 +284,73 @@ public class NewsFeedFragment extends BaseFragment implements
                 }
 
                 populateList(posts_arraylist);
+                Log.i("datasnap", dataSnapshot.toString());*/
+        }
+
+        @Override
+        public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+            posts.clear();
+
+            if(dataSnapshot.exists()) {
+                feedHashMap.put(dataSnapshot.getKey(), dataSnapshot.getValue(Posts.class));
+
+                populateList( feedHashMap.values());
+            }
+        }
+
+        @Override
+        public void onChildRemoved(DataSnapshot dataSnapshot) {
+            if(dataSnapshot.exists()) {
+                feedHashMap.remove(dataSnapshot.getKey());
+
+                adapter.notifyDataSetChanged();
+            }
+        }
+
+        @Override
+        public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+        }
+
+        @Override
+        public void onCancelled(DatabaseError databaseError) {
+
+        }
+    };
+
+    private void loadData(final boolean fromCache) {
+
+//        final List<Posts> posts_arraylist = new ArrayList<>();
+        final List<Posts> posts_arraylist = new ArrayList<>();
+        Query query = null;
+        if (fromCache) {
+            query = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_POST).orderByKey();
+        }
+
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                boolean isRecent = true;
+                //adapter.addItems(feedHashMap.values(), isRecent);
+                long count = dataSnapshot.getChildrenCount();
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                   feedHashMap.put(dataSnapshot1.getKey(), dataSnapshot1.getValue(Posts.class));
+                   /* String key = dataSnapshot1.getKey();
+                    //Posts posts = dataSnapshot1.getValue(Posts.class);
+                    Map<Object, Object> posts = (Map<Object, Object>) dataSnapshot1.getValue();
+                    Posts post = new Posts();
+                    post.setMessage(String.valueOf(posts.get(DbConstants.MESSAGE)));
+                    post.setMedia(String.valueOf(posts.get(DbConstants.MEDIA)));
+                    post.setLikes((ArrayList<String>) posts.get(DbConstants.LIKES));
+                    post.setCreatedAt(String.valueOf(posts.get(DbConstants.CREATED_AT)));
+                    post.setUpdatedAt(String.valueOf(posts.get(DbConstants.UPDATED_AT)));
+                    post.setComments(Integer.parseInt(String.valueOf(posts.get(DbConstants.COMMENTS))));
+                    post.setUser(String.valueOf(posts.get(DbConstants.USER)));
+                    post.setObjectId(String.valueOf(posts.get(DbConstants.ID)));
+                    posts_arraylist.add(post);*/
+                }
+
+                populateList(feedHashMap.values());
                 Log.i("datasnap", dataSnapshot.toString());
             }
 
@@ -282,6 +359,8 @@ public class NewsFeedFragment extends BaseFragment implements
 
             }
         });
+
+        query.addChildEventListener(childEventListener);
 
 //
 //        ParseQuery<ParseObject> query = Queries.getFeedsQuery(fromCache);
@@ -372,7 +451,8 @@ public class NewsFeedFragment extends BaseFragment implements
 //        }
 //    }
 
-    private void populateList(List<Posts> posts) {
+    private void populateList(Collection<Posts> posts) {
+        this.posts.clear();
         if (listView != null) {
             if (posts == null) {
                 showError(Utils.loadString(getActivity(),
@@ -382,9 +462,13 @@ public class NewsFeedFragment extends BaseFragment implements
                         R.string.noFeedMessage));
             } else {
                 listView.setVisibility(View.VISIBLE);
-                adapter = new NewsFeedsAdapter(NewsFeedFragment.this, posts);
-                listView.setAdapter(adapter);
+                adapter.setData(posts);
+                listView.setVisibility(View.VISIBLE);
                 progressParent.setVisibility(View.GONE);
+                this.posts.addAll(posts);/*
+                //adapter = new NewsFeedsAdapter(getActivity(), this.posts);
+                listView.setAdapter(adapter);
+                progressParent.setVisibility(View.GONE);*/
             }
 
         }
@@ -407,7 +491,6 @@ public class NewsFeedFragment extends BaseFragment implements
                 mAdAdapter = new MoPubAdAdapter(getActivity(), adapter,
                         adPositioning);
                 mAdAdapter.registerAdRenderer(adRenderer);
-
                 listView.setAdapter(mAdAdapter);
             } else {
                 listView.setAdapter(adapter);
@@ -541,7 +624,7 @@ public class NewsFeedFragment extends BaseFragment implements
     @Override
     public void onEditDone(int position, Object post) {
         Log.e(NewsFeedFragment.class.getSimpleName(), "onEditDone");
-//        adapter.updateItem(position, post);
+        adapter.updateItem(position, (Posts) post);
     }
 
     @Override

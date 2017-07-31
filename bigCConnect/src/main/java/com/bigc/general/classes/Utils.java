@@ -1095,7 +1095,7 @@ public class Utils {
     }
 
 
-    public static void launchEditView(Activity activity, int operation, boolean fromNewsfeeds,
+    public static void launchEditView(Context activity, int operation, boolean fromNewsfeeds,
                                       int position, Posts post) {
         PostActivity.setCurrentObject(position, post, null, null);
         Intent i = new Intent(activity, PostActivity.class);

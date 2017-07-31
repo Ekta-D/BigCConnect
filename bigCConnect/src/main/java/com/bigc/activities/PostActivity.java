@@ -755,9 +755,13 @@ public class PostActivity extends Activity implements OnClickListener,
             public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
                 ArrayList<String> sendTokens =  new ArrayList<>();
                 ArrayList<Users> activeConnections = Preferences.getInstance(getBaseContext()).getLocalConnections().get(0);
-                for(Users activeConnection : activeConnections)
-                    sendTokens.add(activeConnection.getToken());
-                Utils.sendNotification(sendTokens, Constants.ACTION_NEWS_FEED, "News Feed", "A post has been added.");
+                if(activeConnections.size()>0) {
+                    for (Users activeConnection : activeConnections) {
+                        //if (!activeConnection.getToken().equalsIgnoreCase(Preferences.getInstance(getBaseContext()).getString(DbConstants.TOKEN)))
+                            sendTokens.add(activeConnection.getToken());
+                    }
+                    Utils.sendNotification(sendTokens, Constants.ACTION_NEWS_FEED, "Newsfeed", "A post has been added.");
+                }
             }
         });
         Utils.showToast(PostActivity.this, "Your post has been uploaded!");
