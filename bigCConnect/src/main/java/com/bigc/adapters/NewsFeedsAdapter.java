@@ -87,6 +87,17 @@ public class NewsFeedsAdapter extends BaseAdapter {
         this.isClickable = isClickable;
     }
 
+    @Override
+    public int getItemViewType(int position) {
+        return position;
+    }
+
+    @Override
+    public int getViewTypeCount() {
+        if(posts.size()==0)
+            return 1;
+        else return posts.size();
+    }
 
     @Override
     public int getCount() {
@@ -95,12 +106,12 @@ public class NewsFeedsAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int i) {
-        return null;
+        return posts.get(i);
     }
 
     @Override
     public long getItemId(int i) {
-        return 0;
+        return i;
     }
 
     @Override

@@ -97,13 +97,15 @@ public class CustomFirebaseMessagingService extends FirebaseMessagingService{
 
     private void sendNotification(RemoteMessage messageBody) {
         int icon;
-        Intent intent = new Intent(this, HomeScreen.class);
+
+        buildRequestNotification(this, null, messageBody.getNotification().getBody(), messageBody.getData().values().toArray()[0].toString());
+        /*Intent intent = new Intent(this, HomeScreen.class);
         //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.setAction(messageBody.getData().values().toArray()[0].toString());
 
         System.out.println("action in service: "+messageBody.getData().values().toArray()[0].toString());
 
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 *//* Request code *//*, intent,
                 PendingIntent.FLAG_ONE_SHOT);
 
         Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
@@ -127,6 +129,6 @@ public class CustomFirebaseMessagingService extends FirebaseMessagingService{
         NotificationManager notificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
-        notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
+        notificationManager.notify(0 *//* ID of notification *//*, notificationBuilder.build());*/
     }
 }

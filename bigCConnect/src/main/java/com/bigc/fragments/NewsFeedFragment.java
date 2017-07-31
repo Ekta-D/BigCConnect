@@ -188,8 +188,8 @@ public class NewsFeedFragment extends BaseFragment implements
                 if (position - 1 < adapter.getCount())
                     ((FragmentHolder) getActivity())
                             .replaceFragment(new PostDetailFragment(
-                                    NewsFeedFragment.this, position - 1,
-                                    (Posts) adapter.getItem(position - 1), true));
+                                    NewsFeedFragment.this, position,
+                                    (Posts) adapter.getItem(position), true));
 
             }
         });

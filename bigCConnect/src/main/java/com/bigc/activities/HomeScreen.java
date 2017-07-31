@@ -288,7 +288,7 @@ public class HomeScreen extends AppCompatActivity implements
     public void onResume() {
         super.onResume();
         if(getIntent()!=null)
-            //handleNavigation(getIntent());
+            handleNavigation(getIntent());
         if (searchView != null) {
             searchView.setIconified(true);
             searchView.setIconified(true);
