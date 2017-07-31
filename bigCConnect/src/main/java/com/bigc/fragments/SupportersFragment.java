@@ -16,8 +16,11 @@ import com.bigc.datastorage.Preferences;
 import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
+import com.bigc.general.classes.Queries;
+import com.bigc.general.classes.UserConnections;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
+import com.bigc.models.Users;
 import com.bigc_connect.R;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -78,9 +81,16 @@ public class SupportersFragment extends BaseFragment {
             messageView.setText(R.string.loadingSupporting);
 
         //	new loadUserConnectionsTask().execute(ProfileFragment.getUser());
-     //   loadUserConnectionsTask(); //// TODO: 25-07-2017  
+        //   loadUserConnectionsTask(); //// TODO: 25-07-2017
     }
 
+
+    public void loadUserConnectionsTask(Users users) {
+        String currentUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        boolean isCurrentUser=currentUser.equals(users.getObjectId());
+         UserConnections userConnections = new UserConnections();
+
+    }
     //	private class loadUserConnectionsTask extends
 //			AsyncTask<ParseUser, Void, List<ParseUser>> {
 //		private UserConnections userConnections = new UserConnections();
@@ -116,30 +126,30 @@ public class SupportersFragment extends BaseFragment {
     }*///// TODO: 25-07-2017  
 
 
-   /* private UserConnections loadUserConnections(final boolean fromCache) {
+    /* private UserConnections loadUserConnections(final boolean fromCache) {
 
-        ParseQuery<ParseObject> mQuery = Queries.getUserActiveConnectionsQuery(
-                ParseUser.getCurrentUser(), fromCache);
-        UserConnections connections = new UserConnections();
+         ParseQuery<ParseObject> mQuery = Queries.getUserActiveConnectionsQuery(
+                 ParseUser.getCurrentUser(), fromCache);
+         UserConnections connections = new UserConnections();
 
-        try {
-            List<ParseObject> survivorConnections = mQuery.find();
-            Log.e("Result", survivorConnections.size() + " - ");
+         try {
+             List<ParseObject> survivorConnections = mQuery.find();
+             Log.e("Result", survivorConnections.size() + " - ");
 
-            if (fromCache && survivorConnections.size() == 0)
-                return loadUserConnections(false);
+             if (fromCache && survivorConnections.size() == 0)
+                 return loadUserConnections(false);
 
-            String cOId = ParseUser.getCurrentUser().getObjectId();
-            for (ParseObject obj : survivorConnections) {
-                if (SupportersFragment.supporters) {
-                    if (obj.getParseUser(DbConstants.TO).getObjectId()
-                            .equals(cOId)) {
+             String cOId = ParseUser.getCurrentUser().getObjectId();
+             for (ParseObject obj : survivorConnections) {
+                 if (SupportersFragment.supporters) {
+                     if (obj.getParseUser(DbConstants.TO).getObjectId()
+                             .equals(cOId)) {
 
-                        if (obj.getParseUser(DbConstants.FROM).fetchIfNeeded()
-                                .getInt(DbConstants.TYPE) == Constants.USER_TYPE.SUPPORTER
-                                .ordinal()) {
-                            // TODO: 7/14/2017 show status 
-                            *//*if (obj.getBoolean(DbConstants.STATUS))
+                         if (obj.getParseUser(DbConstants.FROM).fetchIfNeeded()
+                                 .getInt(DbConstants.TYPE) == Constants.USER_TYPE.SUPPORTER
+                                 .ordinal()) {
+                             // TODO: 7/14/2017 show status
+                             *//*if (obj.getBoolean(DbConstants.STATUS))
                                 connections.activeConnections.add(obj
                                         .getParseUser(DbConstants.FROM));
                             else

@@ -185,7 +185,7 @@ public class MessagesFragment extends BaseFragment implements
                     mess.setUser2(user.getObjectId());
                     mess.setSender(currentUserId);
                     mess.setMessage(messages.getMessage());
-                    messages_list.remove(i);
+                    messages_list.remove(j);
                     messages_list.add(0, mess);
                     break;
                 }
@@ -226,20 +226,23 @@ public class MessagesFragment extends BaseFragment implements
             }
             ArrayList<String> sendTokens =  new ArrayList<>();
             sendTokens.add(user.getToken());
-            Utils.sendNotification(sendTokens, Constants.ACTION_MESSAGE, "Message from: "+currentUserName, messages.getMessage());
+            Utils.sendNotification(sendTokens, Constants.ACTION_MESSAGE, "Message from: "+ currentUserName, messages.getMessage());
 
-            getActivity().runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
 
-                    populateList(messages_list);
+            //empty array
 
-                    //empty model
-                    PostActivity.selectedUsers_array.clear();
 
-                }
-            });
+//            getActivity().runOnUiThread(new Runnable() {
+//                @Override
+//                public void run() {
+//
+//
+//                }
+//            });
         }
+        populateList(messages_list);
+        PostActivity.selectedUsers_array.clear();
+
     }
 
     @Override
@@ -247,7 +250,7 @@ public class MessagesFragment extends BaseFragment implements
         super.onStart();
         PostManager.getInstance().bindObserver(this);
         PostManager.getInstance().addObserver(this);
-        //  ((MessageObservable) new NotificationReceiver()).bindObserver(this); //// TODO: 7/18/2017
+        //  ((MessageObservable) new NotificationReceiver()).bindObserver(this); ////
     }
 
     @Override
@@ -511,7 +514,7 @@ public class MessagesFragment extends BaseFragment implements
             listView.setOnItemClickListener(new OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                    position--;
+//                    position--;
                     ((FragmentHolder) getActivity())
                             .replaceFragment(new MessageDetailFragment(message_adapter
                                     .getItem(position), Preferences.getInstance(getActivity()).getAllUsers(DbConstants.FETCH_USER)));

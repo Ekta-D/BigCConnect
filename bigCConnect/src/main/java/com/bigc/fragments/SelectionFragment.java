@@ -283,6 +283,7 @@ public class SelectionFragment extends Fragment implements View.OnClickListener 
                             String uid = firebaseUser.getUid();
                             users.setEmail(((SignupActivity) getActivity()).email);
                             users.setName(((SignupActivity) getActivity()).name);
+                            users.setKey(((SignupActivity) getActivity()).password); //save user password
                             users.setType(finalType);
                             users.setName_lowercase(((SignupActivity) getActivity()).name.toLowerCase());
 

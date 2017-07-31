@@ -74,7 +74,7 @@ public class MessageDetailFragment extends BaseFragment implements
 //				.getParseUser(DbConstants.USER2) : conversation
 //				.getParseUser(DbConstants.USER1);*/
 //	}
-    //// TODO: 24-07-2017  full conversation will be shown here but for now only one message in detail showing
+
     public MessageDetailFragment(Messages conversation, List<Users> userses) {
         this.conversation = conversation;
         this.userses = userses;
@@ -334,7 +334,7 @@ public class MessageDetailFragment extends BaseFragment implements
 				obj.put(DbConstants.USER2, user);
 				obj.put(DbConstants.MESSAGE, reply);
 				obj.put(DbConstants.SENDER, ParseUser.getCurrentUser());
-				// TODO: 7/14/2017 send message 
+
 				//PostManager.getInstance().sendMessage(obj, user);
 				conversation.put(DbConstants.MESSAGE, reply);
 				adapter.addItem(obj);*/
@@ -467,13 +467,13 @@ public class MessageDetailFragment extends BaseFragment implements
     @Override
     public void onStart() {
         super.onStart();
-        //// TODO: 24-07-2017  
+
         // ((MessageObservable) new NotificationReceiver()).bindObserver(this);
     }
 
     @Override
     public void onStop() {
-        //// TODO: 24-07-2017
+
         //  ((MessageObservable) new NotificationReceiver()).freeObserver();
         super.onStop();
         getActivity().getWindow().setSoftInputMode(
