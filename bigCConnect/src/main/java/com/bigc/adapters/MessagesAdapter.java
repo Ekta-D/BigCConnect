@@ -1,6 +1,7 @@
 package com.bigc.adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -84,9 +85,13 @@ public class MessagesAdapter extends ArrayAdapter<Messages> {
         String user2 = message.getUser2();
 
         for (int i = 0; i < userList.size(); i++) {
-            if (userList.get(i).getObjectId().equalsIgnoreCase(user2)) {
-                Users selected_user = userList.get(i);
-                setValues(selected_user, message, holder);
+            if(userList.get(i)!=null && userList.get(i).getObjectId()!=null)
+            {
+                if (userList.get(i).getObjectId().equalsIgnoreCase(user2)) {
+                    Users selected_user = userList.get(i);
+                    setValues(selected_user, message, holder);
+                }
+
             }
         }
       /*  String owner = message.getUser1().equals(currentUser.getObjectId()) ? message.getUser2() : message.getUser1();

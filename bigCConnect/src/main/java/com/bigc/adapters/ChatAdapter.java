@@ -119,9 +119,11 @@ public class ChatAdapter extends ArrayAdapter<Users> {
         }
 
         for (int i = 0; i < userList.size(); i++) {
-            if (userList.get(i).getObjectId().equalsIgnoreCase(sender)) {
-                Users selected_user = userList.get(i);
-                setValues(selected_user, message, holder);
+            if (userList.get(i) != null && userList.get(i).getObjectId() != null) {
+                if (userList.get(i).getObjectId().equalsIgnoreCase(sender)) {
+                    Users selected_user = userList.get(i);
+                    setValues(selected_user, message, holder);
+                }
             }
         }
 
