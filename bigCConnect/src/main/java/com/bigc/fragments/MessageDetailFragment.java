@@ -158,8 +158,7 @@ public class MessageDetailFragment extends BaseFragment implements
         final String receiver = MessageDetailFragment.conversation.getUser2();
 //        final String currentuserID = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-        FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_MESSAGE).orderByKey().addChildEventListener(childEventListener);
-        FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_MESSAGE).orderByKey().
+        FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_MESSAGE).orderByChild(DbConstants.UPDATED_AT).
                 addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
@@ -223,41 +222,6 @@ public class MessageDetailFragment extends BaseFragment implements
                 });
 
     }
-
-    ChildEventListener childEventListener = new ChildEventListener() {
-        @Override
-        public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-
-            Log.i("added_chat", dataSnapshot.toString());
-            if (dataSnapshot.exists()) {
-
-            }
-        }
-
-        @Override
-        public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-            Log.i("update_chat", dataSnapshot.toString());
-            if (dataSnapshot.exists()) {
-                chat_conversation.clear();
-
-            }
-        }
-
-        @Override
-        public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-        }
-
-        @Override
-        public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-        }
-
-        @Override
-        public void onCancelled(DatabaseError databaseError) {
-
-        }
-    };
 
     private void showError(String message) {
         progressView.setVisibility(View.GONE);

@@ -52,8 +52,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
 
 import eu.janmuller.android.simplecropimage.Util;
@@ -149,6 +151,7 @@ public class MessagesFragment extends BaseFragment implements
                 PostActivity.selectedUsers_array.size() > 0 &&
                 !PostActivity.message.equalsIgnoreCase("")) {
             Log.i("currentMessageObject", PostActivity.currentMessageObject.toString());
+            removeDuplicacy(PostActivity.selectedUsers_array);
             uploadMessage(PostActivity.currentMessageObject, PostActivity.selectedUsers_array, messages_list);
         }
     }
@@ -194,8 +197,7 @@ public class MessagesFragment extends BaseFragment implements
             }
 
 
-            if (!found)
-            {
+            if (!found) {
                 Log.e("New", "Add");
                 messages_list.add(messages);
                 FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_MESSAGE).child(messages.getObjectId()).setValue(messages);
@@ -207,38 +209,25 @@ public class MessagesFragment extends BaseFragment implements
                 FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION).child(conversationObjectId)
                         .setValue(conversation_model);
 
-            } else
-            {
+            } else {
                 Map<String, Object> update_conversation = new HashMap<>();
                 update_conversation.put(DbConstants.CREATED_AT, mess.getCreatedAt());
                 update_conversation.put(DbConstants.MESSAGE, PostActivity.message);
                 update_conversation.put(DbConstants.ID, mess.getObjectId());
                 update_conversation.put(DbConstants.UPDATED_AT, Utils.getCurrentDate());
-                update_conversation.put(DbConstants.USER1,FirebaseAuth.getInstance().getCurrentUser().getUid());
+                update_conversation.put(DbConstants.USER1, FirebaseAuth.getInstance().getCurrentUser().getUid());
                 update_conversation.put(DbConstants.USER2, mess.getUser2());
                 update_conversation.put(DbConstants.MEDIA, mess.getMedia());
-                update_conversation.put(DbConstants.SENDER,FirebaseAuth.getInstance().getCurrentUser().getUid());
+                update_conversation.put(DbConstants.SENDER, FirebaseAuth.getInstance().getCurrentUser().getUid());
 
                 FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION).child(mess.getObjectId())
                         .updateChildren(update_conversation);
                 FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_MESSAGE).child(messageId).setValue(messages);
                 found = false;
             }
-            ArrayList<String> sendTokens =  new ArrayList<>();
+            ArrayList<String> sendTokens = new ArrayList<>();
             sendTokens.add(user.getToken());
-            Utils.sendNotification(sendTokens, Constants.ACTION_MESSAGE, "Message from: "+ currentUserName, messages.getMessage());
-
-
-            //empty array
-
-
-//            getActivity().runOnUiThread(new Runnable() {
-//                @Override
-//                public void run() {
-//
-//
-//                }
-//            });
+            Utils.sendNotification(sendTokens, Constants.ACTION_MESSAGE, "Message from: " + currentUserName, messages.getMessage());
         }
         populateList(messages_list);
         PostActivity.selectedUsers_array.clear();
@@ -332,8 +321,6 @@ public class MessagesFragment extends BaseFragment implements
 
 
         Query query = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION).orderByChild(DbConstants.UPDATED_AT);
-
-        query.addChildEventListener(childEventListener);
         //     query.orderByChild(DbConstants.USER1).equalTo(Preferences.getInstance(getActivity()).getString(DbConstants.ID));
         query.addValueEventListener(new ValueEventListener() {
             @Override
@@ -497,7 +484,6 @@ public class MessagesFragment extends BaseFragment implements
 	}*/
 
 
-
     private void populateList(List<Messages> messages) {
 
         if (messages == null) {
@@ -541,35 +527,6 @@ public class MessagesFragment extends BaseFragment implements
 
     }
 
-    ChildEventListener childEventListener = new ChildEventListener() {
-        @Override
-        public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-
-            if (dataSnapshot.exists()) {
-
-            }
-        }
-
-        @Override
-        public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-        }
-
-        @Override
-        public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-        }
-
-        @Override
-        public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-        }
-
-        @Override
-        public void onCancelled(DatabaseError databaseError) {
-
-        }
-    };
 
     private void startProgress() {
         try {
@@ -743,5 +700,14 @@ public class MessagesFragment extends BaseFragment implements
 //            });
 //        }
         return false;
+    }
+
+    public void removeDuplicacy(ArrayList<Users> arrayList) {
+//        List<Users> al = new ArrayList<>();
+// add elements to al, including duplicates
+        Set<Users> hs = new HashSet<>();
+        hs.addAll(arrayList);
+        arrayList.clear();
+        arrayList.addAll(hs);
     }
 }
