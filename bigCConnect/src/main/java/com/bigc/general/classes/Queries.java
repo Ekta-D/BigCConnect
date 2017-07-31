@@ -529,6 +529,7 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
 
                     //save to preferences
                     Preferences.getInstance(context).saveConnectionsLocally(active, pending);
+                    System.out.println("connections saved locally");
                 }
 
             }
@@ -537,6 +538,7 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
             public void onCancelled(DatabaseError databaseError) {
                 //save to preferences
                 Preferences.getInstance(context).saveConnectionsLocally(active, pending);
+                System.out.println("connections saved locally");
             }
         });
     }

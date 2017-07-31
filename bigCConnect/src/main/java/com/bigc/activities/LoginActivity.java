@@ -181,7 +181,7 @@ public class LoginActivity extends Activity implements OnClickListener {
                         if (task.isSuccessful()) {
 
                             gotoHomeScreen();
-                            fetchUserTask();
+
                             fetchUser();
                         } else {
                             String error = task.getException().toString();
@@ -329,6 +329,7 @@ public class LoginActivity extends Activity implements OnClickListener {
                     Preferences.getInstance(LoginActivity.this).save(DbConstants.TOKEN, String.valueOf(values.get("token")));
                     Preferences.getInstance(LoginActivity.this).save(DbConstants.RECEIVEPUSH, String.valueOf(values.get("recievePush")));
 
+                    fetchUserTask();
 
                     Utils.hideProgress();
 

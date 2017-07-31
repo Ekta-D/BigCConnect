@@ -134,6 +134,12 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
                 holder.addOption.setVisibility(View.GONE);
             } else {
                 holder.addOption.setVisibility(View.VISIBLE);
+                /*ArrayList<Users> active = Preferences.getInstance(getContext()).getLocalConnections().get(0);
+                ArrayList<Users> pending = Preferences.getInstance(getContext()).getLocalConnections().get(0);
+                for(Users auser: active)
+                    System.out.println("active: "+auser.getName());
+                for(Users auser: pending)
+                    System.out.println("pending: "+auser.getName());
                 if(Preferences.getInstance(getContext()).getLocalConnections().get(0).contains(user)){
                     holder.addOption.setImageResource(R.drawable.ic_connected);
                     holder.addOption.setContentDescription(TAG_CONNECTED);
@@ -143,8 +149,8 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
                 } else {
                     holder.addOption.setImageResource(R.drawable.ic_connect);
                     holder.addOption.setContentDescription(TAG_NOT_CONNECTED);
-                }
-                /*if (holder.indexInNewAddedConnections >= 0) {
+                }*/
+                if (holder.indexInNewAddedConnections >= 0) {
                     holder.addOption.setImageResource(R.drawable.ic_connect_pending);
                     holder.addOption.setContentDescription(TAG_WAITING);
 
@@ -162,7 +168,7 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
                 } else {
                     holder.addOption.setImageResource(R.drawable.ic_connect);
                     holder.addOption.setContentDescription(TAG_NOT_CONNECTED);
-                }*/
+                }
 
                 holder.addOption.setOnClickListener(new OnClickListener() {
 
@@ -326,7 +332,7 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
                 //show success
                 ArrayList sendToken = new ArrayList();
                 sendToken.add(user.getToken());
-                Utils.sendNotification(sendToken, Constants.ACTION_FRIEND_REQUEST, "Connection Request", user.getName() + " has sent you a connection request");
+                Utils.sendNotification(sendToken, Constants.ACTION_FRIEND_REQUEST, "Connection Request",  Preferences.getInstance(getContext()).getString(DbConstants.NAME) + " has sent you a connection request");
             }
         });
     }

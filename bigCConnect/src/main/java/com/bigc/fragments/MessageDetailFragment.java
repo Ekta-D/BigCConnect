@@ -32,6 +32,7 @@ import com.bigc.receivers.NotificationReceiver;
 import com.bigc_connect.R;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.mediation.MediationAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -326,6 +327,22 @@ public class MessageDetailFragment extends BaseFragment implements
                     adapter.setData(updateList);
                     //   populateList(updateList);
                     adapter.notifyDataSetChanged();
+
+                    String token = "";
+                    ArrayList<Users> activeList = Preferences.getInstance(getContext()).getLocalConnections().get(0);
+                    for (Users auser: activeList) {
+                        if(auser.getObjectId().equalsIgnoreCase(MessageDetailFragment.conversation.getUser2())) {
+                            token = auser.getToken();
+                            break;
+                        }
+                    }
+
+                    if(!token.equalsIgnoreCase("")) {
+                        ArrayList<String> sendTokens = new ArrayList<>();
+                        sendTokens.add(token);
+                        Utils.sendNotification(sendTokens, Constants.ACTION_MESSAGE, "Message from: " + Preferences.getInstance(getContext()).getString(DbConstants.NAME), reply);
+                    }
+
 
                 /*ParseObject obj = new ParseObject(DbConstants.
 

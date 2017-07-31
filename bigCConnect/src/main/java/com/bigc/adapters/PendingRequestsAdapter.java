@@ -97,6 +97,7 @@ public class PendingRequestsAdapter extends ArrayAdapter<ConnectionsModel> {
                     Users fromUser = dataSnapshot.getValue(Users.class);
                     holder.nameView.setText((fromUser.getName()) == null ? "" : fromUser.getName());
                     holder.locationView.setText((fromUser.getLocation() == null) ? "" : fromUser.getLocation());
+                    holder.user = fromUser;
                     if (fromUser.getType() == Constants.USER_TYPE.SUPPORTER.ordinal())
                         holder.iconView.setImageResource(R.drawable.ribbon_supporter);
                     else {
@@ -140,7 +141,7 @@ public class PendingRequestsAdapter extends ArrayAdapter<ConnectionsModel> {
                         if(databaseError==null) {
                             Toast.makeText(getContext(), "Update saved.", Toast.LENGTH_SHORT).show();
                             holder.progressParent.setVisibility(View.GONE);
-
+                            sendResponse(holder.user, true);
                             data.remove(position);
                             notifyDataSetChanged();
                         }
@@ -163,7 +164,7 @@ public class PendingRequestsAdapter extends ArrayAdapter<ConnectionsModel> {
                     public void onComplete(@NonNull Task<Void> task) {
                         Toast.makeText(getContext(), "Update saved.", Toast.LENGTH_SHORT).show();
                         holder.progressParent.setVisibility(View.GONE);
-
+                        sendResponse(holder.user, false);
                         data.remove(position);
                         notifyDataSetChanged();
                     }
@@ -287,6 +288,12 @@ public class PendingRequestsAdapter extends ArrayAdapter<ConnectionsModel> {
         return view;
     }
 
+    private void sendResponse(Users user, boolean response){
+        ArrayList<String> sendTokens =  new ArrayList<>();
+        sendTokens.add(user.getToken());
+        Utils.sendNotification(sendTokens, Constants.ACTION_MESSAGE, "Connection Request", Preferences.getInstance(getContext()).getString(DbConstants.NAME)+ " has "+ (response==true?"accepted":"rejected") + " your connection request");
+    }
+
     public class ViewHolder {
         public ImageView profileView;
         public ImageView iconView;
@@ -295,6 +302,7 @@ public class PendingRequestsAdapter extends ArrayAdapter<ConnectionsModel> {
         public TextView confirmBtn;
         public TextView declineBtn;
         public LinearLayout progressParent;
+        public Users user;
     }
 
 }
