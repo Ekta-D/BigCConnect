@@ -24,7 +24,6 @@ import com.bigc.interfaces.FragmentHolder;
 import com.bigc.interfaces.PopupOptionHandler;
 import com.bigc.interfaces.UploadPostObserver;
 import com.bigc.models.Messages;
-import com.bigc.models.Post;
 import com.bigc.models.Posts;
 import com.bigc.models.Tributes;
 import com.bigc_connect.R;
@@ -259,13 +258,14 @@ public class NewsFeedFragment extends BaseFragment implements
         Log.e("LoadMore", "Request");
         // loadPosts(adapter.getLastItemDate(), false);
     }
+
     HashMap<String, Posts> feedHashMap = new HashMap<>();
 
     ChildEventListener childEventListener = new ChildEventListener() {
         @Override
         public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
-            if(dataSnapshot.exists()) {
+            if (dataSnapshot.exists()) {
                 feedHashMap.put(dataSnapshot.getKey(), dataSnapshot.getValue(Posts.class));
 
                 populateList(feedHashMap.values());
@@ -299,16 +299,16 @@ public class NewsFeedFragment extends BaseFragment implements
         public void onChildChanged(DataSnapshot dataSnapshot, String s) {
             posts.clear();
 
-            if(dataSnapshot.exists()) {
+            if (dataSnapshot.exists()) {
                 feedHashMap.put(dataSnapshot.getKey(), dataSnapshot.getValue(Posts.class));
 
-                populateList( feedHashMap.values());
+                populateList(feedHashMap.values());
             }
         }
 
         @Override
         public void onChildRemoved(DataSnapshot dataSnapshot) {
-            if(dataSnapshot.exists()) {
+            if (dataSnapshot.exists()) {
                 feedHashMap.remove(dataSnapshot.getKey());
 
                 adapter.notifyDataSetChanged();
@@ -342,7 +342,7 @@ public class NewsFeedFragment extends BaseFragment implements
                 //adapter.addItems(feedHashMap.values(), isRecent);
                 long count = dataSnapshot.getChildrenCount();
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                   feedHashMap.put(dataSnapshot1.getKey(), dataSnapshot1.getValue(Posts.class));
+                    feedHashMap.put(dataSnapshot1.getKey(), dataSnapshot1.getValue(Posts.class));
                     String key = dataSnapshot1.getKey();
                     //Posts posts = dataSnapshot1.getValue(Posts.class);
                     Map<Object, Object> posts = (Map<Object, Object>) dataSnapshot1.getValue();
@@ -461,6 +461,7 @@ public class NewsFeedFragment extends BaseFragment implements
 ArrayList<Posts> postsArrayList;
     private void populateList(Collection<Posts> posts) {
 
+
         this.posts.clear();
         if (listView != null) {
             if (posts == null) {
@@ -507,11 +508,11 @@ ArrayList<Posts> postsArrayList;
                             return -1;
                         } else {
                             return 1;
-                        }
+            }
                     } catch (ParseException e) {
 
                         e.printStackTrace();
-                    }
+        }
 
 
                     return 0;
@@ -541,6 +542,7 @@ ArrayList<Posts> postsArrayList;
                 MoPubStaticNativeAdRenderer adRenderer = new MoPubStaticNativeAdRenderer(
                         viewBinder);
 
+
                 mAdAdapter = new MoPubAdAdapter(getActivity(), adapter,
                         adPositioning);
                 mAdAdapter.registerAdRenderer(adRenderer);
@@ -550,6 +552,49 @@ ArrayList<Posts> postsArrayList;
             }
         }
 
+    }
+
+    public void sortArray(List<Posts> postses) {
+
+        Collections.sort(postses, new Comparator<Posts>() {
+            @Override
+            public int compare(Posts comments, Posts t1) {
+                int result = 0;
+                if (comments == null || t1 == null) {
+                    result = 0;
+//                    return 0;
+                } else {
+                    try {
+                        SimpleDateFormat dateFormatlhs = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+                        Date convertedDatelhs = dateFormatlhs.parse(comments.getCreatedAt());
+                        Calendar calendarlhs = Calendar.getInstance();
+                        calendarlhs.setTime(convertedDatelhs);
+
+                        SimpleDateFormat dateFormatrhs = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+                        Date convertedDaterhs = dateFormatrhs.parse(t1.getCreatedAt());
+                        Calendar calendarrhs = Calendar.getInstance();
+                        calendarrhs.setTime(convertedDaterhs);
+
+                        if (calendarlhs.getTimeInMillis() > calendarrhs.getTimeInMillis()) {
+
+                            result = -1;
+//                            return -1;
+                        } else {
+
+                            result = 1;
+//                            return 1;
+
+                        }
+                    } catch (ParseException e) {
+
+                        e.printStackTrace();
+                    }
+
+                }
+                return result;
+
+            }
+        });
     }
 
 //    private void populateList(List<ParseObject> posts) {
