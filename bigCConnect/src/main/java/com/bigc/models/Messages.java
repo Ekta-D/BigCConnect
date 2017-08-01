@@ -15,6 +15,20 @@ public class Messages {
     String user1;
     String user2;
     String media;
+
+    public Messages() {
+    }
+
+    public Messages(String createdAt, String message, String objectId, String sender, String updatedAt, String user1, String user2, String media) {
+        this.createdAt = createdAt;
+        this.message = message;
+        this.objectId = objectId;
+        this.sender = sender;
+        this.updatedAt = updatedAt;
+        this.user1 = user1;
+        this.user2 = user2;
+        this.media = media;
+    }
 //    boolean isRead = false;
 //    boolean Isread=false;
 //    public boolean isread() {

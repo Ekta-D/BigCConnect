@@ -152,8 +152,10 @@ public class CategorySurvivorsFragment extends BaseFragment implements
 			public void onDataChange(DataSnapshot dataSnapshot) {
 				if(dataSnapshot!=null){
 					Log.i("CategorySurvivors",dataSnapshot.toString());
+
 					if(usersHashMap==null)
 						usersHashMap = new HashMap();
+					usersHashMap.clear();
 					for(DataSnapshot snapshot: dataSnapshot.getChildren()) {
 						Users user = snapshot.getValue(Users.class);
 						if(user.getType()!=Constants.USER_TYPE.SUPPORTER.ordinal() && user.getVisibility()!=Constants.PRIVATE && user.isDeactivated()!=true)

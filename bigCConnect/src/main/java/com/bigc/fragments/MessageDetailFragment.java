@@ -298,14 +298,14 @@ public class MessageDetailFragment extends BaseFragment implements
 
                     String token = "";
                     ArrayList<Users> activeList = Preferences.getInstance(getContext()).getLocalConnections().get(0);
-                    for (Users auser: activeList) {
-                        if(auser.getObjectId().equalsIgnoreCase(MessageDetailFragment.conversation.getUser2())) {
+                    for (Users auser : activeList) {
+                        if (auser.getObjectId().equalsIgnoreCase(MessageDetailFragment.conversation.getUser2())) {
                             token = auser.getToken();
                             break;
                         }
                     }
 
-                    if(!token.equalsIgnoreCase("")) {
+                    if (!token.equalsIgnoreCase("")) {
                         ArrayList<String> sendTokens = new ArrayList<>();
                         sendTokens.add(token);
                         Utils.sendNotification(sendTokens, Constants.ACTION_MESSAGE, "Message from: " + Preferences.getInstance(getContext()).getString(DbConstants.NAME), reply);
@@ -447,18 +447,10 @@ public class MessageDetailFragment extends BaseFragment implements
                     Calendar calendarrhs = Calendar.getInstance();
                     calendarrhs.setTime(convertedDaterhs);
 
-                    if(calendarlhs.getTimeInMillis() > calendarrhs.getTimeInMillis())
-                    {
-
-
+                    if (calendarlhs.getTimeInMillis() < calendarrhs.getTimeInMillis()) {
                         return -1;
-                    }
-                    else
-                    {
-
-
+                    } else {
                         return 1;
-
                     }
                 } catch (ParseException e) {
 

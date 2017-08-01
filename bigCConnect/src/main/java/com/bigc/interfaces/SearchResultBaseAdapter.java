@@ -152,7 +152,7 @@ public abstract class SearchResultBaseAdapter extends ArrayAdapter<Users> {
     public Date getLastItemDate() {
         if (data.size() == 0)
             return null;
-        return new Date(data.get(data.size() - 1).getCreatedAt());
+        return Utils.convertStringToDate(data.get(data.size() - 1).getCreatedAt());
     }
 
     public void addItems(List<Users> results, boolean atStart) {

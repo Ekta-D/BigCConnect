@@ -23,6 +23,8 @@ import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
 import com.bigc.interfaces.PopupOptionHandler;
 import com.bigc.interfaces.UploadPostObserver;
+import com.bigc.models.Messages;
+import com.bigc.models.Post;
 import com.bigc.models.Posts;
 import com.bigc.models.Tributes;
 import com.bigc_connect.R;
@@ -41,8 +43,14 @@ import com.mopub.nativeads.MoPubStaticNativeAdRenderer;
 import com.mopub.nativeads.RequestParameters;
 import com.mopub.nativeads.ViewBinder;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -324,7 +332,7 @@ public class NewsFeedFragment extends BaseFragment implements
         final List<Posts> posts_arraylist = new ArrayList<>();
         Query query = null;
         if (fromCache) {
-            query = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_POST).orderByKey();
+            query = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_POST);
         }
 
         query.addValueEventListener(new ValueEventListener() {
@@ -335,7 +343,7 @@ public class NewsFeedFragment extends BaseFragment implements
                 long count = dataSnapshot.getChildrenCount();
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                    feedHashMap.put(dataSnapshot1.getKey(), dataSnapshot1.getValue(Posts.class));
-                   /* String key = dataSnapshot1.getKey();
+                    String key = dataSnapshot1.getKey();
                     //Posts posts = dataSnapshot1.getValue(Posts.class);
                     Map<Object, Object> posts = (Map<Object, Object>) dataSnapshot1.getValue();
                     Posts post = new Posts();
@@ -347,7 +355,7 @@ public class NewsFeedFragment extends BaseFragment implements
                     post.setComments(Integer.parseInt(String.valueOf(posts.get(DbConstants.COMMENTS))));
                     post.setUser(String.valueOf(posts.get(DbConstants.USER)));
                     post.setObjectId(String.valueOf(posts.get(DbConstants.ID)));
-                    posts_arraylist.add(post);*/
+                    posts_arraylist.add(post);
                 }
 
                 populateList(feedHashMap.values());
@@ -360,7 +368,7 @@ public class NewsFeedFragment extends BaseFragment implements
             }
         });
 
-        query.addChildEventListener(childEventListener);
+       // query.addChildEventListener(childEventListener);
 
 //
 //        ParseQuery<ParseObject> query = Queries.getFeedsQuery(fromCache);
@@ -450,8 +458,9 @@ public class NewsFeedFragment extends BaseFragment implements
 //            }
 //        }
 //    }
-
+ArrayList<Posts> postsArrayList;
     private void populateList(Collection<Posts> posts) {
+
         this.posts.clear();
         if (listView != null) {
             if (posts == null) {
@@ -461,18 +470,63 @@ public class NewsFeedFragment extends BaseFragment implements
                 showError(Utils.loadString(getActivity(),
                         R.string.noFeedMessage));
             } else {
-                listView.setVisibility(View.VISIBLE);
+                /*listView.setVisibility(View.VISIBLE);
                 adapter.setData(posts);
                 listView.setVisibility(View.VISIBLE);
                 progressParent.setVisibility(View.GONE);
-                this.posts.addAll(posts);/*
+                this.posts.addAll(posts);*//*
                 //adapter = new NewsFeedsAdapter(getActivity(), this.posts);
                 listView.setAdapter(adapter);
                 progressParent.setVisibility(View.GONE);*/
             }
 
         }
-        if (adapter!=null)
+
+
+        if(posts!=null && posts.size()>0) {
+            postsArrayList = new ArrayList<>();
+            postsArrayList.addAll(posts);
+            Collections.sort(postsArrayList, new Comparator<Posts>() {
+                @Override
+                public int compare(Posts comments, Posts t1) {
+                /*if (Utils.convertStringToDate(comments.getUpdatedAt()) == null || Utils.convertStringToDate(t1.getUpdatedAt()) == null)
+                    return 0;
+                return Utils.convertStringToDate(comments.getUpdatedAt()).compareTo(Utils.convertStringToDate(t1.getUpdatedAt()));*/
+                    try {
+                        SimpleDateFormat dateFormatlhs = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+                        Date convertedDatelhs = dateFormatlhs.parse(comments.getCreatedAt());
+                        Calendar calendarlhs = Calendar.getInstance();
+                        calendarlhs.setTime(convertedDatelhs);
+
+                        SimpleDateFormat dateFormatrhs = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+                        Date convertedDaterhs = dateFormatrhs.parse(t1.getCreatedAt());
+                        Calendar calendarrhs = Calendar.getInstance();
+                        calendarrhs.setTime(convertedDaterhs);
+
+                        if (calendarlhs.getTimeInMillis() < calendarrhs.getTimeInMillis()) {
+                            return -1;
+                        } else {
+                            return 1;
+                        }
+                    } catch (ParseException e) {
+
+                        e.printStackTrace();
+                    }
+
+
+                    return 0;
+                }
+            });
+            Collections.reverse(postsArrayList);
+            listView.setVisibility(View.VISIBLE);
+            adapter.setData(postsArrayList);
+            listView.setVisibility(View.VISIBLE);
+            progressParent.setVisibility(View.GONE);
+            this.posts.addAll(posts);
+        }
+
+
+        if (adapter!=null && getActivity()!=null)
         {
             if (!isPremium) {
 
@@ -486,7 +540,6 @@ public class NewsFeedFragment extends BaseFragment implements
                         .serverPositioning();
                 MoPubStaticNativeAdRenderer adRenderer = new MoPubStaticNativeAdRenderer(
                         viewBinder);
-
 
                 mAdAdapter = new MoPubAdAdapter(getActivity(), adapter,
                         adPositioning);

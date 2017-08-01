@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
@@ -44,15 +45,33 @@ import com.bigc.general.classes.GoogleAnalyticsHelper;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
+import com.bigc.models.ConnectionsModel;
+import com.bigc.models.Messages;
 import com.bigc.views.AppRatingPrompt;
 import com.bigc.views.CustomTypefaceSpan;
 import com.bigc_connect.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.text.DateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
 public class HomeScreen extends AppCompatActivity implements
         FragmentHolder, OnClickListener {
 
@@ -144,6 +163,7 @@ public class HomeScreen extends AppCompatActivity implements
 
         GoogleAnalyticsHelper
                 .sendScreenViewGoogleAnalytics(this, "Home Screen");
+
     }
 
     private void handleNavigation(Intent intent) {

@@ -48,9 +48,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -320,7 +324,7 @@ public class MessagesFragment extends BaseFragment implements
         });*/ // TODO: 21-07-2017 need to work on Converation table
 
 
-        Query query = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION).orderByChild(DbConstants.UPDATED_AT);
+        Query query = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION);
         //     query.orderByChild(DbConstants.USER1).equalTo(Preferences.getInstance(getActivity()).getString(DbConstants.ID));
         query.addValueEventListener(new ValueEventListener() {
             @Override
@@ -485,6 +489,41 @@ public class MessagesFragment extends BaseFragment implements
 
 
     private void populateList(List<Messages> messages) {
+
+        if(messages!=null && messages.size()>0) {
+            Collections.sort(messages, new Comparator<Messages>() {
+                @Override
+                public int compare(Messages comments, Messages t1) {
+               /* if (Utils.convertStringToDate(comments.getUpdatedAt()) == null || Utils.convertStringToDate(t1.getUpdatedAt()) == null)
+                    return 0;
+                return Utils.convertStringToDate(comments.getUpdatedAt()).compareTo(Utils.convertStringToDate(t1.getUpdatedAt()));*/
+                    try {
+                        SimpleDateFormat dateFormatlhs = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+                        Date convertedDatelhs = dateFormatlhs.parse(comments.getCreatedAt());
+                        Calendar calendarlhs = Calendar.getInstance();
+                        calendarlhs.setTime(convertedDatelhs);
+
+                        SimpleDateFormat dateFormatrhs = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+                        Date convertedDaterhs = dateFormatrhs.parse(t1.getCreatedAt());
+                        Calendar calendarrhs = Calendar.getInstance();
+                        calendarrhs.setTime(convertedDaterhs);
+
+                        if (calendarlhs.getTimeInMillis() > calendarrhs.getTimeInMillis()) {
+                            return -1;
+                        } else {
+                            return 1;
+                        }
+                    } catch (ParseException e) {
+
+                        e.printStackTrace();
+                    }
+
+
+                    return 0;
+                }
+            });
+        }
+
 
         if (messages == null) {
             showError(Utils.loadString(getActivity(),

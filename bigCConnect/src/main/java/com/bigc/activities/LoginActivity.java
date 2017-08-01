@@ -300,19 +300,22 @@ public class LoginActivity extends Activity implements OnClickListener {
 
     private void gotoHomeScreen() {
         FirebaseUser currentUser = firebaseAuth.getCurrentUser();
-        String current_uid = currentUser.getUid();
-        databaseReference = FirebaseDatabase.getInstance().getReference().child(DbConstants.USERS).child(current_uid);
-        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+        String current_uid = currentUser.getEmail();
+        databaseReference = FirebaseDatabase.getInstance().getReference().child(DbConstants.USERS);
+        databaseReference.orderByChild(DbConstants.EMAIL).equalTo(current_uid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-
+                System.out.println(dataSnapshot.toString());
                 if (dataSnapshot.getValue() == null) {
+
                     Utils.showPrompt(LoginActivity.this, "This user may not exists in database");
                     Utils.hideProgress();
                 } else {
                     String key = dataSnapshot.getKey();
-                    Map<Object, Object> values = (Map<Object, Object>) dataSnapshot.getValue();
+                    Map<Object, Object> values1 = (Map<Object, Object>) dataSnapshot.getValue();
+                    String keySet = (String) values1.keySet().toArray()[0];
+                    Map<Object, Object> values = (Map<Object, Object>) values1.get(keySet);
 
                     boolean deactivated = (boolean) values.get(DbConstants.DEACTIVATED);
 
