@@ -26,6 +26,8 @@ import com.costum.android.widget.LoadMoreListView;
 import com.costum.android.widget.LoadMoreListView.OnLoadMoreListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
@@ -41,151 +43,120 @@ import java.util.List;
 import java.util.Map;
 
 public class CategorySurvivorsFragment extends BaseFragment implements
-		OnLoadMoreListener {
+        OnLoadMoreListener {
 
-	private static int ribbon;
-	private LoadMoreListView listView;
-	private SearchResultPictureAdapter adapter;
-	private TextView messageView;
-	private LinearLayout progressParent;
-	private ProgressBar progressView;
-	private TextView titleView;
+    private static int ribbon;
+    private LoadMoreListView listView;
+    private SearchResultPictureAdapter adapter;
+    private TextView messageView;
+    private LinearLayout progressParent;
+    private ProgressBar progressView;
+    private TextView titleView;
 
-	private List<Users> users = new ArrayList<>();
-	private HashMap<String, Users> usersHashMap;
-	private UserConnections connections = new UserConnections();
+    private List<Users> users = new ArrayList<>();
+    private HashMap<String, Users> usersHashMap;
+    private UserConnections connections = new UserConnections();
+    DatabaseReference databaseReference;
 
-	public CategorySurvivorsFragment() {
-	}
+    public CategorySurvivorsFragment() {
+    }
 
-	public CategorySurvivorsFragment(int ribbon, UserConnections connections) {
-		CategorySurvivorsFragment.ribbon = ribbon;
-		if (connections != null)
-			this.connections = connections;
-	}
+    public CategorySurvivorsFragment(int ribbon, UserConnections connections) {
+        CategorySurvivorsFragment.ribbon = ribbon;
+        if (connections != null)
+            this.connections = connections;
+    }
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-	}
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		View view = inflater.inflate(
-				R.layout.fragment_cateogory_survivors_layout, container, false);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(
+                R.layout.fragment_cateogory_survivors_layout, container, false);
 
-		titleView = (TextView) view.findViewById(R.id.titleView);
-		messageView = (TextView) view.findViewById(R.id.messageView);
-		progressView = (ProgressBar) view.findViewById(R.id.progressView);
-		progressParent = (LinearLayout) view
-				.findViewById(R.id.messageViewParent);
-		listView = (LoadMoreListView) view.findViewById(R.id.listview);
-		adapter = new SearchResultPictureAdapter(getActivity(),
-				connections.activeConnections, connections.pendingConnections,
-				null);
-		listView.setAdapter(adapter);
+        databaseReference = FirebaseDatabase.getInstance().getReference();
 
-		return view;
-	}
+        titleView = (TextView) view.findViewById(R.id.titleView);
+        messageView = (TextView) view.findViewById(R.id.messageView);
+        progressView = (ProgressBar) view.findViewById(R.id.progressView);
+        progressParent = (LinearLayout) view
+                .findViewById(R.id.messageViewParent);
+        listView = (LoadMoreListView) view.findViewById(R.id.listview);
+        adapter = new SearchResultPictureAdapter(getActivity(),
+                connections.activeConnections, connections.pendingConnections,
+                null);
+        listView.setAdapter(adapter);
 
-	@Override
-	public void onViewCreated(View view, Bundle savedInstanceState) {
-		super.onViewCreated(view, savedInstanceState);
+        return view;
+    }
 
-		GoogleAnalyticsHelper.sendScreenViewGoogleAnalytics(getActivity(),
-				"Categorized Survivors Screen");
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
-		titleView.setText(Utils.ribbonNames[ribbon]
-				.concat(" Fighters & Survivors"));
-		listView.setOnLoadMoreListener(this);
+        GoogleAnalyticsHelper.sendScreenViewGoogleAnalytics(getActivity(),
+                "Categorized Survivors Screen");
 
-		listView.setOnItemClickListener(new OnItemClickListener() {
+        titleView.setText(Utils.ribbonNames[ribbon]
+                .concat(" Fighters & Survivors"));
+        listView.setOnLoadMoreListener(this);
 
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				((FragmentHolder) getActivity())
-						.replaceFragment(new ProfileFragment(
-								CategorySurvivorsFragment.this, adapter
-										.getItem(position)));
-			}
-		});
+        listView.setOnItemClickListener(new OnItemClickListener() {
 
-		startProgress();
-		loadData();
-	}
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                ((FragmentHolder) getActivity())
+                        .replaceFragment(new ProfileFragment(
+                                CategorySurvivorsFragment.this, adapter
+                                .getItem(position)));
+            }
+        });
 
-	@Override
-	public void onPause() {
-		adapter.processUserSettings();
-		connections = adapter.getUserConnections();
-		super.onPause();
-	}
+        startProgress();
+        loadData();
+    }
 
-	@Override
-	public void onClick(View v) {
+    @Override
+    public void onPause() {
+//        adapter.processUserSettings();
+//        connections = adapter.getUserConnections();
+        databaseReference.removeEventListener(valueEventListener);
+        super.onPause();
+    }
 
-	}
+    @Override
+    public void onClick(View v) {
 
-	@Override
-	public String getName() {
-		return Constants.FRAGMENT_CATEGORY_SURVIVORS;
-	}
+    }
 
-	@Override
-	public int getTab() {
-		return 0;
-	}
+    @Override
+    public String getName() {
+        return Constants.FRAGMENT_CATEGORY_SURVIVORS;
+    }
 
-	@Override
-	public void onLoadMore() {
+    @Override
+    public int getTab() {
+        return 0;
+    }
 
-		loadPosts(adapter.getLastItemDate(), false);
-	}
+    @Override
+    public void onLoadMore() {
 
-	private void loadData() {
+        loadPosts(adapter.getLastItemDate(), false);
+    }
 
-		Query query = Queries.getCategorizedUsersQuery(ribbon);
-		query.addValueEventListener(new ValueEventListener() {
-			@Override
-			public void onDataChange(DataSnapshot dataSnapshot) {
-				if(dataSnapshot!=null){
-					Log.i("CategorySurvivors",dataSnapshot.toString());
+    private void loadData() {
 
-					if(usersHashMap==null)
-						usersHashMap = new HashMap();
-					usersHashMap.clear();
-					for(DataSnapshot snapshot: dataSnapshot.getChildren()) {
-						Users user = snapshot.getValue(Users.class);
-						if(user.getType()!=Constants.USER_TYPE.SUPPORTER.ordinal() && user.getVisibility()!=Constants.PRIVATE && user.isDeactivated()!=true)
-							usersHashMap.put(snapshot.getKey(), snapshot.getValue(Users.class));
-					}
-					List<Map.Entry<String, Users>> list = new LinkedList<>(usersHashMap.entrySet());
-					Collections.sort(list, new Comparator<HashMap.Entry<String, Users>>() {
-						@Override
-						public int compare(HashMap.Entry<String, Users> usersHashMap1, HashMap.Entry<String, Users> usersHashMap2) {
-							return ((usersHashMap1.getValue()).getCreatedAt()).compareTo((usersHashMap2.getValue()).getCreatedAt());
-						}
-					});
-					usersHashMap = new LinkedHashMap<>();
-					for (Map.Entry<String, Users> entry : list)
-					{
-						usersHashMap.put(entry.getKey(), entry.getValue());
-					}
-					populateList(usersHashMap.values());
-				}
-
-			}
-
-			@Override
-			public void onCancelled(DatabaseError databaseError) {
-
-			}
-		});
+        Query query = Queries.getCategorizedUsersQuery(ribbon);
+        query.addValueEventListener(valueEventListener);
 
 
-		//populateList(Queries.getCategorizedUsersQuery(ribbon));
+        //populateList(Queries.getCategorizedUsersQuery(ribbon));
 
 		/*ParseQuery<ParseUser> query = Queries.getCategorizedUsersQuery(ribbon);
 
@@ -208,46 +179,82 @@ public class CategorySurvivorsFragment extends BaseFragment implements
 			}
 		});*/
 
-	}
+    }
 
-	private void populateList(Collection<Users> users) {
+    ValueEventListener valueEventListener = new ValueEventListener() {
+        @Override
+        public void onDataChange(DataSnapshot dataSnapshot) {
+            if (dataSnapshot != null) {
+                Log.i("CategorySurvivors", dataSnapshot.toString());
 
-		this.users.clear();
-		if (listView != null) {
-			if (users == null) {
-				showError(Utils.loadString(getActivity(),
-						R.string.networkFailureMessage));
-			} else if (users.size() == 0) {
-				showError("No survivors found");
-			} else {
-				adapter.updateData(users);
-				listView.setVisibility(View.VISIBLE);
-				progressParent.setVisibility(View.GONE);
-				this.users.addAll(users);
-			}
-		}
-	}
+                if (usersHashMap == null)
+                    usersHashMap = new HashMap();
+                usersHashMap.clear();
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    Users user = snapshot.getValue(Users.class);
+                    if (user.getType() != Constants.USER_TYPE.SUPPORTER.ordinal() && user.getVisibility() != Constants.PRIVATE && user.isDeactivated() != true)
+                        usersHashMap.put(snapshot.getKey(), snapshot.getValue(Users.class));
+                }
+                List<Map.Entry<String, Users>> list = new LinkedList<>(usersHashMap.entrySet());
+                Collections.sort(list, new Comparator<HashMap.Entry<String, Users>>() {
+                    @Override
+                    public int compare(HashMap.Entry<String, Users> usersHashMap1, HashMap.Entry<String, Users> usersHashMap2) {
+                        return ((usersHashMap1.getValue()).getCreatedAt()).compareTo((usersHashMap2.getValue()).getCreatedAt());
+                    }
+                });
+                usersHashMap = new LinkedHashMap<>();
+                for (Map.Entry<String, Users> entry : list) {
+                    usersHashMap.put(entry.getKey(), entry.getValue());
+                }
+                populateList(usersHashMap.values());
+            }
 
-	private void startProgress() {
-		try {
-			messageView.setText(R.string.loadingSurvivors);
-			progressParent.setVisibility(View.VISIBLE);
-			listView.setVisibility(View.GONE);
-		} catch (NullPointerException e) {
-			e.printStackTrace();
-		}
-	}
+        }
 
-	private void showError(String message) {
-		listView.setVisibility(View.GONE);
-		progressParent.setVisibility(View.VISIBLE);
-		progressView.setVisibility(View.GONE);
-		messageView.setText(message);
-	}
+        @Override
+        public void onCancelled(DatabaseError databaseError) {
 
-	private void loadPosts(Date from, final boolean recent) {
-		// TODO: 7/13/2017 Get posts of the user from a date
-		/*ParseQuery<ParseUser> query = Queries.getCategorizedUsersQuery(ribbon);
+        }
+    };
+
+    private void populateList(Collection<Users> users) {
+
+        this.users.clear();
+        if (listView != null) {
+            if (users == null) {
+                showError(Utils.loadString(getActivity(),
+                        R.string.networkFailureMessage));
+            } else if (users.size() == 0) {
+                showError("No survivors found");
+            } else {
+                adapter.updateData(users);
+                listView.setVisibility(View.VISIBLE);
+                progressParent.setVisibility(View.GONE);
+                this.users.addAll(users);
+            }
+        }
+    }
+
+    private void startProgress() {
+        try {
+            messageView.setText(R.string.loadingSurvivors);
+            progressParent.setVisibility(View.VISIBLE);
+            listView.setVisibility(View.GONE);
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void showError(String message) {
+        listView.setVisibility(View.GONE);
+        progressParent.setVisibility(View.VISIBLE);
+        progressView.setVisibility(View.GONE);
+        messageView.setText(message);
+    }
+
+    private void loadPosts(Date from, final boolean recent) {
+        // TODO: 7/13/2017 Get posts of the user from a date
+        /*ParseQuery<ParseUser> query = Queries.getCategorizedUsersQuery(ribbon);
 
 		if (recent)
 			query.whereGreaterThan(DbConstants.CREATED_AT, from);
@@ -269,12 +276,12 @@ public class CategorySurvivorsFragment extends BaseFragment implements
 				}
 			}
 		});*/
-	}
+    }
 
-	@Override
-	public boolean onBackPressed() {
-		((FragmentHolder) getActivity())
-				.replaceFragment(new FragmentSearchSurvivors());
-		return true;
-	}
+    @Override
+    public boolean onBackPressed() {
+        ((FragmentHolder) getActivity())
+                .replaceFragment(new FragmentSearchSurvivors());
+        return true;
+    }
 }

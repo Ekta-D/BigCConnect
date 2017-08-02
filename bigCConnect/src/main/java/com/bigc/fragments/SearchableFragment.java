@@ -78,7 +78,7 @@ public class SearchableFragment extends BaseFragment implements
 
 	@Override
 	public void onPause() {
-		adapter.processUserSettings();
+		//adapter.processUserSettings();
 		super.onPause();
 		Utils.hideKeyboard(getActivity());
 	}

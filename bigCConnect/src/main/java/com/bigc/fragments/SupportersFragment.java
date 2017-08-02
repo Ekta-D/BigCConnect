@@ -265,7 +265,7 @@ public class SupportersFragment extends BaseFragment {
 
     @Override
     public void onStop() {
-        adapter.processUserSettings();
+      //  adapter.processUserSettings();
         super.onStop();
     }
 

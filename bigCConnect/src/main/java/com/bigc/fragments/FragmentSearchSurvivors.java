@@ -39,127 +39,102 @@ import java.util.List;
 
 public class FragmentSearchSurvivors extends BaseFragment {
 
-	public static String SEARCH_KEY = "";
-	private ListView listview;
-	private GridView categoryGridView;
-	private RibbonsGridAdapter categoryAdapter;
-	private SearchResultAdapter adapter;
-	private EditText inputBox;
+    public static String SEARCH_KEY = "";
+    private ListView listview;
+    private GridView categoryGridView;
+    private RibbonsGridAdapter categoryAdapter;
+    private SearchResultAdapter adapter;
+    private EditText inputBox;
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-	}
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
-	@Override
-	public void onPause() {
-		adapter.processUserSettings();
-		super.onPause();
-	}
+    @Override
+    public void onPause() {
+        // adapter.processUserSettings();
+        FirebaseDatabase.getInstance().getReference().removeEventListener(valueEventListener);
+        super.onPause();
+    }
 
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
-		View view = inflater.inflate(R.layout.fragment_search_survivors,
-				container, false);
+        View view = inflater.inflate(R.layout.fragment_search_survivors,
+                container, false);
 
-		listview = (ListView) view.findViewById(R.id.listview);
-		categoryGridView = (GridView) view.findViewById(R.id.categoryGridView);
-		categoryAdapter = new RibbonsGridAdapter(getActivity());
-		categoryGridView.setAdapter(categoryAdapter);
+        listview = (ListView) view.findViewById(R.id.listview);
+        categoryGridView = (GridView) view.findViewById(R.id.categoryGridView);
+        categoryAdapter = new RibbonsGridAdapter(getActivity());
+        categoryGridView.setAdapter(categoryAdapter);
 
-		adapter = new SearchResultAdapter(getActivity(), null, null);
-		listview.setAdapter(adapter);
-		inputBox = (EditText) view.findViewById(R.id.searchBox);
+        adapter = new SearchResultAdapter(getActivity(), null, null);
+        listview.setAdapter(adapter);
+        inputBox = (EditText) view.findViewById(R.id.searchBox);
 
-		return view;
-	}
+        return view;
+    }
 
-	@Override
-	public void onViewCreated(View view, Bundle savedInstanceState) {
-		super.onViewCreated(view, savedInstanceState);
-		GoogleAnalyticsHelper.sendScreenViewGoogleAnalytics(getActivity(),
-				"Search Survivor Screen");
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        GoogleAnalyticsHelper.sendScreenViewGoogleAnalytics(getActivity(),
+                "Search Survivor Screen");
 
-		inputBox.setOnKeyListener(new OnKeyListener() {
-			public boolean onKey(View v, int keyCode, KeyEvent event) {
-				if ((event.getAction() == KeyEvent.ACTION_DOWN)
-						&& (keyCode == KeyEvent.KEYCODE_ENTER)) {
-					if (inputBox.getText().length() > 0)
-						searchSurvivors(inputBox.getText().toString());
-					return true;
-				}
-				return false;
-			}
-		});
-		listview.setOnItemClickListener(new OnItemClickListener() {
+        inputBox.setOnKeyListener(new OnKeyListener() {
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if ((event.getAction() == KeyEvent.ACTION_DOWN)
+                        && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    if (inputBox.getText().length() > 0)
+                        searchSurvivors(inputBox.getText().toString());
+                    return true;
+                }
+                return false;
+            }
+        });
+        listview.setOnItemClickListener(new OnItemClickListener() {
 
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				((FragmentHolder) getActivity())
-						.replaceFragment(new ProfileFragment(
-								FragmentSearchSurvivors.this, adapter
-										.getItem(position)));
-			}
-		});
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                ((FragmentHolder) getActivity())
+                        .replaceFragment(new ProfileFragment(
+                                FragmentSearchSurvivors.this, adapter
+                                .getItem(position)));
+            }
+        });
 
-		categoryGridView.setOnItemClickListener(new OnItemClickListener() {
+        categoryGridView.setOnItemClickListener(new OnItemClickListener() {
 
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				((FragmentHolder) getActivity())
-						.replaceFragment(new CategorySurvivorsFragment(
-								position, adapter.getUserConnections()));
-			}
-		});
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                ((FragmentHolder) getActivity())
+                        .replaceFragment(new CategorySurvivorsFragment(
+                                position, adapter.getUserConnections()));
+            }
+        });
 
-		loadConnections(false);
+        loadConnections(false);
 
-		//new loadSurvivorsTask().execute();
-	}
+        //new loadSurvivorsTask().execute();
+    }
 
-	private void searchSurvivors(String SEARCH_KEY) {
-		Utils.showProgress(getActivity());
-		//ArrayList<Users> searchUsers = Queries.getSearchSurvivorQuery(SEARCH_KEY);
+    ArrayList<Users> searchUsers = new ArrayList<>();
 
-		final ArrayList<Users> searchUsers = new ArrayList<>();
-		DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-		mDatabase.child(DbConstants.USERS).orderByChild(DbConstants.NAME_LOWERCASE).startAt(SEARCH_KEY).endAt(SEARCH_KEY+"\uf8ff").addListenerForSingleValueEvent(new ValueEventListener() {
-			@Override
-			public void onDataChange(DataSnapshot dataSnapshot) {
-				Utils.hideProgress();
-				if(dataSnapshot!=null && dataSnapshot.hasChildren()){
-					for( DataSnapshot data: dataSnapshot.getChildren()) {
-						if(data.getValue(Users.class).getObjectId()!= FirebaseAuth.getInstance().getCurrentUser().getUid() && data.getValue(Users.class).isDeactivated()==false)
-							searchUsers.add(data.getValue(Users.class));
-					}
-					if(searchUsers.size() == 0) {
-						showError("No survivor found");
-					} else
-						showResult(searchUsers);
-
-				} else if(searchUsers.size() == 0) {
-					showError("No survivor found");
-				}  /*else {
-						showError("Unable to reach server, Please check your connect and try again");
-				}*/
-
-			}
-
-			@Override
-			public void onCancelled(DatabaseError databaseError) {
-				Utils.hideProgress();
-				showError("Unable to reach server, Please check your connect and try again");
-			}
-		});
+    private void searchSurvivors(String SEARCH_KEY) {
+        Utils.showProgress(getActivity());
+        //ArrayList<Users> searchUsers = Queries.getSearchSurvivorQuery(SEARCH_KEY);
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase.child(DbConstants.USERS).orderByChild(DbConstants.NAME_LOWERCASE).startAt(SEARCH_KEY).endAt(SEARCH_KEY + "\uf8ff")
+                .addListenerForSingleValueEvent(valueEventListener);
 
 
 
 		/*ParseQuery<ParseUser> query = Queries
-				.getSearchSurvivorQuery(SEARCH_KEY);
+                .getSearchSurvivorQuery(SEARCH_KEY);
 		Utils.showProgress(getActivity());
 
 		query.findInBackground(new FindCallback<ParseUser>() {
@@ -178,66 +153,96 @@ public class FragmentSearchSurvivors extends BaseFragment {
 				Utils.hideProgress();
 			}
 		});*/
-	}
+    }
 
-	private void showError(String message) {
-		if (categoryGridView == null || listview == null)
-			return;
+    ValueEventListener valueEventListener = new ValueEventListener() {
+        @Override
+        public void onDataChange(DataSnapshot dataSnapshot) {
+            Utils.hideProgress();
+            if (dataSnapshot != null && dataSnapshot.hasChildren()) {
+                for (DataSnapshot data : dataSnapshot.getChildren()) {
+                    if (data.getValue(Users.class).getObjectId() != FirebaseAuth.getInstance().getCurrentUser().getUid() && data.getValue(Users.class).isDeactivated() == false)
+                        searchUsers.add(data.getValue(Users.class));
+                }
+                if (searchUsers.size() == 0) {
+                    showError("No survivor found");
+                } else
+                    showResult(searchUsers);
 
-		Utils.showToast(getActivity(), message);
-		listview.setVisibility(View.GONE);
-		categoryGridView.setVisibility(View.VISIBLE);
-	}
+            } else if (searchUsers.size() == 0) {
+                showError("No survivor found");
+            }  /*else {
+                        showError("Unable to reach server, Please check your connect and try again");
+				}*/
 
-	private void showResult(List<Users> result) {
-		if (categoryGridView == null || listview == null)
-			return;
-		categoryGridView.setVisibility(View.GONE);
-		adapter.updateData(result);
-		listview.setVisibility(View.VISIBLE);
-	}
+        }
 
-	@Override
-	public void onClick(View view) {
-		switch (view.getId()) {
-		case R.id.continueButton:
-			break;
-		}
-	}
+        @Override
+        public void onCancelled(DatabaseError databaseError) {
+            Utils.hideProgress();
+            showError("Unable to reach server, Please check your connect and try again");
+        }
+    };
 
-	@Override
-	public String getName() {
-		return Constants.FRAGMENT_SEARCH_SURVIVOR;
-	}
+    private void showError(String message) {
+        if (categoryGridView == null || listview == null)
+            return;
 
-/*	private class loadSurvivorsTask extends
-			AsyncTask<Void, Void, UserConnections> {
+        Utils.showToast(getActivity(), message);
+        listview.setVisibility(View.GONE);
+        categoryGridView.setVisibility(View.VISIBLE);
+    }
 
-		@Override
-		public void onPreExecute() {
-		//	Utils.showProgress(getActivity());
-		}
+    private void showResult(List<Users> result) {
+        if (categoryGridView == null || listview == null)
+            return;
+        categoryGridView.setVisibility(View.GONE);
+        adapter.updateData(result);
+        listview.setVisibility(View.VISIBLE);
+    }
 
-		@Override
-		protected UserConnections doInBackground(Void... params) {
-			return loadConnections(false);
-		}
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.continueButton:
+                break;
+        }
+    }
 
-		@Override
-		public void onPostExecute(UserConnections connections) {
-			if (adapter != null)
-				adapter.updateData(null, connections.activeConnections,
-						connections.pendingConnections);
-			Utils.hideProgress();
-		}
-	}*/
-	List<Users> activeConnections = new ArrayList<>();
-	List<Users> pendingConnections = new ArrayList<>();
-	UserConnections userConnections = new UserConnections();
-	Users connectionUser = null;
-	private UserConnections loadConnections(final boolean fromCache) {
+    @Override
+    public String getName() {
+        return Constants.FRAGMENT_SEARCH_SURVIVOR;
+    }
 
-		Queries.getUserConnectionsQuery(Preferences.getInstance(getActivity()).getUserFromPreference(), false, getActivity());
+    /*	private class loadSurvivorsTask extends
+                AsyncTask<Void, Void, UserConnections> {
+
+            @Override
+            public void onPreExecute() {
+            //	Utils.showProgress(getActivity());
+            }
+
+            @Override
+            protected UserConnections doInBackground(Void... params) {
+                return loadConnections(false);
+            }
+
+            @Override
+            public void onPostExecute(UserConnections connections) {
+                if (adapter != null)
+                    adapter.updateData(null, connections.activeConnections,
+                            connections.pendingConnections);
+                Utils.hideProgress();
+            }
+        }*/
+    List<Users> activeConnections = new ArrayList<>();
+    List<Users> pendingConnections = new ArrayList<>();
+    UserConnections userConnections = new UserConnections();
+    Users connectionUser = null;
+
+    private UserConnections loadConnections(final boolean fromCache) {
+
+        Queries.getUserConnectionsQuery(Preferences.getInstance(getActivity()).getUserFromPreference(), false, getActivity());
 
 
 		/*Query connectionsQuery = Queries.getUserConnectionsQuery(Preferences.getInstance(getContext()).getUserFromPreference(),false);
@@ -276,8 +281,8 @@ public class FragmentSearchSurvivors extends BaseFragment {
 		});*/
 
 
-		//userConnections1.activeConnections = activeConnections;
-		// TODO: 7/13/2017 Load connections here
+        //userConnections1.activeConnections = activeConnections;
+        // TODO: 7/13/2017 Load connections here
 		/*ParseQuery<ParseObject> mQuery = Queries.getUserConnectionsQuery(
 				ParseUser.getCurrentUser(), fromCache);
 		try {
@@ -319,14 +324,14 @@ public class FragmentSearchSurvivors extends BaseFragment {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}*/
-		userConnections.activeConnections = Preferences.getInstance(getActivity()).getLocalConnections().get(0);
-		userConnections.pendingConnections = Preferences.getInstance(getActivity()).getLocalConnections().get(1);
-		if (adapter != null)
-			adapter.updateData(null, userConnections.activeConnections,
-					userConnections.pendingConnections);
-		Utils.hideProgress();
-		return userConnections;
-	}
+        userConnections.activeConnections = Preferences.getInstance(getActivity()).getLocalConnections().get(0);
+        userConnections.pendingConnections = Preferences.getInstance(getActivity()).getLocalConnections().get(1);
+        if (adapter != null)
+            adapter.updateData(null, userConnections.activeConnections,
+                    userConnections.pendingConnections);
+        Utils.hideProgress();
+        return userConnections;
+    }
 
 /*	private Users getUserDetail(final ConnectionsModel connection) {
 		final DatabaseReference mReference = FirebaseDatabase.getInstance().getReference();
@@ -357,15 +362,15 @@ public class FragmentSearchSurvivors extends BaseFragment {
 		return connectionUser;
 	}*/
 
-	@Override
-	public int getTab() {
-		return 2;
-	}
+    @Override
+    public int getTab() {
+        return 2;
+    }
 
-	@Override
-	public boolean onBackPressed() {
-		((FragmentHolder) getActivity())
-				.replaceFragment(new ConnectionsFragment());
-		return true;
-	}
+    @Override
+    public boolean onBackPressed() {
+        ((FragmentHolder) getActivity())
+                .replaceFragment(new ConnectionsFragment());
+        return true;
+    }
 }

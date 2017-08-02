@@ -46,7 +46,7 @@ public class SurvivorSearchResultFragment extends Fragment implements
 
 	@Override
 	public void onPause() {
-		adapter.processUserSettings();
+	//	adapter.processUserSettings();
 		super.onPause();
 	}
 
