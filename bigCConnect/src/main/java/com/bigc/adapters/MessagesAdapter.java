@@ -40,9 +40,9 @@ public class MessagesAdapter extends ArrayAdapter<Messages> {
         this.userList = userList;
         this.context = context;
 
-        if(this.context!=null)
-        inflater = (LayoutInflater) this.context
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        if (this.context != null)
+            inflater = (LayoutInflater) this.context
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         currentUser = Preferences.getInstance(context).getUserFromPreference();
 
     }
@@ -85,10 +85,13 @@ public class MessagesAdapter extends ArrayAdapter<Messages> {
 
         Messages message = messages.get(position);
         String user2 = message.getUser2();
+        if (user2.equalsIgnoreCase(FirebaseAuth.getInstance().getCurrentUser().getUid())) {
+            user2 = message.getUser1();
+        }
+
 
         for (int i = 0; i < userList.size(); i++) {
-            if(userList.get(i)!=null && userList.get(i).getObjectId()!=null)
-            {
+            if (userList.get(i) != null && userList.get(i).getObjectId() != null) {
                 if (userList.get(i).getObjectId().equalsIgnoreCase(user2)) {
                     Users selected_user = userList.get(i);
                     setValues(selected_user, message, holder);

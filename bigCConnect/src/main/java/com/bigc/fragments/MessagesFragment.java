@@ -543,6 +543,8 @@ public class MessagesFragment extends BaseFragment implements
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 //                    position--;
+
+
                     ((FragmentHolder) getActivity())
                             .replaceFragment(new MessageDetailFragment(message_adapter
                                     .getItem(position), Preferences.getInstance(getActivity()).getAllUsers(DbConstants.FETCH_USER)));

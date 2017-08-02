@@ -266,7 +266,7 @@ public class MessageDetailFragment extends BaseFragment implements
                         message_reply.setUser2(MessageDetailFragment.conversation.getUser1());
                     }
                     message_reply.setUpdatedAt(Utils.getCurrentDate());
-                    message_reply.setMedia(MessageDetailFragment.conversation.getMedia());
+                    message_reply.setMedia("");
                     message_reply.setObjectId(UUID.randomUUID().toString());
 
 
