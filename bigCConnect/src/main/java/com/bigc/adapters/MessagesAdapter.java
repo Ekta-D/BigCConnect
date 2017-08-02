@@ -39,7 +39,9 @@ public class MessagesAdapter extends ArrayAdapter<Messages> {
             this.messages.addAll(messages);
         this.userList = userList;
         this.context = context;
-        inflater = (LayoutInflater) context
+
+        if(this.context!=null)
+        inflater = (LayoutInflater) this.context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         currentUser = Preferences.getInstance(context).getUserFromPreference();
 

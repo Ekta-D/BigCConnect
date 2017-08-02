@@ -524,6 +524,7 @@ ArrayList<Posts> postsArrayList;
             listView.setVisibility(View.VISIBLE);
             progressParent.setVisibility(View.GONE);
             this.posts.addAll(posts);
+            listView.setSelectionAfterHeaderView();
         }
 
 

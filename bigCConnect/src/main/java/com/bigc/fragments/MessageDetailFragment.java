@@ -251,7 +251,7 @@ public class MessageDetailFragment extends BaseFragment implements
 
                     Messages message_reply = new Messages();
                     Messages conversation = new Messages();
-                    message_reply.setCreatedAt(MessageDetailFragment.conversation.getCreatedAt());
+                    message_reply.setCreatedAt(Utils.getCurrentDate());
                     message_reply.setMessage(reply);
                     message_reply.setUser1(FirebaseAuth.getInstance().getCurrentUser().getUid());
                     message_reply.setSender(FirebaseAuth.getInstance().getCurrentUser().getUid());
@@ -430,37 +430,7 @@ public class MessageDetailFragment extends BaseFragment implements
 	}*/
 
     private void populateList(List<Messages> messageList) {
-        Collections.sort(messageList, new Comparator<Messages>() {
-            @Override
-            public int compare(Messages comments, Messages t1) {
-               /* if (Utils.convertStringToDate(comments.getUpdatedAt()) == null || Utils.convertStringToDate(t1.getUpdatedAt()) == null)
-                    return 0;
-                return Utils.convertStringToDate(comments.getUpdatedAt()).compareTo(Utils.convertStringToDate(t1.getUpdatedAt()));*/
-                try {
-                    SimpleDateFormat dateFormatlhs = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
-                    Date convertedDatelhs = dateFormatlhs.parse(comments.getCreatedAt());
-                    Calendar calendarlhs = Calendar.getInstance();
-                    calendarlhs.setTime(convertedDatelhs);
 
-                    SimpleDateFormat dateFormatrhs = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
-                    Date convertedDaterhs = dateFormatrhs.parse(t1.getCreatedAt());
-                    Calendar calendarrhs = Calendar.getInstance();
-                    calendarrhs.setTime(convertedDaterhs);
-
-                    if (calendarlhs.getTimeInMillis() < calendarrhs.getTimeInMillis()) {
-                        return -1;
-                    } else {
-                        return 1;
-                    }
-                } catch (ParseException e) {
-
-                    e.printStackTrace();
-                }
-
-
-                return 0;
-            }
-        });
 
         if (listView != null) {
             if (messageList == null) {
@@ -470,14 +440,55 @@ public class MessageDetailFragment extends BaseFragment implements
                 showError(Utils.loadString(getActivity(),
                         R.string.noFeedMessage));
             } else {
-                adapter = new ChatAdapter(getActivity(), messageList, Preferences.
+                /*adapter = new ChatAdapter(getActivity(), messageList, Preferences.
                         getInstance(getActivity()).getAllUsers(DbConstants.FETCH_USER));
                 listView.setAdapter(adapter);
                 listView.setVisibility(View.VISIBLE);
                 messageViewParent.setVisibility(View.GONE);
-                this.messages.addAll(messages);
+                this.messages.addAll(messages);*/
             }
             // listView.onRefreshComplete();
+        }
+
+        if(messageList!=null && messageList.size()>0) {
+            Collections.sort(messageList, new Comparator<Messages>() {
+                @Override
+                public int compare(Messages comments, Messages t1) {
+               /* if (Utils.convertStringToDate(comments.getUpdatedAt()) == null || Utils.convertStringToDate(t1.getUpdatedAt()) == null)
+                    return 0;
+                return Utils.convertStringToDate(comments.getUpdatedAt()).compareTo(Utils.convertStringToDate(t1.getUpdatedAt()));*/
+                    try {
+                        SimpleDateFormat dateFormatlhs = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+                        Date convertedDatelhs = dateFormatlhs.parse(comments.getCreatedAt());
+                        Calendar calendarlhs = Calendar.getInstance();
+                        calendarlhs.setTime(convertedDatelhs);
+
+                        SimpleDateFormat dateFormatrhs = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+                        Date convertedDaterhs = dateFormatrhs.parse(t1.getCreatedAt());
+                        Calendar calendarrhs = Calendar.getInstance();
+                        calendarrhs.setTime(convertedDaterhs);
+
+                        if (calendarlhs.getTimeInMillis() < calendarrhs.getTimeInMillis()) {
+                            return -1;
+                        } else {
+                            return 1;
+                        }
+                    } catch (ParseException e) {
+
+                        e.printStackTrace();
+                    }
+
+
+                    return 0;
+                }
+            });
+            adapter = new ChatAdapter(getActivity(), messageList, Preferences.
+                    getInstance(getActivity()).getAllUsers(DbConstants.FETCH_USER));
+            listView.setAdapter(adapter);
+            listView.setVisibility(View.VISIBLE);
+            messageViewParent.setVisibility(View.GONE);
+            this.messages.clear();
+            this.messages.addAll(messageList);
         }
     }
 

@@ -73,8 +73,10 @@ public class AutoCompleteTextViewAdapter extends ArrayAdapter<Users> {
             if (constraint != null) {
                 suggestions.clear();
                 for (Users user : tempItems) {
-                    if (user.getName().toLowerCase().contains(constraint.toString().toLowerCase())) {
-                        suggestions.add(user);
+                    if(user.getName()!=null) {
+                        if (user.getName().toLowerCase().contains(constraint.toString().toLowerCase())) {
+                            suggestions.add(user);
+                        }
                     }
                 }
                 FilterResults filterResults = new FilterResults();

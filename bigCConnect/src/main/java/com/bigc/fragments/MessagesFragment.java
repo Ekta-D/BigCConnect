@@ -256,6 +256,7 @@ public class MessagesFragment extends BaseFragment implements
     public void onDestroy() {
         PostManager.getInstance().freeObserver();
         PostManager.getInstance().removePostObserver();
+        databaseReference.removeEventListener(messagesListener);
         super.onDestroy();
     }
 
@@ -326,43 +327,7 @@ public class MessagesFragment extends BaseFragment implements
 
         Query query = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION);
         //     query.orderByChild(DbConstants.USER1).equalTo(Preferences.getInstance(getActivity()).getString(DbConstants.ID));
-        query.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-                long count = dataSnapshot.getChildrenCount();
-                messages_list = new ArrayList<Messages>();
-                for (DataSnapshot data : dataSnapshot.getChildren()) {
-                    String key = data.getKey();
-//                    Messages messages = new Messages();
-//                    messages.setCreatedAt(data.child(DbConstants.CREATED_AT).getValue(String.class));
-//                    messages.setMessage(data.child(DbConstants.MESSAGE).getValue(String.class));
-//                    messages.setObjectId(data.child(DbConstants.ID).getValue(String.class));
-//                    messages.setSender(data.child(DbConstants.SENDER).getValue(String.class));
-//                    messages.setUpdatedAt(data.child(DbConstants.UPDATED_AT).getValue(String.class));
-//                    messages.setUser1(data.child(DbConstants.USER1).getValue(String.class));
-//                    messages.setUser2(data.child(DbConstants.USER2).getValue(String.class));
-
-                    Messages message = data.getValue(Messages.class);
-
-                    if (message.getUser1().equalsIgnoreCase(Preferences.getInstance(getActivity()).getString(DbConstants.ID))
-                            || message.getUser2().equalsIgnoreCase(Preferences.getInstance(getActivity()).getString(DbConstants.ID))) {
-                        messages_list.add(message);
-                    }
-
-                }
-
-                // uploadMessage(null,PostActivity.selectedUsers_array,messages_list);
-
-                populateList(messages_list);
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                showError(databaseError.toString());
-            }
-        });
+        query.addValueEventListener(messagesListener);
 
 		/*ParseQuery<ParseObject> query = Queries
                 .getConversationsQuery(fromCache);
@@ -403,6 +368,44 @@ public class MessagesFragment extends BaseFragment implements
 			}
 		});*/
     }
+
+    ValueEventListener messagesListener = new ValueEventListener() {
+        @Override
+        public void onDataChange(DataSnapshot dataSnapshot) {
+
+            long count = dataSnapshot.getChildrenCount();
+            messages_list = new ArrayList<Messages>();
+            for (DataSnapshot data : dataSnapshot.getChildren()) {
+                String key = data.getKey();
+//                    Messages messages = new Messages();
+//                    messages.setCreatedAt(data.child(DbConstants.CREATED_AT).getValue(String.class));
+//                    messages.setMessage(data.child(DbConstants.MESSAGE).getValue(String.class));
+//                    messages.setObjectId(data.child(DbConstants.ID).getValue(String.class));
+//                    messages.setSender(data.child(DbConstants.SENDER).getValue(String.class));
+//                    messages.setUpdatedAt(data.child(DbConstants.UPDATED_AT).getValue(String.class));
+//                    messages.setUser1(data.child(DbConstants.USER1).getValue(String.class));
+//                    messages.setUser2(data.child(DbConstants.USER2).getValue(String.class));
+
+                Messages message = data.getValue(Messages.class);
+
+                if (message.getUser1().equalsIgnoreCase(Preferences.getInstance(getActivity()).getString(DbConstants.ID))
+                        || message.getUser2().equalsIgnoreCase(Preferences.getInstance(getActivity()).getString(DbConstants.ID))) {
+                    messages_list.add(message);
+                }
+
+            }
+
+            // uploadMessage(null,PostActivity.selectedUsers_array,messages_list);
+
+            populateList(messages_list);
+
+        }
+
+        @Override
+        public void onCancelled(DatabaseError databaseError) {
+            showError(databaseError.toString());
+        }
+    };
 
     private void executeReceiveQuery(Query query) {
         query.addListenerForSingleValueEvent(new ValueEventListener() {
