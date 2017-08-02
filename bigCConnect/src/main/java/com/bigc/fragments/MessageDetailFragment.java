@@ -281,7 +281,7 @@ public class MessageDetailFragment extends BaseFragment implements
                     update_conversation.put(DbConstants.CREATED_AT, conversation.getCreatedAt());
                     update_conversation.put(DbConstants.MESSAGE, conversation.getMessage());
                     update_conversation.put(DbConstants.ID, conversation.getObjectId());
-                    update_conversation.put(DbConstants.UPDATED_AT, conversation.getUpdatedAt());
+                    update_conversation.put(DbConstants.UPDATED_AT, Utils.getCurrentDate());
                     update_conversation.put(DbConstants.USER1, conversation.getUser1());
                     update_conversation.put(DbConstants.USER2, conversation.getUser2());
                     update_conversation.put(DbConstants.MEDIA, conversation.getMedia());

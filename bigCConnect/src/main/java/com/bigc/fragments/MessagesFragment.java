@@ -183,8 +183,8 @@ public class MessagesFragment extends BaseFragment implements
             for (int j = 0; j < messages_list.size(); j++) {
                 mess = messages_list.get(j);
 
-                System.out.println("comdtidion: " + mess.getUser1().equalsIgnoreCase(senderId) + mess.getUser2().equalsIgnoreCase(senderId)
-                        + mess.getUser1().equalsIgnoreCase(user.getObjectId()) + mess.getUser2().equalsIgnoreCase(user.getObjectId()));
+                /*System.out.println("comdtidion: " + mess.getUser1().equalsIgnoreCase(senderId) + mess.getUser2().equalsIgnoreCase(senderId)
+                        + mess.getUser1().equalsIgnoreCase(user.getObjectId()) + mess.getUser2().equalsIgnoreCase(user.getObjectId()));*/
                 if ((mess.getUser1().equalsIgnoreCase(senderId) || mess.getUser2().equalsIgnoreCase(senderId))
                         && (mess.getUser1().equalsIgnoreCase(user.getObjectId()) || mess.getUser2().equalsIgnoreCase(user.getObjectId()))) {
                     found = true;
@@ -502,12 +502,12 @@ public class MessagesFragment extends BaseFragment implements
                 return Utils.convertStringToDate(comments.getUpdatedAt()).compareTo(Utils.convertStringToDate(t1.getUpdatedAt()));*/
                     try {
                         SimpleDateFormat dateFormatlhs = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
-                        Date convertedDatelhs = dateFormatlhs.parse(comments.getCreatedAt());
+                        Date convertedDatelhs = dateFormatlhs.parse(comments.getUpdatedAt());
                         Calendar calendarlhs = Calendar.getInstance();
                         calendarlhs.setTime(convertedDatelhs);
 
                         SimpleDateFormat dateFormatrhs = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
-                        Date convertedDaterhs = dateFormatrhs.parse(t1.getCreatedAt());
+                        Date convertedDaterhs = dateFormatrhs.parse(t1.getUpdatedAt());
                         Calendar calendarrhs = Calendar.getInstance();
                         calendarrhs.setTime(convertedDaterhs);
 
