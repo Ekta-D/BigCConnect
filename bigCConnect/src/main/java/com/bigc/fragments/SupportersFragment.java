@@ -1,6 +1,7 @@
 package com.bigc.fragments;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,11 +19,17 @@ import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
 import com.bigc.general.classes.Queries;
 import com.bigc.general.classes.UserConnections;
+import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
 import com.bigc.models.Users;
 import com.bigc_connect.R;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import eu.janmuller.android.simplecropimage.Util;
 
 public class SupportersFragment extends BaseFragment {
 
@@ -81,14 +88,21 @@ public class SupportersFragment extends BaseFragment {
             messageView.setText(R.string.loadingSupporting);
 
         //	new loadUserConnectionsTask().execute(ProfileFragment.getUser());
-        //   loadUserConnectionsTask(); //// TODO: 25-07-2017
+        loadUserConnectionsTask();
     }
 
 
-    public void loadUserConnectionsTask(Users users) {
-        String currentUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        boolean isCurrentUser=currentUser.equals(users.getObjectId());
-         UserConnections userConnections = new UserConnections();
+    public void loadUserConnectionsTask() {
+        ArrayList<Users> active = Preferences.getInstance(getActivity()).getLocalConnections().get(0);
+        ArrayList<Users> pending = Preferences.getInstance(getActivity()).getLocalConnections().get(1);
+//        ArrayList<Users> connections = new ArrayList<>();
+//        connections.addAll(active);
+//        connections.addAll(pending);
+        showData(active, pending);
+        //  Log.i("connections", connections.toString());
+//        String currentUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
+//        boolean isCurrentUser=currentUser.equals(users.getObjectId());
+//         UserConnections userConnections = new UserConnections();
 
     }
     //	private class loadUserConnectionsTask extends
@@ -265,7 +279,7 @@ public class SupportersFragment extends BaseFragment {
 
     @Override
     public void onStop() {
-      //  adapter.processUserSettings();
+        //  adapter.processUserSettings();
         super.onStop();
     }
 
@@ -304,19 +318,25 @@ public class SupportersFragment extends BaseFragment {
         }
     }
 
-    /*private void showData(List<ParseUser> connections,
-                          UserConnections loggedInUserConnections) {
+    private void showData(ArrayList<Users> active,
+                          ArrayList<Users> pendingConnections) {
         try {
-            // TODO: 7/14/2017 update data to list 
-            *//*adapter.updateData(connections,
-                    loggedInUserConnections.activeConnections,
-                    loggedInUserConnections.pendingConnections);*//*
+
+//            if (adapter != null)
+                adapter = new SearchResultAdapter(getActivity(), null, null,
+                        active);
+//            adapter.updateData(null, active,
+//                    pendingConnections);
+//           adapter.updateData(connections,
+//                    loggedInUserConnections.activeConnections,
+//                    loggedInUserConnections.pendingConnections);
             listview.setVisibility(View.VISIBLE);
+            listview.setAdapter(adapter);
             messageViewParent.setVisibility(View.GONE);
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }*/
+    }
 
     @Override
     public boolean onBackPressed() {

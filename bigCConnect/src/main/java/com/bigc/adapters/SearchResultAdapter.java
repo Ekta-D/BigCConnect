@@ -58,82 +58,85 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
         final SurvivorSearchViewHolder holder;
         final Users user = data.get(position);
 
-            if (view == null) {
-                view = inflater.inflate(R.layout.listitem_search_result, parent,
-                        false);
-                holder = new SurvivorSearchViewHolder();
-                holder.addOption = (ImageView) view.findViewById(R.id.addOption);
-                holder.ribbonView = (ImageView) view.findViewById(R.id.ribbonView);
-                holder.nameView = (TextView) view.findViewById(R.id.nameView);
-                holder.descView = (TextView) view
-                        .findViewById(R.id.descriptionView);
-                view.setTag(holder);
-            } else {
-                holder = (SurvivorSearchViewHolder) view.getTag();
-            }
+        if (view == null) {
+            view = inflater.inflate(R.layout.listitem_search_result, parent,
+                    false);
+            holder = new SurvivorSearchViewHolder();
+            holder.addOption = (ImageView) view.findViewById(R.id.addOption);
+            holder.ribbonView = (ImageView) view.findViewById(R.id.ribbonView);
+            holder.nameView = (TextView) view.findViewById(R.id.nameView);
+            holder.descView = (TextView) view
+                    .findViewById(R.id.descriptionView);
+            view.setTag(holder);
+        } else {
+            holder = (SurvivorSearchViewHolder) view.getTag();
+        }
 
-            holder.indexInNewAddedConnections = Utils.getUserIndex(user,
-                    newAddedConnections);
+        holder.indexInNewAddedConnections = Utils.getUserIndex(user,
+                newAddedConnections);
+        if (activeConnections .size()>0) {
             holder.indexInActiveConnections = Utils.getUserIndex(user,
                     activeConnections);
-            holder.indexInPendingConnections = Utils.getUserIndex(user,
-                    pendingConnections);
-            holder.indexInRemovedConnections = Utils.getUserIndex(user,
-                    removedConnections);
+        } else {
+            holder.indexInActiveConnections = Utils.getUserIndex(user, data);
+        }
+        holder.indexInPendingConnections = Utils.getUserIndex(user,
+                pendingConnections);
+        holder.indexInRemovedConnections = Utils.getUserIndex(user,
+                removedConnections);
+        holder.nameView.setText(user.getName());
+        String stage = user.getStage();
+        stage = stage == null ? "" : stage;
+        String loc = user.getLocation();
 
-            holder.nameView.setText(user.getName());
-            String stage = user.getStage();
-            stage = stage == null ? "" : stage;
-            String loc = user.getLocation();
-
-            String desc = (stage.length() > 0 ? stage.concat(", ") : "")
-                    .concat(loc == null ? "" : loc);
-            holder.descView.setText(desc);
+        String desc = (stage.length() > 0 ? stage.concat(", ") : "")
+                .concat(loc == null ? "" : loc);
+        holder.descView.setText(desc);
 //		boolean supporter = user.getInt(DbConstants.TYPE) == Constants.USER_TYPE.SUPPORTER
 //				.ordinal();
-            boolean supporter = Preferences.getInstance(getContext()).getInt(DbConstants.TYPE) == 1; // supporter
+        boolean supporter = Preferences.getInstance(getContext()).getInt(DbConstants.TYPE) == 1; // supporter
 
-            if (supporter)
-                holder.ribbonView.setImageResource(R.drawable.ribbon_supporter);
-            else {
+        if (supporter)
+            holder.ribbonView.setImageResource(R.drawable.ribbon_supporter);
+        else {
 //			if (user.getInt(DbConstants.TYPE) == Constants.USER_TYPE.FIGHTER
 //					.ordinal())
-                if (user.getRibbon() == Constants.USER_TYPE.FIGHTER.ordinal()) {
+            if (user.getRibbon() == Constants.USER_TYPE.FIGHTER.ordinal()) {
 //				holder.ribbonView
 //						.setImageResource(user.getInt(DbConstants.RIBBON) < 0 ? R.drawable.ic_launcher
 //								: Utils.fighter_ribbons[user
 //										.getInt(DbConstants.RIBBON)]);
-                    holder.ribbonView.setImageResource(
-                            Preferences.getInstance(getContext()).getInt(DbConstants.RIBBON) < 0 ?
-                                    R.drawable.ic_launcher : Utils.fighter_ribbons[user
-                                    .getRibbon()]);
+                holder.ribbonView.setImageResource(
+                        Preferences.getInstance(getContext()).getInt(DbConstants.RIBBON) < 0 ?
+                                R.drawable.ic_launcher : Utils.fighter_ribbons[user
+                                .getRibbon()]);
 
-                } else {
+            } else {
 //                holder.ribbonView
 //                        .setImageResource(user.getInt(DbConstants.RIBBON) < 0 ? R.drawable.ic_launcher
 //                                : Utils.survivor_ribbons[user
 //                                .getInt(DbConstants.RIBBON)]);
-                    holder.ribbonView
-                            .setImageResource(user.getRibbon() < 0 ? R.drawable.ic_launcher
-                                    : Utils.survivor_ribbons[user
-                                    .getRibbon()]);
-                }
-
-                // int ribbon = user.getInt(DbConstants.RIBBON);
-                // if (ribbon >= 0)
-                // holder.ribbonView
-                // .setImageResource(Utils.survivor_ribbons[ribbon]);
-                // else
-                // holder.ribbonView.setImageResource(R.drawable.ic_launcher);
+                holder.ribbonView
+                        .setImageResource(user.getRibbon() < 0 ? R.drawable.ic_launcher
+                                : Utils.survivor_ribbons[user
+                                .getRibbon()]);
             }
 
-            // TODO: 7/24/2017 check this
-            if (/*(isSupporterUser && supporter)
+            // int ribbon = user.getInt(DbConstants.RIBBON);
+            // if (ribbon >= 0)
+            // holder.ribbonView
+            // .setImageResource(Utils.survivor_ribbons[ribbon]);
+            // else
+            // holder.ribbonView.setImageResource(R.drawable.ic_launcher);
+        }
+
+        // TODO: 7/24/2017 check this
+        if (/*(isSupporterUser && supporter)
                     || */FirebaseAuth.getInstance().getCurrentUser().getUid()
-                    .equals(user.getObjectId())) {
-                holder.addOption.setVisibility(View.GONE);
-            } else {
-                holder.addOption.setVisibility(View.VISIBLE);
+                .equals(user.getObjectId())) {
+            holder.addOption.setVisibility(View.GONE);
+        } else {
+            holder.addOption.setVisibility(View.VISIBLE);
                 /*ArrayList<Users> active = Preferences.getInstance(getContext()).getLocalConnections().get(0);
                 ArrayList<Users> pending = Preferences.getInstance(getContext()).getLocalConnections().get(0);
                 for(Users auser: active)
@@ -150,86 +153,86 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
                     holder.addOption.setImageResource(R.drawable.ic_connect);
                     holder.addOption.setContentDescription(TAG_NOT_CONNECTED);
                 }*/
-                if (holder.indexInNewAddedConnections >= 0) {
-                    holder.addOption.setImageResource(R.drawable.ic_connect_pending);
-                    holder.addOption.setContentDescription(TAG_WAITING);
+            if (holder.indexInNewAddedConnections >= 0) {
+                holder.addOption.setImageResource(R.drawable.ic_connect_pending);
+                holder.addOption.setContentDescription(TAG_WAITING);
 
-                } else if (holder.indexInActiveConnections >= 0
-                        && holder.indexInRemovedConnections < 0) {
-                    holder.addOption.setImageResource(R.drawable.ic_connected);
-                    holder.addOption.setContentDescription(TAG_CONNECTED);
+            } else if (holder.indexInActiveConnections >= 0
+                    && holder.indexInRemovedConnections < 0) {
+                holder.addOption.setImageResource(R.drawable.ic_connected);
+                holder.addOption.setContentDescription(TAG_CONNECTED);
 
-                } else if (holder.indexInPendingConnections >= 0
-                        && holder.indexInRemovedConnections < 0) {
-                    holder.addOption
-                            .setImageResource(R.drawable.ic_connect_pending);
-                    holder.addOption.setContentDescription(TAG_WAITING);
+            } else if (holder.indexInPendingConnections >= 0
+                    && holder.indexInRemovedConnections < 0) {
+                holder.addOption
+                        .setImageResource(R.drawable.ic_connect_pending);
+                holder.addOption.setContentDescription(TAG_WAITING);
 
-                } else {
-                    holder.addOption.setImageResource(R.drawable.ic_connect);
-                    holder.addOption.setContentDescription(TAG_NOT_CONNECTED);
-                }
-
-                holder.addOption.setOnClickListener(new OnClickListener() {
-
-                    @Override
-                    public void onClick(View v) {
-                        if (v.getContentDescription().toString()
-                                .equals(TAG_NOT_CONNECTED)) {
-                            // Completed: 7/17/2017 Send add connection request
-                            checkAddConnectionRequest(user, FirebaseAuth.getInstance().getCurrentUser().getUid());
-
-                            if (holder.indexInRemovedConnections < 0) {
-                                newAddedConnections.add(user);
-                                holder.indexInNewAddedConnections = newAddedConnections
-                                        .size() - 1;
-                            } else {
-                                removedConnections
-                                        .remove(holder.indexInRemovedConnections);
-                                holder.indexInRemovedConnections = -1;
-                            }
-
-                            holder.addOption.setContentDescription(TAG_WAITING);
-                            holder.addOption
-                                    .setImageResource(R.drawable.ic_connect_pending);
-                        } else if(v.getContentDescription().toString()
-                                .equals(TAG_WAITING)){
-                            if (holder.indexInNewAddedConnections < 0) {
-                                removedConnections.add(data.get(position));
-                                holder.indexInRemovedConnections = removedConnections
-                                        .size() - 1;
-                            } else {
-                                newAddedConnections
-                                        .remove(holder.indexInNewAddedConnections);
-                                holder.indexInNewAddedConnections = -1;
-                            }
-
-                            holder.addOption
-                                    .setContentDescription(TAG_NOT_CONNECTED);
-                            holder.addOption
-                                    .setImageResource(R.drawable.ic_connect);
-                        } else if(v.getContentDescription().toString()
-                                .equals(TAG_CONNECTED)){
-
-                            // TODO: 7/24/2017 remove connection 
-                            if (holder.indexInNewAddedConnections < 0) {
-                                removedConnections.add(data.get(position));
-                                holder.indexInRemovedConnections = removedConnections
-                                        .size() - 1;
-                            } else {
-                                newAddedConnections
-                                        .remove(holder.indexInNewAddedConnections);
-                                holder.indexInNewAddedConnections = -1;
-                            }
-
-                            holder.addOption
-                                    .setContentDescription(TAG_NOT_CONNECTED);
-                            holder.addOption
-                                    .setImageResource(R.drawable.ic_connect);
-                        }
-                    }
-                });
+            } else {
+                holder.addOption.setImageResource(R.drawable.ic_connect);
+                holder.addOption.setContentDescription(TAG_NOT_CONNECTED);
             }
+
+            holder.addOption.setOnClickListener(new OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    if (v.getContentDescription().toString()
+                            .equals(TAG_NOT_CONNECTED)) {
+                        // Completed: 7/17/2017 Send add connection request
+                        checkAddConnectionRequest(user, FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+                        if (holder.indexInRemovedConnections < 0) {
+                            newAddedConnections.add(user);
+                            holder.indexInNewAddedConnections = newAddedConnections
+                                    .size() - 1;
+                        } else {
+                            removedConnections
+                                    .remove(holder.indexInRemovedConnections);
+                            holder.indexInRemovedConnections = -1;
+                        }
+
+                        holder.addOption.setContentDescription(TAG_WAITING);
+                        holder.addOption
+                                .setImageResource(R.drawable.ic_connect_pending);
+                    } else if (v.getContentDescription().toString()
+                            .equals(TAG_WAITING)) {
+                        if (holder.indexInNewAddedConnections < 0) {
+                            removedConnections.add(data.get(position));
+                            holder.indexInRemovedConnections = removedConnections
+                                    .size() - 1;
+                        } else {
+                            newAddedConnections
+                                    .remove(holder.indexInNewAddedConnections);
+                            holder.indexInNewAddedConnections = -1;
+                        }
+
+                        holder.addOption
+                                .setContentDescription(TAG_NOT_CONNECTED);
+                        holder.addOption
+                                .setImageResource(R.drawable.ic_connect);
+                    } else if (v.getContentDescription().toString()
+                            .equals(TAG_CONNECTED)) {
+
+                        // TODO: 7/24/2017 remove connection
+                        if (holder.indexInNewAddedConnections < 0) {
+                            removedConnections.add(data.get(position));
+                            holder.indexInRemovedConnections = removedConnections
+                                    .size() - 1;
+                        } else {
+                            newAddedConnections
+                                    .remove(holder.indexInNewAddedConnections);
+                            holder.indexInNewAddedConnections = -1;
+                        }
+
+                        holder.addOption
+                                .setContentDescription(TAG_NOT_CONNECTED);
+                        holder.addOption
+                                .setImageResource(R.drawable.ic_connect);
+                    }
+                }
+            });
+        }
         return view;
     }
 
@@ -237,7 +240,7 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
         SimpleDateFormat format = new SimpleDateFormat(DbConstants.DATE_FORMAT);
         String date = format.format(new Date(System.currentTimeMillis()));
 
-        final String objectID = currentUid+"_"+user.getObjectId();
+        final String objectID = currentUid + "_" + user.getObjectId();
         final ConnectionsModel connection = new ConnectionsModel(date, currentUid, objectID, false, user.getObjectId(), date);
 
         final DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
@@ -246,7 +249,7 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
         ref.child(DbConstants.TABLE_CONNECTIONS).orderByKey().equalTo(objectID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if(dataSnapshot!=null && dataSnapshot.hasChildren()){
+                if (dataSnapshot != null && dataSnapshot.hasChildren()) {
                     /*boolean sendRequest = true;
                     for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()){
                         ConnectionsModel connectionsModel = dataSnapshot1.getValue(ConnectionsModel.class);
@@ -288,11 +291,11 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
 
     }
 
-    private void checkReverse(final DatabaseReference ref, final String currentUid, final String userId, final ConnectionsModel connection, final Users user){
-        ref.child(DbConstants.TABLE_CONNECTIONS).orderByKey().equalTo(userId+"_"+currentUid).addListenerForSingleValueEvent(new ValueEventListener() {
+    private void checkReverse(final DatabaseReference ref, final String currentUid, final String userId, final ConnectionsModel connection, final Users user) {
+        ref.child(DbConstants.TABLE_CONNECTIONS).orderByKey().equalTo(userId + "_" + currentUid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if(dataSnapshot!=null && dataSnapshot.hasChildren()){
+                if (dataSnapshot != null && dataSnapshot.hasChildren()) {
                     /*boolean sendRequest = true;
                     for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()){
                         ConnectionsModel connectionsModel = dataSnapshot1.getValue(ConnectionsModel.class);
@@ -313,7 +316,7 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
                     }*/
                 } else {
                     //send add connection request
-                    sendConnectionRequest(ref, currentUid+"_"+userId, connection, user);
+                    sendConnectionRequest(ref, currentUid + "_" + userId, connection, user);
                 }
             }
 
@@ -332,7 +335,7 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
                 //show success
                 ArrayList sendToken = new ArrayList();
                 sendToken.add(user.getToken());
-                Utils.sendNotification(sendToken, Constants.ACTION_FRIEND_REQUEST, "Connection Request",  Preferences.getInstance(getContext()).getString(DbConstants.NAME) + " has sent you a connection request");
+                Utils.sendNotification(sendToken, Constants.ACTION_FRIEND_REQUEST, "Connection Request", Preferences.getInstance(getContext()).getString(DbConstants.NAME) + " has sent you a connection request");
             }
         });
     }

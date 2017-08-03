@@ -377,14 +377,6 @@ public class MessagesFragment extends BaseFragment implements
             messages_list = new ArrayList<Messages>();
             for (DataSnapshot data : dataSnapshot.getChildren()) {
                 String key = data.getKey();
-//                    Messages messages = new Messages();
-//                    messages.setCreatedAt(data.child(DbConstants.CREATED_AT).getValue(String.class));
-//                    messages.setMessage(data.child(DbConstants.MESSAGE).getValue(String.class));
-//                    messages.setObjectId(data.child(DbConstants.ID).getValue(String.class));
-//                    messages.setSender(data.child(DbConstants.SENDER).getValue(String.class));
-//                    messages.setUpdatedAt(data.child(DbConstants.UPDATED_AT).getValue(String.class));
-//                    messages.setUser1(data.child(DbConstants.USER1).getValue(String.class));
-//                    messages.setUser2(data.child(DbConstants.USER2).getValue(String.class));
 
                 Messages message = data.getValue(Messages.class);
 

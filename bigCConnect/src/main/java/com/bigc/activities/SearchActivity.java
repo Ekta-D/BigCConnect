@@ -210,8 +210,10 @@ public class SearchActivity extends AppCompatActivity implements
 			SearchActivity.this.connections = connections;
 			if (SearchActivity.this != null) {
 				progressBar.setVisibility(View.GONE);
-				replaceFragment(new SearchableFragment(searchView == null ? ""
-						: searchView.getQuery().toString()));
+
+//				replaceFragment(new SearchableFragment(searchView == null ? ""
+//						: searchView.getQuery().toString()));
+
 
 			}
 		}

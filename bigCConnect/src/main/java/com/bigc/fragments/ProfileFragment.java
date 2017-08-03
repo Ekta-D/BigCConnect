@@ -354,9 +354,8 @@ public class ProfileFragment extends BaseFragment {
             case R.id.postsOptions:
                 GoogleAnalyticsHelper.setClickedAction(getActivity(),
                         "User-Posts Button");//// TODO: 14-07-2017
-                Utils.showPrompt(getActivity(), "Functionality is in progress");
-//                ((FragmentHolder) getActivity())
-//                        .replaceFragment(new PostsFragments());
+                ((FragmentHolder) getActivity())
+                        .replaceFragment(new PostsFragments());
                 break;
             case R.id.photosOption:
                 GoogleAnalyticsHelper.setClickedAction(getActivity(),
@@ -367,9 +366,9 @@ public class ProfileFragment extends BaseFragment {
             case R.id.supportersOption:
                 GoogleAnalyticsHelper.setClickedAction(getActivity(),
                         "User-Supporters Button");
-                Utils.showPrompt(getActivity(), "Functionality is in progress");
-//                ((FragmentHolder) getActivity())
-//                        .replaceFragment(new SupportersFragment(true));
+               // Utils.showPrompt(getActivity(), "Functionality is in progress");
+                ((FragmentHolder) getActivity())
+                        .replaceFragment(new SupportersFragment(true));
                 break;
             case R.id.supportingView:
                 GoogleAnalyticsHelper.setClickedAction(getActivity(),
@@ -507,14 +506,10 @@ public class ProfileFragment extends BaseFragment {
                     Map<String, Object> profilemp = new HashMap<String, Object>();
                     profilemp.put(DbConstants.PROFILE_PICTURE, downloadUri.toString());
                     databaseReference.child(DbConstants.USERS).child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                            .updateChildren(profilemp).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            ImageLoader.getInstance().displayImage(downloadUri.toString(), picView,
-                                    Utils.normalDisplayOptions);
-                            //    Utils.hideProgress();
-                        }
-                    });
+                            .updateChildren(profilemp);
+                    Preferences.getInstance(getActivity()).save(DbConstants.PROFILE_PICTURE,downloadUri.toString());
+                    ImageLoader.getInstance().displayImage(downloadUri.toString(), picView,
+                            Utils.normalDisplayOptions);
                     Utils.hideProgress();
 
                 }

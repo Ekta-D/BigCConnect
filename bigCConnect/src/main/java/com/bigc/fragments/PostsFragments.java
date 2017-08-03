@@ -12,28 +12,46 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bigc.adapters.NewsFeedsAdapter;
 import com.bigc.adapters.NewsfeedAdapter;
 import com.bigc.datastorage.Preferences;
 import com.bigc.general.classes.Constants;
+import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
 import com.bigc.interfaces.PopupOptionHandler;
+import com.bigc.models.Post;
 import com.bigc.models.Posts;
 import com.bigc.models.Tributes;
 import com.bigc_connect.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.mopub.nativeads.MoPubAdAdapter;
 import com.mopub.nativeads.MoPubNativeAdPositioning;
 import com.mopub.nativeads.MoPubStaticNativeAdRenderer;
 import com.mopub.nativeads.RequestParameters;
 import com.mopub.nativeads.ViewBinder;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.List;
+
 //import com.bigc.adapters.NewsfeedAdapter;
 
 public class PostsFragments extends BaseFragment implements PopupOptionHandler {
 
-    private NewsfeedAdapter adapter;
+    //    private NewsfeedAdapter adapter;
+    private NewsFeedsAdapter adapter;
     private ListView listview;
     private TextView messageView;
     private MoPubAdAdapter mAdAdapter;
@@ -58,7 +76,7 @@ public class PostsFragments extends BaseFragment implements PopupOptionHandler {
         messageViewParent = (LinearLayout) view
                 .findViewById(R.id.messageViewParent);
         progressView = (ProgressBar) view.findViewById(R.id.progressView);
-        adapter = new NewsfeedAdapter(this, null);
+        adapter = new NewsFeedsAdapter(this, null);
 
         isPremium = Preferences.getInstance(getActivity()).getBoolean(
                 Constants.PREMIUM);
@@ -81,6 +99,8 @@ public class PostsFragments extends BaseFragment implements PopupOptionHandler {
             mAdAdapter.registerAdRenderer(adRenderer);
 
             listview.setAdapter(mAdAdapter);
+
+
         } else {
             listview.setAdapter(adapter);
         }
@@ -129,14 +149,23 @@ public class PostsFragments extends BaseFragment implements PopupOptionHandler {
                         position = temp;
                     }
                 }
+                if (position - 1 < adapter.getCount())
+                    ((FragmentHolder) getActivity())
+                            .replaceFragment(new PostDetailFragment(
+                                    PostsFragments.this, position,
+                                    (Posts) adapter.getItem(position), true));
+
             }
         });
+
+
         messageView.setText(R.string.loadingFeeds);
         loadUserData();
     }
 
     private void loadUserData() {
-        // TODO: 7/14/2017 loadUserData 
+        FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_POST).orderByChild(DbConstants.USER).
+                equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid()).addValueEventListener(postsListener);
   /*ParseQuery<ParseObject> mQuery = Queries
     .getUserConnectionStatusQuery(ProfileFragment.getUser());
   mQuery.fromPin(Constants.TAG_CONNECTIONS);
@@ -154,8 +183,28 @@ public class PostsFragments extends BaseFragment implements PopupOptionHandler {
    }
   });*/
 
-    
+
     }
+
+    ArrayList<Posts> posts;
+    ValueEventListener postsListener = new ValueEventListener() {
+        @Override
+        public void onDataChange(DataSnapshot dataSnapshot) {
+            long count = dataSnapshot.getChildrenCount();
+            posts = new ArrayList<>();
+            for (DataSnapshot data : dataSnapshot.getChildren()) {
+                String key = data.getKey();
+                Posts post = data.getValue(Posts.class);
+                posts.add(post);
+            }
+            populateList(posts);
+        }
+
+        @Override
+        public void onCancelled(DatabaseError databaseError) {
+
+        }
+    };
 
     //// TODO: 14-07-2017  
 //    private void loadData() {
@@ -210,7 +259,7 @@ public class PostsFragments extends BaseFragment implements PopupOptionHandler {
         }
     }*/
 
-    /*private void populateList(List<ParseObject> posts) {
+    private void populateList(List<Posts> posts) {
 
         if (listview != null) {
             if (posts == null) {
@@ -220,12 +269,52 @@ public class PostsFragments extends BaseFragment implements PopupOptionHandler {
                 showError(Utils.loadString(getActivity(),
                         R.string.noUpdatesPostedYet));
             } else {
-                adapter.setData(posts);
-                listview.setVisibility(View.VISIBLE);
-                messageViewParent.setVisibility(View.GONE);
+                if (posts != null && posts.size() > 0) {
+                    posts = new ArrayList<>();
+                    posts.addAll(posts);
+                    Collections.sort(posts, new Comparator<Posts>() {
+                        @Override
+                        public int compare(Posts comments, Posts t1) {
+                /*if (Utils.convertStringToDate(comments.getUpdatedAt()) == null || Utils.convertStringToDate(t1.getUpdatedAt()) == null)
+                    return 0;
+                return Utils.convertStringToDate(comments.getUpdatedAt()).compareTo(Utils.convertStringToDate(t1.getUpdatedAt()));*/
+                            try {
+                                SimpleDateFormat dateFormatlhs = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+                                Date convertedDatelhs = dateFormatlhs.parse(comments.getCreatedAt());
+                                Calendar calendarlhs = Calendar.getInstance();
+                                calendarlhs.setTime(convertedDatelhs);
+
+                                SimpleDateFormat dateFormatrhs = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+                                Date convertedDaterhs = dateFormatrhs.parse(t1.getCreatedAt());
+                                Calendar calendarrhs = Calendar.getInstance();
+                                calendarrhs.setTime(convertedDaterhs);
+
+                                if (calendarlhs.getTimeInMillis() < calendarrhs.getTimeInMillis()) {
+                                    return -1;
+                                } else {
+                                    return 1;
+                                }
+                            } catch (ParseException e) {
+
+                                e.printStackTrace();
+                            }
+
+
+                            return 0;
+                        }
+                    });
+                    Collections.reverse(posts);
+                    listview.setVisibility(View.VISIBLE);
+                    progressView.setVisibility(View.GONE);
+                    this.posts.addAll(posts);
+                    adapter.setData(this.posts);
+                    adapter = new NewsFeedsAdapter(this, this.posts);
+                    listview.setAdapter(adapter);
+                    listview.setSelectionAfterHeaderView();
+                }
             }
         }
-    }*/
+    }
 
     private void showError(String message) {
         listview.setVisibility(View.GONE);
@@ -252,7 +341,7 @@ public class PostsFragments extends BaseFragment implements PopupOptionHandler {
     @Override
     public boolean onBackPressed() {
         ((FragmentHolder) getActivity()).replaceFragment(new ProfileFragment(
-                null, null));
+                PostsFragments.this, Preferences.getInstance(getActivity()).getUserFromPreference()));
         return true;
     }
 
@@ -279,7 +368,7 @@ public class PostsFragments extends BaseFragment implements PopupOptionHandler {
         //  Posts obj = post == null ? adapter.getItem(position) : post;
         Utils.launchEditView(
                 getActivity(),
-                ((Posts)post).getMedia() == null ? Constants.OPERATION_MESSAGE
+                ((Posts) post).getMedia() == null ? Constants.OPERATION_MESSAGE
                         : Constants.OPERATION_PHOTO, true, position, (Posts) post);
     }
 
