@@ -169,6 +169,7 @@ public class FragmentResetPassword extends BaseFragment {
                         }
                     });
                 }
+                Utils.hideProgress();
             }
         });
 

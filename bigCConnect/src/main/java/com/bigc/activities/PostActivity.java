@@ -753,12 +753,18 @@ public class PostActivity extends Activity implements OnClickListener,
         databaseReference.child(DbConstants.TABLE_POST).child(objectId).setValue(post, new DatabaseReference.CompletionListener() {
             @Override
             public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
-                ArrayList<String> sendTokens =  new ArrayList<>();
-                ArrayList<Users> activeConnections = Preferences.getInstance(getBaseContext()).getLocalConnections().get(0);
-                if(activeConnections.size()>0) {
+                ArrayList<String> sendTokens = new ArrayList<>();
+                ArrayList<Users> activeConnections = new ArrayList<>();
+                activeConnections = Preferences.getInstance(getBaseContext()).getLocalConnections().get(0);
+
+                if (activeConnections==null||activeConnections.size()==0)
+                {
+                   // Utils.sendNotification(sendTokens, Constants.ACTION_NEWS_FEED, "Newsfeed", "A post has been added.");
+                }
+                else if (activeConnections.size() > 0) {
                     for (Users activeConnection : activeConnections) {
                         //if (!activeConnection.getToken().equalsIgnoreCase(Preferences.getInstance(getBaseContext()).getString(DbConstants.TOKEN)))
-                            sendTokens.add(activeConnection.getToken());
+                        sendTokens.add(activeConnection.getToken());
                     }
                     Utils.sendNotification(sendTokens, Constants.ACTION_NEWS_FEED, "Newsfeed", "A post has been added.");
                 }
