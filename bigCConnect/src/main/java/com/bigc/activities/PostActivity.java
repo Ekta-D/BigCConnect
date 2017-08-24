@@ -642,7 +642,7 @@ public class PostActivity extends Activity implements OnClickListener,
     public void uploadMessage(String media, List<Users> users_list, String message) {
 //        for (int i = 0; i < users_list.size(); i++) {
 //        Users user = users_list.get(i);
-        String current_user = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        String current_user = Preferences.getInstance(getApplicationContext()).getString(DbConstants.ID);
         //      String objectId = databaseReference.child(DbConstants.TABLE_MESSAGE).push().getKey();
         String conversationObjectId = databaseReference.child(DbConstants.TABLE_CONVERSATION).push().getKey();
         Messages message_model = new Messages();
@@ -719,7 +719,7 @@ public class PostActivity extends Activity implements OnClickListener,
                     //    String objectId = databaseReference.child(DbConstants.TABLE_POST).push().getKey();
 
                     media = downloadUri.toString();
-                    uploadPost(message, 0, date, date, media, objectId, FirebaseAuth.getInstance().getCurrentUser().getUid());
+                    uploadPost(message, 0, date, date, media, objectId, Preferences.getInstance(getApplicationContext()).getString(DbConstants.ID));
 
                     Utils.hideProgress();
                 }
@@ -731,7 +731,7 @@ public class PostActivity extends Activity implements OnClickListener,
                 }
             });
         } else {
-            uploadPost(message, 0, date, date, media, objectId, FirebaseAuth.getInstance().getCurrentUser().getUid());
+            uploadPost(message, 0, date, date, media, objectId, Preferences.getInstance(getApplicationContext()).getString(DbConstants.ID));
 
         }
         Utils.hideProgress();
@@ -748,7 +748,7 @@ public class PostActivity extends Activity implements OnClickListener,
         post.setUpdatedAt(updatedAt);
         post.setMedia(media);
         post.setObjectId(objectId);
-        post.setUser(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        post.setUser(Preferences.getInstance(PostActivity.this).getString(DbConstants.ID));
         Utils.hideProgress();
         databaseReference.child(DbConstants.TABLE_POST).child(objectId).setValue(post, new DatabaseReference.CompletionListener() {
             @Override
@@ -819,7 +819,7 @@ public class PostActivity extends Activity implements OnClickListener,
 
                     media = downloadUri.toString();
                     uploadTribute(targetUser, message, 0, date, date, media,
-                            objectId, FirebaseAuth.getInstance().getCurrentUser().getUid(), age);
+                            objectId, Preferences.getInstance(getApplicationContext()).getString(DbConstants.ID), age);
 
                     Utils.hideProgress();
                 }
@@ -832,7 +832,7 @@ public class PostActivity extends Activity implements OnClickListener,
             });
         } else {
             uploadTribute(targetUser, message, 0, date, date, media, objectId,
-                    FirebaseAuth.getInstance().getCurrentUser().getUid(), age);
+                    Preferences.getInstance(getApplicationContext()).getString(DbConstants.ID), age);
         }
 
     }
@@ -851,7 +851,7 @@ public class PostActivity extends Activity implements OnClickListener,
         tributes.setMedia(mediaUrl);
         tributes.setMessage(message);
         tributes.setTo(targetUser.getObjectId());
-        tributes.setFrom(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        tributes.setFrom(Preferences.getInstance(getApplicationContext()).getString(DbConstants.ID));
         tributes.setUser(user);
         tributes.setLocation(targetUser.getLocation());
         tributes.setSurvivor(targetUser.getName());
@@ -902,7 +902,7 @@ public class PostActivity extends Activity implements OnClickListener,
 
                     media = downloadUri.toString();
 
-                    uploadStory(message, title, date, date, objectId, media, 0, FirebaseAuth.getInstance().getCurrentUser().getUid());
+                    uploadStory(message, title, date, date, objectId, media, 0, Preferences.getInstance(getApplicationContext()).getString(DbConstants.ID));
                     Utils.hideProgress();
                 }
             }).addOnFailureListener(new OnFailureListener() {
@@ -913,7 +913,7 @@ public class PostActivity extends Activity implements OnClickListener,
                 }
             });
         } else {
-            uploadStory(message, title, date, date, objectId, media, 0, FirebaseAuth.getInstance().getCurrentUser().getUid());
+            uploadStory(message, title, date, date, objectId, media, 0, Preferences.getInstance(getApplicationContext()).getString(DbConstants.ID));
         }
 
     }

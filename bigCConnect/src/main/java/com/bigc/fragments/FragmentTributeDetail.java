@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.bigc.activities.HomeScreen;
 import com.bigc.adapters.CommentsAdapter;
+import com.bigc.datastorage.Preferences;
 import com.bigc.dialogs.AddTributeDialog;
 import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
@@ -402,9 +403,9 @@ public class FragmentTributeDetail extends BaseFragment implements
 					tribute,
 					v,
 					(tribute.getFrom()
-							.equals(FirebaseAuth.getInstance().getCurrentUser().getUid()) || tribute
+							.equals(Preferences.getInstance(getActivity()).getString(DbConstants.ID)) || tribute
 							.getTo()
-							.equals(FirebaseAuth.getInstance().getCurrentUser().getUid())),
+							.equals(Preferences.getInstance(getActivity()).getString(DbConstants.ID))),
 					DbConstants.Flags.Tribute);
 			break;
 		case R.id.newsFeedRibbonView:
@@ -447,7 +448,7 @@ public class FragmentTributeDetail extends BaseFragment implements
 				Utils.hideKeyboard(getActivity());
 				String comment = commentInputView.getText().toString();
 				commentInputView.setText("");
-				adapter.addItem(PostManager.getInstance().commentOnTribute(
+				adapter.addItem(PostManager.getInstance().commentOnTribute(getActivity(),
 						comment, tribute));
 				Toast.makeText(getActivity(), "Comment posted",
 						Toast.LENGTH_SHORT).show();
@@ -459,16 +460,16 @@ public class FragmentTributeDetail extends BaseFragment implements
 		case R.id.loveImage:
 			GoogleAnalyticsHelper.setClickedAction(getActivity(),
 					"Love Tribute Button");
-			if (!Utils.isLiked(tribute)) {
+			if (!Utils.isLiked(getActivity(),tribute)) {
 				loveCountView.setText(String.valueOf(tribute
 						.getLikes() == null ? 1 : tribute
 						.getLikes().size() + 1));
 				ArrayList<String> likesList = tribute.getLikes();
 				if(likesList==null) {
 					likesList = new ArrayList<>();
-					likesList.add(FirebaseAuth.getInstance().getCurrentUser().getUid());
+					likesList.add(Preferences.getInstance(getActivity()).getString(DbConstants.ID));
 				} else
-					likesList.add(FirebaseAuth.getInstance().getCurrentUser().getUid());
+					likesList.add(Preferences.getInstance(getActivity()).getString(DbConstants.ID));
 				PostManager.getInstance().likeTribute(likesList, tribute);
 			}
 			break;

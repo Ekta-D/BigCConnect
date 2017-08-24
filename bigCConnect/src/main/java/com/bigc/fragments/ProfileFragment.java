@@ -366,7 +366,7 @@ public class ProfileFragment extends BaseFragment {
             case R.id.supportersOption:
                 GoogleAnalyticsHelper.setClickedAction(getActivity(),
                         "User-Supporters Button");
-               // Utils.showPrompt(getActivity(), "Functionality is in progress");
+
                 ((FragmentHolder) getActivity())
                         .replaceFragment(new SupportersFragment(true));
                 break;
@@ -397,11 +397,11 @@ public class ProfileFragment extends BaseFragment {
                 if (iView.getContentDescription().equals("0")) {
                     iView.setContentDescription("2");
                     iView.setImageResource(R.drawable.ic_connect_pending);
-                    Utils.addConnections(req);
+                    Utils.addConnections(getActivity(),req);
                 } else {
                     iView.setContentDescription("0");
                     iView.setImageResource(R.drawable.ic_connect);
-                    Utils.removeConnections(req);
+                    Utils.removeConnections(getActivity(),req);
                 }
                 break;
             case R.id.profilePicture:
@@ -496,8 +496,8 @@ public class ProfileFragment extends BaseFragment {
     public void PictureResponseHandler(Uri uri) {
         if (uri != null) {
             Utils.showProgress(getActivity());
-            FirebaseUser firebaseUser = firebaseAuth.getInstance().getCurrentUser();
-            final String uid = firebaseUser.getUid();
+     //       FirebaseUser firebaseUser = firebaseAuth.getInstance().getCurrentUser();
+            final String uid = Preferences.getInstance(getActivity()).getString(DbConstants.ID);
             StorageReference reference = storageReference.child(uid + ".jpg");
             reference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
@@ -505,7 +505,7 @@ public class ProfileFragment extends BaseFragment {
                     final Uri downloadUri = taskSnapshot.getMetadata().getDownloadUrl();
                     Map<String, Object> profilemp = new HashMap<String, Object>();
                     profilemp.put(DbConstants.PROFILE_PICTURE, downloadUri.toString());
-                    databaseReference.child(DbConstants.USERS).child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                    databaseReference.child(DbConstants.USERS).child(Preferences.getInstance(getActivity()).getString(DbConstants.ID))
                             .updateChildren(profilemp);
                     Preferences.getInstance(getActivity()).save(DbConstants.PROFILE_PICTURE,downloadUri.toString());
                     ImageLoader.getInstance().displayImage(downloadUri.toString(), picView,

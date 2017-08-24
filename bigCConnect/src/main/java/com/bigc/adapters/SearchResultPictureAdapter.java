@@ -7,7 +7,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bigc.datastorage.Preferences;
+import com.bigc.fragments.CategorySurvivorsFragment;
 import com.bigc.general.classes.Constants;
+import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.SearchResultBaseAdapter;
 import com.bigc.models.Users;
@@ -23,7 +26,7 @@ public class SearchResultPictureAdapter extends SearchResultBaseAdapter {
 	private DisplayImageOptions options = new DisplayImageOptions.Builder()
 			.cacheInMemory(true).cacheOnDisk(true).resetViewBeforeLoading(true)
 			.build();
-
+int ribbon;
 	public SearchResultPictureAdapter(Context context,
 			List<Users> activeConnections,
 			List<Users> pendingConnections, List<Users> data) {
@@ -74,7 +77,7 @@ public class SearchResultPictureAdapter extends SearchResultBaseAdapter {
 
 		if (user.getProfile_picture() == null) {
 
-			holder.ribbonView.setImageResource(R.drawable.ic_launcher);
+			holder.ribbonView.setImageResource(Utils.fighter_ribbons[ribbon]);
 
 		} else {
 
@@ -83,13 +86,13 @@ public class SearchResultPictureAdapter extends SearchResultBaseAdapter {
 				ImageLoader.getInstance().displayImage(url, holder.ribbonView,
 						options);
 			} else {
-				holder.ribbonView.setImageResource(R.drawable.ic_launcher);
+				holder.ribbonView.setImageResource( Utils.survivor_ribbons[CategorySurvivorsFragment.ribbon]);
 			}
 
 		}
 
 		if ((isSupporterUser && supporter)
-				|| FirebaseAuth.getInstance().getCurrentUser().getUid()
+				|| Preferences.getInstance(getContext().getApplicationContext()).getString(DbConstants.ID)
 						.equals(user.getObjectId())) {
 			holder.addOption.setVisibility(View.GONE);
 		} else {

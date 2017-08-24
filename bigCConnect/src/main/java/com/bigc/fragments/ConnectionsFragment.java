@@ -131,8 +131,8 @@ public class ConnectionsFragment extends BaseFragment {
 				if(dataSnapshot!=null && dataSnapshot.hasChildren()) {
 					for( DataSnapshot data: dataSnapshot.getChildren()) {
 						ConnectionsModel connection = data.getValue(ConnectionsModel.class);
-						System.out.println("request: "+ connection.getTo() +" "+ FirebaseAuth.getInstance().getCurrentUser().getUid());
-						if(connection.getTo().equalsIgnoreCase(FirebaseAuth.getInstance().getCurrentUser().getUid()) && connection.getStatus()!=true)
+						System.out.println("request: "+ connection.getTo() +" "+  Preferences.getInstance(getActivity()).getString(DbConstants.ID));
+						if(connection.getTo().equalsIgnoreCase( Preferences.getInstance(getActivity()).getString(DbConstants.ID)) && connection.getStatus()!=true)
 							requests.add(connection);
 						System.out.println("ddata conenction "+data.toString());
 					}

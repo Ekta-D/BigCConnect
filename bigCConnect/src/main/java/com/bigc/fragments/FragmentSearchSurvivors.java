@@ -161,7 +161,8 @@ public class FragmentSearchSurvivors extends BaseFragment {
             Utils.hideProgress();
             if (dataSnapshot != null && dataSnapshot.hasChildren()) {
                 for (DataSnapshot data : dataSnapshot.getChildren()) {
-                    if (data.getValue(Users.class).getObjectId() != FirebaseAuth.getInstance().getCurrentUser().getUid() && data.getValue(Users.class).isDeactivated() == false)
+                    if (data.getValue(Users.class).getObjectId() !=
+                            Preferences.getInstance(getActivity()).getString(DbConstants.ID) && data.getValue(Users.class).isDeactivated() == false)
                         searchUsers.add(data.getValue(Users.class));
                 }
                 if (searchUsers.size() == 0) {

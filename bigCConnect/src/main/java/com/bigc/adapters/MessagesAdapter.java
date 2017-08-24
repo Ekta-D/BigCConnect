@@ -85,7 +85,7 @@ public class MessagesAdapter extends ArrayAdapter<Messages> {
 
         Messages message = messages.get(position);
         String user2 = message.getUser2();
-        if (user2.equalsIgnoreCase(FirebaseAuth.getInstance().getCurrentUser().getUid())) {
+        if (user2.equalsIgnoreCase(Preferences.getInstance(getContext().getApplicationContext()).getString(DbConstants.ID))) {
             user2 = message.getUser1();
         }
 

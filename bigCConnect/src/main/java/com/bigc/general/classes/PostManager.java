@@ -319,12 +319,12 @@ public class PostManager implements UploadPostObservable, MessageObservable {
         return obj;
     }*/
 
-    public Comments commentOnTribute(String comment,
-                                        final Tributes tribute) {
+    public Comments commentOnTribute(Context context, String comment,
+                                     final Tributes tribute) {
         final Comments obj = new Comments();
         obj.setPost(tribute.getObjectId());
         obj.setMessage(comment);
-        obj.setUser(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        obj.setUser(Preferences.getInstance(context).getString(DbConstants.ID));
         SimpleDateFormat format = new SimpleDateFormat(DbConstants.DATE_FORMAT);
         String date = format.format(new Date(System.currentTimeMillis()));
         obj.setCreatedAt(date);

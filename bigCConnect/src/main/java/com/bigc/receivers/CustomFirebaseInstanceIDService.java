@@ -2,6 +2,7 @@ package com.bigc.receivers;
 
 import android.util.Log;
 
+import com.bigc.datastorage.Preferences;
 import com.bigc.general.classes.DbConstants;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -38,7 +39,9 @@ public class CustomFirebaseInstanceIDService extends FirebaseInstanceIdService {
         HashMap<String, Object> map = new HashMap();
         map.put(DbConstants.TOKEN, token);
         if(FirebaseAuth.getInstance().getCurrentUser()!=null)
-        FirebaseDatabase.getInstance().getReference().child(DbConstants.USERS).child(FirebaseAuth.getInstance().getCurrentUser().getUid()).updateChildren(map, new DatabaseReference.CompletionListener() {
+        FirebaseDatabase.getInstance().getReference().child(DbConstants.USERS).
+                child( Preferences.getInstance(getApplicationContext()).getString(DbConstants.ID)).
+                updateChildren(map, new DatabaseReference.CompletionListener() {
             @Override
             public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
                 Log.d(TAG, "Refreshed token saved");

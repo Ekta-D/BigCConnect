@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.bigc.datastorage.Preferences;
 import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
@@ -97,7 +98,7 @@ public class DeactivateFragment extends BaseFragment {
 //			}
 //		});
 
-        String current_usrId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        String current_usrId = Preferences.getInstance(getActivity()).getString(DbConstants.ID);
         Map<String, Object> update_values = new HashMap<>();
         update_values.put(DbConstants.DEACTIVATED, true);
         update_values.put(DbConstants.DEACTIVATED_REASON, feedback);

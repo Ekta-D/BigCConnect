@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bigc.adapters.TributesAdapter;
+import com.bigc.datastorage.Preferences;
 import com.bigc.dialogs.AddTributeDialog;
 import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
@@ -190,7 +191,7 @@ public class FragmentTributes extends BaseFragment implements
 
 
         final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_TRIBUTE);
-        Query query = databaseReference.orderByChild(DbConstants.FROM).equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        Query query = databaseReference.orderByChild(DbConstants.FROM).equalTo(Preferences.getInstance(getActivity()).getString(DbConstants.ID));
 
         query.addValueEventListener(new ValueEventListener() {
             @Override
@@ -223,7 +224,7 @@ public class FragmentTributes extends BaseFragment implements
                     showError(Utils.loadString(getActivity(),
                             R.string.noTributeMessage));*/
                 }
-                checkToTributes(databaseReference, FirebaseAuth.getInstance().getCurrentUser().getUid());
+                checkToTributes(databaseReference,  Preferences.getInstance(getActivity()).getString(DbConstants.ID));
             }
 
             @Override

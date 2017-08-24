@@ -166,7 +166,7 @@ public class MessagesFragment extends BaseFragment implements
         String conversationObjectId;
         String messageId = "";
 
-        String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        String currentUserId = Preferences.getInstance(getActivity()).getString(DbConstants.ID);
         String currentUserName = Preferences.getInstance(getContext()).getString(DbConstants.NAME);
         for (int i = 0; i < selectedUsers.size(); i++) {
             Users user = selectedUsers.get(i);
@@ -219,10 +219,10 @@ public class MessagesFragment extends BaseFragment implements
                 update_conversation.put(DbConstants.MESSAGE, PostActivity.message);
                 update_conversation.put(DbConstants.ID, mess.getObjectId());
                 update_conversation.put(DbConstants.UPDATED_AT, Utils.getCurrentDate());
-                update_conversation.put(DbConstants.USER1, FirebaseAuth.getInstance().getCurrentUser().getUid());
+                update_conversation.put(DbConstants.USER1, Preferences.getInstance(getActivity()).getString(DbConstants.ID));
                 update_conversation.put(DbConstants.USER2, mess.getUser2());
                 update_conversation.put(DbConstants.MEDIA, mess.getMedia());
-                update_conversation.put(DbConstants.SENDER, FirebaseAuth.getInstance().getCurrentUser().getUid());
+                update_conversation.put(DbConstants.SENDER, Preferences.getInstance(getActivity()).getString(DbConstants.ID));
 
                 FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION).child(mess.getObjectId())
                         .updateChildren(update_conversation);

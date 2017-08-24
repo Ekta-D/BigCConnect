@@ -1,5 +1,9 @@
 package com.bigc.activities;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -73,239 +77,29 @@ public class LoginActivity extends Activity implements OnClickListener {
         firebaseAuth = FirebaseAuth.getInstance();
 
         boolean isFirstTime = Preferences.getInstance(LoginActivity.this).getBoolean(Constants.ISFIRST_TIME);
+  /*      StringBuilder stringBuilder = new StringBuilder();
+        BufferedReader in;
+        try {
+            InputStream json = getAssets().open("font/connection_file.txt");
+            in = new BufferedReader(new InputStreamReader(json, "UTF-8"));
+            String str;
 
-     /*   storie_comment_json = "{ \"results\": [\n" +
-                "\t{\n" +
-                "        \"createdAt\": \"2016-04-26T21:28:06.418Z\",\n" +
-                "        \"message\": \"amen\",\n" +
-                "        \"objectId\": \"17kael4vdq\",\n" +
-                "        \"post\": {\n" +
-                "            \"__type\": \"Pointer\",\n" +
-                "            \"className\": \"Stories\",\n" +
-                "            \"objectId\": \"mURbNyX6jL\"\n" +
-                "        },\n" +
-                "        \"updatedAt\": \"2016-04-26T21:28:06.418Z\",\n" +
-                "        \"user\": {\n" +
-                "            \"__type\": \"Pointer\",\n" +
-                "            \"className\": \"_User\",\n" +
-                "            \"objectId\": \"CxE6c5KnDF\"\n" +
-                "        }\n" +
-                "    },\n" +
-                "\t{\n" +
-                "        \"createdAt\": \"2016-02-13T08:57:44.668Z\",\n" +
-                "        \"message\": \"write the next chapter later\",\n" +
-                "        \"objectId\": \"DJzi3oIVso\",\n" +
-                "        \"post\": {\n" +
-                "            \"__type\": \"Pointer\",\n" +
-                "            \"className\": \"Stories\",\n" +
-                "            \"objectId\": \"sWDj5BgJXX\"\n" +
-                "        },\n" +
-                "        \"updatedAt\": \"2016-02-13T08:57:44.668Z\",\n" +
-                "        \"user\": {\n" +
-                "            \"__type\": \"Pointer\",\n" +
-                "            \"className\": \"_User\",\n" +
-                "            \"objectId\": \"Aq5fysNb0T\"\n" +
-                "        }\n" +
-                "    },\n" +
-                "\t{\n" +
-                "        \"createdAt\": \"2015-10-28T11:32:25.976Z\",\n" +
-                "        \"message\": \"hello Jane i was so touched when i read your story your children are beautiful stay strong keep the faith you have made me feel that anything is possible thank you \",\n" +
-                "        \"objectId\": \"DvGITugKzi\",\n" +
-                "        \"post\": {\n" +
-                "            \"__type\": \"Pointer\",\n" +
-                "            \"className\": \"Stories\",\n" +
-                "            \"objectId\": \"sm9rKlq32j\"\n" +
-                "        },\n" +
-                "        \"updatedAt\": \"2015-10-28T11:32:25.976Z\",\n" +
-                "        \"user\": {\n" +
-                "            \"__type\": \"Pointer\",\n" +
-                "            \"className\": \"_User\",\n" +
-                "            \"objectId\": \"1gYaAnaPNn\"\n" +
-                "        }\n" +
-                "    },\n" +
-                "\t{\n" +
-                "        \"createdAt\": \"2016-02-13T04:03:55.020Z\",\n" +
-                "        \"message\": \"I didn't know for about 2years and thanks to the lord I'm alive .I have a feeling your going to be fine and wish you the best of luck. I'm still getting tests as well it's a part of the journey and you choose your own path. xx\\n\",\n" +
-                "        \"objectId\": \"JBHZ47YDcx\",\n" +
-                "        \"post\": {\n" +
-                "            \"__type\": \"Pointer\",\n" +
-                "            \"className\": \"Stories\",\n" +
-                "            \"objectId\": \"pcmIVt4Xoj\"\n" +
-                "        },\n" +
-                "        \"updatedAt\": \"2016-02-13T04:03:55.020Z\",\n" +
-                "        \"user\": {\n" +
-                "            \"__type\": \"Pointer\",\n" +
-                "            \"className\": \"_User\",\n" +
-                "            \"objectId\": \"Aq5fysNb0T\"\n" +
-                "        }\n" +
-                "    },\n" +
-                "\t{\n" +
-                "        \"createdAt\": \"2016-11-30T03:13:06.088Z\",\n" +
-                "        \"message\": \"I pray that you'd be ok.\",\n" +
-                "        \"objectId\": \"OLAkQshjby\",\n" +
-                "        \"post\": {\n" +
-                "            \"__type\": \"Pointer\",\n" +
-                "            \"className\": \"Stories\",\n" +
-                "            \"objectId\": \"pcmIVt4Xoj\"\n" +
-                "        },\n" +
-                "        \"updatedAt\": \"2016-11-30T03:13:06.088Z\",\n" +
-                "        \"user\": {\n" +
-                "            \"__type\": \"Pointer\",\n" +
-                "            \"className\": \"_User\",\n" +
-                "            \"objectId\": \"k4FK6ZS122\"\n" +
-                "        }\n" +
-                "    },\n" +
-                "\t{\n" +
-                "        \"createdAt\": \"2016-01-13T15:21:49.946Z\",\n" +
-                "        \"message\": \"The waiting for tests can be an excruciating time that few understand. I know  when my 3 monthly CT scans cam around I used to be a stressed out bitch to everyone then I would get the all clear and life would go on.  You will be fine, I found by not focusing on the big C word my life was easier..I am a gastric cancer survivor....so I just thought OK I'm sick and I have to have check ups but didn't focus on all the medical terminology or the names of things and treatments and just doing that made it easier to cope. So many people get hung up on the disease and treatments they forget to live.  I didn't talk about it only when necessary.  I hope this helps.....stay strong and  enjoy the moment\",\n" +
-                "        \"objectId\": \"QRA2Xa7BuF\",\n" +
-                "        \"post\": {\n" +
-                "            \"__type\": \"Pointer\",\n" +
-                "            \"className\": \"Stories\",\n" +
-                "            \"objectId\": \"pcmIVt4Xoj\"\n" +
-                "        },\n" +
-                "        \"updatedAt\": \"2016-01-13T15:21:49.946Z\",\n" +
-                "        \"user\": {\n" +
-                "            \"__type\": \"Pointer\",\n" +
-                "            \"className\": \"_User\",\n" +
-                "            \"objectId\": \"WDk8WMsILq\"\n" +
-                "        }\n" +
-                "    },\n" +
-                "\t{\n" +
-                "        \"createdAt\": \"2016-03-08T19:27:56.947Z\",\n" +
-                "        \"message\": \"I am a 10 year survivor of stage 3 her 2nue breast cancer.  I to this day I have never had reconstructive surgery.  My scar is my badge of honor.  I know we must move forward but I never want to forget what I went through because it was not only the worst thing but also the best thing that has happened to me.  It made me appreciate so much in my life.  My faith, my family, and my friends...\",\n" +
-                "        \"objectId\": \"TggIciDu0M\",\n" +
-                "        \"post\": {\n" +
-                "            \"__type\": \"Pointer\",\n" +
-                "            \"className\": \"Stories\",\n" +
-                "            \"objectId\": \"9JrFkXgM26\"\n" +
-                "        },\n" +
-                "        \"updatedAt\": \"2016-03-08T19:27:56.947Z\",\n" +
-                "        \"user\": {\n" +
-                "            \"__type\": \"Pointer\",\n" +
-                "            \"className\": \"_User\",\n" +
-                "            \"objectId\": \"FRMRtUEWTI\"\n" +
-                "        }\n" +
-                "    },\n" +
-                "\t{\n" +
-                "        \"createdAt\": \"2016-04-20T11:04:27.836Z\",\n" +
-                "        \"message\": \"amen \",\n" +
-                "        \"objectId\": \"UbbLwz6I22\",\n" +
-                "        \"post\": {\n" +
-                "            \"__type\": \"Pointer\",\n" +
-                "            \"className\": \"Stories\",\n" +
-                "            \"objectId\": \"mURbNyX6jL\"\n" +
-                "        },\n" +
-                "        \"updatedAt\": \"2016-04-20T11:04:27.836Z\",\n" +
-                "        \"user\": {\n" +
-                "            \"__type\": \"Pointer\",\n" +
-                "            \"className\": \"_User\",\n" +
-                "            \"objectId\": \"qXTGhs0hlL\"\n" +
-                "        }\n" +
-                "    },\n" +
-                "\t{\n" +
-                "        \"createdAt\": \"2015-12-29T01:48:44.068Z\",\n" +
-                "        \"message\": \"Hi Rose. Thanks for sharing your story. I was diagnosed with \\n breast cancer in March of this year. I had 5 operations to remove the cancer. The last one was a  mastectomy. I can also say it was Jesus who gave me the strength to endure and my family provided incredible strength also.\",\n" +
-                "        \"objectId\": \"ZmWPkyCmly\",\n" +
-                "        \"post\": {\n" +
-                "            \"__type\": \"Pointer\",\n" +
-                "            \"className\": \"Stories\",\n" +
-                "            \"objectId\": \"nnLCSlRFZ5\"\n" +
-                "        },\n" +
-                "        \"updatedAt\": \"2015-12-29T01:48:44.068Z\",\n" +
-                "        \"user\": {\n" +
-                "            \"__type\": \"Pointer\",\n" +
-                "            \"className\": \"_User\",\n" +
-                "            \"objectId\": \"bSO8rmIyst\"\n" +
-                "        }\n" +
-                "    },\n" +
-                "\t{\n" +
-                "        \"createdAt\": \"2016-01-22T15:33:49.488Z\",\n" +
-                "        \"message\": \"reading your heart felt story has given me hope, I was diagnosed with breast cancer few mouths ago now, not sure how I should be feeling heads all over the place my moods are up and down, but I do believe positive thinking helps \",\n" +
-                "        \"objectId\": \"b6iXB9pvZg\",\n" +
-                "        \"post\": {\n" +
-                "            \"__type\": \"Pointer\",\n" +
-                "            \"className\": \"Stories\",\n" +
-                "            \"objectId\": \"sm9rKlq32j\"\n" +
-                "        },\n" +
-                "        \"updatedAt\": \"2016-01-22T15:33:49.488Z\",\n" +
-                "        \"user\": {\n" +
-                "            \"__type\": \"Pointer\",\n" +
-                "            \"className\": \"_User\",\n" +
-                "            \"objectId\": \"ErxVBmXY2N\"\n" +
-                "        }\n" +
-                "    },\n" +
-                "\t{\n" +
-                "        \"createdAt\": \"2016-04-12T21:27:55.965Z\",\n" +
-                "        \"message\": \"Hi mine was 2012 2013.I was 38.Had lump big as a pea.Doc told me was cyst don't worry about. A yr later was a Mas.Had lumpectomy. Didn't get all.Then mastectomy. Chemo Radiation. My hair was gone by day 14.Head very sore.Lots water.8 glasses a day. And made my self walk..The end of Aug I had reconstruction surgery.  complications. A 9hr surgery. It didn't take.So I had a black boob for 5 days.They were waiting on expander.But was to infected.Had 3 blood transfusions. I'm not a smoker and I'm small.Just didn't take.6months now.On 22 I'm going for expander.my skin is thin.But I'm not giving up.The last resort is for skin of back with muscle.If you need to no anything ask.All try best I can to help.And may God bless.\",\n" +
-                "        \"objectId\": \"hUHfrtjl6Y\",\n" +
-                "        \"post\": {\n" +
-                "            \"__type\": \"Pointer\",\n" +
-                "            \"className\": \"Stories\",\n" +
-                "            \"objectId\": \"orYoKOYSWu\"\n" +
-                "        },\n" +
-                "        \"updatedAt\": \"2016-04-12T21:27:55.965Z\",\n" +
-                "        \"user\": {\n" +
-                "            \"__type\": \"Pointer\",\n" +
-                "            \"className\": \"_User\",\n" +
-                "            \"objectId\": \"J7h608xdhN\"\n" +
-                "        }\n" +
-                "    },\n" +
-                "\t{\n" +
-                "        \"createdAt\": \"2015-12-29T01:51:45.913Z\",\n" +
-                "        \"message\": \"In Sept. I found out I was cancer free so I am so grateful to God for bringing me through this hard time. I will pray for you that the cancer will stay in remission and you will live a long life. God bless you!\",\n" +
-                "        \"objectId\": \"kKZNbLibnb\",\n" +
-                "        \"post\": {\n" +
-                "            \"__type\": \"Pointer\",\n" +
-                "            \"className\": \"Stories\",\n" +
-                "            \"objectId\": \"nnLCSlRFZ5\"\n" +
-                "        },\n" +
-                "        \"updatedAt\": \"2015-12-29T01:51:45.913Z\",\n" +
-                "        \"user\": {\n" +
-                "            \"__type\": \"Pointer\",\n" +
-                "            \"className\": \"_User\",\n" +
-                "            \"objectId\": \"bSO8rmIyst\"\n" +
-                "        }\n" +
-                "    },\n" +
-                "\t{\n" +
-                "        \"createdAt\": \"2016-01-13T22:37:33.657Z\",\n" +
-                "        \"message\": \"if this helps in any way... I got diagnosed with Malignant Melanoma pretty much exactly the same time as your diagnosis, I was 19 in September so I'm sure we have similar factors in our lives to contend with alongside the big C! I've already had one operation to test some of my lymph nodes and see if the cancer had spread, just before Xmas.. and found out last week that it has so I, going back under the knife next week:/ literally just joined this forum today (13/01/16) because, as supportive as everyone in my life has been, I really feel like I just need to talk to someone who has even the slightest idea of what it's actually like at this age to go through stuff like this.  I was also like you in that they didn't detect mine as  cancer initially... but I've found that they deal with me a lot faster than most other patients when it comes to appointments and surgery. I really hope your results come back clear... and if they don't, mine weren't clear either! so if you need a chat, I know that'd make me feel a whole lot better! \",\n" +
-                "        \"objectId\": \"ky9gkmvscm\",\n" +
-                "        \"post\": {\n" +
-                "            \"__type\": \"Pointer\",\n" +
-                "            \"className\": \"Stories\",\n" +
-                "            \"objectId\": \"pcmIVt4Xoj\"\n" +
-                "        },\n" +
-                "        \"updatedAt\": \"2016-01-13T22:37:33.657Z\",\n" +
-                "        \"user\": {\n" +
-                "            \"__type\": \"Pointer\",\n" +
-                "            \"className\": \"_User\",\n" +
-                "            \"objectId\": \"HaR48Qtjj5\"\n" +
-                "        }\n" +
-                "    },\n" +
-                "\t{\n" +
-                "        \"createdAt\": \"2016-02-13T03:55:24.811Z\",\n" +
-                "        \"message\": \"Amen xx\",\n" +
-                "        \"objectId\": \"wWWxQeEdYK\",\n" +
-                "        \"post\": {\n" +
-                "            \"__type\": \"Pointer\",\n" +
-                "            \"className\": \"Stories\",\n" +
-                "            \"objectId\": \"mURbNyX6jL\"\n" +
-                "        },\n" +
-                "        \"updatedAt\": \"2016-02-13T03:55:24.811Z\",\n" +
-                "        \"user\": {\n" +
-                "            \"__type\": \"Pointer\",\n" +
-                "            \"className\": \"_User\",\n" +
-                "            \"objectId\": \"Aq5fysNb0T\"\n" +
-                "        }\n" +
-                "    }\n" +
-                "] }";
+            while ((str = in.readLine()) != null) {
+                stringBuilder.append(str);
+            }
+
+            in.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        storie_comment_json = stringBuilder.toString();
 
 
         try {
             JSONObject jsonObject = new JSONObject(storie_comment_json);
             Log.i("jsonObject", jsonObject.toString());
-            insertStoriesToDatabase(jsonObject);
+           // insertConnections(jsonObject);
+            //           insertStoriesToDatabase(jsonObject);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -692,5 +486,38 @@ public class LoginActivity extends Activity implements OnClickListener {
         }
     }
 
+    public void insertConnections(JSONObject jsonObject) {
 
+        try {
+            JSONArray result_array = jsonObject.getJSONArray("results");
+
+            for (int i=0;i<result_array.length();i++)
+            {
+                JSONObject res = result_array.getJSONObject(i);
+                String createdAt = res.getString("createdAt");
+                JSONObject fromObject = res.getJSONObject("from");
+                String fromID = fromObject.getString("objectId");
+                String objectID = res.getString("objectId");
+                boolean status = res.getBoolean("status");
+                JSONObject toObject = res.getJSONObject("to");
+                String toObjectID = toObject.getString("objectId");
+
+                String updatedAt = res.getString("updatedAt");
+                ConnectionsModel connectionsModel = new ConnectionsModel();
+                connectionsModel.setCreatedAt(createdAt);
+                connectionsModel.setFrom(fromID);
+                connectionsModel.setStatus(status);
+                connectionsModel.setTo(toObjectID);
+                connectionsModel.setObjectId(objectID);
+                connectionsModel.setUpdatedAt(updatedAt);
+
+                FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONNECTIONS).child(objectID).
+                        setValue(connectionsModel);
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
 }
+

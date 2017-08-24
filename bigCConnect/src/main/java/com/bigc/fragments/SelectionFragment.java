@@ -279,8 +279,8 @@ public class SelectionFragment extends Fragment implements View.OnClickListener 
                             Users users = new Users();
                             SimpleDateFormat format = new SimpleDateFormat(DbConstants.DATE_FORMAT);
                             String date = format.format(new Date(System.currentTimeMillis()));
-                            FirebaseUser firebaseUser = firebaseAuth.getInstance().getCurrentUser();
-                            String uid = firebaseUser.getUid();
+//                            FirebaseUser firebaseUser = firebaseAuth.getInstance().getCurrentUser();
+                            String uid = Preferences.getInstance(getActivity()).getString(DbConstants.ID);
                             users.setEmail(((SignupActivity) getActivity()).email);
                             users.setName(((SignupActivity) getActivity()).name);
                             users.setKey(((SignupActivity) getActivity()).password); //save user password

@@ -317,7 +317,7 @@ public class NewsFeedsAdapter extends BaseAdapter {
 
             @Override
             public void onClick(View v) {
-                 onClickLove(user_post, holder.loveCountView);
+                 onClickLove(context.getActivity(),user_post, holder.loveCountView);
               //  Utils.showToast(context.getActivity(), "hey");
             }
         });
@@ -370,15 +370,15 @@ public class NewsFeedsAdapter extends BaseAdapter {
 
     }
 
-    private void onClickLove(Posts post, TextView countView) {
+    private void onClickLove(Context context,Posts post, TextView countView) {
         if (!isClickable)
             return;
 
-        if (!isLiked(post)) {
+        if (!isLiked(context,post)) {
             countView.setText(String.valueOf(post.getLikes() == null ? 1
                     : post.getLikes().size() + 1));
             ArrayList<String> likes = new ArrayList<>();
-            likes.add(FirebaseAuth.getInstance().getCurrentUser().getUid());
+            likes.add(Preferences.getInstance(context.getApplicationContext()).getString(DbConstants.ID));
             post.setLikes(likes);
 
             Log.e("Likes", post.getLikes().size() + "--");
@@ -387,13 +387,13 @@ public class NewsFeedsAdapter extends BaseAdapter {
 
     }
 
-    private boolean isLiked(Posts post) {
+    private boolean isLiked(Context context,Posts post) {
 
         List<String> likes = post.getLikes();
         if (likes == null)
             return false;
         else
-            return likes.contains(FirebaseAuth.getInstance().getCurrentUser().getUid());
+            return likes.contains(Preferences.getInstance(context).getString(DbConstants.ID));
     }
 
     public Date getLastItemDate() {

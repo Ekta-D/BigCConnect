@@ -421,7 +421,7 @@ public class FragmentStoryDetail extends BaseFragment implements
                 GoogleAnalyticsHelper.setClickedAction(getActivity(),
                         "Story 3-Dots Options");
 
-                boolean isOwner = story.getUser().equals(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                boolean isOwner = story.getUser().equals(Preferences.getInstance(getActivity()).getString(DbConstants.ID));
                 Utils.storyQuickActionMenu(FragmentStoryDetail.this, getActivity(),
                         position, story, v, isOwner, DbConstants.Flags.Story);
 //			Utils.showQuickActionMenu(
@@ -498,7 +498,7 @@ public class FragmentStoryDetail extends BaseFragment implements
                 if (!isLiked(story)) {
                     loveCountView.setText(String.valueOf(story.getLikes() == null ? 1 : story.getLikes().size() + 1));
                     ArrayList<String> likes = new ArrayList<>();
-                    likes.add(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                    likes.add(Preferences.getInstance(getActivity()).getString(DbConstants.ID));
                     story.setLikes(likes);
                     PostManager.getInstance().likeStory(likes, story);
                 }
@@ -513,7 +513,7 @@ public class FragmentStoryDetail extends BaseFragment implements
         if (likes == null)
             return false;
         else
-            return likes.contains(FirebaseAuth.getInstance().getCurrentUser().getUid());
+            return likes.contains(Preferences.getInstance(getActivity()).getString(DbConstants.ID));
 
     }
 

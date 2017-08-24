@@ -253,14 +253,14 @@ public class MessageDetailFragment extends BaseFragment implements
                     Messages conversation = new Messages();
                     message_reply.setCreatedAt(Utils.getCurrentDate());
                     message_reply.setMessage(reply);
-                    message_reply.setUser1(FirebaseAuth.getInstance().getCurrentUser().getUid());
-                    message_reply.setSender(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                    message_reply.setUser1(Preferences.getInstance(getActivity()).getString(DbConstants.ID));
+                    message_reply.setSender(Preferences.getInstance(getActivity()).getString(DbConstants.ID));
 
                     String receiver = MessageDetailFragment.conversation.getUser2();
 //                    if (!receiver.equalsIgnoreCase(message_reply.getSender())) {
 //                        message_reply.setUser2(receiver);
 //                    }
-                    if (!receiver.equalsIgnoreCase(FirebaseAuth.getInstance().getCurrentUser().getUid())) {
+                    if (!receiver.equalsIgnoreCase(Preferences.getInstance(getActivity()).getString(DbConstants.ID))) {
                         message_reply.setUser2(MessageDetailFragment.conversation.getUser2());
                     } else {
                         message_reply.setUser2(MessageDetailFragment.conversation.getUser1());

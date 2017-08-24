@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bigc.datastorage.Preferences;
 import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.PostManager;
@@ -207,7 +208,7 @@ public class StoriesAdapter extends ArrayAdapter<Stories> implements StoryPopupO
 //								.equals(ParseUser.getCurrentUser()
 //										.getObjectId())),
 //						DbConstants.Flags.Story);
-                boolean isOwner = story.getUser().equals(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                boolean isOwner = story.getUser().equals(Preferences.getInstance(context.getActivity()).getString(DbConstants.ID));
                 Utils.storyQuickActionMenu(new StoryPopupOptionHandler() {
                                                @Override
                                                public void onDelete(int position, Stories story) {

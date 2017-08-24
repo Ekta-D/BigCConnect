@@ -16,6 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bigc.datastorage.Preferences;
 import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.PostManager;
@@ -202,9 +203,9 @@ public class TributesAdapter extends ArrayAdapter<Tributes> implements PopupOpti
                         null,
                         v,
                         (tribute.getFrom()
-                                .equals(FirebaseAuth.getInstance().getCurrentUser().getUid()) || tribute
+                                .equals(Preferences.getInstance(context.getActivity()).getString(DbConstants.ID)) || tribute
                                 .getTo()
-                                .equals(FirebaseAuth.getInstance().getCurrentUser().getUid())),
+                                .equals(Preferences.getInstance(context.getActivity()).getString(DbConstants.ID))),
                         DbConstants.Flags.Tribute);
 			}
 		});

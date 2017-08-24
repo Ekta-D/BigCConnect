@@ -60,7 +60,7 @@ public class SettingsFragment extends BaseFragment {
                 false);
 
         updated_values = new HashMap<>();
-        current_userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        current_userId = Preferences.getInstance(getActivity()).getString(DbConstants.ID);
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
         nameView = (EditText) view.findViewById(R.id.nameInputView);

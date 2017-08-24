@@ -402,7 +402,7 @@ public class PostDetailFragment extends BaseFragment implements
                     loveCountView.setText(String.valueOf(post
                             .getLikes() == null ? 1 : post.getLikes().size() + 1));
                     ArrayList<String> like = new ArrayList<>();
-                    like.add(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                    like.add(Preferences.getInstance(getActivity()).getString(DbConstants.ID));
                     post.setLikes(like);
                     PostManager.getInstance().likePost(like, post);
                 }
@@ -416,7 +416,7 @@ public class PostDetailFragment extends BaseFragment implements
         if (likes == null)
             return false;
 
-        return likes.contains(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        return likes.contains(Preferences.getInstance(getActivity()).getString(DbConstants.ID));
     }
 
     @Override

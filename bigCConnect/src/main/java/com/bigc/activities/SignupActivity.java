@@ -175,7 +175,7 @@ public class SignupActivity extends FragmentActivity implements
                     String uri = data.getStringExtra("uri");
                     File file = new File(uri);
                     Uri uri1 = Uri.fromFile(file);
-                    Utils.saveObjectId(databaseReference);
+                    Utils.saveObjectId(this,databaseReference);
                     Utils.showProgress(SignupActivity.this);
 
                     PictureResponseHandler(uri1);
@@ -184,7 +184,7 @@ public class SignupActivity extends FragmentActivity implements
                 case Constants.CODE_TAKE_PHOTO_CODE:
 //                    new PictureResponseHandler()
 //                            .execute(Constants.currentCameraIntentURI);
-                    Utils.saveObjectId(databaseReference);
+                    Utils.saveObjectId(this,databaseReference);
                     Utils.showProgress(SignupActivity.this);
                     PictureResponseHandler(Uri.parse(Constants.currentCameraIntentURI));
                     break;
@@ -197,8 +197,8 @@ public class SignupActivity extends FragmentActivity implements
 
     public void PictureResponseHandler(Uri uri) {
         if (uri != null) {
-            FirebaseUser firebaseUser = firebaseAuth.getInstance().getCurrentUser();
-            final String uid = firebaseUser.getUid();
+         //   FirebaseUser firebaseUser = firebaseAuth.getInstance().getCurrentUser();
+            final String uid = Preferences.getInstance(getApplicationContext()).getString(DbConstants.ID);
             StorageReference reference = storageReference.child(uid + ".jpg");
             reference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override

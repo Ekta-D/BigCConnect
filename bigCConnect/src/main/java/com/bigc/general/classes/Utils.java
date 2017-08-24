@@ -146,13 +146,13 @@ public class Utils {
     public static final DisplayImageOptions normalDisplayOptions = new DisplayImageOptions.Builder()
             .cacheInMemory(true).cacheOnDisk(true).build();
 
-    public static boolean isLiked(Object post) {
+    public static boolean isLiked(Context context,Object post) {
 
         List<String> likes = ((Tributes) post).getLikes();
         if (likes == null)
             return false;
 
-        return likes.contains(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        return likes.contains(Preferences.getInstance(context).getString(DbConstants.ID));
     }
 
     public static String getIpAddress() {
@@ -297,12 +297,12 @@ public class Utils {
         return matcher.matches();
     }
 
-    public static void addConnections(List<Users> newConnections) {
+    public static void addConnections(Context context,List<Users> newConnections) {
         Log.e("ParseUser", "Saving Connections: " + newConnections.size());
         if (newConnections == null || newConnections.size() == 0)
             return;
 
-        String currentUid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        String currentUid = Preferences.getInstance(context).getString(DbConstants.ID);
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
         SimpleDateFormat format = new SimpleDateFormat(DbConstants.DATE_FORMAT);
         //List<ConnectionsModel> newConnectionObjects = new ArrayList<>();
@@ -330,12 +330,12 @@ public class Utils {
         //updateConnectionTable(newConnectionObjects);
     }
 
-    private static void updateConnectionTable(List<ConnectionsModel> newConnectionObjects) {
+    private static void updateConnectionTable(Context context,List<ConnectionsModel> newConnectionObjects) {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
         for (ConnectionsModel connectionReq : newConnectionObjects) {
             Map<String, Object> objectMap = new HashMap<>();
-            objectMap.put("objectId", user.getUid());
+            objectMap.put("objectId", Preferences.getInstance(context).getString(DbConstants.ID));
             databaseReference.child(DbConstants.CONNECTIONS).setValue(connectionReq, new DatabaseReference.CompletionListener() {
                 @Override
                 public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
@@ -389,7 +389,7 @@ public class Utils {
 
     }
 
-    public static void removeConnections(
+    public static void removeConnections(Context context,
             final List<Users> removedConnections) {
         Log.e("ParseUser", "Removing : " + removedConnections.size());
         if (removedConnections == null || removedConnections.size() == 0)
@@ -428,7 +428,7 @@ public class Utils {
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
         for (ConnectionsModel connectionReq : removeConnectionObjects) {
             Map<String, Object> objectMap = new HashMap<>();
-            objectMap.put("objectId", user.getUid());
+            objectMap.put("objectId",Preferences.getInstance(context).getString(DbConstants.ID));
             databaseReference.child(DbConstants.CONNECTIONS).setValue(connectionReq, new DatabaseReference.CompletionListener() {
                 @Override
                 public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
@@ -1330,12 +1330,12 @@ public class Utils {
 
     }
 
-    public static void saveObjectId(DatabaseReference databaseReference) {
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    public static void saveObjectId(Context context,DatabaseReference databaseReference) {
+      //  FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
         Map<String, Object> objectMap = new HashMap<>();
-        objectMap.put("objectId", user.getUid());
-        databaseReference.child(DbConstants.USERS).child(user.getUid()).updateChildren(objectMap);
+        objectMap.put("objectId",  Preferences.getInstance(context).getString(DbConstants.ID));
+        databaseReference.child(DbConstants.USERS).child( Preferences.getInstance(context).getString(DbConstants.ID)).updateChildren(objectMap);
     }
 
     public static void sendPasswordToEmail(String email, final Context context, FirebaseAuth firebaseAuth) {

@@ -92,7 +92,7 @@ public class ProfilePicFragment extends Fragment implements
             ((SignupInterface) getActivity())
                     .replaceFragment(RibbonSelectionFragment.newInstance());
         }
-        Utils.saveObjectId(databaseReference);
+        Utils.saveObjectId(getActivity(),databaseReference);
 
 //        if (ParseUser.getCurrentUser().getInt(DbConstants.TYPE) == Constants.USER_TYPE.SUPPORTER
 //                .ordinal()) {

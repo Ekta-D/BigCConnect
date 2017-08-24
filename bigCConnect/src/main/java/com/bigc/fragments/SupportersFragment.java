@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.bigc.activities.SearchActivity;
 import com.bigc.adapters.SearchResultAdapter;
 import com.bigc.datastorage.Preferences;
 import com.bigc.general.classes.Constants;
@@ -22,12 +23,23 @@ import com.bigc.general.classes.UserConnections;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
+import com.bigc.models.Comments;
+import com.bigc.models.ConnectionsModel;
 import com.bigc.models.Users;
 import com.bigc_connect.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import eu.janmuller.android.simplecropimage.Util;
 
@@ -38,7 +50,7 @@ public class SupportersFragment extends BaseFragment {
     private ProgressBar progressView;
     private LinearLayout messageViewParent;
     private TextView messageView;
-    private static boolean supporters;
+    public static boolean supporters;
 
     public SupportersFragment(boolean supporters) {
 
@@ -88,9 +100,65 @@ public class SupportersFragment extends BaseFragment {
             messageView.setText(R.string.loadingSupporting);
 
         //	new loadUserConnectionsTask().execute(ProfileFragment.getUser());
-        loadUserConnectionsTask();
+        //  loadUserConnectionsTask();
+        loadSupporterSupporting();
     }
 
+    public void loadSupporterSupporting() {
+        Query query;
+        if (supporters) {
+            query = FirebaseDatabase.getInstance().getReference().
+                    child(DbConstants.TABLE_CONNECTIONS).orderByChild(DbConstants.TO).
+                    equalTo(Preferences.getInstance(getActivity()).getString(DbConstants.ID));
+        } else {
+            query = FirebaseDatabase.getInstance().getReference().
+                    child(DbConstants.TABLE_CONNECTIONS).orderByChild(DbConstants.FROM).
+                    equalTo(Preferences.getInstance(getActivity()).getString(DbConstants.ID));
+        }
+
+        query.addValueEventListener(valueEventListener);
+    }
+
+
+    ValueEventListener valueEventListener = new ValueEventListener() {
+        @Override
+        public void onDataChange(DataSnapshot dataSnapshot) {
+
+            ArrayList<Users> users = Preferences.getInstance(getActivity()).getAllUsers(DbConstants.FETCH_USER);
+            ArrayList<Users> userses = new ArrayList<>();
+            for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                String key = dataSnapshot1.getKey();
+                ConnectionsModel connectionsModel = dataSnapshot1.getValue(ConnectionsModel.class);
+                String user;
+                if (supporters) {
+                    user = connectionsModel.getFrom();
+                } else {
+                    user = connectionsModel.getTo();
+                }
+
+
+                for (int i = 0; i < users.size(); i++) {
+                    if (users.get(i) != null && users.get(i).getObjectId() != null) {
+                        if (users.get(i).getObjectId().equalsIgnoreCase(user)) {
+                            Users selected_user = users.get(i);
+                            //setValues(selected_user, message, holder);
+
+                            userses.add(selected_user);
+                        }
+                    }
+                }
+
+                showData(userses);
+
+            }
+
+        }
+
+        @Override
+        public void onCancelled(DatabaseError databaseError) {
+
+        }
+    };
 
     public void loadUserConnectionsTask() {
         ArrayList<Users> active = Preferences.getInstance(getActivity()).getLocalConnections().get(0);
@@ -98,7 +166,8 @@ public class SupportersFragment extends BaseFragment {
 //        ArrayList<Users> connections = new ArrayList<>();
 //        connections.addAll(active);
 //        connections.addAll(pending);
-        showData(active, pending);
+
+        showData(active);
         //  Log.i("connections", connections.toString());
 //        String currentUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
 //        boolean isCurrentUser=currentUser.equals(users.getObjectId());
@@ -296,21 +365,22 @@ public class SupportersFragment extends BaseFragment {
     private void showNoDataMessage() {
         try {
             listview.setVisibility(View.GONE);
-            /*if (supporters) {
+
+            if (supporters) {
                 if (ProfileFragment.getUser().getObjectId()
-                        .equals(ParseUser.getCurrentUser().getObjectId()))
+                        .equals(Preferences.getInstance(getActivity()).getString(DbConstants.ID)))
                     messageView.setText(R.string.NoSupporterMessage);
                 else
                     messageView.setText("User currently has no supporters.");
             } else {
                 if (ProfileFragment.getUser().getObjectId()
-                        .equals(ParseUser.getCurrentUser().getObjectId()))
+                        .equals(Preferences.getInstance(getActivity()).getString(DbConstants.ID)))
                     messageView.setText(R.string.NoSupportingMessage);
                 else
                     messageView
                             .setText("User is currently not supporting anyone.");
             }
-*/
+
             messageViewParent.setVisibility(View.VISIBLE);
             progressView.setVisibility(View.GONE);
         } catch (Exception e) {
@@ -318,13 +388,15 @@ public class SupportersFragment extends BaseFragment {
         }
     }
 
-    private void showData(ArrayList<Users> active,
-                          ArrayList<Users> pendingConnections) {
+    private void showData(ArrayList<Users> active
+    ) {
         try {
 
 //            if (adapter != null)
-                adapter = new SearchResultAdapter(getActivity(), null, null,
-                        active);
+
+
+            adapter = new SearchResultAdapter(getActivity(), null, null,
+                    active);
 //            adapter.updateData(null, active,
 //                    pendingConnections);
 //           adapter.updateData(connections,

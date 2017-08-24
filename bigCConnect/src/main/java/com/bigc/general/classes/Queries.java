@@ -259,47 +259,47 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
 //
 //    }
 
-    public static List<Query> getConversationsQuery(
-            boolean fromCache) {
-
-        Query mQuery = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION);
-        Query sentMessagesQuery = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION).
-                orderByChild(DbConstants.USER1).equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
-        Query receivedMessagesQuery = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION).
-                orderByChild(DbConstants.USER2).equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
-
-        List<Query> conversationQueries = new ArrayList<>();
-        conversationQueries.add(mQuery);
-        conversationQueries.add(sentMessagesQuery);
-        conversationQueries.add(receivedMessagesQuery);
-
-        /*ParseQuery<ParseObject> mQuery = new ParseQuery<ParseObject>(
-                DbConstants.TABLE_CONVERSATION);
-
-        ParseQuery<ParseObject> sentMessagesQuery = new ParseQuery<ParseObject>(
-                DbConstants.TABLE_CONVERSATION);
-        sentMessagesQuery.whereEqualTo(DbConstants.USER1,
-                ParseUser.getCurrentUser());
-
-        ParseQuery<ParseObject> recievedMessagesQuery = new ParseQuery<ParseObject>(
-                DbConstants.TABLE_CONVERSATION);
-        recievedMessagesQuery.whereEqualTo(DbConstants.USER2,
-                ParseUser.getCurrentUser());
-
-        List<ParseQuery<ParseObject>> queries = new ArrayList<ParseQuery<ParseObject>>();
-        queries.add(recievedMessagesQuery);
-        queries.add(sentMessagesQuery);
-
-        mQuery = ParseQuery.or(queries);
-
-        mQuery.orderByDescending(DbConstants.UPDATED_AT);
-
-        mQuery.include("User");
-        mQuery.setLimit(1000);
-
-        return mQuery;*/
-        return conversationQueries;
-    }
+//    public static List<Query> getConversationsQuery(
+//            boolean fromCache) {
+//
+//        Query mQuery = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION);
+//        Query sentMessagesQuery = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION).
+//                orderByChild(DbConstants.USER1).equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
+//        Query receivedMessagesQuery = FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONVERSATION).
+//                orderByChild(DbConstants.USER2).equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
+//
+//        List<Query> conversationQueries = new ArrayList<>();
+//        conversationQueries.add(mQuery);
+//        conversationQueries.add(sentMessagesQuery);
+//        conversationQueries.add(receivedMessagesQuery);
+//
+//        /*ParseQuery<ParseObject> mQuery = new ParseQuery<ParseObject>(
+//                DbConstants.TABLE_CONVERSATION);
+//
+//        ParseQuery<ParseObject> sentMessagesQuery = new ParseQuery<ParseObject>(
+//                DbConstants.TABLE_CONVERSATION);
+//        sentMessagesQuery.whereEqualTo(DbConstants.USER1,
+//                ParseUser.getCurrentUser());
+//
+//        ParseQuery<ParseObject> recievedMessagesQuery = new ParseQuery<ParseObject>(
+//                DbConstants.TABLE_CONVERSATION);
+//        recievedMessagesQuery.whereEqualTo(DbConstants.USER2,
+//                ParseUser.getCurrentUser());
+//
+//        List<ParseQuery<ParseObject>> queries = new ArrayList<ParseQuery<ParseObject>>();
+//        queries.add(recievedMessagesQuery);
+//        queries.add(sentMessagesQuery);
+//
+//        mQuery = ParseQuery.or(queries);
+//
+//        mQuery.orderByDescending(DbConstants.UPDATED_AT);
+//
+//        mQuery.include("User");
+//        mQuery.setLimit(1000);
+//
+//        return mQuery;*/
+//        return conversationQueries;
+//    }
 
    /* public static ParseQuery<ParseObject> getTributesQuery() {
         ParseQuery<ParseObject> mQuery = ParseQuery

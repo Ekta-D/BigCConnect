@@ -29,7 +29,9 @@ import com.bigc_connect.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.mopub.nativeads.MoPubAdAdapter;
 import com.mopub.nativeads.MoPubNativeAdPositioning;
@@ -164,8 +166,14 @@ public class PostsFragments extends BaseFragment implements PopupOptionHandler {
     }
 
     private void loadUserData() {
+        String user = Preferences.getInstance(getActivity()).getString(DbConstants.ID);
+
         FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_POST).orderByChild(DbConstants.USER).
-                equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid()).addValueEventListener(postsListener);
+                equalTo(user).addValueEventListener(postsListener);
+
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+        Query query = databaseReference.child(DbConstants.TABLE_POST).orderByChild(DbConstants.USER).
+                equalTo(Preferences.getInstance(getActivity()).getString(DbConstants.ID));
   /*ParseQuery<ParseObject> mQuery = Queries
     .getUserConnectionStatusQuery(ProfileFragment.getUser());
   mQuery.fromPin(Constants.TAG_CONNECTIONS);

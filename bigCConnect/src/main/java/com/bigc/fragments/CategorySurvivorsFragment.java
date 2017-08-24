@@ -45,7 +45,7 @@ import java.util.Map;
 public class CategorySurvivorsFragment extends BaseFragment implements
         OnLoadMoreListener {
 
-    private static int ribbon;
+    public static int ribbon;
     private LoadMoreListView listView;
     private SearchResultPictureAdapter adapter;
     private TextView messageView;

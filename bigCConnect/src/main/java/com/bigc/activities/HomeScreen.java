@@ -287,7 +287,7 @@ public class HomeScreen extends AppCompatActivity implements
         if (currentFragment != null
                 && selectedTabID.equals(currentFragment.getName())) {
             if (Constants.FRAGMENT_PROFILE.equals(selectedTabID)
-                    && !FirebaseAuth.getInstance().getCurrentUser().getUid()
+                    && !Preferences.getInstance(getApplicationContext()).getString(DbConstants.ID)
                     .equals(ProfileFragment.getUser().getObjectId()))
                 showUserProfile();
 

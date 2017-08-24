@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 
+import com.bigc.datastorage.Preferences;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
 import com.bigc.general.classes.Utils;
@@ -67,7 +68,7 @@ public class Splash extends Activity {
     }
 
     private void startApplication() {
-        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+        if (Preferences.getInstance(getApplicationContext()).getString(DbConstants.ID) == null) {
 
             //Utils.unregisterDeviceForNotifications();
             startActivity(new Intent(Splash.this, LoginActivity.class));
@@ -94,7 +95,7 @@ public class Splash extends Activity {
         // TODO: Implement this method to send token to your app server.
         HashMap<String, Object> map = new HashMap();
         map.put(DbConstants.TOKEN, token);
-        FirebaseDatabase.getInstance().getReference().child(DbConstants.USERS).child(FirebaseAuth.getInstance().getCurrentUser().getUid()).updateChildren(map, new DatabaseReference.CompletionListener() {
+        FirebaseDatabase.getInstance().getReference().child(DbConstants.USERS).child(Preferences.getInstance(getApplicationContext()).getString(DbConstants.ID)).updateChildren(map, new DatabaseReference.CompletionListener() {
             @Override
             public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
                 Log.d("", "Refreshed token saved");

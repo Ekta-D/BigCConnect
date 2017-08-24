@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.bigc.activities.LoginActivity;
 import com.bigc.adapters.SearchResultPictureAdapter.SurvivorSearchViewHolder;
 import com.bigc.datastorage.Preferences;
+import com.bigc.fragments.SupportersFragment;
 import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.Utils;
@@ -58,6 +59,7 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
         final SurvivorSearchViewHolder holder;
         final Users user = data.get(position);
 
+
         if (view == null) {
             view = inflater.inflate(R.layout.listitem_search_result, parent,
                     false);
@@ -74,7 +76,7 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
 
         holder.indexInNewAddedConnections = Utils.getUserIndex(user,
                 newAddedConnections);
-        if (activeConnections .size()>0) {
+        if (activeConnections.size() > 0) {
             holder.indexInActiveConnections = Utils.getUserIndex(user,
                     activeConnections);
         } else {
@@ -130,10 +132,11 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
             // holder.ribbonView.setImageResource(R.drawable.ic_launcher);
         }
 
-        // TODO: 7/24/2017 check this
+
         if (/*(isSupporterUser && supporter)
-                    || */FirebaseAuth.getInstance().getCurrentUser().getUid()
-                .equals(user.getObjectId())) {
+                    ||  now commented by Ekta   FirebaseAuth.getInstance().getCurrentUser().getUid()*/
+                Preferences.getInstance(getContext()).getString(DbConstants.ID)
+                        .equals(user.getObjectId())) {
             holder.addOption.setVisibility(View.GONE);
         } else {
             holder.addOption.setVisibility(View.VISIBLE);
@@ -180,7 +183,7 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
                     if (v.getContentDescription().toString()
                             .equals(TAG_NOT_CONNECTED)) {
                         // Completed: 7/17/2017 Send add connection request
-                        checkAddConnectionRequest(user, FirebaseAuth.getInstance().getCurrentUser().getUid());
+                        checkAddConnectionRequest(user, Preferences.getInstance(getContext().getApplicationContext()).getString(DbConstants.ID));
 
                         if (holder.indexInRemovedConnections < 0) {
                             newAddedConnections.add(user);
