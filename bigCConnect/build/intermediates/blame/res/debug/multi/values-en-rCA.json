@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rCA\\values-en-rCA.xml",
+        "outputFile": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rCA\\values-en-rCA.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 154
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\09c4ba735b68bbf66a1d45ac602667fbfb6182a9\\output\\res\\values-en-rCA\\values.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\8eda1280e1e995bab7a89b6758b0ec62430e7f97\\output\\res\\values-en-rCA\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

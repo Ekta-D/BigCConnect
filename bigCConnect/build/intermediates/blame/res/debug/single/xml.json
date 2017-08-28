@@ -1,10 +1,14 @@
 [
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\xml\\provider_paths.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\xml\\provider_paths.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\xml\\provider_paths.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\xml\\provider_paths.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\xml\\searchable.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\xml\\searchable.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\xml\\searchable.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\xml\\searchable.xml"
+    },
+    {
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\xml\\my_backup_rules.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\xml\\my_backup_rules.xml"
     }
 ]

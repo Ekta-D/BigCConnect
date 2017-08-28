@@ -1,26 +1,26 @@
 [
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\common_google_signin_btn_text_light.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\drawable\\common_google_signin_btn_text_light.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\common_google_signin_btn_icon_dark.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\\output\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\common_google_signin_btn_icon_light.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\drawable\\common_google_signin_btn_icon_light.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\list_item_font_primary.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\list_item_font_primary.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\list_item_font_primary.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\list_item_font_primary.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\common_google_signin_btn_text_dark.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\\output\\res\\drawable\\common_google_signin_btn_text_dark.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\common_google_signin_btn_icon_dark.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\list_item_font_secondary.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\list_item_font_secondary.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\list_item_font_secondary.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\list_item_font_secondary.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\common_google_signin_btn_icon_light.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\\output\\res\\drawable\\common_google_signin_btn_icon_light.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\common_google_signin_btn_text_dark.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\drawable\\common_google_signin_btn_text_dark.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\common_google_signin_btn_text_light.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\\output\\res\\drawable\\common_google_signin_btn_text_light.xml"
     }
 ]

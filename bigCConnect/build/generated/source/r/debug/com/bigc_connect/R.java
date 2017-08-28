@@ -5035,8 +5035,9 @@ containing a value of this type.
         public static final int dlg_priority=0x7f0a018c;
     }
     public static final class xml {
-        public static final int provider_paths=0x7f060000;
-        public static final int searchable=0x7f060001;
+        public static final int my_backup_rules=0x7f060000;
+        public static final int provider_paths=0x7f060001;
+        public static final int searchable=0x7f060002;
     }
     public static final class styleable {
         /** Attributes that can be used with a ActionBar.

@@ -1,726 +1,715 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:2:1-225:12
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:2:1-228:12
 	package
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:3:5-31
-		INJECTED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml
-		INJECTED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:4:5-31
+		INJECTED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml
+		INJECTED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml
 	android:versionName
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:5:5-30
-		INJECTED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml
-		INJECTED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:6:5-30
+		INJECTED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml
+		INJECTED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:4:5-29
-		INJECTED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml
-		INJECTED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:5:5-29
+		INJECTED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml
+		INJECTED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:2:11-69
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:2:11-69
 uses-sdk
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:7:5-9:41
-MERGED from [BigCConnect:loadMoreListView:unspecified] D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\loadMoreListView\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
-MERGED from [BigCConnect:gmailChipsLibrary:unspecified] D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\gmailChipsLibrary\build\intermediates\bundles\default\AndroidManifest.xml:6:5-8:41
-MERGED from [com.mopub:mopub-sdk-native-static:4.10.0] C:\Users\beesolver\.android\build-cache\71f41f52c206d3e30396689b5f5aa9cf412f0b4f\output\AndroidManifest.xml:7:5-9:41
-MERGED from [com.mopub:mopub-sdk-base:4.10.0] C:\Users\beesolver\.android\build-cache\3284fff0e135155c86e1b70d89a3a4756e48f9d2\output\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:recyclerview-v7:23.1.1] C:\Users\beesolver\.android\build-cache\bfd150b95514e7272eccc685342131a9740a2507\output\AndroidManifest.xml:20:5-43
-MERGED from [com.github.JakeWharton:ViewPagerIndicator:2.4.1] C:\Users\beesolver\.android\build-cache\910f88eedd2db1db6a911c58e768f3fc95aec1bc\output\AndroidManifest.xml:7:5-9:41
-MERGED from [com.google.firebase:firebase-core:9.6.0] C:\Users\beesolver\.android\build-cache\9b9a1345101a3639677e5ceb4eeef3acdbfb616e\output\AndroidManifest.xml:4:5-42
-MERGED from [com.google.android.gms:play-services:9.6.0] C:\Users\beesolver\.android\build-cache\824c4ce5888acce4edd3be9cd01f1d3b224fb22c\output\AndroidManifest.xml:4:5-42
-MERGED from [com.google.android.gms:play-services-ads:9.6.0] C:\Users\beesolver\.android\build-cache\85b0a629f666c64c2f7bc3f58f464fcf7b0eb9f6\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.android.gms:play-services-ads-lite:9.6.0] C:\Users\beesolver\.android\build-cache\0a456a85610eccfda2dcc2604f7f0afa5f0918e5\output\AndroidManifest.xml:22:5-42
-MERGED from [com.google.android.gms:play-services-analytics:9.6.0] C:\Users\beesolver\.android\build-cache\a7284f852b1c95b362cc9e34af79e429360f397a\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.android.gms:play-services-appinvite:9.6.0] C:\Users\beesolver\.android\build-cache\f955930d696d6e7e35c3b4e2a72f217c3aaf6fc4\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\beesolver\.android\build-cache\e5c36fc4796bf50feb79eedb5a5c1d59bb037020\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.android.gms:play-services-auth-base:9.6.0] C:\Users\beesolver\.android\build-cache\c82f20944ee137fcf9d272d370dc28de1c663a4e\output\AndroidManifest.xml:4:5-42
-MERGED from [com.google.android.gms:play-services-cast-framework:9.6.0] C:\Users\beesolver\.android\build-cache\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\output\AndroidManifest.xml:3:5-42
-MERGED from [com.google.android.gms:play-services-cast:9.6.0] C:\Users\beesolver\.android\build-cache\ec5b149a6945ad70caba15951ced18ce06fd5482\output\AndroidManifest.xml:17:5-42
-MERGED from [com.android.support:mediarouter-v7:24.0.0] C:\Users\beesolver\.android\build-cache\7ec456b531d2e87f743b4e26a300471e5b078c52\output\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:palette-v7:24.0.0] C:\Users\beesolver\.android\build-cache\976277a7d97fdf5b5e38734195cf48c9b8e562b3\output\AndroidManifest.xml:20:5-43
-MERGED from [com.google.android.gms:play-services-clearcut:9.6.0] C:\Users\beesolver\.android\build-cache\098ee47a89346d52eec3f48c8e6a30272735feec\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.firebase:firebase-config:9.6.0] C:\Users\beesolver\.android\build-cache\764c87a1485ee575a6281775385d215341e14152\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.android.gms:play-services-awareness:9.6.0] C:\Users\beesolver\.android\build-cache\09c6e1f61e69aa57b45da2f8fb916d447ec23646\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.firebase:firebase-crash:9.6.0] C:\Users\beesolver\.android\build-cache\dbc9e5abca133feb07a981da582d1a45ccc5def5\output\AndroidManifest.xml:20:5-42
-MERGED from [com.google.firebase:firebase-auth:9.6.0] C:\Users\beesolver\.android\build-cache\5432b26b5b98348bdbe0beaf534917795fe88271\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.firebase:firebase-auth-common:9.6.0] C:\Users\beesolver\.android\build-cache\e003c2db85864e0bc12fe8bc936bfa1f1807e02f\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.firebase:firebase-auth-module:9.6.0] C:\Users\beesolver\.android\build-cache\d4881e0110b686b8b0d54d85f6621a42ae053c03\output\AndroidManifest.xml:3:5-42
-MERGED from [com.google.firebase:firebase-database:9.6.0] C:\Users\beesolver\.android\build-cache\dabda81be331e42a509b7a020d1d806eeb62229e\output\AndroidManifest.xml:3:5-42
-MERGED from [com.google.firebase:firebase-database-connection:9.6.0] C:\Users\beesolver\.android\build-cache\26a7ed38e37e82c9b31733809fd46193c1098679\output\AndroidManifest.xml:3:5-42
-MERGED from [com.google.firebase:firebase-messaging:9.6.0] C:\Users\beesolver\.android\build-cache\19363b277ca94faa34f0b3aa8ace46dd8e81bd2a\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.firebase:firebase-storage:9.6.0] C:\Users\beesolver\.android\build-cache\9d54eb373531bbfa2f98ee9fd980807ccdaafa27\output\AndroidManifest.xml:3:5-42
-MERGED from [com.google.firebase:firebase-storage-common:9.6.0] C:\Users\beesolver\.android\build-cache\b0105a4a14c96e8887b912c35910aca2b1d7d7d0\output\AndroidManifest.xml:3:5-42
-MERGED from [com.google.android.gms:play-services-fitness:9.6.0] C:\Users\beesolver\.android\build-cache\0b76b44bafc43b67310c76795ffaebcf9addb48f\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.android.gms:play-services-games:9.6.0] C:\Users\beesolver\.android\build-cache\2249eeca0638d9769db037eff8f48fc42504595b\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.android.gms:play-services-drive:9.6.0] C:\Users\beesolver\.android\build-cache\6bcb7d50893311341aa257884a6a40d2bce4a73b\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.android.gms:play-services-gcm:9.6.0] C:\Users\beesolver\.android\build-cache\f6d2657da8599d9a4069af10b8ce9709e6de2568\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.android.gms:play-services-appindexing:9.6.0] C:\Users\beesolver\.android\build-cache\7664d7d3073d749fe0b2320dc6530264c5897dc6\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.android.gms:play-services-iid:9.6.0] C:\Users\beesolver\.android\build-cache\61e21af0d776a5310a5138ea83757818e3443184\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.android.gms:play-services-instantapps:9.6.0] C:\Users\beesolver\.android\build-cache\1e020b66c68dbe090de8e96315cd44e74000ae3f\output\AndroidManifest.xml:3:5-42
-MERGED from [com.google.android.gms:play-services-nearby:9.6.0] C:\Users\beesolver\.android\build-cache\bca5710cde0a4d7945ebc3069ab6287a9ea95bd4\output\AndroidManifest.xml:3:5-42
-MERGED from [com.google.android.gms:play-services-panorama:9.6.0] C:\Users\beesolver\.android\build-cache\56a2d226762c30955e7a9da6736cf54786bd77f1\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.android.gms:play-services-plus:9.6.0] C:\Users\beesolver\.android\build-cache\4043e53d2d02cd617ba4d303de955a8d5c8bb200\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.android.gms:play-services-safetynet:9.6.0] C:\Users\beesolver\.android\build-cache\62cf6b30021b9ce16087e64e54840078cb2926ab\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.android.gms:play-services-tagmanager:9.6.0] C:\Users\beesolver\.android\build-cache\db4e6de2c9e4cf045b0286f94931060c23979519\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.android.gms:play-services-analytics-impl:9.6.0] C:\Users\beesolver\.android\build-cache\a0e4a29da75b422b406ae17bf170df125e33e2a1\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\beesolver\.android\build-cache\6aa2b27e8ca42faddf28cb1d5b034216dc4c2356\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\beesolver\.android\build-cache\507fb61899aafe67634ccca8c8227ec0a8ffa086\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.firebase:firebase-analytics-impl:9.6.0] C:\Users\beesolver\.android\build-cache\86356dbef6f3b6e27375f26458f48f932af83bec\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\beesolver\.android\build-cache\e267732c6bbda79d2c40ade94d90cff892f3711e\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.firebase:firebase-common:9.6.0] C:\Users\beesolver\.android\build-cache\cfb6a0c8c61c73818f459fa7aa8aef91739f601f\output\AndroidManifest.xml:3:5-42
-MERGED from [com.google.android.gms:play-services-vision:9.6.0] C:\Users\beesolver\.android\build-cache\0646fb8fffc84a1f12c273beac418d8e8cbf7c56\output\AndroidManifest.xml:3:5-42
-MERGED from [com.google.android.gms:play-services-wallet:9.6.0] C:\Users\beesolver\.android\build-cache\09c4ba735b68bbf66a1d45ac602667fbfb6182a9\output\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-identity:9.6.0] C:\Users\beesolver\.android\build-cache\ec26eb9d8a6e0026f3a69e6b1ab462320086addd\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.android.gms:play-services-wearable:9.6.0] C:\Users\beesolver\.android\build-cache\b4c1715c011eed97969925688a48f135083e7680\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.android.gms:play-services-places:9.6.0] C:\Users\beesolver\.android\build-cache\6c02cd301da124e1f85c11bfc21066452ea151d9\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.android.gms:play-services-maps:9.6.0] C:\Users\beesolver\.android\build-cache\0416a8a7a01da4a48e3f74ebaf3fc0134bd2e9f4\output\AndroidManifest.xml:23:5-42
-MERGED from [com.google.android.gms:play-services-base:9.6.0] C:\Users\beesolver\.android\build-cache\39cac0cd3945e4bd584590e81e6f05add07ec1e5\output\AndroidManifest.xml:17:5-42
-MERGED from [com.google.android.gms:play-services-tasks:9.6.0] C:\Users\beesolver\.android\build-cache\7217ef36340ac774840244561358fd470e1dc176\output\AndroidManifest.xml:3:5-42
-MERGED from [com.google.android.gms:play-services-basement:9.6.0] C:\Users\beesolver\.android\build-cache\3be25977ec9a26fef414bab0c26302f8424c0f35\output\AndroidManifest.xml:17:5-42
-MERGED from [com.android.support:appcompat-v7:25.0.0] C:\Users\beesolver\.android\build-cache\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\output\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:support-v4:25.0.0] C:\Users\beesolver\.android\build-cache\ee0eac4d8d26742d16cfd26b5a7b7f7fd23bca8f\output\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:25.0.0] C:\Users\beesolver\.android\build-cache\f5e4d27e65f0cbe92720ab10bfcd0af8c80fc2de\output\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:25.0.0] C:\Users\beesolver\.android\build-cache\3a06da5843552602d38b4eacf349c880f9303cca\output\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-ui:25.0.0] C:\Users\beesolver\.android\build-cache\ac43e7275c03bcff51e64e1ee6b80717d75fc09a\output\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:25.0.0] C:\Users\beesolver\.android\build-cache\afd25d6ae79914167bf2bf17302984f7655e6c2a\output\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:animated-vector-drawable:25.0.0] C:\Users\beesolver\.android\build-cache\6519a05215fef39ce479153d51a981830d597bc0\output\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.0.0] C:\Users\beesolver\.android\build-cache\e9b8b66ef18ccd594b82a176fab329a074325a08\output\AndroidManifest.xml:21:5-43
-MERGED from [com.android.support:support-compat:25.0.0] C:\Users\beesolver\.android\build-cache\0dd02f42f76409fc26ba020dbce8299941fa25fe\output\AndroidManifest.xml:21:5-23:58
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support:multidex:1.0.1] C:\Users\Beesolver\.android\build-cache\0c9fd80da1398be629dcf674d2838161349094f8\output\AndroidManifest.xml:18:5-42
+MERGED from [BigCConnect:loadMoreListView:unspecified] D:\GITBigC\BigCConnect\loadMoreListView\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [BigCConnect:gmailChipsLibrary:unspecified] D:\GITBigC\BigCConnect\gmailChipsLibrary\build\intermediates\bundles\default\AndroidManifest.xml:6:5-8:41
+MERGED from [com.mopub:mopub-sdk-native-static:4.10.0] C:\Users\Beesolver\.android\build-cache\fe903e31a07e232edb2638386b80298fd684f2ab\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.mopub:mopub-sdk-base:4.10.0] C:\Users\Beesolver\.android\build-cache\e1f6d34b6fb5ea40fb11685999c61983549904df\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:recyclerview-v7:23.1.1] C:\Users\Beesolver\.android\build-cache\d0da8f79508a5c7593b67bacc231759f367317e5\output\AndroidManifest.xml:20:5-43
+MERGED from [com.github.JakeWharton:ViewPagerIndicator:2.4.1] C:\Users\Beesolver\.android\build-cache\89634ebb90e9721cd30250a48bf5a4272d349c2c\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:firebase-core:9.6.0] C:\Users\Beesolver\.android\build-cache\8fa0870ea0f280a06c25577834f821e88edc7cde\output\AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services:9.6.0] C:\Users\Beesolver\.android\build-cache\eb5050b76f9d0cf5acefd656aab91d82f4423a19\output\AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-ads:9.6.0] C:\Users\Beesolver\.android\build-cache\f653d20a5396c32a3331a5d2aa70b30cb8cfa7e2\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-ads-lite:9.6.0] C:\Users\Beesolver\.android\build-cache\f5a92680ada294c96051980a03f188795f32e4e2\output\AndroidManifest.xml:22:5-42
+MERGED from [com.google.android.gms:play-services-analytics:9.6.0] C:\Users\Beesolver\.android\build-cache\f346894594c1acbf5a8bccf8a02b52d61054c91a\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-appinvite:9.6.0] C:\Users\Beesolver\.android\build-cache\6472705f0a5c439c9e70180478f1d53aa3ac96ee\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\Beesolver\.android\build-cache\77e1e92d713dc46417555482c2738828d39e37a3\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-auth-base:9.6.0] C:\Users\Beesolver\.android\build-cache\4d078cec5692afcf13f54f7ce3f1dd7265a2948a\output\AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-cast-framework:9.6.0] C:\Users\Beesolver\.android\build-cache\8879f853ff549e3fc89e503b0eb14f089c65781e\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-cast:9.6.0] C:\Users\Beesolver\.android\build-cache\c89cae1c66175814b000d3bffaae356acb8e94ca\output\AndroidManifest.xml:17:5-42
+MERGED from [com.android.support:mediarouter-v7:24.0.0] C:\Users\Beesolver\.android\build-cache\86bcb881e5c30bf7ce1e823ca8ce534a3c01b138\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:palette-v7:24.0.0] C:\Users\Beesolver\.android\build-cache\5a74bd9e7259274b27e365ac1bb00b85e3319376\output\AndroidManifest.xml:20:5-43
+MERGED from [com.google.android.gms:play-services-clearcut:9.6.0] C:\Users\Beesolver\.android\build-cache\e1cb9a7ff3020441b60be2e4d519bd082df84ca1\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-config:9.6.0] C:\Users\Beesolver\.android\build-cache\94d905728d47b23154d19d059a61892c3975e785\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-awareness:9.6.0] C:\Users\Beesolver\.android\build-cache\9b0a9aec31b4e42d97329426d75546b4217a45d4\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-crash:9.6.0] C:\Users\Beesolver\.android\build-cache\a6011186bf1fa2f6f53fe3382c2124e73debae25\output\AndroidManifest.xml:20:5-42
+MERGED from [com.google.firebase:firebase-auth:9.6.0] C:\Users\Beesolver\.android\build-cache\dfa53ed4fd3f62cc30ffc9e8cc325bf4bc4b68bc\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-auth-common:9.6.0] C:\Users\Beesolver\.android\build-cache\30478ff079899eb07f6e05f9eecfab03df8f3fc1\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-auth-module:9.6.0] C:\Users\Beesolver\.android\build-cache\9d19ef0e25093f4d959c52589ec08908cdc34fa1\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-database:9.6.0] C:\Users\Beesolver\.android\build-cache\27bab02d7b57987f7e7475b6524c584573bef29e\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-database-connection:9.6.0] C:\Users\Beesolver\.android\build-cache\7ff24fc327c6e6fdd4eec0fb9e54399f6d27ef20\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-messaging:9.6.0] C:\Users\Beesolver\.android\build-cache\f4c2dde147ee8b3759f58a9b77dd40431d840776\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-storage:9.6.0] C:\Users\Beesolver\.android\build-cache\ef619bf1ed0dc443aad5e39ddf0f843712a8bea1\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-storage-common:9.6.0] C:\Users\Beesolver\.android\build-cache\144754437e44e05c680b99699d09d42aafd62a6f\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-fitness:9.6.0] C:\Users\Beesolver\.android\build-cache\27b678349322d0c6b5071d8a43d17b3560dd16c1\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-games:9.6.0] C:\Users\Beesolver\.android\build-cache\719becc774683e5265b06f8f9c1dadf7957cc5ac\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-drive:9.6.0] C:\Users\Beesolver\.android\build-cache\b21b3a1830684ad0693d57c89107cbe70365cf68\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-gcm:9.6.0] C:\Users\Beesolver\.android\build-cache\e365d3866a2c0bc72d5387031bebb0124063ac36\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-appindexing:9.6.0] C:\Users\Beesolver\.android\build-cache\3dba305b6bc9dedba673105dcfa3c564fab52c9d\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\05dd07747fdafdd30eec3280806ac4323adfbeb8\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-instantapps:9.6.0] C:\Users\Beesolver\.android\build-cache\54bf1cd9825239480282306c48bf0a025eb880be\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-nearby:9.6.0] C:\Users\Beesolver\.android\build-cache\419ca0ae86a1fa96b4dcd6bd33585479a6b9d828\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-panorama:9.6.0] C:\Users\Beesolver\.android\build-cache\ee20bb3add62496c774b7c3f8bcabc892cfc4052\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-plus:9.6.0] C:\Users\Beesolver\.android\build-cache\4f9d5c52d75e52697908142cd55271e24484e69c\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-safetynet:9.6.0] C:\Users\Beesolver\.android\build-cache\ffe20b905df1833139a57485c62d2747796ca4d1\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-tagmanager:9.6.0] C:\Users\Beesolver\.android\build-cache\91b9fb43e94a83ba20fb039adb7f08df0321f0ba\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.6.0] C:\Users\Beesolver\.android\build-cache\0938ae17cfba1e5b4195f30b1c3a44041a8dfab2\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\Beesolver\.android\build-cache\6fcd87877ab9eb41da4d862de94274c673f230a8\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Beesolver\.android\build-cache\6f172eda68d4f0aeba44fcc289e5bff1c7bc7194\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-analytics-impl:9.6.0] C:\Users\Beesolver\.android\build-cache\0e91c83282670542a16361c894c80224221cab6d\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\5c2d316b9634a51c006d795ec82cb8c0105810c3\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-common:9.6.0] C:\Users\Beesolver\.android\build-cache\0d20a2b1f46e5aac4b6baf39b412f40a5177b853\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-vision:9.6.0] C:\Users\Beesolver\.android\build-cache\9a61709ec27fa218524eb4a1c0c3bfba38ade698\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-wallet:9.6.0] C:\Users\Beesolver\.android\build-cache\8eda1280e1e995bab7a89b6758b0ec62430e7f97\output\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-identity:9.6.0] C:\Users\Beesolver\.android\build-cache\79f0803fa95531d0e2ed65b85e2ad4ec49d2d460\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-wearable:9.6.0] C:\Users\Beesolver\.android\build-cache\f6d4b73e099841a006c97381f3f26061331f2ef7\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-places:9.6.0] C:\Users\Beesolver\.android\build-cache\ecb9d55f018ba9b36a56d630a11a32deb0141440\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-maps:9.6.0] C:\Users\Beesolver\.android\build-cache\af68822b14bbb5c8e695497d72d7e26570a8cfa5\output\AndroidManifest.xml:23:5-42
+MERGED from [com.google.android.gms:play-services-base:9.6.0] C:\Users\Beesolver\.android\build-cache\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-tasks:9.6.0] C:\Users\Beesolver\.android\build-cache\b23a09b558823b72d290d36215ac6b2f220402bd\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-basement:9.6.0] C:\Users\Beesolver\.android\build-cache\1275dd441bbda749340d62f5017a04709d1004d4\output\AndroidManifest.xml:17:5-42
+MERGED from [com.android.support:appcompat-v7:25.0.0] C:\Users\Beesolver\.android\build-cache\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:25.0.0] C:\Users\Beesolver\.android\build-cache\5844208f96e7093078ef1a6a64ab49341d13b7a1\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.0.0] C:\Users\Beesolver\.android\build-cache\1a19374c6335783515bc05ddc5c668ada61c8fa3\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.0.0] C:\Users\Beesolver\.android\build-cache\10e74d4009d197846dfea9f17ce73bfab9eea4b4\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.0.0] C:\Users\Beesolver\.android\build-cache\a7e32dd4f8707c3db8c662ba3fa106cf64ba58af\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.0.0] C:\Users\Beesolver\.android\build-cache\03a98b44fc7e3c84afa96005cae2f5ece48f0408\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:25.0.0] C:\Users\Beesolver\.android\build-cache\a97405184cfb85469be025cbdab1eaba0c427d6b\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.0.0] C:\Users\Beesolver\.android\build-cache\7ab3b10d86288b0984530cd0d8d78018815a0a5d\output\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-compat:25.0.0] C:\Users\Beesolver\.android\build-cache\cffe41456709c934f3c35161315f52343fcbcdf1\output\AndroidManifest.xml:21:5-23:58
 	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:25.0.0] C:\Users\beesolver\.android\build-cache\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\output\AndroidManifest.xml:23:9-75
+		ADDED from [com.android.support:appcompat-v7:25.0.0] C:\Users\Beesolver\.android\build-cache\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\output\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:9:9-38
-		INJECTED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml
-		INJECTED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:10:9-38
+		INJECTED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml
+		INJECTED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:8:9-35
-		INJECTED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml
-		INJECTED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:9:9-35
+		INJECTED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml
+		INJECTED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml
 uses-permission#com.android.vending.BILLING
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:12:5-67
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:13:5-67
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:12:22-64
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:13:22-64
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:13:5-81
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:14:5-81
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:13:22-78
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:14:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:14:5-79
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:15:5-79
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:14:22-76
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:15:22-76
 uses-permission#android.permission.INTERNET
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:15:5-67
-MERGED from [com.google.android.gms:play-services-ads-lite:9.6.0] C:\Users\beesolver\.android\build-cache\0a456a85610eccfda2dcc2604f7f0afa5f0918e5\output\AndroidManifest.xml:19:5-66
-MERGED from [com.google.android.gms:play-services-analytics:9.6.0] C:\Users\beesolver\.android\build-cache\a7284f852b1c95b362cc9e34af79e429360f397a\output\AndroidManifest.xml:20:5-66
-MERGED from [com.google.android.gms:play-services-appinvite:9.6.0] C:\Users\beesolver\.android\build-cache\f955930d696d6e7e35c3b4e2a72f217c3aaf6fc4\output\AndroidManifest.xml:18:5-66
-MERGED from [com.google.firebase:firebase-crash:9.6.0] C:\Users\beesolver\.android\build-cache\dbc9e5abca133feb07a981da582d1a45ccc5def5\output\AndroidManifest.xml:18:5-66
-MERGED from [com.google.android.gms:play-services-gcm:9.6.0] C:\Users\beesolver\.android\build-cache\f6d2657da8599d9a4069af10b8ce9709e6de2568\output\AndroidManifest.xml:21:5-66
-MERGED from [com.google.android.gms:play-services-iid:9.6.0] C:\Users\beesolver\.android\build-cache\61e21af0d776a5310a5138ea83757818e3443184\output\AndroidManifest.xml:21:5-66
-MERGED from [com.google.android.gms:play-services-analytics-impl:9.6.0] C:\Users\beesolver\.android\build-cache\a0e4a29da75b422b406ae17bf170df125e33e2a1\output\AndroidManifest.xml:20:5-66
-MERGED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\beesolver\.android\build-cache\6aa2b27e8ca42faddf28cb1d5b034216dc4c2356\output\AndroidManifest.xml:20:5-66
-MERGED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\beesolver\.android\build-cache\507fb61899aafe67634ccca8c8227ec0a8ffa086\output\AndroidManifest.xml:20:5-66
-MERGED from [com.google.firebase:firebase-analytics-impl:9.6.0] C:\Users\beesolver\.android\build-cache\86356dbef6f3b6e27375f26458f48f932af83bec\output\AndroidManifest.xml:20:5-66
-MERGED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\beesolver\.android\build-cache\e267732c6bbda79d2c40ade94d90cff892f3711e\output\AndroidManifest.xml:20:5-66
-MERGED from [com.google.android.gms:play-services-maps:9.6.0] C:\Users\beesolver\.android\build-cache\0416a8a7a01da4a48e3f74ebaf3fc0134bd2e9f4\output\AndroidManifest.xml:20:5-66
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:16:5-67
+MERGED from [com.google.android.gms:play-services-ads-lite:9.6.0] C:\Users\Beesolver\.android\build-cache\f5a92680ada294c96051980a03f188795f32e4e2\output\AndroidManifest.xml:19:5-66
+MERGED from [com.google.android.gms:play-services-analytics:9.6.0] C:\Users\Beesolver\.android\build-cache\f346894594c1acbf5a8bccf8a02b52d61054c91a\output\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-appinvite:9.6.0] C:\Users\Beesolver\.android\build-cache\6472705f0a5c439c9e70180478f1d53aa3ac96ee\output\AndroidManifest.xml:18:5-66
+MERGED from [com.google.firebase:firebase-crash:9.6.0] C:\Users\Beesolver\.android\build-cache\a6011186bf1fa2f6f53fe3382c2124e73debae25\output\AndroidManifest.xml:18:5-66
+MERGED from [com.google.android.gms:play-services-gcm:9.6.0] C:\Users\Beesolver\.android\build-cache\e365d3866a2c0bc72d5387031bebb0124063ac36\output\AndroidManifest.xml:21:5-66
+MERGED from [com.google.android.gms:play-services-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\05dd07747fdafdd30eec3280806ac4323adfbeb8\output\AndroidManifest.xml:21:5-66
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.6.0] C:\Users\Beesolver\.android\build-cache\0938ae17cfba1e5b4195f30b1c3a44041a8dfab2\output\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\Beesolver\.android\build-cache\6fcd87877ab9eb41da4d862de94274c673f230a8\output\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Beesolver\.android\build-cache\6f172eda68d4f0aeba44fcc289e5bff1c7bc7194\output\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics-impl:9.6.0] C:\Users\Beesolver\.android\build-cache\0e91c83282670542a16361c894c80224221cab6d\output\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\5c2d316b9634a51c006d795ec82cb8c0105810c3\output\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-maps:9.6.0] C:\Users\Beesolver\.android\build-cache\af68822b14bbb5c8e695497d72d7e26570a8cfa5\output\AndroidManifest.xml:20:5-66
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:15:22-64
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:16:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:16:5-79
-MERGED from [com.google.android.gms:play-services-ads-lite:9.6.0] C:\Users\beesolver\.android\build-cache\0a456a85610eccfda2dcc2604f7f0afa5f0918e5\output\AndroidManifest.xml:20:5-78
-MERGED from [com.google.android.gms:play-services-analytics:9.6.0] C:\Users\beesolver\.android\build-cache\a7284f852b1c95b362cc9e34af79e429360f397a\output\AndroidManifest.xml:21:5-78
-MERGED from [com.google.android.gms:play-services-nearby:9.6.0] C:\Users\beesolver\.android\build-cache\bca5710cde0a4d7945ebc3069ab6287a9ea95bd4\output\AndroidManifest.xml:4:5-78
-MERGED from [com.google.android.gms:play-services-analytics-impl:9.6.0] C:\Users\beesolver\.android\build-cache\a0e4a29da75b422b406ae17bf170df125e33e2a1\output\AndroidManifest.xml:21:5-78
-MERGED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\beesolver\.android\build-cache\6aa2b27e8ca42faddf28cb1d5b034216dc4c2356\output\AndroidManifest.xml:21:5-78
-MERGED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\beesolver\.android\build-cache\507fb61899aafe67634ccca8c8227ec0a8ffa086\output\AndroidManifest.xml:21:5-78
-MERGED from [com.google.firebase:firebase-analytics-impl:9.6.0] C:\Users\beesolver\.android\build-cache\86356dbef6f3b6e27375f26458f48f932af83bec\output\AndroidManifest.xml:21:5-78
-MERGED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\beesolver\.android\build-cache\e267732c6bbda79d2c40ade94d90cff892f3711e\output\AndroidManifest.xml:19:5-78
-MERGED from [com.google.android.gms:play-services-maps:9.6.0] C:\Users\beesolver\.android\build-cache\0416a8a7a01da4a48e3f74ebaf3fc0134bd2e9f4\output\AndroidManifest.xml:19:5-78
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:17:5-79
+MERGED from [com.google.android.gms:play-services-ads-lite:9.6.0] C:\Users\Beesolver\.android\build-cache\f5a92680ada294c96051980a03f188795f32e4e2\output\AndroidManifest.xml:20:5-78
+MERGED from [com.google.android.gms:play-services-analytics:9.6.0] C:\Users\Beesolver\.android\build-cache\f346894594c1acbf5a8bccf8a02b52d61054c91a\output\AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-nearby:9.6.0] C:\Users\Beesolver\.android\build-cache\419ca0ae86a1fa96b4dcd6bd33585479a6b9d828\output\AndroidManifest.xml:4:5-78
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.6.0] C:\Users\Beesolver\.android\build-cache\0938ae17cfba1e5b4195f30b1c3a44041a8dfab2\output\AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\Beesolver\.android\build-cache\6fcd87877ab9eb41da4d862de94274c673f230a8\output\AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Beesolver\.android\build-cache\6f172eda68d4f0aeba44fcc289e5bff1c7bc7194\output\AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:9.6.0] C:\Users\Beesolver\.android\build-cache\0e91c83282670542a16361c894c80224221cab6d\output\AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\5c2d316b9634a51c006d795ec82cb8c0105810c3\output\AndroidManifest.xml:19:5-78
+MERGED from [com.google.android.gms:play-services-maps:9.6.0] C:\Users\Beesolver\.android\build-cache\af68822b14bbb5c8e695497d72d7e26570a8cfa5\output\AndroidManifest.xml:19:5-78
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:16:22-76
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:17:22-76
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:17:5-81
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:18:5-81
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:17:22-78
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:18:22-78
 uses-permission#android.permission.WAKE_LOCK
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:18:5-68
-MERGED from [com.google.android.gms:play-services-analytics:9.6.0] C:\Users\beesolver\.android\build-cache\a7284f852b1c95b362cc9e34af79e429360f397a\output\AndroidManifest.xml:24:5-67
-MERGED from [com.google.android.gms:play-services-analytics-impl:9.6.0] C:\Users\beesolver\.android\build-cache\a0e4a29da75b422b406ae17bf170df125e33e2a1\output\AndroidManifest.xml:24:5-67
-MERGED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\beesolver\.android\build-cache\507fb61899aafe67634ccca8c8227ec0a8ffa086\output\AndroidManifest.xml:22:5-67
-MERGED from [com.google.firebase:firebase-analytics-impl:9.6.0] C:\Users\beesolver\.android\build-cache\86356dbef6f3b6e27375f26458f48f932af83bec\output\AndroidManifest.xml:22:5-67
-MERGED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\beesolver\.android\build-cache\e267732c6bbda79d2c40ade94d90cff892f3711e\output\AndroidManifest.xml:21:5-67
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:19:5-68
+MERGED from [com.google.android.gms:play-services-analytics:9.6.0] C:\Users\Beesolver\.android\build-cache\f346894594c1acbf5a8bccf8a02b52d61054c91a\output\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.6.0] C:\Users\Beesolver\.android\build-cache\0938ae17cfba1e5b4195f30b1c3a44041a8dfab2\output\AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Beesolver\.android\build-cache\6f172eda68d4f0aeba44fcc289e5bff1c7bc7194\output\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:9.6.0] C:\Users\Beesolver\.android\build-cache\0e91c83282670542a16361c894c80224221cab6d\output\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\5c2d316b9634a51c006d795ec82cb8c0105810c3\output\AndroidManifest.xml:21:5-67
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:18:22-65
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:19:22-65
 uses-permission#android.permission.VIBRATE
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:19:5-66
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:20:5-66
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:19:22-63
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:20:22-63
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:20:5-81
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:21:5-81
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:20:22-78
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:21:22-78
 uses-permission#android.permission.GET_ACCOUNTS
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:21:5-71
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:22:5-71
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:21:22-68
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:22:22-68
 uses-permission#com.google.android.c2dm.permission.RECEIVE
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:22:5-82
-MERGED from [com.google.android.gms:play-services-gcm:9.6.0] C:\Users\beesolver\.android\build-cache\f6d2657da8599d9a4069af10b8ce9709e6de2568\output\AndroidManifest.xml:20:5-81
-MERGED from [com.google.android.gms:play-services-iid:9.6.0] C:\Users\beesolver\.android\build-cache\61e21af0d776a5310a5138ea83757818e3443184\output\AndroidManifest.xml:20:5-81
-MERGED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\beesolver\.android\build-cache\e267732c6bbda79d2c40ade94d90cff892f3711e\output\AndroidManifest.xml:22:5-81
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:23:5-82
+MERGED from [com.google.android.gms:play-services-gcm:9.6.0] C:\Users\Beesolver\.android\build-cache\e365d3866a2c0bc72d5387031bebb0124063ac36\output\AndroidManifest.xml:20:5-81
+MERGED from [com.google.android.gms:play-services-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\05dd07747fdafdd30eec3280806ac4323adfbeb8\output\AndroidManifest.xml:20:5-81
+MERGED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\5c2d316b9634a51c006d795ec82cb8c0105810c3\output\AndroidManifest.xml:22:5-81
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:22:22-79
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:23:22-79
 uses-permission#android.permission.CAMERA
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:23:5-65
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:24:5-65
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:23:22-62
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:24:22-62
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:24:5-80
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:25:5-80
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:24:22-77
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:25:22-77
 permission#com.bigc_connect.permission.C2D_MESSAGE
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:26:5-28:47
-MERGED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\beesolver\.android\build-cache\e267732c6bbda79d2c40ade94d90cff892f3711e\output\AndroidManifest.xml:24:5-109
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:27:5-29:47
+MERGED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\5c2d316b9634a51c006d795ec82cb8c0105810c3\output\AndroidManifest.xml:24:5-109
 	android:protectionLevel
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:28:9-44
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:29:9-44
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:27:9-63
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:28:9-63
 uses-permission#com.bigc_connect.permission.C2D_MESSAGE
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:29:5-79
-MERGED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\beesolver\.android\build-cache\e267732c6bbda79d2c40ade94d90cff892f3711e\output\AndroidManifest.xml:26:5-78
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:30:5-79
+MERGED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\5c2d316b9634a51c006d795ec82cb8c0105810c3\output\AndroidManifest.xml:26:5-78
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:29:22-76
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:30:22-76
 meta-data#com.parse.push.notification_icon
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:31:5-33:54
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:32:5-34:54
 	android:resource
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:33:9-51
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:34:9-51
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:32:9-56
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:33:9-56
 application
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:35:5-223:19
-MERGED from [BigCConnect:loadMoreListView:unspecified] D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\loadMoreListView\build\intermediates\bundles\default\AndroidManifest.xml:11:5-18:19
-MERGED from [com.mopub:mopub-sdk-native-static:4.10.0] C:\Users\beesolver\.android\build-cache\71f41f52c206d3e30396689b5f5aa9cf412f0b4f\output\AndroidManifest.xml:11:5-20
-MERGED from [com.mopub:mopub-sdk-base:4.10.0] C:\Users\beesolver\.android\build-cache\3284fff0e135155c86e1b70d89a3a4756e48f9d2\output\AndroidManifest.xml:11:5-20
-MERGED from [com.google.firebase:firebase-core:9.6.0] C:\Users\beesolver\.android\build-cache\9b9a1345101a3639677e5ceb4eeef3acdbfb616e\output\AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services:9.6.0] C:\Users\beesolver\.android\build-cache\824c4ce5888acce4edd3be9cd01f1d3b224fb22c\output\AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-ads-lite:9.6.0] C:\Users\beesolver\.android\build-cache\0a456a85610eccfda2dcc2604f7f0afa5f0918e5\output\AndroidManifest.xml:23:5-27:19
-MERGED from [com.google.android.gms:play-services-analytics:9.6.0] C:\Users\beesolver\.android\build-cache\a7284f852b1c95b362cc9e34af79e429360f397a\output\AndroidManifest.xml:26:5-19
-MERGED from [com.google.android.gms:play-services-appinvite:9.6.0] C:\Users\beesolver\.android\build-cache\f955930d696d6e7e35c3b4e2a72f217c3aaf6fc4\output\AndroidManifest.xml:19:5-26:19
-MERGED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\beesolver\.android\build-cache\e5c36fc4796bf50feb79eedb5a5c1d59bb037020\output\AndroidManifest.xml:19:5-25:19
-MERGED from [com.google.android.gms:play-services-cast-framework:9.6.0] C:\Users\beesolver\.android\build-cache\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\output\AndroidManifest.xml:4:5-8:19
-MERGED from [com.google.android.gms:play-services-cast:9.6.0] C:\Users\beesolver\.android\build-cache\ec5b149a6945ad70caba15951ced18ce06fd5482\output\AndroidManifest.xml:18:5-19
-MERGED from [com.android.support:mediarouter-v7:24.0.0] C:\Users\beesolver\.android\build-cache\7ec456b531d2e87f743b4e26a300471e5b078c52\output\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:palette-v7:24.0.0] C:\Users\beesolver\.android\build-cache\976277a7d97fdf5b5e38734195cf48c9b8e562b3\output\AndroidManifest.xml:22:5-23:19
-MERGED from [com.google.android.gms:play-services-clearcut:9.6.0] C:\Users\beesolver\.android\build-cache\098ee47a89346d52eec3f48c8e6a30272735feec\output\AndroidManifest.xml:18:5-19
-MERGED from [com.google.firebase:firebase-config:9.6.0] C:\Users\beesolver\.android\build-cache\764c87a1485ee575a6281775385d215341e14152\output\AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-awareness:9.6.0] C:\Users\beesolver\.android\build-cache\09c6e1f61e69aa57b45da2f8fb916d447ec23646\output\AndroidManifest.xml:18:5-19
-MERGED from [com.google.firebase:firebase-crash:9.6.0] C:\Users\beesolver\.android\build-cache\dbc9e5abca133feb07a981da582d1a45ccc5def5\output\AndroidManifest.xml:22:5-28:19
-MERGED from [com.google.firebase:firebase-auth:9.6.0] C:\Users\beesolver\.android\build-cache\5432b26b5b98348bdbe0beaf534917795fe88271\output\AndroidManifest.xml:19:5-20:19
-MERGED from [com.google.firebase:firebase-auth-common:9.6.0] C:\Users\beesolver\.android\build-cache\e003c2db85864e0bc12fe8bc936bfa1f1807e02f\output\AndroidManifest.xml:19:5-20:19
-MERGED from [com.google.firebase:firebase-messaging:9.6.0] C:\Users\beesolver\.android\build-cache\19363b277ca94faa34f0b3aa8ace46dd8e81bd2a\output\AndroidManifest.xml:19:5-29:19
-MERGED from [com.google.android.gms:play-services-fitness:9.6.0] C:\Users\beesolver\.android\build-cache\0b76b44bafc43b67310c76795ffaebcf9addb48f\output\AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-games:9.6.0] C:\Users\beesolver\.android\build-cache\2249eeca0638d9769db037eff8f48fc42504595b\output\AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-drive:9.6.0] C:\Users\beesolver\.android\build-cache\6bcb7d50893311341aa257884a6a40d2bce4a73b\output\AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-gass:9.6.0] C:\Users\beesolver\.android\build-cache\fd61bcd3a27a9498fdb13cc7a0f752217edfdc9c\output\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.android.gms:play-services-gcm:9.6.0] C:\Users\beesolver\.android\build-cache\f6d2657da8599d9a4069af10b8ce9709e6de2568\output\AndroidManifest.xml:23:5-19
-MERGED from [com.google.android.gms:play-services-appindexing:9.6.0] C:\Users\beesolver\.android\build-cache\7664d7d3073d749fe0b2320dc6530264c5897dc6\output\AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-iid:9.6.0] C:\Users\beesolver\.android\build-cache\61e21af0d776a5310a5138ea83757818e3443184\output\AndroidManifest.xml:23:5-19
-MERGED from [com.google.android.gms:play-services-nearby:9.6.0] C:\Users\beesolver\.android\build-cache\bca5710cde0a4d7945ebc3069ab6287a9ea95bd4\output\AndroidManifest.xml:5:5-19
-MERGED from [com.google.android.gms:play-services-panorama:9.6.0] C:\Users\beesolver\.android\build-cache\56a2d226762c30955e7a9da6736cf54786bd77f1\output\AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-plus:9.6.0] C:\Users\beesolver\.android\build-cache\4043e53d2d02cd617ba4d303de955a8d5c8bb200\output\AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-safetynet:9.6.0] C:\Users\beesolver\.android\build-cache\62cf6b30021b9ce16087e64e54840078cb2926ab\output\AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-analytics-impl:9.6.0] C:\Users\beesolver\.android\build-cache\a0e4a29da75b422b406ae17bf170df125e33e2a1\output\AndroidManifest.xml:26:5-19
-MERGED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\beesolver\.android\build-cache\6aa2b27e8ca42faddf28cb1d5b034216dc4c2356\output\AndroidManifest.xml:23:5-33:19
-MERGED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\beesolver\.android\build-cache\507fb61899aafe67634ccca8c8227ec0a8ffa086\output\AndroidManifest.xml:24:5-33:19
-MERGED from [com.google.firebase:firebase-analytics-impl:9.6.0] C:\Users\beesolver\.android\build-cache\86356dbef6f3b6e27375f26458f48f932af83bec\output\AndroidManifest.xml:24:5-28:19
-MERGED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\beesolver\.android\build-cache\e267732c6bbda79d2c40ade94d90cff892f3711e\output\AndroidManifest.xml:28:5-50:19
-MERGED from [com.google.firebase:firebase-common:9.6.0] C:\Users\beesolver\.android\build-cache\cfb6a0c8c61c73818f459fa7aa8aef91739f601f\output\AndroidManifest.xml:4:5-7:19
-MERGED from [com.google.android.gms:play-services-vision:9.6.0] C:\Users\beesolver\.android\build-cache\0646fb8fffc84a1f12c273beac418d8e8cbf7c56\output\AndroidManifest.xml:4:5-19
-MERGED from [com.google.android.gms:play-services-identity:9.6.0] C:\Users\beesolver\.android\build-cache\ec26eb9d8a6e0026f3a69e6b1ab462320086addd\output\AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-wearable:9.6.0] C:\Users\beesolver\.android\build-cache\b4c1715c011eed97969925688a48f135083e7680\output\AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-location:9.6.0] C:\Users\beesolver\.android\build-cache\57337fcd01df2a82b73e600015a7f19827fe712a\output\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.android.gms:play-services-places:9.6.0] C:\Users\beesolver\.android\build-cache\6c02cd301da124e1f85c11bfc21066452ea151d9\output\AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-maps:9.6.0] C:\Users\beesolver\.android\build-cache\0416a8a7a01da4a48e3f74ebaf3fc0134bd2e9f4\output\AndroidManifest.xml:24:5-19
-MERGED from [com.google.android.gms:play-services-base:9.6.0] C:\Users\beesolver\.android\build-cache\39cac0cd3945e4bd584590e81e6f05add07ec1e5\output\AndroidManifest.xml:18:5-20:19
-MERGED from [com.google.android.gms:play-services-tasks:9.6.0] C:\Users\beesolver\.android\build-cache\7217ef36340ac774840244561358fd470e1dc176\output\AndroidManifest.xml:4:5-19
-MERGED from [com.google.android.gms:play-services-basement:9.6.0] C:\Users\beesolver\.android\build-cache\3be25977ec9a26fef414bab0c26302f8424c0f35\output\AndroidManifest.xml:19:5-21:19
-MERGED from [com.android.support:appcompat-v7:25.0.0] C:\Users\beesolver\.android\build-cache\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-v4:25.0.0] C:\Users\beesolver\.android\build-cache\ee0eac4d8d26742d16cfd26b5a7b7f7fd23bca8f\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-fragment:25.0.0] C:\Users\beesolver\.android\build-cache\f5e4d27e65f0cbe92720ab10bfcd0af8c80fc2de\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:25.0.0] C:\Users\beesolver\.android\build-cache\3a06da5843552602d38b4eacf349c880f9303cca\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:25.0.0] C:\Users\beesolver\.android\build-cache\ac43e7275c03bcff51e64e1ee6b80717d75fc09a\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:25.0.0] C:\Users\beesolver\.android\build-cache\afd25d6ae79914167bf2bf17302984f7655e6c2a\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.0.0] C:\Users\beesolver\.android\build-cache\6519a05215fef39ce479153d51a981830d597bc0\output\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-vector-drawable:25.0.0] C:\Users\beesolver\.android\build-cache\e9b8b66ef18ccd594b82a176fab329a074325a08\output\AndroidManifest.xml:23:5-20
-MERGED from [com.android.support:support-compat:25.0.0] C:\Users\beesolver\.android\build-cache\0dd02f42f76409fc26ba020dbce8299941fa25fe\output\AndroidManifest.xml:25:5-20
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:36:5-226:19
+MERGED from [BigCConnect:loadMoreListView:unspecified] D:\GITBigC\BigCConnect\loadMoreListView\build\intermediates\bundles\default\AndroidManifest.xml:11:5-18:19
+MERGED from [com.mopub:mopub-sdk-native-static:4.10.0] C:\Users\Beesolver\.android\build-cache\fe903e31a07e232edb2638386b80298fd684f2ab\output\AndroidManifest.xml:11:5-20
+MERGED from [com.mopub:mopub-sdk-base:4.10.0] C:\Users\Beesolver\.android\build-cache\e1f6d34b6fb5ea40fb11685999c61983549904df\output\AndroidManifest.xml:11:5-20
+MERGED from [com.google.firebase:firebase-core:9.6.0] C:\Users\Beesolver\.android\build-cache\8fa0870ea0f280a06c25577834f821e88edc7cde\output\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services:9.6.0] C:\Users\Beesolver\.android\build-cache\eb5050b76f9d0cf5acefd656aab91d82f4423a19\output\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-ads-lite:9.6.0] C:\Users\Beesolver\.android\build-cache\f5a92680ada294c96051980a03f188795f32e4e2\output\AndroidManifest.xml:23:5-27:19
+MERGED from [com.google.android.gms:play-services-analytics:9.6.0] C:\Users\Beesolver\.android\build-cache\f346894594c1acbf5a8bccf8a02b52d61054c91a\output\AndroidManifest.xml:26:5-19
+MERGED from [com.google.android.gms:play-services-appinvite:9.6.0] C:\Users\Beesolver\.android\build-cache\6472705f0a5c439c9e70180478f1d53aa3ac96ee\output\AndroidManifest.xml:19:5-26:19
+MERGED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\Beesolver\.android\build-cache\77e1e92d713dc46417555482c2738828d39e37a3\output\AndroidManifest.xml:19:5-25:19
+MERGED from [com.google.android.gms:play-services-cast-framework:9.6.0] C:\Users\Beesolver\.android\build-cache\8879f853ff549e3fc89e503b0eb14f089c65781e\output\AndroidManifest.xml:4:5-8:19
+MERGED from [com.google.android.gms:play-services-cast:9.6.0] C:\Users\Beesolver\.android\build-cache\c89cae1c66175814b000d3bffaae356acb8e94ca\output\AndroidManifest.xml:18:5-19
+MERGED from [com.android.support:mediarouter-v7:24.0.0] C:\Users\Beesolver\.android\build-cache\86bcb881e5c30bf7ce1e823ca8ce534a3c01b138\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:palette-v7:24.0.0] C:\Users\Beesolver\.android\build-cache\5a74bd9e7259274b27e365ac1bb00b85e3319376\output\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-clearcut:9.6.0] C:\Users\Beesolver\.android\build-cache\e1cb9a7ff3020441b60be2e4d519bd082df84ca1\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.firebase:firebase-config:9.6.0] C:\Users\Beesolver\.android\build-cache\94d905728d47b23154d19d059a61892c3975e785\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-awareness:9.6.0] C:\Users\Beesolver\.android\build-cache\9b0a9aec31b4e42d97329426d75546b4217a45d4\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.firebase:firebase-crash:9.6.0] C:\Users\Beesolver\.android\build-cache\a6011186bf1fa2f6f53fe3382c2124e73debae25\output\AndroidManifest.xml:22:5-28:19
+MERGED from [com.google.firebase:firebase-auth:9.6.0] C:\Users\Beesolver\.android\build-cache\dfa53ed4fd3f62cc30ffc9e8cc325bf4bc4b68bc\output\AndroidManifest.xml:19:5-20:19
+MERGED from [com.google.firebase:firebase-auth-common:9.6.0] C:\Users\Beesolver\.android\build-cache\30478ff079899eb07f6e05f9eecfab03df8f3fc1\output\AndroidManifest.xml:19:5-20:19
+MERGED from [com.google.firebase:firebase-messaging:9.6.0] C:\Users\Beesolver\.android\build-cache\f4c2dde147ee8b3759f58a9b77dd40431d840776\output\AndroidManifest.xml:19:5-29:19
+MERGED from [com.google.android.gms:play-services-fitness:9.6.0] C:\Users\Beesolver\.android\build-cache\27b678349322d0c6b5071d8a43d17b3560dd16c1\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-games:9.6.0] C:\Users\Beesolver\.android\build-cache\719becc774683e5265b06f8f9c1dadf7957cc5ac\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-drive:9.6.0] C:\Users\Beesolver\.android\build-cache\b21b3a1830684ad0693d57c89107cbe70365cf68\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-gass:9.6.0] C:\Users\Beesolver\.android\build-cache\42cfe0c53534572cfc2b6efbbe85df802005558d\output\AndroidManifest.xml:5:5-6:19
+MERGED from [com.google.android.gms:play-services-gcm:9.6.0] C:\Users\Beesolver\.android\build-cache\e365d3866a2c0bc72d5387031bebb0124063ac36\output\AndroidManifest.xml:23:5-19
+MERGED from [com.google.android.gms:play-services-appindexing:9.6.0] C:\Users\Beesolver\.android\build-cache\3dba305b6bc9dedba673105dcfa3c564fab52c9d\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\05dd07747fdafdd30eec3280806ac4323adfbeb8\output\AndroidManifest.xml:23:5-19
+MERGED from [com.google.android.gms:play-services-nearby:9.6.0] C:\Users\Beesolver\.android\build-cache\419ca0ae86a1fa96b4dcd6bd33585479a6b9d828\output\AndroidManifest.xml:5:5-19
+MERGED from [com.google.android.gms:play-services-panorama:9.6.0] C:\Users\Beesolver\.android\build-cache\ee20bb3add62496c774b7c3f8bcabc892cfc4052\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-plus:9.6.0] C:\Users\Beesolver\.android\build-cache\4f9d5c52d75e52697908142cd55271e24484e69c\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-safetynet:9.6.0] C:\Users\Beesolver\.android\build-cache\ffe20b905df1833139a57485c62d2747796ca4d1\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.6.0] C:\Users\Beesolver\.android\build-cache\0938ae17cfba1e5b4195f30b1c3a44041a8dfab2\output\AndroidManifest.xml:26:5-19
+MERGED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\Beesolver\.android\build-cache\6fcd87877ab9eb41da4d862de94274c673f230a8\output\AndroidManifest.xml:23:5-33:19
+MERGED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Beesolver\.android\build-cache\6f172eda68d4f0aeba44fcc289e5bff1c7bc7194\output\AndroidManifest.xml:24:5-33:19
+MERGED from [com.google.firebase:firebase-analytics-impl:9.6.0] C:\Users\Beesolver\.android\build-cache\0e91c83282670542a16361c894c80224221cab6d\output\AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\5c2d316b9634a51c006d795ec82cb8c0105810c3\output\AndroidManifest.xml:28:5-50:19
+MERGED from [com.google.firebase:firebase-common:9.6.0] C:\Users\Beesolver\.android\build-cache\0d20a2b1f46e5aac4b6baf39b412f40a5177b853\output\AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.android.gms:play-services-vision:9.6.0] C:\Users\Beesolver\.android\build-cache\9a61709ec27fa218524eb4a1c0c3bfba38ade698\output\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-identity:9.6.0] C:\Users\Beesolver\.android\build-cache\79f0803fa95531d0e2ed65b85e2ad4ec49d2d460\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-wearable:9.6.0] C:\Users\Beesolver\.android\build-cache\f6d4b73e099841a006c97381f3f26061331f2ef7\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-location:9.6.0] C:\Users\Beesolver\.android\build-cache\fcf34f64f2aefdcb34b824c884e8e8af48b8397a\output\AndroidManifest.xml:5:5-6:19
+MERGED from [com.google.android.gms:play-services-places:9.6.0] C:\Users\Beesolver\.android\build-cache\ecb9d55f018ba9b36a56d630a11a32deb0141440\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-maps:9.6.0] C:\Users\Beesolver\.android\build-cache\af68822b14bbb5c8e695497d72d7e26570a8cfa5\output\AndroidManifest.xml:24:5-19
+MERGED from [com.google.android.gms:play-services-base:9.6.0] C:\Users\Beesolver\.android\build-cache\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\output\AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-tasks:9.6.0] C:\Users\Beesolver\.android\build-cache\b23a09b558823b72d290d36215ac6b2f220402bd\output\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:9.6.0] C:\Users\Beesolver\.android\build-cache\1275dd441bbda749340d62f5017a04709d1004d4\output\AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:appcompat-v7:25.0.0] C:\Users\Beesolver\.android\build-cache\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:25.0.0] C:\Users\Beesolver\.android\build-cache\5844208f96e7093078ef1a6a64ab49341d13b7a1\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.0.0] C:\Users\Beesolver\.android\build-cache\1a19374c6335783515bc05ddc5c668ada61c8fa3\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.0.0] C:\Users\Beesolver\.android\build-cache\10e74d4009d197846dfea9f17ce73bfab9eea4b4\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.0.0] C:\Users\Beesolver\.android\build-cache\a7e32dd4f8707c3db8c662ba3fa106cf64ba58af\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.0.0] C:\Users\Beesolver\.android\build-cache\03a98b44fc7e3c84afa96005cae2f5ece48f0408\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.0.0] C:\Users\Beesolver\.android\build-cache\a97405184cfb85469be025cbdab1eaba0c427d6b\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:25.0.0] C:\Users\Beesolver\.android\build-cache\7ab3b10d86288b0984530cd0d8d78018815a0a5d\output\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-compat:25.0.0] C:\Users\Beesolver\.android\build-cache\cffe41456709c934f3c35161315f52343fcbcdf1\output\AndroidManifest.xml:25:5-20
 	android:label
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:39:9-41
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:42:9-41
+	android:backupInForeground
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:39:9-43
+	android:fullBackupContent
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:40:9-57
 	android:allowBackup
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:37:9-35
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:38:9-36
 	android:icon
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:38:9-45
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:41:9-45
 	android:largeHeap
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:40:9-33
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:43:9-33
 	android:theme
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:41:9-40
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:44:9-40
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:36:9-52
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:37:9-52
 activity#com.bigc.activities.Splash
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:42:9-52:20
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:45:9-55:20
 	android:screenOrientation
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:45:13-49
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:48:13-49
 	android:label
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:44:13-45
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:47:13-45
 	android:theme
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:46:13-69
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:49:13-69
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:43:13-54
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:46:13-54
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:47:13-51:29
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:50:13-54:29
 action#android.intent.action.MAIN
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:48:17-69
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:51:17-69
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:48:25-66
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:51:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:50:17-77
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:53:17-77
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:50:27-74
-activity#com.bigc.activities.PlayerActivity
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:53:9-62:20
-	android:label
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:55:13-45
-	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:54:13-62
-meta-data#@string/minVersion
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:56:13-58:37
-	android:value
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:58:17-34
-	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:57:17-50
-meta-data#@string/isLaunchableActivity
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:59:13-61:40
-	android:value
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:61:17-37
-	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:60:17-60
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:53:27-74
 activity#com.bigc.activities.LoginActivity
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:63:9-67:72
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:66:9-70:72
 	android:screenOrientation
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:66:13-49
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:69:13-49
 	android:label
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:65:13-45
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:68:13-45
 	android:theme
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:67:13-69
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:70:13-69
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:64:13-61
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:67:13-61
 activity#com.bigc.activities.PurchaseActivity
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:68:9-72:75
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:71:9-75:75
 	android:screenOrientation
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:71:13-49
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:74:13-49
 	android:label
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:70:13-45
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:73:13-45
 	android:theme
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:72:13-72
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:75:13-72
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:69:13-64
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:72:13-64
 activity#com.bigc.activities.ZoomActivity
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:73:9-76:72
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:76:9-79:72
 	android:label
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:75:13-45
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:78:13-45
 	android:theme
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:76:13-69
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:79:13-69
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:74:13-60
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:77:13-60
 activity#com.bigc.activities.PostActivity
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:77:9-81:72
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:80:9-84:72
 	android:screenOrientation
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:80:13-49
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:83:13-49
 	android:label
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:79:13-45
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:82:13-45
 	android:theme
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:81:13-69
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:84:13-69
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:78:13-60
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:81:13-60
 activity#com.bigc.activities.ForgotPasswordActivity
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:82:9-86:72
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:85:9-89:72
 	android:screenOrientation
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:85:13-49
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:88:13-49
 	android:label
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:84:13-45
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:87:13-45
 	android:theme
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:86:13-69
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:89:13-69
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:83:13-70
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:86:13-70
 activity#com.bigc.gallery.CustomGalleryActivity
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:87:9-91:72
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:90:9-94:72
 	android:screenOrientation
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:90:13-49
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:93:13-49
 	android:label
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:89:13-45
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:92:13-45
 	android:theme
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:91:13-69
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:94:13-69
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:88:13-66
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:91:13-66
 activity#com.bigc.activities.SignupActivity
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:92:9-97:55
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:95:9-100:55
 	android:screenOrientation
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:95:13-49
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:98:13-49
 	android:label
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:94:13-45
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:97:13-45
 	android:windowSoftInputMode
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:97:13-52
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:100:13-52
 	android:theme
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:96:13-69
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:99:13-69
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:93:13-62
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:96:13-62
 activity#com.bigc.activities.HomeScreen
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:98:9-108:20
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:101:9-111:20
 	android:screenOrientation
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:102:13-49
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:105:13-49
 	android:label
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:100:13-45
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:103:13-45
 	android:launchMode
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:101:13-48
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:104:13-43
 	android:windowSoftInputMode
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:104:13-52
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:107:13-52
 	android:theme
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:103:13-44
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:106:13-44
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:99:13-58
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:102:13-58
 meta-data#android.support.UI_OPTIONS
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:105:13-107:60
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:108:13-110:60
 	android:value
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:107:17-57
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:110:17-57
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:106:17-58
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:109:17-58
 activity#com.bigc.activities.SearchActivity
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:109:9-124:20
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:112:9-127:20
 	android:screenOrientation
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:112:13-49
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:115:13-49
 	android:launchMode
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:111:13-43
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:114:13-43
 	android:windowSoftInputMode
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:113:13-52
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:116:13-52
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:110:13-62
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:113:13-62
 intent-filter#android.intent.action.SEARCH
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:114:13-116:29
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:117:13-119:29
 action#android.intent.action.SEARCH
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:115:17-71
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:118:17-71
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:115:25-68
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:118:25-68
 intent-filter#android.intent.action.VIEW
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:117:13-119:29
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:120:13-122:29
 action#android.intent.action.VIEW
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:118:17-69
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:121:17-69
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:118:25-66
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:121:25-66
 meta-data#android.app.searchable
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:121:13-123:54
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:124:13-126:54
 	android:resource
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:123:17-51
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:126:17-51
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:122:17-54
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:125:17-54
 service#com.bigc.general.classes.RoboSpiceService
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:127:9-129:40
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:130:9-132:40
 	android:exported
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:129:13-37
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:132:13-37
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:128:13-69
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:131:13-69
 meta-data#com.google.android.gms.version
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:160:9-162:69
-MERGED from [com.google.android.gms:play-services-basement:9.6.0] C:\Users\beesolver\.android\build-cache\3be25977ec9a26fef414bab0c26302f8424c0f35\output\AndroidManifest.xml:20:9-121
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:163:9-165:69
+MERGED from [com.google.android.gms:play-services-basement:9.6.0] C:\Users\Beesolver\.android\build-cache\1275dd441bbda749340d62f5017a04709d1004d4\output\AndroidManifest.xml:20:9-121
 	android:value
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:162:13-66
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:165:13-66
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:161:13-58
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:164:13-58
 meta-data#android.app.default_searchable
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:163:9-165:66
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:166:9-168:66
 	android:value
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:165:13-63
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:168:13-63
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:164:13-58
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:167:13-58
 activity#com.google.android.gms.ads.AdActivity
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:167:9-169:125
-MERGED from [com.google.android.gms:play-services-ads-lite:9.6.0] C:\Users\beesolver\.android\build-cache\0a456a85610eccfda2dcc2604f7f0afa5f0918e5\output\AndroidManifest.xml:25:9-232
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:170:9-172:125
+MERGED from [com.google.android.gms:play-services-ads-lite:9.6.0] C:\Users\Beesolver\.android\build-cache\f5a92680ada294c96051980a03f188795f32e4e2\output\AndroidManifest.xml:25:9-232
 	android:configChanges
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:169:13-122
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:172:13-122
 	android:theme
-		ADDED from [com.google.android.gms:play-services-ads-lite:9.6.0] C:\Users\beesolver\.android\build-cache\0a456a85610eccfda2dcc2604f7f0afa5f0918e5\output\AndroidManifest.xml:25:182-230
+		ADDED from [com.google.android.gms:play-services-ads-lite:9.6.0] C:\Users\Beesolver\.android\build-cache\f5a92680ada294c96051980a03f188795f32e4e2\output\AndroidManifest.xml:25:182-230
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:168:13-65
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:171:13-65
 activity#com.mopub.mobileads.MoPubActivity
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:172:9-174:77
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:175:9-177:77
 	android:configChanges
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:174:13-74
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:177:13-74
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:173:13-61
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:176:13-61
 activity#com.mopub.mobileads.MraidActivity
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:176:9-178:77
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:179:9-181:77
 	android:configChanges
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:178:13-74
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:181:13-74
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:177:13-61
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:180:13-61
 activity#com.mopub.common.MoPubBrowser
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:180:9-182:77
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:183:9-185:77
 	android:configChanges
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:182:13-74
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:185:13-74
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:181:13-57
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:184:13-57
 activity#com.mopub.mobileads.MraidVideoPlayerActivity
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:183:9-185:77
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:186:9-188:77
 	android:configChanges
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:185:13-74
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:188:13-74
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:184:13-72
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:187:13-72
 activity#com.google.ads.AdActivity
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:187:9-189:125
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:190:9-192:125
 	android:configChanges
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:189:13-122
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:192:13-122
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:188:13-53
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:191:13-53
 activity#com.millennialmedia.android.MMActivity
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:190:9-193:75
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:193:9-196:75
 	android:configChanges
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:192:13-72
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:195:13-72
 	android:theme
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:193:13-72
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:196:13-72
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:191:13-66
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:194:13-66
 activity#com.millennialmedia.android.VideoPlayer
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:194:9-196:75
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:197:9-199:75
 	android:configChanges
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:196:13-72
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:199:13-72
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:195:13-67
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:198:13-67
 activity#eu.janmuller.android.simplecropimage.CropImage
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:197:9-83
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:200:9-83
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:197:19-80
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:200:19-80
 provider#android.support.v4.content.FileProvider
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:199:9-207:20
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:202:9-210:20
 	android:authorities
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:201:13-60
-		INJECTED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:204:13-60
+		INJECTED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml
 	android:grantUriPermissions
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:203:13-47
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:206:13-47
 	android:exported
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:202:13-37
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:205:13-37
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:200:13-67
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:203:13-67
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:204:13-206:57
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:207:13-209:57
 	android:resource
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:206:17-55
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:209:17-55
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:205:17-67
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:208:17-67
 service#com.bigc.receivers.CustomFirebaseMessagingService
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:209:9-214:19
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:212:9-217:19
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:210:13-77
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:213:13-77
 intent-filter#com.google.firebase.MESSAGING_EVENT
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:211:13-213:29
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:214:13-216:29
 action#com.google.firebase.MESSAGING_EVENT
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:212:17-77
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:215:17-77
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:212:25-75
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:215:25-75
 service#com.bigc.receivers.CustomFirebaseInstanceIDService
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:216:9-221:19
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:219:9-224:19
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:217:13-78
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:220:13-78
 intent-filter#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:218:13-220:29
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:221:13-223:29
 action#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:219:17-79
+ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:222:17-79
 	android:name
-		ADDED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:219:25-77
+		ADDED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:222:25-77
 activity#com.costum.android.widget.LoadMoreListView
-ADDED from [BigCConnect:loadMoreListView:unspecified] D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\loadMoreListView\build\intermediates\bundles\default\AndroidManifest.xml:14:9-17:20
+ADDED from [BigCConnect:loadMoreListView:unspecified] D:\GITBigC\BigCConnect\loadMoreListView\build\intermediates\bundles\default\AndroidManifest.xml:14:9-17:20
 	android:label
-		ADDED from [BigCConnect:loadMoreListView:unspecified] D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\loadMoreListView\build\intermediates\bundles\default\AndroidManifest.xml:16:13-45
+		ADDED from [BigCConnect:loadMoreListView:unspecified] D:\GITBigC\BigCConnect\loadMoreListView\build\intermediates\bundles\default\AndroidManifest.xml:16:13-45
 	android:name
-		ADDED from [BigCConnect:loadMoreListView:unspecified] D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\loadMoreListView\build\intermediates\bundles\default\AndroidManifest.xml:15:13-70
+		ADDED from [BigCConnect:loadMoreListView:unspecified] D:\GITBigC\BigCConnect\loadMoreListView\build\intermediates\bundles\default\AndroidManifest.xml:15:13-70
 uses-permission#android.permission.READ_PHONE_STATE
-IMPLIED from D:\StudioSpace\BigC-Connect\BigCConnect\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:2:1-225:12 reason: eu.janmuller.android.simplecropimage has a targetSdkVersion < 4
+IMPLIED from D:\GITBigC\BigCConnect\bigCConnect\src\main\AndroidManifest.xml:2:1-228:12 reason: eu.janmuller.android.simplecropimage has a targetSdkVersion < 4
 activity#com.google.android.gms.ads.purchase.InAppPurchaseActivity
-ADDED from [com.google.android.gms:play-services-ads-lite:9.6.0] C:\Users\beesolver\.android\build-cache\0a456a85610eccfda2dcc2604f7f0afa5f0918e5\output\AndroidManifest.xml:26:9-131
+ADDED from [com.google.android.gms:play-services-ads-lite:9.6.0] C:\Users\Beesolver\.android\build-cache\f5a92680ada294c96051980a03f188795f32e4e2\output\AndroidManifest.xml:26:9-131
 	android:theme
-		ADDED from [com.google.android.gms:play-services-ads-lite:9.6.0] C:\Users\beesolver\.android\build-cache\0a456a85610eccfda2dcc2604f7f0afa5f0918e5\output\AndroidManifest.xml:26:92-129
+		ADDED from [com.google.android.gms:play-services-ads-lite:9.6.0] C:\Users\Beesolver\.android\build-cache\f5a92680ada294c96051980a03f188795f32e4e2\output\AndroidManifest.xml:26:92-129
 	android:name
-		ADDED from [com.google.android.gms:play-services-ads-lite:9.6.0] C:\Users\beesolver\.android\build-cache\0a456a85610eccfda2dcc2604f7f0afa5f0918e5\output\AndroidManifest.xml:26:19-91
+		ADDED from [com.google.android.gms:play-services-ads-lite:9.6.0] C:\Users\Beesolver\.android\build-cache\f5a92680ada294c96051980a03f188795f32e4e2\output\AndroidManifest.xml:26:19-91
 activity#com.google.android.gms.appinvite.PreviewActivity
-ADDED from [com.google.android.gms:play-services-appinvite:9.6.0] C:\Users\beesolver\.android\build-cache\f955930d696d6e7e35c3b4e2a72f217c3aaf6fc4\output\AndroidManifest.xml:20:9-25:20
+ADDED from [com.google.android.gms:play-services-appinvite:9.6.0] C:\Users\Beesolver\.android\build-cache\6472705f0a5c439c9e70180478f1d53aa3ac96ee\output\AndroidManifest.xml:20:9-25:20
 	android:exported
-		ADDED from [com.google.android.gms:play-services-appinvite:9.6.0] C:\Users\beesolver\.android\build-cache\f955930d696d6e7e35c3b4e2a72f217c3aaf6fc4\output\AndroidManifest.xml:20:51-74
+		ADDED from [com.google.android.gms:play-services-appinvite:9.6.0] C:\Users\Beesolver\.android\build-cache\6472705f0a5c439c9e70180478f1d53aa3ac96ee\output\AndroidManifest.xml:20:51-74
 	android:theme
-		ADDED from [com.google.android.gms:play-services-appinvite:9.6.0] C:\Users\beesolver\.android\build-cache\f955930d696d6e7e35c3b4e2a72f217c3aaf6fc4\output\AndroidManifest.xml:20:75-121
+		ADDED from [com.google.android.gms:play-services-appinvite:9.6.0] C:\Users\Beesolver\.android\build-cache\6472705f0a5c439c9e70180478f1d53aa3ac96ee\output\AndroidManifest.xml:20:75-121
 	android:name
-		ADDED from [com.google.android.gms:play-services-appinvite:9.6.0] C:\Users\beesolver\.android\build-cache\f955930d696d6e7e35c3b4e2a72f217c3aaf6fc4\output\AndroidManifest.xml:20:19-50
+		ADDED from [com.google.android.gms:play-services-appinvite:9.6.0] C:\Users\Beesolver\.android\build-cache\6472705f0a5c439c9e70180478f1d53aa3ac96ee\output\AndroidManifest.xml:20:19-50
 intent-filter#android.intent.category.DEFAULT+com.google.android.gms.appinvite.ACTION_PREVIEW
-ADDED from [com.google.android.gms:play-services-appinvite:9.6.0] C:\Users\beesolver\.android\build-cache\f955930d696d6e7e35c3b4e2a72f217c3aaf6fc4\output\AndroidManifest.xml:21:13-24:29
+ADDED from [com.google.android.gms:play-services-appinvite:9.6.0] C:\Users\Beesolver\.android\build-cache\6472705f0a5c439c9e70180478f1d53aa3ac96ee\output\AndroidManifest.xml:21:13-24:29
 action#com.google.android.gms.appinvite.ACTION_PREVIEW
-ADDED from [com.google.android.gms:play-services-appinvite:9.6.0] C:\Users\beesolver\.android\build-cache\f955930d696d6e7e35c3b4e2a72f217c3aaf6fc4\output\AndroidManifest.xml:22:17-89
+ADDED from [com.google.android.gms:play-services-appinvite:9.6.0] C:\Users\Beesolver\.android\build-cache\6472705f0a5c439c9e70180478f1d53aa3ac96ee\output\AndroidManifest.xml:22:17-89
 	android:name
-		ADDED from [com.google.android.gms:play-services-appinvite:9.6.0] C:\Users\beesolver\.android\build-cache\f955930d696d6e7e35c3b4e2a72f217c3aaf6fc4\output\AndroidManifest.xml:22:25-87
+		ADDED from [com.google.android.gms:play-services-appinvite:9.6.0] C:\Users\Beesolver\.android\build-cache\6472705f0a5c439c9e70180478f1d53aa3ac96ee\output\AndroidManifest.xml:22:25-87
 category#android.intent.category.DEFAULT
-ADDED from [com.google.android.gms:play-services-appinvite:9.6.0] C:\Users\beesolver\.android\build-cache\f955930d696d6e7e35c3b4e2a72f217c3aaf6fc4\output\AndroidManifest.xml:23:17-75
+ADDED from [com.google.android.gms:play-services-appinvite:9.6.0] C:\Users\Beesolver\.android\build-cache\6472705f0a5c439c9e70180478f1d53aa3ac96ee\output\AndroidManifest.xml:23:17-75
 	android:name
-		ADDED from [com.google.android.gms:play-services-appinvite:9.6.0] C:\Users\beesolver\.android\build-cache\f955930d696d6e7e35c3b4e2a72f217c3aaf6fc4\output\AndroidManifest.xml:23:27-73
+		ADDED from [com.google.android.gms:play-services-appinvite:9.6.0] C:\Users\Beesolver\.android\build-cache\6472705f0a5c439c9e70180478f1d53aa3ac96ee\output\AndroidManifest.xml:23:27-73
 activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
-ADDED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\beesolver\.android\build-cache\e5c36fc4796bf50feb79eedb5a5c1d59bb037020\output\AndroidManifest.xml:20:9-189
+ADDED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\Beesolver\.android\build-cache\77e1e92d713dc46417555482c2738828d39e37a3\output\AndroidManifest.xml:20:9-189
 	android:excludeFromRecents
-		ADDED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\beesolver\.android\build-cache\e5c36fc4796bf50feb79eedb5a5c1d59bb037020\output\AndroidManifest.xml:20:129-162
+		ADDED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\Beesolver\.android\build-cache\77e1e92d713dc46417555482c2738828d39e37a3\output\AndroidManifest.xml:20:129-162
 	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\beesolver\.android\build-cache\e5c36fc4796bf50feb79eedb5a5c1d59bb037020\output\AndroidManifest.xml:20:163-187
+		ADDED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\Beesolver\.android\build-cache\77e1e92d713dc46417555482c2738828d39e37a3\output\AndroidManifest.xml:20:163-187
 	android:theme
-		ADDED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\beesolver\.android\build-cache\e5c36fc4796bf50feb79eedb5a5c1d59bb037020\output\AndroidManifest.xml:20:69-128
+		ADDED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\Beesolver\.android\build-cache\77e1e92d713dc46417555482c2738828d39e37a3\output\AndroidManifest.xml:20:69-128
 	android:name
-		ADDED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\beesolver\.android\build-cache\e5c36fc4796bf50feb79eedb5a5c1d59bb037020\output\AndroidManifest.xml:20:19-68
+		ADDED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\Beesolver\.android\build-cache\77e1e92d713dc46417555482c2738828d39e37a3\output\AndroidManifest.xml:20:19-68
 service#com.google.android.gms.auth.api.signin.RevocationBoundService
-ADDED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\beesolver\.android\build-cache\e5c36fc4796bf50feb79eedb5a5c1d59bb037020\output\AndroidManifest.xml:24:9-184
+ADDED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\Beesolver\.android\build-cache\77e1e92d713dc46417555482c2738828d39e37a3\output\AndroidManifest.xml:24:9-184
 	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\beesolver\.android\build-cache\e5c36fc4796bf50feb79eedb5a5c1d59bb037020\output\AndroidManifest.xml:24:64-87
+		ADDED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\Beesolver\.android\build-cache\77e1e92d713dc46417555482c2738828d39e37a3\output\AndroidManifest.xml:24:64-87
 	android:permission
-		ADDED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\beesolver\.android\build-cache\e5c36fc4796bf50feb79eedb5a5c1d59bb037020\output\AndroidManifest.xml:24:88-182
+		ADDED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\Beesolver\.android\build-cache\77e1e92d713dc46417555482c2738828d39e37a3\output\AndroidManifest.xml:24:88-182
 	android:name
-		ADDED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\beesolver\.android\build-cache\e5c36fc4796bf50feb79eedb5a5c1d59bb037020\output\AndroidManifest.xml:24:18-63
+		ADDED from [com.google.android.gms:play-services-auth:9.6.0] C:\Users\Beesolver\.android\build-cache\77e1e92d713dc46417555482c2738828d39e37a3\output\AndroidManifest.xml:24:18-63
 receiver#com.google.android.gms.cast.framework.media.MediaIntentReceiver
-ADDED from [com.google.android.gms:play-services-cast-framework:9.6.0] C:\Users\beesolver\.android\build-cache\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\output\AndroidManifest.xml:5:9-99
+ADDED from [com.google.android.gms:play-services-cast-framework:9.6.0] C:\Users\Beesolver\.android\build-cache\8879f853ff549e3fc89e503b0eb14f089c65781e\output\AndroidManifest.xml:5:9-99
 	android:name
-		ADDED from [com.google.android.gms:play-services-cast-framework:9.6.0] C:\Users\beesolver\.android\build-cache\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\output\AndroidManifest.xml:5:19-97
+		ADDED from [com.google.android.gms:play-services-cast-framework:9.6.0] C:\Users\Beesolver\.android\build-cache\8879f853ff549e3fc89e503b0eb14f089c65781e\output\AndroidManifest.xml:5:19-97
 service#com.google.android.gms.cast.framework.media.MediaNotificationService
-ADDED from [com.google.android.gms:play-services-cast-framework:9.6.0] C:\Users\beesolver\.android\build-cache\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\output\AndroidManifest.xml:6:9-103
+ADDED from [com.google.android.gms:play-services-cast-framework:9.6.0] C:\Users\Beesolver\.android\build-cache\8879f853ff549e3fc89e503b0eb14f089c65781e\output\AndroidManifest.xml:6:9-103
 	android:name
-		ADDED from [com.google.android.gms:play-services-cast-framework:9.6.0] C:\Users\beesolver\.android\build-cache\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\output\AndroidManifest.xml:6:18-101
+		ADDED from [com.google.android.gms:play-services-cast-framework:9.6.0] C:\Users\Beesolver\.android\build-cache\8879f853ff549e3fc89e503b0eb14f089c65781e\output\AndroidManifest.xml:6:18-101
 service#com.google.android.gms.cast.framework.ReconnectionService
-ADDED from [com.google.android.gms:play-services-cast-framework:9.6.0] C:\Users\beesolver\.android\build-cache\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\output\AndroidManifest.xml:7:9-92
+ADDED from [com.google.android.gms:play-services-cast-framework:9.6.0] C:\Users\Beesolver\.android\build-cache\8879f853ff549e3fc89e503b0eb14f089c65781e\output\AndroidManifest.xml:7:9-92
 	android:name
-		ADDED from [com.google.android.gms:play-services-cast-framework:9.6.0] C:\Users\beesolver\.android\build-cache\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\output\AndroidManifest.xml:7:18-90
+		ADDED from [com.google.android.gms:play-services-cast-framework:9.6.0] C:\Users\Beesolver\.android\build-cache\8879f853ff549e3fc89e503b0eb14f089c65781e\output\AndroidManifest.xml:7:18-90
 service#com.google.firebase.crash.internal.service.FirebaseCrashReceiverService
-ADDED from [com.google.firebase:firebase-crash:9.6.0] C:\Users\beesolver\.android\build-cache\dbc9e5abca133feb07a981da582d1a45ccc5def5\output\AndroidManifest.xml:24:9-117
+ADDED from [com.google.firebase:firebase-crash:9.6.0] C:\Users\Beesolver\.android\build-cache\a6011186bf1fa2f6f53fe3382c2124e73debae25\output\AndroidManifest.xml:24:9-117
 	android:process
-		ADDED from [com.google.firebase:firebase-crash:9.6.0] C:\Users\beesolver\.android\build-cache\dbc9e5abca133feb07a981da582d1a45ccc5def5\output\AndroidManifest.xml:24:80-115
+		ADDED from [com.google.firebase:firebase-crash:9.6.0] C:\Users\Beesolver\.android\build-cache\a6011186bf1fa2f6f53fe3382c2124e73debae25\output\AndroidManifest.xml:24:80-115
 	android:name
-		ADDED from [com.google.firebase:firebase-crash:9.6.0] C:\Users\beesolver\.android\build-cache\dbc9e5abca133feb07a981da582d1a45ccc5def5\output\AndroidManifest.xml:24:18-79
+		ADDED from [com.google.firebase:firebase-crash:9.6.0] C:\Users\Beesolver\.android\build-cache\a6011186bf1fa2f6f53fe3382c2124e73debae25\output\AndroidManifest.xml:24:18-79
 service#com.google.firebase.crash.internal.service.FirebaseCrashSenderService
-ADDED from [com.google.firebase:firebase-crash:9.6.0] C:\Users\beesolver\.android\build-cache\dbc9e5abca133feb07a981da582d1a45ccc5def5\output\AndroidManifest.xml:26:9-115
+ADDED from [com.google.firebase:firebase-crash:9.6.0] C:\Users\Beesolver\.android\build-cache\a6011186bf1fa2f6f53fe3382c2124e73debae25\output\AndroidManifest.xml:26:9-115
 	android:process
-		ADDED from [com.google.firebase:firebase-crash:9.6.0] C:\Users\beesolver\.android\build-cache\dbc9e5abca133feb07a981da582d1a45ccc5def5\output\AndroidManifest.xml:26:78-113
+		ADDED from [com.google.firebase:firebase-crash:9.6.0] C:\Users\Beesolver\.android\build-cache\a6011186bf1fa2f6f53fe3382c2124e73debae25\output\AndroidManifest.xml:26:78-113
 	android:name
-		ADDED from [com.google.firebase:firebase-crash:9.6.0] C:\Users\beesolver\.android\build-cache\dbc9e5abca133feb07a981da582d1a45ccc5def5\output\AndroidManifest.xml:26:18-77
+		ADDED from [com.google.firebase:firebase-crash:9.6.0] C:\Users\Beesolver\.android\build-cache\a6011186bf1fa2f6f53fe3382c2124e73debae25\output\AndroidManifest.xml:26:18-77
 service#com.google.firebase.messaging.FirebaseMessagingService
-ADDED from [com.google.firebase:firebase-messaging:9.6.0] C:\Users\beesolver\.android\build-cache\19363b277ca94faa34f0b3aa8ace46dd8e81bd2a\output\AndroidManifest.xml:23:9-27:19
+ADDED from [com.google.firebase:firebase-messaging:9.6.0] C:\Users\Beesolver\.android\build-cache\f4c2dde147ee8b3759f58a9b77dd40431d840776\output\AndroidManifest.xml:23:9-27:19
 	android:exported
-		ADDED from [com.google.firebase:firebase-messaging:9.6.0] C:\Users\beesolver\.android\build-cache\19363b277ca94faa34f0b3aa8ace46dd8e81bd2a\output\AndroidManifest.xml:23:88-111
+		ADDED from [com.google.firebase:firebase-messaging:9.6.0] C:\Users\Beesolver\.android\build-cache\f4c2dde147ee8b3759f58a9b77dd40431d840776\output\AndroidManifest.xml:23:88-111
 	android:name
-		ADDED from [com.google.firebase:firebase-messaging:9.6.0] C:\Users\beesolver\.android\build-cache\19363b277ca94faa34f0b3aa8ace46dd8e81bd2a\output\AndroidManifest.xml:23:18-87
+		ADDED from [com.google.firebase:firebase-messaging:9.6.0] C:\Users\Beesolver\.android\build-cache\f4c2dde147ee8b3759f58a9b77dd40431d840776\output\AndroidManifest.xml:23:18-87
 service#com.google.android.gms.tagmanager.TagManagerService
-ADDED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\beesolver\.android\build-cache\6aa2b27e8ca42faddf28cb1d5b034216dc4c2356\output\AndroidManifest.xml:24:9-134
+ADDED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\Beesolver\.android\build-cache\6fcd87877ab9eb41da4d862de94274c673f230a8\output\AndroidManifest.xml:24:9-134
 	android:enabled
-		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\beesolver\.android\build-cache\6aa2b27e8ca42faddf28cb1d5b034216dc4c2356\output\AndroidManifest.xml:24:110-132
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\Beesolver\.android\build-cache\6fcd87877ab9eb41da4d862de94274c673f230a8\output\AndroidManifest.xml:24:110-132
 	android:exported
-		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\beesolver\.android\build-cache\6aa2b27e8ca42faddf28cb1d5b034216dc4c2356\output\AndroidManifest.xml:24:85-109
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\Beesolver\.android\build-cache\6fcd87877ab9eb41da4d862de94274c673f230a8\output\AndroidManifest.xml:24:85-109
 	android:name
-		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\beesolver\.android\build-cache\6aa2b27e8ca42faddf28cb1d5b034216dc4c2356\output\AndroidManifest.xml:24:18-84
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\Beesolver\.android\build-cache\6fcd87877ab9eb41da4d862de94274c673f230a8\output\AndroidManifest.xml:24:18-84
 activity#com.google.android.gms.tagmanager.TagManagerPreviewActivity
-ADDED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\beesolver\.android\build-cache\6aa2b27e8ca42faddf28cb1d5b034216dc4c2356\output\AndroidManifest.xml:25:9-32:20
+ADDED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\Beesolver\.android\build-cache\6fcd87877ab9eb41da4d862de94274c673f230a8\output\AndroidManifest.xml:25:9-32:20
 	android:noHistory
-		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\beesolver\.android\build-cache\6aa2b27e8ca42faddf28cb1d5b034216dc4c2356\output\AndroidManifest.xml:25:94-118
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\Beesolver\.android\build-cache\6fcd87877ab9eb41da4d862de94274c673f230a8\output\AndroidManifest.xml:25:94-118
 	android:name
-		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\beesolver\.android\build-cache\6aa2b27e8ca42faddf28cb1d5b034216dc4c2356\output\AndroidManifest.xml:25:19-93
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\Beesolver\.android\build-cache\6fcd87877ab9eb41da4d862de94274c673f230a8\output\AndroidManifest.xml:25:19-93
 intent-filter#android.intent.action.VIEW+android.intent.category.BROWSABLE+android.intent.category.DEFAULT
-ADDED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\beesolver\.android\build-cache\6aa2b27e8ca42faddf28cb1d5b034216dc4c2356\output\AndroidManifest.xml:26:13-31:29
+ADDED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\Beesolver\.android\build-cache\6fcd87877ab9eb41da4d862de94274c673f230a8\output\AndroidManifest.xml:26:13-31:29
 data
-ADDED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\beesolver\.android\build-cache\6aa2b27e8ca42faddf28cb1d5b034216dc4c2356\output\AndroidManifest.xml:27:17-71
+ADDED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\Beesolver\.android\build-cache\6fcd87877ab9eb41da4d862de94274c673f230a8\output\AndroidManifest.xml:27:17-71
 	android:scheme
-		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\beesolver\.android\build-cache\6aa2b27e8ca42faddf28cb1d5b034216dc4c2356\output\AndroidManifest.xml:27:23-69
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\Beesolver\.android\build-cache\6fcd87877ab9eb41da4d862de94274c673f230a8\output\AndroidManifest.xml:27:23-69
 category#android.intent.category.BROWSABLE
-ADDED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\beesolver\.android\build-cache\6aa2b27e8ca42faddf28cb1d5b034216dc4c2356\output\AndroidManifest.xml:30:17-77
+ADDED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\Beesolver\.android\build-cache\6fcd87877ab9eb41da4d862de94274c673f230a8\output\AndroidManifest.xml:30:17-77
 	android:name
-		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\beesolver\.android\build-cache\6aa2b27e8ca42faddf28cb1d5b034216dc4c2356\output\AndroidManifest.xml:30:27-75
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.6.0] C:\Users\Beesolver\.android\build-cache\6fcd87877ab9eb41da4d862de94274c673f230a8\output\AndroidManifest.xml:30:27-75
 receiver#com.google.android.gms.measurement.AppMeasurementReceiver
-ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\beesolver\.android\build-cache\507fb61899aafe67634ccca8c8227ec0a8ffa086\output\AndroidManifest.xml:25:7-26:18
-MERGED from [com.google.firebase:firebase-analytics-impl:9.6.0] C:\Users\beesolver\.android\build-cache\86356dbef6f3b6e27375f26458f48f932af83bec\output\AndroidManifest.xml:25:7-26:18
+ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Beesolver\.android\build-cache\6f172eda68d4f0aeba44fcc289e5bff1c7bc7194\output\AndroidManifest.xml:25:7-26:18
+MERGED from [com.google.firebase:firebase-analytics-impl:9.6.0] C:\Users\Beesolver\.android\build-cache\0e91c83282670542a16361c894c80224221cab6d\output\AndroidManifest.xml:25:7-26:18
 	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\beesolver\.android\build-cache\507fb61899aafe67634ccca8c8227ec0a8ffa086\output\AndroidManifest.xml:25:90-112
+		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Beesolver\.android\build-cache\6f172eda68d4f0aeba44fcc289e5bff1c7bc7194\output\AndroidManifest.xml:25:90-112
 	android:exported
-		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\beesolver\.android\build-cache\507fb61899aafe67634ccca8c8227ec0a8ffa086\output\AndroidManifest.xml:25:113-137
+		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Beesolver\.android\build-cache\6f172eda68d4f0aeba44fcc289e5bff1c7bc7194\output\AndroidManifest.xml:25:113-137
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\beesolver\.android\build-cache\507fb61899aafe67634ccca8c8227ec0a8ffa086\output\AndroidManifest.xml:25:17-89
+		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Beesolver\.android\build-cache\6f172eda68d4f0aeba44fcc289e5bff1c7bc7194\output\AndroidManifest.xml:25:17-89
 receiver#com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
-ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\beesolver\.android\build-cache\507fb61899aafe67634ccca8c8227ec0a8ffa086\output\AndroidManifest.xml:27:7-31:18
+ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Beesolver\.android\build-cache\6f172eda68d4f0aeba44fcc289e5bff1c7bc7194\output\AndroidManifest.xml:27:7-31:18
 	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\beesolver\.android\build-cache\507fb61899aafe67634ccca8c8227ec0a8ffa086\output\AndroidManifest.xml:27:162-184
+		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Beesolver\.android\build-cache\6f172eda68d4f0aeba44fcc289e5bff1c7bc7194\output\AndroidManifest.xml:27:162-184
 	android:permission
-		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\beesolver\.android\build-cache\507fb61899aafe67634ccca8c8227ec0a8ffa086\output\AndroidManifest.xml:27:105-161
+		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Beesolver\.android\build-cache\6f172eda68d4f0aeba44fcc289e5bff1c7bc7194\output\AndroidManifest.xml:27:105-161
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\beesolver\.android\build-cache\507fb61899aafe67634ccca8c8227ec0a8ffa086\output\AndroidManifest.xml:27:17-104
+		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Beesolver\.android\build-cache\6f172eda68d4f0aeba44fcc289e5bff1c7bc7194\output\AndroidManifest.xml:27:17-104
 intent-filter#com.android.vending.INSTALL_REFERRER
-ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\beesolver\.android\build-cache\507fb61899aafe67634ccca8c8227ec0a8ffa086\output\AndroidManifest.xml:28:11-30:27
+ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Beesolver\.android\build-cache\6f172eda68d4f0aeba44fcc289e5bff1c7bc7194\output\AndroidManifest.xml:28:11-30:27
 action#com.android.vending.INSTALL_REFERRER
-ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\beesolver\.android\build-cache\507fb61899aafe67634ccca8c8227ec0a8ffa086\output\AndroidManifest.xml:29:15-76
+ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Beesolver\.android\build-cache\6f172eda68d4f0aeba44fcc289e5bff1c7bc7194\output\AndroidManifest.xml:29:15-76
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\beesolver\.android\build-cache\507fb61899aafe67634ccca8c8227ec0a8ffa086\output\AndroidManifest.xml:29:23-74
+		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Beesolver\.android\build-cache\6f172eda68d4f0aeba44fcc289e5bff1c7bc7194\output\AndroidManifest.xml:29:23-74
 service#com.google.android.gms.measurement.AppMeasurementService
-ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\beesolver\.android\build-cache\507fb61899aafe67634ccca8c8227ec0a8ffa086\output\AndroidManifest.xml:32:7-137
-MERGED from [com.google.firebase:firebase-analytics-impl:9.6.0] C:\Users\beesolver\.android\build-cache\86356dbef6f3b6e27375f26458f48f932af83bec\output\AndroidManifest.xml:27:7-137
+ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Beesolver\.android\build-cache\6f172eda68d4f0aeba44fcc289e5bff1c7bc7194\output\AndroidManifest.xml:32:7-137
+MERGED from [com.google.firebase:firebase-analytics-impl:9.6.0] C:\Users\Beesolver\.android\build-cache\0e91c83282670542a16361c894c80224221cab6d\output\AndroidManifest.xml:27:7-137
 	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\beesolver\.android\build-cache\507fb61899aafe67634ccca8c8227ec0a8ffa086\output\AndroidManifest.xml:32:88-110
+		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Beesolver\.android\build-cache\6f172eda68d4f0aeba44fcc289e5bff1c7bc7194\output\AndroidManifest.xml:32:88-110
 	android:exported
-		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\beesolver\.android\build-cache\507fb61899aafe67634ccca8c8227ec0a8ffa086\output\AndroidManifest.xml:32:111-135
+		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Beesolver\.android\build-cache\6f172eda68d4f0aeba44fcc289e5bff1c7bc7194\output\AndroidManifest.xml:32:111-135
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\beesolver\.android\build-cache\507fb61899aafe67634ccca8c8227ec0a8ffa086\output\AndroidManifest.xml:32:16-87
+		ADDED from [com.google.firebase:firebase-analytics:9.6.0] C:\Users\Beesolver\.android\build-cache\6f172eda68d4f0aeba44fcc289e5bff1c7bc7194\output\AndroidManifest.xml:32:16-87
 receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
-ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\beesolver\.android\build-cache\e267732c6bbda79d2c40ade94d90cff892f3711e\output\AndroidManifest.xml:30:9-36:20
+ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\5c2d316b9634a51c006d795ec82cb8c0105810c3\output\AndroidManifest.xml:30:9-36:20
 	android:exported
-		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\beesolver\.android\build-cache\e267732c6bbda79d2c40ade94d90cff892f3711e\output\AndroidManifest.xml:30:85-108
+		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\5c2d316b9634a51c006d795ec82cb8c0105810c3\output\AndroidManifest.xml:30:85-108
 	android:permission
-		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\beesolver\.android\build-cache\e267732c6bbda79d2c40ade94d90cff892f3711e\output\AndroidManifest.xml:30:109-169
+		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\5c2d316b9634a51c006d795ec82cb8c0105810c3\output\AndroidManifest.xml:30:109-169
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\beesolver\.android\build-cache\e267732c6bbda79d2c40ade94d90cff892f3711e\output\AndroidManifest.xml:30:19-84
+		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\5c2d316b9634a51c006d795ec82cb8c0105810c3\output\AndroidManifest.xml:30:19-84
 intent-filter#${applicationId}+com.google.android.c2dm.intent.RECEIVE+com.google.android.c2dm.intent.REGISTRATION
-ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\beesolver\.android\build-cache\e267732c6bbda79d2c40ade94d90cff892f3711e\output\AndroidManifest.xml:31:13-35:29
+ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\5c2d316b9634a51c006d795ec82cb8c0105810c3\output\AndroidManifest.xml:31:13-35:29
 action#com.google.android.c2dm.intent.RECEIVE
-ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\beesolver\.android\build-cache\e267732c6bbda79d2c40ade94d90cff892f3711e\output\AndroidManifest.xml:32:17-80
+ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\5c2d316b9634a51c006d795ec82cb8c0105810c3\output\AndroidManifest.xml:32:17-80
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\beesolver\.android\build-cache\e267732c6bbda79d2c40ade94d90cff892f3711e\output\AndroidManifest.xml:32:25-78
+		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\5c2d316b9634a51c006d795ec82cb8c0105810c3\output\AndroidManifest.xml:32:25-78
 action#com.google.android.c2dm.intent.REGISTRATION
-ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\beesolver\.android\build-cache\e267732c6bbda79d2c40ade94d90cff892f3711e\output\AndroidManifest.xml:33:17-85
+ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\5c2d316b9634a51c006d795ec82cb8c0105810c3\output\AndroidManifest.xml:33:17-85
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\beesolver\.android\build-cache\e267732c6bbda79d2c40ade94d90cff892f3711e\output\AndroidManifest.xml:33:25-83
+		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\5c2d316b9634a51c006d795ec82cb8c0105810c3\output\AndroidManifest.xml:33:25-83
 category#${applicationId}
-ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\beesolver\.android\build-cache\e267732c6bbda79d2c40ade94d90cff892f3711e\output\AndroidManifest.xml:34:17-60
+ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\5c2d316b9634a51c006d795ec82cb8c0105810c3\output\AndroidManifest.xml:34:17-60
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\beesolver\.android\build-cache\e267732c6bbda79d2c40ade94d90cff892f3711e\output\AndroidManifest.xml:34:27-58
+		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\5c2d316b9634a51c006d795ec82cb8c0105810c3\output\AndroidManifest.xml:34:27-58
 receiver#com.google.firebase.iid.FirebaseInstanceIdInternalReceiver
-ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\beesolver\.android\build-cache\e267732c6bbda79d2c40ade94d90cff892f3711e\output\AndroidManifest.xml:40:9-119
+ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\5c2d316b9634a51c006d795ec82cb8c0105810c3\output\AndroidManifest.xml:40:9-119
 	android:exported
-		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\beesolver\.android\build-cache\e267732c6bbda79d2c40ade94d90cff892f3711e\output\AndroidManifest.xml:40:93-117
+		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\5c2d316b9634a51c006d795ec82cb8c0105810c3\output\AndroidManifest.xml:40:93-117
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\beesolver\.android\build-cache\e267732c6bbda79d2c40ade94d90cff892f3711e\output\AndroidManifest.xml:40:19-92
+		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\5c2d316b9634a51c006d795ec82cb8c0105810c3\output\AndroidManifest.xml:40:19-92
 service#com.google.firebase.iid.FirebaseInstanceIdService
-ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\beesolver\.android\build-cache\e267732c6bbda79d2c40ade94d90cff892f3711e\output\AndroidManifest.xml:44:9-48:19
+ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\5c2d316b9634a51c006d795ec82cb8c0105810c3\output\AndroidManifest.xml:44:9-48:19
 	android:exported
-		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\beesolver\.android\build-cache\e267732c6bbda79d2c40ade94d90cff892f3711e\output\AndroidManifest.xml:44:83-106
+		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\5c2d316b9634a51c006d795ec82cb8c0105810c3\output\AndroidManifest.xml:44:83-106
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\beesolver\.android\build-cache\e267732c6bbda79d2c40ade94d90cff892f3711e\output\AndroidManifest.xml:44:18-82
+		ADDED from [com.google.firebase:firebase-iid:9.6.0] C:\Users\Beesolver\.android\build-cache\5c2d316b9634a51c006d795ec82cb8c0105810c3\output\AndroidManifest.xml:44:18-82
 provider#com.google.firebase.provider.FirebaseInitProvider
-ADDED from [com.google.firebase:firebase-common:9.6.0] C:\Users\beesolver\.android\build-cache\cfb6a0c8c61c73818f459fa7aa8aef91739f601f\output\AndroidManifest.xml:6:9-175
+ADDED from [com.google.firebase:firebase-common:9.6.0] C:\Users\Beesolver\.android\build-cache\0d20a2b1f46e5aac4b6baf39b412f40a5177b853\output\AndroidManifest.xml:6:9-175
 	android:authorities
-		ADDED from [com.google.firebase:firebase-common:9.6.0] C:\Users\beesolver\.android\build-cache\cfb6a0c8c61c73818f459fa7aa8aef91739f601f\output\AndroidManifest.xml:6:19-78
+		ADDED from [com.google.firebase:firebase-common:9.6.0] C:\Users\Beesolver\.android\build-cache\0d20a2b1f46e5aac4b6baf39b412f40a5177b853\output\AndroidManifest.xml:6:19-78
 	android:exported
-		ADDED from [com.google.firebase:firebase-common:9.6.0] C:\Users\beesolver\.android\build-cache\cfb6a0c8c61c73818f459fa7aa8aef91739f601f\output\AndroidManifest.xml:6:125-149
+		ADDED from [com.google.firebase:firebase-common:9.6.0] C:\Users\Beesolver\.android\build-cache\0d20a2b1f46e5aac4b6baf39b412f40a5177b853\output\AndroidManifest.xml:6:125-149
 	android:initOrder
-		ADDED from [com.google.firebase:firebase-common:9.6.0] C:\Users\beesolver\.android\build-cache\cfb6a0c8c61c73818f459fa7aa8aef91739f601f\output\AndroidManifest.xml:6:150-173
+		ADDED from [com.google.firebase:firebase-common:9.6.0] C:\Users\Beesolver\.android\build-cache\0d20a2b1f46e5aac4b6baf39b412f40a5177b853\output\AndroidManifest.xml:6:150-173
 	android:name
-		ADDED from [com.google.firebase:firebase-common:9.6.0] C:\Users\beesolver\.android\build-cache\cfb6a0c8c61c73818f459fa7aa8aef91739f601f\output\AndroidManifest.xml:6:79-124
+		ADDED from [com.google.firebase:firebase-common:9.6.0] C:\Users\Beesolver\.android\build-cache\0d20a2b1f46e5aac4b6baf39b412f40a5177b853\output\AndroidManifest.xml:6:79-124
 uses-feature#0x00020000
-ADDED from [com.google.android.gms:play-services-maps:9.6.0] C:\Users\beesolver\.android\build-cache\0416a8a7a01da4a48e3f74ebaf3fc0134bd2e9f4\output\AndroidManifest.xml:21:5-77
+ADDED from [com.google.android.gms:play-services-maps:9.6.0] C:\Users\Beesolver\.android\build-cache\af68822b14bbb5c8e695497d72d7e26570a8cfa5\output\AndroidManifest.xml:21:5-77
 	android:glEsVersion
-		ADDED from [com.google.android.gms:play-services-maps:9.6.0] C:\Users\beesolver\.android\build-cache\0416a8a7a01da4a48e3f74ebaf3fc0134bd2e9f4\output\AndroidManifest.xml:21:19-51
+		ADDED from [com.google.android.gms:play-services-maps:9.6.0] C:\Users\Beesolver\.android\build-cache\af68822b14bbb5c8e695497d72d7e26570a8cfa5\output\AndroidManifest.xml:21:19-51
 	android:required
-		ADDED from [com.google.android.gms:play-services-maps:9.6.0] C:\Users\beesolver\.android\build-cache\0416a8a7a01da4a48e3f74ebaf3fc0134bd2e9f4\output\AndroidManifest.xml:21:52-75
+		ADDED from [com.google.android.gms:play-services-maps:9.6.0] C:\Users\Beesolver\.android\build-cache\af68822b14bbb5c8e695497d72d7e26570a8cfa5\output\AndroidManifest.xml:21:52-75
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:9.6.0] C:\Users\beesolver\.android\build-cache\39cac0cd3945e4bd584590e81e6f05add07ec1e5\output\AndroidManifest.xml:19:9-172
+ADDED from [com.google.android.gms:play-services-base:9.6.0] C:\Users\Beesolver\.android\build-cache\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\output\AndroidManifest.xml:19:9-172
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:9.6.0] C:\Users\beesolver\.android\build-cache\39cac0cd3945e4bd584590e81e6f05add07ec1e5\output\AndroidManifest.xml:19:146-170
+		ADDED from [com.google.android.gms:play-services-base:9.6.0] C:\Users\Beesolver\.android\build-cache\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\output\AndroidManifest.xml:19:146-170
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:9.6.0] C:\Users\beesolver\.android\build-cache\39cac0cd3945e4bd584590e81e6f05add07ec1e5\output\AndroidManifest.xml:19:86-145
+		ADDED from [com.google.android.gms:play-services-base:9.6.0] C:\Users\Beesolver\.android\build-cache\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\output\AndroidManifest.xml:19:86-145
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:9.6.0] C:\Users\beesolver\.android\build-cache\39cac0cd3945e4bd584590e81e6f05add07ec1e5\output\AndroidManifest.xml:19:19-85
+		ADDED from [com.google.android.gms:play-services-base:9.6.0] C:\Users\Beesolver\.android\build-cache\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\output\AndroidManifest.xml:19:19-85

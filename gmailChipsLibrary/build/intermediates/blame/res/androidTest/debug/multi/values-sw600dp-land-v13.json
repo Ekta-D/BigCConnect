@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-sw600dp-land-v13\\values-sw600dp-land-v13.xml",
+        "outputFile": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-sw600dp-land-v13\\values-sw600dp-land-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 94
                 },
                 "from": {
-                    "file": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\debug\\res\\values-sw600dp-land-v13\\values-sw600dp-land-v13.xml",
+                    "file": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\debug\\res\\values-sw600dp-land-v13\\values-sw600dp-land-v13.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 138
                 },
                 "from": {
-                    "file": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\debug\\res\\values-sw600dp-land-v13\\values-sw600dp-land-v13.xml",
+                    "file": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\debug\\res\\values-sw600dp-land-v13\\values-sw600dp-land-v13.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -49,7 +49,7 @@
                     "endOffset": 184
                 },
                 "from": {
-                    "file": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\debug\\res\\values-sw600dp-land-v13\\values-sw600dp-land-v13.xml",
+                    "file": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\debug\\res\\values-sw600dp-land-v13\\values-sw600dp-land-v13.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

@@ -42,9 +42,11 @@ public class Preferences {
         editor = prefs.edit();
     }
 
-    public void clearPreferences(){
-        editor.clear();
-        editor.commit();
+    public void clearPreferences(Context context) {
+        context.getSharedPreferences(Constants.PREFS_NAME,
+                Context.MODE_PRIVATE).edit().clear().commit();
+//        editor.clear();
+//        editor.commit();
     }
 
     public static synchronized Preferences getInstance(Context context) {

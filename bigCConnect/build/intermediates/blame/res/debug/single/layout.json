@@ -1,590 +1,590 @@
 [
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\notification_media_cancel_action.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\layout_dialog_add_tribute.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\layout_dialog_add_tribute.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_messages_detail.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_messages_detail.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\row_grid.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\row_grid.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_story_detail.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_story_detail.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\place_autocomplete_item_powered_by_google.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\6c02cd301da124e1f85c11bfc21066452ea151d9\\output\\res\\layout\\place_autocomplete_item_powered_by_google.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\main.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\simpleCropLib\\build\\intermediates\\bundles\\default\\res\\layout\\main.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_connections_layout.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_connections_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media_custom.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\notification_template_media_custom.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\cast_tracks_chooser_dialog_row_layout.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\\output\\res\\layout\\cast_tracks_chooser_dialog_row_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_cateogory_survivors_layout.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_cateogory_survivors_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_survivor_search.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_survivor_search.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\notification_action_tombstone.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_setupremainder.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_setupremainder.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_post_detail.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_post_detail.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_post_detail.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_post_detail.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\select_dialog_item_material.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_videos.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\list_item_videos.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\mr_volume_control.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\86bcb881e5c30bf7ce1e823ca8ce534a3c01b138\\output\\res\\layout\\mr_volume_control.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_survivor_search_result.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_survivor_search_result.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_terms_conditions.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_terms_conditions.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\abc_action_bar_title_item.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_invite.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_invite.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_comment.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\list_item_comment.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\listitem_message.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\listitem_message.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\player_view.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\player_view.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\mr_chooser_dialog.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\86bcb881e5c30bf7ce1e823ca8ce534a3c01b138\\output\\res\\layout\\mr_chooser_dialog.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action_tombstone.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\notification_action_tombstone.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\notification_template_part_time.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\item_request_layout.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\item_request_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\abc_expanded_menu_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\notification_action.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\cast_intro_overlay.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\\output\\res\\layout\\cast_intro_overlay.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_addprofilepic.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_addprofilepic.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\notification_template_big_media_narrow.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\row_grid.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\row_grid.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\activity_loadimagefromsdcard.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\activity_loadimagefromsdcard.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_settings.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_settings.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\chips_recipient_dropdown_item.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\default\\res\\layout\\chips_recipient_dropdown_item.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_addprofilepic.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_addprofilepic.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\mr_controller_volume_item.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\86bcb881e5c30bf7ce1e823ca8ce534a3c01b138\\output\\res\\layout\\mr_controller_volume_item.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow_custom.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\notification_template_big_media_narrow_custom.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\place_autocomplete_progress.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\ecb9d55f018ba9b36a56d630a11a32deb0141440\\output\\res\\layout\\place_autocomplete_progress.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_custom.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\notification_template_big_media_custom.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_nameinput.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_nameinput.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_tributes.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\list_item_tributes.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\more_item.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\default\\res\\layout\\more_item.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\mr_chooser_list_item.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\7ec456b531d2e87f743b4e26a300471e5b078c52\\output\\res\\layout\\mr_chooser_list_item.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\select_dialog_singlechoice_material.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\single_textview_listitem.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\single_textview_listitem.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\abc_action_mode_bar.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\abc_select_dialog_material.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_book_detail.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_book_detail.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\activity_home_old.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\activity_home_old.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\activity_search_layout.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\activity_search_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\chips_recipient_dropdown_item.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\default\\res\\layout\\chips_recipient_dropdown_item.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_emailinput.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_emailinput.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\activity_search_layout.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\activity_search_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\notification_media_action.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_deactivate_security.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_deactivate_security.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_rssfeeds.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_rssfeeds.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_header_item_layout.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\abc_popup_menu_header_item_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\grid_item_ribbons_layout.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\grid_item_ribbons_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_invite.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_invite.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\abc_screen_simple.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_stories_layout.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_stories_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\activity_login.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\activity_login.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_story_detail.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_story_detail.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\layout_list.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\layout_list.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_report_problem.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_report_problem.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\mr_playback_control.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\86bcb881e5c30bf7ce1e823ca8ce534a3c01b138\\output\\res\\layout\\mr_playback_control.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\more_item.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\default\\res\\layout\\more_item.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_connections_layout.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_connections_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\select_dialog_multichoice_material.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_reply_layout.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\list_item_reply_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_icon_group.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\notification_template_icon_group.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\abc_action_bar_title_item.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\abc_action_menu_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\notification_template_part_chronometer.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\abc_action_menu_item_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_feeds_layout.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_feeds_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\mr_controller_volume_item.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\7ec456b531d2e87f743b4e26a300471e5b078c52\\output\\res\\layout\\mr_controller_volume_item.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\load_more_footer.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\loadMoreListView\\build\\intermediates\\bundles\\default\\res\\layout\\load_more_footer.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\abc_action_mode_close_item_material.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\activity_search.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\activity_search.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\abc_screen_toolbar.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\activity_home.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\activity_home.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\abc_popup_menu_item_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\layout_list_with_margin.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\layout_list_with_margin.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\layout_grid.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\layout_grid.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\cast_help_text.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\8879f853ff549e3fc89e503b0eb14f089c65781e\\output\\res\\layout\\cast_help_text.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\abc_alert_dialog_material.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\abc_search_view.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_cateogory_survivors_layout.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_cateogory_survivors_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\cast_intro_overlay.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\8879f853ff549e3fc89e503b0eb14f089c65781e\\output\\res\\layout\\cast_intro_overlay.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_ribbonselection.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_ribbonselection.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_survivor_search_result.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_survivor_search_result.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\abc_search_view.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\abc_list_menu_item_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_books.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\list_item_books.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_deactivate.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_deactivate.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\copy_chip_dialog_layout.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\default\\res\\layout\\copy_chip_dialog_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\activity_splash.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\activity_splash.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\cast_expanded_controller_activity.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\\output\\res\\layout\\cast_expanded_controller_activity.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\single_textview_listitem.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\single_textview_listitem.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_resetpassword.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_resetpassword.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_player_view.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_player_view.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\notification_template_media.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\support_simple_spinner_dropdown_item.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\notification_template_part_time.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\notification_template_icon_group.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines_media.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\notification_template_lines_media.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\abc_list_menu_item_radio.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\gallery.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\gallery.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_profile_layout.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_profile_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\notification_template_big_media.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\tab.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\tab.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\abc_alert_dialog_material.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_ribbons_layout.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\list_item_ribbons_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\abc_popup_menu_item_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\activity_search.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\activity_search.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\activity_loadimagefromsdcard.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\activity_loadimagefromsdcard.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_nameinput.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_nameinput.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_settings.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_settings.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\abc_screen_content_include.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_deactivate_security.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_deactivate_security.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_supporter_visibility.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_supporter_visibility.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_survivor_search.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_survivor_search.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_profile_layout.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_profile_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\newsfeed_item_layout.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\newsfeed_item_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\pull_to_refresh_header.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\loadMoreListView\\build\\intermediates\\bundles\\default\\res\\layout\\pull_to_refresh_header.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\cast_mini_controller.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\8879f853ff549e3fc89e503b0eb14f089c65781e\\output\\res\\layout\\cast_mini_controller.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\listitem_search_result.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\listitem_search_result.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\place_autocomplete_item_powered_by_google.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\ecb9d55f018ba9b36a56d630a11a32deb0141440\\output\\res\\layout\\place_autocomplete_item_powered_by_google.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\ribbon_selection_item_layout.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\ribbon_selection_item_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_supporter_visibility.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_supporter_visibility.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\notification_action.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_custom.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\notification_template_big_media_custom.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\abc_dialog_title_material.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\cast_tracks_chooser_dialog_layout.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\8879f853ff549e3fc89e503b0eb14f089c65781e\\output\\res\\layout\\cast_tracks_chooser_dialog_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\select_dialog_singlechoice_material.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\listitem_search_result_with_picture.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\listitem_search_result_with_picture.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\select_dialog_item_material.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_explore_layout.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_explore_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_ad.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\list_item_ad.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_search_survivors.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_search_survivors.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\item_request_layout.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\item_request_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\listitem_message.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\listitem_message.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_tribunes.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_tribunes.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\layout_popup.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\layout_popup.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_stories.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\list_item_stories.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\cast_help_text.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\\output\\res\\layout\\cast_help_text.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\notification_template_big_media.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media_custom.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\notification_template_media_custom.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\chips_alternate_item.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\default\\res\\layout\\chips_alternate_item.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\autotext_layout.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\autotext_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\ribbon_nothing_selected.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\ribbon_nothing_selected.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_terms_conditions.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_terms_conditions.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\autotext_layout.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\autotext_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\gallery_item.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\gallery_item.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\gallery_item.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\gallery_item.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_emailinput.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_emailinput.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\activity_post_layout.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\activity_post_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\abc_action_bar_up_container.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_rssfeed_layout.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_rssfeed_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_tribute_detail.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_tribute_detail.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow_custom.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\notification_template_big_media_narrow_custom.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\abc_list_menu_item_icon.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\copy_chip_dialog_layout.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\default\\res\\layout\\copy_chip_dialog_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\activity_zoom_layout.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\activity_zoom_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_tribute_detail.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_tribute_detail.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_news.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\list_item_news.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_books.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_books.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\ribbon_nothing_selected.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\ribbon_nothing_selected.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\abc_screen_toolbar.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_rssfeed_layout.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_rssfeed_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\tab.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\tab.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_messages_layout.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_messages_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\abc_list_menu_item_icon.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\activity_splash.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\activity_splash.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\layout_list_with_margin.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\layout_list_with_margin.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\main.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\simpleCropLib\\build\\intermediates\\bundles\\default\\res\\layout\\main.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\place_autocomplete_fragment.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\ecb9d55f018ba9b36a56d630a11a32deb0141440\\output\\res\\layout\\place_autocomplete_fragment.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\chips_alternate_item.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\default\\res\\layout\\chips_alternate_item.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_books.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\list_item_books.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\gallery.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\gallery.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\activity_post_layout.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\activity_post_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\notification_template_part_chronometer.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\abc_action_bar_up_container.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\abc_screen_content_include.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\cropimage.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\simpleCropLib\\build\\intermediates\\bundles\\default\\res\\layout\\cropimage.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_books.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_books.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_passwordinput.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_passwordinput.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_passwordinput.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_passwordinput.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_ribbonselection.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_ribbonselection.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\newsfeed_item_with_title_layout.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\newsfeed_item_with_title_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\ribbon_selection_item_layout.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\ribbon_selection_item_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_feeds_layout.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_feeds_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\notification_template_big_media_narrow.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\problem_nothing_selected.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\problem_nothing_selected.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\activity_zoom_layout.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\activity_zoom_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\activity_signup.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\activity_signup.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\problem_nothing_selected.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\problem_nothing_selected.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\abc_list_menu_item_radio.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\listitem_chat.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\listitem_chat.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\activity_home.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\activity_home.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\notification_template_media.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\mr_volume_control.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\7ec456b531d2e87f743b4e26a300471e5b078c52\\output\\res\\layout\\mr_volume_control.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\select_dialog_multichoice_material.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\load_more_footer.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\loadMoreListView\\build\\intermediates\\bundles\\default\\res\\layout\\load_more_footer.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_header_item_layout.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\abc_popup_menu_header_item_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\mr_chooser_list_item.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\86bcb881e5c30bf7ce1e823ca8ce534a3c01b138\\output\\res\\layout\\mr_chooser_list_item.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\notification_media_action.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\activity_signup.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\activity_signup.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_book_detail.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_book_detail.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_resetpassword.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_resetpassword.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_tribunes.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_tribunes.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\player_view.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\player_view.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\abc_list_menu_item_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\cast_expanded_controller_activity.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\8879f853ff549e3fc89e503b0eb14f089c65781e\\output\\res\\layout\\cast_expanded_controller_activity.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_reply_layout.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\list_item_reply_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_report_problem.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_report_problem.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\activity_login.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\activity_login.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\abc_activity_chooser_view.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\place_autocomplete_item_prediction.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\6c02cd301da124e1f85c11bfc21066452ea151d9\\output\\res\\layout\\place_autocomplete_item_prediction.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines_media.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\notification_template_lines_media.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\cast_tracks_chooser_dialog_layout.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\\output\\res\\layout\\cast_tracks_chooser_dialog_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\place_autocomplete_item_prediction.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\ecb9d55f018ba9b36a56d630a11a32deb0141440\\output\\res\\layout\\place_autocomplete_item_prediction.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\mr_playback_control.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\7ec456b531d2e87f743b4e26a300471e5b078c52\\output\\res\\layout\\mr_playback_control.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_selection.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_selection.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_player_view.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_player_view.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\activity_home_old.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\activity_home_old.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\abc_screen_simple.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\pull_to_refresh_header.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\loadMoreListView\\build\\intermediates\\bundles\\default\\res\\layout\\pull_to_refresh_header.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\notification_media_cancel_action.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\abc_select_dialog_material.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\mr_controller_material_dialog_b.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\7ec456b531d2e87f743b4e26a300471e5b078c52\\output\\res\\layout\\mr_controller_material_dialog_b.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_messages_layout.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_messages_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\layout_dialog_add_tribute.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\layout_dialog_add_tribute.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_selection.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_selection.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_ribbons_layout.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\list_item_ribbons_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\listitem_chat.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\listitem_chat.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\layout_grid.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\layout_grid.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\cast_mini_controller.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\\output\\res\\layout\\cast_mini_controller.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_stories_layout.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_stories_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\abc_activity_chooser_view.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\abc_action_menu_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\abc_action_mode_bar.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_news.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\list_item_news.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_rssfeeds.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_rssfeeds.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\layout_popup.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\layout_popup.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\grid_item_ribbons_layout.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\grid_item_ribbons_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\listitem_search_result.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\listitem_search_result.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\newsfeed_item_layout.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\newsfeed_item_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\abc_action_menu_item_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\activity_forgotpassword.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\activity_forgotpassword.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_tributes.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\list_item_tributes.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_explore_layout.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_explore_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_videos.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_videos.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_videos.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_videos.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_ad.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\list_item_ad.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_search_survivors.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_search_survivors.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_videos.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\list_item_videos.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_messages_detail.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_messages_detail.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_comment.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\list_item_comment.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\place_autocomplete_progress.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\6c02cd301da124e1f85c11bfc21066452ea151d9\\output\\res\\layout\\place_autocomplete_progress.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\activity_forgotpassword.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\activity_forgotpassword.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\layout_list.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\layout_list.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\cropimage.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\simpleCropLib\\build\\intermediates\\bundles\\default\\res\\layout\\cropimage.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_deactivate.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_deactivate.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\cast_tracks_chooser_dialog_row_layout.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\8879f853ff549e3fc89e503b0eb14f089c65781e\\output\\res\\layout\\cast_tracks_chooser_dialog_row_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\listitem_search_result_with_picture.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\listitem_search_result_with_picture.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_setupremainder.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\fragment_setupremainder.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_stories.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\list_item_stories.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\abc_expanded_menu_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\mr_chooser_dialog.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\7ec456b531d2e87f743b4e26a300471e5b078c52\\output\\res\\layout\\mr_chooser_dialog.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\layout\\abc_activity_chooser_view_list_item.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\place_autocomplete_fragment.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\6c02cd301da124e1f85c11bfc21066452ea151d9\\output\\res\\layout\\place_autocomplete_fragment.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\mr_controller_material_dialog_b.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\86bcb881e5c30bf7ce1e823ca8ce534a3c01b138\\output\\res\\layout\\mr_controller_material_dialog_b.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\layout\\abc_list_menu_item_checkbox.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\layout\\newsfeed_item_with_title_layout.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\layout\\newsfeed_item_with_title_layout.xml"
     }
 ]

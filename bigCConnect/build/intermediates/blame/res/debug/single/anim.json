@@ -1,62 +1,62 @@
 [
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\anim\\abc_slide_in_top.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\anim\\abc_slide_out_top.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\anim\\abc_fade_out.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\anim\\abc_slide_in_top.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\anim\\abc_slide_out_bottom.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\anim\\abc_fade_in.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\remains_same.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\anim\\remains_same.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\anim\\abc_fade_out.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\anim\\abc_fade_in.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\pull_down.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\anim\\pull_down.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\anim\\abc_slide_in_bottom.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\anim\\abc_slide_out_bottom.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\pull_down.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\anim\\pull_down.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\remains_same.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\anim\\remains_same.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\pull_up.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\anim\\pull_up.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\anim\\abc_popup_enter.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\slide_out_left.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\anim\\slide_out_left.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\anim\\abc_popup_enter.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\slide_out_left.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\anim\\slide_out_left.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\anim\\abc_popup_exit.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\anim\\abc_popup_exit.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\pull_up.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\anim\\pull_up.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\slide_in_right.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\anim\\slide_in_right.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\slide_in_right.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\anim\\slide_in_right.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
-        "source": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\anim\\abc_slide_out_top.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     }
 ]

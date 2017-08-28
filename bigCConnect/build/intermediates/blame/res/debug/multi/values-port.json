@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
+        "outputFile": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 106
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\values-port\\values-port.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\values-port\\values-port.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

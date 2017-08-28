@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-bg\\values-bg.xml",
+        "outputFile": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-bg\\values-bg.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 211
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-bg\\values.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\\output\\res\\values-bg\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 408
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-bg\\values.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\\output\\res\\values-bg\\values.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -49,7 +49,7 @@
                     "endOffset": 545
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-bg\\values.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\\output\\res\\values-bg\\values.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -68,7 +68,7 @@
                     "endOffset": 658
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-bg\\values.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\\output\\res\\values-bg\\values.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -87,7 +87,7 @@
                     "endOffset": 886
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-bg\\values.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\\output\\res\\values-bg\\values.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -106,7 +106,7 @@
                     "endOffset": 1114
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-bg\\values.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\\output\\res\\values-bg\\values.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -125,7 +125,7 @@
                     "endOffset": 1251
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-bg\\values.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\\output\\res\\values-bg\\values.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -144,7 +144,7 @@
                     "endOffset": 1389
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-bg\\values.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\\output\\res\\values-bg\\values.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -163,7 +163,7 @@
                     "endOffset": 1633
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\3be25977ec9a26fef414bab0c26302f8424c0f35\\output\\res\\values-bg\\values.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\1275dd441bbda749340d62f5017a04709d1004d4\\output\\res\\values-bg\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -182,7 +182,7 @@
                     "endOffset": 1891
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-bg\\values.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\\output\\res\\values-bg\\values.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -201,7 +201,7 @@
                     "endOffset": 2016
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-bg\\values.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\\output\\res\\values-bg\\values.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -220,7 +220,7 @@
                     "endOffset": 2130
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-bg\\values.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\\output\\res\\values-bg\\values.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -239,7 +239,7 @@
                     "endOffset": 2336
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-bg\\values.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\\output\\res\\values-bg\\values.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -258,7 +258,7 @@
                     "endOffset": 2476
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-bg\\values.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\\output\\res\\values-bg\\values.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -277,7 +277,7 @@
                     "endOffset": 2692
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-bg\\values.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\\output\\res\\values-bg\\values.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -296,7 +296,7 @@
                     "endOffset": 2833
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-bg\\values.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\\output\\res\\values-bg\\values.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -315,7 +315,7 @@
                     "endOffset": 3029
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-bg\\values.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\\output\\res\\values-bg\\values.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -334,7 +334,7 @@
                     "endOffset": 3129
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-bg\\values.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\\output\\res\\values-bg\\values.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -353,7 +353,7 @@
                     "endOffset": 3218
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-bg\\values.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\\output\\res\\values-bg\\values.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
@@ -372,7 +372,7 @@
                     "endOffset": 3320
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\39cac0cd3945e4bd584590e81e6f05add07ec1e5\\output\\res\\values-bg\\values.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\93b2a6ba741ed1cb5ec8806609eaa0bc18a82eed\\output\\res\\values-bg\\values.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
@@ -391,7 +391,7 @@
                     "endOffset": 3414
                 },
                 "from": {
-                    "file": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\debug\\res\\values-bg\\values-bg.xml",
+                    "file": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\debug\\res\\values-bg\\values-bg.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -410,7 +410,7 @@
                     "endOffset": 3512
                 },
                 "from": {
-                    "file": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\debug\\res\\values-bg\\values-bg.xml",
+                    "file": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\debug\\res\\values-bg\\values-bg.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -429,7 +429,7 @@
                     "endOffset": 3581
                 },
                 "from": {
-                    "file": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\debug\\res\\values-bg\\values-bg.xml",
+                    "file": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\debug\\res\\values-bg\\values-bg.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -448,7 +448,7 @@
                     "endOffset": 3684
                 },
                 "from": {
-                    "file": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\debug\\res\\values-bg\\values-bg.xml",
+                    "file": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\debug\\res\\values-bg\\values-bg.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,

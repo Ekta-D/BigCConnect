@@ -48,23 +48,21 @@ dependencies {
     compile('com.github.JakeWharton:ViewPagerIndicator:2.4.1') {
         exclude module: 'support-v4'
     }
+
     //compile 'com.github.JakeWharton:ViewPagerIndicator:2.4.1'
-
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
-
-    compile 'com.google.firebase:firebase-core:9.6.0' //firebase
+    compile 'com.google.firebase:firebase-core:9.6.0'
+    //firebase
     compile 'com.google.firebase:firebase-storage:9.6.0'
     compile 'com.google.firebase:firebase-database:9.6.0'
     compile 'com.google.firebase:firebase-auth:9.6.0'
-    compile 'com.google.firebase:firebase-messaging:9.6.0' // for push notification
-//    compile 'com.firebase:firebase-client-android:2.5.2'
-
+    compile 'com.google.firebase:firebase-messaging:9.6.0'
+    // for push notification
+    //    compile 'com.firebase:firebase-client-android:2.5.2'
     compile 'com.google.android.gms:play-services:9.6.0'
     compile 'com.google.android.gms:play-services-location:9.6.0'
     compile 'com.google.android.gms:play-services-places:9.6.0'
-
-    compile group: 'com.google.code.gson', name: 'gson', version: '2.3.1'
-
+    compile 'com.google.code.gson:gson:2.3.1'
     compile 'com.android.support:appcompat-v7:25.0.0'
     compile files('libs/YouTubeAndroidPlayerApi.jar')
     compile files('libs/jackson-annotations-2.2.3.jar')
@@ -77,5 +75,6 @@ dependencies {
     compile files('libs/spring-android-core-1.0.1.RELEASE.jar')
     compile files('libs/spring-android-rest-template-1.0.1.RELEASE.jar')
     compile files('libs/universal-image-loader-1.9.2.jar')
+    compile files('libs/mopub-sdk-4.16.1-sources.jar')
 }
 apply plugin: 'com.google.gms.google-services'

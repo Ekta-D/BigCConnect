@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
+        "outputFile": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 120
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\values-land\\values-land.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 184
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\values-land\\values-land.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -49,7 +49,7 @@
                     "endOffset": 255
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\values-land\\values-land.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -68,7 +68,7 @@
                     "endOffset": 323
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\0aefd778b7c9b8f22ed6fdd2ddf69883a14a2a3b\\output\\res\\values-land\\values-land.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\462bf9964001611d1b6c50b5e3dfa1dbb9726e2f\\output\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -87,7 +87,7 @@
                     "endOffset": 415
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\\output\\res\\values-land\\values.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\8879f853ff549e3fc89e503b0eb14f089c65781e\\output\\res\\values-land\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -106,7 +106,7 @@
                     "endOffset": 506
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\\output\\res\\values-land\\values.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\8879f853ff549e3fc89e503b0eb14f089c65781e\\output\\res\\values-land\\values.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -125,7 +125,7 @@
                     "endOffset": 605
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\\output\\res\\values-land\\values.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\8879f853ff549e3fc89e503b0eb14f089c65781e\\output\\res\\values-land\\values.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -144,7 +144,7 @@
                     "endOffset": 700
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\13372e5fb25f3e77f7d2338b828780d3ed6b7c47\\output\\res\\values-land\\values.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\8879f853ff549e3fc89e503b0eb14f089c65781e\\output\\res\\values-land\\values.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -163,7 +163,7 @@
                     "endOffset": 744
                 },
                 "from": {
-                    "file": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\default\\res\\values-land\\values-land.xml",
+                    "file": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\bundles\\default\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -182,7 +182,7 @@
                     "endOffset": 819
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\7ec456b531d2e87f743b4e26a300471e5b078c52\\output\\res\\values-land\\values-land.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\86bcb881e5c30bf7ce1e823ca8ce534a3c01b138\\output\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -201,7 +201,7 @@
                     "endOffset": 897
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\7ec456b531d2e87f743b4e26a300471e5b078c52\\output\\res\\values-land\\values-land.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\86bcb881e5c30bf7ce1e823ca8ce534a3c01b138\\output\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -220,7 +220,7 @@
                     "endOffset": 972
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\7ec456b531d2e87f743b4e26a300471e5b078c52\\output\\res\\values-land\\values-land.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\86bcb881e5c30bf7ce1e823ca8ce534a3c01b138\\output\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

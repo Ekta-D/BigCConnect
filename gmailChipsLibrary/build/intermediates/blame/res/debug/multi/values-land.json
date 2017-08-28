@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
+        "outputFile": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 94
                 },
                 "from": {
-                    "file": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-land\\dimen.xml",
+                    "file": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\values-land\\dimen.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,

@@ -247,6 +247,7 @@ public class FragmentStoryDetail extends BaseFragment implements
         }
 
         if (String.valueOf(user_values.get(DbConstants.PROFILE_PICTURE)) != null)
+        {
             ImageLoader.getInstance().displayImage(
                     String.valueOf(user_values.get(DbConstants.PROFILE_PICTURE)),
                     picView, Utils.normalDisplayOptions,
@@ -256,8 +257,13 @@ public class FragmentStoryDetail extends BaseFragment implements
                             picView.setImageResource(R.drawable.default_profile_pic);
                         }
                     });
+        }
+
         else
+        {
             picView.setVisibility(View.GONE);
+        }
+
 
         loveCountView
                 .setText(String

@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw720dp-v13\\values-sw720dp-v13.xml",
+        "outputFile": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw720dp-v13\\values-sw720dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\values-sw720dp\\dimens.xml",
+                    "file": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\values-sw720dp\\dimens.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 147
                 },
                 "from": {
-                    "file": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\values-sw720dp\\dimens.xml",
+                    "file": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\values-sw720dp\\dimens.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -49,7 +49,7 @@
                     "endOffset": 197
                 },
                 "from": {
-                    "file": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\values-sw720dp\\dimens.xml",
+                    "file": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\values-sw720dp\\dimens.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -68,7 +68,7 @@
                     "endOffset": 245
                 },
                 "from": {
-                    "file": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\values-sw720dp\\dimens.xml",
+                    "file": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\values-sw720dp\\dimens.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -87,7 +87,7 @@
                     "endOffset": 314
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\7ec456b531d2e87f743b4e26a300471e5b078c52\\output\\res\\values-sw720dp-v13\\values-sw720dp-v13.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\86bcb881e5c30bf7ce1e823ca8ce534a3c01b138\\output\\res\\values-sw720dp-v13\\values-sw720dp-v13.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -106,7 +106,7 @@
                     "endOffset": 383
                 },
                 "from": {
-                    "file": "C:\\Users\\beesolver\\.android\\build-cache\\7ec456b531d2e87f743b4e26a300471e5b078c52\\output\\res\\values-sw720dp-v13\\values-sw720dp-v13.xml",
+                    "file": "C:\\Users\\Beesolver\\.android\\build-cache\\86bcb881e5c30bf7ce1e823ca8ce534a3c01b138\\output\\res\\values-sw720dp-v13\\values-sw720dp-v13.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -125,7 +125,7 @@
                     "endOffset": 429
                 },
                 "from": {
-                    "file": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\values-sw720dp\\dimens.xml",
+                    "file": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\values-sw720dp\\dimens.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -144,7 +144,7 @@
                     "endOffset": 479
                 },
                 "from": {
-                    "file": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\bigCConnect\\src\\main\\res\\values-sw720dp\\dimens.xml",
+                    "file": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\values-sw720dp\\dimens.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,

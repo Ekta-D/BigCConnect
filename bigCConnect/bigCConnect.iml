@@ -166,6 +166,7 @@
     <orderEntry type="library" exported="" name="play-services-basement-9.6.0" level="project" />
     <orderEntry type="library" exported="" name="spring-android-rest-template-1.0.1.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="robospice-cache-1.4.13" level="project" />
+    <orderEntry type="library" exported="" name="mopub-sdk-4.16.1-sources" level="project" />
     <orderEntry type="library" exported="" name="firebase-auth-common-9.6.0" level="project" />
     <orderEntry type="library" exported="" name="robospice-1.4.13" level="project" />
     <orderEntry type="library" exported="" name="support-v4-25.0.0" level="project" />

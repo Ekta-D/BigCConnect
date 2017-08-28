@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.util.Log;
 
 import com.bigc.datastorage.Preferences;
+import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
 import com.bigc.general.classes.Utils;
@@ -24,12 +25,13 @@ public class Splash extends Activity {
     private volatile boolean sync = false;
     Runnable r;
     Handler handler = new Handler();
+    boolean isFirstTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
+        isFirstTime = Preferences.getInstance(Splash.this).getBoolean(Constants.ISFIRST_TIME);
         //ParseAnalytics.trackAppOpenedInBackground(getIntent());
         sync = false;
 
@@ -68,10 +70,8 @@ public class Splash extends Activity {
     }
 
     private void startApplication() {
-        if (Preferences.getInstance(getApplicationContext()).getString(DbConstants.ID) == null) {
-
-            //Utils.unregisterDeviceForNotifications();
-            startActivity(new Intent(Splash.this, LoginActivity.class));
+        if (!isFirstTime) {
+                startActivity(new Intent(Splash.this, LoginActivity.class));
         } else {
             sendRegistrationToServer(FirebaseInstanceId.getInstance().getToken());
 
@@ -91,6 +91,7 @@ public class Splash extends Activity {
         }
         finish();
     }
+
     private void sendRegistrationToServer(String token) {
         // TODO: Implement this method to send token to your app server.
         HashMap<String, Object> map = new HashMap();

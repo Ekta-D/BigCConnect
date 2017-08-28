@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_alert_feed.png",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable-xhdpi\\ic_alert_feed.png"
+    },
+    {
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_launcher.png",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_alert_invite.png",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable-xhdpi\\ic_alert_invite.png"
+    },
+    {
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_action_overflow.png",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable-xhdpi\\ic_action_overflow.png"
+    },
+    {
+        "merged": "D:\\GITBigC\\BigCConnect\\bigCConnect\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_action_search.png",
+        "source": "D:\\GITBigC\\BigCConnect\\bigCConnect\\src\\main\\res\\drawable-xhdpi\\ic_action_search.png"
+    }
+]

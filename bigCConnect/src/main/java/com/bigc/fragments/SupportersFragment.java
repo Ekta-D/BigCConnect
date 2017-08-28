@@ -126,31 +126,40 @@ public class SupportersFragment extends BaseFragment {
 
             ArrayList<Users> users = Preferences.getInstance(getActivity()).getAllUsers(DbConstants.FETCH_USER);
             ArrayList<Users> userses = new ArrayList<>();
-            for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                String key = dataSnapshot1.getKey();
-                ConnectionsModel connectionsModel = dataSnapshot1.getValue(ConnectionsModel.class);
-                String user;
-                if (supporters) {
-                    user = connectionsModel.getFrom();
-                } else {
-                    user = connectionsModel.getTo();
-                }
+
+            if (dataSnapshot.getValue()!=null)
+            {
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                    String key = dataSnapshot1.getKey();
+                    ConnectionsModel connectionsModel = dataSnapshot1.getValue(ConnectionsModel.class);
+                    String user;
+                    if (supporters) {
+                        user = connectionsModel.getFrom();
+                    } else {
+                        user = connectionsModel.getTo();
+                    }
 
 
-                for (int i = 0; i < users.size(); i++) {
-                    if (users.get(i) != null && users.get(i).getObjectId() != null) {
-                        if (users.get(i).getObjectId().equalsIgnoreCase(user)) {
-                            Users selected_user = users.get(i);
-                            //setValues(selected_user, message, holder);
+                    for (int i = 0; i < users.size(); i++) {
+                        if (users.get(i) != null && users.get(i).getObjectId() != null) {
+                            if (users.get(i).getObjectId().equalsIgnoreCase(user)) {
+                                Users selected_user = users.get(i);
+                                //setValues(selected_user, message, holder);
 
-                            userses.add(selected_user);
+                                userses.add(selected_user);
+                            }
                         }
                     }
+
+                    showData(userses);
+
                 }
-
-                showData(userses);
-
             }
+            else{
+                showNoDataMessage();
+            }
+
+
 
         }
 
@@ -367,7 +376,9 @@ public class SupportersFragment extends BaseFragment {
             listview.setVisibility(View.GONE);
 
             if (supporters) {
-                if (ProfileFragment.getUser().getObjectId()
+
+                String objectID = ProfileFragment.getUser().getObjectId();
+                if (objectID
                         .equals(Preferences.getInstance(getActivity()).getString(DbConstants.ID)))
                     messageView.setText(R.string.NoSupporterMessage);
                 else
@@ -395,16 +406,18 @@ public class SupportersFragment extends BaseFragment {
 //            if (adapter != null)
 
 
-            adapter = new SearchResultAdapter(getActivity(), null, null,
-                    active);
+                adapter = new SearchResultAdapter(getActivity(), null, null,
+                        active);
 //            adapter.updateData(null, active,
 //                    pendingConnections);
 //           adapter.updateData(connections,
 //                    loggedInUserConnections.activeConnections,
 //                    loggedInUserConnections.pendingConnections);
-            listview.setVisibility(View.VISIBLE);
-            listview.setAdapter(adapter);
-            messageViewParent.setVisibility(View.GONE);
+                listview.setVisibility(View.VISIBLE);
+                listview.setAdapter(adapter);
+                messageViewParent.setVisibility(View.GONE);
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -1,18 +1,18 @@
 [
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\release\\layout\\chips_alternate_item.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\layout\\chips_alternate_item.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\release\\layout\\chips_recipient_dropdown_item.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\layout\\chips_recipient_dropdown_item.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\release\\layout\\chips_recipient_dropdown_item.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\layout\\chips_recipient_dropdown_item.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\release\\layout\\more_item.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\layout\\more_item.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\release\\layout\\copy_chip_dialog_layout.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\layout\\copy_chip_dialog_layout.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\release\\layout\\copy_chip_dialog_layout.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\layout\\copy_chip_dialog_layout.xml"
     },
     {
-        "merged": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\release\\layout\\more_item.xml",
-        "source": "D:\\StudioSpace\\BigC-Connect\\BigCConnect\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\layout\\more_item.xml"
+        "merged": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\build\\intermediates\\res\\merged\\release\\layout\\chips_alternate_item.xml",
+        "source": "D:\\GITBigC\\BigCConnect\\gmailChipsLibrary\\src\\main\\res\\layout\\chips_alternate_item.xml"
     }
 ]
