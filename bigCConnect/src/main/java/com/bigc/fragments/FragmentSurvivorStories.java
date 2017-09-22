@@ -1,6 +1,11 @@
 package com.bigc.fragments;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -272,6 +277,40 @@ public class FragmentSurvivorStories extends BaseFragment implements
 //				listView.setVisibility(View.VISIBLE);
 //				progressParent.setVisibility(View.GONE);
 //				this.stories.addAll(stories);
+
+                Collections.sort(stories, new Comparator<Stories>() {
+                    @Override
+                    public int compare(Stories comments, Stories t1) {
+                /*if (Utils.convertStringToDate(comments.getUpdatedAt()) == null || Utils.convertStringToDate(t1.getUpdatedAt()) == null)
+                    return 0;
+                return Utils.convertStringToDate(comments.getUpdatedAt()).compareTo(Utils.convertStringToDate(t1.getUpdatedAt()));*/
+                        try {
+                            SimpleDateFormat dateFormatlhs = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+                            Date convertedDatelhs = dateFormatlhs.parse(comments.getCreatedAt());
+                            Calendar calendarlhs = Calendar.getInstance();
+                            calendarlhs.setTime(convertedDatelhs);
+
+                            SimpleDateFormat dateFormatrhs = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+                            Date convertedDaterhs = dateFormatrhs.parse(t1.getCreatedAt());
+                            Calendar calendarrhs = Calendar.getInstance();
+                            calendarrhs.setTime(convertedDaterhs);
+
+                            if (calendarlhs.getTimeInMillis() < calendarrhs.getTimeInMillis()) {
+                                return -1;
+                            } else {
+                                return 1;
+                            }
+                        } catch (ParseException e) {
+
+                            e.printStackTrace();
+                        }
+
+
+                        return 0;
+                    }
+                });
+
+                Collections.reverse(stories);
                 adapter = new StoriesAdapter(FragmentSurvivorStories.this, stories);
                 listView.setVisibility(View.VISIBLE);
                 listView.setAdapter(adapter);
@@ -378,7 +417,7 @@ public class FragmentSurvivorStories extends BaseFragment implements
 //
 //    }
 
-//    @Override
+    //    @Override
 //    public void onNotify(final ParseObject story) {
 //        Log.e(FragmentSurvivorStories.class.getSimpleName(), "onNotify");
 //        if (story == null) {
@@ -419,10 +458,10 @@ public class FragmentSurvivorStories extends BaseFragment implements
 //    }
 //
     @Override
-public boolean onBackPressed() {
-    ((FragmentHolder) getActivity()).replaceFragment(new ExploreFragment());
-    return true;
-}
+    public boolean onBackPressed() {
+        ((FragmentHolder) getActivity()).replaceFragment(new ExploreFragment());
+        return true;
+    }
 
     @Override
     public void onNotify(Stories story) {

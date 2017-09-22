@@ -23,157 +23,175 @@ import java.util.List;
 
 public class SearchResultPictureAdapter extends SearchResultBaseAdapter {
 
-	private DisplayImageOptions options = new DisplayImageOptions.Builder()
-			.cacheInMemory(true).cacheOnDisk(true).resetViewBeforeLoading(true)
-			.build();
-int ribbon;
-	public SearchResultPictureAdapter(Context context,
-			List<Users> activeConnections,
-			List<Users> pendingConnections, List<Users> data) {
-		super(context, R.layout.listitem_search_result_with_picture,
-				activeConnections, pendingConnections, data);
+    private DisplayImageOptions options = new DisplayImageOptions.Builder()
+            .cacheInMemory(true).cacheOnDisk(true).resetViewBeforeLoading(true)
+            .build();
+    int ribbon;
 
-	}
+    public SearchResultPictureAdapter(Context context,
+                                      List<Users> activeConnections,
+                                      List<Users> pendingConnections, List<Users> data) {
+        super(context, R.layout.listitem_search_result_with_picture,
+                activeConnections, pendingConnections, data);
 
-	@Override
-	public View getView(final int position, View view, ViewGroup parent) {
-		final SurvivorSearchViewHolder holder;
-		final Users user = data.get(position);
+    }
 
-		if (view == null) {
-			view = inflater
-					.inflate(R.layout.listitem_search_result_with_picture,
-							parent, false);
-			holder = new SurvivorSearchViewHolder();
-			holder.addOption = (ImageView) view.findViewById(R.id.addOption);
-			holder.ribbonView = (ImageView) view.findViewById(R.id.ribbonView);
-			holder.nameView = (TextView) view.findViewById(R.id.nameView);
-			holder.descView = (TextView) view
-					.findViewById(R.id.descriptionView);
-			view.setTag(holder);
-		} else {
-			holder = (SurvivorSearchViewHolder) view.getTag();
-		}
+    @Override
+    public View getView(final int position, View view, ViewGroup parent) {
+        final SurvivorSearchViewHolder holder;
+        final Users user = data.get(position);
 
-		holder.indexInNewAddedConnections = Utils.getUserIndex(user,
-				newAddedConnections);
-		holder.indexInActiveConnections = Utils.getUserIndex(user,
-				activeConnections);
-		holder.indexInPendingConnections = Utils.getUserIndex(user,
-				pendingConnections);
-		holder.indexInRemovedConnections = Utils.getUserIndex(user,
-				removedConnections);
+        if (view == null) {
+            view = inflater
+                    .inflate(R.layout.listitem_search_result_with_picture,
+                            parent, false);
+            holder = new SurvivorSearchViewHolder();
+            holder.addOption = (ImageView) view.findViewById(R.id.addOption);
+            holder.ribbonView = (ImageView) view.findViewById(R.id.ribbonView);
+            holder.nameView = (TextView) view.findViewById(R.id.nameView);
+            holder.descView = (TextView) view
+                    .findViewById(R.id.descriptionView);
+            view.setTag(holder);
+        } else {
+            holder = (SurvivorSearchViewHolder) view.getTag();
+        }
 
-		holder.nameView.setText(user.getName());
-		String stage = user.getStage();
-		stage = stage == null ? "" : stage;
-		String loc = user.getLocation();
+        holder.indexInNewAddedConnections = Utils.getUserIndex(user,
+                newAddedConnections);
+        holder.indexInActiveConnections = Utils.getUserIndex(user,
+                activeConnections);
+        holder.indexInPendingConnections = Utils.getUserIndex(user,
+                pendingConnections);
+        holder.indexInRemovedConnections = Utils.getUserIndex(user,
+                removedConnections);
 
-		String desc = (stage.length() > 0 ? stage.concat(", ") : "")
-				.concat(loc == null ? "" : loc);
-		holder.descView.setText(desc);
-		boolean supporter = user.getType() == Constants.USER_TYPE.SUPPORTER
-				.ordinal();
+        holder.nameView.setText(user.getName());
+        String stage = user.getStage();
+        stage = stage == null ? "" : stage;
+        String loc = user.getLocation();
 
-		if (user.getProfile_picture() == null) {
+        String desc = (stage.length() > 0 ? stage.concat(", ") : "")
+                .concat(loc == null ? "" : loc);
+        holder.descView.setText(desc);
+//		boolean supporter = user.getType() == Constants.USER_TYPE.SUPPORTER
+//				.ordinal();
 
-			holder.ribbonView.setImageResource(Utils.fighter_ribbons[ribbon]);
+        int ribbon = user.getRibbon();
+        if (ribbon >= 0) {
 
-		} else {
+//                if (ProfileFragment.user.getInt(DbConstants.TYPE) == Constants.USER_TYPE.FIGHTER
+//                        .ordinal())
+            if (user.getType()==Constants.IS_FIGHTER) {
+                holder.ribbonView.setImageResource(Utils.fighter_ribbons[ribbon]);
+            } else {
+                holder.ribbonView.setImageResource(Utils.survivor_ribbons[ribbon]);
+            }
+            // ribbonView.setImageResource(Utils.survivor_ribbons[ribbon]);
+        } else {
+            holder.ribbonView.setImageResource(R.drawable.ic_launcher);
+        }
+//		if (user.getProfile_picture() == null) {
+//
+//			holder.ribbonView.setImageResource(Utils.fighter_ribbons[ribbon]);
+//
+//		}
+//
+//		else {
+//
+//			String url = user.getProfile_picture();
+//			if (url.length() > 0) {
+//				ImageLoader.getInstance().displayImage(url, holder.ribbonView,
+//						options);
+//			} else {
+//				holder.ribbonView.setImageResource( Utils.survivor_ribbons[CategorySurvivorsFragment.ribbon]);
+//			}
+//
+//		}
 
-			String url = user.getProfile_picture();
-			if (url.length() > 0) {
-				ImageLoader.getInstance().displayImage(url, holder.ribbonView,
-						options);
-			} else {
-				holder.ribbonView.setImageResource( Utils.survivor_ribbons[CategorySurvivorsFragment.ribbon]);
-			}
+//		if ((isSupporterUser && supporter)
+        if ((isSupporterUser)
+                || Preferences.getInstance(getContext().getApplicationContext()).getString(DbConstants.ID)
+                .equals(user.getObjectId())) {
+            holder.addOption.setVisibility(View.GONE);
+        } else {
+            holder.addOption.setVisibility(View.VISIBLE);
+            if (holder.indexInNewAddedConnections >= 0) {
+                holder.addOption
+                        .setImageResource(R.drawable.ic_connect_pending);
+                holder.addOption
+                        .setContentDescription(SearchResultAdapter.TAG_WAITING);
 
-		}
+            } else if (holder.indexInActiveConnections >= 0
+                    && holder.indexInRemovedConnections < 0) {
+                holder.addOption.setImageResource(R.drawable.ic_connected);
+                holder.addOption
+                        .setContentDescription(SearchResultAdapter.TAG_CONNECTED);
 
-		if ((isSupporterUser && supporter)
-				|| Preferences.getInstance(getContext().getApplicationContext()).getString(DbConstants.ID)
-						.equals(user.getObjectId())) {
-			holder.addOption.setVisibility(View.GONE);
-		} else {
-			holder.addOption.setVisibility(View.VISIBLE);
-			if (holder.indexInNewAddedConnections >= 0) {
-				holder.addOption
-						.setImageResource(R.drawable.ic_connect_pending);
-				holder.addOption
-						.setContentDescription(SearchResultAdapter.TAG_WAITING);
+            } else if (holder.indexInPendingConnections >= 0
+                    && holder.indexInRemovedConnections < 0) {
+                holder.addOption
+                        .setImageResource(R.drawable.ic_connect_pending);
+                holder.addOption
+                        .setContentDescription(SearchResultAdapter.TAG_WAITING);
 
-			} else if (holder.indexInActiveConnections >= 0
-					&& holder.indexInRemovedConnections < 0) {
-				holder.addOption.setImageResource(R.drawable.ic_connected);
-				holder.addOption
-						.setContentDescription(SearchResultAdapter.TAG_CONNECTED);
+            } else {
+                holder.addOption.setImageResource(R.drawable.ic_connect);
+                holder.addOption
+                        .setContentDescription(SearchResultAdapter.TAG_NOT_CONNECTED);
+            }
 
-			} else if (holder.indexInPendingConnections >= 0
-					&& holder.indexInRemovedConnections < 0) {
-				holder.addOption
-						.setImageResource(R.drawable.ic_connect_pending);
-				holder.addOption
-						.setContentDescription(SearchResultAdapter.TAG_WAITING);
+            holder.addOption.setOnClickListener(new OnClickListener() {
 
-			} else {
-				holder.addOption.setImageResource(R.drawable.ic_connect);
-				holder.addOption
-						.setContentDescription(SearchResultAdapter.TAG_NOT_CONNECTED);
-			}
+                @Override
+                public void onClick(View v) {
 
-			holder.addOption.setOnClickListener(new OnClickListener() {
+                    if (v.getContentDescription().toString()
+                            .equals(SearchResultAdapter.TAG_NOT_CONNECTED)) {
 
-				@Override
-				public void onClick(View v) {
+                        if (holder.indexInRemovedConnections < 0) {
+                            newAddedConnections.add(user);
+                            holder.indexInNewAddedConnections = newAddedConnections
+                                    .size() - 1;
+                        } else {
+                            removedConnections
+                                    .remove(holder.indexInRemovedConnections);
+                            holder.indexInRemovedConnections = -1;
+                        }
 
-					if (v.getContentDescription().toString()
-							.equals(SearchResultAdapter.TAG_NOT_CONNECTED)) {
+                        holder.addOption
+                                .setContentDescription(SearchResultAdapter.TAG_WAITING);
+                        holder.addOption
+                                .setImageResource(R.drawable.ic_connect_pending);
+                    } else {
+                        if (holder.indexInNewAddedConnections < 0) {
+                            removedConnections.add(data.get(position));
+                            holder.indexInRemovedConnections = removedConnections
+                                    .size() - 1;
+                        } else {
+                            newAddedConnections
+                                    .remove(holder.indexInNewAddedConnections);
+                            holder.indexInNewAddedConnections = -1;
+                        }
 
-						if (holder.indexInRemovedConnections < 0) {
-							newAddedConnections.add(user);
-							holder.indexInNewAddedConnections = newAddedConnections
-									.size() - 1;
-						} else {
-							removedConnections
-									.remove(holder.indexInRemovedConnections);
-							holder.indexInRemovedConnections = -1;
-						}
+                        holder.addOption
+                                .setContentDescription(SearchResultAdapter.TAG_NOT_CONNECTED);
+                        holder.addOption
+                                .setImageResource(R.drawable.ic_connect);
+                    }
+                }
+            });
+        }
+        return view;
+    }
 
-						holder.addOption
-								.setContentDescription(SearchResultAdapter.TAG_WAITING);
-						holder.addOption
-								.setImageResource(R.drawable.ic_connect_pending);
-					} else {
-						if (holder.indexInNewAddedConnections < 0) {
-							removedConnections.add(data.get(position));
-							holder.indexInRemovedConnections = removedConnections
-									.size() - 1;
-						} else {
-							newAddedConnections
-									.remove(holder.indexInNewAddedConnections);
-							holder.indexInNewAddedConnections = -1;
-						}
-
-						holder.addOption
-								.setContentDescription(SearchResultAdapter.TAG_NOT_CONNECTED);
-						holder.addOption
-								.setImageResource(R.drawable.ic_connect);
-					}
-				}
-			});
-		}
-		return view;
-	}
-
-	public static class SurvivorSearchViewHolder {
-		public int indexInRemovedConnections;
-		public int indexInActiveConnections;
-		public int indexInPendingConnections;
-		public int indexInNewAddedConnections;
-		public ImageView ribbonView;
-		public ImageView addOption;
-		public TextView nameView;
-		public TextView descView;
-	}
+    public static class SurvivorSearchViewHolder {
+        public int indexInRemovedConnections;
+        public int indexInActiveConnections;
+        public int indexInPendingConnections;
+        public int indexInNewAddedConnections;
+        public ImageView ribbonView;
+        public ImageView addOption;
+        public TextView nameView;
+        public TextView descView;
+    }
 }

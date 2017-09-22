@@ -96,7 +96,7 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
         holder.descView.setText(desc);
 //		boolean supporter = user.getInt(DbConstants.TYPE) == Constants.USER_TYPE.SUPPORTER
 //				.ordinal();
-        boolean supporter = Preferences.getInstance(getContext()).getInt(DbConstants.TYPE) == 1; // supporter
+        boolean supporter = user.getType() == 1; // supporter
 
         if (supporter)
             holder.ribbonView.setImageResource(R.drawable.ribbon_supporter);
@@ -110,7 +110,7 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
 //										.getInt(DbConstants.RIBBON)]);
                 holder.ribbonView.setImageResource(
                         Preferences.getInstance(getContext()).getInt(DbConstants.RIBBON) < 0 ?
-                                R.drawable.ic_launcher : Utils.fighter_ribbons[user
+                                R.drawable.ribbon_supporter : Utils.fighter_ribbons[user
                                 .getRibbon()]);
 
             } else {
@@ -119,7 +119,7 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
 //                                : Utils.survivor_ribbons[user
 //                                .getInt(DbConstants.RIBBON)]);
                 holder.ribbonView
-                        .setImageResource(user.getRibbon() < 0 ? R.drawable.ic_launcher
+                        .setImageResource(user.getRibbon() < 0 ? R.drawable.ribbon_supporter
                                 : Utils.survivor_ribbons[user
                                 .getRibbon()]);
             }

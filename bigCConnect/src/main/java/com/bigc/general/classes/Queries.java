@@ -47,7 +47,7 @@ public class Queries {
 
     public static Query getStoriesQuery(boolean fromCache) {
         Query query = FirebaseDatabase.getInstance().getReference().
-                child(DbConstants.TABLE_STORIES).limitToFirst(30).orderByChild(DbConstants.CREATED_AT);
+                child(DbConstants.TABLE_STORIES).limitToFirst(30).orderByChild(DbConstants.UPDATED_AT);
         return query;
     }
 
