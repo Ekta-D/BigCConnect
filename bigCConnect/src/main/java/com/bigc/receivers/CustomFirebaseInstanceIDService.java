@@ -36,16 +36,24 @@ public class CustomFirebaseInstanceIDService extends FirebaseInstanceIdService {
 
     private void sendRegistrationToServer(String token) {
         // TODO: Implement this method to send token to your app server.
-        HashMap<String, Object> map = new HashMap();
-        map.put(DbConstants.TOKEN, token);
-        if(FirebaseAuth.getInstance().getCurrentUser()!=null)
-        FirebaseDatabase.getInstance().getReference().child(DbConstants.USERS).
-                child( Preferences.getInstance(getApplicationContext()).getString(DbConstants.ID)).
-                updateChildren(map, new DatabaseReference.CompletionListener() {
-            @Override
-            public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
-                Log.d(TAG, "Refreshed token saved");
-            }
-        });
+        if(FirebaseAuth.getInstance().getCurrentUser()!=null) {
+            String uid = "";
+            if (Preferences.getInstance(getApplicationContext()).getString(DbConstants.ID) != null && !Preferences.getInstance(getApplicationContext()).getString(DbConstants.ID).equalsIgnoreCase(""))
+                uid = Preferences.getInstance(getApplicationContext()).getString(DbConstants.ID);
+            else
+                uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+            HashMap<String, Object> map = new HashMap();
+            map.put(DbConstants.TOKEN, token);
+            if (FirebaseAuth.getInstance().getCurrentUser() != null)
+                FirebaseDatabase.getInstance().getReference().child(DbConstants.USERS).
+                        child(uid).
+                        updateChildren(map, new DatabaseReference.CompletionListener() {
+                            @Override
+                            public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+                                Log.d(TAG, "Refreshed token saved");
+                            }
+                        });
+        }
     }
 }

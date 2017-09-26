@@ -1,6 +1,9 @@
 package com.bigc.fragments;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +26,7 @@ import com.bigc.general.classes.UserConnections;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
+import com.bigc.interfaces.GetConnectionCompletion;
 import com.bigc.models.ConnectionsModel;
 import com.bigc.models.Users;
 import com.bigc_connect.R;
@@ -37,6 +41,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import eu.janmuller.android.simplecropimage.Util;
+
 public class FragmentSearchSurvivors extends BaseFragment {
 
     public static String SEARCH_KEY = "";
@@ -49,6 +55,7 @@ public class FragmentSearchSurvivors extends BaseFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        fetchUserTask();
     }
 
     @Override
@@ -68,12 +75,15 @@ public class FragmentSearchSurvivors extends BaseFragment {
         listview = (ListView) view.findViewById(R.id.listview);
         categoryGridView = (GridView) view.findViewById(R.id.categoryGridView);
         categoryAdapter = new RibbonsGridAdapter(getActivity());
-        categoryGridView.setAdapter(categoryAdapter);
+
 
         adapter = new SearchResultAdapter(getActivity(), null, null);
         listview.setAdapter(adapter);
         inputBox = (EditText) view.findViewById(R.id.searchBox);
 
+
+        //loadConnections(false);
+        categoryGridView.setAdapter(categoryAdapter);
         return view;
     }
 
@@ -117,15 +127,38 @@ public class FragmentSearchSurvivors extends BaseFragment {
             }
         });
 
-        loadConnections(false);
-
         //new loadSurvivorsTask().execute();
     }
+
+    private void fetchUserTask() {
+
+        Utils.showProgress(getActivity());
+        // TODO: 7/18/2017 fetch user task
+        List<ConnectionsModel> connectionsModels = new ArrayList<>();
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+        Queries.getUserConnectionsQuery(Preferences.getInstance(getActivity()).getUserFromPreference(), false, getActivity(),
+                new GetConnectionCompletion() {
+                    @Override
+                    public void isComplete(boolean complete) {
+                        if (complete) {
+                            Utils.hideProgress();
+                            loadConnections(false);
+                        }
+
+                    }
+                });
+
+
+    }
+
+
 
     ArrayList<Users> searchUsers = new ArrayList<>();
 
     private void searchSurvivors(String SEARCH_KEY) {
         Utils.showProgress(getActivity());
+        if(searchUsers!=null)
+            searchUsers.clear();
         //ArrayList<Users> searchUsers = Queries.getSearchSurvivorQuery(SEARCH_KEY);
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.child(DbConstants.USERS).orderByChild(DbConstants.NAME_LOWERCASE).startAt(SEARCH_KEY).endAt(SEARCH_KEY + "\uf8ff")
@@ -215,6 +248,27 @@ public class FragmentSearchSurvivors extends BaseFragment {
         return Constants.FRAGMENT_SEARCH_SURVIVOR;
     }
 
+    private class loadConnections extends AsyncTask<Void,Void,Void>{
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            Utils.showProgress(getActivity());
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            fetchUserTask();
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            Utils.hideProgress();
+        }
+    }
+
     /*	private class loadSurvivorsTask extends
                 AsyncTask<Void, Void, UserConnections> {
 
@@ -242,8 +296,8 @@ public class FragmentSearchSurvivors extends BaseFragment {
     Users connectionUser = null;
 
     private UserConnections loadConnections(final boolean fromCache) {
-
-        Queries.getUserConnectionsQuery(Preferences.getInstance(getActivity()).getUserFromPreference(), false, getActivity());
+        // TODO: 25-09-2017 by Ekta
+        //  Queries.getUserConnectionsQuery(Preferences.getInstance(getActivity()).getUserFromPreference(), false, getActivity());
 
 
 		/*Query connectionsQuery = Queries.getUserConnectionsQuery(Preferences.getInstance(getContext()).getUserFromPreference(),false);
@@ -284,8 +338,8 @@ public class FragmentSearchSurvivors extends BaseFragment {
 
         //userConnections1.activeConnections = activeConnections;
         // TODO: 7/13/2017 Load connections here
-		/*ParseQuery<ParseObject> mQuery = Queries.getUserConnectionsQuery(
-				ParseUser.getCurrentUser(), fromCache);
+        /*ParseQuery<ParseObject> mQuery = Queries.getUserConnectionsQuery(
+                ParseUser.getCurrentUser(), fromCache);
 		try {
 			List<ParseObject> survivorConnections = mQuery.find();
 			Log.e("Result", survivorConnections.size() + " - ");
@@ -327,12 +381,16 @@ public class FragmentSearchSurvivors extends BaseFragment {
 		}*/
         userConnections.activeConnections = Preferences.getInstance(getActivity()).getLocalConnections().get(0);
         userConnections.pendingConnections = Preferences.getInstance(getActivity()).getLocalConnections().get(1);
+
         if (adapter != null)
             adapter.updateData(null, userConnections.activeConnections,
                     userConnections.pendingConnections);
+
         Utils.hideProgress();
         return userConnections;
     }
+
+
 
 /*	private Users getUserDetail(final ConnectionsModel connection) {
 		final DatabaseReference mReference = FirebaseDatabase.getInstance().getReference();

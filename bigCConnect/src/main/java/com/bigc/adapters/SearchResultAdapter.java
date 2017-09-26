@@ -103,7 +103,7 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
         else {
 //			if (user.getInt(DbConstants.TYPE) == Constants.USER_TYPE.FIGHTER
 //					.ordinal())
-            if (user.getRibbon() == Constants.USER_TYPE.FIGHTER.ordinal()) {
+            if (user.getType() == Constants.USER_TYPE.FIGHTER.ordinal()) {
 //				holder.ribbonView
 //						.setImageResource(user.getInt(DbConstants.RIBBON) < 0 ? R.drawable.ic_launcher
 //								: Utils.fighter_ribbons[user
@@ -123,6 +123,11 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
                                 : Utils.survivor_ribbons[user
                                 .getRibbon()]);
             }
+
+
+            /***********************************************/
+
+
 
             // int ribbon = user.getInt(DbConstants.RIBBON);
             // if (ribbon >= 0)

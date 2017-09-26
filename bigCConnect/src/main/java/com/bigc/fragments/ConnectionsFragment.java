@@ -14,6 +14,7 @@ import com.bigc.datastorage.Preferences;
 import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
+import com.bigc.general.classes.Queries;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
@@ -149,7 +150,10 @@ public class ConnectionsFragment extends BaseFragment {
 
 			}
 		});
+
+
 	}
+
 
 /*	private class loadPendingRequestTask extends
 			AsyncTask<Void, Void, List<ParseObject>> {

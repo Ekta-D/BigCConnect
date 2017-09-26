@@ -104,7 +104,8 @@ public class SetupRemainderFragment extends Fragment implements
 //                locationView.getText().toString());
 
         //FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-        String currentUid = Preferences.getInstance(getActivity()).getString(DbConstants.ID);
+//        String currentUid = Preferences.getInstance(getActivity()).getString(DbConstants.ID);
+        String currentUid=FirebaseAuth.getInstance().getCurrentUser().getUid();
         Map<String, Object> map = new HashMap<>();
         map.put(DbConstants.STAGE, stageView.getText().toString().trim());
         map.put(DbConstants.CANCER_TYPE, typeView.getText().toString().trim());

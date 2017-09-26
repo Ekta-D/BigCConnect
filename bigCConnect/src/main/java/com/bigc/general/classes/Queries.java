@@ -1,10 +1,14 @@
 package com.bigc.general.classes;
 
 import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
+import android.view.View;
 
 import com.bigc.datastorage.Preferences;
 import com.bigc.interfaces.ConnectionExist;
+import com.bigc.interfaces.GetConnectionCompletion;
 import com.bigc.interfaces.SignupInterface;
 import com.bigc.models.ConnectionsModel;
 import com.bigc.models.Posts;
@@ -22,6 +26,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import eu.janmuller.android.simplecropimage.Util;
 
 public class Queries {
 
@@ -440,42 +446,91 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
     }*/
 
     public static void getUserConnectionsQuery(
-            final Users user, boolean fromCache, final Context context) {
+            final Users user, boolean fromCache, final Context context, final GetConnectionCompletion getConnectionCompletion) {
+
 
         final List<Users> activeConnections = new ArrayList<>();
         final List<Users> pendingConnections = new ArrayList<>();
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-        mDatabase.child(DbConstants.TABLE_CONNECTIONS).orderByKey().startAt(user.getObjectId()).endAt(user.getObjectId() + "\uf8ff").addListenerForSingleValueEvent(new ValueEventListener() {
+        mDatabase.child(DbConstants.TABLE_CONNECTIONS).addListenerForSingleValueEvent(new ValueEventListener() {
+            // mDatabase.child(DbConstants.TABLE_CONNECTIONS).orderByChild(DbConstants.FROM).equalTo(user.getObjectId()).addListenerForSingleValueEvent(new ValueEventListener() {
+
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot != null && dataSnapshot.hasChildren()) {
-                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                        ConnectionsModel connectionsModel = dataSnapshot1.getValue(ConnectionsModel.class);
-                        if (connectionsModel.getStatus() == true) {
-                            //exists and is a connection.. dont send connection request
-
-                            getConnectionDetails(connectionsModel.getTo(), activeConnections, pendingConnections, true, context);
+            public void onDataChange(final DataSnapshot dataSnapshot) {
 
 
-                        } else {
-                            //exists and pending.. no need to send connection request
-                            getConnectionDetails(connectionsModel.getTo(), activeConnections, pendingConnections, false, context);
+                    new Handler(Looper.getMainLooper()).post(new Runnable() { // Tried new Handler(Looper.myLopper()) also
+                        @Override
+                        public void run() {
+
+                            if (dataSnapshot != null && dataSnapshot.hasChildren()) {
+                                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                                    ConnectionsModel connectionsModel = dataSnapshot1.getValue(ConnectionsModel.class);
+                                    String currentId = Preferences.getInstance(context).getString(DbConstants.ID);
+                                    if (connectionsModel.getFrom().equalsIgnoreCase(Preferences.getInstance(context).getString(DbConstants.ID)) ||
+                                            connectionsModel.getTo().equalsIgnoreCase(Preferences.getInstance(context).getString(DbConstants.ID))) {
+
+                                        ArrayList<Users> allusers = Preferences.getInstance(context).getAllUsers(DbConstants.FETCH_USER);
+
+                                        if (connectionsModel.getStatus() == true) {
+                                            //exists and is a connection.. dont send connection request
+
+                                            if (connectionsModel.getFrom().equalsIgnoreCase(Preferences.getInstance(context).getString(DbConstants.ID))) {
+                                                Users userExists = Utils.getUserIndexFromObjectId(connectionsModel.getTo(), allusers);
+                                                if (userExists != null) {
+                                                    activeConnections.add(userExists);
+                                                }
+                                            } else {
+                                                Users userExists = Utils.getUserIndexFromObjectId(connectionsModel.getFrom(), allusers);
+                                                if (userExists != null)
+                                                    activeConnections.add(userExists);
+                                            }
+                                            //getConnectionDetails(connectionsModel.getFrom(), activeConnections, pendingConnections, true, context);
+
+
+                                        } else {
+                                            //exists and pending.. no need to send connection request
+                                            if (connectionsModel.getFrom().equalsIgnoreCase(Preferences.getInstance(context).getString(DbConstants.ID))) {
+                                                Users userExists = Utils.getUserIndexFromObjectId(connectionsModel.getTo(), allusers);
+                                                if (userExists != null) {
+                                                    pendingConnections.add(userExists);
+                                                }
+                                            } else {
+                                                Users userExists = Utils.getUserIndexFromObjectId(connectionsModel.getFrom(), allusers);
+                                                if (userExists != null)
+                                                    pendingConnections.add(userExists);
+                                            }
+                                    /*getConnectionDetails(connectionsModel.getFrom(), activeConnections, pendingConnections, false, context);
+                                    System.out.println("check pending status: " + connectionsModel.getStatus());*/
+                                        }
+                                    }
+
+
+                                    //check for other connections
+                                    // searchOtherConnections(user, activeConnections, pendingConnections, context);
+                                }
+                            }
+                            getConnectionCompletion.isComplete(true);
+                            System.out.println("check other pending status: " + activeConnections.size() + " " + pendingConnections.size() + " " + dataSnapshot.getChildrenCount());
+                            Preferences.getInstance(context).saveConnectionsLocally(activeConnections, pendingConnections);
                         }
-                    }
-                    //check for other connections
-                    searchOtherConnections(user, activeConnections, pendingConnections, context);
-                } else {
-                    //check for other connections
-                    searchOtherConnections(user, activeConnections, pendingConnections, context);
-                }
-            }
+                    });
 
+//                    else{
+//                        //check for other connections
+//                        //searchOtherConnections(user, activeConnections, pendingConnections, context);
+//                    }
+
+
+
+            }
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
         });
+
 
         //return mDatabase.child(DbConstants.TABLE_CONNECTIONS).equalTo(DbConstants.TO, user.getObjectId());
     }
@@ -495,6 +550,7 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
                             //exists and pending.. no need to send connection request
                             getConnectionDetails(connectionsModel.getFrom(), activeConnections, pendingConnections, false, context);
                         }
+                        System.out.println("check other pending status: " + connectionsModel.getStatus());
                     }
 
                 } else {
@@ -526,7 +582,7 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
                         active.add(user);
                     else
                         pending.add(user);
-
+                    System.out.println("pending size" + pending.size());
                     //save to preferences
                     Preferences.getInstance(context).saveConnectionsLocally(active, pending);
                     System.out.println("connections saved locally");

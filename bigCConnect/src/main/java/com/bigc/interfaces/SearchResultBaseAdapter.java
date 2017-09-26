@@ -125,6 +125,7 @@ public abstract class SearchResultBaseAdapter extends ArrayAdapter<Users> {
         if (result == null)
             return;
         data.addAll(result);
+
         notifyDataSetChanged();
     }
 

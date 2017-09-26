@@ -18,11 +18,13 @@ import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
 import com.bigc.general.classes.PostManager;
+import com.bigc.general.classes.Queries;
 import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
 import com.bigc.interfaces.PopupOptionHandler;
 import com.bigc.interfaces.UploadPostObserver;
+import com.bigc.models.ConnectionsModel;
 import com.bigc.models.Messages;
 import com.bigc.models.Posts;
 import com.bigc.models.Tributes;
@@ -33,6 +35,7 @@ import com.costum.android.widget.PullToRefreshListView.OnRefreshListener;*/
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
@@ -124,6 +127,23 @@ public class NewsFeedFragment extends BaseFragment implements
         } else {
             listView.setAdapter(adapter);
         }
+
+
+        /*FirebaseDatabase.getInstance().getReference().child(DbConstants.TABLE_CONNECTIONS).orderByChild(DbConstants.FROM).equalTo(Preferences.getInstance(getActivity()).getString(DbConstants.ID)).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                    ConnectionsModel connectionsModel = dataSnapshot1.getValue(ConnectionsModel.class);
+                    System.out.println("check pending status: "+connectionsModel.getStatus());
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });*/
+
 
         return view;
     }
@@ -368,7 +388,7 @@ public class NewsFeedFragment extends BaseFragment implements
             }
         });
 
-       // query.addChildEventListener(childEventListener);
+        // query.addChildEventListener(childEventListener);
 
 //
 //        ParseQuery<ParseObject> query = Queries.getFeedsQuery(fromCache);
@@ -415,7 +435,9 @@ public class NewsFeedFragment extends BaseFragment implements
 
     }
 
-//    private class completePostLoadingsTask extends
+
+
+    //    private class completePostLoadingsTask extends
 //            AsyncTask<Void, Void, List<ParseObject>> {
 //
 //        private List<ParseObject> posts;
@@ -458,7 +480,8 @@ public class NewsFeedFragment extends BaseFragment implements
 //            }
 //        }
 //    }
-ArrayList<Posts> postsArrayList;
+    ArrayList<Posts> postsArrayList;
+
     private void populateList(Collection<Posts> posts) {
 
 
@@ -484,7 +507,7 @@ ArrayList<Posts> postsArrayList;
         }
 
 
-        if(posts!=null && posts.size()>0) {
+        if (posts != null && posts.size() > 0) {
             postsArrayList = new ArrayList<>();
             postsArrayList.addAll(posts);
             Collections.sort(postsArrayList, new Comparator<Posts>() {
@@ -508,11 +531,11 @@ ArrayList<Posts> postsArrayList;
                             return -1;
                         } else {
                             return 1;
-            }
+                        }
                     } catch (ParseException e) {
 
                         e.printStackTrace();
-        }
+                    }
 
 
                     return 0;
@@ -528,8 +551,7 @@ ArrayList<Posts> postsArrayList;
         }
 
 
-        if (adapter!=null && getActivity()!=null)
-        {
+        if (adapter != null && getActivity() != null) {
             if (!isPremium) {
 
                 ViewBinder viewBinder = new ViewBinder.Builder(

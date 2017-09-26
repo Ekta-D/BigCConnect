@@ -31,6 +31,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.PopupWindow;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.android.ex.chips.RecipientEntry;
@@ -284,6 +285,8 @@ public class Utils {
             progress.dismiss();
         }
     }
+
+
 
     public static boolean validateEmail(String mail) {
         Pattern pattern;
@@ -1234,12 +1237,31 @@ public class Utils {
         if (id == null || id.length() == 0)
             return -1;
 
-        for (int i = 0; i < list.size(); i++) {
-            if (id.equals(list.get(i).getObjectId()))
-                return i;
+        if(list!=null) {
+            for (int i = 0; i < list.size(); i++) {
+                if (id.equals(list.get(i).getObjectId()))
+                    return i;
+            }
         }
 
         return -1;
+    }
+
+    public static Users getUserIndexFromObjectId(String id, List<Users> list) {
+        if (id == null)
+            return null;
+
+        if (id == null || id.length() == 0)
+            return null;
+
+        if(list!=null) {
+            for (int i = 0; i < list.size(); i++) {
+                if (id.equals(list.get(i).getObjectId()))
+                    return list.get(i);
+            }
+        }
+
+        return null;
     }
 
     public static String getCurrentDate() {
@@ -1332,10 +1354,14 @@ public class Utils {
 
     public static void saveObjectId(Context context,DatabaseReference databaseReference) {
       //  FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
+        String uid = "";
+        if(Preferences.getInstance(context).getString(DbConstants.ID)!=null && !Preferences.getInstance(context).getString(DbConstants.ID).equalsIgnoreCase(""))
+            uid= Preferences.getInstance(context).getString(DbConstants.ID);
+        else
+            uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
         Map<String, Object> objectMap = new HashMap<>();
-        objectMap.put("objectId",  Preferences.getInstance(context).getString(DbConstants.ID));
-        databaseReference.child(DbConstants.USERS).child( Preferences.getInstance(context).getString(DbConstants.ID)).updateChildren(objectMap);
+        objectMap.put("objectId",  uid);
+        databaseReference.child(DbConstants.USERS).child(uid).updateChildren(objectMap);
     }
 
     public static void sendPasswordToEmail(String email, final Context context, FirebaseAuth firebaseAuth) {

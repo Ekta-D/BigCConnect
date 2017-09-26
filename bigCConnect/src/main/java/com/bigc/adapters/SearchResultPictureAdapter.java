@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SearchResultPictureAdapter extends SearchResultBaseAdapter {
@@ -41,6 +42,10 @@ public class SearchResultPictureAdapter extends SearchResultBaseAdapter {
         final SurvivorSearchViewHolder holder;
         final Users user = data.get(position);
 
+        List<ArrayList<Users>> connections= Preferences.getInstance(getContext()).getLocalConnections();
+        List<Users> active = connections.get(0);
+        List<Users> pending = connections.get(1);
+
         if (view == null) {
             view = inflater
                     .inflate(R.layout.listitem_search_result_with_picture,
@@ -59,9 +64,9 @@ public class SearchResultPictureAdapter extends SearchResultBaseAdapter {
         holder.indexInNewAddedConnections = Utils.getUserIndex(user,
                 newAddedConnections);
         holder.indexInActiveConnections = Utils.getUserIndex(user,
-                activeConnections);
+                active);
         holder.indexInPendingConnections = Utils.getUserIndex(user,
-                pendingConnections);
+                pending);
         holder.indexInRemovedConnections = Utils.getUserIndex(user,
                 removedConnections);
 

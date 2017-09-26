@@ -12,6 +12,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.bigc.adapters.SearchResultPictureAdapter;
+import com.bigc.datastorage.Preferences;
 import com.bigc.general.classes.Constants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
 import com.bigc.general.classes.Queries;
@@ -20,6 +21,7 @@ import com.bigc.general.classes.Utils;
 import com.bigc.interfaces.BaseFragment;
 import com.bigc.interfaces.FragmentHolder;
 import com.bigc.models.Comments;
+import com.bigc.models.ConnectionsModel;
 import com.bigc.models.Users;
 import com.bigc_connect.R;
 import com.costum.android.widget.LoadMoreListView;
@@ -48,6 +50,7 @@ public class CategorySurvivorsFragment extends BaseFragment implements
     public static int ribbon;
     private LoadMoreListView listView;
     private SearchResultPictureAdapter adapter;
+
     private TextView messageView;
     private LinearLayout progressParent;
     private ProgressBar progressView;
@@ -121,6 +124,9 @@ public class CategorySurvivorsFragment extends BaseFragment implements
         loadData();
     }
 
+
+
+
     @Override
     public void onPause() {
 //        adapter.processUserSettings();
@@ -151,6 +157,7 @@ public class CategorySurvivorsFragment extends BaseFragment implements
     }
 
     private void loadData() {
+
 
         Query query = Queries.getCategorizedUsersQuery(ribbon);
         query.addValueEventListener(valueEventListener);
@@ -186,7 +193,7 @@ public class CategorySurvivorsFragment extends BaseFragment implements
         public void onDataChange(DataSnapshot dataSnapshot) {
             if (dataSnapshot != null) {
                 Log.i("CategorySurvivors", dataSnapshot.toString());
-
+                long count = dataSnapshot.getChildrenCount();
                 if (usersHashMap == null)
                     usersHashMap = new HashMap();
                 usersHashMap.clear();
@@ -219,6 +226,8 @@ public class CategorySurvivorsFragment extends BaseFragment implements
 
     private void populateList(Collection<Users> users) {
 
+
+
         this.users.clear();
         if (listView != null) {
             if (users == null) {
@@ -227,6 +236,8 @@ public class CategorySurvivorsFragment extends BaseFragment implements
             } else if (users.size() == 0) {
                 showError("No survivors found");
             } else {
+
+
                 adapter.updateData(users);
                 listView.setVisibility(View.VISIBLE);
                 progressParent.setVisibility(View.GONE);

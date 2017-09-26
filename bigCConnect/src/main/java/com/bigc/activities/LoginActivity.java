@@ -35,6 +35,7 @@ import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
 import com.bigc.general.classes.Queries;
 import com.bigc.general.classes.Utils;
+import com.bigc.interfaces.GetConnectionCompletion;
 import com.bigc.models.Comments;
 import com.bigc.models.ConnectionsModel;
 import com.bigc.models.Post;
@@ -257,6 +258,8 @@ public class LoginActivity extends Activity implements OnClickListener {
                             gotoHomeScreen();
 
                             fetchUser();
+
+                            //fetchUserTask();
                         } else {
                             String error = task.getException().toString();
                             String message = "";
@@ -268,6 +271,9 @@ public class LoginActivity extends Activity implements OnClickListener {
                                     "The password is invalid or the user does not have a password.")) {
                                 message = "The password is invalid";
                             }
+                            if (error.equalsIgnoreCase("com.google.firebase.FirebaseNetworkException: A network error (such as timeout, interrupted connection or unreachable host) has occurred.")) {
+                                message = "Please check internet connection";
+                            }
 
                             Log.i("login_error", task.getException().toString());
                             Utils.showPrompt(LoginActivity.this, message);
@@ -277,6 +283,28 @@ public class LoginActivity extends Activity implements OnClickListener {
                     }
                 }
         );
+
+    }
+
+    private void fetchUserTask() {
+
+        Utils.showProgress(LoginActivity.this);
+
+
+        // TODO: 7/18/2017 fetch user task
+        List<ConnectionsModel> connectionsModels = new ArrayList<>();
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+        Queries.getUserConnectionsQuery(Preferences.getInstance(LoginActivity.this).getUserFromPreference(), false, LoginActivity.this,
+                new GetConnectionCompletion() {
+                    @Override
+                    public void isComplete(boolean complete) {
+                        if (complete) {
+                            Utils.hideProgress();
+                        }
+
+                    }
+                });
+
 
     }
 
@@ -294,15 +322,6 @@ public class LoginActivity extends Activity implements OnClickListener {
                 }).create().show();
     }
 
-
-    private void fetchUserTask() {
-
-        // TODO: 7/18/2017 fetch user task
-        List<ConnectionsModel> connectionsModels = new ArrayList<>();
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-        //ref.child(DbConstants.TABLE_CONNECTIONS)
-        Queries.getUserConnectionsQuery(Preferences.getInstance(getBaseContext()).getUserFromPreference(), false, getApplicationContext());
-    }
 
     PostActivity postActivity = new PostActivity();
     ArrayList<Users> usersArrayList;
@@ -322,6 +341,7 @@ public class LoginActivity extends Activity implements OnClickListener {
                 }
                 Utils.hideProgress();
                 Preferences.getInstance(LoginActivity.this).save_list(DbConstants.FETCH_USER, usersArrayList);
+                //fetchUserTask();
 //               postActivity.getAllUsers(usersArrayList);
 
             }
@@ -406,7 +426,6 @@ public class LoginActivity extends Activity implements OnClickListener {
                     Preferences.getInstance(LoginActivity.this).save(DbConstants.TOKEN, String.valueOf(values.get("token")));
                     Preferences.getInstance(LoginActivity.this).save(DbConstants.RECEIVEPUSH, String.valueOf(values.get("recievePush")));
 
-                    fetchUserTask();
 
                     Utils.hideProgress();
 
@@ -491,8 +510,7 @@ public class LoginActivity extends Activity implements OnClickListener {
         try {
             JSONArray result_array = jsonObject.getJSONArray("results");
 
-            for (int i=0;i<result_array.length();i++)
-            {
+            for (int i = 0; i < result_array.length(); i++) {
                 JSONObject res = result_array.getJSONObject(i);
                 String createdAt = res.getString("createdAt");
                 JSONObject fromObject = res.getJSONObject("from");

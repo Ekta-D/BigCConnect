@@ -194,11 +194,14 @@ public class SignupActivity extends FragmentActivity implements
                     break;
             }
     }
-
+    String uid="";
     public void PictureResponseHandler(Uri uri) {
         if (uri != null) {
          //   FirebaseUser firebaseUser = firebaseAuth.getInstance().getCurrentUser();
-            final String uid = Preferences.getInstance(getApplicationContext()).getString(DbConstants.ID);
+            if(Preferences.getInstance(getApplicationContext()).getString(DbConstants.ID)!=null && !Preferences.getInstance(getApplicationContext()).getString(DbConstants.ID).equalsIgnoreCase(""))
+                uid= Preferences.getInstance(getApplicationContext()).getString(DbConstants.ID);
+            else
+                uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
             StorageReference reference = storageReference.child(uid + ".jpg");
             reference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
