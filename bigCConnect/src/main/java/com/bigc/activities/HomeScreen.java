@@ -299,7 +299,7 @@ public class HomeScreen extends AppCompatActivity implements
     }
 
     private void showUserProfile() {
-        ProfileFragment.setUser(Preferences.getInstance(this).getUserFromPreference());
+        ProfileFragment.setUser(Preferences.getInstance(this).getUserFromPreference(HomeScreen.this));
         currentFragment.onViewCreated(currentFragment.getView(), null);
         setTabBar(currentFragment.getTab());
     }
@@ -339,7 +339,7 @@ public class HomeScreen extends AppCompatActivity implements
             return new ExploreFragment();
         } else if (Constants.FRAGMENT_PROFILE.equals(tag)) {
             return new ProfileFragment(new NewsFeedFragment(),
-                    Preferences.getInstance(this).getUserFromPreference());
+                    Preferences.getInstance(this).getUserFromPreference(getApplicationContext()));
         } else if (Constants.FRAGMENT_TRIBUTES.equals(tag))
             return new FragmentTributes();
 

@@ -43,7 +43,7 @@ public class MessagesAdapter extends ArrayAdapter<Messages> {
         if (this.context != null)
             inflater = (LayoutInflater) this.context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        currentUser = Preferences.getInstance(context).getUserFromPreference();
+        currentUser = Preferences.getInstance(context).getUserFromPreference(context);
 
     }
 

@@ -475,7 +475,6 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
 
                                         if (connectionsModel.getStatus() == true) {
                                             //exists and is a connection.. dont send connection request
-
                                             if (connectionsModel.getFrom().equalsIgnoreCase(Preferences.getInstance(context).getString(DbConstants.ID))) {
                                                 Users userExists = Utils.getUserIndexFromObjectId(connectionsModel.getTo(), allusers);
                                                 if (userExists != null) {
@@ -490,6 +489,7 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
 
 
                                         } else {
+
                                             //exists and pending.. no need to send connection request
                                             if (connectionsModel.getFrom().equalsIgnoreCase(Preferences.getInstance(context).getString(DbConstants.ID))) {
                                                 Users userExists = Utils.getUserIndexFromObjectId(connectionsModel.getTo(), allusers);
@@ -503,17 +503,21 @@ public static ParseQuery<ParseObject> getUserConnectionStatusQuery(
                                             }
                                     /*getConnectionDetails(connectionsModel.getFrom(), activeConnections, pendingConnections, false, context);
                                     System.out.println("check pending status: " + connectionsModel.getStatus());*/
+
                                         }
+
                                     }
 
 
                                     //check for other connections
                                     // searchOtherConnections(user, activeConnections, pendingConnections, context);
                                 }
+                                getConnectionCompletion.isComplete(true);
+                                Preferences.getInstance(context).saveConnectionsLocally(activeConnections, pendingConnections);
                             }
-                            getConnectionCompletion.isComplete(true);
+                            /*getConnectionCompletion.isComplete(true);*/
                             System.out.println("check other pending status: " + activeConnections.size() + " " + pendingConnections.size() + " " + dataSnapshot.getChildrenCount());
-                            Preferences.getInstance(context).saveConnectionsLocally(activeConnections, pendingConnections);
+                           /* Preferences.getInstance(context).saveConnectionsLocally(activeConnections, pendingConnections);*/
                         }
                     });
 

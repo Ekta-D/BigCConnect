@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -54,6 +55,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -259,7 +261,7 @@ public class LoginActivity extends Activity implements OnClickListener {
 
                             fetchUser();
 
-                            //fetchUserTask();
+//                           fetchUserTask();
                         } else {
                             String error = task.getException().toString();
                             String message = "";
@@ -294,7 +296,7 @@ public class LoginActivity extends Activity implements OnClickListener {
         // TODO: 7/18/2017 fetch user task
         List<ConnectionsModel> connectionsModels = new ArrayList<>();
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-        Queries.getUserConnectionsQuery(Preferences.getInstance(LoginActivity.this).getUserFromPreference(), false, LoginActivity.this,
+        Queries.getUserConnectionsQuery(Preferences.getInstance(LoginActivity.this).getUserFromPreference(LoginActivity.this), false, LoginActivity.this,
                 new GetConnectionCompletion() {
                     @Override
                     public void isComplete(boolean complete) {
@@ -336,7 +338,9 @@ public class LoginActivity extends Activity implements OnClickListener {
                 usersArrayList = new ArrayList<Users>();
                 for (DataSnapshot data : dataSnapshot.getChildren()) {
                     String key = data.getKey();
+                    Log.i("key_null", key);
                     Users user = data.getValue(Users.class);
+                    Log.i("user_null", user.toString());
                     usersArrayList.add(user);
                 }
                 Utils.hideProgress();
@@ -410,6 +414,14 @@ public class LoginActivity extends Activity implements OnClickListener {
                     Map<Object, Object> values1 = (Map<Object, Object>) dataSnapshot.getValue();
                     String keySet = (String) values1.keySet().toArray()[0];
                     Map<Object, Object> values = (Map<Object, Object>) values1.get(keySet);
+                    String token = FirebaseInstanceId.getInstance().getToken();
+                    Map<String, Object> updated_values = new HashMap<>();
+                    updated_values.put(DbConstants.TOKEN, token);
+
+
+                    FirebaseDatabase.getInstance().getReference().child(DbConstants.USERS).
+                            child(String.valueOf(values.get(DbConstants.ID))).updateChildren(updated_values);
+
 
                     boolean deactivated = (boolean) values.get(DbConstants.DEACTIVATED);
 
@@ -426,6 +438,9 @@ public class LoginActivity extends Activity implements OnClickListener {
                     Preferences.getInstance(LoginActivity.this).save(DbConstants.TOKEN, String.valueOf(values.get("token")));
                     Preferences.getInstance(LoginActivity.this).save(DbConstants.RECEIVEPUSH, String.valueOf(values.get("recievePush")));
 
+
+                    // added: 14-11-2017  by Ekta Dushanj
+                    fetchUserTask();
 
                     Utils.hideProgress();
 

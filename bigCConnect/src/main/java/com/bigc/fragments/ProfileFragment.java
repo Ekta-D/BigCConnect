@@ -89,7 +89,7 @@ public class ProfileFragment extends BaseFragment {
             ProfileFragment.user = user;
         else if (ProfileFragment.user == null) {
             // TODO: 7/13/2017 Get user from preference
-            ProfileFragment.user = Preferences.getInstance(getActivity()).getUserFromPreference();
+            ProfileFragment.user = Preferences.getInstance(getActivity()).getUserFromPreference(getActivity().getApplicationContext());
             //ProfileFragment.user = ParseUser.getCurrentUser();
         }
 
@@ -157,9 +157,9 @@ public class ProfileFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
         GoogleAnalyticsHelper.sendScreenViewGoogleAnalytics(getActivity(),
                 "Profile Screen");
-        if(user==null) {
+        if (user == null) {
 //        nameView.setText(ProfileFragment.user.getString(DbConstants.NAME));
-            populateViews(Preferences.getInstance(getContext()).getUserFromPreference());
+            populateViews(Preferences.getInstance(getContext()).getUserFromPreference(getActivity().getApplicationContext()));
         } else {
             populateViews(user);
         }
@@ -212,7 +212,7 @@ public class ProfileFragment extends BaseFragment {
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         if (dataSnapshot != null) {
                             ConnectionsModel user = dataSnapshot.getValue(ConnectionsModel.class);
-                            if (user!=null && user.getStatus()) {
+                            if (user != null && user.getStatus()) {
                                 connectionView
                                         .setImageResource(R.drawable.ic_connected);
                                 connectionView.setContentDescription("1");
@@ -397,11 +397,11 @@ public class ProfileFragment extends BaseFragment {
                 if (iView.getContentDescription().equals("0")) {
                     iView.setContentDescription("2");
                     iView.setImageResource(R.drawable.ic_connect_pending);
-                    Utils.addConnections(getActivity(),req);
+                    Utils.addConnections(getActivity(), req);
                 } else {
                     iView.setContentDescription("0");
                     iView.setImageResource(R.drawable.ic_connect);
-                    Utils.removeConnections(getActivity(),req);
+                    Utils.removeConnections(getActivity(), req);
                 }
                 break;
             case R.id.profilePicture:
@@ -434,7 +434,7 @@ public class ProfileFragment extends BaseFragment {
 //        if (showProfile && !user.getObjectId().equals(
 //                ParseUser.getCurrentUser().getObjectId()))
         if (showProfile && !Preferences.getInstance(getActivity()).getString(DbConstants.ID).equals(firebaseUser.getUid())) {
-            user = Preferences.getInstance(getActivity()).getUserFromPreference();
+            user = Preferences.getInstance(getActivity()).getUserFromPreference(getActivity().getApplicationContext());
             onViewCreated(getView(), null);
         } else {
             if (caller != null)
@@ -496,7 +496,7 @@ public class ProfileFragment extends BaseFragment {
     public void PictureResponseHandler(Uri uri) {
         if (uri != null) {
             Utils.showProgress(getActivity());
-     //       FirebaseUser firebaseUser = firebaseAuth.getInstance().getCurrentUser();
+            //       FirebaseUser firebaseUser = firebaseAuth.getInstance().getCurrentUser();
             final String uid = Preferences.getInstance(getActivity()).getString(DbConstants.ID);
             StorageReference reference = storageReference.child(uid + ".jpg");
             reference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -507,7 +507,7 @@ public class ProfileFragment extends BaseFragment {
                     profilemp.put(DbConstants.PROFILE_PICTURE, downloadUri.toString());
                     databaseReference.child(DbConstants.USERS).child(Preferences.getInstance(getActivity()).getString(DbConstants.ID))
                             .updateChildren(profilemp);
-                    Preferences.getInstance(getActivity()).save(DbConstants.PROFILE_PICTURE,downloadUri.toString());
+                    Preferences.getInstance(getActivity()).save(DbConstants.PROFILE_PICTURE, downloadUri.toString());
                     ImageLoader.getInstance().displayImage(downloadUri.toString(), picView,
                             Utils.normalDisplayOptions);
                     Utils.hideProgress();

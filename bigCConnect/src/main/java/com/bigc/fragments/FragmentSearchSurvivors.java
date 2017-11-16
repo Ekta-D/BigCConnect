@@ -136,7 +136,7 @@ public class FragmentSearchSurvivors extends BaseFragment {
         // TODO: 7/18/2017 fetch user task
         List<ConnectionsModel> connectionsModels = new ArrayList<>();
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-        Queries.getUserConnectionsQuery(Preferences.getInstance(getActivity()).getUserFromPreference(), false, getActivity(),
+        Queries.getUserConnectionsQuery(Preferences.getInstance(getActivity()).getUserFromPreference(getActivity().getApplicationContext()), false, getActivity(),
                 new GetConnectionCompletion() {
                     @Override
                     public void isComplete(boolean complete) {

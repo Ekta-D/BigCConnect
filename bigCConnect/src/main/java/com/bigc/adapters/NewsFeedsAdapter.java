@@ -94,7 +94,7 @@ public class NewsFeedsAdapter extends BaseAdapter {
 
     @Override
     public int getViewTypeCount() {
-        if(posts.size()==0)
+        if (posts.size() == 0)
             return 1;
         else return posts.size();
     }
@@ -317,8 +317,8 @@ public class NewsFeedsAdapter extends BaseAdapter {
 
             @Override
             public void onClick(View v) {
-                 onClickLove(context.getActivity(),user_post, holder.loveCountView);
-              //  Utils.showToast(context.getActivity(), "hey");
+                onClickLove(context.getActivity(), user_post, holder.loveCountView);
+                //  Utils.showToast(context.getActivity(), "hey");
             }
         });
         return convertView;
@@ -326,8 +326,30 @@ public class NewsFeedsAdapter extends BaseAdapter {
 
     public void setValues(final Context context, Map<Object, Object> user_values, final ViewHolder holder, final Posts posts) {
         holder.headingOne.setText(String.valueOf(user_values.get(DbConstants.NAME)));
-        int type = Integer.parseInt(String.valueOf(user_values.get(DbConstants.TYPE)));
-        int ribbon = Integer.parseInt(String.valueOf(user_values.get(DbConstants.RIBBON)));
+
+        String user_id = String.valueOf(user_values.get(DbConstants.ID));
+        String email = String.valueOf(user_values.get(DbConstants.EMAIL));
+
+
+        Log.i("crashed_details", user_id + " " + email);
+
+        String type_string = String.valueOf(user_values.get(DbConstants.TYPE));
+        int type = 0;
+        if (type_string.equalsIgnoreCase("null")) {
+            type_string = "0";
+
+        } else {
+            type = Integer.parseInt(type_string);
+        }
+        String ribbon_string = String.valueOf(user_values.get(DbConstants.RIBBON));
+        int ribbon = 0;
+
+        if (ribbon_string.equalsIgnoreCase("null")) {
+            ribbon_string = "0";
+
+        } else {
+            ribbon = Integer.parseInt(ribbon_string);
+        }
         if (type == 1)//supporter
         {
             holder.ribbonView.setImageResource(R.drawable.ribbon_supporter);
@@ -370,11 +392,11 @@ public class NewsFeedsAdapter extends BaseAdapter {
 
     }
 
-    private void onClickLove(Context context,Posts post, TextView countView) {
+    private void onClickLove(Context context, Posts post, TextView countView) {
         if (!isClickable)
             return;
 
-        if (!isLiked(context,post)) {
+        if (!isLiked(context, post)) {
             countView.setText(String.valueOf(post.getLikes() == null ? 1
                     : post.getLikes().size() + 1));
             ArrayList<String> likes = new ArrayList<>();
@@ -387,7 +409,7 @@ public class NewsFeedsAdapter extends BaseAdapter {
 
     }
 
-    private boolean isLiked(Context context,Posts post) {
+    private boolean isLiked(Context context, Posts post) {
 
         List<String> likes = post.getLikes();
         if (likes == null)

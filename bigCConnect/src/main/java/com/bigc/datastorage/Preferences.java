@@ -79,6 +79,7 @@ public class Preferences {
         editor.commit();
     }
 
+
     public boolean getBoolean(String key) {
         return prefs.getBoolean(key, false);
     }
@@ -99,6 +100,7 @@ public class Preferences {
         editor.putInt(key, value);
         editor.commit();
     }
+
 
     public void saveFeeds(Feeds feeds, String key) {
         ObjectMapper mapper = new ObjectMapper();
@@ -135,9 +137,9 @@ public class Preferences {
         }
     }
 
-    public Users getUserFromPreference() {
+    public Users getUserFromPreference(Context context) {
         Users user = new Users();
-        user.setName(getString(DbConstants.NAME));
+      /*  user.setName(getString(DbConstants.NAME));
         user.setEmail(getString(DbConstants.EMAIL));
         user.setProfile_picture(getString(DbConstants.PROFILE_PICTURE));
         user.setRibbon(getInt(DbConstants.RIBBON));
@@ -146,7 +148,19 @@ public class Preferences {
         user.setCancertype(getString(DbConstants.CANCER_TYPE));
         user.setType(getInt(DbConstants.TYPE));
         user.setObjectId(getString(DbConstants.ID));
-        user.setVisibility(getInt(DbConstants.VISIBILITY));
+        user.setVisibility(getInt(DbConstants.VISIBILITY));*/
+        user.setName(Preferences.getInstance(context).getString(DbConstants.NAME));
+        user.setEmail(Preferences.getInstance(context).getString(DbConstants.EMAIL));
+        user.setProfile_picture(Preferences.getInstance(context).getString(DbConstants.PROFILE_PICTURE));
+        user.setRibbon(Preferences.getInstance(context).getInt(DbConstants.RIBBON));
+        user.setLocation(Preferences.getInstance(context).getString(DbConstants.LOCATION));
+        user.setStage(Preferences.getInstance(context).getString(DbConstants.STAGE));
+        user.setCancertype(Preferences.getInstance(context).getString(DbConstants.CANCER_TYPE));
+        user.setType(Preferences.getInstance(context).getInt(DbConstants.TYPE));
+        user.setObjectId(Preferences.getInstance(context).getString(DbConstants.ID));
+        //added ekta Dushanj
+        user.setToken(Preferences.getInstance(context).getString(DbConstants.TOKEN));
+        user.setVisibility(Preferences.getInstance(context).getInt(DbConstants.VISIBILITY));
         return user;
     }
 

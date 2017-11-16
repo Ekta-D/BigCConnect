@@ -349,7 +349,7 @@ public class PostsFragments extends BaseFragment implements PopupOptionHandler {
     @Override
     public boolean onBackPressed() {
         ((FragmentHolder) getActivity()).replaceFragment(new ProfileFragment(
-                PostsFragments.this, Preferences.getInstance(getActivity()).getUserFromPreference()));
+                PostsFragments.this, Preferences.getInstance(getActivity()).getUserFromPreference(getActivity().getApplicationContext())));
         return true;
     }
 
