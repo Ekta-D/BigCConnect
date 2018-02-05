@@ -74,8 +74,10 @@ public abstract class SearchResultBaseAdapter extends ArrayAdapter<Users> {
         return cns;
     }
 
-    public UserConnections getUserConnections() {
+    public UserConnections getUserConnections(Context context) {
         UserConnections cns = new UserConnections();
+        activeConnections = Preferences.getInstance(context).getLocalConnections().get(0);
+        pendingConnections = Preferences.getInstance(context).getLocalConnections().get(1);
         cns.activeConnections.addAll(activeConnections);
         cns.pendingConnections.addAll(pendingConnections);
         cns.pendingConnections.addAll(newAddedConnections);

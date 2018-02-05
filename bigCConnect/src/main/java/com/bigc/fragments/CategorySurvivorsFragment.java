@@ -124,9 +124,6 @@ public class CategorySurvivorsFragment extends BaseFragment implements
         loadData();
     }
 
-
-
-
     @Override
     public void onPause() {
 //        adapter.processUserSettings();

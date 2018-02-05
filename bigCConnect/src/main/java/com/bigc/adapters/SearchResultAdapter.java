@@ -39,18 +39,22 @@ import eu.janmuller.android.simplecropimage.Util;
 
 public class SearchResultAdapter extends SearchResultBaseAdapter {
 
+    Context context;
     public SearchResultAdapter(Context context,
                                List<Users> activeConnection, List<Users> pendingConnection) {
         super(context, R.layout.listitem_search_result, activeConnection,
                 pendingConnection, null);
+        this.context=context;
         // init(context, activeConnection, pendingConnections, null);
     }
 
     public SearchResultAdapter(Context context,
                                List<Users> activeConnections,
                                List<Users> pendingConnections, List<Users> data) {
+
         super(context, R.layout.listitem_search_result, activeConnections,
                 pendingConnections, data);
+        this.context=context;
         // init(context, userConnections, pendingConnections, data);
     }
 
@@ -73,15 +77,24 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
         } else {
             holder = (SurvivorSearchViewHolder) view.getTag();
         }
+        getUserConnections(context);
 
         holder.indexInNewAddedConnections = Utils.getUserIndex(user,
                 newAddedConnections);
+
+        System.out.println(activeConnections.size());
+        System.out.println(pendingConnections.size());
         if (activeConnections.size() > 0) {
             holder.indexInActiveConnections = Utils.getUserIndex(user,
                     activeConnections);
-        } else {
-            holder.indexInActiveConnections = Utils.getUserIndex(user, data);
+        } else if (pendingConnections.size() > 0) {
+            holder.indexInPendingConnections = Utils.getUserIndex(user,
+                    pendingConnections);
         }
+//        else {
+//            holder.indexInActiveConnections = Utils.getUserIndex(user, data);
+//        }
+        holder.indexInActiveConnections=Utils.getUserIndex(user,activeConnections);
         holder.indexInPendingConnections = Utils.getUserIndex(user,
                 pendingConnections);
         holder.indexInRemovedConnections = Utils.getUserIndex(user,
@@ -108,8 +121,14 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
 //						.setImageResource(user.getInt(DbConstants.RIBBON) < 0 ? R.drawable.ic_launcher
 //								: Utils.fighter_ribbons[user
 //										.getInt(DbConstants.RIBBON)]);
-                holder.ribbonView.setImageResource(
+
+//                2/5/2018 by Ekta
+             /*   holder.ribbonView.setImageResource(
                         Preferences.getInstance(getContext()).getInt(DbConstants.RIBBON) < 0 ?
+                                R.drawable.ribbon_supporter : Utils.fighter_ribbons[user
+                                .getRibbon()]);*/
+                holder.ribbonView.setImageResource(
+                        user.getRibbon() < 0 ?
                                 R.drawable.ribbon_supporter : Utils.fighter_ribbons[user
                                 .getRibbon()]);
 
@@ -126,7 +145,6 @@ public class SearchResultAdapter extends SearchResultBaseAdapter {
 
 
             /***********************************************/
-
 
 
             // int ribbon = user.getInt(DbConstants.RIBBON);

@@ -96,7 +96,20 @@ public class Splash extends Activity {
         // TODO: Implement this method to send token to your app server.
         HashMap<String, Object> map = new HashMap();
         map.put(DbConstants.TOKEN, token);
-        FirebaseDatabase.getInstance().getReference().child(DbConstants.USERS).child(Preferences.getInstance(getApplicationContext()).getString(DbConstants.ID)).updateChildren(map, new DatabaseReference.CompletionListener() {
+
+        String uid = "";
+        if(Preferences.getInstance(Splash.this).getString(DbConstants.ID)!=null && !Preferences.getInstance(Splash.this).getString(DbConstants.ID).equalsIgnoreCase(""))
+            uid= Preferences.getInstance(Splash.this).getString(DbConstants.ID);
+        else
+            uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+       /* FirebaseDatabase.getInstance().getReference().child(DbConstants.USERS).child(Preferences.getInstance(getApplicationContext()).getString(DbConstants.ID)).updateChildren(map, new DatabaseReference.CompletionListener() {
+            @Override
+            public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+                Log.d("", "Refreshed token saved");
+            }
+        });*/
+        FirebaseDatabase.getInstance().getReference().child(DbConstants.USERS).child(uid).updateChildren(map, new DatabaseReference.CompletionListener() {
             @Override
             public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
                 Log.d("", "Refreshed token saved");

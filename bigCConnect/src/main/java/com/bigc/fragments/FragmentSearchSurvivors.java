@@ -123,7 +123,7 @@ public class FragmentSearchSurvivors extends BaseFragment {
                                     int position, long id) {
                 ((FragmentHolder) getActivity())
                         .replaceFragment(new CategorySurvivorsFragment(
-                                position, adapter.getUserConnections()));
+                                position, adapter.getUserConnections(getActivity().getApplicationContext())));
             }
         });
 
@@ -157,6 +157,7 @@ public class FragmentSearchSurvivors extends BaseFragment {
 
     private void searchSurvivors(String SEARCH_KEY) {
         Utils.showProgress(getActivity());
+        fetchUserTask();
         if(searchUsers!=null)
             searchUsers.clear();
         //ArrayList<Users> searchUsers = Queries.getSearchSurvivorQuery(SEARCH_KEY);

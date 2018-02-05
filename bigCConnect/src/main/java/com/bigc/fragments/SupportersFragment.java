@@ -132,12 +132,17 @@ public class SupportersFragment extends BaseFragment {
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     String key = dataSnapshot1.getKey();
                     ConnectionsModel connectionsModel = dataSnapshot1.getValue(ConnectionsModel.class);
-                    String user;
-                    if (supporters) {
-                        user = connectionsModel.getFrom();
-                    } else {
-                        user = connectionsModel.getTo();
+                    String user="";
+                    // if status true only then show lis
+                    if (connectionsModel.getStatus())
+                    {
+                        if (supporters) {
+                            user = connectionsModel.getFrom();
+                        } else {
+                            user = connectionsModel.getTo();
+                        }
                     }
+
 
 
                     for (int i = 0; i < users.size(); i++) {

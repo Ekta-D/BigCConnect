@@ -2,6 +2,7 @@ package com.bigc.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.bigc.activities.HomeScreen;
+import com.bigc.activities.Splash;
 import com.bigc.datastorage.Preferences;
 import com.bigc.general.classes.DbConstants;
 import com.bigc.general.classes.GoogleAnalyticsHelper;
@@ -22,6 +24,12 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class FragmentResetPassword extends BaseFragment {
 
@@ -157,19 +165,32 @@ public class FragmentResetPassword extends BaseFragment {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
+                                Map<String, Object> updated_values = new HashMap<>();
+                                updated_values.put(DbConstants.KEY, nPass);
+
+                                String uid = "";
+                                if(Preferences.getInstance(getActivity().getApplicationContext()).getString(DbConstants.ID)!=null && !Preferences.getInstance(getActivity().getApplicationContext()).getString(DbConstants.ID).equalsIgnoreCase(""))
+                                    uid= Preferences.getInstance(getActivity().getApplicationContext()).getString(DbConstants.ID);
+                                else
+                                    uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+                                FirebaseDatabase.getInstance().getReference().child(DbConstants.USERS).child(uid).updateChildren(updated_values, new DatabaseReference.CompletionListener() {
+                                    @Override
+                                    public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+                                        Log.d("", "Refreshed token saved");
+                                    }
+                                });
                                 Utils.showToast(getActivity(), Utils.loadString(
                                         getActivity(),
                                         R.string.passwordChangedSuccessful));
                             } else if (!task.isSuccessful()) {
-//                                Utils.showToast(getActivity(), Utils.loadString(
-//                                        getActivity(), R.string.operationFailed));
                                 Utils.showToast(getActivity(), task.getException().toString());
                             }
                             Utils.hideProgress();
                         }
                     });
                 }
-                Utils.hideProgress();
+//                Utils.hideProgress();
             }
         });
 
